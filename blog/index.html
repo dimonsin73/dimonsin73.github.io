@@ -6,6 +6,7 @@
     <title>AUTOSMM</title>
     <link rel="stylesheet" href="css/fonts.css"/>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
     <main>
@@ -32,10 +33,10 @@
                     </div>
                     <nav class="header__nav">
                         <ul class="header__list">
-                            <li class="header__list-item"><a href="" class="header__list-a item-active">Смотреть всё</a></li>
-                            <li class="header__list-item"><a href="" class="header__list-a">Инструкции</a></li>
-                            <li class="header__list-item"><a href="" class="header__list-a">Новости</a></li>
-                            <li class="header__list-item"><a href="" class="header__list-a">Кейсы</a></li>
+                            <li class="header__list-item"><button class="header__list-btn item-active" data-sort="all">Смотреть всё</button></li>
+                            <li class="header__list-item"><button class="header__list-btn" data-sort="instructions">Инструкции</button></li>
+                            <li class="header__list-item"><button class="header__list-btn" data-sort="news">Новости</button></li>
+                            <li class="header__list-item"><button class="header__list-btn" data-sort="cases">Кейсы</button></li>
                         </ul>
                     </nav>
                 </div>
@@ -44,16 +45,9 @@
         <section class="blogs">
             <div class="container">
                 <div class="blogs__wrap">
-                    <div class="blogs__item">
+                    <div class="blogs__item" data-sort="news">
                         <div class="blogs__img">
-                            <img src="img/robo.png" alt="" class="blogs__img-img">
-                            <div class="blogs__img-play">
-                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
-                                    <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
-                                    <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
-                                </svg>
-                            </div>
+                            <iframe class="blogs__img-iframe" src="https://vk.com/video_ext.php?oid=-196796002&id=456240729&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="blogs__content">
                             <p class="blogs__content-teg">Новость</p>
@@ -67,13 +61,13 @@
                             </a>
                         </div>
                     </div>
-                    <div class="blogs__item">
+                    <div class="blogs__item" data-sort="cases">
                         <div class="blogs__img">
                             <img src="img/models.jpg" alt="" class="blogs__img-img">
                         </div>
                         <div class="blogs__content">
                             <p class="blogs__content-teg">Кейс</p>
-                            <h2 class="blogs__content-title">БОльше зо AI  моделей</h2>
+                            <h2 class="blogs__content-title">БОльше зо AI моделей</h2>
                             <p class="blogs__content-text">В настройках чат-бота AutoSMM можно найти более 30 самых передовых генеративных нейросетевых моделей, которые уже подготовлены для вашей работы</p>
                             <a href="#" class="blogs__content-link">
                                 Читать полностью
@@ -83,16 +77,9 @@
                             </a>
                         </div>
                     </div>
-                    <div class="blogs__item">
+                    <div class="blogs__item" data-sort="instructions">
                         <div class="blogs__img">
-                            <img src="img/phone1.png" alt="" class="blogs__img-img">
-                            <div class="blogs__img-play">
-                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
-                                    <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
-                                    <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
-                                </svg>
-                            </div>
+                            <iframe class="blogs__img-iframe" src="https://vk.com/video_ext.php?oid=-220082560&id=456239024&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="blogs__content">
                             <p class="blogs__content-teg">Инструкция</p>
@@ -106,12 +93,12 @@
                             </a>
                         </div>
                     </div>
-                    <div class="blogs__item">
+                    <div class="blogs__item" data-sort="cases">
                         <div class="blogs__img">
                             <img src="img/model.jpg" alt="" class="blogs__img-img">                            
                         </div>
                         <div class="blogs__content">
-                            <p class="blogs__content-teg">кейс</p>
+                            <p class="blogs__content-teg">Кейс</p>
                             <h2 class="blogs__content-title">автосмм для бренда модной одежды</h2>
                             <p class="blogs__content-text">Мы выполнили авторскую настройку АвтоСММ для Lovely Styley и создали (не)официальный телеграм клиента для увеличения продаж.</p>
                             <a href="#" class="blogs__content-link">
@@ -122,19 +109,12 @@
                             </a>
                         </div>
                     </div>
-                    <div class="blogs__item">
+                    <div class="blogs__item" data-sort="news">
                         <div class="blogs__img">
-                            <img src="img/line.png" alt="" class="blogs__img-img">
-                            <div class="blogs__img-play">
-                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
-                                    <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
-                                    <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
-                                </svg>
-                            </div>
+                            <iframe class="blogs__img-iframe" src="https://vk.com/video_ext.php?oid=3850332&id=456239550&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="blogs__content">
-                            <p class="blogs__content-teg">новость</p>
+                            <p class="blogs__content-teg">Новость</p>
                             <h2 class="blogs__content-title">автоСММ + Реклама</h2>
                             <p class="blogs__content-text">ЭФФЕКТИВНАЯ РЕКЛАМА И PERFORMANCE-МАРКЕТИНГ ОТ DIGITAL АГЕНТСТВА HEIGHT LINE И AUTOSMM.RU</p>
                             <a href="#" class="blogs__content-link">
@@ -145,12 +125,12 @@
                             </a>
                         </div>
                     </div>
-                    <div class="blogs__item">
+                    <div class="blogs__item" data-sort="instructions">
                         <div class="blogs__img">
                             <img src="img/moder.jpg" alt="" class="blogs__img-img">
                         </div>
                         <div class="blogs__content">
-                            <p class="blogs__content-teg">инструкция</p>
+                            <p class="blogs__content-teg">Инструкция</p>
                             <h2 class="blogs__content-title">Режим модерации в автосмм</h2>
                             <p class="blogs__content-text">Как работать в режиме модерации, контролируя весь процесс генерации контента. Как на основе актуальных новостей, или персональных задач за 10 секунд создавать уникальный контент</p>
                             <a href="#" class="blogs__content-link">
@@ -163,14 +143,8 @@
                     </div>
                 </div>
             </div>
-            
         </section>
-
-
-
-        
-            
-
+        <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
 
