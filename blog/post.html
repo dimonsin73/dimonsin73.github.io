@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/fonts.css"/>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main class="post">
+        <div class="container">
+            <div class="post__back">
+                <a href="" class="post__back-link">
+                    <div class="post__back-arrow">
+                        <svg width="10" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.8284 5.0005L5.6569 7.8289L4.2426 9.2431L0 5.0005L4.2426 0.757812L5.6569 2.17203L2.8284 5.0005Z" fill="#0F33EF"/>
+                        </svg>                            
+                    </div>
+                    Вернуться к списку новостей из источника
+                </a>
+            </div>
+            <div class="post__new">
+                <div class="post__new-title">
+                    <span class="blue">Создать</span> новый пост из новости
+                </div>
+                <div class="post__new-telegram">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.47657 13.6856L8.12721 18.5995C8.62705 18.5995 8.84353 18.3848 9.10313 18.1269L11.4466 15.8873L16.3024 19.4434C17.193 19.9397 17.8204 19.6784 18.0607 18.6241L21.248 3.68878L21.2489 3.68789C21.5314 2.37141 20.7728 1.85661 19.9051 2.17957L1.16993 9.35246C-0.10871 9.84878 -0.0893504 10.5616 0.95257 10.8845L5.74241 12.3744L16.8682 5.4127C17.3919 5.06598 17.8679 5.25782 17.4763 5.60454L8.47657 13.6856Z" fill="#0F33EF"/>
+                    </svg>
+                </div>
+                <div class="post__new-text">
+                    Заголовок или первые слова текста в фоме ссылка на ориг статью в источнике ...............если длинный тексто то он вооооооот до сюда....
+                </div>
+            </div>
+            <section class="post__wrap">
+                <div class="faq">
+                    <div class="faq__wrap">
+                        <ul class="faq__list accordion">
+                            <li class="faq__item">
+                                <h2 class="faq__item-title">
+                                    <p><span class="blue">Не знаете о чем написать в социальных сетях?</span></p>
+                                    <svg class="faq__item-svg" width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="20.5" cy="20" r="19.5" stroke="#0F33EF"/>
+                                        <path d="M16.3198 15.8203L25.3594 24.8599M25.3594 24.8599L25.3594 15.8203M25.3594 24.8599L16.3198 24.8599" stroke="#0F33EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </h2>
+                                <p class="faq__item-text">С AutoSMM вы можете регулярно и без затрат времени создавать и публиковать уникальный контент по нужной вам теме для своих социальных сетей.  За 1 минуту вы можете <span class="blue">БЕСПЛАТНО создать контент-плат и любой пост для СММ под любую сферу деятельности.</span> </p>
+                            </li>
+                            <li class="faq__item">
+                                <h2 class="faq__item-title">
+                                    <p>Как за 1 минуту <span class="blue">бесплатно</span> создать новый посТ
+                                        на основе выбранной новости из источника:
+                                    </p>
+                                    <svg class="faq__item-svg" width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="20.5" cy="20" r="19.5" stroke="#0F33EF"/>
+                                        <path d="M16.3198 15.8203L25.3594 24.8599M25.3594 24.8599L25.3594 15.8203M25.3594 24.8599L16.3198 24.8599" stroke="#0F33EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </h2>
+                                <ol class="faq__item-text">
+                                    <li class="faq-item-li">Выберите свою сферу деятельности для которой генерируем новый пост:</li>
+                                    <li class="faq-item-li">(необязательно) Отредактируйте оригинальные медиа-файлы и текст из новости.</li>
+                                    <li class="faq-item-li">(необязательно) Опишите, какое изображение, или видео вы хотите создать для нового поста и выберите модель нейро-генераций. </li>
+                                    <li class="faq-item-li">Нажмите кнопку «Создать пост бесплатно» .</li>
+                                    <li class="faq-item-li">*После генерации нового поста, вы сможете редактировать полеченный результат и запланировать публикацию нового поста в нужную Вам соц.сеть.</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="postNews">
+                    <div class="postNews__wrap">
+                        <div class="postNews__item">
+                            <h2 class="postNews__title">Новость из источника <span class="blue">для создания нового поста:</span></h2>
+                            <select class="postNews__select" name="" id="">
+                                <option class="postNews__option" value="">Заголовок выбранной новости из источника</option>
+                                <option class="postNews__option" value="">Заголовок выбранной новости из источника</option>
+                                <option class="postNews__option" value="">Заголовок выбранной новости из источника</option>
+                                <option class="postNews__option" value="">Заголовок выбранной новости из источника</option>
+                            </select>
+                        </div>
+                        <div class="postNews__item">
+                            <h2 class="postNews__title">1. Выберите <span class="blue" title="Что это такое и как добавить свою сферу деятельности">сферу деятельности:</span></h2>
+                            <select class="postNews__select" name="" id="">
+                                <option class="postNews__option" value="">Маркетинг</option>
+                                <option class="postNews__option" value="">Финансы</option>
+                                <option class="postNews__option" value="">Менеджмент</option>
+                                <option class="postNews__option" value="">Мерчендайзинг</option>
+                            </select>
+                        </div>
+                        <div class="postNews__item">
+                            <h2 class="postNews__title">2. Отредактируйте при необходимости <span class="blue">оригинальный текст новости:</span> </h2>
+                            <div class="language">
+                                <p>*Выберите на каком языке вам нужен готовый пост:</p>
+                                <button class="language__btn language__btn-active">RU</button> /
+                                <button class="language__btn">EN</button> /
+                                <button class="language__btn">FR</button> /
+                                <button class="language__btn">SP</button> /
+                                <button class="language__btn">DE</button>
+                            </div>
+                            <textarea class="postNews__item-textarea" id="scroll-textarea" name="">Зарегистрируйтесь бесплатно и получите возможности для 100% автоматизации своих бизнес-аккаунтов и личных социальных сетей с помощью AutoSMM! Зарегистрируйтесь или войдите в свой PRO аккаунт, чтобы ваши генерации были доступны только вам. Это позволит вам получить и другие преимущества 100% автоматизации ваших личных и бизнес-аккаунтов в социальных сетях.  Например, вы сможете добавить свои каналы-получатели (ВКонтакте и Telegram), RSS-ленты..Зарегистрируйтесь бесплатно и получите возможности для 100% автоматизации своих бизнес-аккаунтов и личных социальных сетей с помощью AutoSMM! Зарегистрируйтесь или войдите в свой PRO аккаунт, чтобы ваши генерации были доступны только вам. Это позволит вам получить и другие преимущества 100% автоматизации ваших личных и бизнес-аккаунтов в социальных сетях.  Например, вы сможете добавить свои каналы-получатели (ВКонтакте и Telegram), RSS-ленты..Зарегистрируйтесь бесплатно и получите возможности для 100% автоматизации своих бизнес-аккаунтов и личных социальных сетей с помощью AutoSMM! Зарегистрируйтесь или войдите в свой PRO аккаунт, чтобы ваши генерации были доступны только вам. Это позволит вам получить и другие преимущества 100% автоматизации ваших личных и бизнес-аккаунтов в социальных сетях.  Например, вы сможете добавить свои каналы-получатели Например, вы сможете добавить свои каналы-получатели Например, вы сможете добавить свои каналы-получатели
+                            </textarea>
+                        </div>
+                        <div class="postNews__item">
+                            <h2 class="postNews__title">3. Удалите, замените, или оставьте <span class="blue">оригинальные файлы</span> для нового поста: </h2>
+                            <div class="postNews__slider">
+                                <div class="swiper" id="swiper-post">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <picture class="postNews__slider-picture">
+                                                <img class="postNews__slider-img" src="img/foto.png" alt="">
+                                                <div class="blogs__img-play">
+                                                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
+                                                        <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
+                                                        <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="blogs__img-btn">
+                                                    <div class="blogs__img-success">
+                                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM9.0026 14L16.0737 6.92893L14.6595 5.51472L9.0026 11.1716L6.17421 8.3431L4.75999 9.7574L9.0026 14Z" fill="#200304"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="blogs__img-delete">
+                                                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11 0.875L1 12.861M1 0.875L11 12.861" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>                                                        
+                                                    </div>  
+                                                </div>
+                                                <div class="postNews__slider-text">Оставить без изменений</div>
+                                            </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <picture class="postNews__slider-picture">
+                                                <img class="postNews__slider-img" src="img/foto.png" alt="">
+                                                <div class="blogs__img-play">
+                                                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
+                                                        <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
+                                                        <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="postNews__slider-text">Удалить</div>
+                                            </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <picture class="postNews__slider-picture">
+                                                <img class="postNews__slider-img" src="img/foto.png" alt="">
+                                                <div class="blogs__img-play">
+                                                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
+                                                        <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
+                                                        <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="postNews__slider-text">Создать новое на основе этого</div>
+                                            </picture>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                            <div class="files">
+                                <div class="files__wrap">
+                                    <div class="files__telegram">
+                                        <div class="post__new-telegram">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8.47657 13.6856L8.12721 18.5995C8.62705 18.5995 8.84353 18.3848 9.10313 18.1269L11.4466 15.8873L16.3024 19.4434C17.193 19.9397 17.8204 19.6784 18.0607 18.6241L21.248 3.68878L21.2489 3.68789C21.5314 2.37141 20.7728 1.85661 19.9051 2.17957L1.16993 9.35246C-0.10871 9.84878 -0.0893504 10.5616 0.95257 10.8845L5.74241 12.3744L16.8682 5.4127C17.3919 5.06598 17.8679 5.25782 17.4763 5.60454L8.47657 13.6856Z" fill="#0F33EF"/>
+                                            </svg>
+                                        </div>
+                                        <a href="#" class="files__telegram-text">Кликабельное название скачать/открыть.pdf</a>
+                                    </div>
+                                    <div class="files__telegram">
+                                        <div class="post__new-telegram">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8.47657 13.6856L8.12721 18.5995C8.62705 18.5995 8.84353 18.3848 9.10313 18.1269L11.4466 15.8873L16.3024 19.4434C17.193 19.9397 17.8204 19.6784 18.0607 18.6241L21.248 3.68878L21.2489 3.68789C21.5314 2.37141 20.7728 1.85661 19.9051 2.17957L1.16993 9.35246C-0.10871 9.84878 -0.0893504 10.5616 0.95257 10.8845L5.74241 12.3744L16.8682 5.4127C17.3919 5.06598 17.8679 5.25782 17.4763 5.60454L8.47657 13.6856Z" fill="#0F33EF"/>
+                                            </svg>
+                                        </div>
+                                        <a href="#" class="files__telegram-text">2 Кликабельное название скачать/открыть.mp3</a>
+                                    </div>
+                                    <div class="files__telegram">
+                                        <div class="post__new-telegram">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8.47657 13.6856L8.12721 18.5995C8.62705 18.5995 8.84353 18.3848 9.10313 18.1269L11.4466 15.8873L16.3024 19.4434C17.193 19.9397 17.8204 19.6784 18.0607 18.6241L21.248 3.68878L21.2489 3.68789C21.5314 2.37141 20.7728 1.85661 19.9051 2.17957L1.16993 9.35246C-0.10871 9.84878 -0.0893504 10.5616 0.95257 10.8845L5.74241 12.3744L16.8682 5.4127C17.3919 5.06598 17.8679 5.25782 17.4763 5.60454L8.47657 13.6856Z" fill="#0F33EF"/>
+                                            </svg>
+                                        </div>
+                                        <a href="#" class="files__telegram-text">2 Кликабельное название скачать.csv</a>
+                                    </div>
+                                </div>
+                                <div class="files__add">
+                                    <button class="files__add-btn files__btn">Добавить свои файлы, или фото / видео</button>
+                                    <button class="files__add-btn files__btn">Добавленно 3 объекта для загрузки</button>
+                                </div>
+                                <div class="files__load">
+                                    <button class="files__load-btn files__btn">Загрузить</button>
+                                    <button class="files__load-btn files__btn">Загрузить</button>
+                                </div>
+                            </div>
+                            <div class="files__footer">
+                                <div class="post__footer-wrap">
+                                    <p class="post__footer-p files__footer-p">Создать НОВЫЙ пост с уникальными МЕДИА - бесплатно!</p>
+                                    <button class="post__footer-btn files__footer-btn">
+                                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.83203 14.6673L15.1654 1.33398M15.1654 1.33398H1.83203M15.1654 1.33398V14.6673" stroke="#0F33EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="postNews__item">
+                            <h2 class="postNews__title">4. Создайте из текста новые уникальные <span class="blue">картинки и видео для поста:</span> </h2>
+                            <form action="" class="form">
+                                <label class="form__label" for="textarea-img">
+                                    (необязательно) Опишите, что вы хотите увидеть на <span>изображении:</span>
+                                    <textarea class="form__textarea" name="" id="textarea-img"></textarea>
+                                </label>
+                                <div class="form__left">
+                                    <label class="form__label" for="">
+                                        Модель для генерации картинки:
+                                        <select class="form__select" name="" id="">
+                                            <option value="">DALLE-3</option>
+                                            <option value="">DALLE-3</option>
+                                        </select>
+                                    </label>
+                                    <div class="form__add">
+                                        <button class="form__add-btn">
+                                            <svg width="20" height="20" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9 9.49609V5.49609H11V9.49609H15V11.4961H11V15.4961H9V11.4961H5V9.49609H9ZM10 20.4961C4.47715 20.4961 0 16.0189 0 10.4961C0 4.97324 4.47715 0.496094 10 0.496094C15.5228 0.496094 20 4.97324 20 10.4961C20 16.0189 15.5228 20.4961 10 20.4961ZM10 18.4961C14.4183 18.4961 18 14.9144 18 10.4961C18 6.07781 14.4183 2.49609 10 2.49609C5.58172 2.49609 2 6.07781 2 10.4961C2 14.9144 5.58172 18.4961 10 18.4961Z" fill="#0F33EF"/>
+                                            </svg>                                            
+                                        </button>
+                                        <p class="form__add-text">
+                                            Создать еще картинку 
+                                        </p>
+                                </div>
+                                </div>
+                            </form>
+                            <form action="" class="form">
+                                <label class="form__label" for="textarea-img">
+                                    Опишите, что вы хотите увидеть на втором изображении (или удалите это поле используя крестик):
+                                    <textarea class="form__textarea" name="" id="textarea-img"></textarea>
+                                </label>
+                                <div class="form__left">
+                                    <label class="form__label" for="">
+                                        Модель для генерации картинки:
+                                        <select class="form__select" name="" id="">
+                                            <option value="">FLUX1</option>
+                                            <option value="">DEV</option>
+                                        </select>
+                                    </label>
+                                    <div class="form__add">
+                                        <button class="form__add-btn">
+                                            <svg width="20" height="20" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9 9.49609V5.49609H11V9.49609H15V11.4961H11V15.4961H9V11.4961H5V9.49609H9ZM10 20.4961C4.47715 20.4961 0 16.0189 0 10.4961C0 4.97324 4.47715 0.496094 10 0.496094C15.5228 0.496094 20 4.97324 20 10.4961C20 16.0189 15.5228 20.4961 10 20.4961ZM10 18.4961C14.4183 18.4961 18 14.9144 18 10.4961C18 6.07781 14.4183 2.49609 10 2.49609C5.58172 2.49609 2 6.07781 2 10.4961C2 14.9144 5.58172 18.4961 10 18.4961Z" fill="#0F33EF"/>
+                                            </svg>                                            
+                                        </button>
+                                        <p class="form__add-text">
+                                            Создать еще картинку 
+                                        </p>
+                                </div>
+                                </div>
+                            </form>
+                            <form action="" class="form">
+                                <label class="form__label" for="textarea-img">
+                                    (необязательно) Опишите, что вы хотите увидеть<span>на видео:</span>
+                                    <textarea class="form__textarea" name="" id="textarea-img"></textarea>
+                                </label>
+                                <div class="form__left">
+                                    <label class="form__label" for="">
+                                        Модель для генерации видео:
+                                        <select class="form__select" name="" id="">
+                                            <option value="">AutoMP4</option>
+                                            <option value="">AutoMP4-3</option>
+                                        </select>
+                                    </label>
+                                    <div class="form__add">
+                                        <button class="form__add-btn">
+                                            <svg width="20" height="20" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9 9.49609V5.49609H11V9.49609H15V11.4961H11V15.4961H9V11.4961H5V9.49609H9ZM10 20.4961C4.47715 20.4961 0 16.0189 0 10.4961C0 4.97324 4.47715 0.496094 10 0.496094C15.5228 0.496094 20 4.97324 20 10.4961C20 16.0189 15.5228 20.4961 10 20.4961ZM10 18.4961C14.4183 18.4961 18 14.9144 18 10.4961C18 6.07781 14.4183 2.49609 10 2.49609C5.58172 2.49609 2 6.07781 2 10.4961C2 14.9144 5.58172 18.4961 10 18.4961Z" fill="#0F33EF"/>
+                                            </svg>                                            
+                                        </button>
+                                        <p class="form__add-text">
+                                            Создать еще картинку 
+                                        </p>
+                                </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="post__footer">
+                <div class="post__footer-wrap">
+                    <p class="post__footer-p">Создать НОВЫЙ пост с уникальными МЕДИА - бесплатно!</p>
+                    <button class="post__footer-btn">
+                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.83203 14.6673L15.1654 1.33398M15.1654 1.33398H1.83203M15.1654 1.33398V14.6673" stroke="#0F33EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+
+        </div>
+    </main>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/accordion.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
+    
+</body>
+</html>
