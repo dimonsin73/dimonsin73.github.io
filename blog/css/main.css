@@ -15,7 +15,7 @@ img{
     object-fit: cover;
 }
 :root{
-    --bg-color: #FAFDFF;
+    --bg-color: #f1f7fc;
     --black: #0E3A3F;
     --text: #365C6F;
     --prime: #4FFAFF;
