@@ -205,6 +205,9 @@ img{
     font: 300 18px/23px 'Unbounded', sans-serif;
     color: var(--text); 
 }
+.news__text-a{
+    text-decoration: underline;
+}
 .news__list-bold{
     font-weight: 700;
 }
