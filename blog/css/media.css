@@ -33,7 +33,7 @@
         gap: 8px;
     }
     .news__media-iframe{
-        width: 256px;
+        width: 100%;
         height: 360px;
     }
     .news__text{
@@ -135,6 +135,9 @@
     .news__item{
         grid-column: 1 / -1;
     }
+    .news__item:first-child {
+        grid-column: span 1;
+    }
     .nav{
         grid-row-start: 1;
         margin-bottom: 10px;
@@ -165,6 +168,7 @@
     .news__second{
         grid-template-columns: 385px;
         gap: 25px;
+        margin-right: 0;
     }
     .news__scroll{
         height: 200px;
@@ -276,5 +280,8 @@
     .news__signature {
         font-size: 12px;
         line-height: 14px;
+    }
+    .news__text-sub{
+        width: 280px;
     }
 }
