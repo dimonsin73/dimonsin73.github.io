@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/fonts.css"/>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
     <main class="news">
@@ -28,40 +29,31 @@
                     <h1 class="news__item-title" id="news1">Как Настроить AutoSMM в формате чат-бота</h1>
                 </div>
                 <div class="news__item">
-                    <div class="news__wrap">
-                        <div class="news__item-content">
-                            <div class="news__first">
-                                <ol class="news__list">
-                                    <li class="news__first-item">
-                                        Для начала, чтобы получить api_id и api_hash зарегистрируйтесь на сайте https://my.telegram.org/auth
-                                    </li>
-                                </ol>
-                                <div class="news__first-img">
-                                    <div class="news__first-video">
-                                        <img src="img/phone.png" alt="">
-                                        <div class="blogs__img-play">
-                                            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
-                                                <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
-                                                <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <img src="img/edit.png" alt="">
-                                </div>
-                                <div class="news__first-sign">Смотреть видео, как получить api_id и api_hah для Telegram</div>
-                                <div class="news__first-details">Пример текста для продолжения текста в этом же заголовке но после медиа</div>
-                            </div>
+                    <div class="news__item-content">
+                        <ol class="news__list">
+                            <li class="news__text">
+                                Для начала, чтобы получить api_id и api_hash зарегистрируйтесь на сайте https://my.telegram.org/auth
+                            </li>
+                        </ol>
+                        <div class="news__media">
+                            <iframe class="news__media-iframe" src="https://vk.com/video_ext.php?oid=-220082560&id=456239024&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+                            <img src="img/edit.png" alt="">
                         </div>
-                        <div class="news__nav">
-                            <ol class="news__nav-list" id="news__nav-list">
-                                <li class="news__list-item news__list-active"><a href="#news1">Получите api_id и api_hash</a></li>
-                                <li class="news__list-item"><a href="#news2">Создайте чат-бота в Telegram</a></li>
-                                <li class="news__list-item"><a href="#news3">Создайте закрытый канал в Telegram для модерации</a></li>
-                                <li class="news__list-item"><a href="#news4">Активируйте чат-бота АвтоСММ с помощью менеджер</a></li>
-                            </ol>
-                        </div>
+                        <div class="news__text news__text-sub">Смотреть видео, как получить api_id и api_hah для Telegram</div>
+                        <div class="news__text">Пример текста для продолжения текста в этом же заголовке но после медиа</div>
                     </div>
+                </div>
+                <div class="news__item nav">
+                    <ol class="news__nav" id="news__nav">
+                        <li class="news__nav-item news__nav-active"><a href="#news1">Получите api_id и api_hash</a></li>
+                        <li class="news__nav-item"><a href="#news2">Создайте чат-бота в Telegram</a></li>
+                        <li class="news__nav-item"><a href="#news3">Создайте закрытый канал в Telegram для модерации</a></li>
+                        <li class="news__nav-item"><a href="#news4">Активируйте чат-бота АвтоСММ с помощью менеджер</a></li>
+                        <li class="news__nav-item"><a href="">Получите api_id и api_hash</a></li>
+                        <li class="news__nav-item"><a href="">Создайте чат-бота в Telegram</a></li>
+                        <li class="news__nav-item"><a href="">Создайте закрытый канал в Telegram для модерации</a></li>
+                        <li class="news__nav-item"><a href="">Активируйте чат-бота АвтоСММ с помощью менеджер</a></li>
+                    </ol>
                 </div>
             </div>
             <div class="news__items">
@@ -71,35 +63,27 @@
                 <div class="news__item">
                     <div class="news__item-content">
                         <ol start="2" class="news__list">
-                            <li class="news__list-second">Напишите боту https://t.me/BotFather команду /newbot и следуйте инструкциям.</li>
-                            <ul>
-                                <li class="news__list-sub">2.1 Сохраните токен бота для ипользования в АвтоСММ.</li>
-                                <li class="news__list-sub">2.2 Откройте только что созданного бота и запустите его командой <span>/start</span></li>
-                            </ul>
+                            <li class="news__text">Напишите боту https://t.me/BotFather команду /newbot и следуйте инструкциям.</li>
                         </ol>
-                        <div class="news__img">
-                            <img src="img/robo.png" alt="">
-                            <div class="blogs__img-play">
-                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
-                                    <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
-                                    <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
-                                </svg>
-                            </div>
-                        </div>
+                        <ul class="news__list">
+                            <li class="news__text news__text-space">2.1 Сохраните токен бота для ипользования в АвтоСММ.</li>
+                            <li class="news__text">2.2 Откройте только что созданного бота и запустите его командой <span>/start</span></li>
+                        </ul>
+                        <iframe class="news__iframe" src="https://vk.com/video_ext.php?oid=-196796002&id=456240729&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                     </div>
+
                     <div class="news__second">
                         <div class="news__second-item">
                             <img src="img/sec1.jpg" alt="">
-                            <p class="news__second-p">2. Нашли @BotFather в Telegram</p>
+                            <p class="news__signature">2. Нашли @BotFather в Telegram</p>
                         </div>
                         <div class="news__second-item">
                             <img src="img/sec2.jpg" alt="">
-                            <p class="news__second-p">2.1 Создали нового бота и получили токен</p>
+                            <p class="news__signature">2.1 Создали нового бота и получили токен</p>
                         </div>
                         <div class="news__second-item">
                             <img src="img/sec3.jpg" alt="">
-                            <p class="news__second-p">2.2 Запустили созданного бота</p>
+                            <p class="news__signature">2.2 Запустили созданного бота</p>
                         </div>
                     </div>
                 </div>
@@ -110,54 +94,45 @@
                 </div>
                 <div class="news__item">
                     <div class="news__item-content">
-                        <ul class="news__list" id="scroll">
-                            <li class="news__list-sub">3. Посмотрите на видео, как создать закрытый канал в Telegram (для модерации контента в случае необходимости).</li>
-                            <li class="news__list-sub">3.1 Добавьте бота в администраторы канала, который мы до этого создали. (если вы не можете найти бота в списке юзеров, значит вы не запустили бота, вернитесь в п.2.2)</li>
-                            <li class="news__list-sub">3.2 Напишите любое сообщение (пост) в канале.</li>
-                            <li class="news__list-sub">3.3 Перешлите сообщение из канала в Get My ID https://t.me/getmyid_bot </li>
-                            <li class="news__list-sub">В ответ вы получите "Forwarded from chat:" и "Your user ID:" - сохраните эти данные для настроек АвтоСММ</li>
-                        </ul>
+                        <div class="news__scroll" id="scroll">
+                            <ol start="3" class="news__list">
+                                <li class="news__text">Посмотрите на видео, как создать закрытый канал в Telegram (для модерации контента в случае необходимости).</li>
+                            </ol>
+                            <ul class="news__list">
+                                <li class="news__text news__text-space">3.1 Добавьте бота в администраторы канала, который мы до этого создали. (если вы не можете найти бота в списке юзеров, значит вы не запустили бота, вернитесь в п.2.2)</li>
+                                <li class="news__text news__text-space">3.2 Напишите любое сообщение (пост) в канале.</li>
+                                <li class="news__text news__text-space">3.3 Перешлите сообщение из канала в Get My ID https://t.me/getmyid_bot </li>
+                                <li class="news__text news__text-space">В ответ вы получите <span class="news__list-bold">"Forwarded from chat:"</span> и <span class="news__list-bold">"Your user ID:"</span> - сохраните эти данные для настроек АвтоСММ</li>
+                                <li class="news__text news__text-space">В ответ вы получите <span class="news__list-bold">"Forwarded from chat:"</span> и <span class="news__list-bold">"Your user ID:"</span> - сохраните эти данные для настроек АвтоСММ</li>
+                                <li class="news__text">В ответ вы получите <span class="news__list-bold">"Forwarded from chat:"</span> и <span class="news__list-bold">"Your user ID:"</span> - сохраните эти данные для настроек АвтоСММ</li>
+                            </ul>
+                        </div>
                         <div class="news__slider">
-                            <div class="swiper" id="swiper-news">
-                                <div class="swiper-wrapper">
+                            <div class="swiper news__slider-swiper" id="swiper-news">
+                                <div class="swiper-wrapper news__slider-wrapper">
                                     <div class="swiper-slide">
-                                        <img class="swiper-img" src="img/robohand.png" alt="">
-                                        <div class="blogs__img-play">
-                                            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
-                                                <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
-                                                <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
-                                            </svg>
-                                        </div>
+                                        <iframe class="swipper-iframe" src="https://vk.com/video_ext.php?oid=-135819564&id=456241458&hd=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                     <div class="swiper-slide">
-                                        <img class="swiper-img" src="img/robohand.png" alt="">
-                                        <div class="blogs__img-play">
-                                            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
-                                                <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
-                                                <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
-                                            </svg>
-                                        </div>
+                                        <iframe class="swipper-iframe" src="https://vk.com/video_ext.php?oid=-187177136&id=456239729&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                     <div class="swiper-slide">
-                                        <img class="swiper-img" src="img/robohand.png" alt="">
-                                        <div class="blogs__img-play">
-                                            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle opacity="0.7" cx="50" cy="50" r="50" fill="white"/>
-                                                <circle cx="50" cy="50" r="34" fill="#6DE0E9"/>
-                                                <path d="M62.4417 47.3953C64.4572 48.5469 64.4572 51.453 62.4417 52.6047L43.4884 63.4352C41.4884 64.578 39 63.1339 39 60.8305L39 39.1695C39 36.8661 41.4884 35.422 43.4884 36.5648L62.4417 47.3953Z" fill="white"/>
-                                            </svg>
-                                        </div>
+                                        <iframe class="swipper-iframe" src="https://vk.com/video_ext.php?oid=-28641921&id=456240320&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination"></div>
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev news__slider-prev">
+                                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.292893 7.29289C-0.0976314 7.68342 -0.0976315 8.31658 0.292892 8.7071L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65686 0.928931L0.292893 7.29289ZM21 7L1 7L1 9L21 9L21 7Z" fill="black"/>
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next news__slider-next">
+                                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9L20 9V7L0 7L0 9Z" fill="black"/>
+                                    </svg> 
+                                </div>
                             </div>
-                            <p class="news__second-p">Смотреть видео, как создать закрытый канал в Telegram</p>
+                            <p class="news__signature">Смотреть видео, как создать закрытый канал в Telegram</p>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -168,27 +143,49 @@
                 <div class="news__item">
                     <div class="news__item-content">
                         <ul class="news__list">
-                            <li class="news__list-sub">Для бесплатного использования АвтоСММ - Зарегистрируйтесь на нашем сайте и укажите полученные данные в разделе настройки «АвтоСММ». </li>
-                            <li class="news__list-sub">Или передайте своему личному менеджеру информацию полученную информацию по этой снтрукции в формате чек-листа для активации персонального чат-бота АвтоСММ.</li>
-                            <li class="news__list-sub news__list-bold">(Чек-листа для активации бесплатного периода в AutoSMM.ru):</li>
+                            <li class="news__text news__text-space">Для бесплатного использования АвтоСММ - Зарегистрируйтесь на нашем сайте и укажите полученные данные в разделе настройки «АвтоСММ». </li>
+                            <li class="news__text news__text-space">Или передайте своему личному менеджеру информацию полученную информацию по этой снтрукции в формате чек-листа для активации персонального чат-бота АвтоСММ.</li>
+                            <li class="news__text news__list-bold news__text-space">(Чек-листа для активации бесплатного периода в AutoSMM.ru):</li>
                             <ul class="news__list-marker">
-                                <li>api_id и api_hash: получить на my.telegram.org. (п.1)</li>
-                                <li>Bot token: полученный через BotFather. (п.2)</li>
-                                <li>Forwarded from chat&quot; + "Your user ID" : узнали через бота Get My ID (п.3.3)</li>
-                                <li>Зарегистрироваться на autosmm.ru и следовать дальнейшим инструкциям в личном кабинете</li>
+                                <li class="news__text">api_id и api_hash: получить на my.telegram.org. (п.1)</li>
+                                <li class="news__text">Bot token: полученный через BotFather. (п.2)</li>
+                                <li class="news__text">Forwarded from chat&quot; + "Your user ID" : узнали через бота Get My ID (п.3.3)</li>
+                                <li class="news__text">Зарегистрироваться на autosmm.ru и следовать дальнейшим инструкциям в личном кабинете</li>
                             </ul>
                         </ul>
-                        
                     </div>
-                    <div class="news__second">
-                        <div class="news__second-item">
-                            <img src="img/phone1.png" alt="">
-                        </div>
-                        <div class="news__second-item">
-                            <img src="img/four2.png" alt="">
-                        </div>
-                        <div class="news__second-item">
-                            <img src="img/four3.png" alt="">
+                    <div class="slider__footer">
+                        <div class="swiper slider__footer-swiper" id="swiper-footer">
+                            <div class="swiper-wrapper slider__footer-wrapper">
+                                <div class="swiper-slide slider__footer-slide">
+                                    <img src="img/phone1.png" alt="">
+                                </div>
+                                <div class="swiper-slide slider__footer-slide">
+                                    <img src="img/four2.png" alt="">
+                                </div>
+                                <div class="swiper-slide slider__footer-slide">
+                                    <img src="img/four3.png" alt="">
+                                </div>
+                                <div class="swiper-slide slider__footer-slide">
+                                    <img src="img/phone1.png" alt="">
+                                </div>
+                                <div class="swiper-slide slider__footer-slide">
+                                    <img src="img/four2.png" alt="">
+                                </div>
+                                <div class="swiper-slide slider__footer-slide">
+                                    <img src="img/four3.png" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev slider__footer-prev">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.59961 1.19883L0.799609 5.99883L5.59961 10.7988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="swiper-button-next slider__footer-next">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.40039 1.19883L6.20039 5.99883L1.40039 10.7988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                    
+                            </div>
                         </div>
                     </div>
                 </div>
