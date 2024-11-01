@@ -10,7 +10,7 @@
         margin-right: -40px;
     }
     .slider__footer{
-        margin-right: -275px;
+        margin-right: -40px;
     }
 }
 @media (max-width: 1439px) {
@@ -59,9 +59,6 @@
         width: 520px;
         height: 360px;
     }
-    .slider__footer{
-        margin-right: -215px;
-    }
     .slider__footer-wrapper{
         height: 395px;
     }
@@ -84,21 +81,37 @@
         grid-template-columns: 441px;
     }
     .news__items{
-        grid-template-columns: 520px 160px;
-        gap: 15px;
+        grid-template-columns: 1fr;
     }
-    .news__item:first-child{
-        grid-column: span 2;
+    .nav{
+        grid-row-start: 1;
+    }
+    .news__nav{
+        height: 200px;
+    }
+    .news__nav-item{
+        margin-bottom: 20px;
+    }
+    .news__item-content{
+        align-items: center;
+    }
+    .news__media{
+        justify-content: center;
     }
     .news__second {
         grid-template-columns: repeat(3, 228px);
+        grid-column: span 1;
+        margin-right: 0;
     }
     .news__slider{
         width: 100%;
         margin: 0;
     }
     .slider__footer{
-        margin-right: -170px;
+       margin-right: 0;
+    }
+    .news__item-last{
+        grid-column: span 2;
     }
 
 }
@@ -119,18 +132,15 @@
         font-size: 80px;
     }
     .blogs__wrap{
-        grid-template-columns: 385px;
+        grid-template-columns: 1fr;
     }
     .blogs__img-img, .blogs__img-iframe{
         width: 385px;
         height: 460px;
     }
     .news__items{
-        grid-template-columns: 385px;
+        grid-template-columns: 1fr;
         gap: 0;
-    }
-    .news__items:first-child{
-        grid-row-start: -1;
     }
     .news__item{
         grid-column: 1 / -1;
@@ -139,7 +149,6 @@
         grid-column: span 1;
     }
     .nav{
-        grid-row-start: 1;
         margin-bottom: 10px;
     }
     .news__nav-item{
@@ -167,7 +176,7 @@
     }
     .news__second{
         grid-template-columns: 385px;
-        gap: 25px;
+        justify-content: center;
         margin-right: 0;
     }
     .news__scroll{
@@ -195,6 +204,7 @@
         right: 25%;
     }
     .slider__footer{
+        grid-column: span 1;
         margin-right: -20px;
         margin-left: -20px;
     }
@@ -247,6 +257,7 @@
     .news__items{
         grid-template-columns: 280px;
         gap: 0;
+        justify-content: center;
     }
     .news__media {
         grid-template-columns: 280px;
@@ -259,7 +270,7 @@
         gap: 25px;
     }
     #swiper-news {
-        width: 320px;
+        width: 280px;
         height: 160px;
     }
     .swipper-iframe{
