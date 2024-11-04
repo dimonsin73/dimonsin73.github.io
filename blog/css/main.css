@@ -997,6 +997,7 @@ img{
 .project__my-items{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .project__my-title{
     margin-right: 12px;
