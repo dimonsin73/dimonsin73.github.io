@@ -92,6 +92,9 @@
     .robook{
         width: 20%;
     }
+    .project__content{
+        grid-template-columns: repeat(2, 440px)
+    }
 
 }
 @media (max-width: 1023px) {
@@ -171,6 +174,15 @@
     }
     .robook{
         display: none;
+    }
+    .project__content{
+        grid-template-columns: 440px;
+    }
+    .project__my{
+        flex-direction: column;
+    }
+    .project__my-title{
+        margin-bottom: 24px;
     }
 
 }
@@ -338,7 +350,16 @@
     .postNews__clue{
         left: -30px;
     }
-    
+    .project__my-items{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .project__my-item{
+        margin-bottom: 24px;
+    }
+    .project__content{
+        grid-template-columns: auto;
+    }
 }
 @media (max-width: 424px) {
     .header__logo-title{
@@ -466,5 +487,9 @@
     .post__footer-p {
         font-size: 10px;
         line-height: 14px;
+    }
+    .project__footer-page{
+        margin-right: 8px;
+        padding: 8px 15px;
     }
 }
