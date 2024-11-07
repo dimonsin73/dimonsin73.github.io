@@ -1,0 +1,637 @@
+:root{
+    --header-bg: #2B2E3B;
+    --bar-bg: #1B1F28;
+    --content-bg: #1A1938;
+    --item-bg: #242C53;
+    --account-bg: #3E4B77;
+    --ticket-bg: #7DC073;
+    --orange: #BC8F4E;
+    --green: #6FB967;
+    --text: #878EA1;
+    --gold: #FDD911;
+    --font-sans-serif: system-ui,"Segoe UI","Roboto","Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font: 400 20px/22px var(--font-sans-serif);
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header{
+    position: relative;
+    background-color: var(--header-bg);
+}
+.header__wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 0;
+}
+.header__item{
+    display: flex;
+    align-items: center;
+    transition: margin-left 1s ease;
+}
+.item-active{
+    margin-left: 200px;
+}
+.header__arrow{
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+    transform: rotate(45deg);
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+.header__arrow-active{
+    transform: rotate(225deg);
+}
+.logo__hidden{
+    position: absolute;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 60px;  
+    background-color: var(--bar-bg);
+    transition: left 1s ease;
+}
+.logo__hidden-link{
+    display: block;
+    width: 150px;
+    height: 100%;
+    margin-left: 10px;
+    background: center / contain no-repeat url(../img/logo.png);
+}
+.logo__hidden-active{
+    left: 0px;
+}
+.logo{
+    width: 150px;
+    height: 100%;
+    margin-top: 5px;
+    margin-right: 50px;
+    background: center / contain no-repeat url(../img/logo.png);
+    transition: width 1s ease, margin 1s ease;
+}
+.logo-active{
+    width: 0;
+    margin: 0;
+}
+.header__list{
+    display: flex;
+    list-style: none;
+}
+.header__list-li{
+    margin-right: 30px;
+}
+
+.balance{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.deposit{
+    margin-right: 40px;
+    padding: 8px 20px 10px;
+    border-radius: 10px;
+    background-color: var(--green);
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 800;
+    color: #000;
+    cursor: pointer;
+}
+.account{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.freebie__wrapper{
+    display: grid;
+    grid-template-columns: 60px auto;
+    transition: grid-template-columns 1s ease;
+}
+.freebie__wrapper-active{
+    grid-template-columns: 240px auto;
+}
+.freebie__bar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: var(--bar-bg);
+}
+.freebie__bar-link{
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+}
+.freebie__bar-link:hover{
+    transform: scale(1.25);
+}
+.freebie__bar-text{
+    margin-left: 20px;
+}
+.text-active{
+    width: 0;
+    transition: width 1s ease;
+    
+}
+.freebie__content{
+    background-color: var(--content-bg);
+}
+.freebie__content-item{
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 60px - 140px);
+    min-height: 720px;
+}
+.freebie__content-wrapper{
+    display: grid;
+    grid-template-columns: 460px 870px;
+    column-gap: 40px;
+    justify-content: center;
+    margin: 70px 0;
+}
+.freebie__account{
+    position: relative;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--item-bg);
+}
+.freebie__account-name{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;    
+}
+.freebie__account-nikname{
+    font-size: 26px;
+    line-height: 30px;
+}
+.freebie__account-figure{
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.freebie__account-chance{
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid var(--account-bg);
+    border-radius: 10px;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+}
+.freebie__account-ticket{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--ticket-bg);
+    border: 1px solid var(--ticket-bg);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.freebie__account-ticket figure{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    mix-blend-mode: multiply;
+    color: #000;
+    filter: invert();
+    transform: rotate(25deg);
+}
+.freebie__account-ticket img{
+    filter: grayscale(1);
+}
+.freebie__account-ticket p{
+    font-size: 30px;
+    line-height: 36px;
+    color: #000;
+}
+.freebie__account-clue{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 2px 8.5px;
+    border-radius: 50%;
+    background-color: var(--account-bg);
+    color: #000;
+    cursor: pointer;
+}
+.freebie__link{
+    overflow: hidden;
+}
+.freebie__baner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border-radius: 10px;
+    background: center / cover url(../img/playandwinbg.png);
+    transition: transform 1s ease;
+}
+.freebie__baner:hover{
+    transform: scale(1.04);
+}
+.freebie__baner-p {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.freebie__baner-play{
+    font-size: 80px;
+    line-height: 86px;
+}
+.freebie__baner-platform{
+    margin-bottom: 40px;
+    font-size: 32px;
+    line-height: 36px;
+}
+.freebie__baner-win{
+    margin-bottom: 40px;
+    font-size: 45px;
+    line-height: 55px;
+    font-style: italic;
+    color: #000;
+}
+.freebie__baner-prize{
+    font-size: 32px;
+    line-height: 36px;
+}
+.freebie__fund{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    padding: 60px 60px 140px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(60,59,152,1), rgba(39,46,88,1));
+    overflow: hidden;
+    
+}
+.freebie__fund-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1s ease;
+}
+.freebie__fund:hover .freebie__fund-img{
+    transform: scale(1.15);
+}
+.freebie__fund-fund{
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 700;
+    color: var(--orange);
+}
+.freebie__fund-sum{
+    margin-bottom: 30px;
+    font-size: 66px;
+    line-height: 72px;
+    font-weight: 700;
+}
+.freebie__fund-text{
+    font-weight: 700;
+    color: var(--text);
+    text-transform: uppercase;
+}
+.freebie__fund-info{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    height: 20px;
+}
+.freebie__fund-tickets{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.freebie__fund-info p{
+    font-size: 20px;
+    line-height: 20px;
+    color: var(--text);
+}
+.freebie__fund-info img{
+    margin-right: 5px;
+}
+.freebie__fund-tickets img{
+    filter: grayscale();
+    transform: rotate(25deg);
+}
+.freebie__fund-people img{
+    filter: invert(0.7);
+}
+.freebie__fund-people{
+    display: flex;
+    align-items: center;
+}
+.freebie__fund-time{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+.freebie__fund-time p{
+    letter-spacing: 2px;
+    color: var(--text);
+}
+.time{
+    font-size: 42px;
+    line-height: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text);
+}
+.curtain{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    
+    transition: opacity 0.4s ease;
+}
+.freebie__fund:hover .curtain{
+    opacity: 1;
+}
+.curtain__wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(35, 92, 47, 0.8);
+    z-index: 10;
+}
+.curtain__coins{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+@keyframes coin {
+    0% {
+        top: -110%;
+    }
+    50% {
+        top: -50%;
+    }
+    100% {
+        top: 0;
+    }
+}
+.curtain__coin{
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+}
+.curtain__coin-1{
+    left: 5%;
+}
+.curtain__coin-2{
+    left: 10%;
+}
+.curtain__coin-3{
+    left: 15%;
+}
+.curtain__coin-4{
+    left: 20%;
+}
+.curtain__coin-5{
+    left: 25%;
+}
+.curtain__coin-6{
+    left: 30%;
+}
+.curtain__coin-7{
+    left: 35%;
+}
+.curtain__coin-8{
+    left: 40%;
+}
+.curtain__coin-9{
+    left: 45%;
+}
+.curtain__coin-10{
+    left: 50%;
+}
+.curtain__coin-11{
+    left: 55%;
+}
+.curtain__coin-12{
+    left: 60%;
+}
+.curtain__coin-13{
+    left: 65%;
+}
+.curtain__coin-14{
+    left: 70%;
+}
+.curtain__coin-15{
+    left: 75%;
+}
+.curtain__coin-16{
+    left: 80%;
+}
+.curtain__coin-17{
+    left: 85%;
+}
+.curtain__coin-18{
+    left: 90%;
+}
+.curtain__coin-19{
+    left: 95%;
+}
+.freebie__fund:hover .curtain__coin-1{
+    animation: coin 1s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-2{
+    animation: coin 5s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-3{
+    animation: coin 3s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-4{
+    animation: coin 1.2s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-5{
+    animation: coin 3.5s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-6{
+    animation: coin 2s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-7{
+    animation: coin 4s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-8{
+    animation: coin 2.5s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-9{
+    animation: coin 1.5s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-10{
+    animation: coin 4s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-11{
+    animation: coin 5s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-12{
+    animation: coin 1s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-13{
+    animation: coin 1.5s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-14{
+    animation: coin 5s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-15{
+    animation: coin 2.5s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-16{
+    animation: coin 4s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-17{
+    animation: coin 1s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-18{
+    animation: coin 0.5s infinite linear;
+}
+.freebie__fund:hover .curtain__coin-19{
+    animation: coin 2s infinite linear;
+}
+.curtain__win{
+    font-size: 90px;
+    line-height: 100px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px var(--gold);
+    transform: perspective(150px) rotateX(10deg);
+}
+.curtain__sum{
+    font-size: 80px;
+    line-height: 90px;
+    font-weight: 700;
+}
+.curtain__link{
+    display: flex;
+    margin-top: 15px;
+    color: var(--text);
+}
+.curtain__link-line{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 10px;
+}
+.curtain__link-span{
+    width: 20px;
+    border: 1px solid #fff;
+}
+.curtain__link-span:first-child{
+    width: 12px;
+}
+.freebie__history{
+    padding-right: 7px;
+    overflow-y: scroll;
+}
+.freebie__history::-webkit-scrollbar {
+    width: 7px;
+    background-color: var(--item-bg);
+}
+.freebie__history::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--account-bg);
+}
+.freebie__history::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: var(--content-bg);
+}
+.freebie__history-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    margin-bottom: 5px;
+    padding: 5px 20px 5px 10px;
+    border-radius: 10px;
+    background-color: var(--item-bg);
+}
+.freebie__history-name, .freebie__history-ticket{
+    display: flex;
+    align-items: center;
+}
+.freebie__history-icon{
+    height: 25px;
+    margin-right: 10px;  
+    border-radius: 5px;
+    background-color: var(--account-bg);
+}
+.freebie__history-icon img{
+    filter: invert(1);
+}
+.freebie__history-nikname{
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.freebie__history-ticket{
+    height: 14px;
+}
+.freebie__history-ticket p{
+    font-size: 14px;
+    line-height: 14px;
+}
+.update{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 40px;
+    margin-bottom: 10px;
+    
+}
+.update__wrapper{
+    display: flex;
+    align-items: center;
+    padding: 8px 15px 10px;
+    border-radius: 10px;
+    background-color: var(--account-bg);
+    cursor: pointer;
+}
+.update img{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    filter: invert(1);
+}
