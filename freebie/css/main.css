@@ -22,7 +22,7 @@ a{
     text-decoration: none;
 }
 img{
-    min-width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -163,6 +163,9 @@ img{
 }
 .freebie__bar-link:hover{
     transform: scale(1.25);
+}
+.freebie__bar-link img{
+    min-width: 100%;
 }
 .freebie__bar-text{
     margin-left: 20px;
