@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
-    <main class="news">
+    <main class="main-bg">
+        <!--Фоновый текст-->
         <div class="news__bg">
             <div class="news__bg-text">
                 <span>A</span>
@@ -24,25 +25,30 @@
             </div>
         </div>
         <section class="container">
+            <!-- Пункт страницы -->
             <div class="news__items">
+                <!-- Заголовок пункта -->
                 <div class="news__item">
                     <h1 class="news__item-title" id="news1">Как Настроить AutoSMM в формате чат-бота</h1>
                 </div>
+                <!-- Контент пункта -->
                 <div class="news__item">
                     <div class="news__item-content">
                         <ol class="news__list">
                             <li class="news__text">
-                                Для начала, чтобы получить api_id и api_hash зарегистрируйтесь на сайте https://my.telegram.org/auth
+                                Для начала, чтобы получить api_id и api_hash зарегистрируйтесь на сайте 
+                                <a href="https://my.telegram.org/auth" target="_blank">https://my.telegram.org/auth</a>
                             </li>
                         </ol>
                         <div class="news__media">
                             <iframe class="news__media-iframe" src="https://vk.com/video_ext.php?oid=-220082560&id=456239024&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
-                            <img src="img/edit.png" alt="">
+                            <img tabindex="0" src="img/edit.png" alt="">
                         </div>
                         <div class="news__text news__text-sub">Смотреть видео, как получить api_id и api_hah для Telegram</div>
                         <div class="news__text">Пример текста для продолжения текста в этом же заголовке но после медиа</div>
                     </div>
                 </div>
+                <!-- Навигация по странице -->
                 <div class="news__item nav">
                     <ol class="news__nav" id="news__nav">
                         <li class="news__nav-item news__nav-active"><a href="#news1">Получите api_id и api_hash</a></li>
@@ -54,13 +60,17 @@
                         <li class="news__nav-item"><a href="">Создайте закрытый канал в Telegram для модерации</a></li>
                         <li class="news__nav-item"><a href="">Активируйте чат-бота АвтоСММ с помощью менеджер</a></li>
                     </ol>
-                    <button class="expanded-btn" id="news__nav-btn">Открыть полностью</button>
+                    <!-- Кнопка открыть меню полностью-->
+                    <button type="submit" class="expanded-btn" id="news__nav-btn">Открыть полностью</button>
                 </div>
             </div>
+            <!-- Пункт страницы -->
             <div class="news__items">
+                <!-- Заголовок пункта -->
                 <div class="news__item">
                     <h2 class="news__item-title" id="news2">как создать чат-бота в Telegram</h2>
                 </div>
+                <!-- Контент пункта -->
                 <div class="news__item">
                     <div class="news__item-content">
                         <ol start="2" class="news__list">
@@ -77,27 +87,33 @@
                         <iframe class="news__iframe" src="https://vk.com/video_ext.php?oid=-196796002&id=456240729&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
+                <!-- Пустой контент пункта -->
                 <div class="news__item"></div>
+                <!-- Пустой контент пункта -->
                 <div class="news__item"></div>
+                <!-- Запуск бота -->
                 <div class="news__second">
                     <div class="news__second-item">
-                        <img src="img/sec1.jpg" alt="">
+                        <img tabindex="0" src="img/sec1.jpg" alt="">
                         <p class="news__signature">2. Нашли @BotFather в Telegram</p>
                     </div>
                     <div class="news__second-item">
-                        <img src="img/sec2.jpg" alt="">
+                        <img tabindex="0" src="img/sec2.jpg" alt="">
                         <p class="news__signature">2.1 Создали нового бота и получили токен</p>
                     </div>
                     <div class="news__second-item">
-                        <img src="img/sec3.jpg" alt="">
+                        <img tabindex="0" src="img/sec3.jpg" alt="">
                         <p class="news__signature">2.2 Запустили созданного бота</p>
                     </div>
                 </div>
             </div>
+            <!-- Пункт страницы -->
             <div class="news__items">
+                <!-- Заголовок пункта -->
                 <div class="news__item">
                     <h3 class="news__item-title"  id="news3">КАК Создайть закрытый канал в Telegram для модерации контента от автосмм</h3>
                 </div>
+                <!-- Контент пункта -->
                 <div class="news__item">
                     <div class="news__item-content">
                         <div class="news__scroll" id="scroll">
@@ -118,7 +134,9 @@
                                 <li class="news__text">В ответ вы получите <span class="news__list-bold">"Forwarded from chat:"</span> и <span class="news__list-bold">"Your user ID:"</span> - сохраните эти данные для настроек АвтоСММ</li>
                             </ul>
                         </div>
-                        <button class="expanded-btn" id="news__sctoll-btn">Открыть полностью</button>
+                        <!-- Кнопка открыть полностью-->
+                        <button type="submit" class="expanded-btn" id="news__sctoll-btn">Открыть полностью</button>
+                        <!-- Слайдер -->
                         <div class="news__slider">
                             <div class="swiper news__slider-swiper" id="swiper-news">
                                 <div class="swiper-wrapper news__slider-wrapper">
@@ -148,10 +166,13 @@
                     </div>
                 </div>
             </div>
+            <!-- Пункт страницы -->
             <div class="news__items">
+                <!-- Заголовок пункта -->
                 <div class="news__item news__item-last">
                     <h4 class="news__item-title"  id="news4">Активируйте чат-бота АвтоСММ с помощью менеджера</h4>
                 </div>
+                <!-- Контент пункта -->
                 <div class="news__item">
                     <div class="news__item-content">
                         <ul class="news__list">
@@ -167,8 +188,11 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Пустой контент пункта -->
                 <div class="news__item"></div>
+                <!-- Пустой контент пункта -->
                 <div class="news__item"></div>
+                <!-- Слайдер внизу страницы -->
                 <div class="slider__footer">
                     <div class="swiper slider__footer-swiper" id="swiper-footer">
                         <div class="swiper-wrapper slider__footer-wrapper">
@@ -204,15 +228,12 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        
-            
+        </section>  
     </main>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/slider.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/news.js"></script>
 </body>
 </html>
