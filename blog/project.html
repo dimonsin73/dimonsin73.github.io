@@ -85,14 +85,17 @@
                         <h3 class="choice__title">Выберите новость-исходник, на основе которой автоматически сгенерируем пост под ваш бизнес проект с помощью Ai AutoSMM</h3>
                     </div>
                     <!--Выбор даты-->
-                    <div class="date">
+                    <label class="date" for="projectsNavDate">
                         <div class="date__icon">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 0V2H13V0H15V2H19C19.5523 2 20 2.44772 20 3V19C20 19.5523 19.5523 20 19 20H1C0.44772 20 0 19.5523 0 19V3C0 2.44772 0.44772 2 1 2H5V0H7ZM18 10H2V18H18V10ZM5 4H2V8H18V4H15V6H13V4H7V6H5V4Z" fill="#999999"/>
                             </svg>                                
                         </div>
-                        <input class="date__inpute" type="date" id="date" name="date" placeholder="Выбрать дату"/>
-                    </div>
+                        <p class="date__text">
+                            Выбрать дату
+                        </p>
+                        <input class="date__input" aria-hidden="true" type="date" name="date" id="projectsNavDate" onfocus="this.showPicker()">
+                    </label>
                 </div>
                 <div class="project__content">
                     <!--Проект-->

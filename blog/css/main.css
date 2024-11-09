@@ -1316,7 +1316,6 @@ img{
     color: var(--blue);
     text-decoration: none;
 }
-.text-black
 .project__my-icon{
     margin-right: 10px;
 }
@@ -1371,13 +1370,20 @@ img{
     align-items: center;
     margin-right: 18px;
 }
-.date__inpute{
+.date__text{
+    margin-right: 5px;
     padding: 2px;
-    border: 1px solid var(--text-back);
     background-color: initial;
     font: 500 16px/20px 'Montserrat', sans-serif;
     color: var(--text-back);
+    cursor: pointer;
 }
+.date__input{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
 .project__content{
     display: grid;
     grid-template-columns: repeat(3, 440px);
