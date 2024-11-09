@@ -95,6 +95,35 @@
     .project__content{
         grid-template-columns: repeat(2, 440px)
     }
+    .faq__item-wrapper{
+        grid-template-columns: 658px;
+        justify-content: center;
+    }
+    .faq__item-left{
+        width: 100%;
+        margin-top: 16px;
+        grid-row-start: 2;
+    }
+    .faq__item-right{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        margin-top: 24px;
+    }
+    .faq__btn-recreate{
+        margin-bottom: 0;
+    }
+    .files{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .files__download-btn, .files__download-text, .function__item-label, .function__item-input{
+        font-size: 12px;
+    }
+    .function__item-input{
+        padding: 6px 12px;
+    }
 
 }
 @media (max-width: 1023px) {
@@ -107,11 +136,17 @@
     .news__items{
         grid-template-columns: 1fr;
     }
+    .news__items img:focus{
+        transform: scale(1.25);
+    }
+    .project__content img:focus{
+        transform: scale(1.25);
+    }
     .nav{
         grid-row-start: 1;
     }
     .news__nav{
-        height: 200px;
+        height: 150px;
     }
     .news__nav-item{
         margin-bottom: 20px;
@@ -162,7 +197,7 @@
         top: 156px;
         padding: 6px 14.5px;
     }
-    .post-swipper {
+    .post-swiper {
         margin-right: 65px;
         margin-left: 65px;
     }
@@ -183,6 +218,22 @@
     }
     .project__my-title{
         margin-bottom: 24px;
+    }
+    .functions{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .files__download-btn, .files__download-text, .function__item-label, .function__item-input,
+.posting__item-text {
+        font-size: 10px;
+    }
+    .posting {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .post__back{
+        flex-direction: column;
+    }
+    .post__back-advertising{
+        margin-top: 10px;
     }
 
 }
@@ -205,6 +256,9 @@
     .blogs__wrap{
         grid-template-columns: 1fr;
     }
+    .blogs__img{
+        text-align: center;
+    }
     .blogs__img-img, .blogs__img-iframe{
         width: 385px;
         height: 460px;
@@ -212,6 +266,12 @@
     .news__items{
         grid-template-columns: 1fr;
         gap: 0;
+    }
+    .news__items img:focus{
+        transform: scale(1);
+    }
+    .project__content img:focus{
+        transform: scale(1);
     }
     .news__item{
         grid-column: 1 / -1;
@@ -260,9 +320,11 @@
     #swiper-news{
         width: 425px;
         height: 210px;
+        margin-left: -20px;
     }
     .swipper-iframe{
         width: 385px;
+        height: 100%;
         margin: 0 20px;
     }
     .news__slider-prev, .news__slider-next{
@@ -360,6 +422,28 @@
     .project__content{
         grid-template-columns: auto;
     }
+    .faq__item-wrapper{
+        grid-template-columns: 355px;
+    }
+    .now__item {
+        grid-template-columns: 1fr ;
+        gap: 16px;
+    }
+    .posting__item-add {
+        margin-top: 0;
+    }
+    .now__item{
+        margin-bottom: 20px;
+    }
+    .functions, .posting {
+        grid-template-columns: 1fr;
+    }
+    .files__items{
+        grid-template-columns: 1fr;
+    }
+    .files__item{
+        margin-bottom: 20px;
+    }
 }
 @media (max-width: 424px) {
     .header__logo-title{
@@ -415,7 +499,7 @@
         gap: 25px;
     }
     #swiper-news {
-        width: 280px;
+        width: 320px;
         height: 160px;
     }
     .swipper-iframe{
@@ -449,6 +533,9 @@
     .faq__item-svg{
         display: none;
     }
+    .faq__item-title p {
+        margin-right: 0;
+    }
     .ui-accordion .ui-accordion-content{
         padding-left: 0;
     }
@@ -467,12 +554,12 @@
         margin-right: -15px;
         margin-left: -15px;    
     }
-    .post-swipper {
+    .post-swiper {
         margin-right: 35px;
         margin-left: 35px;
     }
     .post-prev, .post-next {
-        top: 185px;
+        top: 145px;
         padding: 0px 8.5px;
     }
     .post-prev{
@@ -491,5 +578,20 @@
     .project__footer-page{
         margin-right: 8px;
         padding: 8px 15px;
+    }
+    .faq__item-wrapper{
+        grid-template-columns: 270px;
+    }
+    .postCreated-item {
+        padding: 0;
+    }
+    .postNews__content-textarea{
+        width: 220px;
+    }
+    .btn-submit{
+        width: 250px;
+    }
+    .function__item-input {
+        padding: 6px 6px;
     }
 }

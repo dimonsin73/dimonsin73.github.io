@@ -1,7 +1,6 @@
 const screenWidth = window.screen.width;
 
 const BTNLANGUAGE = document.querySelectorAll('.language__btn');
-
 for (let i = 0; i < BTNLANGUAGE.length; i++) {
     const element = BTNLANGUAGE[i];
     element.addEventListener('click', function(){
@@ -48,7 +47,6 @@ FILESBTN.addEventListener('click', function(){
     FILESERROR.style.display = 'block';
 });
 
-
 const FORMADD1 = document.getElementById('form__add-1');
 const FORMHIDDEN1 = document.getElementById('form__hidden-1');
 FORMADD1.addEventListener('click', function(){
@@ -79,17 +77,18 @@ FILESTELEGRAMLOAD.addEventListener('click', function(){
     }
 });
 
-
-
 let countSlides;
-if (screenWidth < '1439') {
-    countSlides = 3;
+if (screenWidth >= '1440') {
+    countSlides = '4';
 }
-if (screenWidth < '1023') {
-    countSlides = 2;
+if (screenWidth < '1440') {
+    countSlides = '3';
 }
-if (screenWidth < '767') {
-    countSlides = 1;
+if (screenWidth < '1024') {
+    countSlides = '2';
+}
+if (screenWidth < '768') {
+    countSlides = '1';
 }
 const swiper = new Swiper('.swiper', {
     // Optional parameters
@@ -100,8 +99,7 @@ const swiper = new Swiper('.swiper', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  
-  });
+});
 
 const POSTBTNDELETE = document.querySelectorAll('.post__btn-delete');
 for (let i = 0; i < POSTBTNDELETE.length; i++) {
