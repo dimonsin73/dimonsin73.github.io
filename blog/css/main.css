@@ -1273,6 +1273,8 @@ img{
     stroke: #fff;
 }
 .project__header{
+    max-width: 1360px;
+    margin: 0 auto;
     margin-bottom: 40px;
 }
 .project__my{
