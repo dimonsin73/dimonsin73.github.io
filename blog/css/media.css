@@ -124,6 +124,9 @@
     .function__item-input{
         padding: 6px 12px;
     }
+    .footer {
+        margin-top: -295px;
+    }
     .footer__item{
         flex-direction: column;
         align-items: center;
@@ -466,7 +469,7 @@
         margin-bottom: 20px;
     }
     .footer {
-        margin-top: -110px;
+        margin-top: -210px;
     }
     .footer__wrapper {
         padding-top: 110px;
