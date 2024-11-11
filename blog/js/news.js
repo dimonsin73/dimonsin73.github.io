@@ -33,3 +33,35 @@ SCROLLBTN.addEventListener('click', function(){
         btn.innerHTML = 'Свернуть оглавление';
     };
 });
+
+
+const menu = document.querySelector('.menu');
+const navigationMenu = document.querySelector('.navigation__menu');
+const menuClose = document.querySelector('.menu__close');
+navigationMenu.addEventListener('click', function(){
+    menu.style.zIndex = '200';
+    menu.style.opacity = '1';
+})
+menuClose.addEventListener('click', function(){
+    menu.style.zIndex = '-10';
+    menu.style.opacity = '0';
+});
+
+const menuInfo = document.querySelectorAll('.menu__info');
+for (let i = 0; i < menuInfo.length; i++) {
+    const element = menuInfo[i];
+    element.addEventListener('click', function(){
+        let menuHeadContent = element.querySelector('.menu__head-content');
+        for (let i = 0; i < menuInfo.length; i++) {
+            const element = menuInfo[i];
+            element.classList.remove('menu__info-active');
+            const menuHeadContentAll = element.querySelectorAll('.menu__head-content');
+            for (let i = 0; i < menuHeadContentAll.length; i++) {
+                const element = menuHeadContentAll[i];
+                element.style.maxHeight = 0;
+            };
+        };
+        element.classList.add('menu__info-active');
+        menuHeadContent.style.maxHeight = `${menuHeadContent.scrollHeight}px`;
+    });
+};

@@ -31,3 +31,16 @@ const swiperFooter = new Swiper('#swiper-footer', {
   },
 
 });
+
+const swiperMenu = new Swiper('#swiper-menu', {
+  // Optional parameters
+  loop: true,
+  slidesPerView: 1,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
