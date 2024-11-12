@@ -51,17 +51,10 @@ const menuInfo = document.querySelectorAll('.menu__info');
 for (let i = 0; i < menuInfo.length; i++) {
     const element = menuInfo[i];
     element.addEventListener('click', function(){
-        let menuHeadContent = element.querySelector('.menu__head-content');
         for (let i = 0; i < menuInfo.length; i++) {
             const element = menuInfo[i];
             element.classList.remove('menu__info-active');
-            const menuHeadContentAll = element.querySelectorAll('.menu__head-content');
-            for (let i = 0; i < menuHeadContentAll.length; i++) {
-                const element = menuHeadContentAll[i];
-                element.style.maxHeight = 0;
-            };
         };
         element.classList.add('menu__info-active');
-        menuHeadContent.style.maxHeight = `${menuHeadContent.scrollHeight}px`;
     });
 };

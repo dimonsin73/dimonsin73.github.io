@@ -15,6 +15,31 @@
     .robook{
         width: 25%;
     }
+    .menu__robook{
+        top: 170px;
+        width: 200px;
+    }
+    .menu__content-wrapper{
+        grid-template-columns: 482px 760px;
+    }
+    .menu__content-nav{
+        grid-row: span 2;
+    }
+    .menu__content-media{
+        width: 521px;
+        justify-self: center;
+    }
+    .menu__header{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .menu__header-link{
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .menu__close {
+        right: 110px;
+    }
 }
 @media (max-width: 1439px) {
     .header__bg-text, .news__bg-text{
@@ -142,7 +167,27 @@
     .footer__menu:nth-child(2n+2){
         border: none;
     }
-
+    .menu__content-wrapper{
+        grid-template-columns: 1fr;
+    }
+    .menu__head-content{
+        border-bottom: 1px solid #CEE6F2;
+        border-left: 1px solid #CEE6F2;
+    }
+    .menu__content {
+        margin-top: -150px;
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+    .menu__close{
+        right: 0;
+    }
+    .menu__robook{
+        display: none;
+    }
+    .menu__header-item {
+        margin-right: 15px;
+    }
 }
 @media (max-width: 1023px) {
     .header__bg-text, .news__bg-text{
@@ -259,7 +304,14 @@
     .footer__title{
         font-size: 22px;
     }
-
+    .menu__close{
+        width: 50px;
+        height: 50px;
+    }
+    .navigation{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 }
 @media (max-width: 767px) {
     .container{
@@ -496,6 +548,75 @@
     .footer__right:first-child{
         margin-bottom: 16px;
     }
+    .menu__header-list{
+        flex-direction: column;
+    }
+    .menu__header-item{
+        max-width: 375px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .menu__content{
+        margin-top: 0;
+    }
+    .menu__content-media{
+        width: 425px;
+    }
+    .navigation__text{
+        display: none;
+    }
+    .navigation__menu{
+        margin-right: 10px;
+    }
+    .navigation__registration{
+        margin-right: 20px;
+    }
+    .navigation__autosmm{
+        padding-left: 14px;
+    }
+    .nemu__logo{
+        margin-right: 14px;
+    }
+    .menu__link{
+        padding-left: 14px;
+        font-size: 10px;
+        line-height: 16px;
+    }
+    .menu__content{
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .menu__slider-slide{
+        width: 325px !important ;
+    }
+    .menu__content-basic{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .menu__slider-title{
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .menu__slider-text{
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .menu__slider-link{
+        font-size: 10px;
+        line-height: 14px;
+    }
+    .basic__item-text{
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .menu__head-h{
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .menu__head-list{
+        font-size: 12px;
+        line-height: 18px;
+    }
 }
 @media (max-width: 424px) {
     .header__logo-title{
@@ -662,5 +783,56 @@
     }
     .footer__right, .footer__rights-link{
         font-size: 10px;
+    }
+    .menu__content {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .menu__content {
+        margin-top: 45px;
+    }
+    .menu__content-media{
+        width: 320px;
+    }
+    .menu__slider-slide{
+        width: 220px !important ;
+    }
+    .menu__head-plus{
+        display: none;
+    }
+    .menu__head-title{
+        margin-right: 0;
+    }
+    .basic__title{
+        font-size: 20px;
+        line-height: 26px;
+    }
+    .basic__text{
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .basic__btn{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .basic__btn svg{
+        width: 48px;
+        margin-left: 10px;
+    }
+    .navigation{
+        height: auto;
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+    .navigation__wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation__menu, .navigation__registration{
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    .navigation__autosmm{
+        padding-left: 0;
     }
 }
