@@ -644,12 +644,10 @@ img{
 }
 .news__scroll{
     height: 350px;
-    overflow: scroll;
-}
-.news__scroll{
     overflow-y: scroll;
     overflow-x: hidden;
     direction: rtl;
+    transition: all 0.5s ease;
 }
 .news__scroll *{
     direction: ltr;
@@ -1901,6 +1899,7 @@ img{
     padding: 0;
     font: 500 80px/90px 'Unbounded', sans-serif;
     color: #fff;
+    text-align: center;
     text-transform: uppercase;
 }
 .footer-title{

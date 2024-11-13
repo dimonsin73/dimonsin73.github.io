@@ -5,6 +5,7 @@ const SCROLLBTN = document.getElementById('news__sctoll-btn');
 const SCROLL = document.getElementById('scroll');
 const btn = document.querySelector('.expanded-btn');
 
+// Ф-ия разворачивания и сворачивания меню
 NAVBTN.addEventListener('click', function(){
     let classes = NEWSNAV.classList.value;
     if ( classes.includes('expanded') ) {
@@ -21,6 +22,8 @@ NAVBTN.addEventListener('click', function(){
         btn.innerHTML = 'Свернуть оглавление';
     };
 });
+
+// Ф-ия разворачивания и сворачивания большого текста
 SCROLLBTN.addEventListener('click', function(){
     let classes = SCROLL.classList.value;
     if ( classes.includes('expanded') ) {
@@ -29,12 +32,12 @@ SCROLLBTN.addEventListener('click', function(){
         btn.innerHTML = 'Открыть полностью';
     } else {
         SCROLL.classList.add('expanded');
-        SCROLL.style.height = '100%';
+        SCROLL.style.height = `${SCROLL.scrollHeight}px`;
         btn.innerHTML = 'Свернуть оглавление';
     };
 });
 
-
+// Ф-ия открытия и закрытия меню
 const menu = document.querySelector('.menu');
 const navigationMenu = document.querySelector('.navigation__menu');
 const menuClose = document.querySelector('.menu__close');
@@ -47,6 +50,7 @@ menuClose.addEventListener('click', function(){
     menu.style.opacity = '0';
 });
 
+// Ф-ия разварачивания скрытого текста в меню
 const menuInfo = document.querySelectorAll('.menu__info');
 for (let i = 0; i < menuInfo.length; i++) {
     const element = menuInfo[i];
@@ -58,3 +62,49 @@ for (let i = 0; i < menuInfo.length; i++) {
         element.classList.add('menu__info-active');
     });
 };
+
+const swiper = new Swiper('#swiper-news', {
+    // Optional parameters
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+  });
+  
+  const swiperFooter = new Swiper('#swiper-footer', {
+    // Optional parameters
+    loop: true,
+    slidesPerView: 3,
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+  });
+  
+  const swiperMenu = new Swiper('#swiper-menu', {
+    // Optional parameters
+    loop: true,
+    slidesPerView: 1,
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
