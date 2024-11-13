@@ -1,63 +1,99 @@
 @font-face {
     font-family: 'Cormorant';
-    src: url('../fonts/Cormorant-Light.woff2') format('woff2'),
-         url('../fonts/Cormorant-Light.woff') format('woff');
+    src: url('../fonts/Cormorant-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Cormorant-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Cormorant-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Cormorant-Light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Cormorant-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Cormorant-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Cormorant';
-    src: url('../fonts/Cormorant-Bold.woff2') format('woff2'),
-         url('../fonts/Cormorant-Bold.woff') format('woff');
+    src: url('../fonts/Cormorant-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Cormorant-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Cormorant-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Cormorant-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Cormorant-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Cormorant-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
-         url('../fonts/Montserrat-Regular.woff') format('woff');
+    src: url('../fonts/Montserrat-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Montserrat-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Montserrat-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Montserrat-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Montserrat-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Medium.woff2') format('woff2'),
-         url('../fonts/Montserrat-Medium.woff') format('woff');
+    src: url('../fonts/Montserrat-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Montserrat-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Montserrat-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Montserrat-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Montserrat-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Montserrat-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
-         url('../fonts/Montserrat-Bold.woff') format('woff');
+    src: url('../fonts/Montserrat-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Montserrat-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Montserrat-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Montserrat-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Montserrat-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Unbounded';
-    src: url('../fonts/Unbounded-Light.woff2') format('woff2'),
-         url('../fonts/Unbounded-Light.woff') format('woff');
+    src: url('../fonts/Unbounded-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Unbounded-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Unbounded-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Unbounded-Light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Unbounded-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Unbounded-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Unbounded';
-    src: url('../fonts/Unbounded-Regular.woff2') format('woff2'),
-         url('../fonts/Unbounded-Regular.woff') format('woff');
+    src: url('../fonts/Unbounded-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Unbounded-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Unbounded-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Unbounded-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Unbounded-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Unbounded-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Unbounded';
-    src: url('../fonts/Unbounded-Medium.woff2') format('woff2'),
-         url('../fonts/Unbounded-Medium.woff') format('woff');
+    src: url('../fonts/Unbounded-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Unbounded-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Unbounded-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Unbounded-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Unbounded-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Unbounded-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'Unbounded';
-    src: url('../fonts/Unbounded-Bold.woff2') format('woff2'),
-         url('../fonts/Unbounded-Bold.woff') format('woff');
+    src: url('../fonts/Unbounded-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Unbounded-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Unbounded-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Unbounded-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Unbounded-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Unbounded-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: 700;
     font-style: normal;
 }
