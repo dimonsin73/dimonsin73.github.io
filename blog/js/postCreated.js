@@ -23,3 +23,11 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
+
+const filesClose = document.querySelectorAll('.files__download-close');
+for (let i = 0; i < filesClose.length; i++) {
+    const element = filesClose[i];
+    element.addEventListener('click', function(){
+        element.classList.toggle('files__close-active');
+    });
+};

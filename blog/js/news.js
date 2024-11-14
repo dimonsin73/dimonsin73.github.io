@@ -63,6 +63,19 @@ for (let i = 0; i < menuInfo.length; i++) {
     });
 };
 
+// Ф-ия переключения кнопок в меню
+const menuLinks = document.querySelectorAll('.menu__header-link');
+for (let i = 0; i < menuLinks.length; i++) {
+    const element = menuLinks[i];
+    element.addEventListener('click', function(){
+        for (let i = 0; i < menuLinks.length; i++) {
+            const element = menuLinks[i];
+            element.classList.remove('menu__link-active');
+        };
+        element.classList.add('menu__link-active');
+    });
+};
+
 const swiper = new Swiper('#swiper-news', {
     // Optional parameters
     loop: true,
