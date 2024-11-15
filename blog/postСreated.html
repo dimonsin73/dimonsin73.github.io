@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <div class="postNews">
-                    <div class="postNews__wrap">
+                    <div class="postNews__wrap postCreated__wrap">
                         <!--Пункт-->
                         <div class="postNews__item postCreated-item">
                             <!--Заголовок пункта-->
@@ -176,7 +176,7 @@
                                 <h2 class="postNews__title">Проверьте <span class="blue">готовые медиа-файлы</span> для <span class="blue">нового</span> поста: </h2>
                             </div>
                             <!--Слайдер-->
-                            <div class="postNews__slider">
+                            <div class="postNews__slider postCreated__slider">
                                 <div class="swiper post-swiper" id="swiper">
                                     <div class="swiper-wrapper post-wrapper">
                                         <!--Слайд-->
@@ -193,13 +193,13 @@
                                                     </svg> 
                                                 </div>
                                                 <!--Обновить-->
-                                                <div hidden>
+                                                <div class="post__div-update">
                                                     <svg class="post__btn-btn post__btn-update" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M14.5683 15.3055C13.1074 16.5686 11.2032 17.3327 9.12044 17.3327C4.51807 17.3327 0.787109 13.6017 0.787109 8.99935C0.787109 4.39697 4.51807 0.666016 9.12044 0.666016C13.7228 0.666016 17.4538 4.39697 17.4538 8.99935C17.4538 10.7794 16.8956 12.4292 15.9448 13.7832L8.62109 6.5H13.1211C13.1211 2.8181 12.8024 2.33268 9.12044 2.33268C5.43854 2.33268 2.45378 5.31745 2.45378 8.99935C2.45378 12.6813 5.43854 15.666 9.12044 15.666C10.9123 15.666 12.5389 14.9591 13.7369 13.809L14.5683 15.3055Z" fill="#0F33EF"/>
                                                     </svg>
                                                 </div>
                                                 <!--Удалить-->
-                                                <div>
+                                                <div class="post__div-delete">
                                                     <svg class="post__btn-btn post__btn-delete" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 1.00781L1 12.9938M1 1.00781L11 12.9938" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>  
@@ -210,22 +210,8 @@
                                         <div class="swiper-slide post-slide">
                                             <!--Медиа часть-->
                                             <img src="img/foto.png" alt="">
-                                            <p class="post-subtext">Создать новое на основе этого</p>
-                                            <div class="post__btn">
-                                                <!--обновить-->
-                                                <div>
-                                                    <svg class="post__btn-btn post__btn-update" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M14.5683 15.3055C13.1074 16.5686 11.2032 17.3327 9.12044 17.3327C4.51807 17.3327 0.787109 13.6017 0.787109 8.99935C0.787109 4.39697 4.51807 0.666016 9.12044 0.666016C13.7228 0.666016 17.4538 4.39697 17.4538 8.99935C17.4538 10.7794 16.8956 12.4292 15.9448 13.7832L8.62109 6.5H13.1211C13.1211 2.8181 12.8024 2.33268 9.12044 2.33268C5.43854 2.33268 2.45378 5.31745 2.45378 8.99935C2.45378 12.6813 5.43854 15.666 9.12044 15.666C10.9123 15.666 12.5389 14.9591 13.7369 13.809L14.5683 15.3055Z" fill="#0F33EF"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--Слайд-->
-                                        <div class="swiper-slide post-slide">
-                                            <!--Медиа часть-->
-                                            <iframe src="https://vk.com/video_ext.php?oid=-190182675&id=456240973&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                                             <!--Текст под медиа-->
-                                            <p class="post-subtext">Удалить</p>
+                                            <p class="post-subtext">Оставить без изменений</p>
                                             <div class="post__btn">
                                                 <!--Галочка-->
                                                 <div hidden>
@@ -234,13 +220,40 @@
                                                     </svg> 
                                                 </div>
                                                 <!--Обновить-->
-                                                <div hidden>
+                                                <div class="post__div-update">
                                                     <svg class="post__btn-btn post__btn-update" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M14.5683 15.3055C13.1074 16.5686 11.2032 17.3327 9.12044 17.3327C4.51807 17.3327 0.787109 13.6017 0.787109 8.99935C0.787109 4.39697 4.51807 0.666016 9.12044 0.666016C13.7228 0.666016 17.4538 4.39697 17.4538 8.99935C17.4538 10.7794 16.8956 12.4292 15.9448 13.7832L8.62109 6.5H13.1211C13.1211 2.8181 12.8024 2.33268 9.12044 2.33268C5.43854 2.33268 2.45378 5.31745 2.45378 8.99935C2.45378 12.6813 5.43854 15.666 9.12044 15.666C10.9123 15.666 12.5389 14.9591 13.7369 13.809L14.5683 15.3055Z" fill="#0F33EF"/>
                                                     </svg>
                                                 </div>
                                                 <!--Удалить-->
-                                                <div>
+                                                <div class="post__div-delete">
+                                                    <svg class="post__btn-btn post__btn-delete" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11 1.00781L1 12.9938M1 1.00781L11 12.9938" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Слайд-->
+                                        <div class="swiper-slide post-slide">
+                                            <!--Медиа часть-->
+                                            <iframe src="https://vk.com/video_ext.php?oid=-190182675&id=456240973&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+                                            <!--Текст под медиа-->
+                                            <p class="post-subtext">Оставить без изменений</p>
+                                            <div class="post__btn">
+                                                <!--Галочка-->
+                                                <div hidden>
+                                                    <svg class="post__btn-btn post__btn-ok" width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.21224 16.6667C4.60986 16.6667 0.878906 12.9357 0.878906 8.33333C0.878906 3.73096 4.60986 0 9.21224 0C13.8146 0 17.5456 3.73096 17.5456 8.33333C17.5456 12.9357 13.8146 16.6667 9.21224 16.6667ZM8.38107 11.6667L14.2737 5.77411L13.0952 4.5956L8.38107 9.30967L6.02408 6.95258L4.84556 8.13117L8.38107 11.6667Z" fill="#200304"/>
+                                                    </svg> 
+                                                </div>
+                                                <!--Обновить-->
+                                                <div class="post__div-update">
+                                                    <svg class="post__btn-btn post__btn-update" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.5683 15.3055C13.1074 16.5686 11.2032 17.3327 9.12044 17.3327C4.51807 17.3327 0.787109 13.6017 0.787109 8.99935C0.787109 4.39697 4.51807 0.666016 9.12044 0.666016C13.7228 0.666016 17.4538 4.39697 17.4538 8.99935C17.4538 10.7794 16.8956 12.4292 15.9448 13.7832L8.62109 6.5H13.1211C13.1211 2.8181 12.8024 2.33268 9.12044 2.33268C5.43854 2.33268 2.45378 5.31745 2.45378 8.99935C2.45378 12.6813 5.43854 15.666 9.12044 15.666C10.9123 15.666 12.5389 14.9591 13.7369 13.809L14.5683 15.3055Z" fill="#0F33EF"/>
+                                                    </svg>
+                                                </div>
+                                                <!--Удалить-->
+                                                <div class="post__div-delete">
                                                     <svg class="post__btn-btn post__btn-delete" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 1.00781L1 12.9938M1 1.00781L11 12.9938" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>  
@@ -261,13 +274,13 @@
                                                     </svg> 
                                                 </div>
                                                 <!--Обновить-->
-                                                <div hidden>
+                                                <div class="post__div-update">
                                                     <svg class="post__btn-btn post__btn-update" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M14.5683 15.3055C13.1074 16.5686 11.2032 17.3327 9.12044 17.3327C4.51807 17.3327 0.787109 13.6017 0.787109 8.99935C0.787109 4.39697 4.51807 0.666016 9.12044 0.666016C13.7228 0.666016 17.4538 4.39697 17.4538 8.99935C17.4538 10.7794 16.8956 12.4292 15.9448 13.7832L8.62109 6.5H13.1211C13.1211 2.8181 12.8024 2.33268 9.12044 2.33268C5.43854 2.33268 2.45378 5.31745 2.45378 8.99935C2.45378 12.6813 5.43854 15.666 9.12044 15.666C10.9123 15.666 12.5389 14.9591 13.7369 13.809L14.5683 15.3055Z" fill="#0F33EF"/>
                                                     </svg>
                                                 </div>
                                                 <!--Удалить-->
-                                                <div>
+                                                <div class="post__div-delete">
                                                     <svg class="post__btn-btn post__btn-delete" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 1.00781L1 12.9938M1 1.00781L11 12.9938" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>  
@@ -288,13 +301,13 @@
                                                     </svg> 
                                                 </div>
                                                 <!--Обновить-->
-                                                <div hidden>
+                                                <div class="post__div-update">
                                                     <svg class="post__btn-btn post__btn-update" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M14.5683 15.3055C13.1074 16.5686 11.2032 17.3327 9.12044 17.3327C4.51807 17.3327 0.787109 13.6017 0.787109 8.99935C0.787109 4.39697 4.51807 0.666016 9.12044 0.666016C13.7228 0.666016 17.4538 4.39697 17.4538 8.99935C17.4538 10.7794 16.8956 12.4292 15.9448 13.7832L8.62109 6.5H13.1211C13.1211 2.8181 12.8024 2.33268 9.12044 2.33268C5.43854 2.33268 2.45378 5.31745 2.45378 8.99935C2.45378 12.6813 5.43854 15.666 9.12044 15.666C10.9123 15.666 12.5389 14.9591 13.7369 13.809L14.5683 15.3055Z" fill="#0F33EF"/>
                                                     </svg>
                                                 </div>
                                                 <!--Удалить-->
-                                                <div>
+                                                <div class="post__div-delete">
                                                     <svg class="post__btn-btn post__btn-delete" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 1.00781L1 12.9938M1 1.00781L11 12.9938" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>  
@@ -306,13 +319,25 @@
                                             <!--Медиа часть-->
                                             <img src="img/model.jpg" alt="">
                                             <!--Текст под медиа-->
-                                            <p class="post-subtext">Создать новое на основе этого</p>
+                                            <p class="post-subtext">Оставить без изменений</p>
                                             <div class="post__btn">
+                                                <!--Галочка-->
+                                                <div hidden>
+                                                    <svg class="post__btn-btn post__btn-ok" width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.21224 16.6667C4.60986 16.6667 0.878906 12.9357 0.878906 8.33333C0.878906 3.73096 4.60986 0 9.21224 0C13.8146 0 17.5456 3.73096 17.5456 8.33333C17.5456 12.9357 13.8146 16.6667 9.21224 16.6667ZM8.38107 11.6667L14.2737 5.77411L13.0952 4.5956L8.38107 9.30967L6.02408 6.95258L4.84556 8.13117L8.38107 11.6667Z" fill="#200304"/>
+                                                    </svg> 
+                                                </div>
                                                 <!--Обновить-->
-                                                <div>
+                                                <div class="post__div-update">
                                                     <svg class="post__btn-btn post__btn-update" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M14.5683 15.3055C13.1074 16.5686 11.2032 17.3327 9.12044 17.3327C4.51807 17.3327 0.787109 13.6017 0.787109 8.99935C0.787109 4.39697 4.51807 0.666016 9.12044 0.666016C13.7228 0.666016 17.4538 4.39697 17.4538 8.99935C17.4538 10.7794 16.8956 12.4292 15.9448 13.7832L8.62109 6.5H13.1211C13.1211 2.8181 12.8024 2.33268 9.12044 2.33268C5.43854 2.33268 2.45378 5.31745 2.45378 8.99935C2.45378 12.6813 5.43854 15.666 9.12044 15.666C10.9123 15.666 12.5389 14.9591 13.7369 13.809L14.5683 15.3055Z" fill="#0F33EF"/>
                                                     </svg>
+                                                </div>
+                                                <!--Удалить-->
+                                                <div class="post__div-delete">
+                                                    <svg class="post__btn-btn post__btn-delete" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11 1.00781L1 12.9938M1 1.00781L11 12.9938" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>  
                                                 </div>
                                             </div>
                                         </div>
@@ -321,10 +346,22 @@
                                             <!--Медиа часть-->
                                             <iframe src="https://vk.com/video_ext.php?oid=-40863665&id=456240972&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                                             <!--Текст под медиа-->
-                                            <p class="post-subtext">Удалить</p>
+                                            <p class="post-subtext">Оставить без изменений</p>
                                             <div class="post__btn">
+                                                <!--Галочка-->
+                                                <div hidden>
+                                                    <svg class="post__btn-btn post__btn-ok" width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.21224 16.6667C4.60986 16.6667 0.878906 12.9357 0.878906 8.33333C0.878906 3.73096 4.60986 0 9.21224 0C13.8146 0 17.5456 3.73096 17.5456 8.33333C17.5456 12.9357 13.8146 16.6667 9.21224 16.6667ZM8.38107 11.6667L14.2737 5.77411L13.0952 4.5956L8.38107 9.30967L6.02408 6.95258L4.84556 8.13117L8.38107 11.6667Z" fill="#200304"/>
+                                                    </svg> 
+                                                </div>
+                                                <!--Обновить-->
+                                                <div class="post__div-update">
+                                                    <svg class="post__btn-btn post__btn-update" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.5683 15.3055C13.1074 16.5686 11.2032 17.3327 9.12044 17.3327C4.51807 17.3327 0.787109 13.6017 0.787109 8.99935C0.787109 4.39697 4.51807 0.666016 9.12044 0.666016C13.7228 0.666016 17.4538 4.39697 17.4538 8.99935C17.4538 10.7794 16.8956 12.4292 15.9448 13.7832L8.62109 6.5H13.1211C13.1211 2.8181 12.8024 2.33268 9.12044 2.33268C5.43854 2.33268 2.45378 5.31745 2.45378 8.99935C2.45378 12.6813 5.43854 15.666 9.12044 15.666C10.9123 15.666 12.5389 14.9591 13.7369 13.809L14.5683 15.3055Z" fill="#0F33EF"/>
+                                                    </svg>
+                                                </div>
                                                 <!--Удалить-->
-                                                <div>
+                                                <div class="post__div-delete">
                                                     <svg class="post__btn-btn post__btn-delete" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 1.00781L1 12.9938M1 1.00781L11 12.9938" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>  
@@ -336,10 +373,22 @@
                                             <!--Медиа часть-->
                                             <img src="img/phone.png" alt="">
                                             <!--Текст под медиа-->
-                                            <p class="post-subtext">Удалить</p>
+                                            <p class="post-subtext">Оставить без изменений</p>
                                             <div class="post__btn">
+                                                <!--Галочка-->
+                                                <div hidden>
+                                                    <svg class="post__btn-btn post__btn-ok" width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.21224 16.6667C4.60986 16.6667 0.878906 12.9357 0.878906 8.33333C0.878906 3.73096 4.60986 0 9.21224 0C13.8146 0 17.5456 3.73096 17.5456 8.33333C17.5456 12.9357 13.8146 16.6667 9.21224 16.6667ZM8.38107 11.6667L14.2737 5.77411L13.0952 4.5956L8.38107 9.30967L6.02408 6.95258L4.84556 8.13117L8.38107 11.6667Z" fill="#200304"/>
+                                                    </svg> 
+                                                </div>
+                                                <!--Обновить-->
+                                                <div class="post__div-update">
+                                                    <svg class="post__btn-btn post__btn-update" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.5683 15.3055C13.1074 16.5686 11.2032 17.3327 9.12044 17.3327C4.51807 17.3327 0.787109 13.6017 0.787109 8.99935C0.787109 4.39697 4.51807 0.666016 9.12044 0.666016C13.7228 0.666016 17.4538 4.39697 17.4538 8.99935C17.4538 10.7794 16.8956 12.4292 15.9448 13.7832L8.62109 6.5H13.1211C13.1211 2.8181 12.8024 2.33268 9.12044 2.33268C5.43854 2.33268 2.45378 5.31745 2.45378 8.99935C2.45378 12.6813 5.43854 15.666 9.12044 15.666C10.9123 15.666 12.5389 14.9591 13.7369 13.809L14.5683 15.3055Z" fill="#0F33EF"/>
+                                                    </svg>
+                                                </div>
                                                 <!--Удалить-->
-                                                <div>
+                                                <div class="post__div-delete">
                                                     <svg class="post__btn-btn post__btn-delete" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 1.00781L1 12.9938M1 1.00781L11 12.9938" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>  
@@ -550,6 +599,11 @@
                             </div>
                             <!--Функции-->
                             <form action="" class="posting">
+                                <div class="posting__checkmark">
+                                    <svg class="posting__checkmark-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM9.0026 14L16.0737 6.92893L14.6595 5.51472L9.0026 11.1716L6.17421 8.3431L4.75999 9.7574L9.0026 14Z" fill="#200304"/>
+                                    </svg>                                        
+                                </div>
                                 <div class="posting__item">
                                     <label for="" class="function__item-label">
                                         Выбрать дату:
@@ -599,6 +653,11 @@
                             <!--Соц сети-->
                             <form action="" class="now">
                                 <div class="now__item">
+                                    <div class="posting__checkmark">
+                                        <svg class="posting__checkmark-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM9.0026 14L16.0737 6.92893L14.6595 5.51472L9.0026 11.1716L6.17421 8.3431L4.75999 9.7574L9.0026 14Z" fill="#200304"/>
+                                        </svg>                                        
+                                    </div>
                                     <!--Выпадающий список-->
                                     <select class="function__item-input" name="" id="">
                                         <option value="">Telegram</option>
@@ -617,6 +676,11 @@
                                     </button>
                                 </div>
                                 <div class="now__item">
+                                    <div class="posting__checkmark posting__checkmark-active">
+                                        <svg class="posting__checkmark-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM9.0026 14L16.0737 6.92893L14.6595 5.51472L9.0026 11.1716L6.17421 8.3431L4.75999 9.7574L9.0026 14Z" fill="#200304"/>
+                                        </svg>                                        
+                                    </div>
                                     <!--Выпадающий список-->
                                     <select class="function__item-input" name="" id="">
                                         <option value="" disabled selected>Выберите свою соц. сеть для публикации</option>

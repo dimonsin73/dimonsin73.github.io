@@ -1108,6 +1108,9 @@ img{
     margin: 0 auto;
     padding: 0 15px;
 }
+.postCreated__wrap{
+    padding: 0 50px;
+}
 .postNews__item{
     position: relative;
     display: flex;
@@ -1291,13 +1294,17 @@ img{
 .postNews__slider{
     max-width: 1330px;
 }
+.postCreated__slider{
+    margin-right: -35px;
+    margin-left: -35px;
+}
 .post-swiper{
     margin-right: 95px;
     margin-left: 95px;
 }
 .post-slide{
     max-width: 275px;
-    height: 310px;
+    height: 320px;
     padding: 0 5px;
 }
 .post-slide img{
@@ -1496,6 +1503,7 @@ img{
     row-gap: 26px;
     column-gap: 15px;
     justify-content: space-between;
+    align-items: end;
 }
 
 .function__item-label{
@@ -1509,6 +1517,7 @@ img{
 }
 .function__item-input{
     margin-top: 8px;
+    margin-bottom: 8px;
     padding: 16px 32px;
     border: 1px solid #adadad;
     border-radius: 16px;
@@ -1522,15 +1531,26 @@ img{
     width: 100px;
 }
 .posting{
+    position: relative;
     display: grid;
     justify-content: space-between;
+    align-items: end;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+}
+.posting__checkmark{
+    position: absolute;
+    bottom: 25px;
+    left: -30px;
+}
+.posting__checkmark-active path{
+    fill: #58CD50;
 }
 .posting__item-add{
     display: flex;
     align-items: center;
-    margin-top: 13px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     border: none;
     background-color: initial;
     cursor: pointer;
@@ -1555,6 +1575,7 @@ img{
     font-weight: 700;
 }
 .now__item{
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 24px;
