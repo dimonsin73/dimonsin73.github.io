@@ -1995,12 +1995,6 @@ img{
     color: #666;
     resize: none;
 }
-.postNews__item-textarea::after{
-    content: 'sdfds';
-    position: absolute;
-    width: 100px;
-    background-color: red;
-}
 .postNews__border{
     border: 1px solid #adadad;
 }
