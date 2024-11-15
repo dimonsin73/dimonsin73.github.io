@@ -1980,6 +1980,7 @@ img{
     margin-bottom: 15px;
 }
 .postNews__item-textarea{
+    position: relative;
     max-width: 1220px;
     height: 216px;
     margin-top: 8px;
@@ -1987,9 +1988,21 @@ img{
     margin-bottom: 40px;
     padding: 19px 16px 19px 32px;
     border: 1px solid #ADADAD;
-    border-radius: 16px;
+    border-left: none;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
     font: 500 14px/24px 'Montserrat', sans-serif;
     color: #666;
+    resize: none;
+}
+.postNews__item-textarea::after{
+    content: 'sdfds';
+    position: absolute;
+    width: 100px;
+    background-color: red;
+}
+.postNews__border{
+    border: 1px solid #adadad;
 }
 #scroll-textarea{
     overflow-y: scroll;
@@ -1997,7 +2010,8 @@ img{
     text-align: left;
 }
 #scroll-textarea:focus{
-    outline: 1px solid var(--blue);
+    border: 1px solid var(--active);
+    border-left: none;
 }
 #scroll-textarea::-webkit-scrollbar {
     width: 7px;
