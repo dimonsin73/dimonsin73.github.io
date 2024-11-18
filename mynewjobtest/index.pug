@@ -1,1 +1,95 @@
 doctype html
+html
+    head
+        title MY NEW JOB
+    body
+        aside.aside
+            .aside__wrapper
+                .logo 
+                    |my 
+                    span.logo__span new 
+                    |job
+                ul.aside__menu
+                    li.aside__item
+                        button.aside__btn
+                            .aside__btn-svg 
+                                <svg class="icon" viewBox="0 0 16 16" width="16" height="16">
+                                    <use xlink:href="component_1.svg#circle_plus"></use>
+                                </svg>
+                            p.aside__btn-text Новый платеж 
+                    li.aside__item
+                        button.aside__btn
+                            .aside__btn-svg 
+                                <svg class="icon" width="16" height="16">
+                                    <use xlink:href="component_1.svg#star"></use>
+                                </svg>
+                            p.aside__btn-text Лента операций
+                    li.aside__item 
+                        button.aside__btn
+                            .aside__btn-svg 
+                                <svg class="icon" viewBox="0 0 16 16" width="16" height="16">
+                                    <use href="component_1.svg#shopping_bag"></use>
+                                </svg>
+                            p.aside__btn-text Платежи в работе
+                    li.aside__item 
+                        button.aside__btn
+                            .aside__btn-svg 
+                            p.aside__btn-text Импорт реестров
+                    li.aside__item 
+                        button.aside__btn
+                            .aside__btn-svg 
+                            p.aside__btn-text Выписка
+                    li.aside__item 
+                        button.aside__btn
+                            .aside__btn-svg 
+                            p.aside__btn-text Контрагенты
+                    li.aside__item 
+                        button.aside__btn
+                            .aside__btn-svg
+                                <svg class="icon" viewBox="0 0 16 16" width="16" height="16">
+                                    <use href="component_1.svg#document_search"></use>
+                                </svg>
+                            p.aside__btn-text Кредитные продукты
+                    li.aside__item 
+                        button.aside__btn
+                            .aside__btn-svg
+                                <svg id="shopping_bag" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7 0C4.79086 0 3 1.79086 3 4V5H2C1.49046 5 1.06239 5.38314 1.00612 5.88957L0.00612112 14.8896C-0.0252904 15.1723 0.0651756 15.455 0.254877 15.6669C0.444578 15.8789 0.715562 16 1 16H13C13.2844 16 13.5554 15.8789 13.7451 15.6669C13.9348 15.455 14.0253 15.1723 13.9939 14.8896L12.9939 5.88957C12.9376 5.38314 12.5096 5 12 5H11V4C11 1.79086 9.20914 0 7 0ZM9 5V4C9 2.89543 8.10457 2 7 2C5.89543 2 5 2.89543 5 4V5H9ZM3 8C3 7.44772 3.44772 7 4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8ZM10 7C9.44771 7 9 7.44772 9 8C9 8.55229 9.44771 9 10 9C10.5523 9 11 8.55229 11 8C11 7.44772 10.5523 7 10 7Z" fill="#65656F"/>
+                                </svg>
+                            p.aside__btn-text Зарплатный проект
+        header.header
+            .header__wrapper 
+                .header__item
+                    .header__search
+                .header__item
+                    .header__mail 
+                    .header__notification
+                .header__item
+                    .header__account
+                        .header__account-company
+                        .header__account-name
+                .header__item
+                    .header__logout
+        main.extract
+            .container
+                h1.extract__title Выписка
+                .extract__buttons 
+                    .extract__buttons-btn
+                    .extract__buttons-btn
+                .extract__tabs 
+                    .extract__tab
+                    .extract__tab
+                    .extract__tab
+                    .extract__tab
+                    .extract__tab
+                .extract__filters 
+                    .extract__filter
+                        .extract__calendar
+                        .extract__search
+                    .extract__filter
+                        .extract__check 
+                        .extract__counterparty
+                        .extract__status
+                        .extract__sum
+                        .extract__payment
+                .extract__field 
