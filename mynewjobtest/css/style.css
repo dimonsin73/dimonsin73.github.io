@@ -719,8 +719,10 @@ img{
 
 /* SEARCH */
 .search{
+    border-radius: 12px;
     background-color: #fff;
     box-shadow: 0px 2px 16px 0px #0000001F;
+    overflow: hidden;
 }
 .search__wrapper{
     display: flex;
