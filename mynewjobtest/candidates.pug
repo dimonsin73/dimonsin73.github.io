@@ -1,0 +1,420 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(
+            name="viewport",
+            content="width=device-width, initial-scale=1.0"
+            )
+        title CANDIDATES
+        link(rel="stylesheet",href="css/reset.css")
+        link(rel="stylesheet",href="css/fonts.css")
+        link(rel="stylesheet",href="css/itc-slider.css")
+        link(rel="stylesheet",href="css/style.css")
+        link(rel="stylesheet",href="css/media.css")
+        script(type="text/javascript",src="js/aside.js",defer="true")
+        script(type="text/javascript",src="js/candidates.js",defer="true")
+        script(type="text/javascript",src="js/itc-slider.min.js",defer="true")
+    body
+        .wrapper
+            aside.aside
+                .aside__wrapper
+                    .logo
+                        a.logo__link(href="#")
+                            |my 
+                            span.logo__link-span new 
+                            |job
+                    ul.aside__menu
+                        li.aside__item
+                            button.aside__btn.aside__btn-new
+                                .aside__btn-svg.svg-container 
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#circle_plus")
+                                p.aside__btn-text Новый платеж 
+                        li.aside__item
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#star")
+                                p.aside__btn-text Лента операций
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#shopping_bag")
+                                p.aside__btn-text Платежи в работе
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#document_search")
+                                p.aside__btn-text Импорт реестров
+                        li.aside__item 
+                            button.aside__btn.aside__btn-selected
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#view_grid")
+                                p.aside__btn-text Список кандидатов
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#star")
+                                p.aside__btn-text Контрагенты
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#shopping_bag")
+                                p.aside__btn-text Кредитные продукты
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#document_search")
+                                p.aside__btn-text Зарплатный проект
+            main.main
+                header.header
+                    .header__wrapper 
+                        .header__item
+                            .header__item-hidden
+                                button.header__item-menu
+                                    svg.icon(viewBox="0 0 14 12",width="14",height="12")
+                                        use(href="img/component_1.svg#menu")
+                                a.logo__link.header__item-logo(href="#")
+                                    |my 
+                                    span.logo__link-span new 
+                                    |job
+                            button.header__search
+                                .header__search-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#search")
+                                .header__search-text Поиск
+                        .header__item
+                            button.header__mail 
+                                .header__mail-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#mail")
+                            button.header__bell
+                                .header__bell-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#bell")
+                                p.header__bell-num 1
+                        .header__item.small-hidden
+                            .header__account
+                                p.header__account-company ООО “МАЙ НЬЮ ДЖОБ РЕКРУТМЕНТ 
+                                p.header__account-name Цвилев А.В.
+                            button.header__setting 
+                                .header__setting-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#cog")
+                        .header__item.small-hidden
+                            button.header__logout
+                                .header__logout-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#logout")
+                section.container
+                    .container__wrapper
+                        h1.extract__title Список кандидатов
+                        .extract__filters 
+                            .extract__filter
+                                input(type="number",min="1900",max="2099",step="1",placeholder="Не выбрано").extract__filter-input.extract__calendar
+                                .extract__filter-search
+                                    .extract__filter-befor
+                                    input(type="text",placeholder="Название вакансии").extract__filter-input.extract__search
+                                    .extract__filter-after
+                            .extract__filter
+                        .search 
+                            .search__wrapper 
+                                .search__range
+                                    input.search__range-input(type="range", name="range", min="1", max="100", value="50")
+                                .search__range-output 50%
+                                p.search__range-text Степень соответствия запросу
+                                button(type="submit").search__range-btn Поиск
+                        .candidates 
+                            .extract__field-info
+                                .extract__field-found
+                                    p.extract__field-text Найдено: 
+                                    p.extract__field-count 
+                            .candidates__item
+                                .candidates__wrapper 
+                                    .candidates__condidat
+                                        .candidates__info
+                                            .candidates__image
+                                                img(src="img/candidates/mezentsev.png", alt="", srcset="")
+                                            .candidates__contant
+                                                .candidates__info-top
+                                                    .candidates__fullname
+                                                        .candidates__bigtitle Мезенцев Денис Петрович
+                                                        .candidates__subtext Сейчас не работает
+                                                    .candidates__city 
+                                                        .candidates__title Москва
+                                                        .candidates__subtext Город
+                                                    .candidates__age 
+                                                        .candidates__title 41 год
+                                                        .candidates__subtext Возраст
+                                                    .candidates__experience 
+                                                        .candidates__title 15 лет
+                                                        .candidates__subtext Опыт
+                                                .candidates__info-middle
+                                                    .candidates__vacancy 
+                                                        .candidates__title Генеральный директор
+                                                        .candidates__subtext Соискатель на должность
+                                                    .candidates__salary 
+                                                        .candidates__title 3 000 000 Р
+                                                        .candidates__subtext Желаемая заработная плата
+                                                    .candidates__lastjob
+                                                        .candidates__title ООО ОДПС Сколково
+                                                        .candidates__subtext Последнее место работы
+                                                .candidates__info-bottom
+                                                    .candidates__connect
+                                                        .candidates__tel-svg 
+                                                            svg.icon(viewBox="0 0 14 13",width="14",height="13")
+                                                                use(href="img/component_1.svg#phone")
+                                                        a(href="tel:+89030791199").candidates__contact 89030791199
+                                                    .candidates__connect
+                                                        .candidates__mail-svg
+                                                            svg.icon(viewBox="0 0 16 12",width="16",height="12")
+                                                                use(href="img/component_1.svg#mail")
+                                                        a(href="mailto:mezentsev@mail.ru").candidates__contact mezentsev@mail.ru
+                                        .candidates__analysis
+                                            .candidates__procent 
+                                                .candidates__procent-num 95%
+                                                .candidates__subtext Степень соответствия запросу
+                                            button.candidates__btn Смотреть Анализ
+                                    .candidates__slider.its-slider(data-slider="itc-slider",data-loop="false")
+                                        .itc-slider-wrapper
+                                            .itc-slider-items
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36   
+                                                        img(src="img/mez_slider/mez_slide_1.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Рассказ об опыте работы директором по связям
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 24 просмотра
+                                                        .candidates__slider-date 12 Октября 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/mez_slider/mez_slide_2.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Интервью о взаимодействии с сотрудниками
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 48 просмотра
+                                                        .candidates__slider-date 3 Октября 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/mez_slider/mez_slide_3.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Рассказ об опыте работы директором по связям
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 59 просмотра
+                                                        .candidates__slider-date 13 Сентября 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/mez_slider/mez_slide_2.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Интервью о взаимодействии с сотрудниками
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 74 просмотра
+                                                        .candidates__slider-date 1 Июля 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/mez_slider/mez_slide_4.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Рассказ об опыте работы директором по связям
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 82 просмотра
+                                                        .candidates__slider-date 15 Мая 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/mez_slider/mez_slide_1.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Интервью о взаимодействии с сотрудниками
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 95 просмотра
+                                                        .candidates__slider-date 29 Апреля 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/mez_slider/mez_slide_1.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Рассказ об опыте работы директором по связям
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 102 просмотра
+                                                        .candidates__slider-date 5 Марта 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/mez_slider/mez_slide_1.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Интервью о взаимодействии с сотрудниками
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 123 просмотра
+                                                        .candidates__slider-date 28 Февраля 2024
+                                        button.itc-slider-btn.itc-slider-btn-prev
+                                        button.itc-slider-btn.itc-slider-btn-next
+                            .candidates__item
+                                .candidates__wrapper 
+                                    .candidates__condidat
+                                        .candidates__info
+                                            .candidates__image
+                                                img(src="img/candidates/nikolaeva.png", alt="", srcset="")
+                                            .candidates__contant
+                                                .candidates__info-top
+                                                    .candidates__fullname
+                                                        .candidates__bigtitle Николаева Алена Сергеевна
+                                                        .candidates__subtext Сейчас не работает
+                                                    .candidates__city 
+                                                        .candidates__title Москва
+                                                        .candidates__subtext Город
+                                                    .candidates__age 
+                                                        .candidates__title 32 год
+                                                        .candidates__subtext Возраст
+                                                    .candidates__experience 
+                                                        .candidates__title 10 лет
+                                                        .candidates__subtext Опыт
+                                                .candidates__info-middle
+                                                    .candidates__vacancy 
+                                                        .candidates__title Генеральный директор
+                                                        .candidates__subtext Соискатель на должность
+                                                    .candidates__salary 
+                                                        .candidates__title 2 000 000 Р
+                                                        .candidates__subtext Желаемая заработная плата
+                                                    .candidates__lastjob
+                                                        .candidates__title ООО Органические Системы
+                                                        .candidates__subtext Последнее место работы
+                                                .candidates__info-bottom
+                                                    .candidates__connect
+                                                        .candidates__tel-svg 
+                                                            svg.icon(viewBox="0 0 14 13",width="14",height="13")
+                                                                use(href="img/component_1.svg#phone")
+                                                        a(href="tel:+89030791199").candidates__contact 89030791199
+                                                    .candidates__connect
+                                                        .candidates__mail-svg
+                                                            svg.icon(viewBox="0 0 16 12",width="16",height="12")
+                                                                use(href="img/component_1.svg#mail")
+                                                        a(href="mailto:nikolaeva@mail.ru").candidates__contact nikolaeva@mail.ru
+                                        .candidates__analysis
+                                            .candidates__procent 
+                                                .candidates__procent-num 92%
+                                                .candidates__subtext Степень соответствия запросу
+                                            button.candidates__btn Смотреть Анализ
+                                    .candidates__slider.its-slider(data-slider="itc-slider",data-loop="false")
+                                        .itc-slider-wrapper
+                                            .itc-slider-items
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/nik_slider/nik_slide_1.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Рассказ об опыте работы директором по связям
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 24 просмотра
+                                                        .candidates__slider-date 12 Октября 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/nik_slider/nik_slide_2.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Интервью о взаимодействии с сотрудниками
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 48 просмотра
+                                                        .candidates__slider-date 3 Октября 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/nik_slider/nik_slide_1.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Рассказ об опыте работы директором по связям
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 59 просмотра
+                                                        .candidates__slider-date 13 Сентября 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/nik_slider/nik_slide_3.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Интервью о взаимодействии с сотрудниками
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 74 просмотра
+                                                        .candidates__slider-date 1 Июля 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/nik_slider/nik_slide_2.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Рассказ об опыте работы директором по связям
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 82 просмотра
+                                                        .candidates__slider-date 15 Мая 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/nik_slider/nik_slide_1.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Интервью о взаимодействии с сотрудниками
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 95 просмотра
+                                                        .candidates__slider-date 29 Апреля 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/nik_slider/nik_slide_2.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Рассказ об опыте работы директором по связям
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 102 просмотра
+                                                        .candidates__slider-date 5 Марта 2024
+                                                .itc-slider-item
+                                                    .candidates__slider-media
+                                                        .candidates__slider-play    
+                                                            svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/")
+                                                                path(d="M8.65 13.75L13.525 10.625C13.7583 10.475 13.875 10.2667 13.875 10C13.875 9.73333 13.7583 9.525 13.525 9.375L8.65 6.25C8.4 6.08333 8.14583 6.07083 7.8875 6.2125C7.62917 6.35417 7.5 6.575 7.5 6.875V13.125C7.5 13.425 7.62917 13.6458 7.8875 13.7875C8.14583 13.9292 8.4 13.9167 8.65 13.75ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z",fill="black",fill-opacity="0.5")
+                                                        .candidates__slider-time 12:36 
+                                                        img(src="img/nik_slider/nik_slide_3.png", alt="Портфолио Мезенцев")
+                                                    .candidates__slider-title Интервью о взаимодействии с сотрудниками
+                                                    .candidates__slider-text 
+                                                        .candidates__slider-views 123 просмотра
+                                                        .candidates__slider-date 28 Февраля 2024
+                                        button.itc-slider-btn.itc-slider-btn-prev
+                                        button.itc-slider-btn.itc-slider-btn-next
+
+                                    
+
+

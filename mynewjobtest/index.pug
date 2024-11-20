@@ -1,95 +1,232 @@
 doctype html
-html
+html(lang="ru")
     head
+        meta(charset="UTF-8")
+        meta(
+            name="viewport",
+            content="width=device-width, initial-scale=1.0"
+            )
         title MY NEW JOB
+        link(rel="stylesheet",href="css/reset.css")
+        link(rel="stylesheet",href="css/fonts.css")
+        link(rel="stylesheet",href="css/style.css")
+        link(rel="stylesheet",href="css/media.css")
+        script(type="text/javascript",src="js/aside.js",defer="true")
+        script(type="text/javascript",src="js/extract.js",defer="true")
     body
-        aside.aside
-            .aside__wrapper
-                .logo 
-                    |my 
-                    span.logo__span new 
-                    |job
-                ul.aside__menu
-                    li.aside__item
-                        button.aside__btn
-                            .aside__btn-svg 
-                                <svg class="icon" viewBox="0 0 16 16" width="16" height="16">
-                                    <use xlink:href="component_1.svg#circle_plus"></use>
-                                </svg>
-                            p.aside__btn-text Новый платеж 
-                    li.aside__item
-                        button.aside__btn
-                            .aside__btn-svg 
-                                <svg class="icon" width="16" height="16">
-                                    <use xlink:href="component_1.svg#star"></use>
-                                </svg>
-                            p.aside__btn-text Лента операций
-                    li.aside__item 
-                        button.aside__btn
-                            .aside__btn-svg 
-                                <svg class="icon" viewBox="0 0 16 16" width="16" height="16">
-                                    <use href="component_1.svg#shopping_bag"></use>
-                                </svg>
-                            p.aside__btn-text Платежи в работе
-                    li.aside__item 
-                        button.aside__btn
-                            .aside__btn-svg 
-                            p.aside__btn-text Импорт реестров
-                    li.aside__item 
-                        button.aside__btn
-                            .aside__btn-svg 
-                            p.aside__btn-text Выписка
-                    li.aside__item 
-                        button.aside__btn
-                            .aside__btn-svg 
-                            p.aside__btn-text Контрагенты
-                    li.aside__item 
-                        button.aside__btn
-                            .aside__btn-svg
-                                <svg class="icon" viewBox="0 0 16 16" width="16" height="16">
-                                    <use href="component_1.svg#document_search"></use>
-                                </svg>
-                            p.aside__btn-text Кредитные продукты
-                    li.aside__item 
-                        button.aside__btn
-                            .aside__btn-svg
-                                <svg id="shopping_bag" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7 0C4.79086 0 3 1.79086 3 4V5H2C1.49046 5 1.06239 5.38314 1.00612 5.88957L0.00612112 14.8896C-0.0252904 15.1723 0.0651756 15.455 0.254877 15.6669C0.444578 15.8789 0.715562 16 1 16H13C13.2844 16 13.5554 15.8789 13.7451 15.6669C13.9348 15.455 14.0253 15.1723 13.9939 14.8896L12.9939 5.88957C12.9376 5.38314 12.5096 5 12 5H11V4C11 1.79086 9.20914 0 7 0ZM9 5V4C9 2.89543 8.10457 2 7 2C5.89543 2 5 2.89543 5 4V5H9ZM3 8C3 7.44772 3.44772 7 4 7C4.55228 7 5 7.44772 5 8C5 8.55229 4.55228 9 4 9C3.44772 9 3 8.55229 3 8ZM10 7C9.44771 7 9 7.44772 9 8C9 8.55229 9.44771 9 10 9C10.5523 9 11 8.55229 11 8C11 7.44772 10.5523 7 10 7Z" fill="#65656F"/>
-                                </svg>
-                            p.aside__btn-text Зарплатный проект
-        header.header
-            .header__wrapper 
-                .header__item
-                    .header__search
-                .header__item
-                    .header__mail 
-                    .header__notification
-                .header__item
-                    .header__account
-                        .header__account-company
-                        .header__account-name
-                .header__item
-                    .header__logout
-        main.extract
-            .container
-                h1.extract__title Выписка
-                .extract__buttons 
-                    .extract__buttons-btn
-                    .extract__buttons-btn
-                .extract__tabs 
-                    .extract__tab
-                    .extract__tab
-                    .extract__tab
-                    .extract__tab
-                    .extract__tab
-                .extract__filters 
-                    .extract__filter
-                        .extract__calendar
-                        .extract__search
-                    .extract__filter
-                        .extract__check 
-                        .extract__counterparty
-                        .extract__status
-                        .extract__sum
-                        .extract__payment
-                .extract__field 
+        .wrapper
+            aside.aside
+                .aside__wrapper
+                    .logo
+                        a.logo__link(href="#")
+                            |my 
+                            span.logo__link-span new 
+                            |job
+                    ul.aside__menu
+                        li.aside__item
+                            button.aside__btn.aside__btn-new
+                                .aside__btn-svg.svg-container 
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#circle_plus")
+                                p.aside__btn-text Новый платеж 
+                        li.aside__item
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#star")
+                                p.aside__btn-text Лента операций
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#shopping_bag")
+                                p.aside__btn-text Платежи в работе
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#document_search")
+                                p.aside__btn-text Импорт реестров
+                        li.aside__item 
+                            button.aside__btn.aside__btn-selected
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#view_grid")
+                                p.aside__btn-text Выписка
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#star")
+                                p.aside__btn-text Контрагенты
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#shopping_bag")
+                                p.aside__btn-text Кредитные продукты
+                        li.aside__item 
+                            button.aside__btn
+                                .aside__btn-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#document_search")
+                                p.aside__btn-text Зарплатный проект
+            main.main
+                header.header
+                    .header__wrapper 
+                        .header__item
+                            .header__item-hidden
+                                button.header__item-menu
+                                    svg.icon(viewBox="0 0 14 12",width="14",height="12")
+                                        use(href="img/component_1.svg#menu")
+                                a.logo__link.header__item-logo(href="#")
+                                    |my 
+                                    span.logo__link-span new 
+                                    |job
+                            button.header__search
+                                .header__search-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#search")
+                                .header__search-text Поиск
+                        .header__item
+                            button.header__mail 
+                                .header__mail-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#mail")
+                            button.header__bell
+                                .header__bell-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#bell")
+                                p.header__bell-num 1
+                        .header__item.small-hidden
+                            .header__account
+                                p.header__account-company ООО “МАЙ НЬЮ ДЖОБ РЕКРУТМЕНТ 
+                                p.header__account-name Цвилев А.В.
+                            button.header__setting 
+                                .header__setting-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#cog")
+                        .header__item.small-hidden
+                            button.header__logout
+                                .header__logout-svg.svg-container
+                                    svg.icon(viewBox="0 0 16 16",width="16",height="16")
+                                        use(href="img/component_1.svg#logout")
+                section.container
+                    .extract.container__wrapper 
+                        h1.extract__title Выписка
+                        .extract__buttons 
+                            button.extract__buttons-btn.button-primary Сформировать выписку
+                            button.extract__buttons-btn.button-gray Создать рассылку
+                        .extract__tabs 
+                            button.extract__tab.tab-active Исполненные операции
+                            button.extract__tab По расписанию
+                            button.extract__tab Незавершенные операции
+                            button.extract__tab.extract__tab-hidden Готовые выписки
+                            button.extract__arrow
+                                svg.icon(viewBox="0 0 6 10",width="6",height="10")
+                                        use(href="img/component_1.svg#chevron_right")
+                        .extract__filters 
+                            .extract__filter
+                                input(type="number",min="1900",max="2099",step="1",placeholder="Не выбрано").extract__filter-input.extract__calendar
+                                .extract__filter-search
+                                    .extract__filter-befor
+                                    input(type="text",placeholder="Контрагент, ИНН, назначение или номер счета").extract__filter-input.extract__search
+                                    .extract__filter-after
+                            .extract__filter
+                                .extract__filter-item 
+                                    p.extract__filter-text Cчёт
+                                    svg.icon.icon-filter(viewBox="0 0 10 6",width="10",height="6")
+                                        use(href="img/component_1.svg#chevron_down")
+                                    .extract__drop
+                                        .extract__btns 
+                                            button(type="submit").extract__btn.extract__btn-apply Применить
+                                            button(type="reset").extract__btn.extract__btn-reset Сбросить
+                                .extract__filter-item 
+                                    p.extract__filter-text Контрагент
+                                    svg.icon.icon-filter(viewBox="0 0 10 6",width="10",height="6")
+                                        use(href="img/component_1.svg#chevron_down")
+                                    .extract__drop
+                                        .extract__btns 
+                                            button(type="submit").extract__btn.extract__btn-apply Применить
+                                            button(type="reset").extract__btn.extract__btn-reset Сбросить
+                                .extract__filter-item 
+                                    p.extract__filter-text Статус
+                                    svg.icon.icon-filter(viewBox="0 0 10 6",width="10",height="6")
+                                        use(href="img/component_1.svg#chevron_down")
+                                    .extract__drop 
+                                        .extract__btns 
+                                            button(type="submit").extract__btn.extract__btn-apply Применить
+                                            button(type="reset").extract__btn.extract__btn-reset Сбросить
+                                .extract__filter-item 
+                                    p.extract__filter-text Сумма
+                                    svg.icon.icon-filter(viewBox="0 0 10 6",width="10",height="6")
+                                        use(href="img/component_1.svg#chevron_down")
+                                    .extract__drop 
+                                        .extract__btns 
+                                            button(type="submit").extract__btn.extract__btn-apply Применить
+                                            button(type="reset").extract__btn.extract__btn-reset Сбросить
+                                .extract__filter-item 
+                                    p.extract__filter-text Тип платежа
+                                    svg.icon.icon-filter(viewBox="0 0 10 6",width="10",height="6")
+                                        use(href="img/component_1.svg#chevron_down")
+                                    .extract__drop 
+                                        .extract__drop-item.itemall
+                                            .checkbox.svg-container.checkboxall
+                                                svg.icon(viewBox="0 0 10 2",width="10",height="2")
+                                                    use(href="img/component_1.svg#minus") 
+                                            p.extract__drop-text Выбрать все
+                                        .extract__drop-item
+                                            .checkbox.svg-container
+                                                svg.icon(viewBox="0 0 14 10",width="12",height="10")
+                                                    use(href="img/component_1.svg#check") 
+                                            p.extract__drop-text Бюджет
+                                        .extract__drop-item
+                                            .checkbox.svg-container
+                                                svg.icon(viewBox="0 0 14 10",width="12",height="10")
+                                                    use(href="img/component_1.svg#check")  
+                                            p.extract__drop-text Юридические лица
+                                        .extract__drop-item
+                                            .checkbox.svg-container
+                                                svg.icon(viewBox="0 0 14 10",width="12",height="10")
+                                                    use(href="img/component_1.svg#check")  
+                                            p.extract__drop-text Физические лица
+                                        .extract__drop-item
+                                            .checkbox.svg-container
+                                                svg.icon(viewBox="0 0 14 10",width="12",height="10")
+                                                    use(href="img/component_1.svg#check")  
+                                            p.extract__drop-text Самозанятые
+                                        .extract__btns 
+                                            button(type="submit").extract__btn.extract__btn-apply Применить
+                                            button(type="reset").extract__btn.extract__btn-reset Сбросить
+                        .extract__field
+                            .extract__field-info
+                                .extract__field-found
+                                    p.extract__field-text Найдено: 
+                                    p.extract__field-count 
+                                button.extract__field-btn
+                                    p.extract__field-setting Настройка таблицы
+                                    svg.icon(viewBox="0 0 10 6",width="10",height="6")
+                                        use(href="img/component_1.svg#chevron_down")
+                            .payments
+                                .payments__header
+                                    .payments__header-item.payments__header-check.checkbox.svg-container
+                                        svg.icon(viewBox="0 0 14 10",width="12",height="10")
+                                            use(href="img/component_1.svg#check") 
+                                    .payments__header-item.payments__header-type 
+                                        p.payments__header-text Тип
+                                    .payments__header-item.payments__header-date 
+                                        p.payments__header-text Дата
+                                        svg.icon(viewBox="0 0 14 12",width="14",height="12")
+                                            use(href="img/component_1.svg#menu_1")
+                                    .payments__header-item.payments__header-content 
+                                        p.payments__header-text Контрагент и назначение
+                                    .payments__header-item.payments__header-number 
+                                        p.payments__header-text Номер
+                                    .payments__header-item.payments__header-sum
+                                        p.payments__header-text Сумма
+                                        svg.icon(viewBox="0 0 14 12",width="14",height="12")
+                                            use(href="img/component_1.svg#menu_1")
+                                .payments__items
+                                    
+
+

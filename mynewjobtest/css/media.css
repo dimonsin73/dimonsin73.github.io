@@ -1,0 +1,99 @@
+@media (max-width: 1439px) {
+    .container{
+        max-width: 960px;
+        padding: 0 32px;
+    }
+}
+@media (max-width: 1199px) {
+    .container{
+        max-width: 768px;
+    }
+    .extract__tab-hidden{
+        display: none;
+    }
+}
+@media (max-width: 1023px) {
+    .aside{
+        position: fixed;
+        margin-left: -240px;
+        background-color: var(--Gray-100);
+        z-index: 100;
+        transition: margin-left 0.5s ease;
+    }
+    .header__wrapper{
+        justify-content: space-between;
+        width: 100%;
+    }
+    .header__item{
+        padding: 0 24px;
+    }
+    .header__item:first-child{
+        justify-content: space-between;
+    }
+    .header__item-hidden{
+        display: flex;
+    }
+    .header__search-svg{
+        margin-right: 0;
+    }
+    .header__search-text{
+        display: none;
+    }
+    .header__account{
+        width: 163px;
+        margin-right: 24px;
+    }
+}
+@media (max-width: 767px) {
+    .container{
+        max-width: 390px;
+        padding: 0 16px;
+    }
+    .small-hidden{
+        display: none;
+    }
+    .header__item{
+        border-right: none;
+    }
+    .header__item:first-child{
+        padding-right: 0;
+    }
+    .extract__title{
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: 0.01em;
+    }
+    .extract__buttons-btn{
+        padding: 10px 13px;
+        font-size: 13px;
+        line-height: 19.5px;
+        letter-spacing: 0.03em;
+    }
+    .extract__tabs{
+        overflow-x: scroll;
+    }
+    .extract__calendar{
+        min-width: 171px;
+    }
+    .extract__filters{
+        position: relative;
+    }
+    .extract__filter-item{
+        position: static;
+    }
+    .extract__filter:last-child{
+        overflow-x: scroll;
+    }
+    .extract__drop {
+        top: 118px;
+        left: 10px;
+    }
+    .payments__header, .payments__item{
+        grid-template-columns: 20px 156px 100px;
+        column-gap: 13px;
+    }
+    .payments__header-type, .payments__header-date, .payments__header-number, .payments__type, .payments__date, .payments__number {
+        display: none;
+    }
+}
