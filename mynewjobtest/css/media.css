@@ -3,11 +3,18 @@
         max-width: 960px;
         padding: 0 32px;
     }
+    .candidates__condidat{
+        grid-template-columns: auto 180px;
+        column-gap: 24px;
+    }
+    .candidates__contant {
+        row-gap: 20px;
+    }
+    .itc-slider-item {
+        flex: 0 0 25%;
+    }
 }
 @media (max-width: 1199px) {
-    .container{
-        max-width: 768px;
-    }
     .extract__tab-hidden{
         display: none;
     }
@@ -46,7 +53,6 @@
 }
 @media (max-width: 767px) {
     .container{
-        max-width: 390px;
         padding: 0 16px;
     }
     .small-hidden{
@@ -74,7 +80,14 @@
         overflow-x: scroll;
     }
     .extract__calendar{
-        min-width: 171px;
+        width: 171px;
+        padding-left: 32px;
+    }
+    .quantity__year {
+        left: 82px;
+    }
+    .quantity__arrow-plus {
+        right: 56px;
     }
     .extract__filters{
         position: relative;
@@ -90,7 +103,7 @@
         left: 10px;
     }
     .payments__header, .payments__item{
-        grid-template-columns: 20px 156px 100px;
+        grid-template-columns: 20px auto 100px;
         column-gap: 13px;
     }
     .payments__header-type, .payments__header-date, .payments__header-number, .payments__type, .payments__date, .payments__number {
