@@ -194,7 +194,7 @@ inputeSearch.addEventListener('input', function(){
     }
 });
 
-onst quantityYear = document.querySelector('.quantity__year');
+const quantityYear = document.querySelector('.quantity__year');
 const quantityNum = document.querySelector('.quantity__num');
 quantityNum.addEventListener('input', function(){
     if (quantityNum.value == '') {
