@@ -624,7 +624,7 @@ input[type="number"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: 24px;
+    column-gap: 10px;
 }
 .candidates__info-bottom{
     display: flex;
