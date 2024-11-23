@@ -28,8 +28,16 @@ img{
 }
 
 .header{
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
     background-color: var(--header-bg);
+    transition: left 0.5s ease, border-bottom-left-radius 0.5s ease;
+    z-index: 10;
+}
+.header-active{
+    left: 200px;
+    border-bottom-left-radius: 20px;
 }
 .header__wrapper{
     display: flex;
@@ -40,51 +48,27 @@ img{
 .header__item{
     display: flex;
     align-items: center;
-    transition: margin-left 1s ease;
-}
-.item-active{
-    margin-left: 200px;
 }
 .header__arrow{
     width: 25px;
     height: 25px;
     margin-right: 15px;
     margin-left: 15px;
-    border-top: 5px solid #fff;
-    border-right: 5px solid #fff;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
     transform: rotate(45deg);
     transition: transform 0.4s ease;
     cursor: pointer;
 }
 .header__arrow-active{
-    transform: rotate(225deg);
-}
-.logo__hidden{
-    position: absolute;
-    top: 0;
-    left: -200px;
-    width: 200px;
-    height: 60px;  
-    background-color: var(--bar-bg);
-    transition: left 1s ease;
-}
-.logo__hidden-link{
-    display: block;
-    width: 150px;
-    height: 100%;
-    margin-left: 10px;
-    background: center / contain no-repeat url(../img/logo.png);
-}
-.logo__hidden-active{
-    left: 0px;
+    transform: rotate(-45deg) scaleX(-1);
 }
 .logo{
     width: 150px;
     height: 100%;
-    margin-top: 5px;
     margin-right: 50px;
     background: center / contain no-repeat url(../img/logo.png);
-    transition: width 1s ease, margin 1s ease;
+    transition: width 0.5s ease, margin 0.5s ease;
 }
 .logo-active{
     width: 0;
@@ -97,7 +81,6 @@ img{
 .header__list-li{
     margin-right: 30px;
 }
-
 .balance{
     display: flex;
     align-items: center;
@@ -140,18 +123,36 @@ img{
 
 .freebie__wrapper{
     display: grid;
-    grid-template-columns: 60px auto;
-    transition: grid-template-columns 1s ease;
+    grid-template-columns: auto;
 }
-.freebie__wrapper-active{
-    grid-template-columns: 240px auto;
+.freebei__aside{
+    height: 100vh;
+}
+.freebie__logo{
+    margin-bottom: 25px;
+}
+.freebie__logo-link{
+    display: block;
+    width: 150px;
+    height: 40px;
+    margin-left: 10px;
+    background: center / contain no-repeat url(../img/logo.png);
 }
 .freebie__bar{
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 15px;
+    width: 60px;
+    height: 100%;
+    padding: 10px 15px;
+    overflow: hidden;
     background-color: var(--bar-bg);
+    transition: width 0.5s ease;
+    z-index: 1;
+}
+.freebie__bar-active{
+    width: 240px;
 }
 .freebie__bar-link{
     display: flex;
@@ -170,30 +171,30 @@ img{
 .freebie__bar-text{
     margin-left: 20px;
 }
-.text-active{
-    width: 0;
-    transition: width 1s ease;
-    
-}
 .freebie__content{
+    min-height: 100vh;
+    margin-top: 60px;
+    margin-left: 60px;
+    padding: 0 24px;
     background-color: var(--content-bg);
 }
 .freebie__content-item{
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 60px - 140px);
-    min-height: 720px;
+    min-width: 260px;
+    height: 755px;
 }
 .freebie__content-wrapper{
     display: grid;
-    grid-template-columns: 460px 870px;
-    column-gap: 40px;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 24px;
     justify-content: center;
-    margin: 70px 0;
+    max-width: 1330px;
+    margin: 70px auto;
 }
 .freebie__account{
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     padding: 20px;
     border-radius: 10px;
     background-color: var(--item-bg);
@@ -225,6 +226,7 @@ img{
 }
 .freebie__account-ticket{
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     background-color: var(--ticket-bg);
@@ -268,10 +270,11 @@ img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 455px;
     height: 500px;
     border-radius: 10px;
     background: center / cover url(../img/playandwinbg.png);
-    transition: transform 1s ease;
+    transition: transform 0.5s ease;
 }
 .freebie__baner:hover{
     transform: scale(1.04);
@@ -311,13 +314,12 @@ img{
     border-radius: 10px;
     background: linear-gradient(90deg, rgba(60,59,152,1), rgba(39,46,88,1));
     overflow: hidden;
-    
 }
 .freebie__fund-img{
     position: absolute;
     top: 0;
     left: 0;
-    transition: transform 1s ease;
+    transition: transform 0.5s ease;
 }
 .freebie__fund:hover .freebie__fund-img{
     transform: scale(1.15);
@@ -327,17 +329,20 @@ img{
     line-height: 60px;
     font-weight: 700;
     color: var(--orange);
+    text-wrap: nowrap;
 }
 .freebie__fund-sum{
     margin-bottom: 30px;
     font-size: 66px;
     line-height: 72px;
     font-weight: 700;
+    text-wrap: nowrap;
 }
 .freebie__fund-text{
     font-weight: 700;
     color: var(--text);
     text-transform: uppercase;
+    text-wrap: nowrap;
 }
 .freebie__fund-info{
     position: absolute;
@@ -394,7 +399,6 @@ img{
     right: 0;
     left: 0;
     opacity: 0;
-    
     transition: opacity 0.4s ease;
 }
 .freebie__fund:hover .curtain{

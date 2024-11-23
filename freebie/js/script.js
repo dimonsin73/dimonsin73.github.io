@@ -1,19 +1,17 @@
 const headerArrow = document.querySelector('.header__arrow');
-const freebieWrapper = document.querySelector('.freebie__wrapper');
-const freebieBarText = document.querySelectorAll('.freebie__bar-text');
-const logoHidden = document.querySelector('.logo__hidden');
-const headerItem = document.querySelector('.header__item');
+const header = document.querySelector('.header');
 const logo = document.querySelector('.logo');
+
+
+const freebieBar = document.querySelector('.freebie__bar');
+const freebieBarText = document.querySelectorAll('.freebie__bar-text');
+const freebielogo = document.querySelector('.freebie__logo');
+
 headerArrow.addEventListener('click', function () {
-    headerArrow.classList.toggle('header__arrow-active');
-    freebieWrapper.classList.toggle('freebie__wrapper-active');
-    for (let i = 0; i < freebieBarText.length; i++) {
-        const element = freebieBarText[i];
-        element.classList.toggle('text-active');
-    };
-    logoHidden.classList.toggle('logo__hidden-active');
-    headerItem.classList.toggle('item-active');
-    logo.classList.toggle('logo-active');
+    headerArrow.classList.toggle('header__arrow-active'); // Поворот стрелки
+    header.classList.toggle('header-active'); // Сдвиг хедера
+    logo.classList.toggle('logo-active'); // Скрытие лого
+    freebieBar.classList.toggle('freebie__bar-active'); //Изменение ширины бара
 });
 
 const freebieBaner = document.querySelector('.freebie__baner');
