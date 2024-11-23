@@ -1026,7 +1026,7 @@ img{
 .post__back-arrow{
     display: inline;
     margin-right: 16px;
-    padding: 10px 15px;
+    padding: 11px 15px;
     background-color: #fff;
     border-radius: 50%;
 }
@@ -1043,24 +1043,21 @@ img{
     border-bottom: 2px solid var(--bg-post);
     font: 500 16px/20px 'Montserrat', sans-serif;
     color: var(--blue);
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 .post__back-text:hover{
-    border-bottom: 2px solid var(--blue);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 .post__back-advertising{
     font: 500 14px/20px 'Montserrat', sans-serif;
     color: #6b6b6b;
     text-decoration: underline;
-    -webkit-transition: color 0.5s ease;
-    -o-transition: color 0.5s ease;
-    transition: color 0.5s ease;
     cursor: pointer;
 }
 .post__back-advertising:hover{
-    color: var(--blue);
+    font-weight: 700;
+    color: #0F33EF;
 }
 .post__new{
     display: -webkit-box;
@@ -1241,15 +1238,10 @@ img{
     background-color: var(--blue);
     color: #fff;
     cursor: pointer;
-    -webkit-transition: -webkit-filter 0.2s linear;
-    transition: -webkit-filter 0.2s linear;
-    -o-transition: filter 0.2s linear;
-    transition: filter 0.2s linear;
-    transition: filter 0.2s linear, -webkit-filter 0.2s linear;
+    transition: background-color 0.4s ease;
 }
 .faq__btn-recreate:hover{
-    -webkit-filter: drop-shadow(2px 2px 6px var(--blue));
-            filter: drop-shadow(2px 2px 6px var(--blue));
+    background-color: #0a0abd;
 }
 .faq__btn-delete{
     padding: 16px 20px;
@@ -1257,16 +1249,11 @@ img{
     border-radius: 16px;
     background-color: var(--red);
     color: #fff;
+    transition: background-color 0.4s ease;
     cursor: pointer;
-    -webkit-transition: -webkit-filter 0.2s linear;
-    transition: -webkit-filter 0.2s linear;
-    -o-transition: filter 0.2s linear;
-    transition: filter 0.2s linear;
-    transition: filter 0.2s linear, -webkit-filter 0.2s linear;
 }
 .faq__btn-delete:hover{
-    -webkit-filter: drop-shadow(2px 2px 6px var(--red));
-            filter: drop-shadow(2px 2px 6px var(--red));
+    background-color: #a60707;
 }
 .faq__item-text span{
     color: var(--blue);
@@ -1290,6 +1277,12 @@ img{
             transform: rotate(-45deg);
 }
 .ui-accordion-header-active .faq__item-svg{
+    background-color: #fff;
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0);
+}
+.ui-accordion-header-active:hover .faq__item-svg{
     background-color: #fff;
     -webkit-transform: rotate(0);
         -ms-transform: rotate(0);
@@ -1469,15 +1462,10 @@ img{
     font: 700 16px/24px 'Montserrat', sans-serif;
     color: #fff;
     cursor: pointer;
-    -webkit-transition: -webkit-filter 0.2s linear;
-    transition: -webkit-filter 0.2s linear;
-    -o-transition: filter 0.2s linear;
-    transition: filter 0.2s linear;
-    transition: filter 0.2s linear, -webkit-filter 0.2s linear;
+    transition: background-color 0.4s ease;
 }
 .content-btn:hover{
-    -webkit-filter: drop-shadow(2px 2px 6px var(--blue));
-            filter: drop-shadow(2px 2px 6px var(--blue));
+    background-color: #0a0abd;
 }
 .created-text{
     margin-bottom: 18px;
@@ -1629,10 +1617,15 @@ img{
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding-top: 15px;
+    padding-right: 15px;
+    overflow: hidden;
 }
 .files__telegram-text{
     font: 500 16px/20px 'Montserrat', sans-serif;
     color: var(--blue);
+    overflow: hidden;
+    text-wrap: nowrap;
     cursor: pointer;
 }
 .files__telegram-telegram{
@@ -1708,8 +1701,8 @@ img{
 }
 .files__download-close{
     position: absolute;
-    top: -15px;
-    right: -15px;
+    top: 0;
+    right: 0;
     padding: 4px 5px 2px;
     border-radius: 4px;
     cursor: pointer;
@@ -1747,11 +1740,7 @@ img{
     font: 700 16px/24px 'Montserrat', sans-serif;
     color: #fff;
     cursor: pointer;
-    -webkit-transition: -webkit-filter 0.2s linear;
-    transition: -webkit-filter 0.2s linear;
-    -o-transition: filter 0.2s linear;
-    transition: filter 0.2s linear;
-    transition: filter 0.2s linear, -webkit-filter 0.2s linear;
+    transition: background-color 0.4s ease;
 }
 .files__btn-add{
     border: 1px solid var(--blue);
@@ -1772,12 +1761,13 @@ img{
     background-color: #118530;
 }
 .files__btn-add:hover{
-    -webkit-filter: drop-shadow(2px 2px 6px var(--blue));
-            filter: drop-shadow(2px 2px 6px var(--blue));
+    background-color: #0a0abd;
 }
 .files__btn-load:hover{
-    -webkit-filter: drop-shadow(2px 2px 6px #727689);
-            filter: drop-shadow(2px 2px 6px #727689);
+    background-color: #464959;
+}
+.files__btn-success:hover{
+    background-color: #075f1f;
 }
 .functions{
     display: -ms-grid;
@@ -1879,11 +1869,10 @@ img{
     font: 500 16px/20px 'Montserrat', sans-serif;
     color: var(--blue);
 }
-.posting__item-add:hover .posting__item-text{
-    font-weight: 700;
-}
 .posting__item-text:hover{
     font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 .now__item{
     position: relative;
@@ -1914,15 +1903,10 @@ img{
     background-color: var(--blue);
     color: #fff;
     cursor: pointer;
-    -webkit-transition: -webkit-filter 0.2s linear;
-    transition: -webkit-filter 0.2s linear;
-    -o-transition: filter 0.2s linear;
-    transition: filter 0.2s linear;
-    transition: filter 0.2s linear, -webkit-filter 0.2s linear;
+    transition: background-color 0.4s ease;
 }
 .btn-submit:hover{
-    -webkit-filter: drop-shadow(2px 2px 6px var(--blue));
-            filter: drop-shadow(2px 2px 6px var(--blue));
+    background-color: #0a0abd;
 }
 .blogs__img-btn{
     display: -webkit-box;
@@ -2229,17 +2213,13 @@ img{
     transition: stroke 0.5s ease;
 }
 .files__footer-items:hover .files__footer-p{
-    background-color: #fff;
-    color: var(--blue);
+    background-color: #0a0abd;
 }
 .files__footer-items:hover .files__footer-btn{
-    background-color: #fff;
+    background-color: #0a0abd;
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
-}
-.files__footer-items:hover path{
-    stroke: var(--blue);
 }
 .project__header{
     max-width: 1360px;
