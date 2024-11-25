@@ -1148,6 +1148,7 @@ img{
 }
 .faq__item-wrapper{
     display: -ms-grid ;
+    display: -ms-grid ;
     display: grid ;
     -ms-grid-columns: 1fr 658px 1fr;
     grid-template-columns: 1fr 658px 1fr;
@@ -1238,6 +1239,8 @@ img{
     background-color: var(--blue);
     color: #fff;
     cursor: pointer;
+    -webkit-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
     transition: background-color 0.4s ease;
 }
 .faq__btn-recreate:hover{
@@ -1249,6 +1252,8 @@ img{
     border-radius: 16px;
     background-color: var(--red);
     color: #fff;
+    -webkit-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
     transition: background-color 0.4s ease;
     cursor: pointer;
 }
@@ -1462,6 +1467,8 @@ img{
     font: 700 16px/24px 'Montserrat', sans-serif;
     color: #fff;
     cursor: pointer;
+    -webkit-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
     transition: background-color 0.4s ease;
 }
 .content-btn:hover{
@@ -1740,6 +1747,8 @@ img{
     font: 700 16px/24px 'Montserrat', sans-serif;
     color: #fff;
     cursor: pointer;
+    -webkit-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
     transition: background-color 0.4s ease;
 }
 .files__btn-add{
@@ -1903,6 +1912,8 @@ img{
     background-color: var(--blue);
     color: #fff;
     cursor: pointer;
+    -webkit-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
     transition: background-color 0.4s ease;
 }
 .btn-submit:hover{
