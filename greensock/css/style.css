@@ -21,7 +21,6 @@
 body {
 	margin: 0;
   font-family: 'Gilroy', sans-serif;
-  min-width: 1333px;
 }
 
 a {
@@ -79,16 +78,6 @@ img {
   border-bottom: 2px solid #C4C4C4;
 }
 
-.header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 14.5%;
-  height: 100%;
-  background-color: #373737;
-}
-
 .logo {
   position: absolute;
   left: 50%;
@@ -134,7 +123,19 @@ img {
   position: relative;
   z-index: 3;
 }
+.nav__link-header{
+  padding: 60px 35px 55px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+  transition: background-color 0.4s ease;
+}
 
+.nav__link-header:hover{
+  background-color: #373737;
+  color: #fff;
+}
 .nav__link {
   font-weight: 700;
   font-size: 20px;
@@ -142,31 +143,22 @@ img {
   color: #FFFFFF;
 }
 
-.nav__link:not(:last-child) {
-  margin-right: 76px;
-}
-
 .nav__link--arrow {
   background-image: url("../img/arrow.svg");
-  background-position: right center;
+  background-position: right 30px center;
   background-repeat: no-repeat;
-  padding-right: 70px;
+  padding-right: 105px;
+  margin-left: -5px;
 }
-
 .hero {
   padding-top: 140px;
   overflow: hidden;
   height: 100vh;
-  /* min-height: 1080px; */
   width: 100%;
   background-image: url("../img/bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.hero__left {
-  max-width: 737px;
 }
 
 .hero__title {
@@ -188,12 +180,18 @@ img {
 }
 
 .hero__btn {
+  border: none;
   font-weight: 700;
   font-size: 20px;
   color: #000000;
   padding: 33px 38px;
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
-
+.hero__btn:hover{
+  background-color: #373737;
+  color: #fff;
+}
 .photos {
   position: relative;
   display: flex;
@@ -291,6 +289,7 @@ img {
   padding-top: 240px;
   display: flex;
   justify-content: space-between;
+  column-gap: 100px;
 }
 
 .menu {
@@ -402,7 +401,7 @@ img {
 }
 
 a {
-  transition: color 0.3s;
+  transition: color 0.4s ease;
 }
 
 a:hover {
@@ -412,7 +411,7 @@ a:hover {
 .social__link,
 .close,
 .burger {
-  transition: opacity 0.3s;
+  transition: opacity 0.4s ease;
 }
 
 .social__link:hover,
@@ -421,15 +420,15 @@ a:hover {
   opacity: 0.7;
 }
 
+
+
 @media (max-height: 1079px) {
   .hero__container {
     padding-top: 170px;
   }
-
   .menu__container {
     padding: 30px;
   }
-
   .menu__nav {
     margin-bottom: 80px;
   }
@@ -440,7 +439,6 @@ a:hover {
     padding: 30px;
     padding-top: 0;
   }
-
   .photos-wrap {
     grid-template-rows: repeat(2, 170px);
   }
@@ -449,8 +447,9 @@ a:hover {
 @media (max-height: 800px) {
   .hero {
     min-height: 640px;
+    padding-top: 75px;
   }
-
+  
   .menu {
     min-height: 640px;
   }
@@ -472,16 +471,6 @@ a:hover {
 
   .hero__left {
     max-width: 40%;
-  }
-
-  .hero__title {
-    font-size: 55px;
-    line-height: 70px;
-  }
-
-  .hero__descr {
-    font-size: 24px;
-    line-height: 30px;
   }
 
   .hero__btn {
@@ -520,5 +509,69 @@ a:hover {
 
   .menu__nav .nav__item:not(:last-child) {
     margin-bottom: 20px;
+  }
+}
+
+
+@media (max-width: 1719px){
+  .hero__title {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  .hero__descr {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+@media (max-width: 1550px) {
+  .hero__title {
+      font-size: 46px;
+      line-height: 60px;
+  }
+  .hero__descr {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  .hero__container{
+    padding-top: 155px;
+  }
+  
+}
+@media (max-width: 1439px){
+  .hero__title {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  .hero__descr {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 1023px){
+  .logo{
+    left: 25%;
+    transform: translate(-25%, -50%);
+  }
+  .hero__container{
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  .hero__descr{
+    margin-bottom: 24px;
+  }
+  .photos{
+    align-self: flex-end;
+  }
+  .photos__shape {
+    width: 600px;
+    height: 300px;
+    padding: 30px;
+    padding-top: 0; 
+  }
+  .photos-wrap {
+    grid-template-rows: repeat(2, 100px);
+  }
+  .hero__btn{
+    padding: 12px 18px;
   }
 }
