@@ -12,248 +12,420 @@ html(lang="ru")
         header.header
             .header__top
                 .container
-                    .header__left 
-                        .header__city 
-                            .header__city-icon
-                                svg(width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M14.1401 1.59323L1.44788 6.23101C0.913438 6.42656 0.928994 7.18767 1.47122 7.36212L7.2801 9.22101L9.13899 15.0299C9.31233 15.5721 10.0745 15.5877 10.2701 15.0532L14.9068 2.3599C15.0812 1.88212 14.6179 1.41878 14.1401 1.59323Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                            p.header__city-text Санкт-Петербург
-                        .header__working
-                            .header__working-icon 
-                                svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M9 4.27783V9.00005L12.6111 11.5001" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                    path(d="M9 0.944824C13.4489 0.944824 17.0556 4.55149 17.0556 9.00038C17.0556 13.4493 13.4489 17.0559 9 17.0559" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                    path(d="M3.3033 15.5299C3.76354 15.5299 4.13664 15.1569 4.13664 14.6966C4.13664 14.2364 3.76354 13.8633 3.3033 13.8633C2.84307 13.8633 2.46997 14.2364 2.46997 14.6966C2.46997 15.1569 2.84307 15.5299 3.3033 15.5299Z" fill="#AD2950")
-                                    path(d="M0.944417 9.83366C1.40465 9.83366 1.77775 9.46056 1.77775 9.00033C1.77775 8.54009 1.40465 8.16699 0.944417 8.16699C0.48418 8.16699 0.111084 8.54009 0.111084 9.00033C0.111084 9.46056 0.48418 9.83366 0.944417 9.83366Z" fill="#AD2950")
-                                    path(d="M3.3033 4.13688C3.76354 4.13688 4.13664 3.76379 4.13664 3.30355C4.13664 2.84331 3.76354 2.47021 3.3033 2.47021C2.84307 2.47021 2.46997 2.84331 2.46997 3.30355C2.46997 3.76379 2.84307 4.13688 3.3033 4.13688Z" fill="#AD2950")
-                                    path(d="M5.91781 17.2756C6.37804 17.2756 6.75114 16.9025 6.75114 16.4422C6.75114 15.982 6.37804 15.6089 5.91781 15.6089C5.45757 15.6089 5.08447 15.982 5.08447 16.4422C5.08447 16.9025 5.45757 17.2756 5.91781 17.2756Z" fill="#AD2950")
-                                    path(d="M1.5577 12.9157C2.01794 12.9157 2.39103 12.5426 2.39103 12.0824C2.39103 11.6221 2.01794 11.249 1.5577 11.249C1.09746 11.249 0.724365 11.6221 0.724365 12.0824C0.724365 12.5426 1.09746 12.9157 1.5577 12.9157Z" fill="#AD2950")
-                                    path(d="M1.5577 6.75114C2.01794 6.75114 2.39103 6.37804 2.39103 5.91781C2.39103 5.45757 2.01794 5.08447 1.5577 5.08447C1.09746 5.08447 0.724365 5.45757 0.724365 5.91781C0.724365 6.37804 1.09746 6.75114 1.5577 6.75114Z" fill="#AD2950")
-                                    path(d="M5.91781 2.39128C6.37804 2.39128 6.75114 2.01818 6.75114 1.55794C6.75114 1.09771 6.37804 0.724609 5.91781 0.724609C5.45757 0.724609 5.08447 1.09771 5.08447 1.55794C5.08447 2.01818 5.45757 2.39128 5.91781 2.39128Z" fill="#AD2950")
-                            .header__working-text 23 июля с 11:00 до 21:00
-                            .header__working-chevron
-                                svg(width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M1.5 1.25L5.46967 5.51404C5.76256 5.82865 6.23744 5.82865 6.53033 5.51404L10.5 1.25" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
-                    ul.menu
-                        li.menu__item
-                            a(href="http://") Адреса магазинов
-                        li.menu__item
-                            a(href="http://") Отзывы
-                        li.menu__item
-                            a(href="http://") Информация
-                            .menu__item-chevron 
-                                svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M1 1L4.5286 4.79026C4.78894 5.06991 5.21106 5.06991 5.4714 4.79026L9 1" stroke="#1C1C1D" stroke-linecap="round")
+                    .header__top-wrapper
+                        .header__left 
+                            .header__city 
+                                .header__city-icon
+                                    svg(width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M14.1401 1.59323L1.44788 6.23101C0.913438 6.42656 0.928994 7.18767 1.47122 7.36212L7.2801 9.22101L9.13899 15.0299C9.31233 15.5721 10.0745 15.5877 10.2701 15.0532L14.9068 2.3599C15.0812 1.88212 14.6179 1.41878 14.1401 1.59323Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                p.header__city-text Санкт-Петербург
+                            .header__working
+                                .header__working-icon 
+                                    svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M9 4.27783V9.00005L12.6111 11.5001" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                        path(d="M9 0.944824C13.4489 0.944824 17.0556 4.55149 17.0556 9.00038C17.0556 13.4493 13.4489 17.0559 9 17.0559" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                        path(d="M3.3033 15.5299C3.76354 15.5299 4.13664 15.1569 4.13664 14.6966C4.13664 14.2364 3.76354 13.8633 3.3033 13.8633C2.84307 13.8633 2.46997 14.2364 2.46997 14.6966C2.46997 15.1569 2.84307 15.5299 3.3033 15.5299Z" fill="#AD2950")
+                                        path(d="M0.944417 9.83366C1.40465 9.83366 1.77775 9.46056 1.77775 9.00033C1.77775 8.54009 1.40465 8.16699 0.944417 8.16699C0.48418 8.16699 0.111084 8.54009 0.111084 9.00033C0.111084 9.46056 0.48418 9.83366 0.944417 9.83366Z" fill="#AD2950")
+                                        path(d="M3.3033 4.13688C3.76354 4.13688 4.13664 3.76379 4.13664 3.30355C4.13664 2.84331 3.76354 2.47021 3.3033 2.47021C2.84307 2.47021 2.46997 2.84331 2.46997 3.30355C2.46997 3.76379 2.84307 4.13688 3.3033 4.13688Z" fill="#AD2950")
+                                        path(d="M5.91781 17.2756C6.37804 17.2756 6.75114 16.9025 6.75114 16.4422C6.75114 15.982 6.37804 15.6089 5.91781 15.6089C5.45757 15.6089 5.08447 15.982 5.08447 16.4422C5.08447 16.9025 5.45757 17.2756 5.91781 17.2756Z" fill="#AD2950")
+                                        path(d="M1.5577 12.9157C2.01794 12.9157 2.39103 12.5426 2.39103 12.0824C2.39103 11.6221 2.01794 11.249 1.5577 11.249C1.09746 11.249 0.724365 11.6221 0.724365 12.0824C0.724365 12.5426 1.09746 12.9157 1.5577 12.9157Z" fill="#AD2950")
+                                        path(d="M1.5577 6.75114C2.01794 6.75114 2.39103 6.37804 2.39103 5.91781C2.39103 5.45757 2.01794 5.08447 1.5577 5.08447C1.09746 5.08447 0.724365 5.45757 0.724365 5.91781C0.724365 6.37804 1.09746 6.75114 1.5577 6.75114Z" fill="#AD2950")
+                                        path(d="M5.91781 2.39128C6.37804 2.39128 6.75114 2.01818 6.75114 1.55794C6.75114 1.09771 6.37804 0.724609 5.91781 0.724609C5.45757 0.724609 5.08447 1.09771 5.08447 1.55794C5.08447 2.01818 5.45757 2.39128 5.91781 2.39128Z" fill="#AD2950")
+                                select(name="").header__working-select
+                                    option(value="23 июля") 23 июля с 11:00 до 21:00
+                                    option(value="24 июля") 24 июля с 11:00 до 21:00
+                        ul.menu
+                            li.menu__item
+                                a(href="http://").menu__item-link.link Адреса магазинов
+                            li.menu__item
+                                a(href="http://").menu__item-link.link Отзывы
+                            li.menu__item
+                                a(href="http://").menu__item-link.link Информация
+                                .menu__item-chevron 
+                                    svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M1 1L4.5286 4.79026C4.78894 5.06991 5.21106 5.06991 5.4714 4.79026L9 1" stroke="#1C1C1D" stroke-linecap="round")
             .header__bottom
                 .container
-                    .logo 
-                        img(src="img/logo.png", alt="BUCEDO")
-                    button.catalog
-                        .catalog__icon
-                            svg(width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                path(d="M5.44444 1H14M5.44444 6.33333H17M5.44444 11.6667H11.5M1 1H1.00889M1 6.33333H1.00889M1 11.6667H1.00889" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                        p.catalog__text Каталог
-                    .search 
-                        input#search.search__input(type="search", name="search" placeholder="Найти товары")
-                    .tel
-                        p.tel__uptext На связи с 8:00 до 20:00
-                        .tel__content 
-                            p.tel__number 8 495 215-20-97
-                            .tel__icon.tel__whatsapp
-                                svg(width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M1 1.25L4.96967 5.51404C5.26256 5.82865 5.73744 5.82865 6.03033 5.51404L10 1.25" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
-                            .tel__icon.tel__telegram 
-                                svg(width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M10.1666 0.753531L8.69037 8.1962C8.69037 8.1962 8.48402 8.71227 7.91618 8.46453L4.49435 5.84553C4.95428 5.43209 8.5223 2.22427 8.67834 2.0788C8.91952 1.85367 8.76985 1.71969 8.48949 1.88995L3.21921 5.23685L1.18591 4.55234C1.18591 4.55234 0.865803 4.43877 0.834996 4.19103C0.804006 3.9433 1.1963 3.80913 1.1963 3.80913L9.48536 0.557384C9.48536 0.557384 10.1666 0.258058 10.1666 0.753531Z" fill="white")
-                            .tel__chevron 
-                                svg(width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M1 1.25L4.96967 5.51404C5.26256 5.82865 5.73744 5.82865 6.03033 5.51404L10 1.25" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
-                    .icons
-                        button.icons__heart 
-                            svg(width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                path(d="M11.294 19.7682C11.74 20.0002 12.26 20.0002 12.706 19.7682C15.062 18.5402 22.5 14.0862 22.5 6.84615C22.512 3.66615 19.944 1.07615 16.76 1.05615C14.844 1.08015 13.064 2.04615 12 3.63615C10.934 2.04615 9.15404 1.08015 7.24004 1.05615C4.05604 1.07615 1.48804 3.66415 1.50004 6.84615C1.50004 14.0862 8.94004 18.5382 11.294 19.7682Z" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                        button.icons__corf 
-                            svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                path(d="M1.33325 1.5332H3.64048C4.61408 1.5332 5.45364 2.21739 5.65014 3.17095L7.84721 13.8328C8.10921 15.1043 9.22862 16.0165 10.5267 16.0165H18.7703C20.034 16.0165 21.1332 15.1511 21.4298 13.9227L22.6083 9.04085C22.92 7.7499 21.9418 6.50745 20.6138 6.50745H6.3075M10.2869 21.4302C10.2869 21.9796 9.84149 22.425 9.29205 22.425C8.74261 22.425 8.2972 21.9796 8.2972 21.4302C8.2972 20.8808 8.74261 20.4353 9.29205 20.4353C9.84149 20.4353 10.2869 20.8808 10.2869 21.4302ZM21.2302 21.4302C21.2302 21.9796 20.7848 22.425 20.2354 22.425C19.686 22.425 19.2405 21.9796 19.2405 21.4302C19.2405 20.8808 19.686 20.4353 20.2354 20.4353C20.7848 20.4353 21.2302 20.8808 21.2302 21.4302Z" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                        .icons__login
-                            button.icons__login-acount 
-                                svg(width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M7.49989 8.05545C9.18743 8.05545 10.5554 6.68743 10.5554 4.99989C10.5554 3.31235 9.18743 1.94434 7.49989 1.94434C5.81235 1.94434 4.44434 3.31235 4.44434 4.99989C4.44434 6.68743 5.81235 8.05545 7.49989 8.05545Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                                    path(d="M12.791 17.2397C13.7466 16.9386 14.2488 15.883 13.8432 14.9675C12.7655 12.533 10.3332 10.833 7.4999 10.833C4.66657 10.833 2.23435 12.533 1.15657 14.9675C0.751014 15.8841 1.25324 16.9386 2.20879 17.2397C3.5699 17.6686 5.37101 18.0552 7.4999 18.0552C9.62879 18.0552 11.4299 17.6686 12.791 17.2397Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                            button.icons__login-burger 
+                    .header__bottom-wrapper
+                        .logo 
+                            img(src="img/logo.png", alt="BUCEDO")
+                        button.catalog
+                            .catalog__icon
+                                svg(width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M5.44444 1H14M5.44444 6.33333H17M5.44444 11.6667H11.5M1 1H1.00889M1 6.33333H1.00889M1 11.6667H1.00889" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                            p.catalog__text Каталог
+                        .search 
+                            .search__icon
+                            input.search__input(type="search", name="search" placeholder="Найти товары")
+                        .tel
+                            p.tel__uptext На связи с 8:00 до 20:00
+                            .tel__content 
+                                p.tel__number 8 495 215-20-97
+                                .tel__icon.tel__icon-whatsapp
+                                    svg(width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M9.05901 1.97267C8.21991 1.13115 7.10506 0.614853 5.91574 0.516995C4.72642 0.419137 3.54101 0.746165 2.57353 1.43904C1.60604 2.13191 0.92024 3.14497 0.639939 4.2953C0.359637 5.44564 0.503308 6.65745 1.04501 7.71196L0.514284 10.2671C0.508602 10.2927 0.508381 10.3191 0.513638 10.3447C0.518895 10.3703 0.529511 10.3945 0.544801 10.4158C0.566698 10.448 0.597998 10.4729 0.634514 10.487C0.671029 10.5011 0.711019 10.5038 0.749132 10.4948L3.27009 9.90136C4.33055 10.4245 5.54379 10.5574 6.69385 10.2766C7.84392 9.99579 8.85618 9.31939 9.55047 8.36782C10.2448 7.41624 10.576 6.25123 10.4853 5.08015C10.3946 3.90907 9.88774 2.80791 9.05503 1.97267H9.05901ZM8.27088 8.20536C7.69056 8.77982 6.94327 9.15947 6.13408 9.29092C5.3249 9.42238 4.49451 9.29904 3.75969 8.93823L3.40675 8.76455L1.85835 9.1277V9.10796L2.18475 7.55933L2.01226 7.2225C1.63654 6.49182 1.50387 5.6619 1.63331 4.85182C1.76275 4.04174 2.14763 3.29314 2.73273 2.71344C3.4674 1.98566 4.46336 1.57686 5.5018 1.57686C6.54024 1.57686 7.53621 1.98566 8.27088 2.71344L8.28812 2.73712C9.01324 3.46721 9.41803 4.45189 9.41431 5.47662C9.41058 6.50135 8.99863 7.48311 8.26822 8.20799L8.27088 8.20536Z" fill="white")
+                                        path(d="M8.13431 7.07972C7.94457 7.37576 7.64338 7.7376 7.26789 7.82838C6.60448 7.98627 5.59477 7.82838 4.33031 6.66921L4.31439 6.65474C3.21446 5.63635 2.92256 4.78769 2.98757 4.11534C3.02605 3.73246 3.34714 3.38774 3.61781 3.16143C3.66085 3.12545 3.71177 3.09994 3.76652 3.08696C3.82127 3.07398 3.87832 3.07388 3.93311 3.08666C3.9879 3.09945 4.03892 3.12477 4.08209 3.16059C4.12526 3.19642 4.15937 3.24177 4.18171 3.293L4.58904 4.20613C4.61564 4.26491 4.62561 4.32975 4.6179 4.39372C4.61018 4.45769 4.58508 4.51837 4.54526 4.56928L4.33828 4.83243C4.29525 4.88705 4.26962 4.95315 4.26466 5.02229C4.2597 5.09142 4.27563 5.16046 4.31041 5.22057C4.50702 5.50794 4.74227 5.76734 5.00965 5.9916C5.29732 6.26614 5.62356 6.49792 5.97822 6.67973C6.04296 6.70561 6.11399 6.71179 6.18227 6.69749C6.25056 6.6832 6.31301 6.64908 6.36168 6.59947L6.59918 6.36001C6.64437 6.31182 6.70213 6.27697 6.76606 6.25932C6.82999 6.24167 6.8976 6.24191 6.9614 6.26001L7.92998 6.535C7.98486 6.55049 8.0353 6.57857 8.07721 6.61698C8.11912 6.65538 8.15132 6.70303 8.17121 6.75606C8.19111 6.8091 8.19813 6.86603 8.19172 6.92226C8.18531 6.97849 8.16564 7.03243 8.13431 7.07972Z" fill="white")
+                                .tel__icon.tel__icon-telegram 
+                                    svg(width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M10.1666 0.753531L8.69037 8.1962C8.69037 8.1962 8.48402 8.71227 7.91618 8.46453L4.49435 5.84553C4.95428 5.43209 8.5223 2.22427 8.67834 2.0788C8.91952 1.85367 8.76985 1.71969 8.48949 1.88995L3.21921 5.23685L1.18591 4.55234C1.18591 4.55234 0.865803 4.43877 0.834996 4.19103C0.804006 3.9433 1.1963 3.80913 1.1963 3.80913L9.48536 0.557384C9.48536 0.557384 10.1666 0.258058 10.1666 0.753531Z" fill="white")
+                                .tel__chevron 
+                                    svg(width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M1 1.25L4.96967 5.51404C5.26256 5.82865 5.73744 5.82865 6.03033 5.51404L10 1.25" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
+                        .icons
+                            button.icons__heart.btn-icon
+                                svg(width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M11.294 19.7682C11.74 20.0002 12.26 20.0002 12.706 19.7682C15.062 18.5402 22.5 14.0862 22.5 6.84615C22.512 3.66615 19.944 1.07615 16.76 1.05615C14.844 1.08015 13.064 2.04615 12 3.63615C10.934 2.04615 9.15404 1.08015 7.24004 1.05615C4.05604 1.07615 1.48804 3.66415 1.50004 6.84615C1.50004 14.0862 8.94004 18.5382 11.294 19.7682Z" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                            button.icons__corf.btn-icon
+                                svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M1.33325 1.5332H3.64048C4.61408 1.5332 5.45364 2.21739 5.65014 3.17095L7.84721 13.8328C8.10921 15.1043 9.22862 16.0165 10.5267 16.0165H18.7703C20.034 16.0165 21.1332 15.1511 21.4298 13.9227L22.6083 9.04085C22.92 7.7499 21.9418 6.50745 20.6138 6.50745H6.3075M10.2869 21.4302C10.2869 21.9796 9.84149 22.425 9.29205 22.425C8.74261 22.425 8.2972 21.9796 8.2972 21.4302C8.2972 20.8808 8.74261 20.4353 9.29205 20.4353C9.84149 20.4353 10.2869 20.8808 10.2869 21.4302ZM21.2302 21.4302C21.2302 21.9796 20.7848 22.425 20.2354 22.425C19.686 22.425 19.2405 21.9796 19.2405 21.4302C19.2405 20.8808 19.686 20.4353 20.2354 20.4353C20.7848 20.4353 21.2302 20.8808 21.2302 21.4302Z" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                            button.icons__login.btn-icon
+                                .icons__login-acount 
+                                    svg(width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M7.49989 8.05545C9.18743 8.05545 10.5554 6.68743 10.5554 4.99989C10.5554 3.31235 9.18743 1.94434 7.49989 1.94434C5.81235 1.94434 4.44434 3.31235 4.44434 4.99989C4.44434 6.68743 5.81235 8.05545 7.49989 8.05545Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                                        path(d="M12.791 17.2397C13.7466 16.9386 14.2488 15.883 13.8432 14.9675C12.7655 12.533 10.3332 10.833 7.4999 10.833C4.66657 10.833 2.23435 12.533 1.15657 14.9675C0.751014 15.8841 1.25324 16.9386 2.20879 17.2397C3.5699 17.6686 5.37101 18.0552 7.4999 18.0552C9.62879 18.0552 11.4299 17.6686 12.791 17.2397Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                                .icons__burger
+                                    .icons__burger-line
+                                    .icons__burger-line
+                                    .icons__burger-line
         main 
             section.stack
                 .container
                     .stack__wrapper 
                         h1.stack__title.title Доставка цветов в Санкт-Петербурге
                         .stack__content
-                            .stack__item.big-item
+                            .stack__item.stack__item-big
                                 .stack__info 
                                     h3.stack__info-title Цветы
                                     ul.stack__info-content
                                         ul.stack__list 
-                                            li.stack__list-item Букеты
-                                            li.stack__list-item Цветы в коробке
-                                            li.stack__list-item Цветы в ящике
+                                            li.stack__item-text Букеты
+                                            li.stack__item-text Цветы в коробке
+                                            li.stack__item-text Цветы в ящике
                                         ul.stack__list 
-                                            li.stack__list-item Цветы в корзине
-                                            li.stack__list-item Цветы в пакете
-                                            li.stack__list-item Цветы в стаканчике
+                                            li.stack__item-text Цветы в корзине
+                                            li.stack__item-text Цветы в пакете
+                                            li.stack__item-text Цветы в стаканчике
                             .stack__item
-                                .stack__item-img 
+                                picture.stack__item-img 
+                                    source(srcset="img/stack1.webp")
+                                    img(src="img/stack1.png" alt="stack1")
                                 .stack__item-text Шары
                             .stack__item 
-                                .stack__item-img 
+                                .picture.stack__item-img 
+                                    source(srcset="img/stack2.webp")
+                                    img(src="img/stack2.png" alt="stack2")
                                 .stack__item-text Съедобные букеты
                             .stack__item 
-                                .stack__item-img 
+                                picture.stack__item-img 
+                                    source(srcset="img/stack3.webp")
+                                    img(src="img/stack3.png" alt="stack3")
                                 .stack__item-text Десерты и выпечка
                             .stack__item 
-                                .stack__item-img 
+                                picture.stack__item-img 
+                                    source(srcset="img/stack4.webp")
+                                    img(src="img/stack4.png" alt="stack4")
                                 .stack__item-text Конфеты и шоколад
                             .stack__item 
-                                .stack__item-img 
+                                picture.stack__item-img 
+                                    source(srcset="img/stack5.webp")
+                                    img(src="img/stack5.png" alt="stack5")
                                 .stack__item-text Открытки
                             .stack__item 
-                                .stack__item-img 
+                                picture.stack__item-img 
+                                    source(srcset="img/stack6.webp")
+                                    img(src="img/stack6.png" alt="stack6")
                                 .stack__item-text Подарки
                             .stack__item 
-                                .stack__item-img 
+                                picture.stack__item-img 
+                                    source(srcset="img/stack7.webp")
+                                    img(src="img/stack7.png" alt="stack7")
                                 .stack__item-text Горшечные растения
                             .stack__item 
-                                .stack__item-img 
+                                picture.stack__item-img 
+                                    source(srcset="img/stack8.webp")
+                                    img(src="img/stack8.png" alt="stack8")
                                 .stack__item-text Вазы
-            section.bouquets 
+            section.favorites 
                 .container
-                    .bouquets__wrapper 
-                        .bouquets__header
-                            .bouquets__info
-                                h2.bouquets__info-title.title Летние букеты
-                                p.bouquets__info-text.text Удобно ставить на стол. Можно поливать — внутри губка. Идеально для доставки на дом или работу.
-                            .bouquets__arrows
-                                .bouquets__arrow.bouquets__arrows-prev 
+                    .favorites__wrapper 
+                        .favorites__header
+                            .favorites__info
+                                h2.favorites__info-title.title Избранное
+                                p.favorites__info-text.text Удобно ставить на стол. Можно поливать — внутри губка. Идеально для доставки на дом или работу.
+                            .favorites__arrows
+                                .favorites__arrow.favorites__arrows-prev.btn-icon
                                     svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M6.5 1.5L1.12716 6.87164C1.04239 6.95495 1 7.06414 1 7.17333M6.5 12.5L1.12716 7.47503C1.04239 7.39172 1 7.28253 1 7.17333M1 7.17333H17" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
-                                .bouquets__arrow.bouquets__arrows-next
+                                .favorites__arrow.favorites__arrows-next.btn-icon
                                     svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M6.5 1.5L1.12716 6.87164C1.04239 6.95495 1 7.06414 1 7.17333M6.5 12.5L1.12716 7.47503C1.04239 7.39172 1 7.28253 1 7.17333M1 7.17333H17" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
-                        .bouquets__content
+                                        path(d="M11.5 1.5L16.8728 6.87164C16.9576 6.95495 17 7.06414 17 7.17333M11.5 12.5L16.8728 7.47503C16.9576 7.39172 17 7.28253 17 7.17333M17 7.17333H1" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
+                        .favorites__content
                             .flower
-                                .flower__img 
-                                h4.flower__title Безграничность нежности
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
+                                picture.flower__img
+                                    source(srcset="img/favorites1.webp")
+                                    img(src="img/favorites1.png" alt="facorites1")
+                                .flower__content
+                                    h4.flower__title Безграничность нежности
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 3 626 ₽
+                                        button.flower__btn Купить
                             .flower
-                                .flower__img 
-                                h4.flower__title Улыбка Фортуны
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
+                                picture.flower__img
+                                    source(srcset="img/favorites2.webp")
+                                    img(src="img/favorites2.png" alt="facorites2")
+                                .flower__content
+                                    h4.flower__title Улыбка Фортуны
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 4 597 ₽
+                                        button.flower__btn Купить
                             .flower
-                                .flower__img 
-                                h4.flower__title Валентинка
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
+                                picture.flower__img
+                                    source(srcset="img/favorites3.webp")
+                                    img(src="img/favorites3.png" alt="facorites3")
+                                .flower__content
+                                    h4.flower__title Валентинка
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 3 626 ₽
+                                        button.flower__btn Купить
                             .flower
-                                .flower__img 
-                                h4.flower__title Чувствуй
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
+                                picture.flower__img
+                                    source(srcset="img/favorites4.webp")
+                                    img(src="img/favorites4.png" alt="facorites4")
+                                .flower__content
+                                    h4.flower__title Чувствуй
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 3 599 ₽
+                                        button.flower__btn Купить
                         button.allbouquets 
-                            p.allbouquets__text Все букеты
-                            .allbouquets__icon
-                                svg(width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M0.5 13L6.18539 7.70711C6.60487 7.31658 6.60487 6.68342 6.18539 6.29289L0.500002 1" stroke="#AD2950" stroke-linecap="round")
-            section.row 
+                            .allbouquets__wrapper.btn-text
+                                p.allbouquets__text Все букеты
+                                .allbouquets__icon
+                                    svg(width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M0.5 13L6.18539 7.70711C6.60487 7.31658 6.60487 6.68342 6.18539 6.29289L0.500002 1" stroke="#AD2950" stroke-linecap="round")
+            section.flowers
                 .container
-                    .row__wrapper
-            section.bouquets
-                .container
-                    .bouquets__wrapper
-                        .bouquets__header
-                            .bouquets__info
-                                h2.bouquets__info-title.title Рядом с вами
-                                p.bouquets__info-text.text Удобно ставить на стол. Можно поливать — внутри губка. Идеально для доставки на дом или работу.
-                            .bouquets__arrows
-                                .bouquets__arrow.bouquets__arrows-prev 
-                                    svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M6.5 1.5L1.12716 6.87164C1.04239 6.95495 1 7.06414 1 7.17333M6.5 12.5L1.12716 7.47503C1.04239 7.39172 1 7.28253 1 7.17333M1 7.17333H17" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
-                                .bouquets__arrow.bouquets__arrows-next
-                                    svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M6.5 1.5L1.12716 6.87164C1.04239 6.95495 1 7.06414 1 7.17333M6.5 12.5L1.12716 7.47503C1.04239 7.39172 1 7.28253 1 7.17333M1 7.17333H17" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
-                        .bouquets__content
+                    .flowers__wrapper
+                        .flowers__header 
+                            .flowers__header-title.title Цветы
+                            .flowers__header-text.text Удобно ставить на стол. Можно поливать — внутри губка.Идеально для доставки на дом или работу.
+                            .flowers__filters
+                        .flowers__content 
                             .flower
-                                .flower__img 
-                                h4.flower__title Милая барбара
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
+                                picture.flower__img
+                                    source(srcset="img/flowers1.webp")
+                                    img(src="img/flowers1.png" alt="flowers1")
+                                .flower__content
+                                    h4.flower__title Коробка с гортензиям
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 3 610 ₽
+                                        button.flower__btn Купить
                             .flower
-                                .flower__img 
-                                h4.flower__title Поцелуй солнца
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
+                                picture.flower__img
+                                    source(srcset="img/flowers2.webp")
+                                    img(src="img/flowers2.png" alt="flowers2")
+                                .flower__content
+                                    h4.flower__title Нежные орхидеи
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 10 250 ₽
+                                        button.flower__btn Купить
                             .flower
-                                .flower__img 
-                                h4.flower__title Коробка с пирожным
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
+                                picture.flower__img
+                                    source(srcset="img/flowers3.webp")
+                                    img(src="img/flowers3.png" alt="flowers3")
+                                .flower__content
+                                    h4.flower__title Нежные орхидеи
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 10 250 ₽
+                                        button.flower__btn Купить
                             .flower
-                                .flower__img 
-                                h4.flower__title Коробка с Macaron
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
-                        button.allbouquets 
-                            p.allbouquets__text Все букеты
-                            .allbouquets__icon
-                                svg(width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M0.5 13L6.18539 7.70711C6.60487 7.31658 6.60487 6.68342 6.18539 6.29289L0.500002 1" stroke="#AD2950" stroke-linecap="round") Все букеты
+                                picture.flower__img
+                                    source(srcset="img/flowers4.webp")
+                                    img(src="img/flowers4.png" alt="flowers4")
+                                .flower__content
+                                    h4.flower__title Поцелуй солнца
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 2 050 ₽
+                                        button.flower__btn Купить
+                            .flower
+                                picture.flower__img
+                                    source(srcset="img/flowers5.webp")
+                                    img(src="img/flowers5.png" alt="flowers5")
+                                .flower__content
+                                    h4.flower__title Счастливая случайность
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 4 550 ₽
+                                        button.flower__btn Купить
+                            .flower
+                                picture.flower__img
+                                    source(srcset="img/flowers6.webp")
+                                    img(src="img/flowers6.png" alt="flowers6")
+                                .flower__content
+                                    h4.flower__title Формула таинственности
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 4 380 ₽
+                                        button.flower__btn Купить
+                            .flower
+                                picture.flower__img
+                                    source(srcset="img/flowers7.webp")
+                                    img(src="img/flowers7.png" alt="flowers7")
+                                .flower__content
+                                    h4.flower__title Гипноз
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 2 150 ₽
+                                        button.flower__btn Купить
+                            .flower
+                                picture.flower__img
+                                    source(srcset="img/flowers8.webp")
+                                    img(src="img/flowers8.png" alt="flowers8")
+                                .flower__content
+                                    h4.flower__title Сиреневый плайм
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 1 910 ₽
+                                        button.flower__btn Купить
+                            .flower
+                                picture.flower__img
+                                    source(srcset="img/flowers9.webp")
+                                    img(src="img/flowers9.png" alt="flowers9")
+                                .flower__content
+                                    h4.flower__title Коробка с Macaron
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 2 610 ₽
+                                        button.flower__btn Купить
+                            .flower
+                                picture.flower__img
+                                    source(srcset="img/flowers10.webp")
+                                    img(src="img/flowers10.png" alt="flowers10")
+                                .flower__content
+                                    h4.flower__title Коробка с гортензиям
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 2 910 ₽
+                                        button.flower__btn Купить
+                            .flower
+                                picture.flower__img
+                                    source(srcset="img/flowers11.webp")
+                                    img(src="img/flowers11.png" alt="flowers11")
+                                .flower__content
+                                    h4.flower__title Дуэт
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 4 110 ₽
+                                        button.flower__btn Купить
+                            .flower
+                                picture.flower__img
+                                    source(srcset="img/flowers12.webp")
+                                    img(src="img/flowers12.png" alt="flowers12")
+                                .flower__content
+                                    h4.flower__title Оливия
+                                    .flower__info 
+                                        .flower__info-icon 
+                                            svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
+                                        .flower__info-price.flower__text 350 ₽,
+                                        .flower__info-delivery.flower__text через 2 часа
+                                    .flower__bottom
+                                        .flower__price 2 610 ₽
+                                        button.flower__btn Купить
+                        .flowers__nav
+                            .flowers__pages 
+                                .flowers__pages-prev.btn-icon 
+                                    svg(width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M8.25 16.5L1.14327 9.88388C0.618912 9.39573 0.618911 8.60427 1.14327 8.11612L8.25 1.5" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
+                                .flowers__pages-page.btn-icon 1
+                                .flowers__pages-page.btn-icon 2
+                                .flowers__pages-page.btn-icon 3
+                                .flowers__pages-next.btn-icon
+                                    svg(width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M0.75 16.5L7.85673 9.88388C8.38109 9.39573 8.38109 8.60427 7.85673 8.11612L0.750002 1.5" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
+                            .flowers__btn.btn-text Показать еще
             section.advantages
                 .container
                     .advantages__wrapper
@@ -261,110 +433,85 @@ html(lang="ru")
                             h2.advantages__title.title Преимущества Букедо
                         .advantages__content
                             .advantages__item 
+                                picture.advantages__item-img
+                                    source(srcset="img/advantages1.webp")
+                                    img(src="img/advantages1.png" alt="advantages1")
+                                h5.advantages__item-title Фото букета перед доставкой
+                                p.advantages__item-text Миссия компании Букедо — предоставлять покупателям лучшие цены и качество сервиса цветочных магазинов.
                             .advantages__item 
+                                picture.advantages__item-img
+                                    source(srcset="img/advantages2.webp")
+                                    img(src="img/advantages2.png" alt="advantages2")
+                                h5.advantages__item-title Фото букета перед доставкой
+                                p.advantages__item-text Миссия компании Букедо — предоставлять покупателям лучшие цены и качество сервиса цветочных магазинов.
                             .advantages__item 
-            section.flowers
-                .container
-                    .flowers__wrapper
-                        .flowers__header 
-                            .flowers__header-title Цветы
-                            .flowers__header-text Удобно ставить на стол. Можно поливать — внутри губка.Идеально для доставки на дом или работу.
-                            .flowers__filters
-                        .flowers__content 
-                            .flower 
-                            .flower 
-                            .flower 
-                            .flower 
-                            .flower 
-                            .flower 
-                            .flower 
-                            .flower 
-                            .flower 
-                            .flower 
-                            .flower 
-                            .flower
-                        .flowers__nav
+                                picture.advantages__item-img
+                                    source(srcset="img/advantages3.webp")
+                                    img(src="img/advantages3.png" alt="advantages3")
+                                h5.advantages__item-title Фото букета перед доставкой
+                                p.advantages__item-text Миссия компании Букедо — предоставлять покупателям лучшие цены и качество сервиса цветочных магазинов.
             section.rating
                 .container
                     .rating__wrapper
-            section.bouquets
+                        .rating__header 
+                            .rating__info
+                                h2.rating__info-title.title Рейтинг
+                                    span.rating__info-star
+                                        svg(width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                            path(d="M15.0848 0.668833C15.4592 -0.0896438 16.5408 -0.0896432 16.9152 0.668833L20.8314 8.60258C21.1284 9.20442 21.7024 9.62177 22.3665 9.71883L31.1259 10.9992C31.9627 11.1215 32.2962 12.1501 31.6904 12.7401L25.3546 18.9112C24.8731 19.3802 24.6534 20.0561 24.767 20.7185L26.262 29.4354C26.405 30.2692 25.5298 30.905 24.7811 30.5113L16.9501 26.393C16.3553 26.0802 15.6447 26.0802 15.0499 26.393L7.21893 30.5113C6.47019 30.905 5.59497 30.2692 5.73798 29.4354L7.23303 20.7185C7.34665 20.0561 7.12689 19.3802 6.64542 18.9112L0.309604 12.7401C-0.296217 12.1501 0.0372987 11.1215 0.874103 10.9992L9.6335 9.71883C10.2976 9.62177 10.8716 9.20442 11.1686 8.60258L15.0848 0.668833Z" fill="#AD2950")
+                                    span.rating__info-rating 5.0
+                                .rating__map 
+                                    p.rating__map-map на Яндекс картах
+                                    p.rating__map-grade 2 775+ 
+                                        span.rating__map-span оценок
+                                    p.rating__map-review 1 500+ 
+                                        span.rating__map-span отзывов
+                            .rating__arrows
+                                .rating__arrow.rating__arrows-prev.btn-icon
+                                    svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M6.5 1.5L1.12716 6.87164C1.04239 6.95495 1 7.06414 1 7.17333M6.5 12.5L1.12716 7.47503C1.04239 7.39172 1 7.28253 1 7.17333M1 7.17333H17" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
+                                .rating__arrow.rating__arrows-next.btn-icon
+                                    svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M11.5 1.5L16.8728 6.87164C16.9576 6.95495 17 7.06414 17 7.17333M11.5 12.5L16.8728 7.47503C16.9576 7.39172 17 7.28253 17 7.17333M17 7.17333H1" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
+            section.row 
                 .container
-                    .bouquets__wrapper
-                        .bouquets__header
-                            .bouquets__info
-                                h2.bouquets__info-title.title Ранункулюсы
-                            .bouquets__arrows
-                                .bouquets__arrow.bouquets__arrows-prev 
-                                    svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M6.5 1.5L1.12716 6.87164C1.04239 6.95495 1 7.06414 1 7.17333M6.5 12.5L1.12716 7.47503C1.04239 7.39172 1 7.28253 1 7.17333M1 7.17333H17" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
-                                .bouquets__arrow.bouquets__arrows-next
-                                    svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M6.5 1.5L1.12716 6.87164C1.04239 6.95495 1 7.06414 1 7.17333M6.5 12.5L1.12716 7.47503C1.04239 7.39172 1 7.28253 1 7.17333M1 7.17333H17" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
-                        .bouquets__content
-                            .flower
-                                .flower__img 
-                                h4.flower__title Коробка с гортензиям
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
-                            .flower
-                                .flower__img 
-                                h4.flower__title Поцелуй солнца
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
-                            .flower
-                                .flower__img 
-                                h4.flower__title Коробка с пирожным
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
-                            .flower
-                                .flower__img 
-                                h4.flower__title Коробка с Macaron
-                                .flower__info 
-                                    .flower__info-icon 
-                                        svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M3.25 1H8.3125C10.7912 1 13.1253 2.21025 14.6125 4.26667L15.4141 5.37512C15.5514 5.56496 15.7413 5.70687 15.9584 5.78191L17.4615 6.30151C18.3803 6.61911 19 7.51077 19 8.5151V10.3333C19 11.622 17.9926 12.6667 16.75 12.6667M16.75 12.6667C16.75 13.9553 15.7426 15 14.5 15C13.2574 15 12.25 13.9553 12.25 12.6667M16.75 12.6667C16.75 11.378 15.7426 10.3333 14.5 10.3333C13.2574 10.3333 12.25 11.378 12.25 12.6667M7.75 12.6667C7.75 13.9553 6.74264 15 5.5 15C4.25736 15 3.25 13.9553 3.25 12.6667M7.75 12.6667C7.75 11.378 6.74264 10.3333 5.5 10.3333C4.25736 10.3333 3.25 11.378 3.25 12.6667M7.75 12.6667H12.25M3.25 12.6667H1M1 8L4.375 8M2.125 4.5L6.625 4.5M10 5.66667L15.625 5.66667" stroke="#93949B" stroke-width="1.3" stroke-linecap="round")
-                                    .flower__info-price.flover__text 350 ₽,
-                                    .flower__info-delivery.flover__text через 2 часа
-                                .flower__price 3 626 ₽
-                                button.flower__btn Купить
-                        button.allbouquets 
-                            p.allbouquets__text Все букеты
-                            .allbouquets__icon
-                                svg(width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M0.5 13L6.18539 7.70711C6.60487 7.31658 6.60487 6.68342 6.18539 6.29289L0.500002 1" stroke="#AD2950" stroke-linecap="round") Все букеты
+                    .row__wrapper
             section.advice
                 .container
                     .advice__wrapper
                         .advice__header 
                             .advice__info
-                                h2.advice__info-title.title Ранункулюсы
-                            .advice__arrows.bouquets__arrows
-                                .advice__arrow.bouquets__arrow.bouquets__arrows-prev 
-                                    
+                                h2.advice__info-title.title Полезные советы
+                            .advice__arrows
+                                .advice__arrow.advice__arrows-prev.btn-icon
                                     svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M6.5 1.5L1.12716 6.87164C1.04239 6.95495 1 7.06414 1 7.17333M6.5 12.5L1.12716 7.47503C1.04239 7.39172 1 7.28253 1 7.17333M1 7.17333H17" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
-                                .advice__arrow.bouquets__arrow.bouquets__arrows-next
+                                .advice__arrow.advice__arrows-next.btn-icon
                                     svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M6.5 1.5L1.12716 6.87164C1.04239 6.95495 1 7.06414 1 7.17333M6.5 12.5L1.12716 7.47503C1.04239 7.39172 1 7.28253 1 7.17333M1 7.17333H17" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
+                                        path(d="M11.5 1.5L16.8728 6.87164C16.9576 6.95495 17 7.06414 17 7.17333M11.5 12.5L16.8728 7.47503C16.9576 7.39172 17 7.28253 17 7.17333M17 7.17333H1" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
                         .advice__content
+                            .advice__item.advice__item-1
+                                .advice__item-title Где купить необычные букеты цветов?
+                                .advice__item-text Как выбрать стильный букет среди разнообразия цветочных магазинов
+                                picture.advice__item-img
+                                    source(srcset="img/advice1.webp")
+                                    img(src="img/advice1.png" alt="advice1")
+                            .advice__item.advice__item-2
+                                .advice__item-title Где купить необычные букеты цветов?
+                                .advice__item-text Как выбрать стильный букет среди разнообразия цветочных магазинов
+                                picture.advice__item-img
+                                    source(srcset="img/advice2.webp")
+                                    img(src="img/advice2.png" alt="advice2")
+                            .advice__item.advice__item-3
+                                .advice__item-title Где купить необычные букеты цветов?
+                                .advice__item-text Как выбрать стильный букет среди разнообразия цветочных магазинов
+                                picture.advice__item-img
+                                    img(src="img/advice5.png" alt="advice3")
+                            .advice__item.advice__item-4
+                                .advice__item-title 1000 поводов подарить букет
+                                .advice__item-text Как выбрать стильный букет среди разнообразия цветочных магазинов
+                                picture.advice__item-img
+                                    img(src="img/advice4.png" alt="advice4")
         footer
             .footer__top
                 .container
