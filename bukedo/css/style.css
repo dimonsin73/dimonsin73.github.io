@@ -10,10 +10,11 @@
   --border: #DFE2E8;
   --rise: #FCE7F3;
   --border-icon: #E5E7EB;
+  --border-footer: #CFCFCF;
 }
 
 .container {
-  max-width: 1330px;
+  width: 1330px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -405,8 +406,14 @@
 .flowers {
   margin-bottom: 90px;
 }
+.flowers__header {
+  margin-bottom: 32px;
+}
 .flowers__header-title {
   margin-bottom: 16px;
+}
+.flowers__header-text {
+  margin-bottom: 24px;
 }
 .flowers__content {
   display: grid;
@@ -439,6 +446,36 @@
 .flowers__pages-next {
   margin-left: 24px;
   border-color: #fff;
+}
+.flowers__filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.flowers__filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 500 16px/20.8px "PT Root UI", "sans-serif";
+  color: var(--black);
+  flex: 1 0 auto;
+  gap: 24px;
+  padding: 14px 16px;
+  border: 1px solid var(--bg-stack);
+  border-radius: 12px;
+  background-color: var(--bg-stack);
+  text-wrap: nowrap;
+  cursor: pointer;
+}
+.flowers__filter-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flowers__filter-reset {
+  background-color: #fff;
 }
 
 .advantages {
@@ -537,6 +574,9 @@
   padding: 90px 0;
 }
 
+.advice {
+  margin-bottom: 90px;
+}
 .advice__header {
   display: flex;
   justify-content: center;
@@ -557,6 +597,7 @@
   justify-content: center;
   align-items: center;
   gap: 32px;
+  margin-bottom: 32px;
 }
 .advice__item {
   display: flex;
@@ -616,4 +657,127 @@
   align-items: center;
   margin-left: -32px;
   margin-right: -32px;
+}
+.advice__indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.advice__indicator-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--burgundy);
+  opacity: 0.3;
+  cursor: pointer;
+}
+.advice__indicator-active {
+  opacity: 1;
+}
+
+.footer {
+  padding: 48px 0;
+  background-color: var(--bg-stack);
+}
+.footer__top {
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border-footer);
+}
+.footer__bottom {
+  margin-top: 32px;
+}
+.footer__bottom-rights {
+  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  color: var(--grey);
+}
+.footer__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer__item-title {
+  font: 700 18px/23.4px "PT Root UI", "sans-serif";
+  color: var(--black);
+  margin-bottom: 12px;
+}
+.footer__lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.footer__list {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 195px;
+}
+.footer__list-link {
+  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.footer__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.footer__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 32px;
+}
+.footer__socials {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  row-gap: 16px;
+}
+.footer__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.footer__social-icon {
+  margin-top: 5px;
+}
+.footer__social-mess {
+  width: 30px;
+  height: 30px;
+}
+.footer__social-mess svg {
+  width: 14px;
+  height: 14px;
+}
+.footer__social-title {
+  font: 500 16px/20.8px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.footer__social-text {
+  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  color: var(--grey);
+}
+
+.seller__btn {
+  padding: 14px 35px;
 }/*# sourceMappingURL=style.css.map */

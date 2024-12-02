@@ -10,6 +10,7 @@
     --border: #DFE2E8
     --rise: #FCE7F3
     --border-icon: #E5E7EB
+    --border-footer: #CFCFCF
 
 @mixin flex
     display: flex
@@ -51,9 +52,15 @@
 @mixin text-map-span
     font: 400 16px/19.2px 'PT Root UI', 'sans-serif'
     color: var(--black)
+@mixin text-footer
+    font: 400 16px/20.8px 'PT Root UI', 'sans-serif'
+    color: var(--grey)
+@mixin subtext-footer
+    font: 400 12px/15.6px 'PT Root UI', 'sans-serif'
+    color: var(--grey)
 
 .container
-    max-width: 1330px
+    width: 1330px
     margin: 0 auto
     padding: 0 16px
 .link
@@ -308,8 +315,11 @@
     margin-bottom: 90px
     &__wrapper
     &__header
+        margin-bottom: 32px
         &-title
             margin-bottom: 16px
+        &-text
+            margin-bottom: 24px
     &__content
         display: grid
         grid-template-columns: repeat(4, 1fr)
@@ -331,6 +341,25 @@
         &-next
             margin-left: 24px
             border-color: #fff
+    &__filters
+        @include flex
+        justify-content: space-between
+        gap: 16px
+    &__filter
+        @include flex
+        @include text-content
+        flex: 1 0 auto
+        gap: 24px
+        padding: 14px 16px
+        border: 1px solid var(--bg-stack)
+        border-radius: 12px
+        background-color: var(--bg-stack)
+        text-wrap: nowrap
+        cursor: pointer
+        &-icon
+            @include flex
+        &-reset
+            background-color: #fff
 
 .advantages
     margin-bottom: 90px
@@ -395,6 +424,7 @@
     padding: 90px 0
 
 .advice
+    margin-bottom: 90px
     &__wrapper
     &__header
         @include flex
@@ -405,10 +435,10 @@
     &__arrows
         @include flex
         gap: 16px
-    &__arrow
     &__content
         @include flex
         gap: 32px
+        margin-bottom: 32px
     &__item
         @include flex
         flex-direction: column
@@ -450,5 +480,90 @@
             @include flex
             margin-left: -32px
             margin-right: -32px
+    &__indicator
+        @include flex
+        gap: 15px
+        &-circle
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            background-color: var(--burgundy)
+            opacity: 0.3
+            cursor: pointer
+        &-active
+            opacity: 1
+
+    
+
+.footer
+    padding: 48px 0
+    background-color: var(--bg-stack)
+    &__top
+        padding-bottom: 48px
+        border-bottom: 1px solid var(--border-footer)
+    &__bottom
+        margin-top: 32px
+        &-rights
+            @include text-footer
+    &__wrapper
+        @include flex
+        justify-content: space-between
+    &__item
+        @include flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: flex-start
+        &-title
+            @include title5
+            margin-bottom: 12px
+    &__lists
+        @include flex
+        gap: 24px
+    &__list
+        display: grid
+        grid-template-rows: 1fr 1fr 1fr 1fr
+        grid-template-columns: 1fr 1fr
+        align-items: flex-start
+        gap: 16px
+        min-width: 195px
+        &-link
+           @include text
+    &__cards
+        @include flex
+        gap: 10px
+    &__card
+        @include flex
+        width: 54px
+        height: 32px
+    &__socials
+        display: grid
+        grid-template-rows: 1fr 1fr 
+        grid-template-columns: 1fr 1fr
+        align-items: flex-start
+        column-gap: 24px
+        row-gap: 16px
+    &__social
+        @include flex
+        gap: 10px
+        justify-content: flex-start
+        align-items: flex-start
+        &-icon
+            margin-top: 5px
+        &-mess
+            width: 30px
+            height: 30px
+            svg
+                width: 14px
+                height: 14px
+        &-title
+            @include text-content
+        &-text
+            @include subtext-footer
             
+
+.seller
+    &__btn
+        padding: 14px 35px  
+        
+        
             
