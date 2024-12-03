@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --black: #1c1c11;
   --grey: #93949B;
@@ -97,7 +98,11 @@
   justify-content: center;
   align-items: center;
 }
-.header__working-select {
+.header__working-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   font: 500 16px/20.8px "PT Root UI", "sans-serif";
   color: var(--black);
   padding-right: 8px;
@@ -127,6 +132,12 @@
   align-items: center;
   -moz-column-gap: 8px;
        column-gap: 8px;
+}
+.menu__item-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 .menu__item-chevron {
   display: flex;
@@ -341,6 +352,21 @@
   gap: 24px;
 }
 
+.flower {
+  position: relative;
+}
+.flower__heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+}
 .flower__img img {
   border-radius: 16px;
 }
@@ -382,6 +408,42 @@
   padding: 14px 24px;
   border: 1px solid var(--rise);
   border-radius: 12px;
+  color: var(--burgundy);
+}
+.flower__btn-shop {
+  display: none;
+}
+.flower__btn-active {
+  content: "В корзине";
+  border-color: var(--green);
+  color: var(--green);
+}
+.flower__btn-active .flower__btn-by {
+  display: none;
+}
+.flower__btn-active .flower__btn-shop {
+  display: block;
+}
+.flower__sale-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.flower__sale-oldprice {
+  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  color: var(--grey);
+  text-decoration: line-through;
+}
+.flower__sale-discount {
+  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  color: var(--grey);
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--rise);
+  color: var(--burgundy);
+}
+.flower__sale-prace {
   color: var(--burgundy);
 }
 
@@ -447,6 +509,10 @@
   margin-left: 24px;
   border-color: #fff;
 }
+.flowers__pages-active {
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+}
 .flowers__filters {
   display: flex;
   justify-content: center;
@@ -476,6 +542,17 @@
 }
 .flowers__filter-reset {
   background-color: #fff;
+}
+.flowers__filter-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 500 12px/15.6px "PT Root UI", "sans-serif";
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--burgundy);
 }
 
 .advantages {
@@ -517,6 +594,7 @@
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 32px;
 }
 .rating__info-title {
   display: flex;
@@ -568,6 +646,49 @@
 .rating__arrow {
   border-color: #fff;
   background-color: #fff;
+}
+.rating__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.rating__pictures {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.rating__pictures-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  color: var(--grey);
+  margin-top: 8px;
+  color: var(--black);
+}
+.rating__review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #fff;
+}
+.rating__review-stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.rating__review-date {
+  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  color: var(--grey);
 }
 
 .row {

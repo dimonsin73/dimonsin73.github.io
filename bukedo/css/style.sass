@@ -58,6 +58,9 @@
 @mixin subtext-footer
     font: 400 12px/15.6px 'PT Root UI', 'sans-serif'
     color: var(--grey)
+@mixin text-filter
+    font: 500 12px/15.6px 'PT Root UI', 'sans-serif'
+    color: #fff    
 
 .container
     width: 1330px
@@ -106,7 +109,9 @@
         column-gap: 8px
         &-chevron
             @include flex
-        &-select
+        &-time
+            @include flex
+            gap: 8px
             @include text-content
             padding-right: 8px
             color: var(--burgundy)
@@ -123,6 +128,9 @@
     &__item
         @include flex
         column-gap: 8px
+        &-link
+            @include flex
+            gap: 8px
         &-chevron
             @include flex
 
@@ -232,7 +240,6 @@
                 image: url('../img/stack.png')
                 position: right
                 repeat: no-repeat
-        &-img
         &-text
             @include text
             margin-top: 8px
@@ -253,7 +260,6 @@
 
 .favorites
     margin-bottom: 90px
-    &__wrapper
     &__header
         @include flex
         justify-content: space-between
@@ -261,19 +267,25 @@
     &__info
         &-title
             margin-bottom: 16px 
-        &-text 
     &__arrows
         @include flex 
         gap: 16px
-        &-prev
-        &-next
-    &__arrow
     &__content
         @include flex 
         justify-content: space-between
         gap: 24px
 
 .flower
+    position: relative
+    &__heart
+        @include flex
+        position: absolute
+        top: 10px
+        right: 10px
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background-color: #fff
     &__img
         & img
             border-radius: 16px
@@ -301,6 +313,32 @@
         border: 1px solid var(--rise)
         border-radius: 12px
         color: var(--burgundy)
+        &-shop
+            display: none
+        &-active
+            content: 'В корзине'
+            border-color: var(--green)
+            color: var(--green)
+            & .flower__btn-by
+                display: none
+            & .flower__btn-shop
+                display: block
+    &__sale
+        &-top
+            @include flex
+            gap: 8px
+        &-oldprice
+            @include subtext-footer
+            text-decoration: line-through
+        &-discount
+            @include subtext-footer
+            padding: 2px 4px
+            border-radius: 8px
+            background-color: var(--rise)
+            color: var(--burgundy)
+        &-prace
+            color: var(--burgundy)
+
 .allbouquets
     @include flex
     margin: 0 auto
@@ -313,7 +351,6 @@
 
 .flowers
     margin-bottom: 90px
-    &__wrapper
     &__header
         margin-bottom: 32px
         &-title
@@ -341,6 +378,9 @@
         &-next
             margin-left: 24px
             border-color: #fff
+        &-active
+            border-color: var(--burgundy)
+            color: var(--burgundy)
     &__filters
         @include flex
         justify-content: space-between
@@ -360,14 +400,19 @@
             @include flex
         &-reset
             background-color: #fff
+        &-number
+            @include flex
+            @include text-filter
+            width: 18px
+            height: 18px
+            border-radius: 50%
+            background-color: var(--burgundy)
 
 .advantages
     margin-bottom: 90px
-    &__wrapper
     &__header
         @include flex
         margin-bottom: 10px
-    &__title
     &__content
         @include flex
         justify-content: space-between
@@ -385,10 +430,10 @@
 .rating
     padding: 90px 0
     background-color: var(--bg-stack)
-    &__wrapper
     &__header
         @include flex
         justify-content: space-between
+        margin-bottom: 32px
     &__info
         &-title
             @include flex
@@ -413,19 +458,43 @@
             @include text-map
         &-span
             @include text-map-span
-            
     &__arrows
         @include flex
         gap: 16px
     &__arrow
         border-color: #fff
         background-color: #fff
+    &__content
+        @include flex
+        justify-content: space-between
+        margin-bottom: 32px
+    &__pictures
+        @include flex
+        gap: 16px
+        margin-bottom: 16px
+        &-text
+            @include flex
+            @include subtext-footer
+            margin-top: 8px
+            color: var(--black)
+    &__review
+        @include flex
+        flex-direction: column
+        gap: 16px
+        padding: 16px
+        border-radius: 16px
+        background-color: #fff
+        &-stars
+            @include flex
+            gap: 8px
+        &-date
+            @include subtext-footer
+            
 .row
     padding: 90px 0
 
 .advice
     margin-bottom: 90px
-    &__wrapper
     &__header
         @include flex
         justify-content: space-between
