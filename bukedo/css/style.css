@@ -754,6 +754,7 @@
   color: #fff;
 }
 .row__shops {
+  background: linear-gradient(179.32deg, #F5EFEE 0.47%, #E9E1DE 99.31%);
   background-color: var(--rise);
   background-image: url("../img/row2.png");
   background-position: right;
@@ -983,7 +984,7 @@
   bottom: 0;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 424px) {
   .container {
     width: 375px;
   }

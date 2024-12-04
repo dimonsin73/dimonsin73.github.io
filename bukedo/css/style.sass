@@ -20,6 +20,9 @@
 @mixin title
     font: 500 42px/54.6px 'PT Root UI', 'sans-serif'
     color: var(--black)
+@media (max-width: 424px) 
+    @mixin title
+        font: 500 32px/41.6px 'PT Root UI', 'sans-serif'
 @mixin title3
     font: 500 32px/41.6px 'PT Root UI', 'sans-serif'
     color: var(--black)
@@ -521,7 +524,6 @@
         &-text 
             @include text
             margin-bottom: 24px
-        &-btn
     &__bouquet
         background: 
             color: var(--acpid)
@@ -531,11 +533,13 @@
         &-title, &-text
             color: #fff
     &__shops
+        background: linear-gradient(179.32deg, #F5EFEE 0.47%, #E9E1DE 99.31%)
         background:
             color: var(--rise)
             image: url('../img/row2.png')
             position: right
             repeat: no-repeat
+            
 
 .advice
     margin-bottom: 90px
@@ -686,7 +690,7 @@
     left: 0
     bottom: 0    
             
-@media (max-width: 375px) 
+@media (max-width: 424px) 
     .container
         width: 375px
     .header
