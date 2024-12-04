@@ -10,3 +10,11 @@ for (let i = 0; i < flowerBtns.length; i++) {
         };
     });
 };
+
+const flowerHears = document.querySelectorAll('.flower__heart')
+for (let i = 0; i < flowerHears.length; i++) {
+    const element = flowerHears[i];
+    element.addEventListener('click', function(){
+        element.classList.toggle('flower__heart-active');
+    });
+};

@@ -20,9 +20,6 @@
 @mixin title
     font: 500 42px/54.6px 'PT Root UI', 'sans-serif'
     color: var(--black)
-@media (max-width: 424px) 
-    @mixin title
-        font: 500 32px/41.6px 'PT Root UI', 'sans-serif'
 @mixin title3
     font: 500 32px/41.6px 'PT Root UI', 'sans-serif'
     color: var(--black)
@@ -43,6 +40,9 @@
     color: var(--grey)
 @mixin text
     font: 400 16px/20.8px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text2
+    font: 400 14px/18.2px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-flower
     font: 400 14px/18.2px 'PT Root UI', 'sans-serif'
@@ -92,13 +92,21 @@
 .text
     @include text
 
+@media (max-width: 424px)
+    .title
+        @include title3
+    .text
+        @include text2
+
  
 .header
     position: relative
     &__top
+        position: relative
         margin-top: 20px
         padding: 13px 0
         border-bottom: 1px solid var(--border)
+        z-index: 10
         &-full
             @include flex
             justify-content: space-between
@@ -125,7 +133,9 @@
             color: var(--burgundy)
             cursor: pointer
     &__bottom
+        position: relative
         padding: 24px 0
+        z-index: 10
         &-full
             @include flex
             justify-content: space-between
@@ -297,6 +307,12 @@
         height: 40px
         border-radius: 50%
         background-color: #fff
+        cursor: pointer
+        & path
+            fill: #BECCD1
+        &-active 
+            & path
+                fill: var(--burgundy)
     &__img
         & img
             border-radius: 16px
@@ -334,6 +350,8 @@
                 display: none
             & .flower__btn-shop
                 display: block
+        &-small
+            display: none
     &__sale
         &-top
             @include flex
@@ -418,6 +436,8 @@
             height: 18px
             border-radius: 50%
             background-color: var(--burgundy)
+        &-small
+            display: none
 
 .advantages
     margin-bottom: 90px
@@ -506,14 +526,17 @@
         @include flex
         gap: 24px
     &__item
-        @include flex
-        flex-direction: column
-        align-items: flex-start
-        justify-content: stretch
         flex: 1 0 50%
-        height: 100%
-        padding: 48px
         border-radius: 16px
+        overflow: hidden
+        background: linear-gradient(179.32deg, #F5EFEE 0.47%, #E9E1DE 99.31%)
+        &-wrapper 
+            @include flex
+            flex-direction: column
+            align-items: flex-start
+            justify-content: stretch
+            height: 100%
+            padding: 48px
         &-icon
             width: 46px
             height: 54px
@@ -533,9 +556,7 @@
         &-title, &-text
             color: #fff
     &__shops
-        background: linear-gradient(179.32deg, #F5EFEE 0.47%, #E9E1DE 99.31%)
         background:
-            color: var(--rise)
             image: url('../img/row2.png')
             position: right
             repeat: no-repeat
@@ -614,11 +635,16 @@
     position: relative
     padding: 48px 0
     background-color: var(--bg-stack)
+    overflow-x: hidden
     &__top
+        position: relative
         padding-bottom: 48px
         border-bottom: 1px solid var(--border-footer)
+        z-index: 10
     &__bottom
+        position: relative
         margin-top: 32px
+        z-index: 10
         &-rights
             @include text-footer
     &__wrapper
@@ -632,6 +658,8 @@
         &-title
             @include title5
             margin-bottom: 12px
+        &-svg 
+            display: none
     &__lists
         @include flex
         gap: 24px
@@ -684,12 +712,26 @@
     right: 0
     left: 0
     top: -20px     
+    z-index: 1
 .decorfooter
     position: absolute
     right: 0
     left: 0
     bottom: 0    
+    z-index: 1
             
+@media (max-width: 1750px) 
+    .decorfooter
+        left: -50px
+        right: -50px
+@media (max-width: 1650px) 
+    .decorfooter
+        left: -100px
+        right: -100px
+@media (max-width: 1550px) 
+    .decorfooter
+        left: -150px
+        right: -150px
 @media (max-width: 424px) 
     .container
         width: 375px
@@ -727,7 +769,138 @@
                 padding: 9px 16px
                 border-radius: 12px
                 background-color: #fff
+    .stack
+        margin-bottom: 24px
+        &__wrapper
+            margin-top: 24px
+        &__content
+            @include flex
+            justify-content: flex-start
+            overflow-x: scroll
+            gap: 0
+            padding-bottom: 20px
+        &__item
+            width: 120px
+            height: 130px
+            background-color: #fff
+            &-big 
+                display: none
+            &-text 
+                @include text2
+    .favorites
+        margin-bottom: 50px
+        &__arrows
+            display: none
+        &__content
+            overflow-x: scroll
+            & img
+                width: 240px
+                height: 240px
+    .flowers
+        &__filters
+        &__filter
+            gap: 8px
+            &-full 
+                display: none
+            &-small
+                display: flex
+        &__content
+            grid-template-columns: repeat(2, 1fr)
+            margin-bottom: 40px
+            & img
+                width: 160px
+                height: 160px
+        &__nav
+            flex-direction: column-reverse
+            gap: 24px 
+    .flower
+        flex: 0 0 auto
+        &__title
+            width: 160px
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: clip
+        &__btn
+            &-full 
+                display: none
+            &-small 
+                display: block
+    .allbouquets
+        margin-top: 32px
+    .advantages
+        margin-bottom: 50px
+        &__content
+            flex-direction: column
+    .rating
+        padding: 50px 0
+        &__arrows
+            display: none
+        &__info
+            @include flex
+            flex-direction: column
+            &-title 
+                margin-bottom: 0
+        &__map
+            flex-wrap: wrap
+            row-gap: 18px
+            &-map
+                font-size: 32px
+                line-height: 41.6px
+        &__content
+            overflow: hidden
+        &__item
+            flex: 0 0 100%
+            overflow-x: hidden
+            & img
+                border-radius: 16px
+    .row
+        &__wrapper
+            flex-direction: column
+        &__item
+            &-wrapper 
+                padding: 32px 100px 32px 24px
+        &__bouquet
+            background-image: url('../img/row1-small.png')
+        &__shops
+            background-image: url('../img/row2-small.png')
 
+    .advice
+        &__arrows
+            display: none
+        &__content
+            justify-content: flex-start
+            padding-bottom: 16px
+            overflow-x: scroll
+        &__item
+            flex: 0 0 auto
+
+    .footer
+        &__wrapper
+            flex-direction: column
+            gap: 16px
+        &__top
+            border: none
+        &__item
+            width: 100%
+            align-items: center
+            &-logo 
+                order: 1
+            &-title 
+                @include flex
+                justify-content: space-between
+                width: 100%
+            &-none 
+                display: none
+        &__socials
+            padding: 32px 0
+            border-top: 1px solid var(--border-footer)
+            border-bottom: 1px solid var(--border-footer)
+        &__lists
+            display: none
+    .seller
+        margin-top: 24px
+
+            
 
                 
                 
