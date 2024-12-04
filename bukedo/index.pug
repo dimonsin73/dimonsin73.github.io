@@ -11,10 +11,12 @@ html(lang="ru")
         script(src="js/script.js" defer) 
     body
         header.header
+            .decorheader
+                img(src="img/decor-header.png", alt="decor")
             .header__top
                 .container
-                    .header__top-wrapper
-                        .header__left 
+                    .header__top-full
+                        .header__left
                             .header__city 
                                 .header__city-icon
                                     svg(width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -46,9 +48,20 @@ html(lang="ru")
                                     .menu__item-chevron 
                                         svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M1 1L4.5286 4.79026C4.78894 5.06991 5.21106 5.06991 5.4714 4.79026L9 1" stroke="#1C1C1D" stroke-linecap="round")
+                    .header__top-small
+                        .logo 
+                            img(src="img/logo.png", alt="BUCEDO")
+                        .header__top-btns
+                            button.glass 
+                                svg(width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M24.9999 25L19.1999 19.2M22.3333 11.6667C22.3333 17.5577 17.5577 22.3333 11.6667 22.3333C5.77563 22.3333 1 17.5577 1 11.6667C1 5.77563 5.77563 1 11.6667 1C17.5577 1 22.3333 5.77563 22.3333 11.6667Z" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                            button.icons__burger
+                                        .icons__burger-line
+                                        .icons__burger-line
+                                        .icons__burger-line
             .header__bottom
                 .container
-                    .header__bottom-wrapper
+                    .header__bottom-full
                         .logo 
                             img(src="img/logo.png", alt="BUCEDO")
                         button.catalog
@@ -89,6 +102,52 @@ html(lang="ru")
                                     .icons__burger-line
                                     .icons__burger-line
                                     .icons__burger-line
+                    .header__bottom-small 
+                        .header__working
+                                .header__working-icon 
+                                    svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M9 4.27783V9.00005L12.6111 11.5001" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                        path(d="M9 0.944824C13.4489 0.944824 17.0556 4.55149 17.0556 9.00038C17.0556 13.4493 13.4489 17.0559 9 17.0559" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                        path(d="M3.3033 15.5299C3.76354 15.5299 4.13664 15.1569 4.13664 14.6966C4.13664 14.2364 3.76354 13.8633 3.3033 13.8633C2.84307 13.8633 2.46997 14.2364 2.46997 14.6966C2.46997 15.1569 2.84307 15.5299 3.3033 15.5299Z" fill="#AD2950")
+                                        path(d="M0.944417 9.83366C1.40465 9.83366 1.77775 9.46056 1.77775 9.00033C1.77775 8.54009 1.40465 8.16699 0.944417 8.16699C0.48418 8.16699 0.111084 8.54009 0.111084 9.00033C0.111084 9.46056 0.48418 9.83366 0.944417 9.83366Z" fill="#AD2950")
+                                        path(d="M3.3033 4.13688C3.76354 4.13688 4.13664 3.76379 4.13664 3.30355C4.13664 2.84331 3.76354 2.47021 3.3033 2.47021C2.84307 2.47021 2.46997 2.84331 2.46997 3.30355C2.46997 3.76379 2.84307 4.13688 3.3033 4.13688Z" fill="#AD2950")
+                                        path(d="M5.91781 17.2756C6.37804 17.2756 6.75114 16.9025 6.75114 16.4422C6.75114 15.982 6.37804 15.6089 5.91781 15.6089C5.45757 15.6089 5.08447 15.982 5.08447 16.4422C5.08447 16.9025 5.45757 17.2756 5.91781 17.2756Z" fill="#AD2950")
+                                        path(d="M1.5577 12.9157C2.01794 12.9157 2.39103 12.5426 2.39103 12.0824C2.39103 11.6221 2.01794 11.249 1.5577 11.249C1.09746 11.249 0.724365 11.6221 0.724365 12.0824C0.724365 12.5426 1.09746 12.9157 1.5577 12.9157Z" fill="#AD2950")
+                                        path(d="M1.5577 6.75114C2.01794 6.75114 2.39103 6.37804 2.39103 5.91781C2.39103 5.45757 2.01794 5.08447 1.5577 5.08447C1.09746 5.08447 0.724365 5.45757 0.724365 5.91781C0.724365 6.37804 1.09746 6.75114 1.5577 6.75114Z" fill="#AD2950")
+                                        path(d="M5.91781 2.39128C6.37804 2.39128 6.75114 2.01818 6.75114 1.55794C6.75114 1.09771 6.37804 0.724609 5.91781 0.724609C5.45757 0.724609 5.08447 1.09771 5.08447 1.55794C5.08447 2.01818 5.45757 2.39128 5.91781 2.39128Z" fill="#AD2950")
+                                .header__working-time 
+                                    p 23 июля с 11:00 до 21:00
+                                    svg(width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M1.5 1.25L5.46967 5.51404C5.76256 5.82865 6.23744 5.82865 6.53033 5.51404L10.5 1.25" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
+            .header__social
+                a(href="#" type="tel").header__social-item 
+                    .header__social-icon
+                        svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M11.4808 10.6411L9.87505 12.2251C9.03768 11.7202 8.25978 11.1227 7.55605 10.4438C6.87823 9.73891 6.28082 8.96089 5.7748 8.12407L7.3573 6.51832C7.45314 6.42099 7.51787 6.29735 7.54325 6.16313C7.56862 6.02891 7.5535 5.89017 7.4998 5.76457L5.8498 1.91857C5.78461 1.76692 5.66712 1.64373 5.51871 1.57146C5.37031 1.49918 5.20088 1.48263 5.0413 1.52482L2.0158 2.32507C1.86471 2.36424 1.73139 2.45353 1.63765 2.57833C1.54391 2.70313 1.49531 2.85605 1.4998 3.01207C1.6923 6.5309 3.15538 9.86027 5.6173 12.3818C8.1393 14.8445 11.4696 16.3079 14.9893 16.5001C15.1455 16.5053 15.2988 16.4571 15.4238 16.3634C15.5489 16.2697 15.6382 16.1362 15.677 15.9848L16.4765 12.9578C16.5189 12.7983 16.5026 12.6289 16.4304 12.4805C16.3583 12.332 16.2352 12.2145 16.0835 12.1493L12.2368 10.5001C12.1111 10.4456 11.9719 10.4299 11.8372 10.455C11.7026 10.4801 11.5784 10.5449 11.4808 10.6411Z" stroke="#AD2950" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square")
+                    p 8 495 215-20-97
+                a(href="#" type="tel").header__social-item 
+                    .header__social-icon
+                        svg(width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M13.5 6.75C13.5 10.425 7.5 16.5 7.5 16.5C7.5 16.5 1.5 10.425 1.5 6.75C1.5 2.925 4.575 0.75 7.5 0.75C10.425 0.75 13.5 2.925 13.5 6.75Z" stroke="#AD2950" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square")
+                            path(d="M7.5 9C8.74264 9 9.75 7.99264 9.75 6.75C9.75 5.50736 8.74264 4.5 7.5 4.5C6.25736 4.5 5.25 5.50736 5.25 6.75C5.25 7.99264 6.25736 9 7.5 9Z" stroke="#AD2950" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square")
+                    p Адреса магазинов
+                a(href="#" type="tel").header__social-mes.footer__social
+                    .footer__social-icon.footer__social-mess.tel__icon.tel__icon-whatsapp
+                        svg(width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M9.05901 1.97267C8.21991 1.13115 7.10506 0.614853 5.91574 0.516995C4.72642 0.419137 3.54101 0.746165 2.57353 1.43904C1.60604 2.13191 0.92024 3.14497 0.639939 4.2953C0.359637 5.44564 0.503308 6.65745 1.04501 7.71196L0.514284 10.2671C0.508602 10.2927 0.508381 10.3191 0.513638 10.3447C0.518895 10.3703 0.529511 10.3945 0.544801 10.4158C0.566698 10.448 0.597998 10.4729 0.634514 10.487C0.671029 10.5011 0.711019 10.5038 0.749132 10.4948L3.27009 9.90136C4.33055 10.4245 5.54379 10.5574 6.69385 10.2766C7.84392 9.99579 8.85618 9.31939 9.55047 8.36782C10.2448 7.41624 10.576 6.25123 10.4853 5.08015C10.3946 3.90907 9.88774 2.80791 9.05503 1.97267H9.05901ZM8.27088 8.20536C7.69056 8.77982 6.94327 9.15947 6.13408 9.29092C5.3249 9.42238 4.49451 9.29904 3.75969 8.93823L3.40675 8.76455L1.85835 9.1277V9.10796L2.18475 7.55933L2.01226 7.2225C1.63654 6.49182 1.50387 5.6619 1.63331 4.85182C1.76275 4.04174 2.14763 3.29314 2.73273 2.71344C3.4674 1.98566 4.46336 1.57686 5.5018 1.57686C6.54024 1.57686 7.53621 1.98566 8.27088 2.71344L8.28812 2.73712C9.01324 3.46721 9.41803 4.45189 9.41431 5.47662C9.41058 6.50135 8.99863 7.48311 8.26822 8.20799L8.27088 8.20536Z" fill="white")
+                            path(d="M8.13431 7.07972C7.94457 7.37576 7.64338 7.7376 7.26789 7.82838C6.60448 7.98627 5.59477 7.82838 4.33031 6.66921L4.31439 6.65474C3.21446 5.63635 2.92256 4.78769 2.98757 4.11534C3.02605 3.73246 3.34714 3.38774 3.61781 3.16143C3.66085 3.12545 3.71177 3.09994 3.76652 3.08696C3.82127 3.07398 3.87832 3.07388 3.93311 3.08666C3.9879 3.09945 4.03892 3.12477 4.08209 3.16059C4.12526 3.19642 4.15937 3.24177 4.18171 3.293L4.58904 4.20613C4.61564 4.26491 4.62561 4.32975 4.6179 4.39372C4.61018 4.45769 4.58508 4.51837 4.54526 4.56928L4.33828 4.83243C4.29525 4.88705 4.26962 4.95315 4.26466 5.02229C4.2597 5.09142 4.27563 5.16046 4.31041 5.22057C4.50702 5.50794 4.74227 5.76734 5.00965 5.9916C5.29732 6.26614 5.62356 6.49792 5.97822 6.67973C6.04296 6.70561 6.11399 6.71179 6.18227 6.69749C6.25056 6.6832 6.31301 6.64908 6.36168 6.59947L6.59918 6.36001C6.64437 6.31182 6.70213 6.27697 6.76606 6.25932C6.82999 6.24167 6.8976 6.24191 6.9614 6.26001L7.92998 6.535C7.98486 6.55049 8.0353 6.57857 8.07721 6.61698C8.11912 6.65538 8.15132 6.70303 8.17121 6.75606C8.19111 6.8091 8.19813 6.86603 8.19172 6.92226C8.18531 6.97849 8.16564 7.03243 8.13431 7.07972Z" fill="white")
+                    .footer__social-info 
+                        .footer__social-title WhatsApp
+                        .footer__social-text +7 961 777-2640
+                a(href="#" type="tel").header__social-mes.footer__social
+                    .footer__social-icon.footer__social-mess.tel__icon.tel__icon-telegram 
+                        svg(width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M10.1666 0.753531L8.69037 8.1962C8.69037 8.1962 8.48402 8.71227 7.91618 8.46453L4.49435 5.84553C4.95428 5.43209 8.5223 2.22427 8.67834 2.0788C8.91952 1.85367 8.76985 1.71969 8.48949 1.88995L3.21921 5.23685L1.18591 4.55234C1.18591 4.55234 0.865803 4.43877 0.834996 4.19103C0.804006 3.9433 1.1963 3.80913 1.1963 3.80913L9.48536 0.557384C9.48536 0.557384 10.1666 0.258058 10.1666 0.753531Z" fill="white")
+                    .footer__social-info 
+                        .footer__social-title Telegram
+                        .footer__social-text @Bukedo
+
+        main
             section.stack
                 .container
                     .stack__wrapper 
@@ -625,6 +684,50 @@ html(lang="ru")
             section.row 
                 .container
                     .row__wrapper
+                        .row__item.row__bouquet
+                            .row__item-icon 
+                                svg(width="46" height="50" viewBox="0 0 46 50" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M37.6484 0.976562V2.92969C37.6484 4.0084 36.774 4.88281 35.6953 4.88281H25.9297C24.851 4.88281 23.9766 4.0084 23.9766 2.92969V0.976562" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M17.1406 13.2812V4.88281C17.1406 2.72549 18.8896 0.976562 21.0469 0.976562H40.5781C42.7354 0.976562 44.4844 2.72549 44.4844 4.88281V45.1172C44.4844 47.2745 42.7354 49.0234 40.5781 49.0234H21.0469C18.8896 49.0234 17.1406 47.2745 17.1406 45.1172V37.6953" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M18.2837 17.1875C18.6858 16.0496 19.7711 15.2344 21.0467 15.2344C22.3223 15.2344 23.4075 16.0496 23.8097 17.1875" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M21.0469 26.9531C24.2829 26.9531 26.9062 24.3298 26.9062 21.0938V17.1875H24.9531C22.7958 17.1875 21.0469 18.9364 21.0469 21.0938" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M21.0469 26.9531C17.8108 26.9531 15.1875 24.3298 15.1875 21.0938V17.1875H17.1406C19.2979 17.1875 21.0469 18.9364 21.0469 21.0938" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M21.0469 21.0938V23.0469" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M21.0469 27.1484V34.7656" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M20.8516 34.5703L11.2812 25C11.2812 31.1186 14.6506 34.6166 20.6562 34.7609" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M21.2422 34.5703L30.8125 25C30.8125 31.1186 27.4432 34.6166 21.4375 34.7609" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M3.46875 25H7.375" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M5.42188 28.9062H8.35156" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M1.51562 21.0938H9.32812" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M25.9297 44.5313H35.6953" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                            .row__item-title.row__bouquet-title Выберите свой букет
+                            .row__item-text.row__bouquet-text Выберите длину, оттенок, страну и сорт
+                            .row__item-btn.catalog.catalog__text Собрать букет
+                        .row__item.row__shops
+                            .row__item-icon 
+                                svg(width="50" height="40" viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M48.9712 26.1728H45.8848V29.2593H48.9712V26.1728Z" fill="#1C1C1D")
+                                    path(d="M34.5679 26.1728H48.9712" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M45.8847 34.4033H48.9712V26.1728L40.7407 17.9424H34.5679" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M22.2222 34.4033H37.6543" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M9.87646 34.4033H13.9917" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M41.7695 35.4321C42.3377 35.4321 42.7983 34.9715 42.7983 34.4033C42.7983 33.8351 42.3377 33.3745 41.7695 33.3745C41.2013 33.3745 40.7407 33.8351 40.7407 34.4033C40.7407 34.9715 41.2013 35.4321 41.7695 35.4321Z" fill="#1C1C1D")
+                                    path(d="M41.7695 38.5185C44.0423 38.5185 45.8847 36.6761 45.8847 34.4033C45.8847 32.1305 44.0423 30.2881 41.7695 30.2881C39.4967 30.2881 37.6543 32.1305 37.6543 34.4033C37.6543 36.6761 39.4967 38.5185 41.7695 38.5185Z" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M18.1069 35.4321C18.6751 35.4321 19.1357 34.9715 19.1357 34.4033C19.1357 33.8351 18.6751 33.3745 18.1069 33.3745C17.5387 33.3745 17.0781 33.8351 17.0781 34.4033C17.0781 34.9715 17.5387 35.4321 18.1069 35.4321Z" fill="#1C1C1D")
+                                    path(d="M18.1069 38.5185C20.3797 38.5185 22.2222 36.6761 22.2222 34.4033C22.2222 32.1305 20.3797 30.2881 18.1069 30.2881C15.8341 30.2881 13.9917 32.1305 13.9917 34.4033C13.9917 36.6761 15.8341 38.5185 18.1069 38.5185Z" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M28.395 13.8272H34.5679V34.4033" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M9.87646 34.4033V13.8272H16.0493" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M9.87645 15.8848H3.70361" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M12.963 22.0576H1.02881" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M5.76127 28.2305H2.36621" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M18.93 3.53909H13.9917V6.62551C13.9917 7.4358 14.3039 8.17325 14.8147 8.72387" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M25.5146 3.53909H30.4529V6.62551C30.4529 7.4358 30.1407 8.17325 29.6299 8.72387" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M25.3086 1.48148V4.5679C25.3086 6.27253 23.9268 7.65432 22.2222 7.65432C20.5175 7.65432 19.1357 6.27253 19.1357 4.5679V1.48148H25.3086Z" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M13.9917 9.71194C18.541 6.96842 25.9033 6.96842 30.4526 9.71194L24.2798 21.0288L26.3374 27.2016C24.0628 28.5734 20.3815 28.5734 18.1069 27.2016L20.1645 21.0288L13.9917 9.71194Z" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M20.1646 21.0288H24.2798" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                            .row__item-title Магазины рядом 
+                            .row__item-text Доставка от 300 руб. до 1 часа.
+                            .row__item-btn.catalog.catalog__text Смотреть на карте
             section.advice
                 .container
                     .advice__wrapper
@@ -669,6 +772,8 @@ html(lang="ru")
                             .advice__indicator-circle
                             .advice__indicator-circle                            
         footer.footer
+            .decorfooter 
+                img(src="img/decor-footer.png", alt="decor")
             .footer__top
                 .container
                     .footer__wrapper 

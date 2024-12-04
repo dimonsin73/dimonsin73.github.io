@@ -11,6 +11,7 @@
     --rise: #FCE7F3
     --border-icon: #E5E7EB
     --border-footer: #CFCFCF
+    --acpid: #749597
 
 @mixin flex
     display: flex
@@ -87,15 +88,19 @@
     @include title
 .text
     @include text
-    
+
+ 
 .header
+    position: relative
     &__top
         margin-top: 20px
         padding: 13px 0
         border-bottom: 1px solid var(--border)
-        &-wrapper
+        &-full
             @include flex
             justify-content: space-between
+        &-small
+            display: none
     &__left
         @include flex
         column-gap: 24px
@@ -118,10 +123,14 @@
             cursor: pointer
     &__bottom
         padding: 24px 0
-        &-wrapper
+        &-full
             @include flex
             justify-content: space-between
-
+        &-small 
+            display: none
+    &__social
+        display: none
+        
 .menu
     @include flex
     column-gap: 24px
@@ -133,7 +142,6 @@
             gap: 8px
         &-chevron
             @include flex
-
 .catalog
     @include flex
     column-gap: 8px
@@ -144,7 +152,6 @@
     &__text
         @include text-btn
         color: #fff
-
 .search
     position: relative
     &__icon
@@ -165,7 +172,6 @@
         :placeholder
             @include text
             color: var(--placeholder)
-
 .tel
     @include flex
     flex-direction: column  
@@ -187,8 +193,7 @@
         &-whatsapp
             background-color: var(--whatsapp)
         &-telegram
-            background-color: var(--telegram)
-              
+            background-color: var(--telegram)         
 .icons
     @include flex
     column-gap: 16px
@@ -243,6 +248,9 @@
         &-text
             @include text
             margin-top: 8px
+        &-img
+            width: 80px
+            height: 80px
     &__info
         &-title
             @include title3
@@ -425,8 +433,7 @@
             margin-bottom: 16px
         &-text  
             @include text
-                
-        
+                        
 .rating
     padding: 90px 0
     background-color: var(--bg-stack)
@@ -492,6 +499,43 @@
             
 .row
     padding: 90px 0
+    &__wrapper
+        @include flex
+        gap: 24px
+    &__item
+        @include flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: stretch
+        flex: 1 0 50%
+        height: 100%
+        padding: 48px
+        border-radius: 16px
+        &-icon
+            width: 46px
+            height: 54px
+            margin-bottom: 16px
+        &-title
+            @include title3
+            margin-bottom: 24px
+        &-text 
+            @include text
+            margin-bottom: 24px
+        &-btn
+    &__bouquet
+        background: 
+            color: var(--acpid)
+            image: url('../img/row1.png')
+            position: right
+            repeat: no-repeat
+        &-title, &-text
+            color: #fff
+    &__shops
+        background:
+            color: var(--rise)
+            image: url('../img/row2.png')
+            position: right
+            repeat: no-repeat
 
 .advice
     margin-bottom: 90px
@@ -562,9 +606,8 @@
         &-active
             opacity: 1
 
-    
-
 .footer
+    position: relative
     padding: 48px 0
     background-color: var(--bg-stack)
     &__top
@@ -628,11 +671,64 @@
             @include text-content
         &-text
             @include subtext-footer
-            
-
 .seller
     &__btn
         padding: 14px 35px  
         
-        
+.decorheader
+    position: absolute
+    right: 0
+    left: 0
+    top: -20px     
+.decorfooter
+    position: absolute
+    right: 0
+    left: 0
+    bottom: 0    
             
+@media (max-width: 375px) 
+    .container
+        width: 375px
+    .header
+        &__top
+            &-full
+                display: none
+            &-small
+                @include flex
+                justify-content: space-between
+            &-btns
+                @include flex
+                gap: 30px
+        &__bottom
+            &-full 
+                display: none
+            &-small
+                @include flex
+        &__social
+            display: grid
+            justify-items: start
+            grid-template-columns: 1fr 1fr
+            gap: 16px
+            padding: 24px 16px
+            background-color: var(--bg-stack)
+            &-item 
+                @include flex
+                @include text
+                gap: 5px
+                cursor: pointer
+            &-icon
+                @include flex
+            &-mes
+                width: 100%
+                padding: 9px 16px
+                border-radius: 12px
+                background-color: #fff
+
+
+                
+                
+    .icons__burger
+        width: 20px
+        height: 24px
+    .stack__content
+        overflow-x: scroll
