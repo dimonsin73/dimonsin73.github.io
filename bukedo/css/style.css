@@ -1147,6 +1147,7 @@
   }
   .flowers__content {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     margin-bottom: 40px;
   }
   .flowers__content img {
@@ -1156,6 +1157,15 @@
   .flowers__nav {
     flex-direction: column-reverse;
     gap: 24px;
+  }
+  .flowers__pages {
+    gap: 4px;
+  }
+  .flowers__pages-prev {
+    margin-right: 12px;
+  }
+  .flowers__pages-next {
+    margin-left: 12px;
   }
   .flower {
     flex: 0 0 auto;

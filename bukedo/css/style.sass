@@ -806,6 +806,7 @@
                 display: flex
         &__content
             grid-template-columns: repeat(2, 1fr)
+            grid-template-rows: repeat(4, 1fr)
             margin-bottom: 40px
             & img
                 width: 160px
@@ -813,6 +814,12 @@
         &__nav
             flex-direction: column-reverse
             gap: 24px 
+        &__pages
+            gap: 4px
+            &-prev
+                margin-right: 12px
+            &-next 
+                margin-left: 12px
     .flower
         flex: 0 0 auto
         &__title
