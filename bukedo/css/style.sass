@@ -12,6 +12,7 @@
     --border-icon: #E5E7EB
     --border-footer: #CFCFCF
     --acpid: #749597
+    --thumb: #EFEFEF
 
 @mixin flex
     display: flex
@@ -28,6 +29,9 @@
     color: var(--black)
 @mixin text-content
     font: 500 16px/20.8px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-content-small
+    font: 500 18px/23.4px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-btn
     font: 700 16px/20.8px 'PT Root UI', 'sans-serif'
@@ -98,15 +102,19 @@
     .text
         @include text2
 
- 
-.header
+html
+    overflow-x: hidden
+    
+body
     position: relative
+    overflow-x: hidden
+.header
+    overflow-x: hidden
     &__top
         position: relative
         margin-top: 20px
         padding: 13px 0
         border-bottom: 1px solid var(--border)
-        z-index: 10
         &-full
             @include flex
             justify-content: space-between
@@ -135,7 +143,6 @@
     &__bottom
         position: relative
         padding: 24px 0
-        z-index: 10
         &-full
             @include flex
             justify-content: space-between
@@ -189,6 +196,7 @@
     @include flex
     flex-direction: column  
     align-items: flex-start
+    border-bottom: 0.5px dashed var(--grey)
     cursor: pointer
     &__uptext  
         @include text-up
@@ -517,6 +525,7 @@
         &-stars
             @include flex
             gap: 8px
+            padding: 4px 0
         &-date
             @include subtext-footer
             
@@ -527,6 +536,7 @@
         gap: 24px
     &__item
         flex: 1 0 50%
+        min-height: 323px
         border-radius: 16px
         overflow: hidden
         background: linear-gradient(179.32deg, #F5EFEE 0.47%, #E9E1DE 99.31%)
@@ -561,7 +571,6 @@
             position: right
             repeat: no-repeat
             
-
 .advice
     margin-bottom: 90px
     &__header
@@ -632,24 +641,21 @@
             opacity: 1
 
 .footer
-    position: relative
-    padding: 48px 0
     background-color: var(--bg-stack)
     overflow-x: hidden
     &__top
         position: relative
-        padding-bottom: 48px
-        border-bottom: 1px solid var(--border-footer)
-        z-index: 10
+        padding-top: 48px
     &__bottom
         position: relative
-        margin-top: 32px
-        z-index: 10
+        padding-top: 32px
         &-rights
             @include text-footer
     &__wrapper
         @include flex
         justify-content: space-between
+        padding-bottom: 48px 
+        border-bottom: 1px solid var(--border-footer)
     &__item
         @include flex
         flex-direction: column
@@ -711,15 +717,60 @@
     position: absolute
     right: 0
     left: 0
-    top: -20px     
-    z-index: 1
+    top: 0     
+    & img
+        width: 100%
+    &__small
+        display: none
 .decorfooter
     position: absolute
     right: 0
     left: 0
     bottom: 0    
-    z-index: 1
-            
+    & img
+        width: 100%
+    &__small
+        display: none
+
+.menu
+    display: none
+    &__wrapper
+        @include flex
+        justify-content: space-between
+        width: 100%
+        padding: 10px 16px
+    &__item
+        @include flex
+        flex-direction: column
+        gap: 4px
+        cursor: pointer
+        &-text 
+            font: 400 11px/11px 'PT Root UI', 'sans-serif'
+        &-textbur
+            color: var(--burgundy)
+        &-active p
+            color: var(--burgundy)
+        &-active path
+            stroke: var(--burgundy)
+        &-heart path
+            fill: var(--burgundy)
+        &-icon 
+            position: relative
+        &-num 
+            position: absolute
+            right: 0
+            bottom: 0
+            @include flex
+            width: 15px
+            height: 15px
+            border: 2px solid #fff
+            border-radius: 50%
+            background-color: var(--burgundy)
+            font: 400 11px/11px 'PT Root UI', 'sans-serif'
+            color: #fff
+
+
+
 @media (max-width: 1750px) 
     .decorfooter
         left: -50px
@@ -729,23 +780,37 @@
         left: -100px
         right: -100px
 @media (max-width: 1550px) 
+    .decorheader
+        right: -20px
     .decorfooter
         left: -150px
         right: -150px
+@media (max-width: 1366px) 
+    .decorheader
+        right: -45px
+        left: -20px
+    .decorfooter
+        left: -170px
+        right: -180px
 @media (max-width: 424px) 
     .container
         width: 375px
     .header
         &__top
+            margin-top: 0
+            padding-top: 24px
+            padding-bottom: 16px
             &-full
                 display: none
             &-small
                 @include flex
                 justify-content: space-between
+                margin: 0 8px
             &-btns
                 @include flex
                 gap: 30px
         &__bottom
+            padding: 16px 0
             &-full 
                 display: none
             &-small
@@ -764,11 +829,17 @@
                 cursor: pointer
             &-icon
                 @include flex
+            &-phone
+                font-weight: 500
             &-mes
                 width: 100%
                 padding: 9px 16px
                 border-radius: 12px
                 background-color: #fff
+        &__working
+            &-time 
+                @include text-content-small
+                color: var(--burgundy)
     .stack
         margin-bottom: 24px
         &__wrapper
@@ -779,6 +850,16 @@
             overflow-x: scroll
             gap: 0
             padding-bottom: 20px
+            scrollbar-width: 20px 
+            scrollbar-color: var(--thumb) #fff
+            &::-webkit-scrollbar
+                width: 8px
+            &::-webkit-scrollbar-thumb
+                border-radius: 50px
+                background-color: var(--thumb)
+            &::-webkit-scrollbar-treck
+                background-color: red
+
         &__item
             width: 120px
             height: 130px
@@ -798,10 +879,12 @@
                 height: 240px
     .flowers
         &__filters
+            flex-wrap: wrap
+            gap: 12px
         &__filter
             gap: 8px
+            flex: 1 0 auto
             &-full 
-                display: none
             &-small
                 display: flex
         &__content
@@ -851,68 +934,109 @@
             flex-wrap: wrap
             row-gap: 18px
             &-map
+                border-bottom: 0.7px dashed var(--black) 
                 font-size: 32px
                 line-height: 41.6px
         &__content
+            margin-bottom: 24px
             overflow: hidden
         &__item
             flex: 0 0 100%
             overflow-x: hidden
             & img
+                width: 163px
+                height: 199px   
                 border-radius: 16px
     .row
         &__wrapper
             flex-direction: column
         &__item
+            &-icon 
+                margin-bottom: 8px
+            &-text 
+                margin-bottom: 16px
             &-wrapper 
                 padding: 32px 100px 32px 24px
         &__bouquet
             background-image: url('../img/row1-small.png')
         &__shops
+            padding-right: 70px
             background-image: url('../img/row2-small.png')
-
+            .row__item-text
+                margin-bottom: 60px
     .advice
         &__arrows
             display: none
         &__content
             justify-content: flex-start
+            padding-top: 6px
             padding-bottom: 16px
             overflow-x: scroll
         &__item
             flex: 0 0 auto
-
     .footer
         &__wrapper
             flex-direction: column
             gap: 16px
+            padding-bottom: 0
+            border: none
         &__top
             border: none
+        &__bottom
+            margin-bottom: 48px
+            &-rights
+                font-size: 14px
+                line-height: 18.2px
         &__item
             width: 100%
             align-items: center
             &-logo 
+                margin-top: 16px
                 order: 1
             &-title 
                 @include flex
                 justify-content: space-between
                 width: 100%
+                margin-bottom: 0
+                padding: 8.5px 0
             &-none 
                 display: none
+            &-svg 
+                display: block
         &__socials
+            width: 100%
             padding: 32px 0
             border-top: 1px solid var(--border-footer)
             border-bottom: 1px solid var(--border-footer)
         &__lists
             display: none
+        &__cards
+            order: -1
     .seller
-        margin-top: 24px
+        margin-top: 16px
+        &__btn
+            margin-top: 4px
 
-            
-
-                
-                
+    .decorheader
+        right: 0
+        left: 0
+        &__full
+            display: none
+        &__small
+            display: block
+    .decorfooter
+        right: 0
+        left: 0
+        bottom: 70px
+        &__full
+            display: none
+        &__small
+            display: block
+    .logo
+        &__small
+            height: 36px      
     .icons__burger
         width: 20px
         height: 24px
-    .stack__content
-        overflow-x: scroll
+    .menu
+        display: block
