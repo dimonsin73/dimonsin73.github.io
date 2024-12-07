@@ -39,14 +39,14 @@ html(lang="ru")
                                     p 23 июля с 11:00 до 21:00
                                     svg(width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M1.5 1.25L5.46967 5.51404C5.76256 5.82865 6.23744 5.82865 6.53033 5.51404L10.5 1.25" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
-                        ul.menu
-                            li.menu__item
-                                a(href="http://").menu__item-link.link Адреса магазинов
-                            li.menu__item
-                                a(href="http://").menu__item-link.link Отзывы
-                            li.menu__item
-                                a(href="http://").menu__item-link.link Информация
-                                    .menu__item-chevron 
+                        ul.header__menu
+                            li.header__menu-item
+                                a(href="http://").header__menu-link.link Адреса магазинов
+                            li.header__menu-item
+                                a(href="http://").header__menu-link.link Отзывы
+                            li.header__menu-item
+                                a(href="http://").header__menu-link.link Информация
+                                    .header__menu-chevron 
                                         svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M1 1L4.5286 4.79026C4.78894 5.06991 5.21106 5.06991 5.4714 4.79026L9 1" stroke="#1C1C1D" stroke-linecap="round")
                     .header__top-small
@@ -59,6 +59,7 @@ html(lang="ru")
                             button.icons__burger
                                 svg(width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg")
                                     path(d="M25 11.5H1M25 1.5H1M25 21.5H1" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
+            .header__line
             .header__bottom
                 .container
                     .header__bottom-full
@@ -237,7 +238,10 @@ html(lang="ru")
                                         .flower__info-delivery.flower__text через 2 часа
                                     .flower__bottom
                                         .flower__price 3 626 ₽
-                                        button.flower__btn Купить
+                                        button.flower__btn.flower__btn-full Купить
+                                        button.flower__btn.flower__btn-small 
+                                            svg(width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg")  
+                                                path(d="M1.8335 1.03345H4.14073C5.11433 1.03345 5.95388 1.71764 6.15038 2.6712L8.34746 13.3331C8.60945 14.6045 9.72886 15.5168 11.027 15.5168H19.2706C20.5342 15.5168 21.6335 14.6513 21.93 13.423L23.1086 8.5411C23.4202 7.25014 22.442 6.00769 21.114 6.00769H6.80774M10.7871 20.9304C10.7871 21.4799 10.3417 21.9253 9.79229 21.9253C9.24285 21.9253 8.79744 21.4799 8.79744 20.9304C8.79744 20.381 9.24285 19.9356 9.79229 19.9356C10.3417 19.9356 10.7871 20.381 10.7871 20.9304ZM21.7305 20.9304C21.7305 21.4799 21.2851 21.9253 20.7356 21.9253C20.1862 21.9253 19.7408 21.4799 19.7408 20.9304C19.7408 20.381 20.1862 19.9356 20.7356 19.9356C21.2851 19.9356 21.7305 20.381 21.7305 20.9304Z" stroke="#AD2950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                             .flower
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
@@ -259,7 +263,10 @@ html(lang="ru")
                                                 p.flower__sale-oldprice 4 120 ₽
                                                 p.flower__sale-discount -10%
                                             .flower__price.flower__sale-prace 3 293 ₽
-                                        button.flower__btn Купить
+                                        button.flower__btn.flower__btn-full Купить
+                                        button.flower__btn.flower__btn-small 
+                                            svg(width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg")  
+                                                path(d="M1.8335 1.03345H4.14073C5.11433 1.03345 5.95388 1.71764 6.15038 2.6712L8.34746 13.3331C8.60945 14.6045 9.72886 15.5168 11.027 15.5168H19.2706C20.5342 15.5168 21.6335 14.6513 21.93 13.423L23.1086 8.5411C23.4202 7.25014 22.442 6.00769 21.114 6.00769H6.80774M10.7871 20.9304C10.7871 21.4799 10.3417 21.9253 9.79229 21.9253C9.24285 21.9253 8.79744 21.4799 8.79744 20.9304C8.79744 20.381 9.24285 19.9356 9.79229 19.9356C10.3417 19.9356 10.7871 20.381 10.7871 20.9304ZM21.7305 20.9304C21.7305 21.4799 21.2851 21.9253 20.7356 21.9253C20.1862 21.9253 19.7408 21.4799 19.7408 20.9304C19.7408 20.381 20.1862 19.9356 20.7356 19.9356C21.2851 19.9356 21.7305 20.381 21.7305 20.9304Z" stroke="#AD2950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                             .flower
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
@@ -277,7 +284,10 @@ html(lang="ru")
                                         .flower__info-delivery.flower__text через 2 часа
                                     .flower__bottom
                                         .flower__price 3 626 ₽
-                                        button.flower__btn.flower__btn-active В корзине
+                                        button.flower__btn.flower__btn-full Купить
+                                        button.flower__btn.flower__btn-small 
+                                            svg(width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg")  
+                                                path(d="M1.8335 1.03345H4.14073C5.11433 1.03345 5.95388 1.71764 6.15038 2.6712L8.34746 13.3331C8.60945 14.6045 9.72886 15.5168 11.027 15.5168H19.2706C20.5342 15.5168 21.6335 14.6513 21.93 13.423L23.1086 8.5411C23.4202 7.25014 22.442 6.00769 21.114 6.00769H6.80774M10.7871 20.9304C10.7871 21.4799 10.3417 21.9253 9.79229 21.9253C9.24285 21.9253 8.79744 21.4799 8.79744 20.9304C8.79744 20.381 9.24285 19.9356 9.79229 19.9356C10.3417 19.9356 10.7871 20.381 10.7871 20.9304ZM21.7305 20.9304C21.7305 21.4799 21.2851 21.9253 20.7356 21.9253C20.1862 21.9253 19.7408 21.4799 19.7408 20.9304C19.7408 20.381 20.1862 19.9356 20.7356 19.9356C21.2851 19.9356 21.7305 20.381 21.7305 20.9304Z" stroke="#AD2950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                             .flower
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
@@ -295,7 +305,10 @@ html(lang="ru")
                                         .flower__info-delivery.flower__text через 2 часа
                                     .flower__bottom
                                         .flower__price 3 599 ₽
-                                        button.flower__btn Купить
+                                        button.flower__btn.flower__btn-full Купить
+                                        button.flower__btn.flower__btn-small 
+                                            svg(width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg")  
+                                                path(d="M1.8335 1.03345H4.14073C5.11433 1.03345 5.95388 1.71764 6.15038 2.6712L8.34746 13.3331C8.60945 14.6045 9.72886 15.5168 11.027 15.5168H19.2706C20.5342 15.5168 21.6335 14.6513 21.93 13.423L23.1086 8.5411C23.4202 7.25014 22.442 6.00769 21.114 6.00769H6.80774M10.7871 20.9304C10.7871 21.4799 10.3417 21.9253 9.79229 21.9253C9.24285 21.9253 8.79744 21.4799 8.79744 20.9304C8.79744 20.381 9.24285 19.9356 9.79229 19.9356C10.3417 19.9356 10.7871 20.381 10.7871 20.9304ZM21.7305 20.9304C21.7305 21.4799 21.2851 21.9253 20.7356 21.9253C20.1862 21.9253 19.7408 21.4799 19.7408 20.9304C19.7408 20.381 20.1862 19.9356 20.7356 19.9356C21.2851 19.9356 21.7305 20.381 21.7305 20.9304Z" stroke="#AD2950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                         button.allbouquets 
                             .allbouquets__wrapper.btn-text
                                 p.allbouquets__text Все букеты
@@ -863,9 +876,17 @@ html(lang="ru")
                             .advice__indicator-circle                            
         
         footer.footer
-            .decorfooter 
-                img(src="img/decor-footer.png", alt="decor").decorfooter__full
-                img(src="img/decor-footer-small.png", alt="decor").decorfooter__small
+            .decorfooter.decorfooter__full
+                .decorfooter__left 
+                    img(src="img/footer-left-1.png", alt="footer-left-1").decorfooter__left-1                 
+                    img(src="img/footer-left-2.png", alt="footer-left-2").decorfooter__left-2
+                .decorfooter__bottom 
+                    img(src="img/footer-bottom.png", alt="footer-bottom").decorfooter__bottom  
+                .decorfooter__right
+                    img(src="img/footer-right-1.png", alt="footer-right-1").decorfooter__right-1         
+                    img(src="img/footer-right-2.png", alt="footer-right-2").decorfooter__right-2
+            .decorfooter.decorfooter__small
+                img(src="img/decor-footer-small.png", alt="decor")
             .footer__top
                 .container
                     .footer__wrapper 
@@ -873,30 +894,29 @@ html(lang="ru")
                             .logo 
                                 img(src="img/logo.png", alt="BUCEDO")
                             .seller
-                                h5.footer__item-title Продавайте на Букедо
+                                h5.footer__item-title.seller__title Продавайте на Букедо
                                 button.seller__btn.catalog.catalog__text Стать продавцом
                         .footer__item 
-                            h5.footer__item-title Покупателям
+                            h5.footer__item-title#buyer Покупателям
                                 svg.footer__item-svg(width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg")
                                     path(d="M13 0.915039L7.70711 6.60043C7.31658 7.01991 6.68342 7.01991 6.29289 6.60043L1 0.915041" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
-                            .footer__lists 
-                                ul.footer__list 
-                                    li.footer__list-item 
-                                        a(href="#").footer__list-link Адреса магазинов
-                                    li.footer__list-item 
-                                        a(href="#").footer__list-link Отзывы
-                                    li.footer__list-item 
-                                        a(href="#").footer__list-link О компании
-                                    li.footer__list-item 
-                                        a(href="#").footer__list-link Корпоративным клиентам   
-                                    li.footer__list-item 
-                                        a(href="#").footer__list-link Оплата и доставка
-                                    li.footer__list-item 
-                                        a(href="#").footer__list-link Правила сайта 
-                                    li.footer__list-item 
-                                        a(href="#").footer__list-link Бонусная программа 
-                                    li.footer__list-item 
-                                        a(href="#").footer__list-link Политика обработки данных
+                            ul.footer__list 
+                                li.footer__list-item 
+                                    a(href="#").footer__list-link Адреса магазинов
+                                li.footer__list-item 
+                                    a(href="#").footer__list-link Отзывы
+                                li.footer__list-item 
+                                    a(href="#").footer__list-link О компании
+                                li.footer__list-item 
+                                    a(href="#").footer__list-link Корпоративным клиентам   
+                                li.footer__list-item 
+                                    a(href="#").footer__list-link Оплата и доставка
+                                li.footer__list-item 
+                                    a(href="#").footer__list-link Правила сайта 
+                                li.footer__list-item 
+                                    a(href="#").footer__list-link Бонусная программа 
+                                li.footer__list-item 
+                                    a(href="#").footer__list-link Политика обработки данных
                         .footer__item
                             h5.footer__item-title.footer__item-none Мы на связи
                             .footer__socials 

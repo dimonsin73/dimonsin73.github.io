@@ -2,7 +2,7 @@ const flowerBtns = document.querySelectorAll('.flower__btn');
 for (let i = 0; i < flowerBtns.length; i++) {
     const element = flowerBtns[i];
     element.addEventListener('click', function(){
-        if (window.screen.width < '424') {
+        if (window.screen.width < '1023') {
             element.classList.toggle('flower__btn-active');
             if (element.classList.contains('flower__btn-active')) {
                 element.innerHTML = `<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,9 +35,22 @@ for (let i = 0; i < flowerHears.length; i++) {
 
 const flowers = document.querySelector('.flowers')
 const flowerArr = flowers.querySelectorAll('.flower')
-for (let i = 0; i < flowerArr.length; i++) {
-    const element = flowerArr[i];
-    if (i > '7') {
-        element.style.display = 'none';
+if (window.screen.width < '544') {
+    for (let i = 0; i < flowerArr.length; i++) {
+        const element = flowerArr[i];
+        if (i > '7') {
+            element.style.display = 'none';
+        };
     };
 };
+
+const buyer = document.getElementById('buyer');
+const list = document.querySelector('.footer__list')
+buyer.addEventListener('click', function(){
+    list.classList.toggle('footer__list-active')
+    if (list.classList.contains('footer__list-active')) {
+        list.style.height = `${list.scrollHeight}px`;
+    } else {
+        list.style.height = `0px`;
+    }
+})
