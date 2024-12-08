@@ -315,6 +315,7 @@ body {
 
 .stack {
   margin-bottom: 90px;
+  z-index: 20;
 }
 .stack__wrapper {
   margin-top: 48px;
@@ -1759,6 +1760,7 @@ body {
   .rating__item img {
     width: 163px;
     height: 199px;
+    border-radius: 16px;
   }
   .decorfooter__full {
     display: none;
