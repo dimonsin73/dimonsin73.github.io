@@ -1,0 +1,308 @@
+:root {
+  --Primary-10: #003B73;
+  --Primary-20: #004C95;
+  --Primary-30: #005EB8;
+  --Primary-40: #006FD8;
+  --Primary-50: #0095FF;
+  --Primary-60: #199FFF;
+  --Primary-70: #3FAFFF;
+  --Primary-80: #66BFFF;
+  --Primary-90: #8FD0FF;
+  --Primary-100: #B8E1FF;
+  --Gray-10: #3F3F45;
+  --Gray-20: #53535A;
+  --Gray-30: #65656F;
+  --Gray-40: #898990;
+  --Gray-50: #A0A1A9;
+  --Gray-60: #B4B5BE;
+  --Gray-70: #C7C9CF;
+  --Gray-80: #DBDDE1;
+  --Gray-90: #E6E8EC;
+  --Gray-100: #F2F3F5;
+  --Gray-110: #F7F7F7;
+  --White: #FFFFFF;
+  --Black: #202123;
+  --Red-error: #FF0034;
+}
+
+body {
+  background-color: var(--Gray-100);
+}
+
+.container {
+  width: 726px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  border-radius: 16px;
+  background-color: var(--White);
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 16px 24px;
+  border-radius: 8px;
+  font: 600 15px/150% "Inter", "sans-serif";
+  letter-spacing: 0.01em;
+}
+.btn-primary {
+  border: 1px solid var(--Primary-40);
+  background-color: var(--Primary-40);
+  color: var(--White);
+}
+.btn-bg-gray {
+  border: 1px solid var(--Gray-80);
+  background-color: var(--Gray-80);
+  color: var(--Black);
+}
+.btn-transparent {
+  border: 1px solid var(--Black);
+  background-color: initial;
+  color: var(--Black);
+}
+
+.attribut {
+  position: relative;
+}
+.attribut__title {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Gray-30);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.attribut__textarea {
+  width: 100%;
+  height: 136px;
+  margin-bottom: 4px;
+  resize: none;
+  padding: 44px 12px 8px;
+  border-radius: 8px;
+  background-color: var(--Gray-90);
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Black);
+  transition: all 0.3s ease;
+}
+.attribut__textarea::-moz-placeholder {
+  font: 400 14px/20px "Inter", "sans-serif";
+  letter-spacing: -0.25px;
+  color: var(--Gray-40);
+  white-space: pre-line;
+}
+.attribut__textarea::placeholder {
+  font: 400 14px/20px "Inter", "sans-serif";
+  letter-spacing: -0.25px;
+  color: var(--Gray-40);
+  white-space: pre-line;
+}
+.attribut__textarea:hover {
+  background-color: var(--Gray-100);
+}
+.attribut__textarea:focus {
+  padding-top: 28px;
+  outline: 2px solid var(--Gray-40);
+  background-color: var(--White);
+}
+.attribut__textarea:focus ~ .attribut__title {
+  top: 8px;
+  font: 400 13px/16px "Inter", "sans-serif";
+  letter-spacing: 0;
+}
+.attribut__textarea:valid {
+  padding-top: 28px;
+}
+.attribut__textarea:valid ~ .attribut__title {
+  top: 8px;
+  font: 400 13px/16px "Inter", "sans-serif";
+  letter-spacing: 0;
+}
+.attribut__textarea-long {
+  height: 181px;
+}
+.attribut__input {
+  width: 100%;
+  height: 56px;
+  padding: 24px 12px 8px;
+  border-radius: 8px;
+  background-color: var(--Gray-90);
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Black);
+}
+.attribut__input::-moz-placeholder {
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Gray-30);
+}
+.attribut__input::placeholder {
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Gray-30);
+}
+.attribut__input:hover {
+  background-color: var(--Gray-100);
+}
+.attribut__input:focus {
+  padding-top: 24px;
+  outline: 2px solid var(--Gray-40);
+  background-color: var(--White);
+}
+.attribut__input:focus ~ .attribut__title {
+  top: 7px;
+  font: 400 13px/16px "Inter", "sans-serif";
+  letter-spacing: 0;
+}
+.attribut__input:valid ~ .attribut__title {
+  top: 7px;
+  font: 400 13px/16px "Inter", "sans-serif";
+  letter-spacing: 0;
+}
+.attribut__text {
+  font: 500 12px/16px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-40);
+}
+.attribut-line {
+  display: flex;
+  gap: 16px;
+}
+.attribut__main {
+  width: 100%;
+}
+.attribut__btn {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background-color: var(--Gray-90);
+}
+
+.header {
+  padding: 0 24px;
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+  padding: 10.5px 0;
+}
+.header__menu-item {
+  display: flex;
+  align-items: stretch;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  height: 40px;
+  padding: 0 32px;
+  border-right: 1px solid var(--Gray-80);
+}
+.header__menu-item:first-child {
+  padding-left: 0;
+}
+.header__menu-item:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+.header__search {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
+}
+.header__search-text {
+  font: 500 13px/18px "Inter", sans-serif;
+  letter-spacing: 0.01em;
+  color: var(--Gray-30);
+}
+.header__mail, .header__bell {
+  position: relative;
+}
+.header__mail-num, .header__bell-num {
+  position: absolute;
+  top: -2px;
+  right: -14px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--Primary-50);
+  font: 700 12px/140% "Inter", sans-serif;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+.header__account {
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+.header__account-company {
+  margin-bottom: 3px;
+  overflow: hidden;
+  font: 700 14px/20px "Inter", sans-serif;
+  color: var(--Black);
+  text-transform: uppercase;
+  text-wrap: nowrap;
+}
+.header__account-name {
+  font: 500 12px/17px "Inter", sans-serif;
+  color: var(--Gray-40);
+}
+
+.head {
+  margin-bottom: 24px;
+}
+.head__title {
+  margin-bottom: 24px;
+  font: 700 40px/48px "Inter", "sans-serif";
+  letter-spacing: -0.2px;
+  color: var(--Black);
+}
+
+.attributes {
+  margin-bottom: 24px;
+}
+.attributes__title {
+  font: 600 20px/28px "Inter", "sans-serif";
+  letter-spacing: -0.2px;
+  color: var(--Black);
+}
+
+.respons {
+  margin-bottom: 24px;
+}
+
+.requirements {
+  margin-bottom: 24px;
+}
+
+.skills {
+  margin-bottom: 24px;
+}
+
+.basement {
+  margin-bottom: 24px;
+}
+.basement__btns {
+  display: flex;
+}
+.basement__btns-publish {
+  margin-right: 16px;
+}
+.basement__btns-save {
+  margin-right: auto;
+}/*# sourceMappingURL=style.css.map */

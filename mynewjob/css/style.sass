@@ -1,0 +1,276 @@
+:root
+    --Primary-10: #003B73
+    --Primary-20: #004C95
+    --Primary-30: #005EB8
+    --Primary-40: #006FD8
+    --Primary-50: #0095FF
+    --Primary-60: #199FFF
+    --Primary-70: #3FAFFF
+    --Primary-80: #66BFFF
+    --Primary-90: #8FD0FF
+    --Primary-100: #B8E1FF
+    --Gray-10: #3F3F45
+    --Gray-20: #53535A
+    --Gray-30: #65656F
+    --Gray-40: #898990
+    --Gray-50: #A0A1A9
+    --Gray-60: #B4B5BE
+    --Gray-70: #C7C9CF
+    --Gray-80: #DBDDE1
+    --Gray-90: #E6E8EC
+    --Gray-100: #F2F3F5
+    --Gray-110: #F7F7F7
+    --White: #FFFFFF
+    --Black: #202123
+    --Red-error: #FF0034
+
+@mixin headline-large
+    font: 700 40px/48px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin headline-medium
+    font: 700 30px/36px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin headline-small
+    font: 700 20px/30px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin title-large
+    font: 600 20px/28px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin title-medium
+    font: 600 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin title-small
+    font: 600 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-extralarge
+    font: 500 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin subtitle-large
+    font: 500 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin subtitle-medium
+    font: 500 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-small
+    font: 500 10px/14px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin body-large
+    font: 400 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin body-medium
+    font: 400 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin body-small
+    font: 400 13px/16px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin label-large
+    font: 600 13px/18px 'Inter', 'sans-serif'
+    letter-spacing: +0.1px
+@mixin label-medium
+    font: 600 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: +0.5px
+@mixin label-small
+    font: 600 11px/16px 'Inter', 'sans-serif'
+    letter-spacing: +12%
+@mixin btn-medium
+    font: 600 15px/150% 'Inter', 'sans-serif'
+    letter-spacing: +0.01em   
+
+body
+    background-color: var(--Gray-100)
+.container
+    width: 726px
+    margin: 0 auto
+.wrapper
+    display: flex
+    flex-direction: column
+    gap: 24px
+    padding: 32px
+    border-radius: 16px
+    background-color: var(--White)
+.svg-container
+    display: flex
+    justify-content: center
+    align-items: center
+.btn
+    padding: 16px 24px
+    border-radius: 8px
+    @include btn-medium
+    &-primary
+        border: 1px solid var(--Primary-40)
+        background-color: var(--Primary-40)
+        color: var(--White)
+    &-bg-gray
+        border: 1px solid var(--Gray-80)
+        background-color: var(--Gray-80)
+        color: var(--Black)
+    &-transparent
+        border: 1px solid var(--Black)
+        background-color: initial
+        color: var(--Black)
+
+.attribut
+    position: relative
+    &__title
+        position: absolute
+        top: 16px
+        left: 12px
+        @include body-large
+        color: var(--Gray-30)
+        pointer-events: none
+        transition: all 0.3s ease
+    &__textarea
+        width: 100%
+        height: 136px
+        margin-bottom: 4px
+        resize: none
+        padding: 44px 12px 8px
+        border-radius: 8px 
+        background-color: var(--Gray-90)
+        @include body-large
+        color: var(--Black)
+        transition: all 0.3s ease
+        &::placeholder
+            @include body-medium
+            color: var(--Gray-40)
+            white-space: pre-line
+        &:hover
+            background-color: var(--Gray-100)
+        &:focus
+            padding-top: 28px
+            outline: 2px solid var(--Gray-40)
+            background-color: var(--White)
+            & ~ .attribut__title
+                top: 8px
+                @include body-small
+        &:valid
+            padding-top: 28px
+            & ~ .attribut__title
+                top: 8px
+                @include body-small
+        &-long 
+            height: 181px
+    &__input
+        width: 100%
+        height: 56px
+        padding: 24px 12px 8px
+        border-radius: 8px 
+        background-color: var(--Gray-90)
+        @include body-large
+        color: var(--Black)
+        &::placeholder
+            @include body-large
+            color: var(--Gray-30)
+        &:hover
+            background-color: var(--Gray-100)
+        &:focus
+            padding-top: 24px
+            outline: 2px solid var(--Gray-40)
+            background-color: var(--White)
+            & ~ .attribut__title
+                top: 7px
+                @include body-small
+        &:valid
+            & ~ .attribut__title
+                top: 7px
+                @include body-small
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &-line
+        display: flex
+        gap: 16px
+    &__main
+        width: 100%
+    &__btn
+        flex: 0 0 auto
+        width: 56px
+        height: 56px
+        border-radius: 8px
+        background-color: var(--Gray-90)
+
+    
+.header
+    padding: 0 24px
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__menu
+        display: flex
+        align-items: center
+        padding: 10.5px 0
+        &-item
+            display: flex
+            align-items: stretch
+            column-gap: 24px
+            height: 40px
+            padding: 0 32px
+            border-right: 1px solid var(--Gray-80)
+            &:first-child
+                padding-left: 0
+            &:last-child
+                padding-right: 0
+                border-right: none
+    &__search
+        display: flex
+        align-items: center
+        column-gap: 6px
+        &-text 
+            font: 500 13px/18px 'Inter', sans-serif
+            letter-spacing: 0.01em
+            color: var(--Gray-30)
+    &__mail, &__bell
+        position: relative
+        &-num
+            position: absolute
+            top: -2px
+            right: -14px
+            width: 16px
+            height: 16px
+            border-radius: 50%
+            background-color: var(--Primary-50)
+            font: 700 12px/140% 'Inter', sans-serif
+            letter-spacing: 0.01em
+            color: #fff
+    &__account
+        overflow: hidden
+        text-wrap: nowrap
+        &-company
+            margin-bottom: 3px
+            overflow: hidden
+            font: 700 14px/20px 'Inter', sans-serif
+            color: var(--Black)
+            text-transform: uppercase
+            text-wrap: nowrap
+        &-name
+            font: 500 12px/17px 'Inter', sans-serif
+            color: var(--Gray-40)
+
+.head
+    margin-bottom: 24px
+    &__title
+        margin-bottom: 24px
+        @include headline-large
+        color: var(--Black)
+
+.attributes
+    margin-bottom: 24px
+    &__title
+        @include title-large
+        color: var(--Black)
+.respons  
+    margin-bottom: 24px
+.requirements
+    margin-bottom: 24px
+.skills
+    margin-bottom: 24px
+
+.basement
+    margin-bottom: 24px
+    &__btns
+        display: flex
+        &-publish
+            margin-right: 16px
+        &-save
+            margin-right: auto

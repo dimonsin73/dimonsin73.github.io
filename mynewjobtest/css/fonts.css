@@ -72,7 +72,7 @@
          url('../fonts/Inter_Bold.woff') format('woff'), /* Pretty Modern Browsers */
          url('../fonts/Inter_Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
          url('../fonts/Inter_Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
-    font-weight: 700;Inter_Bold
+    font-weight: 700;
     font-style: normal;
 }
 @font-face {
