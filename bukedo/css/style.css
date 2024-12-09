@@ -159,6 +159,7 @@ body {
 }
 .header__social {
   display: none;
+  z-index: 20;
 }
 .header__menu {
   display: flex;

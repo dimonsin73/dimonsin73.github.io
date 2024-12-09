@@ -54,3 +54,7 @@ buyer.addEventListener('click', function(){
         list.style.height = `0px`;
     }
 })
+
+document.addEventListener('click', function(e){
+    console.log(e.target)
+})
