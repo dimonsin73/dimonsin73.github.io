@@ -76,12 +76,12 @@ html(lang="ru")
                         .tel
                             p.tel__uptext На связи с 8:00 до 20:00
                             .tel__content 
-                                p.tel__number 8 495 215-20-97
-                                .tel__icon.tel__icon-whatsapp
+                                a.tel__number(href="tel:+7 495 215-20-97") 8 495 215-20-97
+                                a.tel__icon.tel__icon-whatsapp(href="https://wa.me/79617772640")
                                     svg(width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M9.05901 1.97267C8.21991 1.13115 7.10506 0.614853 5.91574 0.516995C4.72642 0.419137 3.54101 0.746165 2.57353 1.43904C1.60604 2.13191 0.92024 3.14497 0.639939 4.2953C0.359637 5.44564 0.503308 6.65745 1.04501 7.71196L0.514284 10.2671C0.508602 10.2927 0.508381 10.3191 0.513638 10.3447C0.518895 10.3703 0.529511 10.3945 0.544801 10.4158C0.566698 10.448 0.597998 10.4729 0.634514 10.487C0.671029 10.5011 0.711019 10.5038 0.749132 10.4948L3.27009 9.90136C4.33055 10.4245 5.54379 10.5574 6.69385 10.2766C7.84392 9.99579 8.85618 9.31939 9.55047 8.36782C10.2448 7.41624 10.576 6.25123 10.4853 5.08015C10.3946 3.90907 9.88774 2.80791 9.05503 1.97267H9.05901ZM8.27088 8.20536C7.69056 8.77982 6.94327 9.15947 6.13408 9.29092C5.3249 9.42238 4.49451 9.29904 3.75969 8.93823L3.40675 8.76455L1.85835 9.1277V9.10796L2.18475 7.55933L2.01226 7.2225C1.63654 6.49182 1.50387 5.6619 1.63331 4.85182C1.76275 4.04174 2.14763 3.29314 2.73273 2.71344C3.4674 1.98566 4.46336 1.57686 5.5018 1.57686C6.54024 1.57686 7.53621 1.98566 8.27088 2.71344L8.28812 2.73712C9.01324 3.46721 9.41803 4.45189 9.41431 5.47662C9.41058 6.50135 8.99863 7.48311 8.26822 8.20799L8.27088 8.20536Z" fill="white")
                                         path(d="M8.13431 7.07972C7.94457 7.37576 7.64338 7.7376 7.26789 7.82838C6.60448 7.98627 5.59477 7.82838 4.33031 6.66921L4.31439 6.65474C3.21446 5.63635 2.92256 4.78769 2.98757 4.11534C3.02605 3.73246 3.34714 3.38774 3.61781 3.16143C3.66085 3.12545 3.71177 3.09994 3.76652 3.08696C3.82127 3.07398 3.87832 3.07388 3.93311 3.08666C3.9879 3.09945 4.03892 3.12477 4.08209 3.16059C4.12526 3.19642 4.15937 3.24177 4.18171 3.293L4.58904 4.20613C4.61564 4.26491 4.62561 4.32975 4.6179 4.39372C4.61018 4.45769 4.58508 4.51837 4.54526 4.56928L4.33828 4.83243C4.29525 4.88705 4.26962 4.95315 4.26466 5.02229C4.2597 5.09142 4.27563 5.16046 4.31041 5.22057C4.50702 5.50794 4.74227 5.76734 5.00965 5.9916C5.29732 6.26614 5.62356 6.49792 5.97822 6.67973C6.04296 6.70561 6.11399 6.71179 6.18227 6.69749C6.25056 6.6832 6.31301 6.64908 6.36168 6.59947L6.59918 6.36001C6.64437 6.31182 6.70213 6.27697 6.76606 6.25932C6.82999 6.24167 6.8976 6.24191 6.9614 6.26001L7.92998 6.535C7.98486 6.55049 8.0353 6.57857 8.07721 6.61698C8.11912 6.65538 8.15132 6.70303 8.17121 6.75606C8.19111 6.8091 8.19813 6.86603 8.19172 6.92226C8.18531 6.97849 8.16564 7.03243 8.13431 7.07972Z" fill="white")
-                                .tel__icon.tel__icon-telegram 
+                                a.tel__icon.tel__icon-telegram(href="https://t.me/+74952152097")
                                     svg(width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.1666 0.753531L8.69037 8.1962C8.69037 8.1962 8.48402 8.71227 7.91618 8.46453L4.49435 5.84553C4.95428 5.43209 8.5223 2.22427 8.67834 2.0788C8.91952 1.85367 8.76985 1.71969 8.48949 1.88995L3.21921 5.23685L1.18591 4.55234C1.18591 4.55234 0.865803 4.43877 0.834996 4.19103C0.804006 3.9433 1.1963 3.80913 1.1963 3.80913L9.48536 0.557384C9.48536 0.557384 10.1666 0.258058 10.1666 0.753531Z" fill="white")
                                 .tel__chevron 
@@ -159,53 +159,59 @@ html(lang="ru")
                                     h2.stack__info-title Цветы
                                     .stack__info-content
                                         ul.stack__list 
-                                            li.stack__item-text Букеты
-                                            li.stack__item-text Цветы в коробке
-                                            li.stack__item-text Цветы в ящике
+                                            li 
+                                                a.stack__item-text(href="#") Букеты
+                                            li
+                                                a.stack__item-text(href="#") Цветы в коробке
+                                            li
+                                                a.stack__item-text(href="#") Цветы в ящике
                                         ul.stack__list 
-                                            li.stack__item-text Цветы в корзине
-                                            li.stack__item-text Цветы в пакете
-                                            li.stack__item-text Цветы в стаканчике
-                            .stack__item
+                                            li
+                                                a.stack__item-text(href="#") Цветы в корзине
+                                            li
+                                                a.stack__item-text(href="#") Цветы в пакете
+                                            li
+                                                a.stack__item-text(href="#") Цветы в стаканчике
+                            a.stack__item(href="#")
                                 picture.stack__item-img 
                                     source(srcset="img/stack1.webp")
                                     img(src="img/stack1.png" alt="stack1")
-                                .stack__item-text Шары
-                            .stack__item 
-                                .picture.stack__item-img 
+                                p.stack__item-text Шары
+                            a.stack__item(href="#")
+                                picture.stack__item-img 
                                     source(srcset="img/stack2.webp")
                                     img(src="img/stack2.png" alt="stack2")
-                                .stack__item-text Съедобные букеты
-                            .stack__item 
+                                p.stack__item-text Съедобные букеты
+                            a.stack__item(href="#")
                                 picture.stack__item-img 
                                     source(srcset="img/stack3.webp")
                                     img(src="img/stack3.png" alt="stack3")
-                                .stack__item-text Десерты и выпечка
-                            .stack__item 
+                                p.stack__item-text Десерты и выпечка
+                            a.stack__item(href="#")
                                 picture.stack__item-img 
                                     source(srcset="img/stack4.webp")
                                     img(src="img/stack4.png" alt="stack4")
-                                .stack__item-text Конфеты и шоколад
-                            .stack__item 
+                                p.stack__item-text Конфеты и шоколад
+                            a.stack__item(href="#")
                                 picture.stack__item-img 
                                     source(srcset="img/stack5.webp")
                                     img(src="img/stack5.png" alt="stack5")
-                                .stack__item-text Открытки
-                            .stack__item 
+                                p.stack__item-text Открытки
+                            a.stack__item(href="#")
                                 picture.stack__item-img 
                                     source(srcset="img/stack6.webp")
                                     img(src="img/stack6.png" alt="stack6")
-                                .stack__item-text Подарки
-                            .stack__item 
+                                p.stack__item-text Подарки
+                            a.stack__item(href="#")
                                 picture.stack__item-img 
                                     source(srcset="img/stack7.webp")
                                     img(src="img/stack7.png" alt="stack7")
-                                .stack__item-text Горшечные растения
-                            .stack__item 
+                                p.stack__item-text Горшечные растения
+                            a.stack__item(href="#")
                                 picture.stack__item-img 
                                     source(srcset="img/stack8.webp")
                                     img(src="img/stack8.png" alt="stack8")
-                                .stack__item-text Вазы
+                                p.stack__item-text Вазы
             section.favorites 
                 .container
                     .favorites__wrapper 
@@ -225,11 +231,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/favorites1.webp")
-                                    img(src="img/favorites1.png" alt="facorites1")
+                                a(href="#")
+                                    picture.flower__img
+                                        source(srcset="img/favorites1.webp")
+                                        img(src="img/favorites1.png" alt="facorites1")
                                 .flower__content
-                                    h3.flower__title Безграничность нежности
+                                    a.flower__title(href="#") Безграничность нежности
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -246,11 +253,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/favorites2.webp")
-                                    img(src="img/favorites2.png" alt="facorites2")
+                                a(href="#")
+                                    picture.flower__img
+                                        source(srcset="img/favorites2.webp")
+                                        img(src="img/favorites2.png" alt="facorites2")
                                 .flower__content
-                                    h4.flower__title Улыбка Фортуны
+                                    a.flower__title(href="#") Улыбка Фортуны
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -271,11 +279,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/favorites3.webp")
-                                    img(src="img/favorites3.png" alt="facorites3")
+                                a(href="#")
+                                    picture.flower__img
+                                        source(srcset="img/favorites3.webp")
+                                        img(src="img/favorites3.png" alt="facorites3")
                                 .flower__content
-                                    h4.flower__title Валентинка
+                                    a.flower__title(href="#") Валентинка
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -292,11 +301,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/favorites4.webp")
-                                    img(src="img/favorites4.png" alt="facorites4")
+                                a(href="#")
+                                    picture.flower__img
+                                        source(srcset="img/favorites4.webp")
+                                        img(src="img/favorites4.png" alt="facorites4")
                                 .flower__content
-                                    h4.flower__title Чувствуй
+                                    a.flower__title(href="#") Чувствуй
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -310,7 +320,7 @@ html(lang="ru")
                                             svg(width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg")  
                                                 path(d="M1.8335 1.03345H4.14073C5.11433 1.03345 5.95388 1.71764 6.15038 2.6712L8.34746 13.3331C8.60945 14.6045 9.72886 15.5168 11.027 15.5168H19.2706C20.5342 15.5168 21.6335 14.6513 21.93 13.423L23.1086 8.5411C23.4202 7.25014 22.442 6.00769 21.114 6.00769H6.80774M10.7871 20.9304C10.7871 21.4799 10.3417 21.9253 9.79229 21.9253C9.24285 21.9253 8.79744 21.4799 8.79744 20.9304C8.79744 20.381 9.24285 19.9356 9.79229 19.9356C10.3417 19.9356 10.7871 20.381 10.7871 20.9304ZM21.7305 20.9304C21.7305 21.4799 21.2851 21.9253 20.7356 21.9253C20.1862 21.9253 19.7408 21.4799 19.7408 20.9304C19.7408 20.381 20.1862 19.9356 20.7356 19.9356C21.2851 19.9356 21.7305 20.381 21.7305 20.9304Z" stroke="#AD2950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                         button.allbouquets 
-                            .allbouquets__wrapper.btn-text
+                            a(href="").allbouquets__wrapper.btn-text
                                 p.allbouquets__text Все букеты
                                 .allbouquets__icon
                                     svg(width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -372,11 +382,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers1.webp")
-                                    img(src="img/flowers1.png" alt="flowers1")
+                                a(href="") 
+                                    picture.flower__img
+                                        source(srcset="img/flowers1.webp")
+                                        img(src="img/flowers1.png" alt="flowers1")
                                 .flower__content
-                                    h4.flower__title Коробка с гортензиям
+                                    a.flower__title(href="#") Коробка с гортензиям
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -393,11 +404,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers2.webp")
-                                    img(src="img/flowers2.png" alt="flowers2")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers2.webp")
+                                        img(src="img/flowers2.png" alt="flowers2")
                                 .flower__content
-                                    h4.flower__title Нежные орхидеи
+                                    a.flower__title(href="#") Нежные орхидеи
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -414,11 +426,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers3.webp")
-                                    img(src="img/flowers3.png" alt="flowers3")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers3.webp")
+                                        img(src="img/flowers3.png" alt="flowers3")
                                 .flower__content
-                                    h4.flower__title Нежные орхидеи
+                                    a.flower__title(href="#") Нежные орхидеи
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -439,11 +452,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers4.webp")
-                                    img(src="img/flowers4.png" alt="flowers4")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers4.webp")
+                                        img(src="img/flowers4.png" alt="flowers4")
                                 .flower__content
-                                    h4.flower__title Поцелуй солнца
+                                    a.flower__title(href="#") Поцелуй солнца
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -460,11 +474,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers5.webp")
-                                    img(src="img/flowers5.png" alt="flowers5")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers5.webp")
+                                        img(src="img/flowers5.png" alt="flowers5")
                                 .flower__content
-                                    h4.flower__title Счастливая случайность
+                                    a.flower__title(href="#") Счастливая случайность
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -481,11 +496,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers6.webp")
-                                    img(src="img/flowers6.png" alt="flowers6")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers6.webp")
+                                        img(src="img/flowers6.png" alt="flowers6")
                                 .flower__content
-                                    h4.flower__title Формула таинственности
+                                    a.flower__title(href="#") Формула таинственности
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -502,11 +518,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers7.webp")
-                                    img(src="img/flowers7.png" alt="flowers7")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers7.webp")
+                                        img(src="img/flowers7.png" alt="flowers7")
                                 .flower__content
-                                    h4.flower__title Гипноз
+                                    a.flower__title(href="#") Гипноз
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -523,11 +540,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers8.webp")
-                                    img(src="img/flowers8.png" alt="flowers8")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers8.webp")
+                                        img(src="img/flowers8.png" alt="flowers8")
                                 .flower__content
-                                    h4.flower__title Сиреневый плайм
+                                    a.flower__title(href="#") Сиреневый плайм
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -544,11 +562,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers9.webp")
-                                    img(src="img/flowers9.png" alt="flowers9")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers9.webp")
+                                        img(src="img/flowers9.png" alt="flowers9")
                                 .flower__content
-                                    h4.flower__title Коробка с Macaron
+                                    a.flower__title(href="#") Коробка с Macaron
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -565,11 +584,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers10.webp")
-                                    img(src="img/flowers10.png" alt="flowers10")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers10.webp")
+                                        img(src="img/flowers10.png" alt="flowers10")
                                 .flower__content
-                                    h4.flower__title Коробка с гортензиям
+                                    a.flower__title(href="#") Коробка с гортензиям
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -586,11 +606,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers11.webp")
-                                    img(src="img/flowers11.png" alt="flowers11")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers11.webp")
+                                        img(src="img/flowers11.png" alt="flowers11")
                                 .flower__content
-                                    h4.flower__title Дуэт
+                                    a.flower__title(href="#") Дуэт
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -607,11 +628,12 @@ html(lang="ru")
                                 .flower__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                picture.flower__img
-                                    source(srcset="img/flowers12.webp")
-                                    img(src="img/flowers12.png" alt="flowers12")
+                                a(href="")
+                                    picture.flower__img
+                                        source(srcset="img/flowers12.webp")
+                                        img(src="img/flowers12.png" alt="flowers12")
                                 .flower__content
-                                    h4.flower__title Оливия
+                                    a.flower__title(href="#") Оливия
                                     .flower__info 
                                         .flower__info-icon 
                                             svg(width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -626,15 +648,15 @@ html(lang="ru")
                                                 path(d="M1.8335 1.03345H4.14073C5.11433 1.03345 5.95388 1.71764 6.15038 2.6712L8.34746 13.3331C8.60945 14.6045 9.72886 15.5168 11.027 15.5168H19.2706C20.5342 15.5168 21.6335 14.6513 21.93 13.423L23.1086 8.5411C23.4202 7.25014 22.442 6.00769 21.114 6.00769H6.80774M10.7871 20.9304C10.7871 21.4799 10.3417 21.9253 9.79229 21.9253C9.24285 21.9253 8.79744 21.4799 8.79744 20.9304C8.79744 20.381 9.24285 19.9356 9.79229 19.9356C10.3417 19.9356 10.7871 20.381 10.7871 20.9304ZM21.7305 20.9304C21.7305 21.4799 21.2851 21.9253 20.7356 21.9253C20.1862 21.9253 19.7408 21.4799 19.7408 20.9304C19.7408 20.381 20.1862 19.9356 20.7356 19.9356C21.2851 19.9356 21.7305 20.381 21.7305 20.9304Z" stroke="#AD2950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                         .flowers__nav
                             .flowers__pages 
-                                .flowers__pages-prev.btn-icon 
+                                a(href="").flowers__pages-prev.btn-icon 
                                     svg(width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M8.25 16.5L1.14327 9.88388C0.618912 9.39573 0.618911 8.60427 1.14327 8.11612L8.25 1.5" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
-                                .flowers__pages-page.btn-icon 1
-                                .flowers__pages-page.flowers__pages-active.btn-icon 2
-                                .flowers__pages-page.btn-icon 3
+                                a(href="").flowers__pages-page.btn-icon 1
+                                a(href="").flowers__pages-page.flowers__pages-active.btn-icon 2
+                                a(href="").flowers__pages-page.btn-icon 3
                                 p ...   
-                                .flowers__pages-page.btn-icon 7
-                                .flowers__pages-next.btn-icon
+                                a(href="").flowers__pages-page.btn-icon 7
+                                a(href="").flowers__pages-next.btn-icon
                                     svg(width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M0.75 16.5L7.85673 9.88388C8.38109 9.39573 8.38109 8.60427 7.85673 8.11612L0.750002 1.5" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
                             .flowers__btn.btn-text Показать еще
@@ -673,7 +695,7 @@ html(lang="ru")
                                             path(d="M15.0848 0.668833C15.4592 -0.0896438 16.5408 -0.0896432 16.9152 0.668833L20.8314 8.60258C21.1284 9.20442 21.7024 9.62177 22.3665 9.71883L31.1259 10.9992C31.9627 11.1215 32.2962 12.1501 31.6904 12.7401L25.3546 18.9112C24.8731 19.3802 24.6534 20.0561 24.767 20.7185L26.262 29.4354C26.405 30.2692 25.5298 30.905 24.7811 30.5113L16.9501 26.393C16.3553 26.0802 15.6447 26.0802 15.0499 26.393L7.21893 30.5113C6.47019 30.905 5.59497 30.2692 5.73798 29.4354L7.23303 20.7185C7.34665 20.0561 7.12689 19.3802 6.64542 18.9112L0.309604 12.7401C-0.296217 12.1501 0.0372987 11.1215 0.874103 10.9992L9.6335 9.71883C10.2976 9.62177 10.8716 9.20442 11.1686 8.60258L15.0848 0.668833Z" fill="#AD2950")
                                     span.rating__info-rating 5.0
                                 .rating__map 
-                                    p.rating__map-map на Яндекс картах
+                                    a(href="").rating__map-map на Яндекс картах
                                     p.rating__map-grade 2 775+ 
                                         span.rating__map-span оценок
                                     p.rating__map-review 1 500+ 
@@ -804,7 +826,7 @@ html(lang="ru")
                                         path(d="M25.9297 44.5313H35.6953" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
                                 .row__item-title.row__bouquet-title Выберите свой букет
                                 .row__item-text.row__bouquet-text Выберите длину, оттенок, страну и сорт
-                                .row__item-btn.catalog.catalog__text Собрать букет
+                                a(href="").row__item-btn.catalog.catalog__text Собрать букет
                         .row__item
                             .row__item-wrapper.row__shops
                                 .row__item-icon 
@@ -830,7 +852,7 @@ html(lang="ru")
                                         path(d="M20.1646 21.0288H24.2798" stroke="#1C1C1D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
                                 .row__item-title Магазины рядом 
                                 .row__item-text Доставка от 300 руб. до 1 часа.
-                                .row__item-btn.catalog.catalog__text Смотреть на карте
+                                a(href="").row__item-btn.catalog.catalog__text Смотреть на карте
             section.advice
                 .container
                     .advice__wrapper
@@ -845,25 +867,25 @@ html(lang="ru")
                                     svg(width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M11.5 1.5L16.8728 6.87164C16.9576 6.95495 17 7.06414 17 7.17333M11.5 12.5L16.8728 7.47503C16.9576 7.39172 17 7.28253 17 7.17333M17 7.17333H1" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
                         .advice__content
-                            .advice__item.advice__item-1
+                            a(href="").advice__item.advice__item-1
                                 .advice__item-title Где купить необычные букеты цветов?
                                 .advice__item-text Как выбрать стильный букет среди разнообразия цветочных магазинов
                                 picture.advice__item-img
                                     source(srcset="img/advice1.webp")
                                     img(src="img/advice1.png" alt="advice1")
-                            .advice__item.advice__item-2
+                            a(href="").advice__item.advice__item-2
                                 .advice__item-title Где купить необычные букеты цветов?
                                 .advice__item-text Как выбрать стильный букет среди разнообразия цветочных магазинов
                                 picture.advice__item-img
                                     source(srcset="img/advice2.webp")
                                     img(src="img/advice2.png" alt="advice2")
-                            .advice__item.advice__item-3
+                            a(href="").advice__item.advice__item-3
                                 .advice__item-title Где купить необычные букеты цветов?
                                 .advice__item-text Как выбрать стильный букет среди разнообразия цветочных магазинов
                                 picture.advice__item-img
                                     source(srcset="img/advice3.webp")
                                     img(src="img/advice3.png" alt="advice3")
-                            .advice__item.advice__item-4
+                            a(href="").advice__item.advice__item-4
                                 .advice__item-title 1000 поводов подарить букет
                                 .advice__item-text Как выбрать стильный букет среди разнообразия цветочных магазинов
                                 picture.advice__item-img
@@ -895,7 +917,7 @@ html(lang="ru")
                                 img(src="img/logo.png", alt="BUCEDO")
                             .seller
                                 h5.footer__item-title.seller__title Продавайте на Букедо
-                                button.seller__btn.catalog.catalog__text Стать продавцом
+                                a(href="").seller__btn.catalog.catalog__text Стать продавцом
                         .footer__item 
                             h5.footer__item-title#buyer Покупателям
                                 svg.footer__item-svg(width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -920,7 +942,7 @@ html(lang="ru")
                         .footer__item
                             h5.footer__item-title.footer__item-none Мы на связи
                             .footer__socials 
-                                .footer__social 
+                                a.footer__social(href="tel:+7 495 215-20-97")
                                     .footer__social-icon
                                         svg(width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             g(clip-path="url(#clip0_988_2391)")
@@ -931,7 +953,7 @@ html(lang="ru")
                                     .footer__social-info 
                                         .footer__social-title 8 495 215-20-97
                                         .footer__social-text с 8:00 до 20:00 
-                                .footer__social 
+                                a.footer__social(href="https://wa.me/79617772640")
                                     .footer__social-icon.footer__social-mess.tel__icon.tel__icon-whatsapp
                                         svg(width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M9.05901 1.97267C8.21991 1.13115 7.10506 0.614853 5.91574 0.516995C4.72642 0.419137 3.54101 0.746165 2.57353 1.43904C1.60604 2.13191 0.92024 3.14497 0.639939 4.2953C0.359637 5.44564 0.503308 6.65745 1.04501 7.71196L0.514284 10.2671C0.508602 10.2927 0.508381 10.3191 0.513638 10.3447C0.518895 10.3703 0.529511 10.3945 0.544801 10.4158C0.566698 10.448 0.597998 10.4729 0.634514 10.487C0.671029 10.5011 0.711019 10.5038 0.749132 10.4948L3.27009 9.90136C4.33055 10.4245 5.54379 10.5574 6.69385 10.2766C7.84392 9.99579 8.85618 9.31939 9.55047 8.36782C10.2448 7.41624 10.576 6.25123 10.4853 5.08015C10.3946 3.90907 9.88774 2.80791 9.05503 1.97267H9.05901ZM8.27088 8.20536C7.69056 8.77982 6.94327 9.15947 6.13408 9.29092C5.3249 9.42238 4.49451 9.29904 3.75969 8.93823L3.40675 8.76455L1.85835 9.1277V9.10796L2.18475 7.55933L2.01226 7.2225C1.63654 6.49182 1.50387 5.6619 1.63331 4.85182C1.76275 4.04174 2.14763 3.29314 2.73273 2.71344C3.4674 1.98566 4.46336 1.57686 5.5018 1.57686C6.54024 1.57686 7.53621 1.98566 8.27088 2.71344L8.28812 2.73712C9.01324 3.46721 9.41803 4.45189 9.41431 5.47662C9.41058 6.50135 8.99863 7.48311 8.26822 8.20799L8.27088 8.20536Z" fill="white")
@@ -939,7 +961,7 @@ html(lang="ru")
                                     .footer__social-info 
                                         .footer__social-title WhatsApp
                                         .footer__social-text +7 961 777-2640
-                                .footer__social 
+                                a.footer__social(href="mailto:hello@bukedo.ru")
                                     .footer__social-icon 
                                         svg(width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M0.875 5.4165L7 8.0415L13.125 5.4165" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
@@ -947,7 +969,7 @@ html(lang="ru")
                                     .footer__social-info 
                                         .footer__social-title hello@bukedo.ru
                                         .footer__social-text поддержка 24/7
-                                .footer__social
+                                a.footer__social(href="https://t.me/@bukedo")
                                     .footer__social-icon.footer__social-mess.tel__icon.tel__icon-telegram 
                                         svg(width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M10.1666 0.753531L8.69037 8.1962C8.69037 8.1962 8.48402 8.71227 7.91618 8.46453L4.49435 5.84553C4.95428 5.43209 8.5223 2.22427 8.67834 2.0788C8.91952 1.85367 8.76985 1.71969 8.48949 1.88995L3.21921 5.23685L1.18591 4.55234C1.18591 4.55234 0.865803 4.43877 0.834996 4.19103C0.804006 3.9433 1.1963 3.80913 1.1963 3.80913L9.48536 0.557384C9.48536 0.557384 10.1666 0.258058 10.1666 0.753531Z" fill="white")
