@@ -8,6 +8,7 @@ html(lang="ru")
         link(rel="stylesheet" href="css/reset.css")
         link(rel="stylesheet" href="css/fonts.css")
         link(rel="stylesheet" href="css/style.css")
+        script(src="js/createvacancy.js" defer) 
     body
         header.header 
             .header__wrapper 
@@ -55,7 +56,7 @@ html(lang="ru")
             section.attributes
                 .container
                     .wrapper
-                        h2.attributes__title О вакансии:
+                        h2.attributes__title.title-large О вакансии:
                         .attribut
                             textarea.attribut__textarea(id="greetings" required maxlength="500" placeholder="Например: Здравствуйте, уважаемые кандидаты! В нашей компании открыта вакансия и мы планируем максимально оперативно её закрыть. Если вы заинтересованы в трудоустройстве, просим вас оставлять свои отклики.")
                             h3.attribut__title Приветствие для кандидатов
@@ -63,7 +64,7 @@ html(lang="ru")
                         .attribut
                             input.attribut__input(required type="text") 
                             h3.attribut__title Название вакансии (должность)
-                        .attribut.attribut-line
+                        .attribut.attribut-line16
                             .attribut__main
                                 input.attribut__input(required type="text")
                                 h3.attribut__title План найма, количество сотрудников
@@ -73,7 +74,15 @@ html(lang="ru")
                             button.attribut__btn.svg-container
                                 svg(width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg")
                                     path(fill-rule="evenodd" clip-rule="evenodd" d="M5 0C5.55228 0 6 0.447715 6 1V4L9 4C9.55228 4 10 4.44772 10 5C10 5.55228 9.55228 6 9 6H6V9C6 9.55229 5.55228 10 5 10C4.44771 10 4 9.55229 4 9V6H1C0.447715 6 0 5.55228 0 5C5.96046e-08 4.44771 0.447715 4 1 4L4 4V1C4 0.447715 4.44771 0 5 0Z" fill="#202123")
-                        h2.attributes__title О работодателе:
+                        h2.attributes__title.title-large О работодателе:
+                        .attribut.attribut-line24
+                            .attribut__icon
+                                svg(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M38 24.5109C32.4414 26.7609 26.3654 28 20 28C13.6346 28 7.55859 26.7609 2 24.5109M28 10V6C28 3.79086 26.2091 2 24 2H16C13.7909 2 12 3.79086 12 6V10M20 22H20.02M6 38H34C36.2091 38 38 36.2091 38 34V14C38 11.7909 36.2091 10 34 10H6C3.79086 10 2 11.7909 2 14V34C2 36.2091 3.79086 38 6 38Z" stroke="#C7C9CF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                            .attribut__info
+                                .attribut__info-title.title-medium Логотип работодателя
+                                .attribut__info-text JPG, PNG, GIF максимальный размер 800K
+                                button.attribut__info-btn.btn.btn-bg-gray Загрузить
                         .attribut
                             input.attribut__input(required type="text") 
                             h3.attribut__title Наименование работодателя
@@ -87,25 +96,123 @@ html(lang="ru")
             section.respons
                 .container
                     .wrapper 
-                        h2.attributes__title Требования:
+                        h2.respons__title.title-large Требования:
                         .attribut
                             textarea.attribut__textarea.attribut__textarea-long(id="greetings" required maxlength="5000" placeholder="Например: - Продажа «коробочного» решения и франши... - Работа со средним чеком ... - Обработка первичных входящих заявок, квалификация заявок... - «Реанимация» существующей базы клиентов...")
                             h3.attribut__title Должностные и дополнительные обязанности
                             p.attribut__text Должностные обязаности должны содержать не более 5000 символов с учетом пробелов.
-                        h2.attributes__title Оплата в месяц
-
+                        .attribut
+                            h2.respons__title.title-medium Оплата в месяц
+                            .difference
+                                .difference__item
+                                    input.attribut__input(required type="number", name="")
+                                    h3.attribut__title от
+                                .difference__item
+                                    input.attribut__input(required type="number", name="")
+                                    h3.attribut__title до
+                                .difference__item.currency
+                                    .currency__select(tabindex="0") ₽
+                                    .currency__options 
+                                        .currency__option ₽
+                                        .currency__option $
+                                        .currency__option €
+                            .tax
+                                .tax__item
+                                    input.tax__item-radio(type="radio" name="tax" id="tax1")
+                                    label.tax__item-label(for="tax1") 
+                                        .tax__item-check 
+                                        .tax__item-title До налогооблажения
+                                        .tax__item-text Доход “гросс”
+                                .tax__item
+                                    input.tax__item-radio(type="radio" name="tax" id="tax2")
+                                    label.tax__item-label(for="tax2") 
+                                        .tax__item-check
+                                        .tax__item-title После налогооблажения
+                                        .tax__item-text Чистый доход “На руки”
+                        .attribut
+                            .address
+                                input.attribut__input.attribut__select(required tabindex="0" type="text")
+                                h3.attribut__title Регион и адресс
+                                .attribut__options 
+                                    .attribut__option Москва
+                                    .attribut__option Санкт-Петербург
+                                    .attribut__option Казань
+                                .address__item 
+                                    input.address__item-checkbox(type="checkbox" name="address" id="address1")
+                                    label.address__item-label(for="address1") 
+                                        .address__item-check 
+                                        .address__item-title Готовность к релокации
+                                        .address__item-text Готовы ли вы изменить город проживания?
+                                .address__item 
+                                    input.address__item-checkbox(type="checkbox" name="address" id="address2")
+                                    label.address__item-label(for="address2") 
+                                        .address__item-check 
+                                        .address__item-title Готовность к командировкам
+                                        .address__item-text Готовы ли вы ездить в командировки по рабочим вопросам?
+                        .attribut
+                            input.attribut__input(required type="text") 
+                            h3.attribut__title Гражданство
             section.requirements
                 .container
                     .wrapper 
-                        h2.attributes__title Тип занятости:
-                        h2.attributes__title Режим работы:
-                        h2.attributes__title Опыт работы:
-                        h2.attributes__title Рекомендованный возраст кандидатов:
-                        h2.attributes__title Испытательный период:
+                        .attribut
+                            h2.requirements__title.title-medium Тип занятости:
+                            .tag 
+                                button.tag__btn Полная занятость
+                                button.tag__btn Частичная занятость
+                                button.tag__btn Проектная работа
+                        .attribut
+                            h2.requirements__title.title-medium Режим работы:
+                            .tag 
+                                button.tag__btn Офисная работа
+                                button.tag__btn Удаленная работа
+                                button.tag__btn Гибридная работа
+                                button.tag__btn Вахтовый метод
+                        .attribut
+                            h2.requirements__title.title-medium Опыт работы:
+                            .tag 
+                                button.tag__btn Без опыта
+                                button.tag__btn Менее 1 года
+                                button.tag__btn от 1 до 3-х лет
+                                button.tag__btn от 3-х лет
+                                button.tag__btn от 5 лет
+                                button.tag__btn от 10 лет
+                        .attribut
+                            h2.requirements__title.title-medium Рекомендованный возраст кандидатов:
+                            .difference
+                                .difference__item.requirements__item
+                                    input.attribut__input(required type="number", name="")
+                                    h3.attribut__title от
+                                .difference__item.requirements__item
+                                    input.attribut__input(required type="number", name="")
+                                    h3.attribut__title до
+                        .attribut
+                            input.attribut__input.attribut__select(required tabindex="0" type="text")
+                            h3.attribut__title Рекомендованный пол кандидатов
+                            .attribut__options 
+                                .attribut__option Мужской
+                                .attribut__option Женский
+                        .attribut
+                            input.attribut__input.attribut__select(required tabindex="0" type="text") 
+                            h3.attribut__title Образование
+                            .attribut__options 
+                                .attribut__option Не важно
+                                .attribut__option Без образования 
+                                .attribut__option Среднее образование
+                                .attribut__option Среднее специальное образование
+                                .attribut__option Высшее образование
+                                .attribut__option Несколько высших образований
+                        .attribut
+                            h2.requirements__title.title-medium Испытательный период:
+                            .tag 
+                                button.tag__btn Без периода
+                                button.tag__btn до 1 месяца
+                                button.tag__btn до 3 месяцев
+                                button.tag__btn Более 3 месяцев
             section.skills
                 .container
                     .wrapper 
-                        h2.attributes__title Дополнительно:
+                        h2.skills__title.title-large Дополнительно:
                         .attribut
                             textarea.attribut__textarea.attribut__textarea-long(id="greetings" required maxlength="5000" placeholder="Например: - Продажа «коробочного» решения и франши... - Работа со средним чеком ... - Обработка первичных входящих заявок, квалификация заявок... - «Реанимация» существующей базы клиентов...")
                             h3.attribut__title Дополнительные требования:
@@ -125,6 +232,10 @@ html(lang="ru")
             section.basement
                 .container
                     .basement__check 
+                        input.basement__check-checkbox(type="checkbox" name="address" id="checkAI")
+                        label.basement__check-label(for="checkAI") 
+                            .basement__check-check 
+                            .basement__check-title Показывать в поиске AI
                     .basement__btns 
                         button(type="submit").basement__btns-publish.btn.btn-primary Опубликовать
                         button(type="submit").basement__btns-save.btn.btn-transparent Сохранить
