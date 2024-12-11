@@ -85,10 +85,12 @@
     font: 500 18px/20px 'Inter', 'sans-serif'
     letter-spacing: 0  
 
+// 
 body
     background-color: var(--Gray-100)
 .container
-    width: 726px
+    max-width: 726px
+    min-width: 390px
     margin: 0 auto
 .wrapper
     display: flex
@@ -146,7 +148,15 @@ body
             border: 1px solid var(--Primary-30)
             background-color: var(--Primary-30)
             color: var(--White)
+.small-visible
+    display: none
+.burger
+    flex: 0 0 20px
+    margin-right: 24px
 
+.logo
+    flex: 0 0 auto
+    margin-right: 32px
 .attribut
     position: relative
     &__title
@@ -266,6 +276,8 @@ body
         &:hover
             background-color: var(--Gray-100)
     &__icon
+        width: 96px
+        height: 96px
         padding: 28px 30px
         border: 2px dashed var(--Gray-90)
         border-radius: 16px
@@ -276,14 +288,14 @@ body
         &-title 
             margin-bottom: 8px
         &-text 
+            margin-bottom: 16px
             @include body-small
             color: var(--Gray-60)
         &-btn 
             margin-top: auto
             padding: 6px 16px
             border-radius: 6px
-            @include btn-small
-        
+            @include btn-small      
 .currency
     &__select
         height: 56px
@@ -331,7 +343,6 @@ body
         flex: 1 0 auto 
         &:last-child
             flex: 0 0 auto
-
 .tag
     display: flex
     justify-content: flex-start
@@ -357,7 +368,6 @@ body
             color: var(--White)
             &:hover
                 background-color: var(--Gray-20)
-
 .tax
     &__item
         margin-top: 8px
@@ -418,6 +428,7 @@ body
         &-text        
             @include text-medium
             color: var(--Gray-30)
+
 .header
     padding: 0 24px
     &__wrapper
@@ -441,6 +452,8 @@ body
                 padding-right: 0
                 border-right: none
     &__search
+        flex: 0 0 auto
+        width: 20px
         display: flex
         align-items: center
         column-gap: 6px
@@ -450,6 +463,9 @@ body
             color: var(--Gray-30)
     &__mail, &__bell
         position: relative
+        flex: 0 0 auto
+        width: 20px
+        margin-right: 16px
         &-num
             position: absolute
             top: -2px
@@ -462,6 +478,7 @@ body
             letter-spacing: 0.01em
             color: #fff
     &__account
+        flex: 0 2 auto
         overflow: hidden
         text-wrap: nowrap
         &-company
@@ -474,6 +491,12 @@ body
         &-name
             font: 500 12px/17px 'Inter', sans-serif
             color: var(--Gray-40)
+    &__setting
+        flex: 0 0 auto
+        width: 20px
+    &__logout
+        flex: 0 0 auto
+        width: 20px
 .head
     margin-bottom: 24px
     &__title
@@ -523,7 +546,62 @@ body
             margin-right: 16px
         &-save
             margin-right: auto
+        &--back
+            margin-right: auto
+        &-view
+            margin-right: 16px
+            background:
+                image: url(../image/icons/eye.svg)
+                repeat: no-repeat
+                position: center center
 
 input[type="number"]::-webkit-outer-spin-button, 
 input[type="number"]::-webkit-inner-spin-button 
     -webkit-appearance: none
+
+@media (max-width:1023px)
+    .header
+        &__search-text
+            display: none
+        &__account
+            width: 161px
+@media (max-width:767px)
+    .wrapper
+        padding: 16px
+    .small-hidden
+        display: none
+    .small-visible
+        display: block
+    .btn
+        padding: 11.95px 23.2px
+    .logo
+        margin-right: 24px
+    .header
+        padding: 0 32px
+        &__menu
+            padding: 12px 0
+            &-item
+                padding-right: 0
+                border: none
+    .head
+        &__title
+            @include headline-medium
+    .attribut
+        &__textarea
+            height: 240px
+            &-headlong
+                padding-top: 68px
+    .attributes .attribut__textarea
+        height: 152px
+    .difference__item
+        flex: 0 1 auto
+    .basement
+        &__check
+            padding: 0 16px
+        &__btns
+            padding: 0 16px
+            &-back 
+                margin-right: auto
+            &-publish 
+                margin-right: 0                
+                
