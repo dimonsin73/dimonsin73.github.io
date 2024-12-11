@@ -59,3 +59,62 @@ for (let i = 0; i < currencySelectArr.length; i++) {
         }
     })
 }
+
+// Табы
+const tabs = document.querySelectorAll('.tabs__item')
+const tabcontentItemArr = document.querySelectorAll('.tabcontent__item')
+
+for (let i = 0; i < tabs.length; i++) {
+    const element = tabs[i];
+    element.addEventListener('click', function(){
+        for (let i = 0; i < tabs.length; i++) {
+            const el = tabs[i];
+            el.classList.remove('tabs__item-active')
+        }
+        element.classList.add('tabs__item-active')
+        switch (element.dataset.tab) {
+            case 'tab1':
+                for (let i = 0; i < tabcontentItemArr.length; i++) {
+                    const element = tabcontentItemArr[i];
+                    if (element.dataset.content == 'tab1') {
+                        element.classList.remove('tabcontent__item-hidden')
+                    } else {
+                        element.classList.add('tabcontent__item-hidden')
+                    };
+                };
+                break;
+            case 'tab2':
+                for (let i = 0; i < tabcontentItemArr.length; i++) {
+                    const element = tabcontentItemArr[i];
+                    if (element.dataset.content == 'tab2') {
+                        element.classList.remove('tabcontent__item-hidden')
+                    } else {
+                        element.classList.add('tabcontent__item-hidden')
+                    };
+                };
+                break;
+            case 'tab3':
+                for (let i = 0; i < tabcontentItemArr.length; i++) {
+                    const element = tabcontentItemArr[i];
+                    if (element.dataset.content == 'tab3') {
+                        element.classList.remove('tabcontent__item-hidden')
+                    } else {
+                        element.classList.add('tabcontent__item-hidden')
+                    };
+                };
+                break;
+            case 'tab4':
+                for (let i = 0; i < tabcontentItemArr.length; i++) {
+                    const element = tabcontentItemArr[i];
+                    if (element.dataset.content == 'tab4') {
+                        element.classList.remove('tabcontent__item-hidden')
+                    } else {
+                        element.classList.add('tabcontent__item-hidden')
+                    };
+                };
+                break;
+            default:
+                break;
+        }
+    })
+}

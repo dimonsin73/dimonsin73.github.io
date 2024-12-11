@@ -433,6 +433,59 @@ body
             @include text-medium
             color: var(--Gray-30)
 
+.tabcontent
+    display: flex
+    overflow: hidden
+    &__item
+        flex: 0 0 100%
+        &-hidden
+            display: none
+    &__check
+        margin-top: 24px
+    &__btns
+        display: flex
+        gap: 16px
+        justify-content: flex-end
+        margin-top: 24px
+        &-back
+            margin-right: auto
+
+.tabs
+    margin-bottom: 24px
+    &__wrapper
+        display: flex
+        gap: 24px
+    &__item
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        flex: 0 0 calc(25% - 24px * 3 / 4)
+        padding: 12px
+        border-radius: 12px
+        background-color: var(--White)
+        &-icon 
+            display: flex
+            justify-content: center
+            align-items: cener
+            width: 40px
+            height: 40px
+            margin-bottom: 12px
+            border-radius: 12px
+            background-color: var(--Gray-100)
+            & path
+                fill: var(--Gray-30)
+                transition: fill 0.3s ease
+        &-text
+            @include title-small
+            color: var(--Gray-20)
+            text-align: left
+            transition: color 0.3s ease
+        &-active 
+            & .tabs__item-text
+                color: var(--Primary-40)
+            & path
+                fill: var(--Primary-40)
 .header
     padding: 0 24px
     &__wrapper
