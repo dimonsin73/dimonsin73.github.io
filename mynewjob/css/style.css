@@ -29,6 +29,13 @@ body {
   background-color: var(--Gray-100);
 }
 
+.main {
+  display: grid;
+  grid-template-columns: 350px 726px 350px;
+  gap: 24px;
+  justify-content: center;
+}
+
 .container {
   max-width: 726px;
   min-width: 390px;
@@ -520,7 +527,6 @@ body {
 }
 .header__search {
   flex: 0 0 auto;
-  width: 20px;
   display: flex;
   align-items: center;
   -moz-column-gap: 6px;
@@ -576,6 +582,7 @@ body {
 }
 
 .head {
+  grid-column: span 3;
   margin-bottom: 24px;
 }
 .head__title {
@@ -627,6 +634,7 @@ body {
 .basement__check-label {
   display: flex;
   gap: 16px;
+  align-items: center;
 }
 .basement__check-check {
   width: 20px;
@@ -658,11 +666,55 @@ body {
   background-position: center center;
 }
 
+.videovacancy {
+  position: sticky;
+  top: 24px;
+  width: 350px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background-color: var(--White);
+}
+.videovacancy__info {
+  padding: 16px 24px 24px;
+}
+.videovacancy__title {
+  margin-bottom: 8px;
+  font: 700 20px/30px "Inter", "sans-serif";
+  letter-spacing: 0;
+}
+.videovacancy__text {
+  margin-bottom: 16px;
+  font: 400 14px/20px "Inter", "sans-serif";
+  letter-spacing: -0.25px;
+}
+.videovacancy__btn {
+  padding: 12.5px 53px;
+  border-radius: 8px;
+  background-color: var(--Black);
+  font: 600 15px/150% "Inter", "sans-serif";
+  letter-spacing: 0.01em;
+  color: var(--White);
+}
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
+@media (max-width: 1473px) {
+  .main {
+    grid-template-columns: auto;
+    gap: 0;
+  }
+  .head {
+    grid-column: span 1;
+  }
+  .videovacancy {
+    display: none;
+  }
+}
 @media (max-width: 1023px) {
   .header__search-text {
     display: none;
