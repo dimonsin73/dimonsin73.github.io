@@ -407,10 +407,10 @@ body {
   gap: 24px;
 }
 
-.flower {
+.product {
   position: relative;
 }
-.flower__heart {
+.product__heart {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -423,49 +423,49 @@ body {
   background-color: #fff;
   cursor: pointer;
 }
-.flower__heart path {
+.product__heart path {
   fill: #BECCD1;
 }
-.flower__heart-active path {
+.product__heart-active path {
   fill: var(--burgundy);
 }
-.flower__img img {
+.product__img img {
   border-radius: 16px;
 }
-.flower__content {
+.product__content {
   margin-top: 16px;
 }
-.flower__title {
+.product__title {
   display: inline-block;
   font: 500 16px/20.8px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-bottom: 10px;
 }
-.flower__info {
+.product__info {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: start;
   margin-bottom: 10px;
 }
-.flower__info-icon {
+.product__info-icon {
   margin-right: 9px;
 }
-.flower__text {
+.product__text {
   font: 400 14px/18.2px "PT Root UI", "sans-serif";
   color: var(--grey);
 }
-.flower__bottom {
+.product__bottom {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
 }
-.flower__price {
+.product__price {
   font: 700 20px/26px "PT Root UI", "sans-serif";
   color: var(--black);
 }
-.flower__btn {
+.product__btn {
   font: 700 16px/20.8px "PT Root UI", "sans-serif";
   color: var(--black);
   padding: 14px 24px;
@@ -473,35 +473,35 @@ body {
   border-radius: 12px;
   color: var(--burgundy);
 }
-.flower__btn-shop {
+.product__btn-shop {
   display: none;
 }
-.flower__btn-active {
+.product__btn-active {
   content: "В корзине";
   border-color: var(--green);
   color: var(--green);
 }
-.flower__btn-active .flower__btn-by {
+.product__btn-active .product__btn-by {
   display: none;
 }
-.flower__btn-active .flower__btn-shop {
+.product__btn-active .product__btn-shop {
   display: block;
 }
-.flower__btn-small {
+.product__btn-small {
   display: none;
 }
-.flower__sale-top {
+.product__sale-top {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
 }
-.flower__sale-oldprice {
+.product__sale-oldprice {
   font: 400 12px/15.6px "PT Root UI", "sans-serif";
   color: var(--grey);
   text-decoration: line-through;
 }
-.flower__sale-discount {
+.product__sale-discount {
   font: 400 12px/15.6px "PT Root UI", "sans-serif";
   color: var(--grey);
   padding: 2px 4px;
@@ -509,7 +509,7 @@ body {
   background-color: var(--rise);
   color: var(--burgundy);
 }
-.flower__sale-prace {
+.product__sale-prace {
   color: var(--burgundy);
 }
 
@@ -529,62 +529,62 @@ body {
   align-items: center;
 }
 
-.flowers {
+.products {
   margin-bottom: 90px;
 }
-.flowers__header {
+.products__header {
   margin-bottom: 32px;
 }
-.flowers__header-title {
+.products__header-title {
   margin-bottom: 16px;
 }
-.flowers__header-text {
+.products__header-text {
   margin-bottom: 24px;
 }
-.flowers__content {
+.products__content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 56px;
 }
-.flowers__nav {
+.products__nav {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 48px;
 }
-.flowers__pages {
+.products__pages {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
 }
-.flowers__pages-page {
+.products__pages-page {
   font: 500 16px/20.8px "PT Root UI", "sans-serif";
   color: var(--black);
   border-color: #fff;
 }
-.flowers__pages-prev {
+.products__pages-prev {
   margin-right: 24px;
   border-color: #fff;
 }
-.flowers__pages-next {
+.products__pages-next {
   margin-left: 24px;
   border-color: #fff;
 }
-.flowers__pages-active {
+.products__pages-active {
   border-color: var(--burgundy);
   color: var(--burgundy);
 }
-.flowers__filters {
+.products__filters {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
-.flowers__filter {
+.products__filter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -599,15 +599,15 @@ body {
   text-wrap: nowrap;
   cursor: pointer;
 }
-.flowers__filter-icon {
+.products__filter-icon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.flowers__filter-reset {
+.products__filter-reset {
   background-color: #fff;
 }
-.flowers__filter-number {
+.products__filter-number {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -618,7 +618,7 @@ body {
   border-radius: 50%;
   background-color: var(--burgundy);
 }
-.flowers__filter-small {
+.products__filter-small {
   display: none;
 }
 
@@ -761,23 +761,23 @@ body {
   color: var(--grey);
 }
 
-.row {
+.offer {
   padding: 90px 0;
 }
-.row__wrapper {
+.offer__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
 }
-.row__item {
+.offer__item {
   flex: 1 0 50%;
   min-height: 323px;
   border-radius: 16px;
   overflow: hidden;
   background: linear-gradient(179.32deg, #F5EFEE 0.47%, #E9E1DE 99.31%);
 }
-.row__item-wrapper {
+.offer__item-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -787,31 +787,31 @@ body {
   height: 100%;
   padding: 48px;
 }
-.row__item-icon {
+.offer__item-icon {
   width: 46px;
   height: 54px;
   margin-bottom: 16px;
 }
-.row__item-title {
+.offer__item-title {
   font: 500 32px/41.6px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-bottom: 24px;
 }
-.row__item-text {
+.offer__item-text {
   font: 400 16px/20.8px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-bottom: 24px;
 }
-.row__bouquet {
+.offer__bouquet {
   background-color: var(--acpid);
   background-image: url("../img/row1.png");
   background-position: right;
   background-repeat: no-repeat;
 }
-.row__bouquet-title, .row__bouquet-text {
+.offer__bouquet-title, .offer__bouquet-text {
   color: #fff;
 }
-.row__shops {
+.offer__shops {
   background-image: url("../img/row2.png");
   background-position: right;
   background-repeat: no-repeat;
@@ -1209,13 +1209,13 @@ body {
   .favorites__content {
     gap: 16px;
   }
-  .flowers {
+  .products {
     margin-bottom: 60px;
   }
-  .flowers__filters {
+  .products__filters {
     flex-wrap: wrap;
   }
-  .flowers__content {
+  .products__content {
     gap: 16px;
   }
   .advantages {
@@ -1224,13 +1224,13 @@ body {
   .rating {
     padding: 60px 0;
   }
-  .row {
+  .offer {
     padding: 60px 0;
   }
-  .row__bouquet {
+  .offer__bouquet {
     background-position: right -130px center;
   }
-  .row__shops {
+  .offer__shops {
     background-position: right -130px center;
   }
   .advice {
@@ -1270,13 +1270,13 @@ body {
     min-width: 240px;
     height: 240px;
   }
-  .flower__btn-full {
+  .product__btn-full {
     display: none;
   }
-  .flower__btn-small {
+  .product__btn-small {
     display: block;
   }
-  .flowers__content {
+  .products__content {
     grid-template-columns: repeat(3, 1fr);
   }
   .rating__content {
@@ -1286,16 +1286,16 @@ body {
     flex: 0 0 calc(50% - 8px);
     overflow: hidden;
   }
-  .row__wrapper {
+  .offer__wrapper {
     flex-direction: column;
   }
-  .row__item {
+  .offer__item {
     width: 100%;
   }
-  .row__bouquet {
+  .offer__bouquet {
     background-position: right center;
   }
-  .row__shops {
+  .offer__shops {
     background-position: right center;
   }
   .advice__content {
@@ -1524,43 +1524,43 @@ body {
   .favorites__arrows {
     display: none;
   }
-  .flowers__filters {
+  .products__filters {
     flex-wrap: wrap;
     gap: 12px;
   }
-  .flowers__filter {
+  .products__filter {
     gap: 8px;
     flex: 1 0 auto;
   }
-  .flowers__filter-small {
+  .products__filter-small {
     display: flex;
   }
-  .flowers__content {
+  .products__content {
     margin-bottom: 40px;
   }
-  .flowers__nav {
+  .products__nav {
     flex-direction: column-reverse;
     gap: 24px;
   }
-  .flowers__pages {
+  .products__pages {
     gap: 4px;
   }
-  .flowers__pages-prev {
+  .products__pages-prev {
     margin-right: 12px;
   }
-  .flowers__pages-next {
+  .products__pages-next {
     margin-left: 12px;
   }
-  .flower__title {
+  .product__title {
     width: 160px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: clip;
   }
-  .flower__btn-full {
+  .product__btn-full {
     display: none;
   }
-  .flower__btn-small {
+  .product__btn-small {
     display: block;
   }
   .allbouquets {
@@ -1602,19 +1602,19 @@ body {
     margin-bottom: 24px;
     overflow: hidden;
   }
-  .row {
+  .offer {
     padding: 50px 0;
   }
-  .row__item {
+  .offer__item {
     min-height: 0;
   }
-  .row__item-icon {
+  .offer__item-icon {
     margin-bottom: 8px;
   }
-  .row__item-text {
+  .offer__item-text {
     margin-bottom: 60px;
   }
-  .row__item-wrapper {
+  .offer__item-wrapper {
     padding: 32px 100px 32px 24px;
   }
   .advice__arrows {
@@ -1723,10 +1723,10 @@ body {
   }
 }
 @media (max-width: 639px) {
-  .row__bouquet {
+  .offer__bouquet {
     background-image: url("../img/row1-small.png");
   }
-  .row__shops {
+  .offer__shops {
     padding-right: 70px;
     background-image: url("../img/row2-small.png");
   }
@@ -1753,7 +1753,7 @@ body {
   .header__social {
     padding: 24px 16px;
   }
-  .flowers__content {
+  .products__content {
     grid-template-columns: repeat(2, 1fr);
   }
   .rating__item {

@@ -48,7 +48,7 @@
 @mixin text2
     font: 400 14px/18.2px 'PT Root UI', 'sans-serif'
     color: var(--black)
-@mixin text-flower
+@mixin text-product
     font: 400 14px/18.2px 'PT Root UI', 'sans-serif'
     color: var(--grey)
 @mixin text-price
@@ -311,7 +311,7 @@ body
         justify-content: space-between
         gap: 24px
 
-.flower
+.product
     position: relative
     &__heart
         @include flex
@@ -344,7 +344,7 @@ body
         &-icon
             margin-right: 9px
     &__text
-        @include text-flower
+        @include text-product
     &__bottom
         @include flex 
         justify-content: space-between
@@ -362,9 +362,9 @@ body
             content: 'В корзине'
             border-color: var(--green)
             color: var(--green)
-            & .flower__btn-by
+            & .product__btn-by
                 display: none
-            & .flower__btn-shop
+            & .product__btn-shop
                 display: block
         &-small
             display: none
@@ -393,7 +393,7 @@ body
     &__icon
         @include flex 
 
-.flowers
+.products
     margin-bottom: 90px
     &__header
         margin-bottom: 32px
@@ -538,7 +538,7 @@ body
         &-date
             @include subtext-footer
             
-.row
+.offer
     padding: 90px 0
     &__wrapper
         @include flex
@@ -857,7 +857,7 @@ body
         margin-bottom: 60px
         &__content
             gap: 16px
-    .flowers
+    .products
         margin-bottom: 60px
         &__filters
             flex-wrap: wrap
@@ -867,7 +867,7 @@ body
         margin-bottom: 60px
     .rating
         padding: 60px 0
-    .row
+    .offer
         padding: 60px 0
         &__bouquet
             background-position: right -130px center
@@ -904,13 +904,13 @@ body
             & img
                 min-width: 240px
                 height: 240px
-    .flower
+    .product
         &__btn
             &-full 
                 display: none
             &-small
                 display: block
-    .flowers
+    .products
         &__content
             grid-template-columns: repeat(3, 1fr)
     .rating
@@ -919,7 +919,7 @@ body
         &__item
             flex: 0 0 calc( 50% - 8px )
             overflow: hidden
-    .row
+    .offer
         &__wrapper
             flex-direction: column
         &__item
@@ -1094,7 +1094,7 @@ body
         margin-bottom: 50px
         &__arrows
             display: none
-    .flowers
+    .products
         &__filters
             flex-wrap: wrap
             gap: 12px
@@ -1115,7 +1115,7 @@ body
                 margin-right: 12px
             &-next 
                 margin-left: 12px
-    .flower
+    .product
         &__title
             width: 160px
             overflow: hidden
@@ -1152,7 +1152,7 @@ body
         &__content
             margin-bottom: 24px
             overflow: hidden    
-    .row
+    .offer
         padding: 50px 0
         &__item
             min-height: 0
@@ -1243,7 +1243,7 @@ body
     .menu
         display: block
 @media (max-width: 639px) 
-    .row
+    .offer
         &__bouquet
             background-image: url('../img/row1-small.png')
         &__shops
@@ -1270,7 +1270,7 @@ body
                 margin: 0 8px
         &__social
             padding: 24px 16px
-    .flowers
+    .products
         &__content 
             grid-template-columns: repeat(2, 1fr)
     .rating

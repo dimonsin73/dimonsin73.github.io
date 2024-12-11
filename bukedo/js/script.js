@@ -1,10 +1,10 @@
-const flowerBtns = document.querySelectorAll('.flower__btn');
-for (let i = 0; i < flowerBtns.length; i++) {
-    const element = flowerBtns[i];
+const productBtns = document.querySelectorAll('.product__btn');
+for (let i = 0; i < productBtns.length; i++) {
+    const element = productBtns[i];
     element.addEventListener('click', function(){
         if (window.screen.width < '1023') {
-            element.classList.toggle('flower__btn-active');
-            if (element.classList.contains('flower__btn-active')) {
+            element.classList.toggle('product__btn-active');
+            if (element.classList.contains('product__btn-active')) {
                 element.innerHTML = `<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.1665 12C6.21984 14.0493 7.8265 16.416 9.1665 19C12.2772 13.1107 16.1665 8.444 20.8332 5" stroke="#03A050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>`;
@@ -14,8 +14,8 @@ for (let i = 0; i < flowerBtns.length; i++) {
                                     </svg>`;
             };
         } else {
-            element.classList.toggle('flower__btn-active');
-            if (element.classList.contains('flower__btn-active')) {
+            element.classList.toggle('product__btn-active');
+            if (element.classList.contains('product__btn-active')) {
                 element.innerHTML = 'В корзине';
             } else {
                 element.innerHTML = 'Купить';
@@ -25,19 +25,19 @@ for (let i = 0; i < flowerBtns.length; i++) {
     });
 };
 
-const flowerHears = document.querySelectorAll('.flower__heart')
-for (let i = 0; i < flowerHears.length; i++) {
-    const element = flowerHears[i];
+const productHears = document.querySelectorAll('.product__heart')
+for (let i = 0; i < productHears.length; i++) {
+    const element = productHears[i];
     element.addEventListener('click', function(){
-        element.classList.toggle('flower__heart-active');
+        element.classList.toggle('product__heart-active');
     });
 };
 
-const flowers = document.querySelector('.flowers')
-const flowerArr = flowers.querySelectorAll('.flower')
+const products = document.querySelector('.products')
+const productArr = products.querySelectorAll('.product')
 if (window.screen.width < '544') {
-    for (let i = 0; i < flowerArr.length; i++) {
-        const element = flowerArr[i];
+    for (let i = 0; i < productArr.length; i++) {
+        const element = productArr[i];
         if (i > '7') {
             element.style.display = 'none';
         };
