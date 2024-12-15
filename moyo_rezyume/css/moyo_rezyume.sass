@@ -34,7 +34,7 @@
     font: 700 30px/36px 'Inter', 'sans-serif'
     letter-spacing: -0.1px
 @mixin headline-small
-    font: 700 20px/30px 'Inter', 'sans-serif'
+    font: 700 22px/30px 'Inter', 'sans-serif'
     letter-spacing: 0
 @mixin title-large
     font: 600 20px/28px 'Inter', 'sans-serif'
@@ -90,20 +90,15 @@
 
 body
     background-color: var(--Gray-100)
-.main
-    display: grid
-    grid-template-columns: 350px 726px 350px
-    column-gap: 24px
-    justify-content: center
 .container
-    max-width: 726px
+    max-width: 1090px
     min-width: 390px
     margin: 0 auto
 .wrapper
     display: flex
     flex-direction: column
     gap: 24px
-    padding: 32px
+    padding: 40px
     border-radius: 16px
     box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.10)
     background-color: var(--White)
@@ -112,6 +107,8 @@ body
     justify-content: center
     align-items: center
 .title
+    &-h2 
+        @include headline-medium
     &-large
         @include title-large
         color: var(--Black)
@@ -163,10 +160,10 @@ body
 .burger
     flex: 0 0 20px
     margin-right: 24px
-
 .logo
     flex: 0 0 auto
     margin-right: 32px
+
 .attribut
     position: relative
     &__wrapper
@@ -177,23 +174,12 @@ body
         display: flex
         flex-direction: column
         gap: 24px
-        margin-bottom: 24px
+        margin-top: 24px
     &__item
-        position: relative
-        &-icon
-            position: absolute
-            top: 50%
-            left: 12px
-            transform: translateY(-50%)
-        &-icons .attribut__input
-            padding-left: 44px
-        &-icons .attribut__title
-            padding-left: 32px
-        &-grid 
-            position: relative
-            display: grid
-            grid-template-columns: 200px 120px auto
-            column-gap: 16px
+        display: grid
+        grid-template-columns: 180px auto
+        gap: 40px
+        padding: 0 16px
     &__title
         position: absolute
         top: 16px
@@ -260,6 +246,7 @@ body
     &__text 
         @include subtitle-medium
         color: var(--Gray-40)
+    &-line12 
     &-line16
         display: flex
         gap: 16px
@@ -324,20 +311,13 @@ body
         &:hover
             background-color: var(--Gray-100)
     &__icon
-        width: 96px
-        height: 96px
-        padding: 28px 30px
-        border: 2px dashed var(--Gray-90)
-        border-radius: 16px
     &__info
         display: flex
         flex-direction: column
-        align-items: flex-start
-        &-title 
-            margin-bottom: 8px
+        width: 100%
         &-text 
             margin-bottom: 16px
-            @include body-small
+            @include subtitle-large
             color: var(--Gray-60)
         &-btn 
             margin-top: auto
@@ -350,11 +330,32 @@ body
         flex: 0 0 auto 
     &__parts
         display: flex
-        flex-direction: column
-        gap: 24px
-        margin-top: 24px
+        gap: 40px
     &__part
-        position: relative
+        display: flex
+        flex-direction: column
+        gap: 18px
+        padding-left: 16px
+        &-title 
+            font: 600 21px/36px 'Inter', 'sans-serif'
+            line-height: -0.75px
+    &__salary
+        &-number
+            margin-bottom: 3px
+            @include headline-small
+            color: var(--Black)
+        &-text 
+            font: 500 12px/21px 'Inter', 'sans-serif'
+            color: var(--Gray-30)
+    &__tags
+        display: flex
+        gap: 12px
+        &-tag 
+            padding: 6px 12px
+            border: 0.75px solid var(--Gray-70)
+            border-radius: 13.5px
+            @include subtitle-large
+            color: var(--Gray-20)
     &-grid
         display: grid
         grid-template-columns: 1fr 56px
@@ -363,258 +364,68 @@ body
         padding: 24px 0
         border-top: 1px solid var(--Border)
         border-bottom: 1px solid var(--Border)
-.currency
-    &__select
-        height: 56px
-        padding: 18px 48px 18px 16px
-        border-radius: 8px
-        @include currency
-        color: var(--Black)
-        background:
-            color: var(--Gray-90)
-            image: url(../image/chevron_down.png)
-            repeat: no-repeat
-            position: right 21px center
-        cursor: pointer
-        &:hover
-            background-color: var(--Gray-100)
-        &:focus 
-            outline: 2px solid var(--Gray-40)    
-            background-color: var(--White)
-    &__options
-        position: absolute
-        top: 64px
-        left: 0
-        width: 100%
-        height: 0
-        border-radius: 8px
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
-        border: none
-        background-color: var(--White) 
+    &__avatar
+        width: 160px
+        height: 160px
+        border-radius: 12px
         overflow: hidden
-        z-index: 10
-        transition: height 0.3s ease
-    &__option
-        height: 56px
-        padding: 18px 48px 18px 16px
-        @include currency
-        color: var(--Black)
-        cursor: pointer
-        &:hover
-            background-color: var(--Gray-100)
-.difference
-    display: flex
-    gap: 16px
-    &__item
-        position: relative  
-        flex: 1 0 auto 
-        &:last-child
-            flex: 0 0 auto
-.tag
-    display: flex
-    justify-content: flex-start
-    flex-wrap: wrap
-    gap: 14px
-    &__btn
-        padding: 8px 16px 8px 42px
-        border: 1px solid var(--Gray-70)
-        border-radius: 18px
-        background:
-            color: var(--Gray-100)
-            image: url(../image/plus.png)
-            repeat: no-repeat
-            position: left 16px center
-        @include subtitle-large
+    &__social
+        display: grid
+        grid-template-columns: 1fr 1fr
+        column-gap: 36px
+        row-gap: 12px
+        &-title 
+            @include title-small
+            color: var(--Black)
+        &-text 
+            @include subtitle-small
+            color: var(--Gray-40)
+        &-item 
+            display: flex
+            gap: 8px
+    &__titlesmall
+        display: flex
+        gap: 12px
+        padding: 12px 0
+        border-bottom: 1px solid var(--Gray-80)
+        @include title-small
         color: var(--Gray-20)
-        transition: all 0.3s ease
-        &:hover
-            background-color: var(--Gray-80)
-        &-active
-            background-color: var(--Gray-20)
-            background-image: url(../image/check.png)
-            color: var(--White)
-            &:hover
-                background-color: var(--Gray-20)
-.tax
-    &__item
-        margin-top: 8px
-        padding: 4px 14px
-        &-radio 
-            position: absolute
-            width: 0
-            opacity: 0
-            &:checked ~ .tax__item-label .tax__item-check
-                border: 7px solid var(--Black)
-        &-label 
-            display: grid
-            grid-template-columns: 20px auto
-            column-gap: 16px
-            row-gap: 4px
-        &-check 
-            grid-row: span 2
-            width: 20px
-            height: 20px
-            margin-top: 4px
-            border: 1.5px solid var(--Gray-40)
-            border-radius: 50%
+    &__left
         &-title 
-            @include title-medium
+            @include subtitle-large
             color: var(--Black)
-        &-text        
-            @include text-medium
-            color: var(--Gray-30)
-.address
-    &__item
-        margin-top: 8px
-        padding: 4px 14px
-        &-checkbox 
-            position: absolute
-            width: 0
-            opacity: 0
-            &:checked ~ .address__item-label .address__item-check
-                background:
-                    color: var(--Black)
-                    image: url(../image/check.png)
-                    repeat: no-repeat
-                    position: center center
-        &-label 
-            display: grid
-            grid-template-columns: 20px auto
-            column-gap: 16px
-            row-gap: 4px
-        &-check 
-            grid-row: span 2
-            width: 20px
-            height: 20px
-            margin-top: 4px
-            border: 1.5px solid var(--Gray-40)
-            border-radius: 4px
-        &-title 
-            @include title-medium
-            color: var(--Black)
-        &-text        
-            @include text-medium
-            color: var(--Gray-30)
-.fl
-    margin-top: -14px
-    margin-left: 14px
-    &__checkbox
-        position: absolute
-        width: 0
-        opacity: 0
-        &:checked ~ .fl__label .fl__check
-            background:
-                color: var(--Black)
-                image: url(../image/check.png)
-                repeat: no-repeat
-                position: center center
-    &__label
-        display: flex
-        gap: 16px
-        align-items: center
-    &__check
-        width: 20px
-        height: 20px
-        border: 1.5px solid var(--Gray-40)
-        border-radius: 4px
-    &__title
-        @include text-medium
-        color: var(--Black)
-
-.now
-    display: flex 
-    margin: 14px
-    &__checkbox
-        position: absolute
-        width: 0
-        opacity: 0
-        &:checked ~ .now__label .now__check
-            background:
-                color: var(--Black)
-                image: url(../image/check.png)
-                repeat: no-repeat
-                position: center center
-    &__label
-        display: flex
-        gap: 16px
-        align-items: center
-    &__check
-        flex: 0 0 auto
-        width: 20px
-        height: 20px
-        border: 1.5px solid var(--Gray-40)
-        border-radius: 4px
-    &__title
-        flex: 0 0 auto
-        width: max-content
-        @include text-medium
-        color: var(--Black)
-.tabcontent
-    display: flex
-    &__item
-        flex: 0 0 100%
-        &-hidden
-            display: none
-    &__check
-        margin-top: 24px
-    &__btns
-        display: flex
-        gap: 16px
-        justify-content: flex-end
-        margin: 24px 0
-        &-back
-            margin-right: auto
-
-.education
-    &__btn
-        display: flex
-        align-items: center
-        gap: 10px
-        width: 100%
-        padding: 16px
-        border: 1px solid var(--Black)
-        border-radius: 8px
+            margin-bottom: 6px
         &-text
-            @include btn-medium
-
-
-.tabs
-    margin-bottom: 24px
-    &__wrapper
-        display: flex
-        gap: 24px
-    &__item
+            font: 500 12px/24px 'Inter', 'sans-serif'
+            line-height: -0.15px
+            color: var(--Gray-30)
+    &__right
         display: flex
         flex-direction: column
-        justify-content: flex-start
-        align-items: flex-start
-        flex: 0 0 calc(25% - 24px * 3 / 4)
-        padding: 12px
-        border-radius: 12px
-        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.20)
-        background-color: var(--White)
-        &-icon 
-            display: flex
-            justify-content: center
-            align-items: cener
-            width: 40px
-            height: 40px
-            margin-bottom: 12px
-            border-radius: 12px
-            background-color: var(--Gray-100)
-            & path
-                fill: var(--Gray-30)
-                transition: fill 0.3s ease
+        gap: 8px
+        &-title 
+        &-subtitle 
+            margin-bottom: 0px
+        &-subtext 
+            @include subtitle-medium
+            color: var(--Gray-30)
         &-text
-            @include title-small
-            color: var(--Gray-20)
-            text-align: left
-            transition: color 0.3s ease
-        &-active 
-            & .tabs__item-text
-                color: var(--Primary-40)
-            & path
-                fill: var(--Primary-40)
+            @include body-medium
+            color: var(--Black)
+    &__head
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+.insearch
+    display: flex
+    margin-left: auto
+    padding: 4px 8px
+    border-radius: 16px
+    background-color: rgba(0, 111, 216, 0.1)
+    @include subtitle-small
+    color: var(--Primary-40)
+
 .header
     padding: 0 24px
     &__wrapper
@@ -683,99 +494,38 @@ body
         flex: 0 0 auto
         width: 20px
 .head
-    grid-column: span 3
     margin-bottom: 24px
     &__title
         margin-bottom: 24px
         @include headline-large
         color: var(--Black)
-.attributes
-    margin-bottom: 24px
-.respons  
-    margin-bottom: 24px
-.requirements
-    margin-bottom: 24px
-    &__item
-        flex: 0 0 153.5px 
-        &:last-child
-            flex: 0 0 153.5px  
-.skills
-    margin-bottom: 24px
-.basement
-    margin-bottom: 24px
-    &__check
-        margin-bottom: 24px
-        &-checkbox
-            position: absolute
-            width: 0
-            opacity: 0
-            &:checked ~ .basement__check-label .basement__check-check
-                background:
-                    color: var(--Black)
-                    image: url(../image/check.png)
-                    repeat: no-repeat
-                    position: center center
-        &-label
-            display: flex
-            gap: 16px
-            align-items: center
-        &-check
-            width: 20px
-            height: 20px
-            border: 1.5px solid var(--Gray-40)
-            border-radius: 4px
-        &-title
-            @include title-medium
-            color: var(--Black)
+    &__path
+        display: flex
+        column-gap: 8px
+        margin-bottom: 4px
+        @include subtitle-medium
+        color: var(--Gray-30)
+        &-link 
+            color: var(--Gray-30)
     &__btns
         display: flex
-        &-publish
-            margin-right: 16px
-        &-save
-            margin-right: auto
-        &--back
-            margin-right: auto
-        &-view
-            margin-right: 16px
-            background:
-                image: url(../image/eye.png)
-                repeat: no-repeat
-                position: center center
-
-.videovacancy
-    position: sticky
-    top: 24px
-    width: 350px
-    margin: 0 auto
-    border-radius: 16px
-    box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.10)
-    overflow: hidden
-    background-color: var(--White)
-    &__info
-        padding: 16px 24px 24px
-    &__title
-        margin-bottom: 8px
-        @include headline-small
-    &__text
-        margin-bottom: 16px
-        @include body-medium
+        gap: 24px
     &__btn
-        padding: 12.5px 53px
-        border-radius: 8px
-        background-color: var(--Black)
-        @include btn-medium
-        color: var(--White)
-
-input[type="number"]::-webkit-outer-spin-button, 
-input[type="number"]::-webkit-inner-spin-button 
-    -webkit-appearance: none
+        margin-right: auto
+        &-icon 
+            padding: 9px 11px
+            border-radius: 8px
+            border: 0.5px solid var(--Black)
+.resume
+    margin-bottom: 24px
 
 @media (max-width:1473px)
     .main
         grid-template-columns: auto
         gap: 0
     .head
-        grid-column: span 1
+        margin-left: 16px
+        margin-right: 16px
     .videovacancy
         display: none
 @media (max-width:1023px)
@@ -804,10 +554,11 @@ input[type="number"]::-webkit-inner-spin-button
                 border: none
     .head
         &__title
-            margin: 0 16px 24px
             @include headline-medium
-        & .btn
-            margin: 0 16px
+        &__btns
+            gap: 16px
+        &__btn
+            margin-right: 0
     .attribut
         &__wrapper
             grid-template-columns: 1fr
@@ -818,6 +569,27 @@ input[type="number"]::-webkit-inner-spin-button
         &__item
             &-grid
                 grid-template-columns: 50% 50%
+        &-line24 
+            flex-direction: column
+        &__head
+            flex-direction: column
+            align-items: flex-start
+            margin-bottom: 16px
+        &__part
+            padding-left: 0
+        &__item
+            grid-template-columns: 1fr
+            gap: 6px
+            padding: 0
+        &__left
+            display: flex
+            align-items: center
+            flex-wrap: wrap
+            gap: 6px
+            &-title 
+                margin-bottom: 0
+        &__right
+            gap: 3px
     .attributes .attribut__textarea
         height: 152px
     .difference__item
@@ -852,3 +624,6 @@ input[type="number"]::-webkit-inner-spin-button
     .tabcontent__btns 
         margin-left: 16px
         margin-right: 16px
+    .insearch
+        margin-left: 0
+    
