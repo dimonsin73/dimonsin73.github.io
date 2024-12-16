@@ -109,6 +109,10 @@ body
 .title
     &-h2 
         @include headline-medium
+        color: var(--Black)
+    &-h3
+        @include headline-small 
+        color: var(--Black)
     &-large
         @include title-large
         color: var(--Black)
@@ -166,10 +170,6 @@ body
 
 .attribut
     position: relative
-    &__wrapper
-        display: grid
-        grid-template-columns: 1fr 1fr
-        gap: 24px
     &__items
         display: flex
         flex-direction: column
@@ -180,143 +180,16 @@ body
         grid-template-columns: 180px auto
         gap: 40px
         padding: 0 16px
-    &__title
-        position: absolute
-        top: 16px
-        left: 12px
-        @include body-large
-        color: var(--Gray-30)
-        pointer-events: none
-        transition: all 0.3s ease
-    &__textarea
-        width: 100%
-        height: 136px
-        margin-bottom: 4px
-        resize: none
-        padding: 44px 12px 8px
-        border-radius: 8px 
-        background-color: var(--Gray-90)
-        @include body-large
-        color: var(--Black)
-        transition: all 0.3s ease
-        &::placeholder
-            @include body-medium
-            color: var(--Gray-40)
-            white-space: pre-line
-        &:hover
-            background-color: var(--Gray-100)
-        &:focus
-            padding-top: 28px
-            outline: 2px solid var(--Gray-40)
-            background-color: var(--White)
-            & ~ .attribut__title
-                top: 8px
-                @include body-small
-        &:valid
-            padding-top: 28px
-            & ~ .attribut__title
-                top: 8px
-                @include body-small
-        &-long 
-            height: 181px
-    &__input
-        width: 100%
-        height: 56px
-        padding: 24px 12px 8px
-        border-radius: 8px 
-        background-color: var(--Gray-90)
-        @include body-large
-        color: var(--Black)
-        &::placeholder
-            @include body-large
-            color: var(--Gray-30)
-        &:hover
-            background-color: var(--Gray-100)
-        &:focus
-            padding-top: 24px
-            outline: 2px solid var(--Gray-40)
-            background-color: var(--White)
-            & ~ .attribut__title
-                top: 7px
-                @include body-small
-        &:valid
-            & ~ .attribut__title
-                top: 7px
-                @include body-small
-    &__text 
-        @include subtitle-medium
-        color: var(--Gray-40)
-    &-line12 
-    &-line16
-        display: flex
-        gap: 16px
     &-line24
         display: flex
         gap: 24px
-    &-vertline24
-        display: flex
-        flex-direction: column
-    &__main
-        width: 100%
-    &__btn
-        flex: 0 0 auto
-        width: 56px
-        height: 56px
-        border-radius: 8px
-        background-color: var(--Gray-90)
-        &:hover
-            background-color: var(--Gray-100)
-        &:active
-            background-color: var(--Gray-80)
-        &-noactive
-            display: none
-        &-trash
-            background: 
-                image: url(../image/trash.png)
-                repeat: no-repeat
-                position: center center
-            &:hover
-                 background-image: url(../image/trash-red.png)
-    &__select
-        background:
-            image: url(../image/chevron_down.png)
-            repeat: no-repeat
-            position: right 21px center
-        cursor: pointer
-        &:hover
-            background-color: var(--Gray-100)
-        &:focus 
-            outline: 2px solid var(--Gray-40)    
-            background-color: var(--White)
-    &__options
-        position: absolute
-        top: 64px
-        left: 0
-        grid-column: 1/2
-        width: 100%
-        height: 0
-        border-radius: 8px
-        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.20)
-        border: none
-        background-color: var(--White) 
-        overflow: hidden
-        z-index: 10
-        transition: height 0.3s ease
-    &__option
-        height: 56px
-        padding: 18px 48px 18px 16px
-        @include body-medium
-        color: var(--Black)
-        cursor: pointer
-        &:hover
-            background-color: var(--Gray-100)
-    &__icon
     &__info
         display: flex
         flex-direction: column
+        gap: 8px
         width: 100%
+        overflow: hidden
         &-text 
-            margin-bottom: 16px
             @include subtitle-large
             color: var(--Gray-60)
         &-btn 
@@ -324,13 +197,6 @@ body
             padding: 5.25px 16px
             border-radius: 6px
             @include btn-small     
-    &__empty
-        width: 56px
-        height: 56px
-        flex: 0 0 auto 
-    &__parts
-        display: flex
-        gap: 40px
     &__part
         display: flex
         flex-direction: column
@@ -340,22 +206,19 @@ body
             font: 600 21px/36px 'Inter', 'sans-serif'
             line-height: -0.75px
     &__salary
-        &-number
-            margin-bottom: 3px
-            @include headline-small
-            color: var(--Black)
-        &-text 
-            font: 500 12px/21px 'Inter', 'sans-serif'
-            color: var(--Gray-30)
+        display: flex
+        align-items: center
     &__tags
         display: flex
         gap: 12px
+        flex-wrap: wrap
         &-tag 
-            padding: 6px 12px
+            padding: 8px 12px
             border: 0.75px solid var(--Gray-70)
-            border-radius: 13.5px
+            border-radius: 18px
             @include subtitle-large
             color: var(--Gray-20)
+            white-space: nowrap
     &-grid
         display: grid
         grid-template-columns: 1fr 56px
@@ -365,15 +228,15 @@ body
         border-top: 1px solid var(--Border)
         border-bottom: 1px solid var(--Border)
     &__avatar
+        flex: 0 0 auto
         width: 160px
         height: 160px
         border-radius: 12px
         overflow: hidden
     &__social
-        display: grid
-        grid-template-columns: 1fr 1fr
-        column-gap: 36px
-        row-gap: 12px
+        display: flex
+        column-gap: 12px
+        justify-content: space-between
         &-title 
             @include title-small
             color: var(--Black)
@@ -383,6 +246,15 @@ body
         &-item 
             display: flex
             gap: 8px
+        &-col 
+            display: flex
+            flex-direction: column
+            row-gap: 12px 
+            &:first-child
+                overflow: hidden
+        &-content
+            overflow: hidden
+            white-space: nowrap
     &__titlesmall
         display: flex
         gap: 12px
@@ -403,7 +275,6 @@ body
         display: flex
         flex-direction: column
         gap: 8px
-        &-title 
         &-subtitle 
             margin-bottom: 0px
         &-subtext 
@@ -416,10 +287,12 @@ body
         display: flex
         justify-content: space-between
         align-items: center
-        width: 100%
+    &__name
+        display: flex
+        flex-direction: column
+        align-items: flex-start
 .insearch
     display: flex
-    margin-left: auto
     padding: 4px 8px
     border-radius: 16px
     background-color: rgba(0, 111, 216, 0.1)
@@ -493,6 +366,14 @@ body
     &__logout
         flex: 0 0 auto
         width: 20px
+    &__print
+        padding: 10px 0
+        &-logo svg
+            height: 20px
+    &__starts
+        font: 700 9px/16px 'Inter', 'sans-serif'
+        letter-spacing: -0.16px
+        color: var(--Primary-50)
 .head
     margin-bottom: 24px
     &__title
@@ -518,6 +399,12 @@ body
             border: 0.5px solid var(--Black)
 .resume
     margin-bottom: 24px
+.print
+    &__container
+        width: 595px
+    &__wrapper
+        padding: 32px
+        border-radius: 0
 
 @media (max-width:1473px)
     .main
@@ -526,6 +413,7 @@ body
     .head
         margin-left: 16px
         margin-right: 16px
+        overflow: hidden
     .videovacancy
         display: none
 @media (max-width:1023px)
@@ -534,6 +422,9 @@ body
             display: none
         &__account
             width: 161px
+    .attribut__head
+        flex-direction: column
+        align-items: flex-start
 @media (max-width:767px)
     .wrapper
         padding: 16px
@@ -590,6 +481,12 @@ body
                 margin-bottom: 0
         &__right
             gap: 3px
+        &__social
+            flex-wrap: wrap
+            row-gap: 24px
+            &-col 
+                &:first-child
+                    flex: 0 0 100%
     .attributes .attribut__textarea
         height: 152px
     .difference__item
