@@ -100,6 +100,14 @@ main {
   color: var(--Gray-10);
   text-decoration: none !important;
   text-align: center;
+  background-color: var(--Primary-40);
+  color: var(--White);
+}
+.btns__col-btn:hover {
+  background-color: var(--Primary-30);
+}
+.btns__col-btn:active {
+  background-color: var(--Primary-20);
 }
 .btns__col-clue {
   font: 500 16px/21px "Inter", "sans-serif";
@@ -108,28 +116,6 @@ main {
 .btns__col a {
   text-decoration: underline;
   outline: none;
-}
-
-.searchwork {
-  background-color: var(--Primary-40);
-  color: var(--White);
-}
-.searchwork:hover {
-  background-color: var(--Primary-30);
-}
-.searchwork:active {
-  background-color: var(--Primary-20);
-}
-
-.searchemployee {
-  background-color: var(--Gray-70);
-  color: var(--Black);
-}
-.searchemployee:hover {
-  background-color: var(--Gray-60);
-}
-.searchemployee:active {
-  background-color: var(--Gray-50);
 }
 
 .links {
