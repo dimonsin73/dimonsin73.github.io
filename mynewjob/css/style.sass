@@ -86,612 +86,120 @@
     letter-spacing: 0  
 
 body
-    background-color: var(--Gray-100)
-.main
-    display: grid
-    grid-template-columns: 350px 726px 350px
-    column-gap: 24px
+    position: relative
+    width: 100vw
+    height: 100vh
+    background: url('../image/earth.png') lightgray 50% / cover no-repeat
+main
+    position: absolute
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
     justify-content: center
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, #FFF 100%)
 .container
-    max-width: 726px
-    min-width: 390px
-    margin: 0 auto
-.wrapper
     display: flex
     flex-direction: column
-    gap: 24px
-    padding: 32px
-    border-radius: 16px
-    background-color: var(--White)
-.svg-container
-    display: flex
-    justify-content: center
     align-items: center
+    row-gap: 80px
+    width: 772px
+    padding: 80px
+.info
+    display: flex
 .title
-    &-large
-        @include title-large
-        color: var(--Black)
-    &-medium
-        margin-bottom: 16px
-        @include title-medium
-        color: var(--Black)
-.btn
-    padding: 16px 24px
-    border-radius: 8px
-    @include btn-medium
-    transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
-    &-primary
-        border: 1px solid var(--Primary-40)
-        background-color: var(--Primary-40)
-        color: var(--White)
-        &:hover
-            border: 1px solid var(--Primary-30)
-            background-color: var(--Primary-30)
-        &:active
-            border: 1px solid var(--Primary-20)
-            background-color: var(--Primary-20)
-    &-bg-gray
-        border: 1px solid var(--Gray-80)
-        background-color: var(--Gray-80)
-        color: var(--Black)
-        &:hover
-            border: 1px solid var(--Gray-70)
-            background-color: var(--Gray-70)
-        &:active
-            border: 1px solid var(--Gray-60)
-            background-color: var(--Gray-60)
-    &-transparent
-        border: 1px solid var(--Black)
-        background-color: initial
-        color: var(--Black)
-        &:hover
-            border: 1px solid var(--Primary-40)
-            background-color: var(--Primary-40)
-            color: var(--White)
-        &:active
-            border: 1px solid var(--Primary-30)
-            background-color: var(--Primary-30)
-            color: var(--White)
-.small-visible
-    display: none
-.burger
-    flex: 0 0 20px
-    margin-right: 24px
-
-.logo
-    flex: 0 0 auto
-    margin-right: 32px
-.attribut
-    position: relative
-    &__title
-        position: absolute
-        top: 16px
-        left: 12px
-        @include body-large
-        color: var(--Gray-30)
-        pointer-events: none
-        transition: all 0.3s ease
-    &__textarea
-        width: 100%
-        height: 136px
-        margin-bottom: 4px
-        resize: none
-        padding: 44px 12px 8px
-        border-radius: 8px 
-        background-color: var(--Gray-90)
-        @include body-large
-        color: var(--Black)
-        transition: all 0.3s ease
-        &::placeholder
-            @include body-medium
-            color: var(--Gray-40)
-            white-space: pre-line
-        &:hover
-            background-color: var(--Gray-100)
-        &:focus
-            padding-top: 28px
-            outline: 2px solid var(--Gray-40)
-            background-color: var(--White)
-            & ~ .attribut__title
-                top: 8px
-                @include body-small
-        &:valid
-            padding-top: 28px
-            & ~ .attribut__title
-                top: 8px
-                @include body-small
-        &-long 
-            height: 181px
-    &__input
-        width: 100%
-        height: 56px
-        padding: 24px 12px 8px
-        border-radius: 8px 
-        background-color: var(--Gray-90)
-        @include body-large
-        color: var(--Black)
-        &::placeholder
-            @include body-large
-            color: var(--Gray-30)
-        &:hover
-            background-color: var(--Gray-100)
-        &:focus
-            padding-top: 24px
-            outline: 2px solid var(--Gray-40)
-            background-color: var(--White)
-            & ~ .attribut__title
-                top: 7px
-                @include body-small
-        &:valid
-            & ~ .attribut__title
-                top: 7px
-                @include body-small
-    &__text 
-        @include subtitle-medium
-        color: var(--Gray-40)
-    &-line16
-        display: flex
-        gap: 16px
-    &-line24
-        display: flex
-        gap: 24px
-    &__main
-        width: 100%
-    &__btn
-        flex: 0 0 auto
-        width: 56px
-        height: 56px
-        border-radius: 8px
-        background-color: var(--Gray-90)
-        &:hover
-            background-color: var(--Gray-100)
-        &:active
-            background-color: var(--Gray-80)
-    &__select
-        background:
-            image: url(../image/icons/chevron.svg)
-            repeat: no-repeat
-            position: right 21px center
-        cursor: pointer
-        &:hover
-            background-color: var(--Gray-100)
-        &:focus 
-            outline: 2px solid var(--Gray-40)    
-            background-color: var(--White)
-    &__options
-        position: absolute
-        top: 64px
-        left: 0
-        width: 100%
-        height: 0
-        border-radius: 8px
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
-        border: none
-        background-color: var(--White) 
-        overflow: hidden
-        z-index: 10
-        transition: height 0.3s ease
-    &__option
-        height: 56px
-        padding: 18px 48px 18px 16px
-        @include body-medium
-        color: var(--Black)
-        cursor: pointer
-        &:hover
-            background-color: var(--Gray-100)
-    &__icon
-        width: 96px
-        height: 96px
-        padding: 28px 30px
-        border: 2px dashed var(--Gray-90)
-        border-radius: 16px
-    &__info
-        display: flex
-        flex-direction: column
-        align-items: flex-start
-        &-title 
-            margin-bottom: 8px
-        &-text 
-            margin-bottom: 16px
-            @include body-small
-            color: var(--Gray-60)
-        &-btn 
-            margin-top: auto
-            padding: 6px 16px
-            border-radius: 6px
-            @include btn-small      
-.currency
-    &__select
-        height: 56px
-        padding: 18px 48px 18px 16px
-        border-radius: 8px
-        @include currency
-        color: var(--Black)
-        background:
-            color: var(--Gray-90)
-            image: url(../image/icons/chevron.svg)
-            repeat: no-repeat
-            position: right 21px center
-        cursor: pointer
-        &:hover
-            background-color: var(--Gray-100)
-        &:focus 
-            outline: 2px solid var(--Gray-40)    
-            background-color: var(--White)
-    &__options
-        position: absolute
-        top: 64px
-        left: 0
-        width: 100%
-        height: 0
-        border-radius: 8px
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
-        border: none
-        background-color: var(--White) 
-        overflow: hidden
-        z-index: 10
-        transition: height 0.3s ease
-    &__option
-        height: 56px
-        padding: 18px 48px 18px 16px
-        @include currency
-        color: var(--Black)
-        cursor: pointer
-        &:hover
-            background-color: var(--Gray-100)
-.difference
-    display: flex
-    gap: 16px
-    &__item
-        position: relative  
-        flex: 1 0 auto 
-        &:last-child
-            flex: 0 0 auto
-.tag
-    display: flex
-    justify-content: flex-start
-    flex-wrap: wrap
-    gap: 14px
-    &__btn
-        padding: 8px 16px 8px 42px
-        border: 1px solid var(--Gray-70)
-        border-radius: 18px
-        background:
-            color: var(--Gray-100)
-            image: url(../image/icons/plus.svg)
-            repeat: no-repeat
-            position: left 16px center
-        @include subtitle-large
-        color: var(--Gray-20)
-        transition: all 0.3s ease
-        &:hover
-            background-color: var(--Gray-80)
-        &-active
-            background-color: var(--Gray-20)
-            background-image: url(../image/icons/check.svg)
-            color: var(--White)
-            &:hover
-                background-color: var(--Gray-20)
-.tax
-    &__item
-        margin-top: 8px
-        padding: 4px 14px
-        &-radio 
-            position: absolute
-            width: 0
-            opacity: 0
-            &:checked ~ .tax__item-label .tax__item-check
-                border: 7px solid var(--Black)
-        &-label 
-            display: grid
-            grid-template-columns: 20px auto
-            column-gap: 16px
-            row-gap: 4px
-        &-check 
-            grid-row: span 2
-            width: 20px
-            height: 20px
-            margin-top: 4px
-            border: 1.5px solid var(--Gray-40)
-            border-radius: 50%
-        &-title 
-            @include title-medium
-            color: var(--Black)
-        &-text        
-            @include text-medium
-            color: var(--Gray-30)
-.address
-    &__item
-        margin-top: 8px
-        padding: 4px 14px
-        &-checkbox 
-            position: absolute
-            width: 0
-            opacity: 0
-            &:checked ~ .address__item-label .address__item-check
-                background:
-                    color: var(--Black)
-                    image: url(../image/icons/check.svg)
-                    repeat: no-repeat
-                    position: center center
-        &-label 
-            display: grid
-            grid-template-columns: 20px auto
-            column-gap: 16px
-            row-gap: 4px
-        &-check 
-            grid-row: span 2
-            width: 20px
-            height: 20px
-            margin-top: 4px
-            border: 1.5px solid var(--Gray-40)
-            border-radius: 4px
-        &-title 
-            @include title-medium
-            color: var(--Black)
-        &-text        
-            @include text-medium
-            color: var(--Gray-30)
-
-.tabcontent
-    display: flex
-    overflow: hidden
-    &__item
-        flex: 0 0 100%
-        &-hidden
-            display: none
-    &__check
-        margin-top: 24px
-    &__btns
-        display: flex
-        gap: 16px
-        justify-content: flex-end
-        margin-top: 24px
-        &-back
-            margin-right: auto
-
-.tabs
-    margin-bottom: 24px
-    &__wrapper
-        display: flex
-        gap: 24px
-    &__item
-        display: flex
-        flex-direction: column
-        justify-content: flex-start
-        align-items: flex-start
-        flex: 0 0 calc(25% - 24px * 3 / 4)
-        padding: 12px
-        border-radius: 12px
-        background-color: var(--White)
-        &-icon 
-            display: flex
-            justify-content: center
-            align-items: cener
-            width: 40px
-            height: 40px
-            margin-bottom: 12px
-            border-radius: 12px
-            background-color: var(--Gray-100)
-            & path
-                fill: var(--Gray-30)
-                transition: fill 0.3s ease
-        &-text
-            @include title-small
-            color: var(--Gray-20)
-            text-align: left
-            transition: color 0.3s ease
-        &-active 
-            & .tabs__item-text
-                color: var(--Primary-40)
-            & path
-                fill: var(--Primary-40)
-.header
     padding: 0 24px
+    font: 600  80px/80px 'Inter', 'sans-serif'
+    letter-spacing: -0.133px
+    color: var(--Gray-10)
+.text
+    font: 700 26px/150% 'Inter', 'sans-serif'
+    color: var(--Gray-10)
+    letter-spacing: -0.2px  
+.btns
+    display: flex
+    gap: 36px
+    width: 100%
+    &__col
+        display: flex
+        flex-direction: column
+        gap: 24px
+        align-items: center
+        flex: 2 0 50%
+        &-btn 
+            width: 100%
+            border-radius: 18px
+            padding: 24px 36px
+            font: 600 24px/150% 'Inter', 'sans-serif'
+            letter-spacing: -0.72px
+            color: var(--Gray-10)
+        &-clue 
+            font: 500 16px/21px 'Inter', 'sans-serif'
+            color: var(--Gray-10)
+        & a
+            text-decoration: underline
+.searchwork
+    background-color: var(--Primary-40)
+    color: var(--White)
+    &:hover 
+        background-color: var(--Primary-30)
+    &:focus 
+        background-color: var(--Primary-30)
+    &:active 
+        background-color: var(--Primary-20)
+.searchemployee
+    background-color: var(--Gray-70)
+    color: var(--Black)
+    &:hover 
+        background-color: var(--Gray-60)
+    &:focus 
+        background-color: var(--Gray-60)
+    &:active 
+        background-color: var(--Gray-50)
+.links
+    position: absolute
+    left: 0
+    bottom: 0
     &__wrapper
         display: flex
-        justify-content: space-between
-        align-items: center
-    &__menu
-        display: flex
-        align-items: center
-        padding: 10.5px 0
-        &-item
-            display: flex
-            align-items: stretch
-            column-gap: 24px
-            height: 40px
-            padding: 0 32px
-            border-right: 1px solid var(--Gray-80)
-            &:first-child
-                padding-left: 0
-            &:last-child
-                padding-right: 0
-                border-right: none
-    &__search
-        flex: 0 0 auto
-        display: flex
-        align-items: center
-        column-gap: 6px
-        &-text 
-            font: 500 13px/18px 'Inter', sans-serif
-            letter-spacing: 0.01em
-            color: var(--Gray-30)
-    &__mail, &__bell
+        flex-direction: column
+        gap: 16px
+        padding: 40px
+    &__link
+        font: 600 16px/22px 'Inter', 'sans-serif'
+        letter-spacing: -0.1px  
+        color: var(--Primary-40)
+    & a
+        text-decoration: underline
+    & a:visited
+        color: var(--Primary-40)
+@media (max-width:767px) 
+    main
+        align-items: flex-end
+    .container
         position: relative
-        flex: 0 0 auto
-        width: 20px
-        margin-right: 16px
-        &-num
-            position: absolute
-            top: -2px
-            right: -14px
-            width: 16px
-            height: 16px
-            border-radius: 50%
-            background-color: var(--Primary-50)
-            font: 700 12px/140% 'Inter', sans-serif
-            letter-spacing: 0.01em
-            color: #fff
-    &__account
-        flex: 0 2 auto
-        overflow: hidden
-        text-wrap: nowrap
-        &-company
-            margin-bottom: 3px
-            overflow: hidden
-            font: 700 14px/20px 'Inter', sans-serif
-            color: var(--Black)
-            text-transform: uppercase
-            text-wrap: nowrap
-        &-name
-            font: 500 12px/17px 'Inter', sans-serif
-            color: var(--Gray-40)
-    &__setting
-        flex: 0 0 auto
-        width: 20px
-    &__logout
-        flex: 0 0 auto
-        width: 20px
-.head
-    grid-column: span 3
-    margin-bottom: 24px
-    &__title
-        margin-bottom: 24px
-        @include headline-large
-        color: var(--Black)
-.attributes
-    margin-bottom: 24px
-.respons  
-    margin-bottom: 24px
-.requirements
-    margin-bottom: 24px
-    &__item
-        flex: 0 0 153.5px 
-        &:last-child
-            flex: 0 0 153.5px  
-.skills
-    margin-bottom: 24px
-.basement
-    margin-bottom: 24px
-    &__check
-        margin-bottom: 24px
-        &-checkbox
-            position: absolute
-            width: 0
-            opacity: 0
-            &:checked ~ .basement__check-label .basement__check-check
-                background:
-                    color: var(--Black)
-                    image: url(../image/icons/check.svg)
-                    repeat: no-repeat
-                    position: center center
-        &-label
-            display: flex
+        row-gap: 64px
+        width: 390px
+        margin-bottom: 62px
+        padding: 0 40px
+    .info
+        flex-direction: column
+        align-items: center
+        row-gap: 24px
+    .text
+        text-align: center
+        font-size: 16px
+    .btns
+        flex-direction: column
+        &__col
             gap: 16px
-            align-items: center
-        &-check
-            width: 20px
-            height: 20px
-            border: 1.5px solid var(--Gray-40)
-            border-radius: 4px
-        &-title
-            @include title-medium
-            color: var(--Black)
-    &__btns
-        display: flex
-        &-publish
-            margin-right: 16px
-        &-save
-            margin-right: auto
-        &--back
-            margin-right: auto
-        &-view
-            margin-right: 16px
-            background:
-                image: url(../image/icons/eye.svg)
-                repeat: no-repeat
-                position: center center
+            &-btn 
+                font-size: 16px
+    .links
+        right: 0
+        &__wrapper
+            flex-direction: row
+            justify-content: center
+            gap: 40px
+            padding: 16px
 
-.videovacancy
-    position: sticky
-    top: 24px
-    width: 350px
-    margin: 0 auto
-    border-radius: 16px
-    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.2)
-    overflow: hidden
-    background-color: var(--White)
-    &__info
-        padding: 16px 24px 24px
-    &__title
-        margin-bottom: 8px
-        @include headline-small
-    &__text
-        margin-bottom: 16px
-        @include body-medium
-    &__btn
-        padding: 12.5px 53px
-        border-radius: 8px
-        background-color: var(--Black)
-        @include btn-medium
-        color: var(--White)
-
-input[type="number"]::-webkit-outer-spin-button, 
-input[type="number"]::-webkit-inner-spin-button 
-    -webkit-appearance: none
-
-@media (max-width:1473px)
-    .main
-        grid-template-columns: auto
-        gap: 0
-    .head
-        grid-column: span 1
-    .videovacancy
-        display: none
-@media (max-width:1023px)
-    .header
-        &__search-text
-            display: none
-        &__account
-            width: 161px
-@media (max-width:767px)
-    .wrapper
-        padding: 16px
-    .small-hidden
-        display: none
-    .small-visible
-        display: block
-    .btn
-        padding: 11.95px 23.2px
-    .logo
-        margin-right: 24px
-    .header
-        padding: 0 32px
-        &__menu
-            padding: 12px 0
-            &-item
-                padding-right: 0
-                border: none
-    .head
-        &__title
-            @include headline-medium
-    .attribut
-        &__textarea
-            height: 240px
-            &-headlong
-                padding-top: 68px
-    .attributes .attribut__textarea
-        height: 152px
-    .difference__item
-        flex: 0 1 auto
-    .basement
-        &__check
-            padding: 0 16px
-        &__btns
-            padding: 0 16px
-            &-back 
-                margin-right: auto
-            &-publish 
-                margin-right: 0                
-                

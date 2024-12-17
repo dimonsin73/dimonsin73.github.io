@@ -1,0 +1,32 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title MY NEW JOB
+        link(rel="icon" type="image/x-icon" href="image/favicon.png")
+        link(rel="stylesheet" href="css/reset.css")
+        link(rel="stylesheet" href="css/fonts.css")
+        link(rel="stylesheet" href="css/style.css")
+        script(src="js/sozdat_rezyume.js" defer) 
+    body 
+        main
+            .container
+                .logo
+                    img(src="image/logo.png", alt="MY NEW JOB")
+                .info
+                    h1.title AI
+                    p.text Платформа для контактного подбора сотрудников и поиска работы
+                .btns 
+                    .btns__col 
+                        button.btns__col-btn.searchwork(type="submit") Найти работу
+                        a(href="").btns__col-clue Как это работает?
+                    .btns__col
+                        button.btns__col-btn.searchemployee(type="submit") Найти сотрудников
+                        a(href="").btns__col-clue Как это работает?
+        .links 
+            .links__wrapper 
+                a(href="").links__link AI стенд
+                a(href="").links__link Верстка
+
+
