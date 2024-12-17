@@ -956,6 +956,10 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 @media (max-width: 767px) {
+  .logo svg {
+    width: 102px;
+    height: 24px;
+  }
   .wrapper {
     padding: 16px;
   }
@@ -1022,8 +1026,10 @@ input[type=number]::-webkit-inner-spin-button {
   .tabs__wrapper {
     overflow-x: scroll;
     gap: 16px;
-    padding: 0 16px;
     width: 390px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    padding: 10px 16px;
   }
   .tabs__item {
     flex-direction: row;

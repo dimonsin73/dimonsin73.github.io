@@ -486,6 +486,10 @@ body {
   }
 }
 @media (max-width: 767px) {
+  .logo svg {
+    width: 102px;
+    height: 24px;
+  }
   .wrapper {
     padding: 16px;
   }

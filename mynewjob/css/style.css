@@ -51,6 +51,17 @@ main {
   padding: 80px;
 }
 
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo svg {
+  width: 340px;
+  height: 80px;
+}
+
 .info {
   display: flex;
 }
@@ -87,6 +98,8 @@ main {
   font: 600 24px/150% "Inter", "sans-serif";
   letter-spacing: -0.72px;
   color: var(--Gray-10);
+  text-decoration: none !important;
+  text-align: center;
 }
 .btns__col-clue {
   font: 500 16px/21px "Inter", "sans-serif";
@@ -94,6 +107,7 @@ main {
 }
 .btns__col a {
   text-decoration: underline;
+  outline: none;
 }
 
 .searchwork {
@@ -105,6 +119,7 @@ main {
 }
 .searchwork:focus {
   background-color: var(--Primary-30);
+  outline: none;
 }
 .searchwork:active {
   background-color: var(--Primary-20);
@@ -119,6 +134,7 @@ main {
 }
 .searchemployee:focus {
   background-color: var(--Gray-60);
+  outline: none;
 }
 .searchemployee:active {
   background-color: var(--Gray-50);
@@ -157,6 +173,9 @@ main {
     width: 390px;
     margin-bottom: 62px;
     padding: 0 40px;
+  }
+  .logo svg {
+    height: 64px;
   }
   .info {
     flex-direction: column;
