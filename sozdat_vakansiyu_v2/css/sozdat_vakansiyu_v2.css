@@ -868,4 +868,36 @@ input[type=number]::-webkit-inner-spin-button {
   .basement__btns-publish {
     margin-right: 0;
   }
+  .tabs__wrapper {
+    overflow-x: scroll;
+    gap: 16px;
+    width: 390px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    padding: 10px 16px;
+  }
+  .tabs__item {
+    flex-direction: row;
+    flex: 0 1 20px;
+    gap: 12px;
+  }
+  .tabs__item-icon {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+  }
+  .tabs__item-text {
+    display: none;
+    width: -moz-min-content;
+    width: min-content;
+  }
+  .tabs__item-active .tabs__item-text {
+    display: block;
+  }
+  .tabcontent__btns {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .insearch {
+    margin-left: 0;
+  }
 }/*# sourceMappingURL=sozdat_vakansiyu_v2.css.map */
