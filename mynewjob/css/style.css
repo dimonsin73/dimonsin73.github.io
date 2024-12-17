@@ -117,10 +117,6 @@ main {
 .searchwork:hover {
   background-color: var(--Primary-30);
 }
-.searchwork:focus {
-  background-color: var(--Primary-30);
-  outline: none;
-}
 .searchwork:active {
   background-color: var(--Primary-20);
 }
@@ -131,10 +127,6 @@ main {
 }
 .searchemployee:hover {
   background-color: var(--Gray-60);
-}
-.searchemployee:focus {
-  background-color: var(--Gray-60);
-  outline: none;
 }
 .searchemployee:active {
   background-color: var(--Gray-50);
