@@ -487,15 +487,31 @@ body {
   }
 }
 @media (max-width: 1023px) {
+  .wrapper {
+    grid-template-columns: 240px 1fr;
+    margin: 0 24px;
+  }
   .header__search-text {
     display: none;
   }
   .header__account {
     width: 161px;
   }
-  .attribut__head {
-    flex-direction: column;
-    align-items: flex-start;
+  .attribut__item {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .attribut__titlesmall {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .attribut__avatar {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .attribut__info {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 @media (max-width: 767px) {
@@ -504,7 +520,7 @@ body {
     height: 24px;
   }
   .wrapper {
-    padding: 16px;
+    grid-template-columns: 1fr;
   }
   .small-hidden {
     display: none;
@@ -541,90 +557,21 @@ body {
   .attribut__wrapper {
     grid-template-columns: 1fr;
   }
+  .attribut-vline24 {
+    padding-top: 16px;
+  }
   .attribut__textarea {
     height: 240px;
   }
   .attribut__textarea-headlong {
     padding-top: 68px;
   }
-  .attribut__item-grid {
-    grid-template-columns: 50% 50%;
-  }
-  .attribut-line24 {
-    flex-direction: column;
-  }
-  .attribut__head {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 16px;
-  }
-  .attribut__part {
-    padding-left: 0;
-  }
-  .attribut__item {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding: 0;
-  }
-  .attribut__left {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .attribut__left-title {
-    margin-bottom: 0;
-  }
-  .attribut__right {
-    gap: 3px;
-  }
-  .attribut__social {
-    flex-wrap: wrap;
-    row-gap: 24px;
-  }
-  .attribut__social-col:first-child {
-    flex: 0 0 100%;
-  }
   .attributes .attribut__textarea {
     height: 152px;
   }
   .difference__item {
     flex: 0 1 auto;
-  }
-  .basement__check {
-    padding: 0 16px;
-  }
-  .basement__btns {
-    padding: 0 16px;
-  }
-  .basement__btns-back {
-    margin-right: auto;
-  }
-  .basement__btns-publish {
-    margin-right: 0;
-  }
-  .tabs__wrapper {
-    overflow-x: scroll;
-    gap: 16px;
-    padding: 0 16px;
-    width: 390px;
-  }
-  .tabs__item {
-    flex-direction: row;
-    flex: 0 1 20px;
-    gap: 12px;
-  }
-  .tabs__item-icon {
-    flex: 0 0 auto;
-    margin-bottom: 0;
-  }
-  .tabs__item-text {
-    display: none;
-    width: -moz-min-content;
-    width: min-content;
-  }
-  .tabs__item-active .tabs__item-text {
-    display: block;
+    flex-display: block;
   }
   .tabcontent__btns {
     margin-left: 16px;

@@ -429,20 +429,34 @@ body
     .videovacancy
         display: none
 @media (max-width:1023px)
+    .wrapper
+        grid-template-columns: 240px 1fr
+        margin: 0 24px
     .header
         &__search-text
             display: none
         &__account
             width: 161px
-    .attribut__head
-        flex-direction: column
-        align-items: flex-start
+    .attribut
+        &__item
+            padding-left: 16px
+            padding-right: 16px
+        &__titlesmall
+            padding-left: 16px
+            padding-right: 16px
+        &__avatar
+            margin-left: 16px
+            margin-right: 16px
+        &__info
+            padding-left: 16px
+            padding-right: 16px
+
 @media (max-width:767px)
     .logo svg
         width: 102px
         height: 24px
     .wrapper
-        padding: 16px
+        grid-template-columns: 1fr
     .small-hidden
         display: none
     .small-visible
@@ -468,70 +482,16 @@ body
     .attribut
         &__wrapper
             grid-template-columns: 1fr
+        &-vline24
+            padding-top: 16px
         &__textarea
             height: 240px
             &-headlong
                 padding-top: 68px
-        &__item
-            &-grid
-                grid-template-columns: 50% 50%
-        &-line24 
-            flex-direction: column
-        &__head
-            flex-direction: column
-            align-items: flex-start
-            margin-bottom: 16px
-        &__part
-            padding-left: 0
-        &__item
-            grid-template-columns: 1fr
-            gap: 6px
-            padding: 0
-        &__left
-            display: flex
-            align-items: center
-            flex-wrap: wrap
-            gap: 6px
-            &-title 
-                margin-bottom: 0
-        &__right
-            gap: 3px
-        &__social
-            flex-wrap: wrap
-            row-gap: 24px
-            &-col 
-                &:first-child
-                    flex: 0 0 100%
     .attributes .attribut__textarea
         height: 152px
     .difference__item
-        flex: 0 1 auto
-    .basement
-        &__check
-            padding: 0 16px
-        &__btns
-            padding: 0 16px
-            &-back 
-                margin-right: auto
-            &-publish 
-                margin-right: 0    
-    .tabs   
-        &__wrapper
-            overflow-x: scroll
-            gap: 16px
-            padding: 0 16px
-            width: 390px
-        &__item
-            flex-direction: row
-            flex: 0 1 20px
-            gap: 12px
-            &-icon 
-                flex: 0 0 auto
-                margin-bottom: 0   
-            &-text 
-                display: none  
-                width: min-content
-            &-active .tabs__item-text     
+        flex: 0 1 auto     
                 display: block
     .tabcontent__btns 
         margin-left: 16px
