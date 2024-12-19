@@ -45,3 +45,9 @@ for (let i = 0; i < expandBtnArr.length; i++) {
         })
     })
 }
+// Ползунок 
+const range = document.querySelector('.search__range-input')
+const number = document.querySelector('.search__range-number')
+range.addEventListener('input', function(){
+    number.textContent = `${range.value}%`
+})
