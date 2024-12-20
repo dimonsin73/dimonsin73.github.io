@@ -658,9 +658,9 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex: 0 0 auto;
 }
 .modal__head-ai svg {
-  flex: 0 0 auto;
   width: 48px;
   height: 48px;
 }
@@ -895,6 +895,12 @@ body {
     padding: 16px;
     border-radius: 0;
     overflow-y: scroll;
+  }
+  .modal__head {
+    gap: 8px;
+  }
+  .modal__head-ai {
+    gap: 8px;
   }
 }
 @media (max-width: 600px) {
