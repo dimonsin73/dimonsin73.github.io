@@ -316,7 +316,7 @@ body {
      -moz-appearance: none;
           appearance: none;
   width: 374px;
-  height: 16px;
+  height: 20px;
   border: none;
   border-radius: 2px;
   overflow: hidden;
@@ -515,7 +515,8 @@ body {
   position: relative;
   overflow: hidden;
   margin-bottom: 8px;
-  border-radius: 16px;
+  border-radius: 8px;
+  background-color: var(--Black);
   cursor: pointer;
 }
 .card__slider-media:hover img {
@@ -745,8 +746,14 @@ body {
 .itc-slider-btn:hover {
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
 }
+.itc-slider-btn:hover path {
+  fill: var(--Gray-20);
+}
 .itc-slider-btn:active {
   filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.25));
+}
+.itc-slider-btn:active path {
+  fill: var(--Gray-20);
 }
 .itc-slider-btn-hide {
   display: none;
