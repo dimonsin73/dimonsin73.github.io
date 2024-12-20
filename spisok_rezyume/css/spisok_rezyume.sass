@@ -536,7 +536,7 @@ body
             border-radius: 8px
             background-color: var(--Black)
 .modal
-    position: absolute
+    position: fixed
     top: 0
     bottom: 0
     left: 0
@@ -563,6 +563,7 @@ body
             align-items: center
             gap: 16px
             & svg
+                flex: 0 0 auto
                 width: 48px
                 height: 48px
         &-number 
@@ -734,6 +735,12 @@ body
             grid-column: span 2
         &__footer
             gap: 16px
+    .modal__wrapper
+        width: 100%
+        height: 100%
+        padding: 16px
+        border-radius: 0
+        overflow-y: scroll
 @media ( max-width: 600px )
     .search
         &__setting 
