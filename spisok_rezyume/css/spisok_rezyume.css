@@ -570,6 +570,9 @@ body {
   letter-spacing: 0;
   color: var(--Gray-40);
 }
+.card__slider-btn {
+  flex: 0 0 16px;
+}
 .card__expand {
   display: grid;
   grid-template-columns: 48px 768px 48px;
