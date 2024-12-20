@@ -309,7 +309,43 @@ body {
        column-gap: 19px;
 }
 .search__range-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 374px;
+  height: 16px;
+  border: none;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.search__range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  background-color: var(--Primary-40);
+  box-shadow: var(--Shadow-dropdawn);
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  margin-top: -7px;
+  box-shadow: calc(-100vmax - 16px) 0 0 100vmax var(--Primary-40);
+  -webkit-clip-path: polygon(100% 0, 2px 0, 0 7px, -100vmax 7px, -100vmax 11px, 0 11px, 2px 100%, 100% 100%);
+          clip-path: polygon(100% 0, 2px 0, 0 7px, -100vmax 7px, -100vmax 11px, 0 11px, 2px 100%, 100% 100%);
+}
+.search__range-input::-moz-range-thumb {
+  -moz-appearance: none;
+       appearance: none;
+  background-color: var(--Primary-40);
+  border: 0px solid var(--Primary-40);
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  margin-top: -7px;
+}
+.search__range-input::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.1);
 }
 .search__range-number {
   width: 90px;
@@ -633,6 +669,7 @@ body {
 .modal__head-title {
   font: 700 20px/30px "Inter", "sans-serif";
   letter-spacing: 0;
+  color: var(--Black);
 }
 .modal__head-close {
   margin-left: auto;
@@ -745,4 +782,83 @@ body {
 }
 .itc-slider-indicator-active {
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 1138px) {
+  .main {
+    margin: 0 24px;
+  }
+  .search__setting p {
+    display: none;
+  }
+  .itc-slider-item {
+    flex: 0 0 calc(25% - 12px);
+  }
+}
+@media (max-width: 1023px) {
+  .header__search-text {
+    display: none;
+  }
+  .header__account {
+    width: 161px;
+  }
+}
+@media (max-width: 767px) {
+  .logo svg {
+    width: 102px;
+    height: 24px;
+  }
+  .wrapper {
+    padding: 16px;
+  }
+  .small-hidden {
+    display: none;
+  }
+  .small-visible {
+    display: block;
+  }
+  .btn {
+    padding: 11.95px 23.2px;
+  }
+  .logo {
+    margin-right: 24px;
+  }
+  .header {
+    padding: 0 32px;
+  }
+  .header__menu {
+    padding: 12px 0;
+  }
+  .header__menu-item {
+    padding-right: 0;
+    border: none;
+  }
+  .head__title {
+    font: 700 30px/36px "Inter", "sans-serif";
+    letter-spacing: -0.1px;
+  }
+  .attribut__textarea {
+    height: 240px;
+  }
+  .attribut__textarea-headlong {
+    padding-top: 68px;
+  }
+  .attributes .attribut__textarea {
+    height: 152px;
+  }
+  .difference__item {
+    flex: 0 1 auto;
+  }
+  .basement__check {
+    padding: 0 16px;
+  }
+  .basement__btns {
+    padding: 0 16px;
+  }
+  .basement__btns-back {
+    margin-right: auto;
+  }
+  .basement__btns-publish {
+    margin-right: 0;
+  }
 }/*# sourceMappingURL=spisok_rezyume.css.map */
