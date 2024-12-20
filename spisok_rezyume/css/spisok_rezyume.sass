@@ -291,6 +291,8 @@ body
         border: 1px solid var(--Gray-80)
         border-radius: 8px
         @include title-small
+        & svg 
+            padding: 3px 0
     &__range
         display: flex
         align-items: center
@@ -327,7 +329,7 @@ body
                 background: rgba(0, 0, 0, 0.10)
         &-number 
             width: 90px
-            padding: 12px 16px
+            padding: 8px 16px
             border: 1px solid rgba(0, 0, 0, 0.10)
             border-radius: 8px
             @include headline-small
@@ -340,7 +342,7 @@ body
         display: flex
         align-items: center
         column-gap: 12px
-        padding: 16px 24px
+        padding: 14px 24px
         border-radius: 8px
         background-color: var(--Black)
         @include title-small
@@ -353,24 +355,23 @@ body
         padding: 24px
         border-bottom: 1px solid var(--Gray-80)
     &__top
-        display: flex
+        display: grid
+        grid-template-columns: 160px 1fr 160px
+        grid-auto-flow: dense
         column-gap: 24px
     &__img
+        grid-row: span 2
         display: flex
         justify-content: center
         align-items: center
         width: 160px
         height: 160px
+        border: 1px solid var(--Gray-90)
         border-radius: 16px
         overflow: hidden
-    &__info
+    &__head
         display: flex
-        flex-direction: column
-        row-gap: 12px
-        &-head 
-            display: flex
-            align-items: center
-            column-gap: 12px
+        gap: 12px
         &-title 
             @include headline-small
         &-salary
@@ -378,7 +379,7 @@ body
             @include headline-small
     &__social
         display: flex
-        column-gap: 12px
+        gap: 12px
         justify-content: space-between
         &-title 
             @include title-small
@@ -393,12 +394,14 @@ body
             display: flex
             flex-direction: column
             row-gap: 12px 
+            column-gap: 24px
             &:first-child
                 overflow: hidden
         &-content
             overflow: hidden
             white-space: nowrap
     &__correspondence
+        grid-row: span 2
         display: flex
         flex-direction: column
         align-items: center
@@ -491,9 +494,9 @@ body
     &__expand 
         display: grid
         grid-template-columns: 48px 768px 48px
-        gap: 97px
-        justify-content: center
+        justify-content: space-between
         height: 0
+        margin: 0 16px
         border-top: 1px solid var(--Gray-80)
         overflow: hidden
         transition: height 0.3s ease
@@ -600,8 +603,7 @@ body
     &-transition-none
         transition: none
     &-item
-        flex: 0 0 calc( 20% - (16px * 4 / 5) )
-        max-width: 100%
+        flex: 0 0 200px
         user-select: none
         will-change: transform
     /* кнопки влево и вправо */
@@ -662,30 +664,55 @@ body
         margin: 0 24px
     .search__setting p 
         display: none
-    .itc-slider-item
-        flex: 0 0 calc( 25% - (16px * 3 / 4) )
 @media (max-width:1023px)
     .header
         &__search-text
             display: none
         &__account
             width: 161px
+    .search__range-input
+        width: 203px
+    .card
+        &__top
+            row-gap: 16px
+        &__head
+            flex-direction: column
+            grid-row: span 2
+            justify-content: center
+            &-salary
+                flex: 0 2 auto
+        &__social
+            grid-column: span 3
+        &__expand 
+            grid-template-columns: 0 1fr 48px
+@media (max-width:816px)
+    .card__expand 
+        position: relative
+        &-right 
+            position: absolute
+            top: 0
+            bottom: 0
+            right: 16px
 @media (max-width:767px)
+    .main
+        margin: 0
+        margin-bottom: 24px
     .logo svg
         width: 102px
         height: 24px
     .wrapper
-        padding: 16px
+        border-radius: 0
     .small-hidden
         display: none
     .small-visible
         display: block
     .btn
-        padding: 11.95px 23.2px
+        flex: 0 0 auto
+        padding: 11px   
     .logo
         margin-right: 24px
     .header
-        padding: 0 32px
+        padding: 0 24px
         &__menu
             padding: 12px 0
             &-item
@@ -693,24 +720,31 @@ body
                 border: none
     .head
         &__title
+            margin: 0 24px
             @include headline-medium
-    .attribut
-        &__textarea
-            height: 240px
-            &-headlong
-                padding-top: 68px
-    .attributes .attribut__textarea
-        height: 152px
-    .difference__item
-        flex: 0 1 auto
-    .basement
-        &__check
-            padding: 0 16px
-        &__btns
-            padding: 0 16px
-            &-back 
-                margin-right: auto
-            &-publish 
-                margin-right: 0             
-
+    .search__wrapper
+        padding: 16px 24px
+        border-radius: 0
+    .card
+        &__top       
+            grid-template-columns: 1fr 1fr
+        &__head
+            grid-column: span 2
+        &__social
+            grid-column: span 2
+        &__footer
+            gap: 16px
+@media ( max-width: 600px )
+    .search
+        &__setting 
+            padding: 13px 14.5px
+        &__range-input
+            width: 98px 
+    .card
+        &__social
+            flex-direction: column
+            row-gap: 12px
+            &-col
+                display: grid
+                grid-template-columns: 1fr 1fr
     

@@ -75,15 +75,15 @@ html(lang="ru")
                                 path(d="M3.5 1C3.5 0.447715 3.05228 0 2.5 0C1.94772 0 1.5 0.447715 1.5 1V8.26756C0.902199 8.61337 0.5 9.25972 0.5 10C0.5 10.7403 0.902199 11.3866 1.5 11.7324V13C1.5 13.5523 1.94772 14 2.5 14C3.05228 14 3.5 13.5523 3.5 13V11.7324C4.0978 11.3866 4.5 10.7403 4.5 10C4.5 9.25972 4.0978 8.61337 3.5 8.26756V1Z" fill="#202123")
                                 path(d="M9.5 1C9.5 0.447715 9.05229 0 8.5 0C7.94772 0 7.5 0.447715 7.5 1V2.26756C6.9022 2.61337 6.5 3.25972 6.5 4C6.5 4.74028 6.9022 5.38663 7.5 5.73244V13C7.5 13.5523 7.94772 14 8.5 14C9.05229 14 9.5 13.5523 9.5 13V5.73244C10.0978 5.38663 10.5 4.74028 10.5 4C10.5 3.25972 10.0978 2.61337 9.5 2.26756V1Z" fill="#202123")
                                 path(d="M14.5 0C15.0523 0 15.5 0.447715 15.5 1V8.26756C16.0978 8.61337 16.5 9.25972 16.5 10C16.5 10.7403 16.0978 11.3866 15.5 11.7324V13C15.5 13.5523 15.0523 14 14.5 14C13.9477 14 13.5 13.5523 13.5 13V11.7324C12.9022 11.3866 12.5 10.7403 12.5 10C12.5 9.25972 12.9022 8.61337 13.5 8.26756V1C13.5 0.447715 13.9477 0 14.5 0Z" fill="#202123")
-                            p. Настроить поиск
+                            p Настроить поиск
                         .search__range
                             input.search__range-input(type="range" min="0" max="100" step="1" value="90")#radius
                             .search__range-number 90% 
-                            p.search__range-text Степень соответствия 
+                            p.search__range-text.small-hidden Степень соответствия 
                         button.search__search 
                             svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
                                 path(fill-rule="evenodd" clip-rule="evenodd" d="M6 2C3.79086 2 2 3.79086 2 6C2 8.20914 3.79086 10 6 10C8.20914 10 10 8.20914 10 6C10 3.79086 8.20914 2 6 2ZM0 6C0 2.68629 2.68629 0 6 0C9.31371 0 12 2.68629 12 6C12 7.29583 11.5892 8.49572 10.8907 9.47653L15.7071 14.2929C16.0976 14.6834 16.0976 15.3166 15.7071 15.7071C15.3166 16.0976 14.6834 16.0976 14.2929 15.7071L9.47653 10.8907C8.49572 11.5892 7.29583 12 6 12C2.68629 12 0 9.31371 0 6Z" fill="white")
-                            p Поиск
+                            p.small-hidden Поиск
             section.card.section
                 .container 
                     .wrapper
@@ -91,38 +91,9 @@ html(lang="ru")
                             .card__top
                                 .card__img
                                     img(src="image/card_1.png", alt="logo")
-                                .card__info 
-                                    .card__info-head 
-                                        .card__info-title Директор по проектированию и строительству в дирекцию
-                                        .card__info-salary 350 000 - 400 000 ₽
-                                    .card__social 
-                                        .card__social-col 
-                                            .card__social-item 
-                                                .card__social-content
-                                                    h3.card__social-title.title-small ПАО “Газпромнефть”
-                                                    p.card__social-text Наименование работодателя
-                                            .card__social-item 
-                                                .card__social-content
-                                                    h3.card__social-title.title-small gazpromneft.ru
-                                                    p.card__social-text Сайт работодателя
-                                        .card__social-col 
-                                            .card__social-item 
-                                                .card__social-content
-                                                    h3.card__social-title.title-small от 10 лет
-                                                    p.card__social-text Опыт работы
-                                            .card__social-item 
-                                                .card__social-content
-                                                    h3.card__social-title.title-small от 35 до 45 лет
-                                                    p.card__social-text Рекомендованный возраст
-                                        .card__social-col 
-                                            .card__social-item 
-                                                .card__social-content
-                                                    h3.card__social-title.title-small г. Москва
-                                                    p.card__social-text Место работы
-                                            .card__social-item 
-                                                .card__social-content
-                                                    h3.card__social-title.title-small м. Арбатская
-                                                    p.card__social-text Станция метро
+                                .card__head 
+                                    .card__head-title Директор по проектированию и строительству в дирекцию
+                                    .card__head-salary 350 000 - 400 000 ₽
                                 button.card__correspondence
                                     p.card__correspondence-text Степень соответствия 
                                     p.card__correspondence-number 95%
@@ -133,7 +104,35 @@ html(lang="ru")
                                             path(d="M13.5469 8.97734C13.5188 9.04766 13.5 10.1117 13.5 11.668C13.5 13.2242 13.5188 14.2883 13.5469 14.3586L13.5938 14.4805H14.2922C14.9391 14.4805 15 14.4711 15.0469 14.3914C15.075 14.3305 15.0938 13.393 15.0938 11.668C15.0938 9.94297 15.075 9.00547 15.0469 8.94453C15 8.86484 14.9391 8.85547 14.2922 8.85547H13.5938L13.5469 8.97734Z" fill="#006FD8")
                                         p Смотреть
                                     p.card__correspondence-text Почему подходит?
-                            .card__slider.its-slider(data-slider="itc-slider" data-loop="false")
+                                .card__social 
+                                    .card__social-col 
+                                        .card__social-item 
+                                            .card__social-content
+                                                h3.card__social-title.title-small ПАО “Газпромнефть”
+                                                p.card__social-text Наименование работодателя
+                                        .card__social-item 
+                                            .card__social-content
+                                                h3.card__social-title.title-small gazpromneft.ru
+                                                p.card__social-text Сайт работодателя
+                                    .card__social-col 
+                                        .card__social-item 
+                                            .card__social-content
+                                                h3.card__social-title.title-small от 10 лет
+                                                p.card__social-text Опыт работы
+                                        .card__social-item 
+                                            .card__social-content
+                                                h3.card__social-title.title-small от 35 до 45 лет
+                                                p.card__social-text Рекомендованный возраст
+                                    .card__social-col 
+                                        .card__social-item 
+                                            .card__social-content
+                                                h3.card__social-title.title-small г. Москва
+                                                p.card__social-text Место работы
+                                        .card__social-item 
+                                            .card__social-content
+                                                h3.card__social-title.title-small м. Арбатская
+                                                p.card__social-text Станция метро
+                            .card__slider.its-slider(data-slider="itc-slider" data-loop="true")
                                 .itc-slider-wrapper
                                     .itc-slider-items
                                         .itc-slider-item
@@ -291,11 +290,11 @@ html(lang="ru")
                             button.card__btn.btn.btn-black.card__btn-expand(type="submit")
                                 svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
                                     path(d="M10 6H5C3.89543 6 3 6.89543 3 8V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V8C21 6.89543 20.1046 6 19 6H14M10 6V5C10 3.89543 10.8954 3 12 3C13.1046 3 14 3.89543 14 5V6M10 6C10 7.10457 10.8954 8 12 8C13.1046 8 14 7.10457 14 6M9 14C10.1046 14 11 13.1046 11 12C11 10.8954 10.1046 10 9 10C7.89543 10 7 10.8954 7 12C7 13.1046 7.89543 14 9 14ZM9 14C10.3062 14 11.4174 14.8348 11.8292 16M9 14C7.69378 14 6.58249 14.8348 6.17065 16M15 11H18M15 15H17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                p Вакансия
+                                p.small-hidden Вакансия
                             button.card__btn.btn.btn-black(type="submit")
                                 svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
                                     path(d="M21 13.2554C18.2207 14.3805 15.1827 15 12 15C8.8173 15 5.7793 14.3805 3 13.2554M16 6V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V6M12 12H12.01M5 20H19C20.1046 20 21 19.1046 21 18V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V18C3 19.1046 3.89543 20 5 20Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                p О компании
+                                p.small-hidden О компании
                             button.card__btnheart.btn.btn-black(type="submit")
                                 svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
                                     path(d="M4.31802 6.31802C2.56066 8.07538 2.56066 10.9246 4.31802 12.682L12.0001 20.364L19.682 12.682C21.4393 10.9246 21.4393 8.07538 19.682 6.31802C17.9246 4.56066 15.0754 4.56066 13.318 6.31802L12.0001 7.63609L10.682 6.31802C8.92462 4.56066 6.07538 4.56066 4.31802 6.31802Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
