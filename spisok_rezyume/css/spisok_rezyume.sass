@@ -495,11 +495,12 @@ body
         &-btn 
             flex: 0 0 16px
     &__expand 
-        display: grid
-        grid-template-columns: 48px 768px 48px
+        position: relative
+        display: flex
+        flex-direction: column
         justify-content: space-between
         height: 0
-        margin: 0 16px
+        padding: 0 24px
         border-top: 1px solid var(--Gray-80)
         overflow: hidden
         transition: height 0.3s ease
@@ -507,15 +508,19 @@ body
             display: flex
             flex-direction: column
             gap: 24px
-            margin: 24px auto
+            margin: 0 auto
         &-item 
             display: flex
             flex-direction: column 
             gap: 8px
         &-title
-            padding: 6px 0 
-            @include title-medium
-            color: var(--Black)
+            display: flex
+            gap: 12px
+            padding: 12px 16px 
+            border-bottom: .45px solid var(--Gray-70)
+            font: 500 15px/24px 'inter', 'sans-serif'
+            letter-spacing: -0.15px
+            color: var(--Gray-20)
         &-text 
             @include body-large
             color: var(--Black)
@@ -526,9 +531,12 @@ body
             & li 
                 list-style: disc
         &-right
-            display: flex 
+            position: absolute
+            top: 24px
+            bottom: 24px
+            right: 24px
+            display: flex
             align-items: flex-end
-            margin: 24px 0
         &-active 
             overflow: visible
         &-up 
@@ -538,6 +546,133 @@ body
             height: 48px
             border-radius: 8px
             background-color: var(--Black)
+
+.attribut
+    position: relative
+    &__items
+        display: flex
+        flex-direction: column
+        gap: 24px
+        margin-top: 24px
+    &__item
+        display: grid
+        grid-template-columns: 180px auto
+        gap: 40px
+        padding: 0 16px
+        margin-bottom: 36px
+    &-line24
+        display: flex
+        gap: 24px
+    &__info
+        display: flex
+        flex-direction: column
+        gap: 8px
+        width: 100%
+        overflow: hidden
+        &-text 
+            @include subtitle-large
+            color: var(--Gray-60)
+        &-btn 
+            margin-top: auto
+            padding: 5.25px 16px
+            border-radius: 6px
+            @include btn-small     
+    &__part
+        display: flex
+        flex-direction: column
+        gap: 18px
+        padding-left: 16px
+        &-title 
+            font: 600 21px/36px 'Inter', 'sans-serif'
+            line-height: -0.75px
+    &__salary
+        display: flex
+        align-items: center
+    &__tags
+        display: flex
+        gap: 12px
+        flex-wrap: wrap
+        &-tag 
+            padding: 8px 12px
+            border: 0.75px solid var(--Gray-70)
+            border-radius: 18px
+            @include subtitle-large
+            color: var(--Gray-20)
+            white-space: nowrap
+    &-grid
+        display: grid
+        grid-template-columns: 1fr 56px
+        column-gap: 16px
+    &-border
+        padding: 24px 0
+        border-top: 1px solid var(--Border)
+        border-bottom: 1px solid var(--Border)
+    &__avatar
+        flex: 0 0 auto
+        width: 160px
+        height: 160px
+        border-radius: 12px
+        overflow: hidden
+    &__social
+        display: flex
+        column-gap: 12px
+        justify-content: space-between
+        &-title 
+            @include title-small
+            color: var(--Black)
+        &-text 
+            @include subtitle-small
+            color: var(--Gray-40)
+        &-item 
+            display: flex
+            gap: 8px
+        &-col 
+            display: flex
+            flex-direction: column
+            row-gap: 12px 
+            &:first-child
+                overflow: hidden
+        &-content
+            overflow: hidden
+            white-space: nowrap
+    &__titlesmall
+        display: flex
+        gap: 12px
+        padding: 12px 16px
+        border-bottom: 1px solid var(--Gray-80)
+        @include title-small
+        color: var(--Gray-20)
+    &__left
+        &-title 
+            @include subtitle-large
+            color: var(--Black)
+            margin-bottom: 6px
+        &-text
+            font: 500 12px/24px 'Inter', 'sans-serif'
+            line-height: -0.15px
+            color: var(--Gray-30)
+    &__right
+        display: flex
+        flex-direction: column
+        gap: 8px
+        &-subtitle 
+            margin-bottom: 0px
+        &-subtext 
+            @include subtitle-medium
+            color: var(--Gray-30)
+        &-text
+            @include body-medium
+            color: var(--Black)
+    &__head
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__name
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+
+
 .modal
     position: fixed
     top: 0
@@ -695,14 +830,6 @@ body
             grid-column: span 3
         &__expand 
             grid-template-columns: 0 1fr 48px
-@media (max-width:816px)
-    .card__expand 
-        position: relative
-        &-right 
-            position: absolute
-            top: 0
-            bottom: 0
-            right: 16px
 @media (max-width:767px)
     .main
         margin: 0
