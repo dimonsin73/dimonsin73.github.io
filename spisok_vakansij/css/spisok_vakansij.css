@@ -823,7 +823,7 @@ body {
   .card__head {
     flex-direction: column;
     grid-row: span 2;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .card__head-salary {
     flex: 0 2 auto;

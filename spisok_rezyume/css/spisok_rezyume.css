@@ -391,6 +391,7 @@ body {
   grid-auto-flow: dense;
   -moz-column-gap: 24px;
        column-gap: 24px;
+  row-gap: 8px;
 }
 .card__img {
   grid-row: span 2;
@@ -406,13 +407,25 @@ body {
 .card__head {
   display: flex;
   gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__head-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .card__head-title {
   font: 700 20px/30px "Inter", "sans-serif";
   letter-spacing: 0;
 }
+.card__head-text {
+  font: 500 12px/16px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-40);
+}
 .card__head-salary {
-  flex: 2 0 max-content;
+  flex: 0 2 max-content;
   font: 700 20px/30px "Inter", "sans-serif";
   letter-spacing: 0;
 }
@@ -492,6 +505,17 @@ body {
        column-gap: 24px;
   padding: 16px 24px;
 }
+.card__footer-icons {
+  display: flex;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  margin-left: auto;
+}
+.card__footer-icon {
+  display: flex;
+  align-items: center;
+  padding: 11px;
+}
 .card__btn {
   display: flex;
   align-items: center;
@@ -500,13 +524,19 @@ body {
   font: 600 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.1px;
 }
+.card__print, .card__dawnloader {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 .card__btnheart {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  padding: 11px;
-  font: 600 14px/20px "Inter", "sans-serif";
-  letter-spacing: -0.1px;
+  transition: stroke 0.3s ease, fill 0.3s ease;
+}
+.card__btnheart-active path {
+  stroke: var(--Red-error);
+  fill: var(--Red-error);
+}
+.card__btnheart-active:hover path {
+  stroke: var(--Red-error);
 }
 .card__slider {
   position: relative;
@@ -636,6 +666,16 @@ body {
   height: 48px;
   border-radius: 8px;
   background-color: var(--Black);
+}
+
+.insearch {
+  display: flex;
+  padding: 4px 8px;
+  border-radius: 16px;
+  background-color: rgba(0, 111, 216, 0.1);
+  font: 500 10px/14px "Inter", "sans-serif";
+  letter-spacing: 0;
+  color: var(--Primary-40);
 }
 
 .attribut {
@@ -792,6 +832,12 @@ body {
   font: 400 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
   color: var(--Black);
+}
+.attribut__right-experience {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  white-space: nowrap;
 }
 .attribut__head {
   display: flex;
@@ -995,7 +1041,8 @@ body {
   .card__head {
     flex-direction: column;
     grid-row: span 2;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .card__head-salary {
     flex: 0 2 auto;
@@ -1062,6 +1109,19 @@ body {
   }
   .card__footer {
     gap: 16px;
+  }
+  .attribut__item {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+  .attribut__left-title {
+    margin-bottom: 0;
+  }
+  .attribut__right {
+    width: calc(100% - 32px);
+  }
+  .attribut__right-experience {
+    overflow: scroll;
   }
   .modal__wrapper {
     width: 100%;

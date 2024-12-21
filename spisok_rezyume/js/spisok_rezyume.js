@@ -36,15 +36,23 @@ for (let i = 0; i < expandBtnArr.length; i++) {
         element.classList.toggle('btn-black-active')
         const card = element.parentElement.parentElement
         const expand = card.querySelector('.card__expand')
+        const btnPrint = card.querySelector('.card__print')
+        const btnDawnload = card.querySelector('.card__dawnloader')
         expand.classList.toggle('card__expand-active')
         if (expand.classList.contains('card__expand-active')) {
             expand.style.height = `${expand.scrollHeight}px`
+            btnPrint.style.opacity = '1'
+            btnDawnload.style.opacity = '1'
         } else {
-            expand.style.height = 0
+            expand.style.height = '0'
+            btnPrint.style.opacity = '0'
+            btnDawnload.style.opacity = '0'
         }
         const expandUp = card.querySelector('.card__expand-up')
         expandUp.addEventListener('click', function(){
-            expand.style.height = 0
+            expand.style.height = '0'
+            btnPrint.style.opacity = '0'
+            btnDawnload.style.opacity = '0'
             expand.classList.remove('card__expand-active')
             element.classList.remove('btn-black-active')
         })
@@ -56,3 +64,11 @@ const number = document.querySelector('.search__range-number')
 range.addEventListener('input', function(){
     number.textContent = `${range.value}%`
 })
+// Кнопка Лайк 
+const btnHeartArr = document.querySelectorAll('.card__btnheart')
+for (let i = 0; i < btnHeartArr.length; i++) {
+    const element = btnHeartArr[i];
+    element.addEventListener('click', function(){
+        element.classList.toggle('card__btnheart-active')    
+    })
+}

@@ -359,6 +359,7 @@ body
         grid-template-columns: 160px 1fr 160px
         grid-auto-flow: dense
         column-gap: 24px
+        row-gap: 8px
     &__img
         grid-row: span 2
         display: flex
@@ -372,10 +373,19 @@ body
     &__head
         display: flex
         gap: 12px
+        justify-content: space-between
+        align-items: center
+        &-items 
+            display: flex 
+            flex-direction: column 
+            align-items: flex-start
         &-title 
             @include headline-small
+        &-text 
+            @include subtitle-medium
+            color: var(--Gray-40)
         &-salary
-            flex: 2 0 max-content
+            flex: 0 2 max-content
             @include headline-small
     &__social
         display: flex
@@ -432,17 +442,30 @@ body
         display: flex 
         column-gap: 24px
         padding: 16px 24px
+        &-icons 
+            display: flex
+            column-gap: 24px
+            margin-left: auto
+        &-icon
+            display: flex
+            align-items: center
+            padding: 11px
     &__btn
         display: flex
         align-items: center
         column-gap: 8px
         @include title-small
+    &__print, &__dawnloader 
+        opacity: 0
+        transition: opacity 0.3s ease
     &__btnheart
-        display: flex
-        align-items: center
-        margin-left: auto
-        padding: 11px
-        @include title-small
+        transition: stroke 0.3s ease, fill 0.3s ease
+        &-active path
+            stroke: var(--Red-error)
+            fill: var(--Red-error)
+        &-active:hover path 
+            stroke: var(--Red-error)
+
     &__slider
         position: relative
         &-media 
@@ -546,7 +569,13 @@ body
             height: 48px
             border-radius: 8px
             background-color: var(--Black)
-
+.insearch
+    display: flex
+    padding: 4px 8px
+    border-radius: 16px
+    background-color: rgba(0, 111, 216, 0.1)
+    @include subtitle-small
+    color: var(--Primary-40)
 .attribut
     position: relative
     &__items
@@ -663,6 +692,11 @@ body
         &-text
             @include body-medium
             color: var(--Black)
+        &-experience 
+            display: flex
+            gap: 12px
+            align-items: center
+            white-space: nowrap
     &__head
         display: flex
         justify-content: space-between
@@ -823,7 +857,8 @@ body
         &__head
             flex-direction: column
             grid-row: span 2
-            justify-content: center
+            justify-content: flex-start
+            align-items: flex-start
             &-salary
                 flex: 0 2 auto
         &__social
@@ -871,6 +906,16 @@ body
             grid-column: span 2
         &__footer
             gap: 16px
+    .attribut
+        &__item 
+            padding: 0
+            grid-template-columns: 1fr
+        &__left-title
+            margin-bottom: 0
+        &__right 
+            width: calc( 100% - 32px )
+            &-experience 
+                overflow: scroll
     .modal
         &__wrapper
             width: 100%
