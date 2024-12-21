@@ -56,3 +56,12 @@ const number = document.querySelector('.search__range-number')
 range.addEventListener('input', function(){
     number.textContent = `${range.value}%`
 })
+
+// Кнопка Лайк 
+const btnHeartArr = document.querySelectorAll('.card__btnheart')
+for (let i = 0; i < btnHeartArr.length; i++) {
+    const element = btnHeartArr[i];
+    element.addEventListener('click', function(){
+        element.classList.toggle('card__btnheart-active')    
+    })
+}

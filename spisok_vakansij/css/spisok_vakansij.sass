@@ -442,7 +442,12 @@ body
         align-items: center
         margin-left: auto
         padding: 11px
-        @include title-small
+        transition: stroke 0.3s ease, fill 0.3s ease
+        &-active path
+            stroke: var(--Red-error)
+            fill: var(--Red-error)
+        &-active:hover path 
+            stroke: var(--Red-error)
     &__slider
         position: relative
         &-media 

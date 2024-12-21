@@ -505,8 +505,14 @@ body {
   align-items: center;
   margin-left: auto;
   padding: 11px;
-  font: 600 14px/20px "Inter", "sans-serif";
-  letter-spacing: -0.1px;
+  transition: stroke 0.3s ease, fill 0.3s ease;
+}
+.card__btnheart-active path {
+  stroke: var(--Red-error);
+  fill: var(--Red-error);
+}
+.card__btnheart-active:hover path {
+  stroke: var(--Red-error);
 }
 .card__slider {
   position: relative;
