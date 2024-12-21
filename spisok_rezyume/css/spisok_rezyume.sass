@@ -188,7 +188,7 @@ body
             & path
                 stroke: var(--White)
 .small-visible
-    display: none
+    display: none 
 .burger
     flex: 0 0 20px
     margin-right: 24px
@@ -450,6 +450,8 @@ body
             display: flex
             align-items: center
             padding: 11px
+        &-dots 
+            margin-left: auto
     &__btn
         display: flex
         align-items: center
@@ -876,7 +878,7 @@ body
     .small-hidden
         display: none
     .small-visible
-        display: block
+        display: flex 
     .btn
         flex: 0 0 auto
         padding: 11px   
@@ -934,9 +936,8 @@ body
             width: 98px 
     .card
         &__social
-            flex-direction: column
+            display: grid
+            column-gap: 24px
             row-gap: 12px
-            &-col
-                display: grid
-                grid-template-columns: 1fr 1fr
+            grid-template-columns: 1fr 1fr
     

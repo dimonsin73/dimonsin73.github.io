@@ -516,6 +516,9 @@ body {
   align-items: center;
   padding: 11px;
 }
+.card__footer-dots {
+  margin-left: auto;
+}
 .card__btn {
   display: flex;
   align-items: center;
@@ -1070,7 +1073,7 @@ body {
     display: none;
   }
   .small-visible {
-    display: block;
+    display: flex;
   }
   .btn {
     flex: 0 0 auto;
@@ -1145,11 +1148,10 @@ body {
     width: 98px;
   }
   .card__social {
-    flex-direction: column;
-    row-gap: 12px;
-  }
-  .card__social-col {
     display: grid;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    row-gap: 12px;
     grid-template-columns: 1fr 1fr;
   }
 }/*# sourceMappingURL=spisok_rezyume.css.map */
