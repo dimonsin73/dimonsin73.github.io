@@ -41,18 +41,18 @@ for (let i = 0; i < expandBtnArr.length; i++) {
         expand.classList.toggle('card__expand-active')
         if (expand.classList.contains('card__expand-active')) {
             expand.style.height = `${expand.scrollHeight}px`
-            btnPrint.style.opacity = '1'
-            btnDawnload.style.opacity = '1'
+            btnPrint.style.display = 'flex'
+            btnDawnload.style.display = 'flex'
         } else {
             expand.style.height = '0'
-            btnPrint.style.opacity = '0'
-            btnDawnload.style.opacity = '0'
+            btnPrint.style.display = 'none'
+            btnDawnload.style.display = 'none'
         }
         const expandUp = card.querySelector('.card__expand-up')
         expandUp.addEventListener('click', function(){
             expand.style.height = '0'
-            btnPrint.style.opacity = '0'
-            btnDawnload.style.opacity = '0'
+            btnPrint.style.display = 'none'
+            btnDawnload.style.display = 'none'
             expand.classList.remove('card__expand-active')
             element.classList.remove('btn-black-active')
         })
@@ -70,5 +70,15 @@ for (let i = 0; i < btnHeartArr.length; i++) {
     const element = btnHeartArr[i];
     element.addEventListener('click', function(){
         element.classList.toggle('card__btnheart-active')    
+    })
+}
+
+const cardFooterDotsArr = document.querySelectorAll('.card__footer-dots')
+for (let i = 0; i < cardFooterDotsArr.length; i++) {
+    const element = cardFooterDotsArr[i];
+    element.addEventListener('click', function(){
+        const cardFooterIcons = element.parentElement.querySelector('.card__footer-icons')
+        cardFooterIcons.style.display = 'flex'
+        element.style.display = 'none'
     })
 }

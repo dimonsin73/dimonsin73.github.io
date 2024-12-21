@@ -504,12 +504,14 @@ body {
   -moz-column-gap: 24px;
        column-gap: 24px;
   padding: 16px 24px;
+  overflow-x: scroll;
 }
 .card__footer-icons {
   display: flex;
   -moz-column-gap: 24px;
        column-gap: 24px;
   margin-left: auto;
+  flex: 0 0 auto;
 }
 .card__footer-icon {
   display: flex;
@@ -528,8 +530,8 @@ body {
   letter-spacing: -0.1px;
 }
 .card__print, .card__dawnloader {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  display: none;
+  transition: opacity 3s ease;
 }
 .card__btnheart {
   transition: stroke 0.3s ease, fill 0.3s ease;
@@ -1112,6 +1114,10 @@ body {
   }
   .card__footer {
     gap: 16px;
+  }
+  .card__footer-icons {
+    -moz-column-gap: 16px;
+         column-gap: 16px;
   }
   .attribut__item {
     padding: 0;

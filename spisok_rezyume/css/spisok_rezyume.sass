@@ -442,10 +442,12 @@ body
         display: flex 
         column-gap: 24px
         padding: 16px 24px
+        overflow-x: scroll
         &-icons 
             display: flex
             column-gap: 24px
             margin-left: auto
+            flex: 0 0 auto
         &-icon
             display: flex
             align-items: center
@@ -458,8 +460,8 @@ body
         column-gap: 8px
         @include title-small
     &__print, &__dawnloader 
-        opacity: 0
-        transition: opacity 0.3s ease
+        display: none
+        transition: opacity 3s ease
     &__btnheart
         transition: stroke 0.3s ease, fill 0.3s ease
         &-active path
@@ -905,6 +907,8 @@ body
             grid-column: span 2
         &__footer
             gap: 16px
+            &-icons 
+                column-gap: 16px
     .attribut
         &__item 
             padding: 0
