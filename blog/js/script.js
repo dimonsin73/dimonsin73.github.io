@@ -975,4 +975,43 @@ AIGenerationLink.addEventListener('click', function(e){
       };
   };
 })
+const modalFrom = document.querySelector('.modal-form');
+const backdrop = document.querySelector('.backdrop');
+const jsClose = document.querySelectorAll('.js--close');
+const navReg = document.querySelector('.navigation__registration')
+const basicBtnArr = document.querySelectorAll('.basic__btn')
+const accordionLinkArr = document.querySelectorAll('.accordion__link-link')
+const menuLink = document.querySelector('.menu__link')
+navReg.addEventListener('click', function(){
+  modalOpen();
+})
+menuLink.addEventListener('click', function(){
+  modalOpen();
+})
+for (let i = 0; i < jsClose.length; i++) {
+  const element = jsClose[i];
+  element.addEventListener('click', function(){
+    modalClose();
+  })
+}
+for (let i = 0; i < accordionLinkArr.length; i++) {
+  const element = accordionLinkArr[i];
+  element.addEventListener('click', function(){
+    modalOpen();
+  })
+}
+for (let i = 0; i < basicBtnArr.length; i++) {
+  const element = basicBtnArr[i];
+  element.addEventListener('click', function(){
+    modalOpen();
+  })
+}
 
+function modalOpen() {
+	modalFrom.classList.add('open');
+	backdrop.classList.add('open');
+}
+function modalClose() {
+	modalFrom.classList.remove('open');
+	backdrop.classList.remove('open');
+}

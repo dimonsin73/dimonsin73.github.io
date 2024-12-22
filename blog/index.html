@@ -46,9 +46,6 @@
 
         /* Стиль для кнопки закрытия меню */
         .menu__close {
-            position: absolute;
-            top: 20px;
-            right: 260px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -305,12 +302,12 @@
                         <path d="M56.2014 12.58H58.9534C59.0174 12.9853 59.1934 13.3427 59.4814 13.652C59.78 13.9507 60.1747 14.1853 60.6654 14.356C61.1667 14.516 61.7427 14.596 62.3934 14.596C63.3427 14.596 64.0894 14.4627 64.6334 14.196C65.188 13.9187 65.4654 13.5347 65.4654 13.044C65.4654 12.66 65.3054 12.3667 64.9854 12.164C64.676 11.9507 64.0947 11.796 63.2414 11.7L60.8254 11.428C59.268 11.2573 58.1374 10.8947 57.4334 10.34C56.74 9.77467 56.3934 8.99067 56.3934 7.988C56.3934 7.19867 56.6227 6.52667 57.0814 5.972C57.5507 5.41733 58.2067 4.996 59.0494 4.708C59.892 4.40933 60.884 4.26 62.0254 4.26C63.1347 4.26 64.1214 4.42533 64.9854 4.756C65.8494 5.076 66.5374 5.52933 67.0494 6.116C67.5614 6.692 67.8387 7.36933 67.8814 8.148H65.1294C65.076 7.796 64.916 7.492 64.6494 7.236C64.3934 6.96933 64.036 6.76667 63.5774 6.628C63.1187 6.47867 62.58 6.404 61.9614 6.404C61.0974 6.404 60.4094 6.532 59.8974 6.788C59.3854 7.044 59.1294 7.40667 59.1294 7.876C59.1294 8.23867 59.2787 8.52133 59.5774 8.724C59.8867 8.916 60.4254 9.06 61.1934 9.156L63.7054 9.46C64.8147 9.57733 65.6947 9.76933 66.3454 10.036C67.0067 10.292 67.476 10.6387 67.7534 11.076C68.0414 11.5133 68.1854 12.068 68.1854 12.74C68.1854 13.54 67.94 14.244 67.4494 14.852C66.9694 15.4493 66.292 15.9133 65.4174 16.244C64.5427 16.5747 63.5187 16.74 62.3454 16.74C61.1507 16.74 60.1 16.5693 59.1934 16.228C58.2867 15.876 57.572 15.3907 57.0494 14.772C56.5267 14.1427 56.244 13.412 56.2014 12.58ZM86.8612 4.5V16.5H84.2693V5.412L84.9573 5.46L79.8373 16.5H77.0373L71.9173 5.492L72.5893 5.428V16.5H70.0133V4.5H74.1893L79.0213 15.188H77.8533L82.6853 4.5H86.8612ZM106.158 4.5V16.5H103.566V5.412L104.254 5.46L99.1341 16.5H96.3341L91.2141 5.492L91.8861 5.428V16.5H89.3101V4.5H93.4861L98.3181 15.188H97.1501L101.982 4.5H106.158Z" fill="#292D33"/>
                     </svg>
                 </div>
-                <a href="#" class="menu__link">
+                <button class="menu__link">
                     <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 21H14V19C14 17.3431 12.6569 16 11 16H5C3.34315 16 2 17.3431 2 19V21H0V19C0 16.2386 2.23858 14 5 14H11C13.7614 14 16 16.2386 16 19V21ZM8 12C4.68629 12 2 9.3137 2 6C2 2.68629 4.68629 0 8 0C11.3137 0 14 2.68629 14 6C14 9.3137 11.3137 12 8 12ZM8 10C10.2091 10 12 8.20914 12 6C12 3.79086 10.2091 2 8 2C5.79086 2 4 3.79086 4 6C4 8.20914 5.79086 10 8 10Z" fill="black"/>
                     </svg>
                     Бесплатная регистрация для первой 1000 пользователей
-                </a>
+                </button>
             </div>
             <div class="menu__header-bottom">
                 <ul class="menu__header-list">
@@ -3664,7 +3661,59 @@
         </div>            
     </div>
     <div class="footer-bottom"></div>
+    <div class="backdrop js--close"></div>
 
+    <div class="modal modal-form">
+        <button class="modal-form__close js--close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>            
+        </button>
+        <div class="modal-form__header">
+            <p class="modal-form__title">
+                autosmm.ru
+            </p>
+            <p class="modal-form__txt">
+                Автоматизируем весь ваш СММ уже сегодня!
+            </p>
+        </div>
+        <form id="modal-form" class="modal-form__form">
+            <div class="modal-form__el">
+                <p class="modal-form__label">
+                    Ваше имя*
+                </p>
+                <input name="name" placeholder="Иван Иванов Иванович" class="modal-form__name">
+            </div>
+            <div class="modal-form__el">
+                <p class="modal-form__label">
+                    Номер телефона*
+                </p>
+                <input id="phone4" type="tel" name="phone" placeholder="+7-***-***-**-**" class="modal-form__name" pattern="(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?">
+            </div>
+            <div class="modal-form__el">
+                <p class="modal-form__label">
+                    Email*
+                </p>
+                <input type="email" name="email" placeholder="cbmail@nomail.com" class="modal-form__name">
+            </div>
+            <button type="submit" class="modal-form__submit">
+                <span>
+                    Бесплатная регистрация
+                </span>
+                <i>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.33301 22.6667L22.6663 9.33334M22.6663 9.33334H9.33301M22.6663 9.33334V22.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                                    
+                </i>
+            </button>
+            <p class="modal-form__agree">
+                Оставляя заявку, вы соглашаетесь на <a href="#">обработку персональных данных и с условиями бронирования счёта</a>
+            </p>
+        </form>
+        <p class="modal-form__success" style="display:none;">
+            Заявка успешно отправлена!
+        </p>
+    </div>
     <!-- Скрипты (загружаются в конце для оптимизации) -->
     <script src="js/swiper.min.js" defer></script>
     <script defer>
@@ -3684,11 +3733,7 @@
             menuBtn.addEventListener('click', openMenu);
             menuClose.addEventListener('click', closeMenu);
 
-            document.addEventListener('click', (e) => {
-                if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
-                    closeMenu();
-                }
-            });
+            
 
 const allItems = [
   {
@@ -4001,6 +4046,69 @@ function createCard(item) {
   "inLanguage": "ru"
 }
 </script>
+
+<div class="modal modal-success">
+    <p class="modal-success__title">
+        Ваша заявка принята
+    </p>
+    <p class="modal-success__txt">
+        В ближайшее время наш менеджер свяжется с Вами
+    </p>
+    <div class="modal-success__img">
+        <img src="assets/img/modal-thank.92767501bd231f939beb.png" alt="autosmm.ru">
+    </div>
+    <button class="modal-success__btn js--close">
+        <span>
+            Вернуться на главную
+        </span>
+        <i>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.33301 22.6667L22.6663 9.33337M22.6663 9.33337H9.33301M22.6663 9.33337V22.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                                                    
+        </i>
+    </button>
+</div>
+
+
+<div class="modal modal-reviews">
+    <button class="modal-reviews__close js--close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" fill="white"/>
+            <path d="M18 6L6 18M6 6L18 18" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>            
+    </button>
+    <div class="modal-reviews__header">
+        <div class="modal-reviews__ava">
+            <img src="assets/img/revava.5ca26c36d94f98680a42.png" alt="autosmm.ru">
+        </div>  
+        <div class="modal-reviews__info">
+            <p class="modal-reviews__name">
+                Владимир Дорецкий
+            </p>
+            <p class="modal-reviews__date">
+                05.07.2024
+            </p>
+        </div>
+    </div>
+    <p class="modal-reviews__content">
+        AМы начали работать с AutoSMM и Height Line полгода назад, и результаты превзошли все наши ожидания. Искусственный интеллект помогает нам оперативно адаптировать рекламные кампании под изменения на рынке, а персонализированные стратегии позволили значительно увеличить наш ROI. Теперь мы получаем качественные лиды по значительно сниженной стоимости, и всё это благодаря глубокой аналитике и автоматизации, которую предлагает команда Height Line. AutoSMM помог вывести наш контент на новый уровень, благодаря уникальному подходу к генерации контента. <br><br>
+        AutoSMM помог вывести наш контент на новый уровень, благодаря уникальному подходу к генерации контента. AutoSMM помог вывести наш контент на новый уровень, благодаря уникальному подходу к генерации контента. <br><br>
+        AutoSMM помог вывести наш контент на новый уровень, благодаря уникальному подходу к генерации контента. AutoSMM помог вывести наш контент на новый уровень, благодаря уникальному подходу к генерации контента.
+    </p>
+</div>
+
+
+<div class="modal modal-video">
+    <button class="modal-video__close js--close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" fill="white"/>
+            <path d="M18 6L6 18M6 6L18 18" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>            
+    </button>
+    <div class="modal-video__video">
+        <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>
 
 </body>
 </html>
