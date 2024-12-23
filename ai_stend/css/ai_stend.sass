@@ -1,0 +1,370 @@
+:root
+    --Primary-10: #003B73
+    --Primary-20: #004C95
+    --Primary-30: #005EB8
+    --Primary-40: #006FD8
+    --Primary-50: #0095FF
+    --Primary-60: #199FFF
+    --Primary-70: #3FAFFF
+    --Primary-80: #66BFFF
+    --Primary-90: #8FD0FF
+    --Primary-100: #B8E1FF
+    --Gray-10: #3F3F45
+    --Gray-20: #53535A
+    --Gray-30: #65656F
+    --Gray-40: #898990
+    --Gray-50: #A0A1A9
+    --Gray-60: #B4B5BE
+    --Gray-70: #C7C9CF
+    --Gray-80: #DBDDE1
+    --Gray-90: #E6E8EC
+    --Gray-100: #F2F3F5
+    --Gray-110: #F7F7F7
+    --White: #FFFFFF
+    --Black: #202123
+    --Red-error: #FF0034
+    --Border: #E7E8EA
+    --Shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1)
+    --Shadow-dropdawn: 0px 2px 16px 0px rgba(0, 0, 0, 0.20)
+
+@mixin headline-large
+    font: 700 40px/48px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin headline-medium
+    font: 700 30px/36px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin headline-small
+    font: 700 20px/30px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin title-large
+    font: 600 20px/28px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin title-medium
+    font: 600 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin title-small
+    font: 600 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-extralarge
+    font: 500 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin subtitle-large
+    font: 500 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin subtitle-medium
+    font: 500 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-small
+    font: 500 10px/14px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin body-large
+    font: 400 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin body-medium
+    font: 400 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin body-small
+    font: 400 13px/16px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin label-large
+    font: 600 13px/18px 'Inter', 'sans-serif'
+    letter-spacing: +0.1px
+@mixin label-medium
+    font: 600 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: +0.5px
+@mixin label-small
+    font: 600 11px/16px 'Inter', 'sans-serif'
+    letter-spacing: +12%
+@mixin btn-medium
+    font: 600 15px/150% 'Inter', 'sans-serif'
+    letter-spacing: +0.01em 
+@mixin btn-small
+    font: 600 13px/150% 'Inter', 'sans-serif'
+    letter-spacing: +0.03em   
+@mixin text-medium
+    font: 500 14px/140% 'Inter', 'sans-serif'
+    letter-spacing: +0.02em   
+@mixin currency
+    font: 500 18px/20px 'Inter', 'sans-serif'
+    letter-spacing: 0  
+
+html 
+    scroll-behavior: smooth
+body
+    background-color: var(--Gray-100)
+.main
+    display: flex
+    flex-direction: column
+    row-gap: 24px
+    justify-content: center
+    margin-bottom: 24px
+.container
+    max-width: 1090px
+    min-width: 390px
+    margin: 0 auto
+.wrapper
+    display: flex
+    flex-direction: column
+    border-radius: 12px
+    box-shadow: var(--Shadow-dropdawn)
+    background-color: var(--White)
+.svg-container
+    display: flex
+    justify-content: center
+    align-items: center
+.title
+    &-large
+        @include title-large
+        color: var(--Black)
+    &-medium
+        margin-bottom: 16px
+        @include title-medium
+        color: var(--Black)
+    &-mb24
+        margin-bottom: 24px
+.btn
+    padding: 11px 24px
+    border-radius: 8px
+    @include btn-medium
+    transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+    &-primary
+        border: 1px solid var(--Primary-40)
+        background-color: var(--Primary-40)
+        color: var(--White)
+        &:hover
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+        &:active
+            border: 1px solid var(--Primary-20)
+            background-color: var(--Primary-20)
+    &-bg-gray
+        border: 1px solid var(--Gray-80)
+        background-color: var(--Gray-80)
+        color: var(--Black)
+        &:hover
+            border: 1px solid var(--Gray-70)
+            background-color: var(--Gray-70)
+        &:active
+            border: 1px solid var(--Gray-60)
+            background-color: var(--Gray-60)
+    &-transparent
+        border: 1px solid var(--Black)
+        background-color: initial
+        color: var(--Black)
+        & path
+            stroke: var(--Black)
+            transition: stroke 0.3s ease
+        &:hover path
+            stroke: var(--White)
+        &:hover
+            border: 1px solid var(--Primary-40)
+            background-color: var(--Primary-40)
+            color: var(--White)
+        &:active
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+            color: var(--White)
+    &-black 
+        border: 1px solid var(--Black)
+        background-color: initial
+        color: var(--Black)
+        & path
+            stroke: var(--Black)
+            transition: stroke 0.3s ease
+        &:hover path
+            stroke: var(--White)
+        &:hover
+            border: 1px solid var(--Black)
+            background-color: var(--Black)
+            color: var(--White)
+        &:active
+            border: 1px solid var(--Black)
+            background-color: var(--Black)
+            color: var(--White)
+        &-active 
+            border: 1px solid var(--Black)
+            background-color: var(--Black)
+            color: var(--White)
+            & path
+                stroke: var(--White)
+.small-visible
+    display: none
+.burger
+    display: none
+    flex: 0 0 20px
+.logo
+    flex: 0 0 auto
+.header
+    padding: 0 24px
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__left 
+        display: flex
+        gap: 24px
+        margin-right: 32px
+    &__menu
+        display: flex
+        align-items: center
+        padding: 10.5px 0
+        &-item
+            display: flex
+            align-items: stretch
+            column-gap: 24px
+            height: 40px
+            padding: 0 32px
+            border-right: 1px solid var(--Gray-80)
+            &:first-child
+                padding-left: 0
+            &:last-child
+                padding-right: 0
+                border-right: none
+    &__search
+        flex: 0 0 auto
+        display: flex
+        align-items: center
+        column-gap: 6px
+        &-text 
+            font: 500 13px/18px 'Inter', sans-serif
+            letter-spacing: 0.01em
+            color: var(--Gray-30)
+    &__mail, &__bell
+        position: relative
+        flex: 0 0 auto
+        width: 20px
+        margin-right: 16px
+        &-num
+            position: absolute
+            top: -2px
+            right: -14px
+            width: 16px
+            height: 16px
+            border-radius: 50%
+            background-color: var(--Primary-50)
+            font: 700 12px/140% 'Inter', sans-serif
+            letter-spacing: 0.01em
+            color: #fff
+    &__account
+        flex: 0 2 auto
+        overflow: hidden
+        text-wrap: nowrap
+        &-company
+            margin-bottom: 3px
+            overflow: hidden
+            font: 700 14px/20px 'Inter', sans-serif
+            color: var(--Black)
+            text-transform: uppercase
+            text-wrap: nowrap
+        &-name
+            font: 500 12px/17px 'Inter', sans-serif
+            color: var(--Gray-40)
+    &__user 
+        display: flex
+        align-items: center
+        gap: 8px
+        &-account
+            overflow: hidden
+            font: 700 14px/20px 'Inter', sans-serif
+            color: var(--Black)
+            text-transform: uppercase
+            text-wrap: nowrap
+    &__setting
+        flex: 0 0 24px
+    &__logout
+        flex: 0 0 auto
+        width: 20px
+    &__print
+        padding: 10px 0
+        &-logo svg
+            height: 20px
+    &__starts
+        font: 700 9px/16px 'Inter', 'sans-serif'
+        letter-spacing: -0.16px
+        color: var(--Primary-50)
+
+.aside 
+    position: absolute
+    top: 0
+    width: 296px
+    height: 100%
+    border-right: 1px solid var(--Gray-80)
+    background-color: var(--Gray-100)
+    transition: left 0.3s ease
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        row-gap: 8px
+        padding: 0 16px
+    &__logo 
+        padding: 24px 50px
+    &__line 
+        width: 100%
+        height: 1px
+        margin: 8px 0
+        background-color: var(--Gray-80)
+    &__title
+        @include label-medium
+        color: var(--Gray-20)
+        text-transform: uppercase
+    &__item 
+        display: flex
+        align-items: center
+        column-gap: 12px
+        padding: 8px
+        border-radius: 8px
+        transition: background-color 0.3s ease
+        &-icon 
+            flex: 0 0 auto
+            margin-left: auto
+        &:hover 
+            background-color: rgba(0, 111, 216, 0.10)
+            & .aside__item-text 
+                color: var(--Primary-40)
+        &-active 
+            background-color: rgba(0, 111, 216, 0.20)
+            & .aside__item-text 
+                color: var(--Primary-30)
+            &:hover 
+                background-color: rgba(0, 111, 216, 0.20)
+                & .aside__item-text 
+                    color: var(--Primary-30)
+        &-text 
+            font: 600 14px/130% 'Inter', 'sans-serif'
+            letter-spacing: 0.42px
+            color: var(--Gray-10)
+            text-align: left
+            transition: color 0.3s ease
+@media (max-width: 1439px)
+    .aside
+        left: -296px
+        &-active 
+            left: 0
+    .burger 
+        display: block
+@media (max-width:1023px)
+    .header
+        &__search-text
+            display: none
+        &__account
+            width: 161px
+@media (max-width:767px)
+    .logo svg
+        width: 102px
+        height: 24px
+    .small-hidden
+        display: none
+    .small-visible
+        display: block
+    .btn
+        flex: 0 0 auto
+        padding: 11px   
+    .logo
+        margin-right: 24px
+    .header
+        padding: 0 24px
+        &__menu
+            padding: 12px 0
+            &-item
+                padding-right: 0
+                border: none
