@@ -99,6 +99,7 @@ body
     max-width: 1090px
     min-width: 856px
     margin: 0 auto
+    padding: 0 24px
 .svg-container
     display: flex
     justify-content: center
@@ -388,14 +389,12 @@ body
             flex-direction: column
             gap: 0
     &__dropdawn
-        width: 100%
         height: 0
         overflow: hidden
         transition: height 0.3s ease
     &__content 
         display: flex
         flex-direction: column
-        width: 100%
         &-item
             display: flex
             align-items: center
@@ -410,7 +409,7 @@ body
             @include title-medium
             color: var(--Gray-10)
         &-detail
-            width: 800px
+            max-width: 800px
             @include subtitle-large
             color: var(--Black)
             word-wrap: break-word
@@ -440,3 +439,8 @@ body
         &-text 
             @include subtitle-medium
             color: var(--Gray-10)
+
+@media (max-width:1201px)
+    .hero__wrapper
+        height: 100%
+        border-radius: 0

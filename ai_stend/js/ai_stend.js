@@ -27,7 +27,6 @@ for (let i = 0; i < stendBtnArr.length; i++) {
     const element = stendBtnArr[i];
     element.addEventListener('click', function(){
         element.classList.toggle('stend__item-btn-active')
-        console.log(element)
         const stendDropdawn = element.parentElement.querySelector('.stend__dropdawn')
         if (element.classList.contains('stend__item-btn-active') ) {
             stendDropdawn.style.height = `${stendDropdawn.scrollHeight}px`
