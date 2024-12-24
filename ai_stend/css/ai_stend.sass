@@ -194,6 +194,69 @@ body
     flex: 0 0 20px
 .logo
     flex: 0 0 auto
+.hero
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    &__wrapper
+        display: grid
+        grid-template-columns: 1fr 1fr
+        width: 1200px
+        height: 800px
+        border-radius: 32px
+        overflow: hidden
+    &__left
+        background-color: var(--Primary-40)
+    &__items
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+        padding: 40px
+    &__logo 
+        height: 50px
+    &__content 
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 24px
+        align-self: stretch
+        &-title 
+            font: 700 48px/150% 'Inter', 'sans-serif'
+            letter-spacing: -0.2px
+            color: var(--White)
+        &-text
+            font: 400 24px/150% 'Inter', 'sans-serif'
+            letter-spacing: -0.5px
+            color: var(--White)
+    &__space 
+        height: 50px
+    &__right
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        background: var(--White) url('../image/bg_hero.png') center center no-repeat
+    &__btn 
+        margin-top: 100px
+        padding: 16px 48px
+        border-radius: 12px
+        background-color: var(--Primary-40)
+        font: 600 16px/150% 'Inter', 'sans-serif'
+        letter-spacing: -0.48px
+        color: var(--White)
+        z-index: 100
+    &__rocet
+        position: absolute
+        top: 195px
+        transition: top 3s ease
+        &-active 
+            top: -1000px
 .header
     padding: 0 24px
     &__wrapper
@@ -287,7 +350,6 @@ body
     position: absolute
     top: 0
     width: 296px
-    height: 100%
     border-right: 1px solid var(--Gray-80)
     background-color: var(--Gray-100)
     transition: left 0.3s ease
