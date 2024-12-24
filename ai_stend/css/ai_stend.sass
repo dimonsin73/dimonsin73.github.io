@@ -93,21 +93,12 @@ html
 body
     background-color: var(--Gray-100)
 .main
-    display: flex
-    flex-direction: column
-    row-gap: 24px
-    justify-content: center
-    margin-bottom: 24px
+    display: none
+    grid-template-columns: 296px auto
 .container
     max-width: 1090px
-    min-width: 390px
+    min-width: 856px
     margin: 0 auto
-.wrapper
-    display: flex
-    flex-direction: column
-    border-radius: 12px
-    box-shadow: var(--Shadow-dropdawn)
-    background-color: var(--White)
 .svg-container
     display: flex
     justify-content: center
@@ -187,13 +178,6 @@ body
             color: var(--White)
             & path
                 stroke: var(--White)
-.small-visible
-    display: none
-.burger
-    display: none
-    flex: 0 0 20px
-.logo
-    flex: 0 0 auto
 .hero
     position: fixed
     top: 0
@@ -257,98 +241,8 @@ body
         transition: top 3s ease
         &-active 
             top: -800px
-.header
-    padding: 0 24px
-    &__wrapper
-        display: flex
-        justify-content: space-between
-        align-items: center
-    &__left 
-        display: flex
-        gap: 24px
-        margin-right: 32px
-    &__menu
-        display: flex
-        align-items: center
-        padding: 10.5px 0
-        &-item
-            display: flex
-            align-items: stretch
-            column-gap: 24px
-            height: 40px
-            padding: 0 32px
-            border-right: 1px solid var(--Gray-80)
-            &:first-child
-                padding-left: 0
-            &:last-child
-                padding-right: 0
-                border-right: none
-    &__search
-        flex: 0 0 auto
-        display: flex
-        align-items: center
-        column-gap: 6px
-        &-text 
-            font: 500 13px/18px 'Inter', sans-serif
-            letter-spacing: 0.01em
-            color: var(--Gray-30)
-    &__mail, &__bell
-        position: relative
-        flex: 0 0 auto
-        width: 20px
-        margin-right: 16px
-        &-num
-            position: absolute
-            top: -2px
-            right: -14px
-            width: 16px
-            height: 16px
-            border-radius: 50%
-            background-color: var(--Primary-50)
-            font: 700 12px/140% 'Inter', sans-serif
-            letter-spacing: 0.01em
-            color: #fff
-    &__account
-        flex: 0 2 auto
-        overflow: hidden
-        text-wrap: nowrap
-        &-company
-            margin-bottom: 3px
-            overflow: hidden
-            font: 700 14px/20px 'Inter', sans-serif
-            color: var(--Black)
-            text-transform: uppercase
-            text-wrap: nowrap
-        &-name
-            font: 500 12px/17px 'Inter', sans-serif
-            color: var(--Gray-40)
-    &__user 
-        display: flex
-        align-items: center
-        gap: 8px
-        &-account
-            overflow: hidden
-            font: 700 14px/20px 'Inter', sans-serif
-            color: var(--Black)
-            text-transform: uppercase
-            text-wrap: nowrap
-    &__setting
-        flex: 0 0 24px
-    &__logout
-        flex: 0 0 auto
-        width: 20px
-    &__print
-        padding: 10px 0
-        &-logo svg
-            height: 20px
-    &__starts
-        font: 700 9px/16px 'Inter', 'sans-serif'
-        letter-spacing: -0.16px
-        color: var(--Primary-50)
 
 .aside 
-    position: absolute
-    top: 0
     width: 296px
     border-right: 1px solid var(--Gray-80)
     background-color: var(--Gray-100)
@@ -369,6 +263,9 @@ body
         @include label-medium
         color: var(--Gray-20)
         text-transform: uppercase
+    &__subtext 
+        @include subtitle-medium
+        color: var(--Gray-40)
     &__item 
         display: flex
         align-items: center
@@ -397,3 +294,149 @@ body
             color: var(--Gray-10)
             text-align: left
             transition: color 0.3s ease
+.stend
+    margin-top: 54px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 24px
+    &__title 
+        @include headline-large
+        color: var(--Black)
+        text-align: center
+    &__items 
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 24px
+    &__item
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 24px
+        padding: 16px 24px
+        border-radius: 12px
+        background-color: var(--White)
+        box-shadow: var(--Shadow)
+        &-left 
+            justify-content: flex-start
+        &-start 
+            align-items: flex-start
+        &-input 
+            appearance: none
+            width: 374px
+            height: 20px
+            border: none
+            border-radius: 2px
+            overflow: hidden
+            cursor: pointer
+            &::-webkit-slider-thumb
+                appearance: none
+                background-color: var(--Primary-40)
+                box-shadow: var(--Shadow-dropdawn)
+                border-radius: 50%
+                height: 16px
+                width: 16px
+                margin-top: -7px
+                box-shadow: calc(-100vmax - 16px) 0 0 100vmax var(--Primary-40)
+                clip-path: polygon(100% 0, 2px 0, 0 7px, -100vmax 7px, -100vmax 11px, 0 11px, 2px 100%, 100% 100%)
+            &::-moz-range-thumb
+                appearance: none
+                background-color: var(--Primary-40)
+                border: 0px solid var(--Primary-40)
+                border-radius: 50%
+                height: 16px
+                width: 16px
+                margin-top: -7px
+            &::-webkit-slider-runnable-track
+                height: 3px
+                border-radius: 2px
+                background: rgba(0, 0, 0, 0.10)
+        &-num 
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 115px
+            padding: 9px 15.5px
+            border: 1px solid rgba(0, 0, 0, 0.10)
+            border-radius: 8px
+            @include headline-small
+            color: var(--Primary-40)
+        &-col 
+            display: flex
+            flex-direction: column
+            gap: 4px
+        &-text
+            display: flex
+            align-items: center
+            min-width: 180px
+            @include title-medium
+            color: var(--Gray-10)
+        &-subtext
+            @include label-medium
+            color: var(--Gray-30)
+            text-transform: uppercase
+        &-btn 
+            display: flex
+            align-items: center
+            gap: 16px
+        &-icon svg
+            transform: rotateX(180deg)
+        &-btn
+            &-active .stend__item-icon svg
+                transform: rotateX(0)
+        &-dropdawn
+            flex-direction: column
+            gap: 0
+    &__dropdawn
+        width: 100%
+        height: 0
+        overflow: hidden
+        transition: height 0.3s ease
+    &__content 
+        display: flex
+        flex-direction: column
+        width: 100%
+        &-item
+            display: flex
+            align-items: center
+            gap: 24px
+            margin-top: 24px
+        &-icon 
+            flex: 0 0 64px
+        &-text
+            display: flex
+            align-items: center
+            min-width: 95px
+            @include title-medium
+            color: var(--Gray-10)
+        &-detail
+            width: 800px
+            @include subtitle-large
+            color: var(--Black)
+            word-wrap: break-word
+            overflow-wrap: break-word
+    &__btn 
+        width: min-content
+        margin: 0 auto
+    &__grid 
+        display: grid
+        grid-template-columns: repeat(3, auto)
+        row-gap: 40px
+        column-gap: 24px
+        margin-top: 16px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 4px
+        &-top 
+            display: flex
+            align-items: center
+            gap: 12px
+        &-title 
+            display: flex
+            flex-direction: column
+            @include title-small
+            color: var(--Gray-10)
+        &-text 
+            @include subtitle-medium
+            color: var(--Gray-10)
