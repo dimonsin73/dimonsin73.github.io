@@ -252,7 +252,7 @@ body {
   transition: top 3s ease;
 }
 .hero__rocket-active {
-  top: -1000px;
+  top: -800px;
 }
 
 .header {
@@ -433,53 +433,4 @@ body {
   color: var(--Gray-10);
   text-align: left;
   transition: color 0.3s ease;
-}
-
-@media (max-width: 1439px) {
-  .aside {
-    left: -296px;
-  }
-  .aside-active {
-    left: 0;
-  }
-  .burger {
-    display: block;
-  }
-}
-@media (max-width: 1023px) {
-  .header__search-text {
-    display: none;
-  }
-  .header__account {
-    width: 161px;
-  }
-}
-@media (max-width: 767px) {
-  .logo svg {
-    width: 102px;
-    height: 24px;
-  }
-  .small-hidden {
-    display: none;
-  }
-  .small-visible {
-    display: block;
-  }
-  .btn {
-    flex: 0 0 auto;
-    padding: 11px;
-  }
-  .logo {
-    margin-right: 24px;
-  }
-  .header {
-    padding: 0 24px;
-  }
-  .header__menu {
-    padding: 12px 0;
-  }
-  .header__menu-item {
-    padding-right: 0;
-    border: none;
-  }
 }/*# sourceMappingURL=ai_stend.css.map */
