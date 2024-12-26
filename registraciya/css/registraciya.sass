@@ -183,7 +183,7 @@ body
             & path
                 stroke: var(--White)
 .hero
-    position: fixed
+    position: absolute
     top: 0
     bottom: 0
     left: 0
@@ -229,7 +229,6 @@ body
         display: flex
         justify-content: center
         align-items: center
-        background: var(--White) url('../image/hero_bg.png') center center no-repeat
     &__btn 
         margin-top: 190px
         padding: 16px 48px
@@ -372,6 +371,7 @@ body
             height: 8px
             border-radius: 4px
             background-color: var(--Gray-80)
+            transition: background-color 0.3s ease
         &-success 
             background-color: var(--Green)
         &-orange 
@@ -392,9 +392,10 @@ body
         &-error
             display: none
     &__error 
+        opacity: 0
         @include body-small
         color: var(--Red-error)
-    
+        transition: opacity 0.3s ease
 @media (max-width:1201px)
     .hero__wrapper
         height: 100%
