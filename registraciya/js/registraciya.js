@@ -1,17 +1,34 @@
 const form = document.querySelector('.form')
 // Поля ввода
+const company = document.getElementById('company')
 const name = document.getElementById('name')
 const surname = document.getElementById('surname')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 const passwordSecond = document.getElementById('password-second')
+// Радиокнопка 
+const employee = document.getElementById('employee')
+
 form.addEventListener('submit', function(event){
     event.preventDefault()
     let validation = 0
     // Регулярные выражения
+    const companyRegularExpression = /[a-zа-яё0-9\s!@#$%^&*]{2,}/i
     const nameRegularExpression = /^[A-ZА-Я][a-zа-яё]*$/
     const emailRegularExpression = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w)$/
     const passwordRegularExpression = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{4,}/g
+    // Валидация Названия компаниии
+    console.log(employee.checked)
+    if (employee.checked) {
+        if (companyRegularExpression.test(company.value)) {
+            company.classList.remove('attribut__input-error')
+            validation++
+        } else {
+            company.classList.add('attribut__input-error')
+        }
+    } else {
+        validation++
+    }
     // Валидация Имя
     if (nameRegularExpression.test(name.value)) {
         name.classList.remove('attribut__input-error')
@@ -45,11 +62,14 @@ form.addEventListener('submit', function(event){
         validation++
     }
 
-    if (validation == '5') {
+    if (validation == '6') {
         alert("Данный введены правильно");
     }
 })
 // Убрать состояние Error
+company.addEventListener('input', function(){
+    company.classList.remove('attribut__input-error')
+})
 name.addEventListener('input', function(){
     name.classList.remove('attribut__input-error')
 })
@@ -124,11 +144,20 @@ function attributLineAddColor(attributLineItemArr) {
     }
 }
 // Проверка совпадения паролей 
+password.addEventListener('input', function(){
+    passwordComparison()
+})
 passwordSecond.addEventListener('input', function(){
+    passwordComparison()
+})
+
+// Ф-ция проверки совпадения паролей
+function passwordComparison() {
     const attributLine = passwordSecond.parentElement.nextSibling
     const attributLineItemArr = attributLine.children
     const attributError = attributLine.nextSibling
     if (passwordSecond.value != password.value) {
+        password.classList.add('attribut__input-error')
         passwordSecond.classList.add('attribut__input-error')
         for (let i = 0; i < attributLineItemArr.length; i++) {
             const element = attributLineItemArr[i];
@@ -140,11 +169,13 @@ passwordSecond.addEventListener('input', function(){
         }
         attributError.style.opacity = '1'
     } else {
+        password.classList.remove('attribut__input-error')
         passwordSecond.classList.remove('attribut__input-error')
         attributLineAddColor(attributLineItemArr)
         attributError.style.opacity = '0'
     }
     if (passwordSecond.value.length == 0) {
+        password.classList.remove('attribut__input-error')
         passwordSecond.classList.remove('attribut__input-error')
         for (let i = 0; i < attributLineItemArr.length; i++) {
             const element = attributLineItemArr[i];
@@ -152,4 +183,19 @@ passwordSecond.addEventListener('input', function(){
         }
         attributError.style.opacity = '0'
     }
-})
+}
+// Добавление поля Компания
+const radioArr = document.querySelectorAll('.form__wantfind-radio')
+for (let i = 0; i < radioArr.length; i++) {
+    const element = radioArr[i];
+    element.addEventListener('change', function(){
+        const attribut = company.parentElement
+        if (employee.checked) {
+            attribut.classList.remove('attribut-hide')
+            company.setAttribute('required', 'true')
+        } else {
+            attribut.classList.add('attribut-hide')
+            company.removeAttribute('required')
+        }
+    })
+}

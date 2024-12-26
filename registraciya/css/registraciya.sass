@@ -191,11 +191,12 @@ body
     display: flex
     align-items: center
     justify-content: center
+    background-color: var(--Gray-100)
+    overflow: scroll
     &__wrapper
         display: grid
         grid-template-columns: 1fr 1fr
         width: 1200px
-        height: 866px
         border-radius: 32px
         overflow: hidden
     &__left
@@ -229,6 +230,7 @@ body
         display: flex
         justify-content: center
         align-items: center
+        background-color: var(--White)
     &__btn 
         margin-top: 190px
         padding: 16px 48px
@@ -396,6 +398,8 @@ body
         @include body-small
         color: var(--Red-error)
         transition: opacity 0.3s ease
+    &-hide
+        display: none
 @media (max-width:1201px)
     .hero__wrapper
         height: 100%

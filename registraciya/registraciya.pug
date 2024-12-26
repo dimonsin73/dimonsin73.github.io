@@ -76,25 +76,31 @@ html(lang="ru")
                                         .form__wantfind-check 
                                         .form__wantfind-text Работу
                                 .form__wantfind-item 
-                                    input.form__wantfind-radio(type="radio" name="wantfind" id="wantfind2")
-                                    label.form__wantfind-label(for="wantfind2") 
+                                    input.form__wantfind-radio(type="radio" name="wantfind" id="employee")
+                                    label.form__wantfind-label(for="employee") 
                                         .form__wantfind-check
                                         .form__wantfind-text Сотрудников
+                        .attribut.attribut-hide
+                            input.attribut__input(type="text" name="company")#company
+                            h3.attribut__title Название компании
+                            .attribut__item-error.svg-container
+                                    svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM11 14C11 14.5523 10.5523 15 10 15C9.44772 15 9 14.5523 9 14C9 13.4477 9.44772 13 10 13C10.5523 13 11 13.4477 11 14ZM10 5C9.44772 5 9 5.44772 9 6V10C9 10.5523 9.44772 11 10 11C10.5523 11 11 10.5523 11 10V6C11 5.44772 10.5523 5 10 5Z" fill="#FF0034")
                         .attribut
-                            input.attribut__input(required type="text")#name
+                            input.attribut__input(required type="text" name="name")#name
                             h3.attribut__title Имя
                             .attribut__item-error.svg-container
                                     svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM11 14C11 14.5523 10.5523 15 10 15C9.44772 15 9 14.5523 9 14C9 13.4477 9.44772 13 10 13C10.5523 13 11 13.4477 11 14ZM10 5C9.44772 5 9 5.44772 9 6V10C9 10.5523 9.44772 11 10 11C10.5523 11 11 10.5523 11 10V6C11 5.44772 10.5523 5 10 5Z" fill="#FF0034")
                         .attribut
-                            input.attribut__input(required type="text")#surname
+                            input.attribut__input(required type="text" name="surname")#surname
                             h3.attribut__title Фамилия
                             .attribut__item-error.svg-container
                                     svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM11 14C11 14.5523 10.5523 15 10 15C9.44772 15 9 14.5523 9 14C9 13.4477 9.44772 13 10 13C10.5523 13 11 13.4477 11 14ZM10 5C9.44772 5 9 5.44772 9 6V10C9 10.5523 9.44772 11 10 11C10.5523 11 11 10.5523 11 10V6C11 5.44772 10.5523 5 10 5Z" fill="#FF0034")
                         .attribut
                             .attribut__item.attribut__item-icons
-                                input.attribut__input(required type="text")#email
+                                input.attribut__input(required type="text" name="email")#email
                                 h3.attribut__title Почта
                                 .attribut__item-icon.svg-container
                                     svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -105,7 +111,7 @@ html(lang="ru")
                                         path(fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM11 14C11 14.5523 10.5523 15 10 15C9.44772 15 9 14.5523 9 14C9 13.4477 9.44772 13 10 13C10.5523 13 11 13.4477 11 14ZM10 5C9.44772 5 9 5.44772 9 6V10C9 10.5523 9.44772 11 10 11C10.5523 11 11 10.5523 11 10V6C11 5.44772 10.5523 5 10 5Z" fill="#FF0034")
                         .attribut
                             .attribut__item.attribut__item-icons
-                                input.attribut__input(required type="password")#password
+                                input.attribut__input(required type="password" name="password")#password
                                 h3.attribut__title Пароль
                                 .attribut__item-icon.svg-container
                                     svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -120,7 +126,7 @@ html(lang="ru")
                                 .attribut__line4-item
                         .attribut
                             .attribut__item.attribut__item-icons
-                                input.attribut__input(required type="password")#password-second
+                                input.attribut__input(required type="password" name="password-second")#password-second
                                 h3.attribut__title Пароль
                                 .attribut__item-icon.svg-container
                                     svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
