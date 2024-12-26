@@ -170,7 +170,6 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--Gray-100);
-  overflow: scroll;
 }
 .hero__wrapper {
   display: grid;
@@ -467,6 +466,9 @@ body {
   }
 }
 @media (max-width: 599px) {
+  .hero {
+    position: static;
+  }
   .form {
     padding: 32px 24px;
   }

@@ -192,7 +192,6 @@ body
     align-items: center
     justify-content: center
     background-color: var(--Gray-100)
-    overflow: scroll
     &__wrapper
         display: grid
         grid-template-columns: 1fr 1fr
@@ -413,6 +412,8 @@ body
         &__left
             display: none
 @media (max-width:599px)
+    .hero
+        position: static
     .form
         padding: 32px 24px
         &__wantfind-content
