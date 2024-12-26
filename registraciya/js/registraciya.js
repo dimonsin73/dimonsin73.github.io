@@ -1,13 +1,13 @@
 const form = document.querySelector('.form')
+// Поля ввода
+const name = document.getElementById('name')
+const surname = document.getElementById('surname')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+const passwordSecond = document.getElementById('password-second')
 form.addEventListener('submit', function(event){
     event.preventDefault()
     let validation = 0
-    // Поля ввода
-    const name = document.getElementById('name')
-    const surname = document.getElementById('surname')
-    const email = document.getElementById('email')
-    const password = document.getElementById('password')
-    const passwordSecond = document.getElementById('password-second')
     // Регулярные выражения
     const nameRegularExpression = /^[A-ZА-Я][a-zа-яё]*$/
     const emailRegularExpression = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w)$/
@@ -49,10 +49,20 @@ form.addEventListener('submit', function(event){
         alert("Данный введены правильно");
     }
 })
-
-
+// Убрать состояние Error
+name.addEventListener('input', function(){
+    name.classList.remove('attribut__input-error')
+})
+surname.addEventListener('input', function(){
+    surname.classList.remove('attribut__input-error')
+})
+email.addEventListener('input', function(){
+    email.classList.remove('attribut__input-error')
+})
+password.addEventListener('input', function(){
+    password.classList.remove('attribut__input-error')
+})
 // Проверка надёжности пароля
-const password = document.getElementById('password')
 password.addEventListener('input', function(){
     const attributLine = password.parentElement.nextSibling
     const attributLineItemArr = attributLine.children
@@ -114,7 +124,6 @@ function attributLineAddColor(attributLineItemArr) {
     }
 }
 // Проверка совпадения паролей 
-const passwordSecond = document.getElementById('password-second')
 passwordSecond.addEventListener('input', function(){
     const attributLine = passwordSecond.parentElement.nextSibling
     const attributLineItemArr = attributLine.children
