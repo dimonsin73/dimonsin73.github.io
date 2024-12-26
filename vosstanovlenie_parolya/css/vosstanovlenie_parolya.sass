@@ -249,50 +249,10 @@ body
     &__head 
         display: flex
         align-items: center
-        gap: 32px
+        justify-content: space-between
         &-title 
             @include headline-medium
             color: var(--Black)
-        &-close
-            margin-left: auto
-    &__wantfind
-        display: flex
-        flex-direction: column
-        gap: 16px
-        &-title 
-            @include title-large
-            color: var(--Gray-10)
-        &-checked 
-            display: flex
-            gap: 24px
-        &-content
-            display: grid 
-            grid-template-columns: 1fr 1fr 
-            gap: 24px
-        &-radio 
-            position: absolute
-            width: 0
-            opacity: 0
-            &:checked ~ .form__wantfind-label
-                border: 2px solid var(--Primary-40)
-            &:checked ~ .form__wantfind-label .form__wantfind-check
-                border: 7px solid var(--Primary-40)
-        &-label 
-            display: grid
-            grid-template-columns: 20px auto
-            column-gap: 16px
-            align-items: center
-            padding: 18px 24px
-            border: 2px solid var(--Gray-60)
-            border-radius: 8px
-        &-check 
-            width: 20px
-            height: 20px
-            border: 1.5px solid var(--Gray-40)
-            border-radius: 50%
-        &-text 
-            @include title-medium
-            color: var(--Gray-20)
     &__btn
         width: 240px
         padding: 15.75px 24px
@@ -308,12 +268,7 @@ body
             color: var(--Gray-20)
         &-link
             color: var(--Primary-40)
-    &__link 
-        @include title-medium
-        color: var(--Primary-40)
-    &__text 
-        @include body-large
-        color: var(--Gray-10)
+            
 .attribut
     position: relative
     display: flex
@@ -396,8 +351,6 @@ body
         @include body-small
         color: var(--Red-error)
         transition: opacity 0.3s ease
-    &-hide
-        display: none
 @media (max-width:1201px)
     .hero__wrapper
         height: 100%
