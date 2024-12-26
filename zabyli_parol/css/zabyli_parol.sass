@@ -239,12 +239,6 @@ body
         letter-spacing: -0.48px
         color: var(--White)
         z-index: 100
-    &__rocket
-        position: absolute
-        top: 195px
-        transition: top 3s ease
-        &-active 
-            top: -800px
 
 .form
     display: flex
@@ -255,10 +249,12 @@ body
     &__head 
         display: flex
         align-items: center
-        justify-content: space-between
+        gap: 32px
         &-title 
             @include headline-large
             color: var(--Black)
+        &-close
+            margin-left: auto
     &__wantfind
         display: flex
         flex-direction: column
@@ -312,9 +308,12 @@ body
             color: var(--Gray-20)
         &-link
             color: var(--Primary-40)
-            
-
-
+    &__link 
+        @include title-medium
+        color: var(--Primary-40)
+    &__text 
+        @include body-large
+        color: var(--Gray-10)
 .attribut
     position: relative
     display: flex

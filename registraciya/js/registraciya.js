@@ -88,7 +88,7 @@ password.addEventListener('input', function(){
     const attributLineItemArr = attributLine.children
     attributLineAddColor(attributLineItemArr)
 })
-// Ф-ия учистки цветов
+// Ф-ия очистки цветов
 function attributLineRemoveColor(element) {
     element.classList.remove('attribut__line4-orange')
     element.classList.remove('attribut__line4-success')

@@ -228,14 +228,6 @@ body {
   color: var(--White);
   z-index: 100;
 }
-.hero__rocket {
-  position: absolute;
-  top: 195px;
-  transition: top 3s ease;
-}
-.hero__rocket-active {
-  top: -800px;
-}
 
 .form {
   display: flex;
@@ -324,6 +316,11 @@ body {
   color: var(--Gray-20);
 }
 .form__footer-link {
+  color: var(--Primary-40);
+}
+.form__link {
+  font: 600 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
   color: var(--Primary-40);
 }
 
@@ -474,4 +471,4 @@ body {
   .form__wantfind-content {
     grid-template-columns: 1fr;
   }
-}/*# sourceMappingURL=registraciya.css.map */
+}/*# sourceMappingURL=vojti.css.map */

@@ -239,12 +239,6 @@ body
         letter-spacing: -0.48px
         color: var(--White)
         z-index: 100
-    &__rocket
-        position: absolute
-        top: 195px
-        transition: top 3s ease
-        &-active 
-            top: -800px
 
 .form
     display: flex
@@ -312,9 +306,9 @@ body
             color: var(--Gray-20)
         &-link
             color: var(--Primary-40)
-            
-
-
+    &__link 
+        @include title-medium
+        color: var(--Primary-40)
 .attribut
     position: relative
     display: flex
