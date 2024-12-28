@@ -920,11 +920,10 @@ body {
   .card__expand {
     grid-template-columns: 0 1fr 48px;
   }
+  .medium-hidden {
+    display: none;
+  }
 }
-.medium-hidden {
-  display: none;
-}
-
 @media (max-width: 816px) {
   .card__expand {
     position: relative;
