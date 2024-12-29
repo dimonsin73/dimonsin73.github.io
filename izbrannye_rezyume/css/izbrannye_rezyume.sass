@@ -157,13 +157,24 @@ body
             color: var(--White)
             & path
                 stroke: var(--White)
+            & .search__active-num 
+                background-color: var(--White)
+    &-azure
+        border: 0.5px solid var(--Primary-40)
+        background-color: rgba(0, 111, 216, 0.10)
+        color: var(--Primary-40)
+    &-lightgreen
+        border: 0.5px solid #369869
+        background-color: rgba(54, 152, 105, 0.10)
+        color: #369869
 .main
     display: grid
     grid-template-columns: 400px minmax(390px, 1090px)
     gap: 24px
     justify-content: center
-    margin-bottom: 24px
+    margin: 0 24px 24px
     &__left
+        position: relative
         display: flex
         flex-direction: column
         gap: 24px
@@ -200,6 +211,8 @@ body
                 font: 600 14px / 20px "Inter", "sans-serif"
                 letter-spacing: -0.1px
                 color: var(--Black)
+            & path 
+                stroke: none
         &-list 
             display: flex
             flex-direction: column
@@ -235,10 +248,41 @@ body
             background-color: var(--Gray-100)
             @include title-small
             transition: background-color 0.3s ease, color 0.3s ease
+        &-select 
+            display: flex
+            align-items: center
+            gap: 16px
+            padding: 15px 16px
+            border: 1px solid var(--Gray-80)
+            border-radius: 8px
+            @include title-large
+            color: var(--Gray-20)
+            cursor: pointer
+            transition: background-color 0.3s ease, color 0.3s ease
+            & svg 
+                margin-left: auto
+            &-num
+                display: flex
+                align-items: center
+                justify-content: center
+                flex: 0 0 24px
+                width: 24px
+                height: 24px
+                border-radius: 50%
+                background-color: var(--Primary-40)
+                @include title-small
+                color: var(--White)
+        &-dropdawn 
+            display: flex
+            position: absolute
+            top: 240px
+            width: 100%
+            z-index: 100
     &__right
         display: flex
         flex-direction: column
         gap: 24px
+
 .container
     max-width: 1090px
     min-width: 390px
@@ -263,7 +307,8 @@ body
         color: var(--Black)
     &-mb24
         margin-bottom: 24px
-
+.laptop-visible
+    display: none
 .small-visible
     display: none 
 .burger
@@ -356,7 +401,7 @@ body
         display: flex
         justify-content: space-between
         align-items: center
-        padding: 16px
+        padding: 16px 24px
         border-radius: 12px
         background-color: var(--White)
         box-shadow: var(--Shadow-dropdawn)
@@ -424,6 +469,19 @@ body
         background-color: var(--Black)
         @include title-small
         color: var(--White)
+    &__filter
+        display: flex
+        align-items: center
+        column-gap: 12px
+        margin-left: auto
+        padding: 13px 16px
+        border: 1px solid var(--Gray-80)
+        border-radius: 8px
+        font: 600 14px/20px 'Inter', 'sans-serif'
+        color: var(--Black)
+    &__text 
+        @include title-medium
+        color: var(--Black)
 .card
     &__content
         display: flex
@@ -524,17 +582,40 @@ body
             column-gap: 24px
             margin-left: auto
             flex: 0 0 auto
-        &-icon
-            display: flex
-            align-items: center
+        &-icon 
             padding: 11px
-        &-dots 
-            margin-left: auto
+        &-active .card__btn-responded
+            display: flex
+        &-active .card__btn-chat
+            display: flex
+        &-active .card__btn-response
+            display: none
     &__btn
+        flex: 0 0 auto
         display: flex
         align-items: center
         column-gap: 8px
         @include title-small
+        &-responded 
+            display: none
+        &-chat 
+            position: relative
+            display: none
+            border: 1px solid var(--Black)
+            &-num
+                position: absolute
+                top: 6px
+                left: 36px
+                display: flex
+                align-items: center
+                justify-content: center 
+                padding: 0 5.6px
+                border: 1px solid var(--White)
+                border-radius: 50%
+                background-color: var(--Primary-50)
+                font: 700 11px/16px 'Inter', 'sans-serif'
+                letter-spacing: 0.11px
+                color: var(--White)
     &__print, &__dawnloader 
         display: none
         transition: opacity 3s ease
@@ -915,19 +996,11 @@ body
         cursor: pointer
         &-active 
             background-color: rgb(255 255 255 / 90%)
-@media (max-width: 1138px)
-    .main
-        margin: 0 24px
-    .search__setting p 
-        display: none
-@media (max-width:1023px)
-    .header
-        &__search-text
-            display: none
-        &__account
-            width: 161px
-    .search__range-input
-        width: 203px
+@media (max-width: 1439px)       
+    .big-hidden
+        display: none 
+    .btn 
+        padding: 11px
     .card
         &__top
             row-gap: 16px
@@ -942,10 +1015,62 @@ body
             grid-column: span 3
         &__expand 
             grid-template-columns: 0 1fr 48px
+        &__btn-chat-num
+            left: 24px  
+@media (max-width:1199px)
+    .main
+        grid-template-columns: 100%
+        &__left
+            &-head 
+                padding: 16px 24px
+                border-radius: 12px
+                box-shadow: var(--Shadow-dropdawn)
+                background-color: var(--White)
+            &-btns 
+                justify-content: flex-start
+                padding: 16px 0
+                box-shadow: none
+            &-btn:last-child
+                margin-left: auto
+            &-title 
+                margin-top: 0
+                padding: 16px 0
+            &-list
+                display: none
+            &-dropdawn
+                display: flex
+        &-right 
+
+    .laptop-hidden
+        display: none
+    .laptop-visible
+        display: block
+        
+@media (max-width:1023px)
+    .header
+        &__search-text
+            display: none
+        &__account
+            width: 161px
+    .search__range-input
+        width: 203px
+    .medium-hidden
+        display: none
 @media (max-width:767px)
     .main
         margin: 0
         margin-bottom: 24px
+        &__left
+            &-head 
+                border-radius: 0
+            &-select 
+                @include title-medium
+            &-item 
+                @include title-medium   
+            &-dropdawn
+                width: 95%
+                left: 50%
+                transform: translateX(-50%)
     .logo svg
         width: 102px
         height: 24px
@@ -955,6 +1080,7 @@ body
         display: none
     .small-visible
         display: flex 
+        flex: 0 0 auto
     .btn
         flex: 0 0 auto
         padding: 11px   
@@ -971,9 +1097,10 @@ body
         &__title
             margin: 0 24px
             @include headline-medium
-    .search__wrapper
-        padding: 16px 24px
-        border-radius: 0
+    .search
+        &__wrapper
+            padding: 16px 
+            border-radius: 0
     .card
         &__top       
             grid-template-columns: 1fr 1fr
@@ -1007,6 +1134,7 @@ body
             gap: 8px
             &-ai
                 gap: 8px
+    
 @media ( max-width: 600px )
     .search
         &__setting 

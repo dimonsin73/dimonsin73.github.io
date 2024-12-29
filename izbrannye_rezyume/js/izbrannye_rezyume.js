@@ -125,13 +125,57 @@ active.addEventListener('click', function(){
 
 // Нажатие кнопок слева
 const mainLeftItemArr = document.querySelectorAll('.main__left-item')
-for (let i = 0; i < mainLeftItemArr.length; i++) {
-    const element = mainLeftItemArr[i];
+function mainLeftItemClick() {
+    for (let i = 0; i < mainLeftItemArr.length; i++) {
+        const element = mainLeftItemArr[i];
+        element.addEventListener('click', function(){
+            for (let i = 0; i < mainLeftItemArr.length; i++) {
+                const el = mainLeftItemArr[i];
+                el.classList.remove('main__left-item-active')
+            }
+            element.classList.add('main__left-item-active')
+        })
+    }
+}
+mainLeftItemClick()
+// Ножитие на кнопку пригласить
+const responseArr = document.querySelectorAll('.card__btn-response')
+for (let i = 0; i < responseArr.length; i++) {
+    const element = responseArr[i];
     element.addEventListener('click', function(){
-        for (let i = 0; i < mainLeftItemArr.length; i++) {
-            const el = mainLeftItemArr[i];
-            el.classList.remove('main__left-item-active')
-        }
-        element.classList.add('main__left-item-active')
+        const cardFooter = element.parentElement.parentElement
+        cardFooter.classList.add('card__footer-active')
     })
 }
+// Нажатие на кнопку дропауна 
+const mainLeftSelect = document.querySelector('.main__left-select')
+const mainLeftList = document.querySelector('.main__left-list')
+mainLeftSelect.addEventListener('click', function(){
+    mainLeftList.classList.toggle('main__left-dropdawn')
+    for (let i = 0; i < mainLeftItemArr.length; i++) {
+        const element = mainLeftItemArr[i];
+        element.addEventListener('click', function(){
+            const mainLeftText = element.querySelector('.main__left-text').textContent
+            const mainLeftNum = element.querySelector('.main__left-num').textContent
+            const mainLeftSelectText = document.querySelector('.main__left-select-text')
+            const mainLeftSelectNum = document.querySelector('.main__left-select-num')
+            mainLeftSelectText.textContent = mainLeftText
+            mainLeftSelectNum.textContent = mainLeftNum
+            mainLeftList.classList.remove('main__left-dropdawn')
+        })
+    }
+    document.addEventListener( 'click', (e) => {
+        const withinBoundariesList = e.composedPath().includes(mainLeftList);
+        const withinBoundariesSelect = e.composedPath().includes(mainLeftSelect);
+        if ( ! withinBoundariesList ) {
+            if (! withinBoundariesSelect) {
+                mainLeftList.classList.remove('main__left-dropdawn')
+            }
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            mainLeftList.classList.remove('main__left-dropdawn')
+        }
+    })
+})
