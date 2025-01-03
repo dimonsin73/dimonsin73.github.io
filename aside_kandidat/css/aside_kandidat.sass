@@ -307,6 +307,7 @@ body
         display: flex
         align-items: center
         column-gap: 12px
+        height: 40px
         padding: 8px
         border-radius: 8px
         transition: background-color 0.3s ease
@@ -327,6 +328,13 @@ body
             color: var(--Gray-10)
             white-space: nowrap
             transition: color 0.3s ease
+        &-num 
+            margin-left: auto
+            padding: 2px 8px
+            border-radius: 12px
+            background: rgba(73, 172, 124, 0.20)
+            @include title-small
+            color: #369869
 @media (max-width: 1439px)
     .aside
         left: -264px
