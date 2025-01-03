@@ -3699,9 +3699,371 @@
         </div>            
     </div>
     <div class="footer-bottom"></div>
+    <div class="backdrop js--close"></div>
+
+    <div class="modal modal-form">
+        <button class="modal-form__close js--close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="#0F33EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>            
+        </button>
+        <div class="modal-form__header">
+            <p class="modal-form__title">
+                autosmm.ru
+            </p>
+            <p class="modal-form__txt">
+                Автоматизируем весь ваш СММ уже сегодня!
+            </p>
+        </div>
+        <form id="modal-form" class="modal-form__form">
+            <div class="modal-form__el">
+                <p class="modal-form__label">
+                    Ваше имя*
+                </p>
+                <input name="name" placeholder="Иван Иванов Иванович" class="modal-form__name">
+            </div>
+            <div class="modal-form__el">
+                <p class="modal-form__label">
+                    Номер телефона*
+                </p>
+                <input id="phone4" type="tel" name="phone" placeholder="+7-***-***-**-**" class="modal-form__name" pattern="(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?">
+            </div>
+            <div class="modal-form__el">
+                <p class="modal-form__label">
+                    Email*
+                </p>
+                <input type="email" name="email" placeholder="cbmail@nomail.com" class="modal-form__name">
+            </div>
+            <button type="submit" class="modal-form__submit">
+                <span>
+                    Бесплатная регистрация
+                </span>
+                <i>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.33301 22.6667L22.6663 9.33334M22.6663 9.33334H9.33301M22.6663 9.33334V22.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                                    
+                </i>
+            </button>
+            <p class="modal-form__agree">
+                Оставляя заявку, вы соглашаетесь на <a href="#">обработку персональных данных и с условиями бронирования счёта</a>
+            </p>
+        </form>
+        <p class="modal-form__success" style="display:none;">
+            Заявка успешно отправлена!
+        </p>
+    </div>
     <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle Menu
+            const menuBtn = document.querySelector('.navigation__menu');
+            const menu = document.querySelector('.menu');
+            const menuClose = document.querySelector('.menu__close');
+            function openMenu() {
+                if (window.screen.width > '767') {
+                    menu.classList.add('menu-open');
+                }
+            }
+            function closeMenu() {
+                menu.classList.remove('menu-open');
+            }
+
+            menuBtn.addEventListener('click', openMenu);
+            menuClose.addEventListener('click', closeMenu);
+            
+
+            
+
+const allItems = [
+  {
+    type: 'instructions',
+    title: '1. Полуавтоматический SMM режим: контроль и выгода от нейросетей',
+    text: 'Опытайте АвтоSMM в режиме полуавтоматизации. Используйте искусственный интеллект для контента, сохраняя контроль и качество публикуемых постов.',
+    img: 'img/moder2.jpg',
+    url: 'news2.html'
+  },
+  {
+    type: 'instructions',
+    title: '2. Личный генератор контента в Telegram для масштабирования SMM',
+    text: 'Создавайте уникальные посты в вашем Telegram-канале с помощью АвтоSMM. Нейросети генерируют контент в один клик, помогая развивать бренд 24/7.',
+    img: 'img/moder1.png',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: '3. 100% автоматизация SMM: контент-маркетинг 24/7 без вашего участия',
+    text: 'Настройте АвтоSMM один раз — и получите нескончаемый поток оригинальных постов для ВКонтакте, Telegram и Яндекс Дзен. Экономьте время и ресурсы!',
+    img: 'img/100auto.png',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: '4. Уникальные тексты и медиа: адаптация под ваш бизнес с помощью ИИ',
+    text: 'Более 50 нейросетей АвтоSMM подбирают стиль и тональность, создавая уникальные статьи, изображения и видео-контент для целевой аудитории.',
+    img: 'img/50ai.png',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: '5. Подключение Telegram-каналов как источников новостей',
+    text: 'Интегрируйте любые Telegram-каналы. АвтоSMM превращает их контент в новые посты, увеличивая охваты и вовлечённость.',
+    img: 'img/moder.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: '6. RSS-ленты: беспрерывное обновление контента для соцсетей',
+    text: 'Подключайте RSS-ленты, чтобы АвтоSMM генерировал свежие идеи и публикации. Максимизируйте присутствие бренда без лишних усилий.',
+    img: 'img/rss.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: '7. Дополнительные фильтры и настройки для точного таргетинга',
+    text: 'Используйте black/white-листы для точного отбора тем. Контролируйте релевантность и качество контента без ручной модерации.',
+    img: 'img/filtr.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: '8. Подключение соцсетей за один клик: автопостинг во все каналы',
+    text: 'Интегрируйте ВКонтакте, Telegram и Яндекс Дзен. АвтоSMM публикует контент сразу во все площадки, сокращая время и затраты.',
+    img: 'img/posting.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: '9. Личный кабинет АвтоSMM в ПК версии: управление SMM в одном месте',
+    text: 'Анализируйте результаты, планируйте контент и получайте рекомендации. Все функции в едином интерфейсе — удобство и эффективность без компромиссов.',
+    img: 'img/example4.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: 'Бесплатный контент-план для любого бизнеса с помощью ИИ',
+    text: 'Создайте контент-план за считанные минуты, без агентств и лишних расходов. АвтоSMM — ваш путь к стратегическому контент-маркетингу.',
+    img: 'img/example5.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: 'Бесплатное создание постов по любой теме: ваш AI-копирайтер',
+    text: 'Просто введите тему, и АвтоSMM сгенерирует готовый пост. Мгновенный контент для увеличения охватов и продаж.',
+    img: 'img/example6.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: '100% автоматизация СММ в веб-версии АвтоSMM',
+    text: 'Запустите АвтоSMM и получите постоянный поток свежего контента. Забудьте о рутине — наслаждайтесь ростом аудитории и вовлечённости.',
+    img: 'img/example7.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: 'Автогенерация постов на автопилоте: масштабируйте бренд',
+    text: 'Получайте новые публикации по расписанию или триггерам. АвтоSMM повышает производительность SMM без лишних усилий.',
+    img: 'img/example8.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'instructions',
+    title: 'Автоматизированный SMM бесплатно: первые 30 дней',
+    text: 'Оцените возможности АвтоSMM без риска. Запускайте продвижение с готовыми шаблонами и тестируйте уникальный функционал!',
+    iframe: 'https://vk.com/video_ext.php?oid=3850332&id=456239550&hd=2',
+    url: 'news.html'
+  },
+  {
+    type: 'news',
+    title: 'Мультиканальная SMM-стратегия без лишних затрат',
+    text: 'Управляйте контентом сразу в нескольких соцсетях, экономя время и деньги. АвтоSMM — мультиканальный подход к продвижению.',
+    img: 'img/example10.jpg',
+    url: 'news.html'
+  },
+  {
+    type: 'cases',
+    title: 'Кейс: AutoSMM для бренда одежды Lovely Styley',
+    text: 'Полная автоматизация SMM, уникальный контент и рост продаж. Узнайте, как нейросети преобразили маркетинг для fashion-бизнеса.',
+    img: 'img/model.jpg',
+    url: 'news.html'
+  },
+
+  {
+    type: 'cases',
+    title: 'Как искусственный интеллект в SMM повышает ROI и конверсию',
+    text: 'Разбор кейсов и метрик: как нейросети и АвтоSMM увеличивают вовлечённость и продажи.',
+    url: 'seo1.html'
+  },
+  {
+    type: 'news',
+    title: 'Автоматизация контент-маркетинга: для успеха вашего бренда',
+    text: 'Узнайте, как АвтоSMM устраняет рутину и помогает создавать релевантный контент 24/7.',
+    url: 'seo2.html'
+  },
+  {
+    type: 'news',
+    title: 'Сравнение SMM-платформ: почему АвтоSMM лидирует на рынке',
+    text: 'Сравнительный обзор конкурентов и анализ преимуществ АвтоSMM для бизнеса разных масштабов.',
+    url: 'seo3.html'
+  },
+  {
+    type: 'cases',
+    title: 'Многоязычный контент с АвтоSMM: выход на новые рынки',
+    text: 'Расширьте аудиторию, создавая посты на разных языках без дополнительных расходов.',
+    url: 'seo4.html'
+  },
+  {
+    type: 'cases',
+    title: 'Интеграция АвтоSMM с вашим CRM: новые возможности аналитики',
+    text: 'Отслеживайте результаты постов и улучшайте стратегию с помощью данных из вашей CRM.',
+    url: 'seo5.html'
+  },
+  {
+    type: 'news',
+    title: 'Контент-планирование с ИИ: от идей до регулярных публикаций',
+    text: 'Как АвтоSMM автоматизирует процесс, помогая создавать долгосрочную стратегию контента.',
+    url: 'seo6.html'
+  },
+  {
+    type: 'cases',
+    title: 'Performance-маркетинг: использование нейросетей для повышения эффективности',
+    text: 'Применение AI в SMM для оптимизации расходов и улучшения показателей привлечения клиентов.',
+    url: 'seo7.html'
+  },
+  {
+    type: 'cases',
+    title: '5 способов уменьшить затраты на SMM с помощью АвтоSMM',
+    text: 'Сократите расходы на персонал и агентства. Полная автоматизация экономит ваш бюджет.',
+    url: 'seo8.html'
+  },
+  {
+    type: 'news',
+    title: 'Тренды SMM-автоматизации: что ждет нас в ближайшие годы',
+    text: 'Прогнозы экспертов: нейросети, персонализация и глобальная оптимизация контент-стратегий.',
+    url: 'seo9.html'
+  },
+  {
+    type: 'cases',
+    title: 'Использование АвтоSMM для запуска новых продуктов',
+    text: 'Как автоматическая генерация и продвижение контента помогает быстро вывести новый товар на рынок.',
+    url: 'seo10.html'
+  }
+];
+
+
+
+            const blogsWrap = document.getElementById('blogsWrap');
+            const filterButtons = document.querySelectorAll('.header__list-btn');
+            let currentFilter = 'all';
+            let itemsPerLoad = 9;
+            let currentIndex = 0;
+
+function createCard(item) {
+    const article = document.createElement('article');
+    article.classList.add('blogs__item');
+    article.setAttribute('data-sort', item.type);
+
+    const imgWrap = document.createElement('div');
+    imgWrap.classList.add('blogs__img');
+
+    if (item.iframe) {
+        const iframe = document.createElement('iframe');
+        iframe.classList.add('blogs__img-iframe');
+        iframe.src = item.iframe;
+        iframe.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; screen-wake-lock;');
+        iframe.setAttribute('frameborder','0');
+        iframe.setAttribute('allowfullscreen','');
+        imgWrap.appendChild(iframe);
+    } else {
+        const img = document.createElement('img');
+        img.classList.add('blogs__img-img');
+        img.src = item.img;
+        img.alt = item.title;
+        img.loading = 'lazy';
+        imgWrap.appendChild(img);
+    }
+
+    const content = document.createElement('div');
+    content.classList.add('blogs__content');
+
+    const teg = document.createElement('p');
+    teg.classList.add('blogs__content-teg');
+    teg.textContent = item.type === 'instructions' ? 'Инструкция' : item.type === 'news' ? 'Новость' : 'Кейс';
+
+    const title = document.createElement('h2');
+    title.classList.add('blogs__content-title');
+    title.textContent = item.title;
+
+    const text = document.createElement('p');
+    text.classList.add('blogs__content-text');
+    text.textContent = item.text;
+
+    const link = document.createElement('a');
+    link.classList.add('blogs__content-link');
+    link.href = item.url; // используем url из объекта
+    link.textContent = 'Читать полностью';
+
+    // Создаем ссылки-обертки для заголовка и текста
+    const titleLink = document.createElement('a');
+    titleLink.href = item.url;
+    titleLink.appendChild(title);
+
+    const textLink = document.createElement('a');
+    textLink.href = item.url;
+    textLink.appendChild(text);
+
+    content.appendChild(teg);
+    content.appendChild(titleLink);
+    content.appendChild(textLink);
+    content.appendChild(link);
+
+    article.appendChild(imgWrap);
+    article.appendChild(content);
+
+    return article;
+}
+
+            function loadItems(filter = 'all') {
+                if (filter !== currentFilter) {
+                    currentFilter = filter;
+                    currentIndex = 0;
+                    blogsWrap.innerHTML = '';
+                }
+
+                const filteredItems = currentFilter === 'all' ? allItems : allItems.filter(i => i.type === currentFilter);
+                const slice = filteredItems.slice(currentIndex, currentIndex + itemsPerLoad);
+
+                slice.forEach(item => {
+                    const card = createCard(item);
+                    blogsWrap.appendChild(card);
+                });
+
+                currentIndex += itemsPerLoad;
+            }
+
+            window.addEventListener('scroll', () => {
+                const bottomOffset = 300; 
+                if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - bottomOffset)) {
+                    const filteredItems = currentFilter === 'all' ? allItems : allItems.filter(i => i.type === currentFilter);
+                    if (currentIndex < filteredItems.length) {
+                        loadItems(currentFilter);
+                    }
+                }
+            });
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => b.classList.remove('item-active'));
+                    btn.classList.add('item-active');
+                    const sort = btn.getAttribute('data-sort');
+                    loadItems(sort);
+                });
+            });
+
+            loadItems('all');
+        });
+    </script>
     <script type="text/javascript" src="js/news.js"></script>
-    
-    <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

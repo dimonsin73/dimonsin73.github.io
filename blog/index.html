@@ -26,33 +26,7 @@
     
     <style>
             /* Исправленные и улучшенные стили для меню */
-        .menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            transform: translateX(-100%);
-            transition: all 0.3s ease;
-            z-index: 9999;
-            overflow-y: auto;
-        }
-        .menu.menu-open {
-            opacity: 1;
-            transform: translateX(0);
-            transition: transform 0.3s ease;
-        }
-
-        /* Стиль для кнопки закрытия меню */
-        .menu__close {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
+        
         /* Обеспечиваем, что футер всегда после контента и еще ниже */
         html, body {
             margin: 0;
@@ -3724,7 +3698,9 @@
             const menuClose = document.querySelector('.menu__close');
 
             function openMenu() {
-                menu.classList.add('menu-open');
+                if (window.screen.width > '767') {
+                    menu.classList.add('menu-open');
+                }
             }
             function closeMenu() {
                 menu.classList.remove('menu-open');

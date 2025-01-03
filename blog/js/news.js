@@ -37,19 +37,6 @@ SCROLLBTN.addEventListener('click', function(){
     };
 });
 
-// Ф-ия открытия и закрытия меню
-const menu = document.querySelector('.menu');
-const navigationMenu = document.querySelector('.navigation__menu');
-const menuClose = document.querySelector('.menu__close');
-navigationMenu.addEventListener('click', function(){
-    menu.style.zIndex = '200';
-    menu.style.opacity = '1';
-})
-menuClose.addEventListener('click', function(){
-    menu.style.zIndex = '-10';
-    menu.style.opacity = '0';
-});
-
 // Ф-ия разварачивания скрытого текста в меню
 const menuInfo = document.querySelectorAll('.menu__info');
 for (let i = 0; i < menuInfo.length; i++) {
