@@ -943,12 +943,12 @@ body
     &__content
         max-height: 350px
         overflow-y: scroll
-        scrollbar-width: thin
-        scrollbar-color: #E6E9ED #fff
+        &::-webkit-scrollbar
+            width: 8px
+            background-color: #fff
         &::-webkit-scrollbar-thumb 
             border-radius: 4px
-        &::-webkit-scrollbar-button
-
+            background-color: #E6E9ED
         &-item
             margin: 0 16px
             padding: 16px 8px
