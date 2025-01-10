@@ -43,29 +43,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   padding: 14px 24px;
   cursor: pointer;
 }
 
 .title {
-  font: 500 42px/54.6px "PT Root UI", "sans-serif";
+  font: 500 42px/55px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 
 .text {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 
 @media (max-width: 424px) {
   .title {
-    font: 500 32px/41.6px "PT Root UI", "sans-serif";
+    font: 500 32px/42px "PT Root UI", "sans-serif";
     color: var(--black);
   }
   .text {
-    font: 400 14px/18.2px "PT Root UI", "sans-serif";
+    font: 400 14px/18px "PT Root UI", "sans-serif";
     color: var(--black);
   }
 }
@@ -108,7 +108,7 @@ body {
        column-gap: 8px;
 }
 .header__city-text {
-  font: 500 16px/20.8px "PT Root UI", "sans-serif";
+  font: 500 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 .header__working {
@@ -128,7 +128,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  font: 500 16px/20.8px "PT Root UI", "sans-serif";
+  font: 500 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   padding-right: 8px;
   color: var(--burgundy);
@@ -208,7 +208,7 @@ body {
   stroke: #93949B;
 }
 .catalog__text {
-  font: 700 16px/20.8px "PT Root UI", "sans-serif";
+  font: 700 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   color: #fff;
 }
@@ -227,7 +227,7 @@ body {
   transform: translateY(-50%);
 }
 .search__input {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   width: 442px;
   padding: 13px 16px;
@@ -236,12 +236,12 @@ body {
   border-radius: 12px;
 }
 .search__input::-moz-placeholder {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   color: var(--placeholder);
 }
 .search__input::placeholder {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   color: var(--placeholder);
 }
@@ -256,7 +256,7 @@ body {
   cursor: pointer;
 }
 .tel__uptext {
-  font: 400 13px/16.9px "PT Root UI", "sans-serif";
+  font: 400 13px/16px "PT Root UI", "sans-serif";
   color: var(--grey);
   margin-bottom: 3px;
 }
@@ -359,7 +359,7 @@ body {
   background-repeat: no-repeat;
 }
 .stack__item-text {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-top: 8px;
 }
@@ -368,7 +368,7 @@ body {
   height: 80px;
 }
 .stack__info-title {
-  font: 500 32px/41.6px "PT Root UI", "sans-serif";
+  font: 500 32px/42px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-bottom: 24px;
   text-align: left;
@@ -446,7 +446,7 @@ body {
 }
 .product__title {
   display: inline-block;
-  font: 500 16px/20.8px "PT Root UI", "sans-serif";
+  font: 500 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-bottom: 10px;
 }
@@ -461,7 +461,7 @@ body {
   margin-right: 9px;
 }
 .product__text {
-  font: 400 14px/18.2px "PT Root UI", "sans-serif";
+  font: 400 14px/18px "PT Root UI", "sans-serif";
   color: var(--grey);
 }
 .product__bottom {
@@ -475,7 +475,7 @@ body {
   color: var(--black);
 }
 .product__btn {
-  font: 700 16px/20.8px "PT Root UI", "sans-serif";
+  font: 700 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   padding: 14px 24px;
   border: 1px solid var(--rise);
@@ -517,12 +517,12 @@ body {
   gap: 8px;
 }
 .product__sale-oldprice {
-  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  font: 400 12px/16px "PT Root UI", "sans-serif";
   color: var(--grey);
   text-decoration: line-through;
 }
 .product__sale-discount {
-  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  font: 400 12px/16px "PT Root UI", "sans-serif";
   color: var(--grey);
   padding: 2px 4px;
   border-radius: 8px;
@@ -596,7 +596,7 @@ body {
   gap: 8px;
 }
 .products__pages-page {
-  font: 500 16px/20.8px "PT Root UI", "sans-serif";
+  font: 500 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   border-color: #fff;
 }
@@ -622,11 +622,14 @@ body {
 .products__container {
   position: relative;
 }
+.products__container-active .products__filter-icon {
+  transform: scale(1, -1);
+}
 .products__filter {
   display: flex;
   justify-content: center;
   align-items: center;
-  font: 500 16px/20.8px "PT Root UI", "sans-serif";
+  font: 500 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   flex: 1 0 auto;
   gap: 24px;
@@ -641,6 +644,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease;
 }
 .products__filter-reset {
   background-color: #fff;
@@ -649,11 +653,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font: 500 12px/15.6px "PT Root UI", "sans-serif";
+  font: 500 12px/16px "PT Root UI", "sans-serif";
   color: #fff;
   width: 18px;
   height: 18px;
   border-radius: 50%;
+}
+.products__filter-number-active {
   background-color: var(--burgundy);
 }
 .products__filter-small {
@@ -692,13 +698,13 @@ body {
   text-align: center;
 }
 .advantages__item-title {
-  font: 700 18px/23.4px "PT Root UI", "sans-serif";
+  font: 700 18px/23px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-top: 24px;
   margin-bottom: 16px;
 }
 .advantages__item-text {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 
@@ -740,19 +746,19 @@ body {
 }
 .rating__map-map {
   border-bottom: 0.7px dashed var(--black);
-  font: 500 24px/28.8px "PT Root UI", "sans-serif";
+  font: 500 24px/28px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 .rating__map-grade {
-  font: 500 24px/28.8px "PT Root UI", "sans-serif";
+  font: 500 24px/28px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 .rating__map-review {
-  font: 500 24px/28.8px "PT Root UI", "sans-serif";
+  font: 500 24px/28px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 .rating__map-span {
-  font: 400 16px/19.2px "PT Root UI", "sans-serif";
+  font: 400 16px/19px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 .rating__arrows {
@@ -784,7 +790,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  font: 400 12px/16px "PT Root UI", "sans-serif";
   color: var(--grey);
   margin-top: 8px;
   color: var(--black);
@@ -807,7 +813,7 @@ body {
   padding: 4px 0;
 }
 .rating__review-date {
-  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  font: 400 12px/16px "PT Root UI", "sans-serif";
   color: var(--grey);
 }
 
@@ -843,12 +849,12 @@ body {
   margin-bottom: 16px;
 }
 .offer__item-title {
-  font: 500 32px/41.6px "PT Root UI", "sans-serif";
+  font: 500 32px/42px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-bottom: 24px;
 }
 .offer__item-text {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-bottom: 24px;
 }
@@ -940,7 +946,7 @@ body {
   margin-bottom: 8px;
 }
 .advice__item-text {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-bottom: 16px;
 }
@@ -984,7 +990,7 @@ body {
   z-index: 20;
 }
 .footer__bottom-rights {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--grey);
 }
 .footer__wrapper {
@@ -1005,7 +1011,7 @@ body {
   align-items: flex-start;
 }
 .footer__item-title {
-  font: 700 18px/23.4px "PT Root UI", "sans-serif";
+  font: 700 18px/23px "PT Root UI", "sans-serif";
   color: var(--black);
   margin-bottom: 24px;
 }
@@ -1021,7 +1027,7 @@ body {
   min-width: 195px;
 }
 .footer__list-link {
-  font: 400 16px/20.8px "PT Root UI", "sans-serif";
+  font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 .footer__cards {
@@ -1066,11 +1072,11 @@ body {
   height: 14px;
 }
 .footer__social-title {
-  font: 500 16px/20.8px "PT Root UI", "sans-serif";
+  font: 500 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 .footer__social-text {
-  font: 400 12px/15.6px "PT Root UI", "sans-serif";
+  font: 400 12px/16px "PT Root UI", "sans-serif";
   color: var(--grey);
 }
 
@@ -1230,7 +1236,7 @@ body {
   padding: 14px 16px;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
-  font: 500 18px/23.4px "PT Root UI", "sans-serif";
+  font: 500 18px/23px "PT Root UI", "sans-serif";
   color: var(--black);
   white-space: nowrap;
   cursor: pointer;
@@ -1266,18 +1272,22 @@ body {
 }
 
 .dropdawn {
-  display: none;
   position: absolute;
   top: 60px;
   left: -50%;
   width: 306px;
+  height: 0;
   border-radius: 8px;
   box-shadow: 0px 20px 65px -5px rgba(18, 18, 23, 0.1019607843);
   background-color: #fff;
+  overflow: hidden;
+  opacity: 0;
+  transition: height 0.3s ease, opacity 0.3s ease;
   z-index: 100;
 }
 .dropdawn-active {
-  display: block;
+  height: 484px;
+  opacity: 1;
 }
 .dropdawn__header {
   display: flex;
@@ -1290,6 +1300,18 @@ body {
   height: 24px;
   background: url("../img/search_bg.svg") center center no-repeat;
 }
+.dropdawn__header-input {
+  font: 500 14px/18px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.dropdawn__header-input::-moz-placeholder {
+  font: 400 14px/22px "PT Root UI", "sans-serif";
+  color: #93949B;
+}
+.dropdawn__header-input::placeholder {
+  font: 400 14px/22px "PT Root UI", "sans-serif";
+  color: #93949B;
+}
 .dropdawn__header-btn {
   flex: 0 0 24px;
   height: 24px;
@@ -1299,11 +1321,19 @@ body {
 .dropdawn__content {
   max-height: 350px;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #E6E9ED #fff;
+}
+.dropdawn__content::-webkit-scrollbar-thumb {
+  border-radius: 4px;
 }
 .dropdawn__content-item {
   margin: 0 16px;
   padding: 16px 8px;
   border-bottom: 1px solid #E9EFF6;
+}
+.dropdawn__content-item:last-child {
+  border-bottom: none;
 }
 .dropdawn__content-input {
   display: none;
@@ -1315,6 +1345,13 @@ body {
   background-image: url(../img/check.png);
   background-repeat: no-repeat;
   background-position: center center;
+}
+.dropdawn__content-input:checked ~ .dropdawn__content-label .dropdawn__content-circle {
+  outline: 1px solid var(--burgundy);
+}
+.dropdawn__content-text {
+  font: 500 14px/18px "PT Root UI", "sans-serif";
+  color: var(--black);
 }
 .dropdawn__content-label {
   display: flex;
@@ -1330,10 +1367,17 @@ body {
   border: 1px solid #93949B;
   border-radius: 4px;
 }
+.dropdawn__content-circle {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #F3F5F7;
+  border-radius: 50%;
+}
 .dropdawn__footer {
   display: flex;
   gap: 8px;
   padding: 16px 24px;
+  border-top: 1px solid #E9EFF6;
 }
 .dropdawn__footer-btn {
   flex: 0 0 125px;
@@ -1562,7 +1606,7 @@ body {
     transition: height 0.4s ease;
   }
   .footer__list-link {
-    font: 400 12px/15.6px "PT Root UI", "sans-serif";
+    font: 400 12px/16px "PT Root UI", "sans-serif";
     color: var(--grey);
     color: var(--black);
   }
@@ -1660,7 +1704,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font: 400 16px/20.8px "PT Root UI", "sans-serif";
+    font: 400 16px/20px "PT Root UI", "sans-serif";
     color: var(--black);
     gap: 5px;
     cursor: pointer;
@@ -1680,7 +1724,7 @@ body {
     background-color: #fff;
   }
   .header__working-time {
-    font: 500 18px/23.4px "PT Root UI", "sans-serif";
+    font: 500 18px/23px "PT Root UI", "sans-serif";
     color: var(--black);
     color: var(--burgundy);
   }
@@ -1720,7 +1764,7 @@ body {
     display: none;
   }
   .stack__item-text {
-    font: 400 14px/18.2px "PT Root UI", "sans-serif";
+    font: 400 14px/18px "PT Root UI", "sans-serif";
     color: var(--black);
   }
   .favorites {
@@ -1877,7 +1921,7 @@ body {
     transition: height 0.4s ease;
   }
   .footer__list-link {
-    font: 400 12px/15.6px "PT Root UI", "sans-serif";
+    font: 400 12px/16px "PT Root UI", "sans-serif";
     color: var(--grey);
     color: var(--black);
   }

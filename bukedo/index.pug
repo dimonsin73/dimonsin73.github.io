@@ -408,14 +408,14 @@ html(lang="ru")
                                             path(d="M1 1H17M17 13H1M1 7H6M1 4H9M1 10H9" stroke="#1C1C1D" stroke-linecap="round" stroke-linejoin="round")
                                             path(d="M11 5.5L14 8.5L17 5.5" stroke="#1C1C1D" stroke-linecap="round" stroke-linejoin="round")
                                     p По популярности
-                                    .products__filer-icon 
+                                    .products__filter-icon 
                                         svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
                                 .products__container#filter-flowers
                                     button.products__filter.products__filter-full
                                         p Цветы
-                                        p.products__filter-number 1
-                                        .products__filer-icon 
+                                        p.products__filter-number 
+                                        .products__filter-icon 
                                             svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
                                                 path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
                                     .dropdawn
@@ -429,28 +429,48 @@ html(lang="ru")
                                             button.dropdawn__footer-btn.products__btn.btn-text Сбросить
                                 button.products__filter.products__filter-full
                                     p Цена
-                                    p.products__filter-number 3
-                                    .products__filer-icon 
+                                    p.products__filter-number 
+                                    .products__filter-icon 
                                         svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round") 
-                                button.products__filter.products__filter-full
-                                    p Цвет
-                                    p.products__filter-number 1
-                                    .products__filer-icon 
-                                        svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                                .products__container#filter-colors
+                                    button.products__filter.products__filter-full
+                                        p Цвет
+                                        p.products__filter-number 
+                                        .products__filter-icon 
+                                            svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                                    .dropdawn
+                                        .dropdawn__header 
+                                            .dropdawn__header-icon 
+                                            input.dropdawn__header-input(type="text" placeholder="Поиск по цвету")
+                                            .dropdawn__header-btn
+                                        .dropdawn__content 
+                                        .dropdawn__footer 
+                                            button.dropdawn__footer-btn.catalog.catalog__text Показать
+                                            button.dropdawn__footer-btn.products__btn.btn-text Сбросить
                                 button.products__filter.products__filter-full
                                     p Повод
-                                    p.products__filter-number 2
-                                    .products__filer-icon 
+                                    p.products__filter-number 
+                                    .products__filter-icon 
                                         svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
-                                button.products__filter.products__filter-full
-                                    p Размер
-                                    p.products__filter-number 1
-                                    .products__filer-icon 
-                                        svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                                .products__container#filter-sizes
+                                    button.products__filter.products__filter-full
+                                        p Размер
+                                        p.products__filter-number 
+                                        .products__filter-icon 
+                                            svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                                    .dropdawn
+                                        .dropdawn__header 
+                                            .dropdawn__header-icon 
+                                            input.dropdawn__header-input(type="text" placeholder="Поиск по цвету")
+                                            .dropdawn__header-btn
+                                        .dropdawn__content 
+                                        .dropdawn__footer 
+                                            button.dropdawn__footer-btn.catalog.catalog__text Показать
+                                            button.dropdawn__footer-btn.products__btn.btn-text Сбросить
                                 button.products__filter.products__filter-reset.products__filter-full Сбросить фильтр
                         .products__content 
                             .product

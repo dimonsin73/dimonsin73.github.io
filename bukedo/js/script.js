@@ -62,11 +62,13 @@ catalog.addEventListener('click', function(){
     popup.classList.toggle('popup-active')
 })
 
+
+// Цветы 
 const flowers = ['Альстромерия', 'Амариллис', 'Анемон', 'Гвоздика', 'Гвоздика кустовая', 'Гербера', 'Гербера мини', 'Гиацинт', 'Гипсофила', 'Гортензия', 'Ирис', 'Калла', 'Лаванда', 'Лилия', 'Мимоза', 'Нарцисс', 'Орхидея Ванда', 'Орхидея Фаленопсис', 'Орхидея Цимбидиум', 'Пион', "Пион Сара Бернар", 'Подсолнух', 'Ранункулюс', 'Роза', 'Роза Вувузела', 'Роза Пинк Охара', 'Роза Эквадор', 'Роза кустовая', 'Роза кустовая пионовидная', "Роза пионовидная", 'Ромашка', 'Сирень', 'Тюльпан', 'Тюльпан пионовидный', 'Хлопок', 'Хризантема Антонов', 'Хризантема Момоко', 'Хризантема кустовая', 'Хризантема одноголовая', 'Эустома', 'Эустома махровая']
 
+// построение фильтра по цветам
 const filterFlowers = document.getElementById('filter-flowers')
-const dropdawnContent = filterFlowers.querySelector('.dropdawn__content')
-
+const dropdawnContentFlowers = filterFlowers.querySelector('.dropdawn__content')
 for (let i = 0; i < flowers.length; i++) {
     const element = flowers[i];
     createFlowers(element, i)
@@ -74,7 +76,7 @@ for (let i = 0; i < flowers.length; i++) {
 function createFlowers(element, i) {
     const dropdawnContentItem = document.createElement('div')
     dropdawnContentItem.classList.add('dropdawn__content-item')
-    dropdawnContent.append(dropdawnContentItem)
+    dropdawnContentFlowers.append(dropdawnContentItem)
     const dropdawnContentInput = document.createElement('input')
     dropdawnContentInput.classList.add('dropdawn__content-input')
     dropdawnContentInput.setAttribute('type', 'checkbox')
@@ -93,22 +95,25 @@ function createFlowers(element, i) {
 }
 
 // открытие фильтра по цветам
-const productsFilterBtn = filterFlowers.querySelector('.products__filter')
-productsFilterBtn.addEventListener('click', function(){
+const productsFilterBtnFlower = filterFlowers.querySelector('.products__filter')
+productsFilterBtnFlower.addEventListener('click', function(){
     const dropdawn = filterFlowers.querySelector('.dropdawn')
     dropdawn.classList.toggle('dropdawn-active')
+    filterFlowers.classList.toggle('products__container-active')
     const dropdawnDelete = dropdawn.querySelector('.dropdawn__header-btn')
     const dropdawnContentInput = dropdawn.querySelector('.dropdawn__header-input')
+    // удалить тектс в input
     dropdawnDelete.addEventListener('click', function(){
         dropdawnContentInput.value = ''
-        dropdawnContent.innerHTML = ''
+        dropdawnContentFlowers.innerHTML = ''
         for (let i = 0; i < flowers.length; i++) {
             const element = flowers[i];
             createFlowers(element)
         }
     })
+    // фильтр по введённому 
     dropdawnContentInput.addEventListener('input', function(){
-        dropdawnContent.innerHTML = ''
+        dropdawnContentFlowers.innerHTML = ''
         for (let i = 0; i < flowers.length; i++) {
             const element = flowers[i];
             if (element.toLowerCase().includes(dropdawnContentInput.value.toLowerCase())) {
@@ -116,10 +121,307 @@ productsFilterBtn.addEventListener('click', function(){
             }
         }
     })
-    // показать выбранные чекбоксы
+    // кнопка сбросить
+    const resetBtn = filterFlowers.querySelector('.products__btn')
+    resetBtn.addEventListener('click', function(){
+        const dropdawnContentInputArr = filterFlowers.querySelectorAll('.dropdawn__content-input:checked')
+        for (let i = 0; i < dropdawnContentInputArr.length; i++) {
+            const element = dropdawnContentInputArr[i];
+            element.checked = false
+        }
+        productsFilterNumber.textContent = ''
+        productsFilterNumber.classList.remove('products__filter-number-active')
+    })
+    // кнопка показать
     const showBtn = filterFlowers.querySelector('.catalog')
     showBtn.addEventListener('click', function(){
         const dropdawnContentInputArr = filterFlowers.querySelectorAll('.dropdawn__content-input:checked') 
         console.log(dropdawnContentInputArr)
     })
+    // количество выбранных фильтров
+    const dropdawnContentItemArr = filterFlowers.querySelectorAll('.dropdawn__content-item')
+    const productsFilterNumber = filterFlowers.querySelector('.products__filter-number')
+    for (let i = 0; i < dropdawnContentItemArr.length; i++) {
+        const element = dropdawnContentItemArr[i];
+        element.addEventListener('click', function () {
+            const dropdawnContentInputArr = filterFlowers.querySelectorAll('.dropdawn__content-input:checked') 
+            productsFilterNumber.textContent = dropdawnContentInputArr.length
+            if (dropdawnContentInputArr.length > 0) {
+                productsFilterNumber.classList.add('products__filter-number-active')
+            } else {
+                productsFilterNumber.classList.remove('products__filter-number-active')
+            }
+        })
+    }
+    // закрытие
+    document.addEventListener( 'click', (e) => {
+        const withinBoundaries = e.composedPath().includes(filterFlowers);
+        if ( ! withinBoundaries ) {
+            dropdawn.classList.remove('dropdawn-active')
+            filterFlowers.classList.remove('products__container-active')
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            dropdawn.classList.remove('dropdawn-active')
+            filterFlowers.classList.remove('products__container-active')
+        }
+    });
+})
+
+// Цвета
+const colors = ['Белый', 'Оранжевый', 'Розовый', 'Зеленый', 'Красный', 'Желтый', 'Синий', 'Голубой', 'Фиолетовый', 'Чёрный', 'Салатовый', 'Фуксия', 'Бордовый']
+
+// построение фильтра по цветам
+const filterColors = document.getElementById('filter-colors')
+const dropdawnContentColors = filterColors.querySelector('.dropdawn__content')
+for (let i = 0; i < colors.length; i++) {
+    const element = colors[i];
+    createColors(element, i)
+}
+function createColors(element, i) {
+    const dropdawnContentItem = document.createElement('div')
+    dropdawnContentItem.classList.add('dropdawn__content-item')
+    dropdawnContentColors.append(dropdawnContentItem)
+    const dropdawnContentInput = document.createElement('input')
+    dropdawnContentInput.classList.add('dropdawn__content-input')
+    dropdawnContentInput.setAttribute('type', 'checkbox')
+    dropdawnContentInput.setAttribute('name', 'color')
+    dropdawnContentInput.id = `color${i}`
+    const dropdawnContentLabel = document.createElement('label')
+    dropdawnContentLabel.classList.add('dropdawn__content-label')
+    dropdawnContentLabel.setAttribute('for', `color${i}`)
+    dropdawnContentItem.append(dropdawnContentInput, dropdawnContentLabel)
+    const dropdawnContentCheck = document.createElement('div')
+    dropdawnContentCheck.classList.add('dropdawn__content-circle')
+    switch (element) {
+        case 'Белый':
+            dropdawnContentCheck.style.backgroundColor = 'white'
+            break;
+        case 'Оранжевый':
+            dropdawnContentCheck.style.backgroundColor = 'orange'
+            break;
+        case 'Розовый':
+            dropdawnContentCheck.style.backgroundColor = 'pink'
+            break;
+        case 'Зеленый':
+            dropdawnContentCheck.style.backgroundColor = 'green'
+            break;
+        case 'Красный':
+            dropdawnContentCheck.style.backgroundColor = 'red'
+            break;
+        case 'Желтый':
+            dropdawnContentCheck.style.backgroundColor = 'yellow'
+            break;
+        case 'Синий':
+            dropdawnContentCheck.style.backgroundColor = 'blue'
+            break;
+        case 'Голубой':
+            dropdawnContentCheck.style.backgroundColor = 'deepskyblue'
+            break;
+        case 'Фиолетовый':
+            dropdawnContentCheck.style.backgroundColor = 'purple'
+            break;
+        case 'Чёрный':
+            dropdawnContentCheck.style.backgroundColor = 'black'
+            break;
+        case 'Салатовый':
+            dropdawnContentCheck.style.backgroundColor = 'chartreuse'
+            break;
+        case 'Фуксия':
+            dropdawnContentCheck.style.backgroundColor = 'fuchsia'
+            break;
+        case 'Бордовый':
+            dropdawnContentCheck.style.backgroundColor = '#AD2950'
+            break;
+        default:
+            dropdawnContentCheck.style.backgroundColor = ''
+            break;
+    }
+    const dropdawnContentText = document.createElement('p')
+    dropdawnContentText.classList.add('dropdawn__content-text')
+    dropdawnContentText.textContent = element
+    dropdawnContentLabel.append(dropdawnContentCheck, dropdawnContentText)
+}
+
+// открытие фильтра по цветам
+const productsFilterBtnColor = filterColors.querySelector('.products__filter')
+productsFilterBtnColor.addEventListener('click', function(){
+    const dropdawn = filterColors.querySelector('.dropdawn')
+    dropdawn.classList.toggle('dropdawn-active')
+    filterColors.classList.toggle('products__container-active')
+    const dropdawnDelete = dropdawn.querySelector('.dropdawn__header-btn')
+    const dropdawnContentInput = dropdawn.querySelector('.dropdawn__header-input')
+    // удалить тектс в input
+    dropdawnDelete.addEventListener('click', function(){
+        dropdawnContentInput.value = ''
+        dropdawnContentColors.innerHTML = ''
+        for (let i = 0; i < colors.length; i++) {
+            const element = colors[i];
+            createColors(element)
+        }
+    })
+    // фильтр по введённому 
+    dropdawnContentInput.addEventListener('input', function(){
+        dropdawnContentColors.innerHTML = ''
+        for (let i = 0; i < colors.length; i++) {
+            const element = colors[i];
+            if (element.toLowerCase().includes(dropdawnContentInput.value.toLowerCase())) {
+                createColors(element)
+            }
+        }
+    })
+    // кнопка сбросить
+    const resetBtn = filterColors.querySelector('.products__btn')
+    resetBtn.addEventListener('click', function(){
+        const dropdawnContentInputArr = filterColors.querySelectorAll('.dropdawn__content-input:checked')
+        for (let i = 0; i < dropdawnContentInputArr.length; i++) {
+            const element = dropdawnContentInputArr[i];
+            element.checked = false
+        }
+        productsFilterNumber.textContent = ''
+        productsFilterNumber.classList.remove('products__filter-number-active')
+    })
+    // кнопка показать
+    const showBtn = filterColors.querySelector('.catalog')
+    showBtn.addEventListener('click', function(){
+        const dropdawnContentInputArr = filterColors.querySelectorAll('.dropdawn__content-input:checked') 
+        console.log(dropdawnContentInputArr)
+    })
+    // количество выбранных фильтров
+    const dropdawnContentItemArr = filterColors.querySelectorAll('.dropdawn__content-item')
+    const productsFilterNumber = filterColors.querySelector('.products__filter-number')
+    for (let i = 0; i < dropdawnContentItemArr.length; i++) {
+        const element = dropdawnContentItemArr[i];
+        element.addEventListener('click', function () {
+            const dropdawnContentInputArr = filterColors.querySelectorAll('.dropdawn__content-input:checked') 
+            productsFilterNumber.textContent = dropdawnContentInputArr.length
+            if (dropdawnContentInputArr.length > 0) {
+                productsFilterNumber.classList.add('products__filter-number-active')
+            } else {
+                productsFilterNumber.classList.remove('products__filter-number-active')
+            }
+        })
+    }
+    // закрытие
+    document.addEventListener( 'click', (e) => {
+        const withinBoundaries = e.composedPath().includes(filterColors);
+        if ( ! withinBoundaries ) {
+            dropdawn.classList.remove('dropdawn-active')
+            filterColors.classList.remove('products__container-active')
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            dropdawn.classList.remove('dropdawn-active')
+            filterColors.classList.remove('products__container-active')
+        }
+    });
+})
+
+// Цвета
+const sizes = ['Параметр размера', 'Параметр размера', 'Параметр размера', 'Параметр размера', 'Параметр размера', 'Параметр размера', 'Параметр размера']
+
+// построение фильтра по цветам
+const filterSizes = document.getElementById('filter-sizes')
+const dropdawnContentSizes = filterSizes.querySelector('.dropdawn__content')
+for (let i = 0; i < sizes.length; i++) {
+    const element = sizes[i];
+    createSizes(element, i)
+}
+function createSizes(element, i) {
+    const dropdawnContentItem = document.createElement('div')
+    dropdawnContentItem.classList.add('dropdawn__content-item')
+    dropdawnContentSizes.append(dropdawnContentItem)
+    const dropdawnContentInput = document.createElement('input')
+    dropdawnContentInput.classList.add('dropdawn__content-input')
+    dropdawnContentInput.setAttribute('type', 'checkbox')
+    dropdawnContentInput.setAttribute('name', 'size')
+    dropdawnContentInput.id = `size${i}`
+    const dropdawnContentLabel = document.createElement('label')
+    dropdawnContentLabel.classList.add('dropdawn__content-label')
+    dropdawnContentLabel.setAttribute('for', `size${i}`)
+    dropdawnContentItem.append(dropdawnContentInput, dropdawnContentLabel)
+    const dropdawnContentCheck = document.createElement('div')
+    dropdawnContentCheck.classList.add('dropdawn__content-check')
+    const dropdawnContentText = document.createElement('p')
+    dropdawnContentText.classList.add('dropdawn__content-text')
+    dropdawnContentText.textContent = element
+    dropdawnContentLabel.append(dropdawnContentCheck, dropdawnContentText)
+}
+
+// открытие фильтра по цветам
+const productsFilterBtnSizes = filterSizes.querySelector('.products__filter')
+productsFilterBtnSizes.addEventListener('click', function(){
+    const dropdawn = filterSizes.querySelector('.dropdawn')
+    dropdawn.classList.toggle('dropdawn-active')
+    filterSizes.classList.toggle('products__container-active')
+    const dropdawnDelete = dropdawn.querySelector('.dropdawn__header-btn')
+    const dropdawnContentInput = dropdawn.querySelector('.dropdawn__header-input')
+    // удалить тектс в input
+    dropdawnDelete.addEventListener('click', function(){
+        dropdawnContentInput.value = ''
+        dropdawnContentSizes.innerHTML = ''
+        for (let i = 0; i < sizes.length; i++) {
+            const element = sizes[i];
+            createSizes(element)
+        }
+    })
+    // фильтр по введённому 
+    dropdawnContentInput.addEventListener('input', function(){
+        dropdawnContentSizes.innerHTML = ''
+        for (let i = 0; i < sizes.length; i++) {
+            const element = sizes[i];
+            if (element.toLowerCase().includes(dropdawnContentInput.value.toLowerCase())) {
+                createSizes(element)
+            }
+        }
+    })
+    // кнопка сбросить
+    const resetBtn = filterSizes.querySelector('.products__btn')
+    resetBtn.addEventListener('click', function(){
+        const dropdawnContentInputArr = filterSizes.querySelectorAll('.dropdawn__content-input:checked')
+        for (let i = 0; i < dropdawnContentInputArr.length; i++) {
+            const element = dropdawnContentInputArr[i];
+            element.checked = false
+        }
+        productsFilterNumber.textContent = ''
+        productsFilterNumber.classList.remove('products__filter-number-active')
+    })
+    // кнопка показать
+    const showBtn = filterSizes.querySelector('.catalog')
+    showBtn.addEventListener('click', function(){
+        const dropdawnContentInputArr = filterSizes.querySelectorAll('.dropdawn__content-input:checked') 
+        console.log(dropdawnContentInputArr)
+    })
+    // количество выбранных фильтров
+    const dropdawnContentItemArr = filterSizes.querySelectorAll('.dropdawn__content-item')
+    const productsFilterNumber = filterSizes.querySelector('.products__filter-number')
+    for (let i = 0; i < dropdawnContentItemArr.length; i++) {
+        const element = dropdawnContentItemArr[i];
+        element.addEventListener('click', function () {
+            const dropdawnContentInputArr = filterColors.querySelectorAll('.dropdawn__content-input:checked') 
+            productsFilterNumber.textContent = dropdawnContentInputArr.length
+            if (dropdawnContentInputArr.length > 0) {
+                productsFilterNumber.classList.add('products__filter-number-active')
+            } else {
+                productsFilterNumber.classList.remove('products__filter-number-active')
+            }
+        })
+    }
+    // закрытие
+    document.addEventListener( 'click', (e) => {
+        const withinBoundaries = e.composedPath().includes(filterSizes);
+        if ( ! withinBoundaries ) {
+            dropdawn.classList.remove('dropdawn-active')
+            filterSizes.classList.remove('products__container-active')
+            
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            dropdawn.classList.remove('dropdawn-active')
+            filterSizes.classList.remove('products__container-active')
+        }
+    });
 })

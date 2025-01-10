@@ -19,55 +19,55 @@
     justify-content: center
     align-items: center
 @mixin title
-    font: 500 42px/54.6px 'PT Root UI', 'sans-serif'
+    font: 500 42px/55px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin title3
-    font: 500 32px/41.6px 'PT Root UI', 'sans-serif'
+    font: 500 32px/42px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin title5
-    font: 700 18px/23.4px 'PT Root UI', 'sans-serif'
+    font: 700 18px/23px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-content
-    font: 500 16px/20.8px 'PT Root UI', 'sans-serif'
+    font: 500 16px/20px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-content-small
-    font: 500 18px/23.4px 'PT Root UI', 'sans-serif'
+    font: 500 18px/23px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-btn
-    font: 700 16px/20.8px 'PT Root UI', 'sans-serif'
+    font: 700 16px/20px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-bold
     font: 700 20px/26px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-up
-    font: 400 13px/16.9px 'PT Root UI', 'sans-serif'
+    font: 400 13px/16px 'PT Root UI', 'sans-serif'
     color: var(--grey)
 @mixin text
-    font: 400 16px/20.8px 'PT Root UI', 'sans-serif'
+    font: 400 16px/20px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text2
-    font: 400 14px/18.2px 'PT Root UI', 'sans-serif'
+    font: 400 14px/18px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-product
-    font: 400 14px/18.2px 'PT Root UI', 'sans-serif'
+    font: 400 14px/18px 'PT Root UI', 'sans-serif'
     color: var(--grey)
 @mixin text-price
     font: 700 20px/26px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-map
-    font: 500 24px/28.8px 'PT Root UI', 'sans-serif'
+    font: 500 24px/28px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-map-span
-    font: 400 16px/19.2px 'PT Root UI', 'sans-serif'
+    font: 400 16px/19px 'PT Root UI', 'sans-serif'
     color: var(--black)
 @mixin text-footer
-    font: 400 16px/20.8px 'PT Root UI', 'sans-serif'
+    font: 400 16px/20px 'PT Root UI', 'sans-serif'
     color: var(--grey)
 @mixin subtext-footer
-    font: 400 12px/15.6px 'PT Root UI', 'sans-serif'
+    font: 400 12px/16px 'PT Root UI', 'sans-serif'
     color: var(--grey)
 @mixin text-filter
-    font: 500 12px/15.6px 'PT Root UI', 'sans-serif'
+    font: 500 12px/16px 'PT Root UI', 'sans-serif'
     color: #fff    
 
 .container
@@ -457,6 +457,8 @@ body
         gap: 16px
     &__container
         position: relative
+        &-active .products__filter-icon
+            transform: scale(1, -1)
     &__filter
         @include flex
         @include text-content
@@ -470,6 +472,7 @@ body
         cursor: pointer
         &-icon
             @include flex
+            transition: transform 0.3s ease
         &-reset
             background-color: #fff
         &-number
@@ -478,7 +481,8 @@ body
             width: 18px
             height: 18px
             border-radius: 50%
-            background-color: var(--burgundy)
+            &-active
+                background-color: var(--burgundy)
         &-small
             display: none
     &__btn
@@ -901,17 +905,21 @@ body
             white-space: nowrap
 
 .dropdawn
-    display: none
     position: absolute    
     top: 60px   
     left: -50%
     width: 306px
+    height: 0
     border-radius: 8px 
     box-shadow: 0px 20px 65px -5px #1212171A  
     background-color: #fff
+    overflow: hidden
+    opacity: 0
+    transition: height 0.3s ease, opacity 0.3s ease
     z-index: 100
     &-active 
-        display: block
+        height: 484px
+        opacity: 1
     &__header
         display: flex
         gap: 8px
@@ -921,6 +929,12 @@ body
             flex: 0 0 24px
             height: 24px
             background: url('../img/search_bg.svg') center center no-repeat
+        &-input 
+            font: 500 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &::placeholder
+                font: 400 14px/22px 'PT Root UI', 'sans-serif'
+                color: #93949B
         &-btn 
             flex: 0 0 24px
             height: 24px
@@ -929,10 +943,18 @@ body
     &__content
         max-height: 350px
         overflow-y: scroll
+        scrollbar-width: thin
+        scrollbar-color: #E6E9ED #fff
+        &::-webkit-scrollbar-thumb 
+            border-radius: 4px
+        &::-webkit-scrollbar-button
+
         &-item
             margin: 0 16px
             padding: 16px 8px
             border-bottom: 1px solid #E9EFF6
+            &:last-child
+                border-bottom: none
         &-input
             display: none
             width: 0
@@ -943,6 +965,11 @@ body
                     image: url(../img/check.png)
                     repeat: no-repeat
                     position: center center
+            &:checked ~ .dropdawn__content-label .dropdawn__content-circle
+                outline: 1px solid var(--burgundy)
+        &-text 
+            font: 500 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
         &-label 
             @include flex
             justify-content: start
@@ -952,10 +979,16 @@ body
             height: 18px
             border: 1px solid #93949B
             border-radius: 4px 
+        &-circle 
+            width: 30px
+            height: 30px
+            border: 5px solid #F3F5F7
+            border-radius: 50%
     &__footer 
         display: flex
         gap: 8px
         padding: 16px 24px
+        border-top: 1px solid #E9EFF6
         &-btn 
             flex: 0 0 125px
     
