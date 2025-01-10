@@ -1,3 +1,4 @@
+// купить\в корзине
 const productBtns = document.querySelectorAll('.product__btn');
 for (let i = 0; i < productBtns.length; i++) {
     const element = productBtns[i];
@@ -24,7 +25,7 @@ for (let i = 0; i < productBtns.length; i++) {
        
     });
 };
-
+// понравившиеся
 const productHears = document.querySelectorAll('.product__heart')
 for (let i = 0; i < productHears.length; i++) {
     const element = productHears[i];
@@ -32,7 +33,7 @@ for (let i = 0; i < productHears.length; i++) {
         element.classList.toggle('product__heart-active');
     });
 };
-
+// количество карточек
 const products = document.querySelector('.products')
 const productArr = products.querySelectorAll('.product')
 if (window.screen.width < '544') {
@@ -43,7 +44,7 @@ if (window.screen.width < '544') {
         };
     };
 };
-
+// футер раскрытие меню
 const buyer = document.getElementById('buyer');
 const list = document.querySelector('.footer__list')
 buyer.addEventListener('click', function(){
@@ -53,4 +54,72 @@ buyer.addEventListener('click', function(){
     } else {
         list.style.height = `0px`;
     }
+})
+// открытие\закрытие каталога
+const catalog = document.getElementById('catalog')
+const popup = document.querySelector('.popup')
+catalog.addEventListener('click', function(){
+    popup.classList.toggle('popup-active')
+})
+
+const flowers = ['Альстромерия', 'Амариллис', 'Анемон', 'Гвоздика', 'Гвоздика кустовая', 'Гербера', 'Гербера мини', 'Гиацинт', 'Гипсофила', 'Гортензия', 'Ирис', 'Калла', 'Лаванда', 'Лилия', 'Мимоза', 'Нарцисс', 'Орхидея Ванда', 'Орхидея Фаленопсис', 'Орхидея Цимбидиум', 'Пион', "Пион Сара Бернар", 'Подсолнух', 'Ранункулюс', 'Роза', 'Роза Вувузела', 'Роза Пинк Охара', 'Роза Эквадор', 'Роза кустовая', 'Роза кустовая пионовидная', "Роза пионовидная", 'Ромашка', 'Сирень', 'Тюльпан', 'Тюльпан пионовидный', 'Хлопок', 'Хризантема Антонов', 'Хризантема Момоко', 'Хризантема кустовая', 'Хризантема одноголовая', 'Эустома', 'Эустома махровая']
+
+const filterFlowers = document.getElementById('filter-flowers')
+const dropdawnContent = filterFlowers.querySelector('.dropdawn__content')
+
+for (let i = 0; i < flowers.length; i++) {
+    const element = flowers[i];
+    createFlowers(element, i)
+}
+function createFlowers(element, i) {
+    const dropdawnContentItem = document.createElement('div')
+    dropdawnContentItem.classList.add('dropdawn__content-item')
+    dropdawnContent.append(dropdawnContentItem)
+    const dropdawnContentInput = document.createElement('input')
+    dropdawnContentInput.classList.add('dropdawn__content-input')
+    dropdawnContentInput.setAttribute('type', 'checkbox')
+    dropdawnContentInput.setAttribute('name', 'flower')
+    dropdawnContentInput.id = `flower${i}`
+    const dropdawnContentLabel = document.createElement('label')
+    dropdawnContentLabel.classList.add('dropdawn__content-label')
+    dropdawnContentLabel.setAttribute('for', `flower${i}`)
+    dropdawnContentItem.append(dropdawnContentInput, dropdawnContentLabel)
+    const dropdawnContentCheck = document.createElement('div')
+    dropdawnContentCheck.classList.add('dropdawn__content-check')
+    const dropdawnContentText = document.createElement('p')
+    dropdawnContentText.classList.add('dropdawn__content-text')
+    dropdawnContentText.textContent = element
+    dropdawnContentLabel.append(dropdawnContentCheck, dropdawnContentText)
+}
+
+// открытие фильтра по цветам
+const productsFilterBtn = filterFlowers.querySelector('.products__filter')
+productsFilterBtn.addEventListener('click', function(){
+    const dropdawn = filterFlowers.querySelector('.dropdawn')
+    dropdawn.classList.toggle('dropdawn-active')
+    const dropdawnDelete = dropdawn.querySelector('.dropdawn__header-btn')
+    const dropdawnContentInput = dropdawn.querySelector('.dropdawn__header-input')
+    dropdawnDelete.addEventListener('click', function(){
+        dropdawnContentInput.value = ''
+        dropdawnContent.innerHTML = ''
+        for (let i = 0; i < flowers.length; i++) {
+            const element = flowers[i];
+            createFlowers(element)
+        }
+    })
+    dropdawnContentInput.addEventListener('input', function(){
+        dropdawnContent.innerHTML = ''
+        for (let i = 0; i < flowers.length; i++) {
+            const element = flowers[i];
+            if (element.toLowerCase().includes(dropdawnContentInput.value.toLowerCase())) {
+                createFlowers(element)
+            }
+        }
+    })
+    // показать выбранные чекбоксы
+    const showBtn = filterFlowers.querySelector('.catalog')
+    showBtn.addEventListener('click', function(){
+        const dropdawnContentInputArr = filterFlowers.querySelectorAll('.dropdawn__content-input:checked') 
+        console.log(dropdawnContentInputArr)
+    })
 })

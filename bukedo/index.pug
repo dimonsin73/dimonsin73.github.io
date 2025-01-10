@@ -65,7 +65,7 @@ html(lang="ru")
                     .header__bottom-full
                         a(href="").logo 
                             img(src="img/logo.png", alt="BUCEDO")
-                        button.catalog
+                        button.catalog#catalog
                             .catalog__icon
                                 svg(width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg")
                                     path(d="M5.44444 1H14M5.44444 6.33333H17M5.44444 11.6667H11.5M1 1H1.00889M1 6.33333H1.00889M1 11.6667H1.00889" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
@@ -120,6 +120,71 @@ html(lang="ru")
                                     p 23 июля с 11:00 до 21:00
                                     svg(width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M1.5 1.25L5.46967 5.51404C5.76256 5.82865 6.23744 5.82865 6.53033 5.51404L10.5 1.25" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
+                    .popup
+                        .popup__wrapper 
+                            .composition
+                                ul.popup__list 
+                                    li.popup__list-item Букеты
+                                    li.popup__list-item Цветы в коробке
+                                    li.popup__list-item Корзины с цветами
+                                    li.popup__list-item Букеты с фруктами
+                                    li.popup__list-item Шляпные коробки
+                                    li.popup__list-item Новогодние композиции
+                                    li.popup__list-item Подарочные корзины
+                                    li.popup__list-item Фруктовые корзины
+                                    li.popup__list-item Топперы
+                                    li.popup__list-item Съедобные букеты
+                                    li.popup__list-item Все подарки
+                            .filters
+                                ul.popup__list 
+                                        li.popup__list-item По цене
+                                        li.popup__list-item.popup__list-item-active По цветам
+                                        li.popup__list-item Повод
+                                        li.popup__list-item По размеру
+                                        li.popup__list-item По гамме
+                            .contant 
+                                ul.contant__list 
+                                    li.contant__list-item Альстромерия
+                                    li.contant__list-item Амариллис
+                                    li.contant__list-item Анемон
+                                    li.contant__list-item Гвоздика
+                                    li.contant__list-item Гвоздика кустовая
+                                    li.contant__list-item Гербера
+                                    li.contant__list-item Гербера мини
+                                    li.contant__list-item Гиацинт
+                                    li.contant__list-item Гипсофила
+                                    li.contant__list-item Гортензия
+                                    li.contant__list-item Ирис
+                                    li.contant__list-item Калла
+                                    li.contant__list-item Лаванда
+                                    li.contant__list-item Лилия
+                                    li.contant__list-item Мимоза
+                                    li.contant__list-item Нарцисс
+                                    li.contant__list-item Орхидея Ванда
+                                    li.contant__list-item Орхидея Фаленопсис
+                                    li.contant__list-item Орхидея Цимбидиум
+                                    li.contant__list-item Пион
+                                    li.contant__list-item Пион Сара Бернар
+                                    li.contant__list-item Подсолнух
+                                    li.contant__list-item Ранункулюс
+                                    li.contant__list-item Роза
+                                    li.contant__list-item Роза Вувузела
+                                    li.contant__list-item Роза Пинк Охара
+                                    li.contant__list-item Роза Эквадор
+                                    li.contant__list-item Роза кустовая
+                                    li.contant__list-item Роза кустовая пионовидная
+                                    li.contant__list-item Роза пионовидная
+                                    li.contant__list-item Ромашка
+                                    li.contant__list-item Сирень
+                                    li.contant__list-item Тюльпан
+                                    li.contant__list-item Тюльпан пионовидный
+                                    li.contant__list-item Хлопок
+                                    li.contant__list-item Хризантема Антонов
+                                    li.contant__list-item Хризантема Момоко
+                                    li.contant__list-item Хризантема кустовая
+                                    li.contant__list-item Хризантема одноголовая
+                                    li.contant__list-item Эустома
+                                    li.contant__list-item Эустома махровая
             .header__social
                 a(href="tel:+7 495 215-20-97" type="tel").header__social-item 
                     .header__social-icon
@@ -147,7 +212,7 @@ html(lang="ru")
                     .footer__social-info 
                         .footer__social-title Telegram
                         .footer__social-text @Bukedo
-
+                    
         main
             section.stack
                 .container
@@ -319,7 +384,7 @@ html(lang="ru")
                                         button.product__btn.product__btn-small 
                                             svg(width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg")  
                                                 path(d="M1.8335 1.03345H4.14073C5.11433 1.03345 5.95388 1.71764 6.15038 2.6712L8.34746 13.3331C8.60945 14.6045 9.72886 15.5168 11.027 15.5168H19.2706C20.5342 15.5168 21.6335 14.6513 21.93 13.423L23.1086 8.5411C23.4202 7.25014 22.442 6.00769 21.114 6.00769H6.80774M10.7871 20.9304C10.7871 21.4799 10.3417 21.9253 9.79229 21.9253C9.24285 21.9253 8.79744 21.4799 8.79744 20.9304C8.79744 20.381 9.24285 19.9356 9.79229 19.9356C10.3417 19.9356 10.7871 20.381 10.7871 20.9304ZM21.7305 20.9304C21.7305 21.4799 21.2851 21.9253 20.7356 21.9253C20.1862 21.9253 19.7408 21.4799 19.7408 20.9304C19.7408 20.381 20.1862 19.9356 20.7356 19.9356C21.2851 19.9356 21.7305 20.381 21.7305 20.9304Z" stroke="#AD2950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                        button.allbouquets 
+                        button.allbouquets
                             a(href="").allbouquets__wrapper.btn-text
                                 p.allbouquets__text Все букеты
                                 .allbouquets__icon
@@ -346,12 +411,22 @@ html(lang="ru")
                                     .products__filer-icon 
                                         svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
-                                button.products__filter.products__filter-full
-                                    p Цветы
-                                    p.products__filter-number 1
-                                    .products__filer-icon 
-                                        svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                            path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                                .products__container#filter-flowers
+                                    button.products__filter.products__filter-full
+                                        p Цветы
+                                        p.products__filter-number 1
+                                        .products__filer-icon 
+                                            svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                                    .dropdawn
+                                        .dropdawn__header 
+                                            .dropdawn__header-icon 
+                                            input.dropdawn__header-input(type="text" placeholder="Поиск по цветам")
+                                            .dropdawn__header-btn
+                                        .dropdawn__content 
+                                        .dropdawn__footer 
+                                            button.dropdawn__footer-btn.catalog.catalog__text Показать
+                                            button.dropdawn__footer-btn.products__btn.btn-text Сбросить
                                 button.products__filter.products__filter-full
                                     p Цена
                                     p.products__filter-number 3
