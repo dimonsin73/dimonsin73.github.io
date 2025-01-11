@@ -457,8 +457,12 @@ body
         gap: 16px
     &__container
         position: relative
-        &-active .products__filter-icon
+        display: flex
+        flex: 1 0 auto
+        &-active .icon-chevrone
             transform: scale(1, -1)
+        &-small
+            display: none
     &__filter
         @include flex
         @include text-content
@@ -482,9 +486,10 @@ body
             height: 18px
             border-radius: 50%
             &-active
+                flex: 0 0 auto
                 background-color: var(--burgundy)
-        &-small
-            display: none
+        &-text 
+            width: 127px
     &__btn
         border: 1px solid #E5E7EB
         border-radius: 12px
@@ -906,10 +911,11 @@ body
 
 .dropdawn
     position: absolute    
-    top: 60px   
+    top: 50px   
     left: -50%
-    width: 306px
+    min-width: 306px
     height: 0
+    margin-top: 30px
     border-radius: 8px 
     box-shadow: 0px 20px 65px -5px #1212171A  
     background-color: #fff
@@ -990,9 +996,88 @@ body
         padding: 16px 24px
         border-top: 1px solid #E9EFF6
         &-btn 
-            flex: 0 0 125px
-    
-    
+            flex: 0 0 calc(50% - 4px)
+    &__sorter 
+        margin: 0 16px
+        padding: 16px 8px
+        border-bottom: 1px solid #E9EFF6
+        font: 500 14px / 18px "PT Root UI", "sans-serif"
+        color: var(--black)
+        cursor: pointer
+        &:last-child
+            border-bottom: none
+    &__wrapper
+        padding: 0 24px
+    &__item 
+        border-bottom: 1px solid #E9EFF6
+        &:last-child
+            border-bottom: none
+    &__head
+        display: flex
+        justify-content: space-between
+        padding: 18.5px 24px
+        font: 700 18px/24px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        cursor: pointer
+        &-active .head-chevrone
+            transform: scale(1, -1)
+#filter-prices .dropdawn-active
+    height: 215px
+#filter-filters .dropdawn
+        left: 0
+#filter-sorter .dropdawn
+    min-width: max-content
+    left: 50%
+    transform: translateX(-50%)
+    &-active
+        height: 203px
+
+
+.polzunok-container-5 
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 16px
+    padding: 16px 24px
+.polzunok-container-5:after 
+    content: ""
+    clear: both
+    display: table
+.polzunok-container-5 .ui-slider 
+    position: relative
+    grid-column: span 2
+    margin: 16px 12px 0
+    height: 2px
+    background: #E6E9ED
+.polzunok-container-5 .ui-slider .ui-slider-handle
+    position: absolute
+    top: -11px
+    width: 24px
+    height: 24px
+    margin-left: -12px
+    border-radius: 50%
+    background: var(--burgundy)
+    outline: none
+    cursor: pointer
+    z-index: 2
+    transition: transform 0.2s, border 0.4s
+.polzunok-input-5-left,
+.polzunok-input-5-right
+    width: 155px
+    padding: 14px 16px
+    border: 1px solid #93949B
+    border-radius: 12px
+    font: 400 16px/20px 'PT Root UI', 'sans-serif'
+.polzunok-input-5-left 
+    float: left
+.polzunok-input-5-right 
+    float: right
+.polzunok-container-5 .ui-slider .ui-slider-range 
+    position: absolute
+    z-index: 1
+    height: 2px
+    border: 0
+    background: var(--burgundy)
+
 
 
 
@@ -1076,6 +1161,10 @@ body
     .contant__list
         grid-template-rows: repeat(21, auto)
         grid-template-columns: repeat(2, 1fr)
+@media (max-width: 1100px)
+    #filter-sizes .dropdawn 
+        left: inherit
+        right: 0
 @media (max-width: 1023px)
     .search 
         display: none
@@ -1209,7 +1298,19 @@ body
     .contant__list
         grid-template-columns: 1fr
         grid-auto-flow: row
+@media (max-width: 947px)
+    #filter-sizes .dropdawn 
+        left: 0
+        right: inherit
+    #filter-colors .dropdawn 
+        left: inherit
+        right: 0
+@media (max-width: 907px)
+    #filter-sizes .dropdawn
+        left: 0
 @media (max-width: 767px) 
+    .small-hidden
+        display: none
     .header
         &__top
             margin-top: 0
@@ -1296,7 +1397,7 @@ body
         &__filter
             gap: 8px
             flex: 1 0 auto
-            &-full 
+        &__container 
             &-small
                 display: flex
         &__content
@@ -1456,6 +1557,7 @@ body
             &-2
                 right: -100px
 @media (max-width: 544px)
+    
     .header
         &__top
             &-small

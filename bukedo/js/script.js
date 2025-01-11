@@ -154,7 +154,7 @@ productsFilterBtnFlower.addEventListener('click', function(){
         })
     }
     // закрытие
-    document.addEventListener( 'click', (e) => {
+    document.addEventListener( 'mousedown', (e) => {
         const withinBoundaries = e.composedPath().includes(filterFlowers);
         if ( ! withinBoundaries ) {
             dropdawn.classList.remove('dropdawn-active')
@@ -304,7 +304,7 @@ productsFilterBtnColor.addEventListener('click', function(){
         })
     }
     // закрытие
-    document.addEventListener( 'click', (e) => {
+    document.addEventListener( 'mousedown', (e) => {
         const withinBoundaries = e.composedPath().includes(filterColors);
         if ( ! withinBoundaries ) {
             dropdawn.classList.remove('dropdawn-active')
@@ -319,10 +319,10 @@ productsFilterBtnColor.addEventListener('click', function(){
     });
 })
 
-// Цвета
+// Размеры
 const sizes = ['Параметр размера', 'Параметр размера', 'Параметр размера', 'Параметр размера', 'Параметр размера', 'Параметр размера', 'Параметр размера']
 
-// построение фильтра по цветам
+// построение фильтра по размерам
 const filterSizes = document.getElementById('filter-sizes')
 const dropdawnContentSizes = filterSizes.querySelector('.dropdawn__content')
 for (let i = 0; i < sizes.length; i++) {
@@ -350,7 +350,7 @@ function createSizes(element, i) {
     dropdawnContentLabel.append(dropdawnContentCheck, dropdawnContentText)
 }
 
-// открытие фильтра по цветам
+// открытие фильтра по размерам
 const productsFilterBtnSizes = filterSizes.querySelector('.products__filter')
 productsFilterBtnSizes.addEventListener('click', function(){
     const dropdawn = filterSizes.querySelector('.dropdawn')
@@ -410,18 +410,189 @@ productsFilterBtnSizes.addEventListener('click', function(){
         })
     }
     // закрытие
-    document.addEventListener( 'click', (e) => {
+    document.addEventListener( 'mousedown', (e) => {
         const withinBoundaries = e.composedPath().includes(filterSizes);
         if ( ! withinBoundaries ) {
             dropdawn.classList.remove('dropdawn-active')
             filterSizes.classList.remove('products__container-active')
-            
         }
     })
     document.addEventListener('keydown', function(e) {
         if( e.keyCode == 27 ){ 
             dropdawn.classList.remove('dropdawn-active')
             filterSizes.classList.remove('products__container-active')
+        }
+    });
+})
+
+// открытие фильтра по цене
+const filterPrices = document.getElementById('filter-prices')
+const productsFilterBtnPrices = filterPrices.querySelector('.products__filter')
+productsFilterBtnPrices.addEventListener('click', function(){
+    const dropdawn = filterPrices.querySelector('.dropdawn')
+    dropdawn.classList.toggle('dropdawn-active')
+    filterPrices.classList.toggle('products__container-active')
+    // кнопка сбросить
+    const resetBtn = filterPrices.querySelector('.products__btn')
+    resetBtn.addEventListener('click', function(){
+        const pil = document.querySelector('.polzunok-input-5-left')
+        const pir = document.querySelector('.polzunok-input-5-right')
+        pil.value = `0 ₽`
+        pir.value = `100 000 ₽`
+    })
+    // кнопка показать
+    const showBtn = filterPrices.querySelector('.catalog')
+    showBtn.addEventListener('click', function(){
+        const dropdawnPriceInputArr = filterPrices.querySelectorAll('.dropdawn__price-input') 
+        for (let i = 0; i < dropdawnPriceInputArr.length; i++) {
+            const element = dropdawnPriceInputArr[i];
+            console.log(element.value)
+        }
+    })
+    // закрытие
+    document.addEventListener( 'mousedown', (e) => {
+        const withinBoundaries = e.composedPath().includes(filterPrices);
+        if ( ! withinBoundaries ) {
+            dropdawn.classList.remove('dropdawn-active')
+            filterPrices.classList.remove('products__container-active')
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            dropdawn.classList.remove('dropdawn-active')
+            filterPrices.classList.remove('products__container-active')
+        }
+    });
+})
+
+$(".polzunok-5").slider({
+    min: 0,
+    max: 100000,
+    values: [0, 100000],
+    range: true,
+    animate: "fast",
+    slide : function(event, ui) {    
+        $(".polzunok-input-5-left").val(ui.values[ 0 ]);   
+        $(".polzunok-input-5-right").val(ui.values[ 1 ]);  
+    }    
+});
+$(".polzunok-input-5-left").val($(".polzunok-5").slider("values", 0));
+$(".polzunok-input-5-right").val($(".polzunok-5").slider("values", 1));
+// кнопка сбросить
+$('#price-reset').click(function() {
+    $(".polzunok-5").slider({
+        values: [0, 100000]
+    });
+});
+$(".polzunok-container-5 input").change(function() {
+    var input_left = $(".polzunok-input-5-left").val().replace(/[^0-9]/g, ''),    
+    opt_left = $(".polzunok-5").slider("option", "min"),
+    where_right = $(".polzunok-5").slider("values", 1),
+    input_right = $(".polzunok-input-5-right").val().replace(/[^0-9]/g, ''),    
+    opt_right = $(".polzunok-5").slider("option", "max"),
+    where_left = $(".polzunok-5").slider("values", 0); 
+    if (input_left > where_right) { 
+        input_left = where_right; 
+    }
+    if (input_left < opt_left) {
+        input_left = opt_left; 
+    }
+    if (input_left == "") {
+        input_left = 0;    
+    }        
+    if (input_right < where_left) { 
+        input_right = where_left; 
+    }
+    if (input_right > opt_right) {
+        input_right = opt_right; 
+    }
+    if (input_right == "") {
+        input_right = 0;    
+    }    
+    $(".polzunok-input-5-left").val(`${input_left.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`); 
+    $(".polzunok-input-5-right").val(`${input_right.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`); 
+    if (input_left != where_left) {
+        $(".polzunok-5").slider("values", 0, input_left);
+    }
+    if (input_right != where_right) {
+        $(".polzunok-5").slider("values", 1, input_right);
+    }
+});
+const pil = document.querySelector('.polzunok-input-5-left')
+const pir = document.querySelector('.polzunok-input-5-right')
+const p = document.querySelector('.polzunok-5')
+pil.value = `${pil.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
+pir.value = `${pir.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
+p.addEventListener('mouseup', function(){
+    pil.value = `${pil.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
+    pir.value = `${pir.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
+})
+
+
+// открытие фильтра сортировки
+const filterSorter = document.getElementById('filter-sorter')
+const productsFilterBtnSorter = filterSorter.querySelector('.products__filter')
+productsFilterBtnSorter.addEventListener('click', function(){
+    const dropdawn = filterSorter.querySelector('.dropdawn')
+    dropdawn.classList.toggle('dropdawn-active')
+    filterSorter.classList.toggle('products__container-active')
+    const dropdawnSorter = dropdawn.querySelectorAll('.dropdawn__sorter')
+    const productsFilterText = filterSorter.querySelector('.products__filter-text')
+    for (let i = 0; i < dropdawnSorter.length; i++) {
+        const element = dropdawnSorter[i];
+        element.addEventListener('click', function(){
+            productsFilterText.textContent = element.textContent
+            dropdawn.classList.remove('dropdawn-active')
+            filterSorter.classList.remove('products__container-active')
+        })
+    }
+    // закрытие
+    document.addEventListener( 'mousedown', (e) => {
+        const withinBoundaries = e.composedPath().includes(filterSorter);
+        if ( ! withinBoundaries ) {
+            dropdawn.classList.remove('dropdawn-active')
+            filterSorter.classList.remove('products__container-active')
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            dropdawn.classList.remove('dropdawn-active')
+            filterSorter.classList.remove('products__container-active')
+        }
+    });
+})
+
+
+// открытие фильтров
+const filterFilters = document.getElementById('filter-filters')
+const productsFilterBtnFilters= filterFilters.querySelector('.products__filter')
+productsFilterBtnFilters.addEventListener('click', function(){
+    const dropdawn = filterFilters.querySelector('.dropdawn')
+    dropdawn.classList.toggle('dropdawn-active')
+    filterFilters.classList.toggle('products__container-active')
+    const dropdawnSorter = dropdawn.querySelectorAll('.dropdawn__sorter')
+    const productsFilterText = filterFilters.querySelector('.products__filter-text')
+    for (let i = 0; i < dropdawnSorter.length; i++) {
+        const element = dropdawnSorter[i];
+        element.addEventListener('click', function(){
+            productsFilterText.textContent = element.textContent
+            dropdawn.classList.remove('dropdawn-active')
+            filterPrices.classList.remove('products__container-active')
+        })
+    }
+
+    // закрытие
+    document.addEventListener( 'mousedown', (e) => {
+        const withinBoundaries = e.composedPath().includes(filterFilters);
+        if ( ! withinBoundaries ) {
+            dropdawn.classList.remove('dropdawn-active')
+            filterFilters.classList.remove('products__container-active')
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            dropdawn.classList.remove('dropdawn-active')
+            filterFilters.classList.remove('products__container-active')
         }
     });
 })

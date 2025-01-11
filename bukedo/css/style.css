@@ -621,9 +621,14 @@ body {
 }
 .products__container {
   position: relative;
+  display: flex;
+  flex: 1 0 auto;
 }
-.products__container-active .products__filter-icon {
+.products__container-active .icon-chevrone {
   transform: scale(1, -1);
+}
+.products__container-small {
+  display: none;
 }
 .products__filter {
   display: flex;
@@ -660,10 +665,11 @@ body {
   border-radius: 50%;
 }
 .products__filter-number-active {
+  flex: 0 0 auto;
   background-color: var(--burgundy);
 }
-.products__filter-small {
-  display: none;
+.products__filter-text {
+  width: 127px;
 }
 .products__btn {
   border: 1px solid #E5E7EB;
@@ -1273,10 +1279,11 @@ body {
 
 .dropdawn {
   position: absolute;
-  top: 60px;
+  top: 50px;
   left: -50%;
-  width: 306px;
+  min-width: 306px;
   height: 0;
+  margin-top: 30px;
   border-radius: 8px;
   box-shadow: 0px 20px 65px -5px rgba(18, 18, 23, 0.1019607843);
   background-color: #fff;
@@ -1383,7 +1390,116 @@ body {
   border-top: 1px solid #E9EFF6;
 }
 .dropdawn__footer-btn {
-  flex: 0 0 125px;
+  flex: 0 0 calc(50% - 4px);
+}
+.dropdawn__sorter {
+  margin: 0 16px;
+  padding: 16px 8px;
+  border-bottom: 1px solid #E9EFF6;
+  font: 500 14px/18px "PT Root UI", "sans-serif";
+  color: var(--black);
+  cursor: pointer;
+}
+.dropdawn__sorter:last-child {
+  border-bottom: none;
+}
+.dropdawn__wrapper {
+  padding: 0 24px;
+}
+.dropdawn__item {
+  border-bottom: 1px solid #E9EFF6;
+}
+.dropdawn__item:last-child {
+  border-bottom: none;
+}
+.dropdawn__head {
+  display: flex;
+  justify-content: space-between;
+  padding: 18.5px 24px;
+  font: 700 18px/24px "PT Root UI", "sans-serif";
+  color: var(--black);
+  cursor: pointer;
+}
+.dropdawn__head-active .head-chevrone {
+  transform: scale(1, -1);
+}
+
+#filter-prices .dropdawn-active {
+  height: 215px;
+}
+
+#filter-filters .dropdawn {
+  left: 0;
+}
+
+#filter-sorter .dropdawn {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#filter-sorter .dropdawn-active {
+  height: 203px;
+}
+
+.polzunok-container-5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.polzunok-container-5:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.polzunok-container-5 .ui-slider {
+  position: relative;
+  grid-column: span 2;
+  margin: 16px 12px 0;
+  height: 2px;
+  background: #E6E9ED;
+}
+
+.polzunok-container-5 .ui-slider .ui-slider-handle {
+  position: absolute;
+  top: -11px;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-radius: 50%;
+  background: var(--burgundy);
+  outline: none;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s, border 0.4s;
+}
+
+.polzunok-input-5-left,
+.polzunok-input-5-right {
+  width: 155px;
+  padding: 14px 16px;
+  border: 1px solid #93949B;
+  border-radius: 12px;
+  font: 400 16px/20px "PT Root UI", "sans-serif";
+}
+
+.polzunok-input-5-left {
+  float: left;
+}
+
+.polzunok-input-5-right {
+  float: right;
+}
+
+.polzunok-container-5 .ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  height: 2px;
+  border: 0;
+  background: var(--burgundy);
 }
 
 @media (max-width: 1750px) {
@@ -1492,6 +1608,12 @@ body {
   .contant__list {
     grid-template-rows: repeat(21, auto);
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1100px) {
+  #filter-sizes .dropdawn {
+    left: inherit;
+    right: 0;
   }
 }
 @media (max-width: 1023px) {
@@ -1660,7 +1782,25 @@ body {
     grid-auto-flow: row;
   }
 }
+@media (max-width: 947px) {
+  #filter-sizes .dropdawn {
+    left: 0;
+    right: inherit;
+  }
+  #filter-colors .dropdawn {
+    left: inherit;
+    right: 0;
+  }
+}
+@media (max-width: 907px) {
+  #filter-sizes .dropdawn {
+    left: 0;
+  }
+}
 @media (max-width: 767px) {
+  .small-hidden {
+    display: none;
+  }
   .header__top {
     margin-top: 0;
     padding-top: 24px;
@@ -1784,7 +1924,7 @@ body {
     gap: 8px;
     flex: 1 0 auto;
   }
-  .products__filter-small {
+  .products__container-small {
     display: flex;
   }
   .products__content {
