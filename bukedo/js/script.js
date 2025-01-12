@@ -73,7 +73,6 @@ for (let i = 0; i < flowers.length; i++) {
     const element = flowers[i];
     createFlowers(element, i)
 }
-
 function createFlowers(element, i) {
     const dropdawnContentItem = document.createElement('div')
     dropdawnContentItem.classList.add('dropdawn__content-item')
@@ -365,7 +364,7 @@ productsFilterBtnSizes.addEventListener('click', function(){
         dropdawnContentSizes.innerHTML = ''
         for (let i = 0; i < sizes.length; i++) {
             const element = sizes[i];
-            createSizes(element)
+            createSizes(element, i)
         }
     })
     // фильтр по введённому 
@@ -374,7 +373,7 @@ productsFilterBtnSizes.addEventListener('click', function(){
         for (let i = 0; i < sizes.length; i++) {
             const element = sizes[i];
             if (element.toLowerCase().includes(dropdawnContentInput.value.toLowerCase())) {
-                createSizes(element)
+                createSizes(element, i)
             }
         }
     })
@@ -401,7 +400,7 @@ productsFilterBtnSizes.addEventListener('click', function(){
     for (let i = 0; i < dropdawnContentItemArr.length; i++) {
         const element = dropdawnContentItemArr[i];
         element.addEventListener('click', function () {
-            const dropdawnContentInputArr = filterColors.querySelectorAll('.dropdawn__content-input:checked') 
+            const dropdawnContentInputArr = filterSizes.querySelectorAll('.dropdawn__content-input:checked') 
             productsFilterNumber.textContent = dropdawnContentInputArr.length
             if (dropdawnContentInputArr.length > 0) {
                 productsFilterNumber.classList.add('products__filter-number-active')
@@ -527,6 +526,30 @@ pir.value = `${pir.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
 p.addEventListener('mouseup', function(){
     pil.value = `${pil.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
     pir.value = `${pir.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
+})
+
+// кнопка сбросить фильтры 
+const productsFilterReset = document.querySelector('.products__filter-reset')
+const productsFilterNumberArr = document.querySelectorAll('.products__filter-number')
+productsFilterReset.addEventListener('click', function(){
+    const dropdawnInputArr = document.querySelectorAll('.dropdawn__content-input:checked')
+    for (let i = 0; i < dropdawnInputArr.length; i++) {
+        const element = dropdawnInputArr[i];
+        element.checked = false
+    }
+    for (let i = 0; i < productsFilterNumberArr.length; i++) {
+        const element = productsFilterNumberArr[i];
+        element.textContent = ''
+        element.classList.remove('products__filter-number-active')
+    }
+    const pil = document.querySelector('.polzunok-input-5-left')
+    const pir = document.querySelector('.polzunok-input-5-right')
+    pil.value = `0 ₽`
+    pir.value = `100 000 ₽`
+    
+    $(".polzunok-5").slider({
+        values: [0, 100000]
+    });
 })
 
 
@@ -904,10 +927,10 @@ function createItemSizes(element, i) {
     dropdawnContentInput.classList.add('dropdawn__content-input')
     dropdawnContentInput.setAttribute('type', 'checkbox')
     dropdawnContentInput.setAttribute('name', 'size')
-    dropdawnContentInput.id = `size${i}`
+    dropdawnContentInput.id = `itemsize${i}`
     const dropdawnContentLabel = document.createElement('label')
     dropdawnContentLabel.classList.add('dropdawn__content-label')
-    dropdawnContentLabel.setAttribute('for', `size${i}`)
+    dropdawnContentLabel.setAttribute('for', `itemsize${i}`)
     dropdawnContentItem.append(dropdawnContentInput, dropdawnContentLabel)
     const dropdawnContentCheck = document.createElement('div')
     dropdawnContentCheck.classList.add('dropdawn__content-check')
