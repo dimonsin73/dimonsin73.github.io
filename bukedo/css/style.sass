@@ -7,6 +7,7 @@
     --green: #03A050
     --whatsapp: #29A71A
     --telegram: #23B7EC
+    --phone: #FEFAFC
     --border: #DFE2E8
     --rise: #FCE7F3
     --border-icon: #E5E7EB
@@ -112,8 +113,9 @@ body
         position: relative
         margin-top: 20px
         padding: 13px 0
-        z-index: 20
+        z-index: 30
         &-full
+            position: relative
             @include flex
             justify-content: space-between
         &-small
@@ -164,6 +166,28 @@ body
             gap: 8px
         &-chevron
             @include flex
+    &__dropdawn 
+        position: absolute
+        right: 0
+        top: 42px
+        height: 0
+        border-radius: 8px
+        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
+        background-color: #fff
+        overflow: hidden
+        transition: height 0.3s ease
+        z-index: 100
+        &-active 
+            height: 200px
+        &-list 
+            padding: 0 16px
+        &-item 
+            width: 175px
+            padding: 14px 8px
+            border-bottom: 1px solid #E5E7EB
+            cursor: pointer
+            &:last-child
+                border-bottom: none
 .catalog
     @include flex
     column-gap: 8px
@@ -206,10 +230,11 @@ body
             @include text
             color: var(--placeholder)
 .tel
+    position: relative
     @include flex
     flex-direction: column  
     align-items: flex-start
-    border-bottom: 0.5px dashed var(--grey)
+    background-color: #fff
     cursor: pointer
     &__uptext  
         @include text-up
@@ -217,6 +242,7 @@ body
     &__content
         @include flex
         column-gap: 5px
+        border-bottom: 0.5px dashed var(--grey)
     &__number
         @include text-bold
     &__icon
@@ -227,7 +253,49 @@ body
         &-whatsapp
             background-color: var(--whatsapp)
         &-telegram
-            background-color: var(--telegram)         
+            background-color: var(--telegram)   
+        &-phone  
+            background-color: var(--phone)   
+    &__wrapper
+        position: absolute
+        top: 100%
+        left: -24px
+        right: -24px
+        display: flex
+        flex-direction: column
+        gap: 10px
+        height: 0
+        padding: 0 24px
+        border-bottom-left-radius: 12px
+        border-bottom-right-radius: 12px
+        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
+        background-color: #fff
+        overflow: hidden
+        transition: height 0.3s ease, padding 0.3s ease
+        &-active 
+            height: 218px
+            padding: 24px
+        & .tel__icon
+            width: 30px
+            height: 30px
+    &__item 
+        display: flex
+        align-items: center
+        width: 100%
+        height: 50px
+        padding: 7px 16px
+        border-radius: 16px
+        background-color: #F5F5F5  
+        &-link 
+            display: flex
+            align-items: center
+            gap: 8px   
+        &-title 
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text
+            font: 500 12px/16px 'PT Root UI', 'sans-serif'
+            color: #93949B
 .icons
     @include flex
     column-gap: 16px

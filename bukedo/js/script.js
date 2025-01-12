@@ -976,3 +976,38 @@ for (let i = 0; i < dropdawnItemSizesArr.length; i++) {
         }
     })
 }
+// Кнопка Информация
+const headerInfo = document.getElementById('header-info')
+const headerDropdawn = document.querySelector('.header__dropdawn')
+headerInfo.addEventListener('click', function(){
+    headerDropdawn.classList.toggle('header__dropdawn-active')
+    document.addEventListener( 'mousedown', (e) => {
+        const withinBoundaries = e.composedPath().includes(headerInfo);
+        if ( ! withinBoundaries ) {
+            headerDropdawn.classList.remove('header__dropdawn-active')
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            headerDropdawn.classList.remove('header__dropdawn-active')
+        }
+    });
+})
+// Кнопка телефонов
+const tel = document.querySelector('.tel')
+const telChevrone = document.querySelector('.tel__chevron')
+const telWrapper = document.querySelector('.tel__wrapper')
+telChevrone.addEventListener('click', function(){
+    telWrapper.classList.toggle('tel__wrapper-active')
+    document.addEventListener( 'mousedown', (e) => {
+        const withinBoundaries = e.composedPath().includes(tel);
+        if ( ! withinBoundaries ) {
+            telWrapper.classList.remove('tel__wrapper-active')
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            telWrapper.classList.remove('tel__wrapper-active')
+        }
+    });
+})
