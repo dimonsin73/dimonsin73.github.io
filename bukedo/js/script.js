@@ -73,6 +73,7 @@ for (let i = 0; i < flowers.length; i++) {
     const element = flowers[i];
     createFlowers(element, i)
 }
+
 function createFlowers(element, i) {
     const dropdawnContentItem = document.createElement('div')
     dropdawnContentItem.classList.add('dropdawn__content-item')
@@ -258,7 +259,7 @@ productsFilterBtnColor.addEventListener('click', function(){
         dropdawnContentColors.innerHTML = ''
         for (let i = 0; i < colors.length; i++) {
             const element = colors[i];
-            createColors(element)
+            createColors(element, i)
         }
     })
     // фильтр по введённому 
@@ -267,7 +268,7 @@ productsFilterBtnColor.addEventListener('click', function(){
         for (let i = 0; i < colors.length; i++) {
             const element = colors[i];
             if (element.toLowerCase().includes(dropdawnContentInput.value.toLowerCase())) {
-                createColors(element)
+                createColors(element, i)
             }
         }
     })
@@ -464,7 +465,7 @@ productsFilterBtnPrices.addEventListener('click', function(){
         }
     });
 })
-
+// Фильтр по цене отдельный
 $(".polzunok-5").slider({
     min: 0,
     max: 100000,
@@ -566,21 +567,13 @@ productsFilterBtnSorter.addEventListener('click', function(){
 // открытие фильтров
 const filterFilters = document.getElementById('filter-filters')
 const productsFilterBtnFilters= filterFilters.querySelector('.products__filter')
+const dropdawn = filterFilters.querySelector('.dropdawn')
+const dropdawnWrapper = filterFilters.querySelector('.dropdawn__wrapper')
 productsFilterBtnFilters.addEventListener('click', function(){
-    const dropdawn = filterFilters.querySelector('.dropdawn')
     dropdawn.classList.toggle('dropdawn-active')
-    filterFilters.classList.toggle('products__container-active')
-    const dropdawnSorter = dropdawn.querySelectorAll('.dropdawn__sorter')
-    const productsFilterText = filterFilters.querySelector('.products__filter-text')
-    for (let i = 0; i < dropdawnSorter.length; i++) {
-        const element = dropdawnSorter[i];
-        element.addEventListener('click', function(){
-            productsFilterText.textContent = element.textContent
-            dropdawn.classList.remove('dropdawn-active')
-            filterPrices.classList.remove('products__container-active')
-        })
-    }
-
+    /*
+    dropdawn.style.height = `${dropdawnWrapper.clientHeight}px`
+    */
     // закрытие
     document.addEventListener( 'mousedown', (e) => {
         const withinBoundaries = e.composedPath().includes(filterFilters);
@@ -595,4 +588,368 @@ productsFilterBtnFilters.addEventListener('click', function(){
             filterFilters.classList.remove('products__container-active')
         }
     });
+    // кнопка сбросить
+    const resetBtn = filterFilters.querySelector('.products__btn')
+    resetBtn.addEventListener('click', function(){
+        const dropdawnContentInputArr = filterFilters.querySelectorAll('.dropdawn__content-input:checked')
+        const dropdawnTitleNumberArr = filterFilters.querySelectorAll('.dropdawn__title-number')
+        for (let i = 0; i < dropdawnContentInputArr.length; i++) {
+            const element = dropdawnContentInputArr[i];
+            element.checked = false
+        }
+        for (let i = 0; i < dropdawnTitleNumberArr.length; i++) {
+            const element = dropdawnTitleNumberArr[i];
+            element.textContent = ''
+            element.classList.remove('products__filter-number-active')
+        }
+        const pil = document.querySelector('.polzunok-input-4-left')
+        const pir = document.querySelector('.polzunok-input-4-right')
+        pil.value = `0 ₽`
+        pir.value = `100 000 ₽`
+    })
 })
+
+// Фильтр по цене в составе фильтров
+$(".polzunok-4").slider({
+    min: 0,
+    max: 100000,
+    values: [0, 100000],
+    range: true,
+    animate: "fast",
+    slide : function(event, ui) {    
+        $(".polzunok-input-4-left").val(ui.values[ 0 ]);   
+        $(".polzunok-input-4-right").val(ui.values[ 1 ]);  
+    }    
+});
+$(".polzunok-input-4-left").val($(".polzunok-4").slider("values", 0));
+$(".polzunok-input-4-right").val($(".polzunok-4").slider("values", 1));
+// кнопка сбросить
+$('.filters-reset').click(function() {
+    $(".polzunok-4").slider({
+        values: [0, 100000]
+    });
+});
+$(".polzunok-container-4 input").change(function() {
+    var input_left = $(".polzunok-input-4-left").val().replace(/[^0-9]/g, ''),    
+    opt_left = $(".polzunok-4").slider("option", "min"),
+    where_right = $(".polzunok-4").slider("values", 1),
+    input_right = $(".polzunok-input-4-right").val().replace(/[^0-9]/g, ''),    
+    opt_right = $(".polzunok-4").slider("option", "max"),
+    where_left = $(".polzunok-4").slider("values", 0); 
+    if (input_left > where_right) { 
+        input_left = where_right; 
+    }
+    if (input_left < opt_left) {
+        input_left = opt_left; 
+    }
+    if (input_left == "") {
+        input_left = 0;    
+    }        
+    if (input_right < where_left) { 
+        input_right = where_left; 
+    }
+    if (input_right > opt_right) {
+        input_right = opt_right; 
+    }
+    if (input_right == "") {
+        input_right = 0;    
+    }    
+    $(".polzunok-input-4-left").val(`${input_left.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`); 
+    $(".polzunok-input-4-right").val(`${input_right.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`); 
+    if (input_left != where_left) {
+        $(".polzunok-4").slider("values", 0, input_left);
+    }
+    if (input_right != where_right) {
+        $(".polzunok-4").slider("values", 1, input_right);
+    }
+});
+const pil4 = document.querySelector('.polzunok-input-4-left')
+const pir4 = document.querySelector('.polzunok-input-4-right')
+const p4 = document.querySelector('.polzunok-4')
+pil4.value = `${pil4.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
+pir4.value = `${pir4.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
+p4.addEventListener('mouseup', function(){
+    pil4.value = `${pil4.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
+    pir4.value = `${pir4.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
+})
+
+// переход по вкладкам фильтра
+const dropdawnItemArr = document.querySelectorAll('.dropdawn__item')
+const dropdawnFoundArr = document.querySelectorAll('.dropdawn__found')
+const dropdawnHeadArr = document.querySelectorAll('.dropdawn__head')
+for (let i = 0; i < dropdawnFoundArr.length; i++) {
+    const element = dropdawnFoundArr[i];
+    if (element.classList.contains('dropdawn__found-active')) {
+        element.style.height = `${element.scrollHeight}px`
+    }
+}
+for (let i = 0; i < dropdawnItemArr.length; i++) {
+    const element = dropdawnItemArr[i];
+    const dropdawnHead = element.querySelector('.dropdawn__head')
+    dropdawnHead.addEventListener('click', function(){
+        const dropdawnFound = element.querySelector('.dropdawn__found')
+        if (dropdawnFound.classList.contains('dropdawn__found-active')) {
+            dropdawnHead.classList.remove('dropdawn__head-active')
+            dropdawnFound.classList.remove('dropdawn__found-active')
+            dropdawnFound.style.height = '0'
+        } else {
+            for (let i = 0; i < dropdawnFoundArr.length; i++) {
+                const element = dropdawnFoundArr[i];
+                element.classList.remove('dropdawn__found-active')
+                element.style.height = '0'
+            }
+            for (let i = 0; i < dropdawnHeadArr.length; i++) {
+                const element = dropdawnHeadArr[i];
+                element.classList.remove('dropdawn__head-active')
+            }
+            dropdawnHead.classList.add('dropdawn__head-active')
+            dropdawnFound.classList.add('dropdawn__found-active')
+            dropdawnFound.style.height = `${dropdawnFound.scrollHeight}px`
+        }
+        /*
+        function delay() {
+            dropdawn.style.height = `${dropdawnWrapper.clientHeight}px`
+        }
+        setTimeout(delay, 300);
+        */
+    })
+}
+// Построение цветов
+const dropdawnItemFlowers = document.querySelector('.dropdawn__item-flowers')
+const dropdawnContentItemFlowers = dropdawnItemFlowers.querySelector('.dropdawn__content')
+for (let i = 0; i < flowers.length; i++) {
+    const element = flowers[i];
+    createItemFlowers(element, i)
+}
+function createItemFlowers(element, i) {
+    const dropdawnContentItem = document.createElement('div')
+    dropdawnContentItem.classList.add('dropdawn__content-item')
+    dropdawnContentItemFlowers.append(dropdawnContentItem)
+    const dropdawnContentInput = document.createElement('input')
+    dropdawnContentInput.classList.add('dropdawn__content-input')
+    dropdawnContentInput.setAttribute('type', 'checkbox')
+    dropdawnContentInput.setAttribute('name', 'flower')
+    dropdawnContentInput.id = `itemflower${i}`
+    const dropdawnContentLabel = document.createElement('label')
+    dropdawnContentLabel.classList.add('dropdawn__content-label')
+    dropdawnContentLabel.setAttribute('for', `itemflower${i}`)
+    dropdawnContentItem.append(dropdawnContentInput, dropdawnContentLabel)
+    const dropdawnContentCheck = document.createElement('div')
+    dropdawnContentCheck.classList.add('dropdawn__content-check')
+    const dropdawnContentText = document.createElement('p')
+    dropdawnContentText.classList.add('dropdawn__content-text')
+    dropdawnContentText.textContent = element
+    dropdawnContentLabel.append(dropdawnContentCheck, dropdawnContentText)
+}
+const dropdawnHeaderInputFlowers = dropdawnItemFlowers.querySelector('.dropdawn__header-input')
+const dropdawnHeaderBtnFlowers = dropdawnItemFlowers.querySelector('.dropdawn__header-btn')
+const dropdawncontentFlowers = dropdawnItemFlowers.querySelector('.dropdawn__content')
+// удалить тектс в input
+dropdawnHeaderBtnFlowers.addEventListener('click', function(){
+    dropdawnHeaderInputFlowers.value = ''
+    dropdawncontentFlowers.innerHTML = ''
+    for (let i = 0; i < flowers.length; i++) {
+        const element = flowers[i];
+        createItemFlowers(element, i)
+    }
+})
+// фильтр по введённому 
+dropdawnHeaderInputFlowers.addEventListener('input', function(){
+    dropdawncontentFlowers.innerHTML = ''
+    for (let i = 0; i < flowers.length; i++) {
+        const element = flowers[i];
+        if (element.toLowerCase().includes(dropdawnHeaderInputFlowers.value.toLowerCase())) {
+            createItemFlowers(element, i)
+        }
+    }
+})
+// количество выбранных фильтров
+const dropdawnItemFlowersArr = dropdawnItemFlowers.querySelectorAll('.dropdawn__content-item')
+const dropdawnFlowersNumber = dropdawnItemFlowers.querySelector('.dropdawn__title-number')
+for (let i = 0; i < dropdawnItemFlowersArr.length; i++) {
+    const element = dropdawnItemFlowersArr[i];
+    element.addEventListener('click', function () {
+        const dropdawnItemCheckedArr = dropdawnItemFlowers.querySelectorAll('.dropdawn__content-input:checked') 
+        dropdawnFlowersNumber.textContent = dropdawnItemCheckedArr.length
+        if (dropdawnItemCheckedArr.length > 0) {
+            dropdawnFlowersNumber.classList.add('products__filter-number-active')
+        } else {
+            dropdawnFlowersNumber.classList.remove('products__filter-number-active')
+        }
+    })
+}
+
+
+// Построение цветов 
+const dropdawnItemColors = document.querySelector('.dropdawn__item-colors')
+const dropdawnContentItemColors = dropdawnItemColors.querySelector('.dropdawn__content')
+for (let i = 0; i < colors.length; i++) {
+    const element = colors[i];
+    createItemColors(element, i)
+}
+function createItemColors(element, i) {
+    const dropdawnContentItem = document.createElement('div')
+    dropdawnContentItem.classList.add('dropdawn__content-item')
+    dropdawnContentItemColors.append(dropdawnContentItem)
+    const dropdawnContentInput = document.createElement('input')
+    dropdawnContentInput.classList.add('dropdawn__content-input')
+    dropdawnContentInput.setAttribute('type', 'checkbox')
+    dropdawnContentInput.setAttribute('name', 'color')
+    dropdawnContentInput.id = `itemcolor${i}`
+    const dropdawnContentLabel = document.createElement('label')
+    dropdawnContentLabel.classList.add('dropdawn__content-label')
+    dropdawnContentLabel.setAttribute('for', `itemcolor${i}`)
+    dropdawnContentItem.append(dropdawnContentInput, dropdawnContentLabel)
+    const dropdawnContentCheck = document.createElement('div')
+    dropdawnContentCheck.classList.add('dropdawn__content-circle')
+    switch (element) {
+        case 'Белый':
+            dropdawnContentCheck.style.backgroundColor = 'white'
+            break;
+        case 'Оранжевый':
+            dropdawnContentCheck.style.backgroundColor = 'orange'
+            break;
+        case 'Розовый':
+            dropdawnContentCheck.style.backgroundColor = 'pink'
+            break;
+        case 'Зеленый':
+            dropdawnContentCheck.style.backgroundColor = 'green'
+            break;
+        case 'Красный':
+            dropdawnContentCheck.style.backgroundColor = 'red'
+            break;
+        case 'Желтый':
+            dropdawnContentCheck.style.backgroundColor = 'yellow'
+            break;
+        case 'Синий':
+            dropdawnContentCheck.style.backgroundColor = 'blue'
+            break;
+        case 'Голубой':
+            dropdawnContentCheck.style.backgroundColor = 'deepskyblue'
+            break;
+        case 'Фиолетовый':
+            dropdawnContentCheck.style.backgroundColor = 'purple'
+            break;
+        case 'Чёрный':
+            dropdawnContentCheck.style.backgroundColor = 'black'
+            break;
+        case 'Салатовый':
+            dropdawnContentCheck.style.backgroundColor = 'chartreuse'
+            break;
+        case 'Фуксия':
+            dropdawnContentCheck.style.backgroundColor = 'fuchsia'
+            break;
+        case 'Бордовый':
+            dropdawnContentCheck.style.backgroundColor = '#AD2950'
+            break;
+        default:
+            dropdawnContentCheck.style.backgroundColor = ''
+            break;
+    }
+    const dropdawnContentText = document.createElement('p')
+    dropdawnContentText.classList.add('dropdawn__content-text')
+    dropdawnContentText.textContent = element
+    dropdawnContentLabel.append(dropdawnContentCheck, dropdawnContentText)
+}
+const dropdawnHeaderInputColors = dropdawnItemColors.querySelector('.dropdawn__header-input')
+const dropdawnHeaderBtnColors = dropdawnItemColors.querySelector('.dropdawn__header-btn')
+const dropdawncontentColors = dropdawnItemColors.querySelector('.dropdawn__content')
+// удалить тектс в input
+dropdawnHeaderBtnColors.addEventListener('click', function(){
+    dropdawnHeaderInputColors.value = ''
+    dropdawncontentColors.innerHTML = ''
+    for (let i = 0; i < colors.length; i++) {
+        const element = colors[i];
+        createItemColors(element, i)
+    }
+})
+// фильтр по введённому 
+dropdawnHeaderInputColors.addEventListener('input', function(){
+    dropdawncontentColors.innerHTML = ''
+    for (let i = 0; i < colors.length; i++) {
+        const element = colors[i];
+        if (element.toLowerCase().includes(dropdawnHeaderInputColors.value.toLowerCase())) {
+            createItemColors(element, i)
+        }
+    }
+})
+// количество выбранных фильтров
+const dropdawnItemColorsArr = dropdawnItemColors.querySelectorAll('.dropdawn__content-item')
+const dropdawnColorsNumber = dropdawnItemColors.querySelector('.dropdawn__title-number')
+for (let i = 0; i < dropdawnItemColorsArr.length; i++) {
+    const element = dropdawnItemColorsArr[i];
+    element.addEventListener('click', function () {
+        const dropdawnItemCheckedArr = dropdawnItemColors.querySelectorAll('.dropdawn__content-input:checked') 
+        dropdawnColorsNumber.textContent = dropdawnItemCheckedArr.length
+        if (dropdawnItemCheckedArr.length > 0) {
+            dropdawnColorsNumber.classList.add('products__filter-number-active')
+        } else {
+            dropdawnColorsNumber.classList.remove('products__filter-number-active')
+        }
+    })
+}
+
+// построение размеров
+const dropdawnItemSizes = document.querySelector('.dropdawn__item-sizes')
+const dropdawnContentItemSizes = dropdawnItemSizes.querySelector('.dropdawn__content')
+for (let i = 0; i < sizes.length; i++) {
+    const element = sizes[i];
+    createItemSizes(element, i)
+}
+function createItemSizes(element, i) {
+    const dropdawnContentItem = document.createElement('div')
+    dropdawnContentItem.classList.add('dropdawn__content-item')
+    dropdawnContentItemSizes.append(dropdawnContentItem)
+    const dropdawnContentInput = document.createElement('input')
+    dropdawnContentInput.classList.add('dropdawn__content-input')
+    dropdawnContentInput.setAttribute('type', 'checkbox')
+    dropdawnContentInput.setAttribute('name', 'size')
+    dropdawnContentInput.id = `size${i}`
+    const dropdawnContentLabel = document.createElement('label')
+    dropdawnContentLabel.classList.add('dropdawn__content-label')
+    dropdawnContentLabel.setAttribute('for', `size${i}`)
+    dropdawnContentItem.append(dropdawnContentInput, dropdawnContentLabel)
+    const dropdawnContentCheck = document.createElement('div')
+    dropdawnContentCheck.classList.add('dropdawn__content-check')
+    const dropdawnContentText = document.createElement('p')
+    dropdawnContentText.classList.add('dropdawn__content-text')
+    dropdawnContentText.textContent = element
+    dropdawnContentLabel.append(dropdawnContentCheck, dropdawnContentText)
+}
+const dropdawnHeaderInputSizes = dropdawnItemSizes.querySelector('.dropdawn__header-input')
+const dropdawnHeaderBtnSizes = dropdawnItemSizes.querySelector('.dropdawn__header-btn')
+const dropdawncontentSizes = dropdawnItemSizes.querySelector('.dropdawn__content')
+// удалить тектс в input
+dropdawnHeaderBtnSizes.addEventListener('click', function(){
+    dropdawnHeaderInputSizes.value = ''
+    dropdawncontentSizes.innerHTML = ''
+    for (let i = 0; i < sizes.length; i++) {
+        const element = sizes[i];
+        createItemSizes(element, i)
+    }
+})
+// фильтр по введённому 
+dropdawnHeaderInputSizes.addEventListener('input', function(){
+    dropdawncontentSizes.innerHTML = ''
+    for (let i = 0; i < sizes.length; i++) {
+        const element = sizes[i];
+        if (element.toLowerCase().includes(dropdawnHeaderInputSizes.value.toLowerCase())) {
+            createItemSizes(element, i)
+        }
+    }
+})
+// количество выбранных фильтров
+const dropdawnItemSizesArr = dropdawnItemSizes.querySelectorAll('.dropdawn__content-item')
+const dropdawnSizesNumber = dropdawnItemSizes.querySelector('.dropdawn__title-number')
+for (let i = 0; i < dropdawnItemSizesArr.length; i++) {
+    const element = dropdawnItemSizesArr[i];
+    element.addEventListener('click', function () {
+        const dropdawnItemCheckedArr = dropdawnItemSizes.querySelectorAll('.dropdawn__content-input:checked') 
+        dropdawnSizesNumber.textContent = dropdawnItemCheckedArr.length
+        if (dropdawnItemCheckedArr.length > 0) {
+            dropdawnSizesNumber.classList.add('products__filter-number-active')
+        } else {
+            dropdawnSizesNumber.classList.remove('products__filter-number-active')
+        }
+    })
+}

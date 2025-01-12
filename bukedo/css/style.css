@@ -1308,6 +1308,7 @@ body {
   background: url("../img/search_bg.svg") center center no-repeat;
 }
 .dropdawn__header-input {
+  width: 100%;
   font: 500 14px/18px "PT Root UI", "sans-serif";
   color: var(--black);
 }
@@ -1324,6 +1325,12 @@ body {
   height: 24px;
   background: url("../img/close.svg") center center no-repeat;
   cursor: pointer;
+}
+.dropdawn__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 .dropdawn__content {
   max-height: 350px;
@@ -1404,7 +1411,7 @@ body {
   border-bottom: none;
 }
 .dropdawn__wrapper {
-  padding: 0 24px;
+  width: 375px;
 }
 .dropdawn__item {
   border-bottom: 1px solid #E9EFF6;
@@ -1423,13 +1430,31 @@ body {
 .dropdawn__head-active .head-chevrone {
   transform: scale(1, -1);
 }
+.dropdawn__found {
+  position: relative;
+  height: 0;
+  opacity: 0;
+  transition: height 0.3s ease, z-index 0.3s ease;
+  z-index: -100;
+}
+.dropdawn__found-active {
+  opacity: 1;
+  z-index: 100;
+}
+.dropdawn__found-active .dropdawn__content {
+  height: 250px;
+}
 
 #filter-prices .dropdawn-active {
+  width: 375px;
   height: 215px;
 }
 
 #filter-filters .dropdawn {
-  left: 0;
+  left: -9px;
+}
+#filter-filters .dropdawn-active {
+  height: 632px;
 }
 
 #filter-sorter .dropdawn {
@@ -1442,6 +1467,7 @@ body {
   height: 203px;
 }
 
+.polzunok-container-4,
 .polzunok-container-5 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1449,12 +1475,14 @@ body {
   padding: 16px 24px;
 }
 
+.polzunok-container-4:after,
 .polzunok-container-5:after {
   content: "";
   clear: both;
   display: table;
 }
 
+.polzunok-container-4 .ui-slider,
 .polzunok-container-5 .ui-slider {
   position: relative;
   grid-column: span 2;
@@ -1463,6 +1491,7 @@ body {
   background: #E6E9ED;
 }
 
+.polzunok-container-4 .ui-slider .ui-slider-handle,
 .polzunok-container-5 .ui-slider .ui-slider-handle {
   position: absolute;
   top: -11px;
@@ -1477,23 +1506,26 @@ body {
   transition: transform 0.2s, border 0.4s;
 }
 
-.polzunok-input-5-left,
-.polzunok-input-5-right {
-  width: 155px;
+.polzunok-input-4-left, .polzunok-input-4-right,
+.polzunok-input-5-left, .polzunok-input-5-right {
+  width: 100%;
   padding: 14px 16px;
   border: 1px solid #93949B;
   border-radius: 12px;
   font: 400 16px/20px "PT Root UI", "sans-serif";
 }
 
+.polzunok-input-4-left,
 .polzunok-input-5-left {
   float: left;
 }
 
+.polzunok-input-4-right,
 .polzunok-input-5-right {
   float: right;
 }
 
+.polzunok-container-4 .ui-slider .ui-slider-range,
 .polzunok-container-5 .ui-slider .ui-slider-range {
   position: absolute;
   z-index: 1;
