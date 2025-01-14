@@ -26,22 +26,75 @@ html(lang="ru")
                                     svg(width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M14.1401 1.59323L1.44788 6.23101C0.913438 6.42656 0.928994 7.18767 1.47122 7.36212L7.2801 9.22101L9.13899 15.0299C9.31233 15.5721 10.0745 15.5877 10.2701 15.0532L14.9068 2.3599C15.0812 1.88212 14.6179 1.41878 14.1401 1.59323Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
                                 p.header__city-text Санкт-Петербург
-                            .header__working
-                                .header__working-icon 
-                                    svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M9 4.27783V9.00005L12.6111 11.5001" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                        path(d="M9 0.944824C13.4489 0.944824 17.0556 4.55149 17.0556 9.00038C17.0556 13.4493 13.4489 17.0559 9 17.0559" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                        path(d="M3.3033 15.5299C3.76354 15.5299 4.13664 15.1569 4.13664 14.6966C4.13664 14.2364 3.76354 13.8633 3.3033 13.8633C2.84307 13.8633 2.46997 14.2364 2.46997 14.6966C2.46997 15.1569 2.84307 15.5299 3.3033 15.5299Z" fill="#AD2950")
-                                        path(d="M0.944417 9.83366C1.40465 9.83366 1.77775 9.46056 1.77775 9.00033C1.77775 8.54009 1.40465 8.16699 0.944417 8.16699C0.48418 8.16699 0.111084 8.54009 0.111084 9.00033C0.111084 9.46056 0.48418 9.83366 0.944417 9.83366Z" fill="#AD2950")
-                                        path(d="M3.3033 4.13688C3.76354 4.13688 4.13664 3.76379 4.13664 3.30355C4.13664 2.84331 3.76354 2.47021 3.3033 2.47021C2.84307 2.47021 2.46997 2.84331 2.46997 3.30355C2.46997 3.76379 2.84307 4.13688 3.3033 4.13688Z" fill="#AD2950")
-                                        path(d="M5.91781 17.2756C6.37804 17.2756 6.75114 16.9025 6.75114 16.4422C6.75114 15.982 6.37804 15.6089 5.91781 15.6089C5.45757 15.6089 5.08447 15.982 5.08447 16.4422C5.08447 16.9025 5.45757 17.2756 5.91781 17.2756Z" fill="#AD2950")
-                                        path(d="M1.5577 12.9157C2.01794 12.9157 2.39103 12.5426 2.39103 12.0824C2.39103 11.6221 2.01794 11.249 1.5577 11.249C1.09746 11.249 0.724365 11.6221 0.724365 12.0824C0.724365 12.5426 1.09746 12.9157 1.5577 12.9157Z" fill="#AD2950")
-                                        path(d="M1.5577 6.75114C2.01794 6.75114 2.39103 6.37804 2.39103 5.91781C2.39103 5.45757 2.01794 5.08447 1.5577 5.08447C1.09746 5.08447 0.724365 5.45757 0.724365 5.91781C0.724365 6.37804 1.09746 6.75114 1.5577 6.75114Z" fill="#AD2950")
-                                        path(d="M5.91781 2.39128C6.37804 2.39128 6.75114 2.01818 6.75114 1.55794C6.75114 1.09771 6.37804 0.724609 5.91781 0.724609C5.45757 0.724609 5.08447 1.09771 5.08447 1.55794C5.08447 2.01818 5.45757 2.39128 5.91781 2.39128Z" fill="#AD2950")
-                                .header__working-time 
-                                    p 23 июля с 11:00 до 21:00
-                                    svg(width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M1.5 1.25L5.46967 5.51404C5.76256 5.82865 6.23744 5.82865 6.53033 5.51404L10.5 1.25" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
+                            .header__left-item
+                                .header__working
+                                    .header__working-icon 
+                                        svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                            path(d="M9 4.27783V9.00005L12.6111 11.5001" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                            path(d="M9 0.944824C13.4489 0.944824 17.0556 4.55149 17.0556 9.00038C17.0556 13.4493 13.4489 17.0559 9 17.0559" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                            path(d="M3.3033 15.5299C3.76354 15.5299 4.13664 15.1569 4.13664 14.6966C4.13664 14.2364 3.76354 13.8633 3.3033 13.8633C2.84307 13.8633 2.46997 14.2364 2.46997 14.6966C2.46997 15.1569 2.84307 15.5299 3.3033 15.5299Z" fill="#AD2950")
+                                            path(d="M0.944417 9.83366C1.40465 9.83366 1.77775 9.46056 1.77775 9.00033C1.77775 8.54009 1.40465 8.16699 0.944417 8.16699C0.48418 8.16699 0.111084 8.54009 0.111084 9.00033C0.111084 9.46056 0.48418 9.83366 0.944417 9.83366Z" fill="#AD2950")
+                                            path(d="M3.3033 4.13688C3.76354 4.13688 4.13664 3.76379 4.13664 3.30355C4.13664 2.84331 3.76354 2.47021 3.3033 2.47021C2.84307 2.47021 2.46997 2.84331 2.46997 3.30355C2.46997 3.76379 2.84307 4.13688 3.3033 4.13688Z" fill="#AD2950")
+                                            path(d="M5.91781 17.2756C6.37804 17.2756 6.75114 16.9025 6.75114 16.4422C6.75114 15.982 6.37804 15.6089 5.91781 15.6089C5.45757 15.6089 5.08447 15.982 5.08447 16.4422C5.08447 16.9025 5.45757 17.2756 5.91781 17.2756Z" fill="#AD2950")
+                                            path(d="M1.5577 12.9157C2.01794 12.9157 2.39103 12.5426 2.39103 12.0824C2.39103 11.6221 2.01794 11.249 1.5577 11.249C1.09746 11.249 0.724365 11.6221 0.724365 12.0824C0.724365 12.5426 1.09746 12.9157 1.5577 12.9157Z" fill="#AD2950")
+                                            path(d="M1.5577 6.75114C2.01794 6.75114 2.39103 6.37804 2.39103 5.91781C2.39103 5.45757 2.01794 5.08447 1.5577 5.08447C1.09746 5.08447 0.724365 5.45757 0.724365 5.91781C0.724365 6.37804 1.09746 6.75114 1.5577 6.75114Z" fill="#AD2950")
+                                            path(d="M5.91781 2.39128C6.37804 2.39128 6.75114 2.01818 6.75114 1.55794C6.75114 1.09771 6.37804 0.724609 5.91781 0.724609C5.45757 0.724609 5.08447 1.09771 5.08447 1.55794C5.08447 2.01818 5.45757 2.39128 5.91781 2.39128Z" fill="#AD2950")
+                                    .header__working-time 
+                                        p.header__working-text 
+                                        svg(width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                            path(d="M1.5 1.25L5.46967 5.51404C5.76256 5.82865 6.23744 5.82865 6.53033 5.51404L10.5 1.25" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
+                                .header__choice 
+                                    .header__choice-wrapper 
+                                        h5.header__choice-title Укажите дату и время доставки
+                                        .header__choice-tabs 
+                                            .header__choice-tab.header__choice-tab-active
+                                                .header__choice-days Сегодня
+                                                .header__choice-number 
+                                            .header__choice-tab 
+                                                .header__choice-days Завтра
+                                                .header__choice-number 
+                                            .header__choice-tab 
+                                                .header__choice-days 
+                                                .header__choice-number 
+                                            .header__choice-tab 
+                                                .header__choice-days 
+                                                .header__choice-number 
+                                        .header__choice-select
+                                            p Другая дата
+                                            svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M1 1L4.5286 4.79026C4.78894 5.06991 5.21106 5.06991 5.4714 4.79026L9 1" stroke="#1C1C1D" stroke-linecap="round")
+                                        .header__choice-options 
+                                            .header__choice-option.header__choice-option-active 
+                                            .header__choice-option 
+                                            .header__choice-option 
+                                            .header__choice-option 
+                                            .header__choice-option 
+                                            .header__choice-option 
+                                            .header__choice-option 
+                                            .header__choice-option 
+                                        .header__choice-time 
+                                            .header__choice-time-select
+                                                p.header__choice-time-select-text 10:00 - 11:00
+                                                svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                    path(d="M1 1L4.5286 4.79026C4.78894 5.06991 5.21106 5.06991 5.4714 4.79026L9 1" stroke="#1C1C1D" stroke-linecap="round")
+                                            .header__choice-time-options 
+                                                .header__choice-time-option 11:00 - 12:00
+                                                .header__choice-time-option 12:00 - 13:00
+                                                .header__choice-time-option 13:00 - 14:00
+                                                .header__choice-time-option 14:00 - 15:00
+                                                .header__choice-time-option 15:00 - 16:00
+                                                .header__choice-time-option 16:00 - 17:00
+                                                .header__choice-time-option 17:00 - 18:00
+                                                .header__choice-time-option 18:00 - 19:00
+                                                .header__choice-time-option 19:00 - 20:00
+                                                .header__choice-time-option 20:00 - 21:00
+                                            .header__choice-local Время Местное
+                                        .header__choice-checkrecipient
+                                            input.header__choice-input#checkrecipient(type="checkbox", name="checkrecipient")
+                                            label.header__choice-label(for="checkrecipient")
+                                                .header__choice-check 
+                                                p.header__choice-text Уточнить у получателя
+                                        button.header__choice-btn Применить
                         ul.header__menu
                             li.header__menu-item
                                 a(href="#").header__menu-link.link Адреса магазинов
@@ -86,6 +139,40 @@ html(lang="ru")
                         .search 
                             .search__icon
                             input.search__input(type="search", name="search" placeholder="Найти товары")
+                            .search__clue
+                                .search__clue-wrapper 
+                                    .search__clue-items(data-search="search")
+                                        h5.search__clue-title Возможно вы ищите
+                                        .search__clue-item
+                                            svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M20 20L16.1333 16.1333M18.2222 11.1111C18.2222 15.0385 15.0385 18.2222 11.1111 18.2222C7.18375 18.2222 4 15.0385 4 11.1111C4 7.18375 7.18375 4 11.1111 4C15.0385 4 18.2222 7.18375 18.2222 11.1111Z" stroke="#93949B" stroke-linecap="round" stroke-linejoin="round")
+                                            p орхидея в горшке
+                                        .search__clue-item
+                                            svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M20 20L16.1333 16.1333M18.2222 11.1111C18.2222 15.0385 15.0385 18.2222 11.1111 18.2222C7.18375 18.2222 4 15.0385 4 11.1111C4 7.18375 7.18375 4 11.1111 4C15.0385 4 18.2222 7.18375 18.2222 11.1111Z" stroke="#93949B" stroke-linecap="round" stroke-linejoin="round")
+                                            p орхидеии в коробке
+                                        .search__clue-item
+                                            svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M20 20L16.1333 16.1333M18.2222 11.1111C18.2222 15.0385 15.0385 18.2222 11.1111 18.2222C7.18375 18.2222 4 15.0385 4 11.1111C4 7.18375 7.18375 4 11.1111 4C15.0385 4 18.2222 7.18375 18.2222 11.1111Z" stroke="#93949B" stroke-linecap="round" stroke-linejoin="round")
+                                            p орхидеи в шляпной коробке 
+                                    .search__clue-items(data-search="product")
+                                        h6.search__clue-title Товары
+                                        .search__clue-item
+                                            img(src="img/flowers1.webp", alt="")
+                                            .search__clue-info 
+                                                h6.search__clue-subtitle Сахарная пудра х 2
+                                                p.search__clue-subtext В составе Орхидея цимбидиум 5 шт.
+                                        .search__clue-item
+                                            img(src="img/flowers2.webp", alt="")
+                                            .search__clue-info 
+                                                h6.search__clue-subtitle Сахарная пудра
+                                                p.search__clue-subtext В составе Орхидея цимбидиум 3 шт.
+                                        .search__clue-item
+                                            img(src="img/flowers3.webp", alt="")
+                                            .search__clue-info 
+                                                h6.search__clue-subtitle Сахарная пудра
+                                                p.search__clue-subtext В составе Орхидея цимбидиум 3 шт.
+                                        button.search__clue-btn.products__btn.btn-text Показать еще товары
                         .tel
                             p.tel__uptext На связи с 8:00 до 20:00
                             .tel__content 
@@ -101,30 +188,27 @@ html(lang="ru")
                                     svg(width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M1 1.25L4.96967 5.51404C5.26256 5.82865 5.73744 5.82865 6.03033 5.51404L10 1.25" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
                             .tel__wrapper
-                                .tel__item 
-                                    a(href="https://wa.me/79617772640").tel__item-link
-                                        .tel__icon.tel__icon-whatsapp
-                                            svg(width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                                path(d="M11.9826 2.06174C10.8079 0.88361 9.24708 0.160795 7.58204 0.0237931C5.91699 -0.113209 4.25742 0.344631 2.90294 1.31465C1.54846 2.28467 0.588336 3.70295 0.195914 5.31343C-0.196508 6.9239 0.0046314 8.62044 0.763017 10.0967L0.0199981 13.674C0.0120423 13.7097 0.011734 13.7467 0.0190932 13.7826C0.0264524 13.8184 0.0413153 13.8523 0.0627216 13.8821C0.0933771 13.9273 0.137198 13.962 0.188319 13.9818C0.239441 14.0015 0.295426 14.0053 0.348784 13.9927L3.87813 13.1619C5.36277 13.8942 7.06131 14.0804 8.67139 13.6873C10.2815 13.2941 11.6987 12.3471 12.6707 11.0149C13.6427 9.68274 14.1064 8.05172 13.9794 6.41221C13.8524 4.7727 13.1428 3.23108 11.977 2.06174H11.9826ZM10.8792 10.7875C10.0668 11.5917 9.02057 12.1233 7.88771 12.3073C6.75486 12.4913 5.59232 12.3187 4.56356 11.8135L4.06945 11.5704L1.90169 12.0788V12.0511L2.35865 9.88306L2.11717 9.4115C1.59115 8.38855 1.40542 7.22667 1.58663 6.09255C1.76784 4.95844 2.30668 3.91039 3.12582 3.09881C4.15436 2.07992 5.54871 1.5076 7.00252 1.5076C8.45634 1.5076 9.85069 2.07992 10.8792 3.09881L10.9034 3.13197C11.9185 4.1541 12.4852 5.53264 12.48 6.96727C12.4748 8.4019 11.8981 9.77635 10.8755 10.7912L10.8792 10.7875Z" fill="white")
-                                                path(d="M10.6872 9.21127C10.4215 9.62573 9.99986 10.1323 9.47417 10.2594C8.5454 10.4804 7.1318 10.2594 5.36156 8.63655L5.33927 8.61629C3.79936 7.19054 3.3907 6.00243 3.48172 5.06114C3.53559 4.52511 3.98512 4.04249 4.36406 3.72566C4.4243 3.67528 4.4956 3.63958 4.57225 3.6214C4.64889 3.60323 4.72876 3.60309 4.80548 3.62098C4.88219 3.63888 4.95361 3.67433 5.01405 3.72449C5.07448 3.77465 5.12224 3.83813 5.15352 3.90986L5.72378 5.18824C5.76101 5.27053 5.77497 5.36131 5.76418 5.45087C5.75338 5.54042 5.71823 5.62538 5.66248 5.69665L5.37271 6.06505C5.31248 6.14153 5.2766 6.23407 5.26965 6.33086C5.2627 6.42765 5.285 6.5243 5.3337 6.60846C5.60895 7.01077 5.9383 7.37394 6.31263 7.6879C6.71537 8.07225 7.17211 8.39675 7.66864 8.65129C7.75926 8.68751 7.8587 8.69616 7.9543 8.67615C8.0499 8.65614 8.13734 8.60837 8.20547 8.53892L8.53797 8.20367C8.60124 8.1362 8.6821 8.08741 8.7716 8.0627C8.8611 8.038 8.95576 8.03833 9.04508 8.06367L10.4011 8.44866C10.4779 8.47034 10.5485 8.50966 10.6072 8.56342C10.6659 8.61719 10.711 8.68389 10.7388 8.75814C10.7667 8.83239 10.7765 8.9121 10.7675 8.99082C10.7586 9.06954 10.731 9.14506 10.6872 9.21127Z" fill="white")
-                                        .tel__item-info 
-                                            .tel__item-title WhatsApp
-                                            .tel__item-text +7 961 777-2640
-                                .tel__item 
-                                    a(href="https://t.me/Bukedo").tel__item-link
-                                        .tel__icon.tel__icon-telegram
-                                            svg(width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                                path(d="M14 1.38054L11.7857 12.5445C11.7857 12.5445 11.4761 13.3187 10.6244 12.947L5.49165 9.01854C6.18154 8.39837 11.5336 3.58665 11.7676 3.36845C12.1294 3.03075 11.9049 2.82977 11.4844 3.08517L3.57894 8.10552L0.528988 7.07875C0.528988 7.07875 0.0488272 6.9084 0.00261589 6.5368C-0.0438689 6.16519 0.544574 5.96394 0.544574 5.96394L12.9782 1.08632C12.9782 1.08632 14 0.637332 14 1.38054Z" fill="white")
-                                        .tel__item-info 
-                                            .tel__item-title Telegram
-                                            .tel__item-text @Bukedo
-                                .tel__item 
-                                    a(href="tel:+7 495 215-20-97").tel__item-link
-                                        .tel__icon.tel__icon-phone
-                                            svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                                path(d="M5.80666 10.4754C3.50457 8.36858 2.89966 6.18659 2.7746 4.82125C2.69835 3.98875 3.35325 3.35038 4.17922 3.22138L5.13082 3.07277C6.06767 2.92646 6.9514 3.55053 7.1269 4.48235L7.27884 5.28906C7.34789 5.65568 7.14487 6.01922 6.79652 6.15274C6.39843 6.30532 6.20339 6.75099 6.40671 7.12571C6.65003 7.57417 7.024 8.15538 7.51698 8.60655C8.00997 9.05771 8.62196 9.37883 9.09018 9.58155C9.48141 9.75094 9.90808 9.51726 10.0249 9.10724C10.1271 8.74845 10.4712 8.51408 10.8425 8.55045L11.6595 8.63047C12.6032 8.7229 13.303 9.548 13.2401 10.4941L13.1762 11.4551C13.1207 12.2893 12.5427 12.998 11.7067 12.9957C10.3357 12.9918 8.10876 12.5822 5.80666 10.4754Z" fill="#03A050")
-                                        .tel__item-info 
-                                            .tel__item-title 8 495 215-20-97
+                                a(href="https://wa.me/79617772640").tel__item
+                                    .tel__icon.tel__icon-whatsapp
+                                        svg(width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                            path(d="M11.9826 2.06174C10.8079 0.88361 9.24708 0.160795 7.58204 0.0237931C5.91699 -0.113209 4.25742 0.344631 2.90294 1.31465C1.54846 2.28467 0.588336 3.70295 0.195914 5.31343C-0.196508 6.9239 0.0046314 8.62044 0.763017 10.0967L0.0199981 13.674C0.0120423 13.7097 0.011734 13.7467 0.0190932 13.7826C0.0264524 13.8184 0.0413153 13.8523 0.0627216 13.8821C0.0933771 13.9273 0.137198 13.962 0.188319 13.9818C0.239441 14.0015 0.295426 14.0053 0.348784 13.9927L3.87813 13.1619C5.36277 13.8942 7.06131 14.0804 8.67139 13.6873C10.2815 13.2941 11.6987 12.3471 12.6707 11.0149C13.6427 9.68274 14.1064 8.05172 13.9794 6.41221C13.8524 4.7727 13.1428 3.23108 11.977 2.06174H11.9826ZM10.8792 10.7875C10.0668 11.5917 9.02057 12.1233 7.88771 12.3073C6.75486 12.4913 5.59232 12.3187 4.56356 11.8135L4.06945 11.5704L1.90169 12.0788V12.0511L2.35865 9.88306L2.11717 9.4115C1.59115 8.38855 1.40542 7.22667 1.58663 6.09255C1.76784 4.95844 2.30668 3.91039 3.12582 3.09881C4.15436 2.07992 5.54871 1.5076 7.00252 1.5076C8.45634 1.5076 9.85069 2.07992 10.8792 3.09881L10.9034 3.13197C11.9185 4.1541 12.4852 5.53264 12.48 6.96727C12.4748 8.4019 11.8981 9.77635 10.8755 10.7912L10.8792 10.7875Z" fill="white")
+                                            path(d="M10.6872 9.21127C10.4215 9.62573 9.99986 10.1323 9.47417 10.2594C8.5454 10.4804 7.1318 10.2594 5.36156 8.63655L5.33927 8.61629C3.79936 7.19054 3.3907 6.00243 3.48172 5.06114C3.53559 4.52511 3.98512 4.04249 4.36406 3.72566C4.4243 3.67528 4.4956 3.63958 4.57225 3.6214C4.64889 3.60323 4.72876 3.60309 4.80548 3.62098C4.88219 3.63888 4.95361 3.67433 5.01405 3.72449C5.07448 3.77465 5.12224 3.83813 5.15352 3.90986L5.72378 5.18824C5.76101 5.27053 5.77497 5.36131 5.76418 5.45087C5.75338 5.54042 5.71823 5.62538 5.66248 5.69665L5.37271 6.06505C5.31248 6.14153 5.2766 6.23407 5.26965 6.33086C5.2627 6.42765 5.285 6.5243 5.3337 6.60846C5.60895 7.01077 5.9383 7.37394 6.31263 7.6879C6.71537 8.07225 7.17211 8.39675 7.66864 8.65129C7.75926 8.68751 7.8587 8.69616 7.9543 8.67615C8.0499 8.65614 8.13734 8.60837 8.20547 8.53892L8.53797 8.20367C8.60124 8.1362 8.6821 8.08741 8.7716 8.0627C8.8611 8.038 8.95576 8.03833 9.04508 8.06367L10.4011 8.44866C10.4779 8.47034 10.5485 8.50966 10.6072 8.56342C10.6659 8.61719 10.711 8.68389 10.7388 8.75814C10.7667 8.83239 10.7765 8.9121 10.7675 8.99082C10.7586 9.06954 10.731 9.14506 10.6872 9.21127Z" fill="white")
+                                    .tel__item-info 
+                                        .tel__item-title WhatsApp
+                                        .tel__item-text +7 961 777-2640
+                                a(href="https://t.me/Bukedo").tel__item 
+                                    .tel__icon.tel__icon-telegram
+                                        svg(width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                            path(d="M14 1.38054L11.7857 12.5445C11.7857 12.5445 11.4761 13.3187 10.6244 12.947L5.49165 9.01854C6.18154 8.39837 11.5336 3.58665 11.7676 3.36845C12.1294 3.03075 11.9049 2.82977 11.4844 3.08517L3.57894 8.10552L0.528988 7.07875C0.528988 7.07875 0.0488272 6.9084 0.00261589 6.5368C-0.0438689 6.16519 0.544574 5.96394 0.544574 5.96394L12.9782 1.08632C12.9782 1.08632 14 0.637332 14 1.38054Z" fill="white")
+                                    .tel__item-info 
+                                        .tel__item-title Telegram
+                                        .tel__item-text @Bukedo
+                                a(href="tel:+7 495 215-20-97").tel__item 
+                                    .tel__icon.tel__icon-phone
+                                        svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                            path(d="M5.80666 10.4754C3.50457 8.36858 2.89966 6.18659 2.7746 4.82125C2.69835 3.98875 3.35325 3.35038 4.17922 3.22138L5.13082 3.07277C6.06767 2.92646 6.9514 3.55053 7.1269 4.48235L7.27884 5.28906C7.34789 5.65568 7.14487 6.01922 6.79652 6.15274C6.39843 6.30532 6.20339 6.75099 6.40671 7.12571C6.65003 7.57417 7.024 8.15538 7.51698 8.60655C8.00997 9.05771 8.62196 9.37883 9.09018 9.58155C9.48141 9.75094 9.90808 9.51726 10.0249 9.10724C10.1271 8.74845 10.4712 8.51408 10.8425 8.55045L11.6595 8.63047C12.6032 8.7229 13.303 9.548 13.2401 10.4941L13.1762 11.4551C13.1207 12.2893 12.5427 12.998 11.7067 12.9957C10.3357 12.9918 8.10876 12.5822 5.80666 10.4754Z" fill="#03A050")
+                                    .tel__item-info 
+                                        .tel__item-title 8 495 215-20-97
                         .icons
                             button.icons__heart.btn-icon(aria-label="Нравятся")
                                 svg(width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -143,21 +227,73 @@ html(lang="ru")
                                     .icons__burger-line
                     .header__bottom-small 
                         .header__working
-                                .header__working-icon 
-                                    svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M9 4.27783V9.00005L12.6111 11.5001" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                        path(d="M9 0.944824C13.4489 0.944824 17.0556 4.55149 17.0556 9.00038C17.0556 13.4493 13.4489 17.0559 9 17.0559" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                        path(d="M3.3033 15.5299C3.76354 15.5299 4.13664 15.1569 4.13664 14.6966C4.13664 14.2364 3.76354 13.8633 3.3033 13.8633C2.84307 13.8633 2.46997 14.2364 2.46997 14.6966C2.46997 15.1569 2.84307 15.5299 3.3033 15.5299Z" fill="#AD2950")
-                                        path(d="M0.944417 9.83366C1.40465 9.83366 1.77775 9.46056 1.77775 9.00033C1.77775 8.54009 1.40465 8.16699 0.944417 8.16699C0.48418 8.16699 0.111084 8.54009 0.111084 9.00033C0.111084 9.46056 0.48418 9.83366 0.944417 9.83366Z" fill="#AD2950")
-                                        path(d="M3.3033 4.13688C3.76354 4.13688 4.13664 3.76379 4.13664 3.30355C4.13664 2.84331 3.76354 2.47021 3.3033 2.47021C2.84307 2.47021 2.46997 2.84331 2.46997 3.30355C2.46997 3.76379 2.84307 4.13688 3.3033 4.13688Z" fill="#AD2950")
-                                        path(d="M5.91781 17.2756C6.37804 17.2756 6.75114 16.9025 6.75114 16.4422C6.75114 15.982 6.37804 15.6089 5.91781 15.6089C5.45757 15.6089 5.08447 15.982 5.08447 16.4422C5.08447 16.9025 5.45757 17.2756 5.91781 17.2756Z" fill="#AD2950")
-                                        path(d="M1.5577 12.9157C2.01794 12.9157 2.39103 12.5426 2.39103 12.0824C2.39103 11.6221 2.01794 11.249 1.5577 11.249C1.09746 11.249 0.724365 11.6221 0.724365 12.0824C0.724365 12.5426 1.09746 12.9157 1.5577 12.9157Z" fill="#AD2950")
-                                        path(d="M1.5577 6.75114C2.01794 6.75114 2.39103 6.37804 2.39103 5.91781C2.39103 5.45757 2.01794 5.08447 1.5577 5.08447C1.09746 5.08447 0.724365 5.45757 0.724365 5.91781C0.724365 6.37804 1.09746 6.75114 1.5577 6.75114Z" fill="#AD2950")
-                                        path(d="M5.91781 2.39128C6.37804 2.39128 6.75114 2.01818 6.75114 1.55794C6.75114 1.09771 6.37804 0.724609 5.91781 0.724609C5.45757 0.724609 5.08447 1.09771 5.08447 1.55794C5.08447 2.01818 5.45757 2.39128 5.91781 2.39128Z" fill="#AD2950")
-                                .header__working-time 
-                                    p 23 июля с 11:00 до 21:00
-                                    svg(width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                        path(d="M1.5 1.25L5.46967 5.51404C5.76256 5.82865 6.23744 5.82865 6.53033 5.51404L10.5 1.25" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
+                            .header__working-icon 
+                                svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M9 4.27783V9.00005L12.6111 11.5001" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M9 0.944824C13.4489 0.944824 17.0556 4.55149 17.0556 9.00038C17.0556 13.4493 13.4489 17.0559 9 17.0559" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M3.3033 15.5299C3.76354 15.5299 4.13664 15.1569 4.13664 14.6966C4.13664 14.2364 3.76354 13.8633 3.3033 13.8633C2.84307 13.8633 2.46997 14.2364 2.46997 14.6966C2.46997 15.1569 2.84307 15.5299 3.3033 15.5299Z" fill="#AD2950")
+                                    path(d="M0.944417 9.83366C1.40465 9.83366 1.77775 9.46056 1.77775 9.00033C1.77775 8.54009 1.40465 8.16699 0.944417 8.16699C0.48418 8.16699 0.111084 8.54009 0.111084 9.00033C0.111084 9.46056 0.48418 9.83366 0.944417 9.83366Z" fill="#AD2950")
+                                    path(d="M3.3033 4.13688C3.76354 4.13688 4.13664 3.76379 4.13664 3.30355C4.13664 2.84331 3.76354 2.47021 3.3033 2.47021C2.84307 2.47021 2.46997 2.84331 2.46997 3.30355C2.46997 3.76379 2.84307 4.13688 3.3033 4.13688Z" fill="#AD2950")
+                                    path(d="M5.91781 17.2756C6.37804 17.2756 6.75114 16.9025 6.75114 16.4422C6.75114 15.982 6.37804 15.6089 5.91781 15.6089C5.45757 15.6089 5.08447 15.982 5.08447 16.4422C5.08447 16.9025 5.45757 17.2756 5.91781 17.2756Z" fill="#AD2950")
+                                    path(d="M1.5577 12.9157C2.01794 12.9157 2.39103 12.5426 2.39103 12.0824C2.39103 11.6221 2.01794 11.249 1.5577 11.249C1.09746 11.249 0.724365 11.6221 0.724365 12.0824C0.724365 12.5426 1.09746 12.9157 1.5577 12.9157Z" fill="#AD2950")
+                                    path(d="M1.5577 6.75114C2.01794 6.75114 2.39103 6.37804 2.39103 5.91781C2.39103 5.45757 2.01794 5.08447 1.5577 5.08447C1.09746 5.08447 0.724365 5.45757 0.724365 5.91781C0.724365 6.37804 1.09746 6.75114 1.5577 6.75114Z" fill="#AD2950")
+                                    path(d="M5.91781 2.39128C6.37804 2.39128 6.75114 2.01818 6.75114 1.55794C6.75114 1.09771 6.37804 0.724609 5.91781 0.724609C5.45757 0.724609 5.08447 1.09771 5.08447 1.55794C5.08447 2.01818 5.45757 2.39128 5.91781 2.39128Z" fill="#AD2950")
+                            .header__working-time 
+                                p.header__working-text 
+                                svg(width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M1.5 1.25L5.46967 5.51404C5.76256 5.82865 6.23744 5.82865 6.53033 5.51404L10.5 1.25" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
+                        .header__choice 
+                            .header__choice-wrapper 
+                                h5.header__choice-title Укажите дату и время доставки
+                                .header__choice-tabs 
+                                    .header__choice-tab.header__choice-tab-active
+                                        .header__choice-days Сегодня
+                                        .header__choice-number 
+                                    .header__choice-tab 
+                                        .header__choice-days Завтра
+                                        .header__choice-number 
+                                    .header__choice-tab 
+                                        .header__choice-days 
+                                        .header__choice-number 
+                                    .header__choice-tab 
+                                        .header__choice-days 
+                                        .header__choice-number 
+                                .header__choice-select
+                                    p Другая дата
+                                    svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M1 1L4.5286 4.79026C4.78894 5.06991 5.21106 5.06991 5.4714 4.79026L9 1" stroke="#1C1C1D" stroke-linecap="round")
+                                .header__choice-options 
+                                    .header__choice-option.header__choice-option-active 
+                                    .header__choice-option 
+                                    .header__choice-option 
+                                    .header__choice-option 
+                                    .header__choice-option 
+                                    .header__choice-option 
+                                    .header__choice-option 
+                                    .header__choice-option 
+                                .header__choice-time 
+                                    .header__choice-time-select
+                                        p.header__choice-time-select-text 10:00 - 11:00
+                                        svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                            path(d="M1 1L4.5286 4.79026C4.78894 5.06991 5.21106 5.06991 5.4714 4.79026L9 1" stroke="#1C1C1D" stroke-linecap="round")
+                                    .header__choice-time-options 
+                                        .header__choice-time-option 11:00 - 12:00
+                                        .header__choice-time-option 12:00 - 13:00
+                                        .header__choice-time-option 13:00 - 14:00
+                                        .header__choice-time-option 14:00 - 15:00
+                                        .header__choice-time-option 15:00 - 16:00
+                                        .header__choice-time-option 16:00 - 17:00
+                                        .header__choice-time-option 17:00 - 18:00
+                                        .header__choice-time-option 18:00 - 19:00
+                                        .header__choice-time-option 19:00 - 20:00
+                                        .header__choice-time-option 20:00 - 21:00
+                                    .header__choice-local Время Местное
+                                .header__choice-checkrecipient
+                                    input.header__choice-input#checkrecipient2(type="checkbox", name="checkrecipient")
+                                    label.header__choice-label(for="checkrecipient2")
+                                        .header__choice-check 
+                                        p.header__choice-text Уточнить у получателя
+                                button.header__choice-btn Применить
                     .popup
                         .popup__wrapper 
                             .composition
@@ -175,54 +311,18 @@ html(lang="ru")
                                     li.popup__list-item Все подарки
                             .filters
                                 ul.popup__list 
-                                        li.popup__list-item По цене
-                                        li.popup__list-item.popup__list-item-active По цветам
-                                        li.popup__list-item Повод
-                                        li.popup__list-item По размеру
-                                        li.popup__list-item По гамме
+                                    li.popup__list-item.popup__list-item-active(data-choice='prices') По цене
+                                    li.popup__list-item(data-choice='flowers') По цветам
+                                    li.popup__list-item(data-choice='sizes') По размеру
+                                    li.popup__list-item(data-choice='colors') По гамме
                             .contant 
-                                ul.contant__list 
-                                    li.contant__list-item Альстромерия
-                                    li.contant__list-item Амариллис
-                                    li.contant__list-item Анемон
-                                    li.contant__list-item Гвоздика
-                                    li.contant__list-item Гвоздика кустовая
-                                    li.contant__list-item Гербера
-                                    li.contant__list-item Гербера мини
-                                    li.contant__list-item Гиацинт
-                                    li.contant__list-item Гипсофила
-                                    li.contant__list-item Гортензия
-                                    li.contant__list-item Ирис
-                                    li.contant__list-item Калла
-                                    li.contant__list-item Лаванда
-                                    li.contant__list-item Лилия
-                                    li.contant__list-item Мимоза
-                                    li.contant__list-item Нарцисс
-                                    li.contant__list-item Орхидея Ванда
-                                    li.contant__list-item Орхидея Фаленопсис
-                                    li.contant__list-item Орхидея Цимбидиум
-                                    li.contant__list-item Пион
-                                    li.contant__list-item Пион Сара Бернар
-                                    li.contant__list-item Подсолнух
-                                    li.contant__list-item Ранункулюс
-                                    li.contant__list-item Роза
-                                    li.contant__list-item Роза Вувузела
-                                    li.contant__list-item Роза Пинк Охара
-                                    li.contant__list-item Роза Эквадор
-                                    li.contant__list-item Роза кустовая
-                                    li.contant__list-item Роза кустовая пионовидная
-                                    li.contant__list-item Роза пионовидная
-                                    li.contant__list-item Ромашка
-                                    li.contant__list-item Сирень
-                                    li.contant__list-item Тюльпан
-                                    li.contant__list-item Тюльпан пионовидный
-                                    li.contant__list-item Хлопок
-                                    li.contant__list-item Хризантема Антонов
-                                    li.contant__list-item Хризантема Момоко
-                                    li.contant__list-item Хризантема кустовая
-                                    li.contant__list-item Хризантема одноголовая
-                                    li.contant__list-item Эустома
-                                    li.contant__list-item Эустома махровая
+                                .polzunok-container-3(data-contant='prices')
+                                    input(type="text").polzunok-input-3-left
+                                    input(type="text").polzunok-input-3-right
+                                    .polzunok-3
+                                ul.contant__list(data-contant='flowers')
+                                ul.contant__list(data-contant='sizes')
+                                ul.contant__list(data-contant='colors')
             .header__social
                 a(href="tel:+7 495 215-20-97" type="tel").header__social-item 
                     .header__social-icon
@@ -250,7 +350,20 @@ html(lang="ru")
                     .footer__social-info 
                         .footer__social-title Telegram
                         .footer__social-text @Bukedo
-                    
+        .modal-city
+            .modal-city__wrapper
+                .modal-city__title Выберите город доставки
+                input.modal-city__input(type="text" placeholder="Введите название населенного пункта")
+                ul.modal-city__list
+                button.allbouquets
+                    a(href="").allbouquets__wrapper.btn-text
+                        p.allbouquets__text Больше городов
+                        .allbouquets__icon
+                            svg(width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M0.5 13L6.18539 7.70711C6.60487 7.31658 6.60487 6.68342 6.18539 6.29289L0.500002 1" stroke="#AD2950" stroke-linecap="round")
+                button.modal-city__close  
+                    svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M1.5 1.5L9 9M9 9L16.5 16.5M9 9L16.5 1.5M9 9L1.5 16.5" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
         main
             section.stack
                 .container

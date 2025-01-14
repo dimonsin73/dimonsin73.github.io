@@ -148,6 +148,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 1090px;
+  width: 100%;
+  margin: 0 auto;
 }
 .main__left-title {
   display: flex;
@@ -234,7 +237,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .main__left-select {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 16px;
   padding: 15px 16px;
@@ -1269,6 +1272,9 @@ body {
     display: none;
   }
   .main__left-dropdawn {
+    display: flex;
+  }
+  .main__left-select {
     display: flex;
   }
   .laptop-hidden {

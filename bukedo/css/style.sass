@@ -123,23 +123,31 @@ body
     &__left
         @include flex
         column-gap: 24px
+        &-item 
+            position: relative
     &__city
         @include flex
         column-gap: 8px
         &-text
             @include text-content
+            cursor: pointer
     &__working
         @include flex
         column-gap: 8px
+        & .header__working-time svg
+            transition: transform 0.3s ease
+        &-active .header__working-time svg
+            transform: scale(1, -1)
         &-chevron
             @include flex
         &-time
             @include flex
             gap: 8px
-            @include text-content
             padding-right: 8px
-            color: var(--burgundy)
             cursor: pointer
+        &-text
+            @include text-content
+            color: var(--burgundy)
     &__line
         width: 100%
         border-bottom: 1px solid var(--border)
@@ -152,6 +160,10 @@ body
             justify-content: space-between
         &-small 
             display: none
+            & .header__choice
+                top: calc( 100% + 16px )
+                left: 50%
+                transform: translateX(-50%)
     &__social
         display: none
         z-index: 20
@@ -188,6 +200,191 @@ body
             cursor: pointer
             &:last-child
                 border-bottom: none
+    &__choice
+        position: absolute
+        top: calc(100% + 7px)
+        left: 0
+        height: 0
+        border-radius: 16px
+        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
+        background-color: #fff
+        overflow: hidden
+        opacity: 0
+        transition: height 0.3s ease, opacity 0.3s ease
+        &-active 
+            height: 415px
+            overflow: visible
+            opacity: 1
+        &-wrapper 
+            width: 360px
+            padding: 24px
+        &-title 
+            margin-bottom: 24px
+            font: 500 16px/21px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-tabs 
+            display: flex
+            gap: 8px
+            margin-bottom: 16px
+        &-tab 
+            flex: 1 0 calc(25% - 6px)
+            @include flex
+            flex-direction: column
+            gap: 2px
+            padding: 10px 12px
+            border: 1px solid #E5E7EB
+            border-radius: 12px
+            color: var(--black)
+            cursor: pointer
+            &-active 
+                border: 1px solid var(--burgundy)
+                background-color: var(--burgundy)
+                color: #fff
+        &-days 
+            font: 500 12px/16px 'PT Root UI', 'sans-serif'
+        &-number 
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+        &-select 
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 100%
+            margin-bottom: 24px
+            padding: 13px 24px 13px 58px
+            border: 1px solid #93949B
+            border-radius: 12px
+            background: 
+                image: url('../img/calendar.svg')
+                position: center left 24px
+                repeat: no-repeat
+            font: 500 16px/22px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            cursor: pointer
+            & svg 
+                transition: transform 0.3s ease
+            &-active svg
+                transform: scale(1, -1)
+        &-options
+            position: absolute
+            left: 24px
+            right: 24px
+            height: 0
+            padding: 0 24px
+            border-radius: 12px
+            box-shadow: 0px 3px 10px -5px #12121712
+            background-color: #fff
+            overflow-y: scroll
+            transition: height 0.3s ease
+            z-index: 100
+            &-active 
+                height: 255px
+            &::-webkit-scrollbar
+                width: 8px
+                background-color: #fff
+            &::-webkit-scrollbar-thumb 
+                border-radius: 4px
+                background-color: #E6E9ED
+        &-option
+            padding: 16px 0
+            border-bottom: 1px solid #E5E7EB
+            cursor: pointer
+            &:last-child
+                border-bottom: none
+            &-active    
+                background: 
+                    image: url('../img/check-i.svg')
+                    position: center right 
+                    repeat: no-repeat
+                color: var(--burgundy)
+        &-time 
+            position: relative
+            display: flex
+            justify-content: space-between
+            align-items: center
+            gap: 34px
+            margin-bottom: 24px
+            &-select 
+                display: flex
+                align-items: center
+                justify-content: space-between
+                width: 205px
+                padding: 13px 24px
+                border: 1px solid #93949B
+                border-radius: 12px
+                font: 500 16px/22px 'PT Root UI', 'sans-serif'
+                color: var(--black)
+                cursor: pointer
+                & svg 
+                    transition: transform 0.3s ease
+                &-active svg
+                    transform: scale(1, -1)
+            &-options
+                position: absolute
+                top: calc( 100% + 16px )
+                left: 0
+                width: 205px
+                height: 0
+                padding: 0 24px
+                border-radius: 12px
+                box-shadow: 0px 3px 10px -5px #12121712
+                background-color: #fff
+                overflow-y: scroll
+                transition: height 0.3s ease
+                z-index: 100
+                &-active 
+                    height: 255px
+                &::-webkit-scrollbar
+                    width: 8px
+                    background-color: #fff
+                &::-webkit-scrollbar-thumb 
+                    border-radius: 4px
+                    background-color: #E6E9ED
+            &-option
+                padding: 16px 0
+                border-bottom: 1px solid #E5E7EB
+                cursor: pointer
+                &:last-child
+                    border-bottom: none
+        &-local 
+            width: 56px
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            text-align: right
+        &-checkrecipient
+            margin-bottom: 24px
+            padding: 3px 0
+        &-input
+            display: none
+            width: 0
+            opacity: 0
+            &:checked ~ .header__choice-label .header__choice-check
+                background:
+                    color: var(--burgundy)
+                    image: url(../img/check.png)
+                    repeat: no-repeat
+                    position: center center
+            &:checked ~ .header__choice-label .header__choice-circle
+                outline: 1px solid var(--burgundy)
+        &-text 
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-label 
+            @include flex
+            justify-content: start
+            column-gap: 12px
+        &-check 
+            width: 18px
+            height: 18px
+            border: 1px solid #93949B
+            border-radius: 4px 
+        &-btn 
+            width: 100%
+            padding: 14.5px
+            border-radius: 12px
+            background-color: var(--burgundy)
+            font: 700 16px/21px 'PT Root UI' , 'sans-serif'
+            color: #fff
+
 .catalog
     @include flex
     column-gap: 8px
@@ -229,6 +426,53 @@ body
         &::placeholder
             @include text
             color: var(--placeholder)
+    &__clue
+        position: absolute
+        width: 100%
+        min-width: 421px
+        height: 0
+        border-radius: 12px
+        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
+        background-color: #fff
+        overflow: hidden
+        transition: height 0.3s ease
+        z-index: 1000
+        &-active
+            height: 508px
+        &-wrapper 
+            display: flex
+            flex-direction: column
+            gap: 32px
+            padding: 24px
+        &-title 
+            margin-bottom: 12px
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: #93949B
+        &-items 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 18px
+        &-item 
+            display: flex
+            align-items: center
+            gap: 8px
+            cursor: pointer
+            & img 
+                width: 40px
+                height: 40px
+                border-radius: 6px
+                overflow: hidden
+        &-info 
+            display: flex
+            flex-direction: column
+            gap: 4px
+        &-subtitle
+            font: 400 16px/21px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-subtext
+            font: 400 12px/14px 'PT Root UI', 'sans-serif'
+            color: var(--black)
 .tel
     position: relative
     @include flex
@@ -281,21 +525,77 @@ body
     &__item 
         display: flex
         align-items: center
+        gap: 8px   
         width: 100%
         height: 50px
         padding: 7px 16px
         border-radius: 16px
         background-color: #F5F5F5  
-        &-link 
-            display: flex
-            align-items: center
-            gap: 8px   
         &-title 
             font: 500 16px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
         &-text
             font: 500 12px/16px 'PT Root UI', 'sans-serif'
             color: #93949B
+.modal-city
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: none
+    background-color: #26262680
+    z-index: 1000
+    &-active 
+        @include flex
+    &__wrapper
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 32px
+        padding: 32px
+        border-radius: 16px
+        box-shadow: 0px 8px 22px 0px #2626261A
+        background-color: #fff
+    &__title 
+        font: 500 32px/42px 'PT Root UI', 'sans-serif'
+    &__input 
+        padding: 14.5px 56px
+        border: 1px solid #E5E7EB
+        border-radius: 12px
+        background: 
+            image: url(../img/search_bg.svg)
+            repeat: no-repeat
+            position: center left 24px
+        font: 400 16px/21px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        &::placeholder
+            font: 400 16px/21px 'PT Root UI', 'sans-serif'
+            color: #93949B
+    &__list 
+        display: grid
+        grid-template-columns: repeat(4, 161px)
+        grid-template-rows: repeat(10, 1fr)
+        grid-auto-flow: column
+        row-gap: 16px
+        column-gap: 50px
+    &__item
+        font: 400 16px/21px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        cursor: pointer
+        &-black
+            font: 500 18px/21px 'PT Root UI', 'sans-serif'
+    & .allbouquets
+        margin-top: 0
+    &__close 
+        position: absolute
+        top: 20px
+        right: 20px
+        @include flex
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background-color: var(--bg-stack)
 .icons
     @include flex
     column-gap: 16px
@@ -934,6 +1234,7 @@ body
         display: block
     &__wrapper
         display: flex
+        min-height: 760px
         border-radius: 16px
         box-shadow: 0px 20px 65px -5px #1212170A
         background-color: #fff
@@ -964,7 +1265,7 @@ body
     padding: 48px 32px
     background-color: var(--bg-stack)
     &__list
-        display: grid
+        display: none
         grid-template-rows: repeat(14, auto) 
         grid-template-columns: repeat(3, 1fr)
         grid-auto-flow: column
@@ -1118,18 +1419,20 @@ body
     &-active
         height: 203px
 
-
+.polzunok-container-3, 
 .polzunok-container-4, 
 .polzunok-container-5 
     display: grid
     grid-template-columns: 1fr 1fr
     gap: 16px
     padding: 16px 24px
+.polzunok-container-3:after, 
 .polzunok-container-4:after, 
 .polzunok-container-5:after 
     content: ""
     clear: both
     display: table
+.polzunok-container-3 .ui-slider, 
 .polzunok-container-4 .ui-slider, 
 .polzunok-container-5 .ui-slider 
     position: relative
@@ -1137,7 +1440,8 @@ body
     margin: 16px 12px 0
     height: 2px
     background: #E6E9ED
-.polzunok-container-4 .ui-slider .ui-slider-handle, 
+.polzunok-container-3 .ui-slider .ui-slider-handle,
+.polzunok-container-4 .ui-slider .ui-slider-handle,  
 .polzunok-container-5 .ui-slider .ui-slider-handle
     position: absolute
     top: -11px
@@ -1150,6 +1454,7 @@ body
     cursor: pointer
     z-index: 2
     transition: transform 0.2s, border 0.4s
+.polzunok-input-3-left, .polzunok-input-3-right,
 .polzunok-input-4-left, .polzunok-input-4-right,
 .polzunok-input-5-left, .polzunok-input-5-right
     width: 100%
@@ -1157,12 +1462,15 @@ body
     border: 1px solid #93949B
     border-radius: 12px
     font: 400 16px/20px 'PT Root UI', 'sans-serif'
+.polzunok-input-3-left, 
 .polzunok-input-4-left, 
 .polzunok-input-5-left 
     float: left
+.polzunok-input-3-right,
 .polzunok-input-4-right, 
 .polzunok-input-5-right 
     float: right
+.polzunok-container-3 .ui-slider .ui-slider-range, 
 .polzunok-container-4 .ui-slider .ui-slider-range, 
 .polzunok-container-5 .ui-slider .ui-slider-range 
     position: absolute
@@ -1401,6 +1709,9 @@ body
 @media (max-width: 907px)
     #filter-sizes .dropdawn
         left: 0
+    .modal-city__list
+        grid-template-columns: repeat(3, 161px)
+        grid-template-rows: repeat(14, auto)
 @media (max-width: 767px) 
     .small-hidden
         display: none
@@ -1631,6 +1942,14 @@ body
         height: 36px
     .menu
         display: block
+    .modal-city
+        position: absolute
+        bottom: inherit
+    .modal-city__list 
+        grid-template-columns: repeat(2, 161px)
+        grid-template-rows: repeat(20, auto)
+    .modal-city__title
+        margin-right: 40px
 @media (max-width: 639px) 
     .offer
         &__bouquet
@@ -1677,3 +1996,6 @@ body
             display: block
             & img
                 width: 100%
+    .modal-city__list 
+        grid-template-columns: repeat(1, 161px)
+        grid-auto-flow: row
