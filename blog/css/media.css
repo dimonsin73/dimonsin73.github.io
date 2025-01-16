@@ -214,10 +214,10 @@
         grid-template-columns: 1fr;
     }
     .news__items img:focus{
-        transform: scale(1.25);
+        transform: scale(1.35);
     }
     .project__content img:focus{
-        transform: scale(1.25);
+        transform: scale(1.35);
     }
     .nav{
         grid-row-start: 1;
@@ -365,10 +365,10 @@
         gap: 0;
     }
     .news__items img:focus{
-        transform: scale(1);
+        transform: scale(1.3);
     }
     .project__content img:focus{
-        transform: scale(1);
+        transform: scale(1.3);
     }
     .news__item{
         grid-column: 1 / -1;

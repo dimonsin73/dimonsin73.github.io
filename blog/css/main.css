@@ -812,6 +812,9 @@ button {
     padding-bottom: 100px;
     background-color: var(--bg-color);
 }
+.news__bg{
+    position: fixed;
+}
 .news__bg-text{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -823,6 +826,7 @@ button {
     color: #fff;
 }
 .news__items{
+    position: relative;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 420px 670px 200px;
@@ -833,7 +837,7 @@ button {
     margin-bottom: 100px;
 }
 .news__items:first-child{
-    margin-top: -220px;
+    margin-top: 140px;
 }
 .news__item-title{
     margin-top: 5px;
@@ -861,15 +865,17 @@ button {
     width: 331px;
     height: 465px;
 }
-.news__items img:focus{
-    -webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-            transform: scale(1.5);
+.news__items img{
     -webkit-transition: -webkit-transform 0.5s ease;
     transition: -webkit-transform 0.5s ease;
     -o-transition: transform 0.5s ease;
     transition: transform 0.5s ease;
     transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.news__items img:focus{
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
     z-index: 10;
 }
 .news__list{
@@ -899,7 +905,6 @@ button {
     margin-bottom: 60px;
 }
 .news__nav{
-    height: 400px;
     padding-left: 20px;
     overflow-y: hidden;
     -webkit-transition: all 0.5s ease;
@@ -2350,6 +2355,9 @@ button {
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
 }
+.project{
+    position: relative;
+}
 .project__header{
     max-width: 1360px;
     margin: 0 auto;
@@ -2512,16 +2520,18 @@ button {
             column-gap: 20px;
     margin-bottom: 120px;
 }
-.project__content img:focus{
-    position: relative;
-    -webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-            transform: scale(1.5);
+.project__content img{
     -webkit-transition: -webkit-transform 0.5s ease;
     transition: -webkit-transform 0.5s ease;
     -o-transition: transform 0.5s ease;
     transition: transform 0.5s ease;
     transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.project__content img:focus{
+    position: relative;
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
     z-index: 10;
 }
 .project__content-item{
@@ -2821,7 +2831,6 @@ button {
 
 .accordion{
     position: relative;
-    margin-top: -100px;
     overflow: visible;
 }
 .accordion__robo{
