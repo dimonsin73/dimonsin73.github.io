@@ -27,6 +27,15 @@ for (let i = 0; i < productBtns.length; i++) {
        
     });
 };
+const cardBtnsBasket = document.querySelector('.card__btns-basket');
+cardBtnsBasket.addEventListener('click', function(){
+    cardBtnsBasket.classList.toggle('card__btns-basket-active');
+    if (cardBtnsBasket.classList.contains('card__btns-basket-active')) {
+        cardBtnsBasket.innerHTML = 'В корзине';
+    } else {
+        cardBtnsBasket.innerHTML = 'В корзину';
+    }
+});
 // понравившиеся
 const productHears = document.querySelectorAll('.product__heart')
 for (let i = 0; i < productHears.length; i++) {
@@ -35,6 +44,10 @@ for (let i = 0; i < productHears.length; i++) {
         element.classList.toggle('product__heart-active');
     });
 };
+const cardBtnHear = document.querySelector('.card__btns-heart')
+cardBtnHear.addEventListener('click', function(){
+    cardBtnHear.classList.toggle('card__btns-heart-active');
+});
 // количество карточек
 const products = document.querySelector('.products')
 const productArr = products.querySelectorAll('.product')
@@ -1090,4 +1103,52 @@ for (let i = 0; i < contantItemArr.length; i++) {
         default:
             break;
     }
+}
+
+// Работа Card
+const productLinkArr = document.querySelectorAll('.product__link')
+const card = document.querySelector('.card')
+for (let i = 0; i < productLinkArr.length; i++) {
+    const element = productLinkArr[i];
+    element.addEventListener('click', function(event){
+        event.preventDefault()
+        const product = element.parentElement
+
+        const imgPath = product.querySelector('.product__img-source').srcset
+        const titleText = product.querySelector('.product__title').textContent
+        const priceText = product.querySelector('.product__sale').innerHTML
+
+
+        const cardImg = card.querySelector('.card__media-big')
+        cardImg.setAttribute('src', `${imgPath}`)
+        const cardTitle = card.querySelector('.card__title')
+        cardTitle.textContent = titleText
+        const cardPrice = card.querySelector('.card__price-text')
+        cardPrice.innerHTML = priceText
+
+        
+        card.classList.add('card-active')
+
+        const cardClose = card.querySelector('.card__close')
+        const cardWrapper = card.querySelector('.card__wrapper')
+        console.log(cardClose)
+        cardClose.querySelector('click', function(){
+            
+            
+            card.classList.remove('card-active')
+        })
+        document.addEventListener( 'mousedown', (e) => {
+            const withinBoundaries = e.composedPath().includes(cardWrapper)
+            if ( ! withinBoundaries ) {
+                card.classList.remove('card-active')
+            }
+        })
+        document.addEventListener('keydown', function(e) {
+            if( e.keyCode == 27 ){ 
+                card.classList.remove('card-active')
+            }
+        });
+    })
+
+    
 }

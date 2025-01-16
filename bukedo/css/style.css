@@ -893,6 +893,9 @@ body {
 .product__heart-active path {
   fill: var(--burgundy);
 }
+.product__link {
+  display: block;
+}
 .product__img img {
   border-radius: 16px;
 }
@@ -1805,25 +1808,78 @@ body {
 }
 
 .card {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: flex-start;
   background-color: rgba(38, 38, 38, 0.5019607843);
   z-index: 1000;
 }
+.card-active {
+  display: flex;
+}
 .card__wrapper {
+  position: relative;
   margin-top: 50px;
   border-radius: 24px;
   box-shadow: 0px 8px 22px 0px rgba(38, 38, 38, 0.1019607843);
   background-color: #fff;
+  overflow: hidden;
+}
+.card__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #F5F5F5;
+  z-index: 50;
+}
+.card__content {
+  display: flex;
+}
+.card__media {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card__media-big {
+  width: 636px;
+  height: 636px;
+  border-bottom-right-radius: 24px;
+}
+.card__media-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.card__media-small {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
 }
 .card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding: 60px 48px 48px 24px;
+}
+.card__info-title {
+  font: 700 16px/21px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.card__info-text {
+  font: 400 14px/18px "PT Root UI", "sans-serif";
+  color: var(--black);
 }
 .card__title {
   font: 500 24px/32px "PT Root UI", "sans-serif";
@@ -1848,12 +1904,44 @@ body {
   font: 400 14px/18px "PT Root UI", "sans-serif";
   color: var(--black);
 }
+.card__choice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 7px 24px;
+  border-radius: 12px;
+  background-color: #F5F5F5;
+}
+.card__choice-btn {
+  display: contents;
+}
 .card__btns {
   display: flex;
   gap: 16px;
 }
 .card__btns-basket {
   flex: 2 0 auto;
+  border: 1px solid var(--burgundy);
+  transition: all 0.3s ease;
+}
+.card__btns-basket-active {
+  border: 1px solid var(--green);
+  background-color: #fff;
+  color: var(--green);
+}
+.card__btns-basket-active::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/check-green.svg");
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+.card__btns-basket-active:hover {
+  border: 1px solid var(--green);
+  background-color: #fff;
+  color: var(--green);
 }
 .card__btns-heart {
   display: flex;
@@ -1864,15 +1952,37 @@ body {
   border: 1px solid #E5E7EB;
   border-radius: 12px;
 }
+.card__btns-heart-active path {
+  fill: var(--burgundy);
+}
 .card__delivery {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin: 8px 0;
 }
 .card__delivery-text {
   display: flex;
   align-items: center;
   gap: 10px;
+  font: 400 16px/21px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.card__size {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 8px 0;
+}
+.card__compound {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 8px 0;
+}
+.card__about-title {
+  font: 400 14px/18px "PT Root UI", "sans-serif";
+  color: var(--black);
 }
 .card__about-item {
   display: flex;
@@ -1884,7 +1994,12 @@ body {
 }
 .card__about-parameter {
   flex: 0 0 100px;
+  font: 400 14px/18px "PT Root UI", "sans-serif";
   color: #93949B;
+}
+.card__about-text {
+  font: 400 14px/18px "PT Root UI", "sans-serif";
+  color: var(--black);
 }
 
 .popup {

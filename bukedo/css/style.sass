@@ -704,6 +704,8 @@ body
         &-active 
             & path
                 fill: var(--burgundy)
+    &__link
+        display: block
     &__img
         & img
             border-radius: 16px
@@ -1331,25 +1333,64 @@ body
             font: 400 11px/11px 'PT Root UI', 'sans-serif'
             color: #fff
 .card 
-    position: absolute
+    position: fixed
     top: 0
     right: 0
     left: 0
     bottom: 0
-    display: flex
+    display: none
     justify-content: center
     align-items: flex-start
     background-color: #26262680
     z-index: 1000
+    &-active 
+        display: flex
     &__wrapper 
+        position: relative
         margin-top: 50px
         border-radius: 24px
         box-shadow: 0px 8px 22px 0px #2626261A
         background-color: #fff
+        overflow: hidden
+    &__close 
+        position: absolute
+        top: 20px
+        right: 20px
+        @include flex
+        width: 50px 
+        height: 50px
+        border-radius: 50%
+        background-color: #F5F5F5
+        z-index: 50
     &__content 
-    &__media
+        display: flex
+    &__media 
+        display: flex
+        flex-direction: column
+        gap: 10px
+        &-big 
+            width: 636px
+            height: 636px
+            border-bottom-right-radius: 24px
+        &-bottom
+            @include flex
+            
+            gap: 10px
+        &-small
+            width: 60px
+            height: 60px
+            border-radius: 8px
     &__info
+        display: flex
+        flex-direction: column
+        gap: 16px
         padding: 60px 48px 48px 24px
+        &-title 
+            font: 700 16px/21px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text 
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
     &__title 
         font: 500 24px/32px 'PT Root UI', 'sans-serif'
         color: var(--black)
@@ -1368,27 +1409,72 @@ body
             border-bottom: 0.5px dashed #1C1C1D
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
             color: var(--black)
-
+    &__choice 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        padding: 7px 24px
+        border-radius: 12px
+        background-color: #F5F5F5
+        &-btn 
+            display: contents
     &__btns
         display: flex
         gap: 16px
         &-basket
             flex: 2 0 auto
+            border: 1px solid var(--burgundy)
+            transition: all 0.3s ease
+            &-active 
+                border: 1px solid var(--green)
+                background-color: #fff
+                color: var(--green)
+                &::before
+                    content: ''
+                    width: 20px
+                    height: 20px
+                    background:
+                        image: url('../img/check-green.svg')
+                        repeat: no-repeat
+                        position: center left
+                &:hover 
+                    border: 1px solid var(--green)
+                    background-color: #fff
+                    color: var(--green)   
         &-heart 
             @include flex
             width: 50px
             height: 50px
             border: 1px solid #E5E7EB
             border-radius: 12px
+            &-active path
+                fill: var(--burgundy)
     &__delivery 
         display: flex
         flex-direction: column
         gap: 12px
+        margin: 8px 0
         &-text 
             display: flex
             align-items: center
             gap: 10px
+            font: 400 16px/21px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__size 
+        display: flex
+        flex-direction: column
+        gap: 12px
+        margin: 8px 0
+    &__compound
+        display: flex
+        flex-direction: column
+        gap: 12px
+        margin: 8px 0
     &__about
+        &-title 
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
         &-item
             display: flex
             padding: 8px 0
@@ -1397,7 +1483,11 @@ body
                 border-bottom: none
         &-parameter
             flex: 0 0 100px
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
             color: #93949B
+        &-text
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
 .popup
     position: absolute
     display: none
