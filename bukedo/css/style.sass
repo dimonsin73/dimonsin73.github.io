@@ -165,6 +165,7 @@ body
                 left: 50%
                 transform: translateX(-50%)
     &__social
+        position: relative
         display: none
         z-index: 20
     &__menu
@@ -1187,7 +1188,112 @@ body
     &__small
         display: none
 
-
+.links
+    position: relative
+    margin-bottom: 32px
+    z-index: 20
+    &__wrapper
+        display: flex
+        align-items: flex-end
+        gap: 12px
+        height: 74px
+    &__link
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: #93949B
+    &__slash
+        color: #E3E6EC
+    &__text
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: #93949B
+.addresses
+    position: relative
+    margin-bottom: 100px
+    z-index: 20
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 24px
+    &__input 
+        width: 100%
+        padding: 14.5px 58px
+        border: 1px solid #E3E6EC
+        border-radius: 12px
+        background: 
+            image: url('../img/search_bg.svg')
+            repeat: no-repeat
+            position: center left 28px
+        font: 400 16px/20px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        &::placeholder
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: #93949B
+    &__content
+        display: flex
+        height: 800px
+        border-radius: 24px
+        border: 1px solid #E3E6EC
+        overflow: hidden
+        &-list 
+            width: 416px
+            overflow-y: scroll
+            &::-webkit-scrollbar
+                width: 8px
+                background-color: #fff
+            &::-webkit-scrollbar-thumb 
+                border-radius: 4px
+                background-color: #E6E9ED
+        &-item 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 16px
+            padding: 24px
+            border-radius: 10px
+            &:nth-child(2n)
+                background-color: #F9FAFB
+        &-title 
+            font: 500 18px/24px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-delivery
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            justify-content: space-between
+            row-gap: 10px
+            column-gap: 16px
+            width: 100%
+        &-paragraph
+            display: flex
+            flex-direction: column
+            gap: 4px
+        &-subtitle 
+            font: 500 12px/16px 'PT Root UI', 'sans-serif'
+            color: #93949B
+        &-subtext
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__tabs 
+        display: none
+        align-items: center
+        border-radius: 12px
+        background-color: #F5F5F5
+        &-btn 
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 12px
+            flex: 0 0 50%
+            padding: 14.5px
+            border: 1px solid #F5F5F5
+            border-radius: 12px
+            transition: border 0.3s ease, color 0.3s ease, background-color 0.3s ease
+            & path 
+                transition: stroke 0.3s ease
+            &-active 
+                border: 1px solid var(--burgundy)
+                background-color: #fff
+                color: var(--burgundy)
+                & path 
+                    stroke: var(--burgundy)
 .menu
     display: none
     &__wrapper
@@ -1224,6 +1330,74 @@ body
             background-color: var(--burgundy)
             font: 400 11px/11px 'PT Root UI', 'sans-serif'
             color: #fff
+.card 
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    background-color: #26262680
+    z-index: 1000
+    &__wrapper 
+        margin-top: 50px
+        border-radius: 24px
+        box-shadow: 0px 8px 22px 0px #2626261A
+        background-color: #fff
+    &__content 
+    &__media
+    &__info
+        padding: 60px 48px 48px 24px
+    &__title 
+        font: 500 24px/32px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+    &__basket 
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__price 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &-text 
+            font: 500 32px/42px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-change 
+            border-bottom: 0.5px dashed #1C1C1D
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+
+    &__btns
+        display: flex
+        gap: 16px
+        &-basket
+            flex: 2 0 auto
+        &-heart 
+            @include flex
+            width: 50px
+            height: 50px
+            border: 1px solid #E5E7EB
+            border-radius: 12px
+    &__delivery 
+        display: flex
+        flex-direction: column
+        gap: 12px
+        &-text 
+            display: flex
+            align-items: center
+            gap: 10px
+    &__about
+        &-item
+            display: flex
+            padding: 8px 0
+            border-bottom: 1px solid #E5E7EB
+            &:last-child
+                border-bottom: none
+        &-parameter
+            flex: 0 0 100px
+            color: #93949B
 .popup
     position: absolute
     display: none
@@ -1553,6 +1727,16 @@ body
                 right: 95px
             &-2
                 right: -15px
+@media (max-width: 1329px)
+    .addresses__tabs
+        display: flex
+    .addresses__content-map
+        width: 100%
+        & iframe 
+            width: 100%
+    .addresses__content-list
+        display: none
+        width: 100%
 @media (max-width: 1199px)
     .popup
         &__list 
