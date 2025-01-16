@@ -1342,12 +1342,14 @@ body
     justify-content: center
     align-items: flex-start
     background-color: #26262680
+    overflow-y: scroll
     z-index: 1000
     &-active 
         display: flex
     &__wrapper 
         position: relative
         margin-top: 50px
+        margin-bottom: 50px
         border-radius: 24px
         box-shadow: 0px 8px 22px 0px #2626261A
         background-color: #fff
@@ -1381,6 +1383,7 @@ body
             height: 60px
             border-radius: 8px
     &__info
+        flex: 1 0 auto
         display: flex
         flex-direction: column
         gap: 16px
@@ -1488,6 +1491,41 @@ body
         &-text
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
             color: var(--black)
+    &__review
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 48px
+        background-color: #F5F5F5
+        &-header
+            display: flex
+            justify-content: space-between
+            align-items: flex-end
+        &-title
+            font: 500 32px/41px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-right 
+            display: flex
+            align-items: center
+            align-items: baseline
+            gap: 12px
+        &-grade
+            font: 500 42px/55px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-name 
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-dot 
+            color: #93949B
+        &-line 
+            display: grid
+            grid-template-columns: repeat(9, auto)
+            gap: 8px
+        &-small
+            width: 101px
+            height: 101px
+            border-radius: 8px
+            object-fit: cover
 .popup
     position: absolute
     display: none

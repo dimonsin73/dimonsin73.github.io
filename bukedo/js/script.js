@@ -1126,6 +1126,10 @@ for (let i = 0; i < productLinkArr.length; i++) {
         const cardPrice = card.querySelector('.card__price-text')
         cardPrice.innerHTML = priceText
 
+        const cardImgSmall = card.querySelectorAll('.card__media-small')
+        for (let i = 0; i < cardImgSmall.length; i++) {
+            cardImgSmall[0].setAttribute('src', `${imgPath}`)
+        }
         
         card.classList.add('card-active')
 
@@ -1133,8 +1137,6 @@ for (let i = 0; i < productLinkArr.length; i++) {
         const cardWrapper = card.querySelector('.card__wrapper')
         console.log(cardClose)
         cardClose.querySelector('click', function(){
-            
-            
             card.classList.remove('card-active')
         })
         document.addEventListener( 'mousedown', (e) => {
