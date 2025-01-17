@@ -113,7 +113,7 @@ body
         position: relative
         margin-top: 20px
         padding: 13px 0
-        z-index: 30
+        z-index: 40
         &-full
             position: relative
             @include flex
@@ -154,7 +154,7 @@ body
     &__bottom
         position: relative
         padding: 24px 0
-        z-index: 20
+        z-index: 30
         &-full
             @include flex
             justify-content: space-between
@@ -1370,8 +1370,9 @@ body
         flex-direction: column
         gap: 10px
         &-big 
-            width: 636px
-            height: 636px
+            display: block
+            max-width: 636px
+            max-height: 636px
             border-bottom-right-radius: 24px
         &-bottom
             @include flex
@@ -1527,14 +1528,32 @@ body
         &-dot 
             color: var(--grey)
         &-line 
-            display: grid
-            grid-template-columns: repeat(9, auto)
+            display: flex
+            justify-content: flex-start
             gap: 8px
+            overflow-x: scroll
         &-small
             width: 101px
             height: 101px
             border-radius: 8px
             object-fit: cover
+        &-image 
+            position: relative
+            flex: 0 0 101px
+            &-more:after
+                content: 'Ещё +5'
+                position: absolute
+                top: 0
+                bottom: 0
+                right: 0
+                left: 0
+                display: flex
+                justify-content: center
+                align-items: center
+                border-radius: 8px
+                background-color: #1C1C1D80
+                font: 700 18px/24px 'PT Root UI', 'sans-serif'
+                color: #fff
         &-card
             display: grid
             grid-template-columns:368px 368px
@@ -1644,9 +1663,141 @@ body
         margin: 22px 0
         &-item 
             font: 400 18px/22px 'PT Root UI', 'sans-serif'
-            color: #1C1C1D
+            color: var(--black)
             white-space: nowrap
-
+.about
+    &__wrapper
+        display: flex
+        flex-direction: column
+        gap: 48px
+        margin-bottom: 100px
+    &__title
+        text-align: center
+    &__content
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 24px
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &-title 
+            margin-bottom: 24px
+            font: 500 32px/42px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text 
+            max-width: 526px
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &:last-child
+                margin-bottom: 0
+    &__card 
+        display: flex
+        align-items: center
+        gap: 24px
+        padding: 24px
+        border-radius: 24px
+        background-color: #F5F5F5
+        &-img
+            flex: 0 0 auto
+        &-info 
+            display: flex
+            flex-direction: column
+            gap: 16px
+        &-title 
+            font: 700 22px/28px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text 
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__contacts 
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 24px
+    &__contact 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 32px 24px
+        border: 1px solid #DADADA
+        border-radius: 16px
+        &-big 
+            grid-column: span 2
+        &-title 
+            font: 500 22px/28px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text 
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-mail 
+            margin-top: auto
+            font: 700 22px/28px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-info 
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-line 
+            display: flex
+            justify-content: space-between
+        &-link 
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-subtitle 
+            font: 500 18px/24px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-subtext 
+            font: 400 12px/16px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-handvisits
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-shop 
+            grid-column: span 2
+            display: flex
+            flex-direction: row
+            gap: 24px
+        &-item 
+            flex: 0 0 calc( 50% - 12px )
+            display: flex 
+            flex-direction: column
+            justify-content: space-between
+            align-items: flex-start
+.agreement 
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 48px
+        max-width: 856px
+        margin: 0 auto 100px
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &-title 
+            margin-bottom: 8px
+            font: 700 32px/42px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            text-align: center
+        &-subtitle 
+            font: 700 22px/32px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            text-align: center
+    &__title 
+        margin-bottom: 16px
+        text-align: center
+    &__text 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        text-align: justify
+        &-p 
+            font: 400 16px/22px 'PT Root UI', 'sans-serif'
+            color: var(--black) 
+            & a 
+                color: var(--black)
+                text-decoration: underline
 .dropdawn
     position: absolute    
     top: 50px   
@@ -1941,6 +2092,11 @@ body
     .contant__list
         grid-template-rows: repeat(21, auto)
         grid-template-columns: repeat(2, 1fr)
+    .about
+        &__content
+            grid-template-columns: 1fr
+        &__contacts 
+            grid-template-columns: repeat(2, 1fr)
 @media (max-width: 1100px)
     #filter-sizes .dropdawn 
         left: inherit
@@ -2078,6 +2234,28 @@ body
     .contant__list
         grid-template-columns: 1fr
         grid-auto-flow: row
+    .card 
+        &__wrapper
+            max-width: 804px
+            margin: 0
+            border-radius: 0
+        &__content
+            flex-direction: column
+            align-items: center
+        &__media
+            width: 100%
+            flex-direction: row
+            &-bottom
+                flex-direction: column
+            &-big 
+                border-radius: 0
+        &__info
+            padding: 16px
+            padding-bottom: 48px
+        &__review
+            padding: 16px
+            &-card 
+                gap: 16px
 @media (max-width: 947px)
     #filter-sizes .dropdawn 
         left: 0
@@ -2329,6 +2507,56 @@ body
         grid-template-rows: repeat(20, auto)
     .modal-city__title
         margin-right: 40px
+    .card 
+        &__media 
+            position: relative
+            flex-direction: column
+            &-bottom
+                position: absolute
+                bottom: 18px
+                right: 0
+                left: 0
+                flex-direction: row
+            &-small
+                width: 10px
+                height: 10px
+                filter: brightness(100)
+                opacity: 0.7
+                &-active 
+                    opacity: 1
+            &-big 
+                display: block
+                max-width: 100%
+                max-height: 100%
+        &__review
+            &-card 
+                grid-template-columns: 368px
+    .about
+        &__card 
+            flex-direction: column
+            align-items: flex-start
+        &__contacts
+            grid-template-columns: 1fr 
+        &__contact
+            gap: 18px
+            padding: 24px
+            &-line 
+                flex-direction: column
+            &-big 
+                grid-column: span 1
+            &-shop 
+                grid-column: span 1
+            &-item
+                flex: 0 0 100%
+                gap: 18px
+                & img 
+                    display: none
+    .agreement__item-subtitle
+        font-size: 18px
+        line-height: 27px
+    .agreement__item-title
+        font-size: 22px
+        line-height: 29px
 @media (max-width: 639px) 
     .offer
         &__bouquet

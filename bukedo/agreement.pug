@@ -95,7 +95,7 @@ html(lang="ru")
                                         button.header__choice-btn Применить
                         ul.header__menu
                             li.header__menu-item
-                                a(href="#").header__menu-link.link Адреса магазинов
+                                a(href="addresses.html").header__menu-link.link Адреса магазинов
                             li.header__menu-item
                                 a(href="#").header__menu-link.link Отзывы
                             li.header__menu-item#header-info
@@ -327,7 +327,7 @@ html(lang="ru")
                         svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                             path(d="M11.4808 10.6411L9.87505 12.2251C9.03768 11.7202 8.25978 11.1227 7.55605 10.4438C6.87823 9.73891 6.28082 8.96089 5.7748 8.12407L7.3573 6.51832C7.45314 6.42099 7.51787 6.29735 7.54325 6.16313C7.56862 6.02891 7.5535 5.89017 7.4998 5.76457L5.8498 1.91857C5.78461 1.76692 5.66712 1.64373 5.51871 1.57146C5.37031 1.49918 5.20088 1.48263 5.0413 1.52482L2.0158 2.32507C1.86471 2.36424 1.73139 2.45353 1.63765 2.57833C1.54391 2.70313 1.49531 2.85605 1.4998 3.01207C1.6923 6.5309 3.15538 9.86027 5.6173 12.3818C8.1393 14.8445 11.4696 16.3079 14.9893 16.5001C15.1455 16.5053 15.2988 16.4571 15.4238 16.3634C15.5489 16.2697 15.6382 16.1362 15.677 15.9848L16.4765 12.9578C16.5189 12.7983 16.5026 12.6289 16.4304 12.4805C16.3583 12.332 16.2352 12.2145 16.0835 12.1493L12.2368 10.5001C12.1111 10.4456 11.9719 10.4299 11.8372 10.455C11.7026 10.4801 11.5784 10.5449 11.4808 10.6411Z" stroke="#AD2950" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square")
                     p.header__social-phone 8 495 215-20-97
-                a(href="#").header__social-item 
+                a(href="addresses.html").header__social-item 
                     .header__social-icon
                         svg(width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                             path(d="M13.5 6.75C13.5 10.425 7.5 16.5 7.5 16.5C7.5 16.5 1.5 10.425 1.5 6.75C1.5 2.925 4.575 0.75 7.5 0.75C10.425 0.75 13.5 2.925 13.5 6.75Z" stroke="#AD2950" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square")
@@ -368,133 +368,59 @@ html(lang="ru")
                     .links__wrapper 
                         a(href="index.html").links__link Главная
                         p.links__slash / 
-                        p.links__text Адреса магазинов
-            section.addresses
+                        p.links__text Пользовательское соглашение
+            section.agreement 
                 .container
-                    .addresses__wrapper 
-                        h1.addresses__title.title Адреса магазинов
-                        .addresses__tabs 
-                            button.addresses__tabs-btn.addresses__tabs-btn-active(data-tab='map')
-                                svg(width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M8.58398 3.72266V17.7227" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                    path(d="M15.918 6.27734V20.2773" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                    path(d="M3.62798 4.7678L8.20398 3.75047C8.45198 3.6958 8.71065 3.7118 8.94932 3.79847L15.552 6.1998C15.7907 6.28647 16.0493 6.3038 16.2973 6.2478L20.2947 5.3598C21.128 5.17447 21.9173 5.8078 21.9173 6.66113V17.9305C21.9173 18.5558 21.4827 19.0971 20.8733 19.2318L16.2973 20.2491C16.0493 20.3038 15.7907 20.2878 15.552 20.2011L8.94932 17.7998C8.71065 17.7131 8.45198 17.6958 8.20398 17.7518L4.20665 18.6398C3.37332 18.8251 2.58398 18.1918 2.58398 17.3385V6.06913C2.58398 5.4438 3.01865 4.90247 3.62798 4.7678Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                p На карте
-                            button.addresses__tabs-btn(data-tab='list')
-                                svg(width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M18.416 3.6665H7.08268C5.60992 3.6665 4.41602 4.86041 4.41602 6.33317V17.6665C4.41602 19.1393 5.60992 20.3332 7.08268 20.3332H18.416C19.8888 20.3332 21.0827 19.1393 21.0827 17.6665V6.33317C21.0827 4.86041 19.8888 3.6665 18.416 3.6665Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                    path(d="M8.41602 9.6665H17.0827" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                    path(d="M8.41602 14.333H17.0827" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-                                p Списком
-                        input.addresses__input(type="search" placeholder="Поиск по магазинам") 
-                        .addresses__content 
-                            ul.addresses__content-list#addresses-list
-                                li.addresses__content-item 
-                                    h4.addresses__content-title г. Москва, 2-я Звенигородская улица, 13с42
-                                    .addresses__content-delivery
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Время работы
-                                            p.addresses__content-subtext Пн-Вс 8:00-22:00
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Телефон
-                                            p.addresses__content-subtext +7 901 634-66-28
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Доставка
-                                            p.addresses__content-subtext 450 ₽ через 3-4 часа
-                                    button.addresses__content-btn.catalog.catalog__text Заказать в магазине
-                                li.addresses__content-item 
-                                    h4.addresses__content-title г. Москва, Нижегородская, 25
-                                    .addresses__content-delivery
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Время работы
-                                            p.addresses__content-subtext Пн-Вс 8:00-22:00
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Телефон
-                                            p.addresses__content-subtext +7 901 634-66-28
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Доставка
-                                            p.addresses__content-subtext 450 ₽ через 3-4 часа
-                                    button.addresses__content-btn.catalog.catalog__text Заказать в магазине
-                                li.addresses__content-item 
-                                    h4.addresses__content-title г. Москва, Рогожский вал, 17
-                                    .addresses__content-delivery
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Время работы
-                                            p.addresses__content-subtext Пн-Вс 8:00-22:00
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Телефон
-                                            p.addresses__content-subtext +7 901 634-66-28
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Доставка
-                                            p.addresses__content-subtext 450 ₽ через 3-4 часа
-                                    button.addresses__content-btn.catalog.catalog__text Заказать в магазине
-                                li.addresses__content-item 
-                                    h4.addresses__content-title г. Москва, Новокузнецкая улица, 13с1
-                                    .addresses__content-delivery
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Время работы
-                                            p.addresses__content-subtext Пн-Вс 8:00-22:00
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Телефон
-                                            p.addresses__content-subtext +7 901 634-66-28
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Доставка
-                                            p.addresses__content-subtext 450 ₽ через 3-4 часа
-                                    button.addresses__content-btn.catalog.catalog__text Заказать в магазине
-                                li.addresses__content-item 
-                                    h4.addresses__content-title г. Москва, Курсовой переулок, 13
-                                    .addresses__content-delivery
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Время работы
-                                            p.addresses__content-subtext Пн-Вс 8:00-22:00
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Телефон
-                                            p.addresses__content-subtext +7 901 634-66-28
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Доставка
-                                            p.addresses__content-subtext 450 ₽ через 3-4 часа
-                                    button.addresses__content-btn.catalog.catalog__text Заказать в магазине
-                                li.addresses__content-item 
-                                    h4.addresses__content-title г. Москва, улица Новый Арбат, 17
-                                    .addresses__content-delivery
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Время работы
-                                            p.addresses__content-subtext Пн-Вс 8:00-22:00
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Телефон
-                                            p.addresses__content-subtext +7 901 634-66-28
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Доставка
-                                            p.addresses__content-subtext 450 ₽ через 3-4 часа
-                                    button.addresses__content-btn.catalog.catalog__text Заказать в магазине
-                                li.addresses__content-item 
-                                    h4.addresses__content-title г. Москва, Тверская улица, 22
-                                    .addresses__content-delivery
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Время работы
-                                            p.addresses__content-subtext Пн-Вс 8:00-22:00
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Телефон
-                                            p.addresses__content-subtext +7 901 634-66-28
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Доставка
-                                            p.addresses__content-subtext 450 ₽ через 3-4 часа
-                                    button.addresses__content-btn.catalog.catalog__text Заказать в магазине
-                                li.addresses__content-item 
-                                    h4.addresses__content-title г. Москва, Чистопрудный бульвар, 10с1
-                                    .addresses__content-delivery
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Время работы
-                                            p.addresses__content-subtext Пн-Вс 8:00-22:00
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Телефон
-                                            p.addresses__content-subtext +7 901 634-66-28
-                                        .addresses__content-paragraph
-                                            h5.addresses__content-subtitle Доставка
-                                            p.addresses__content-subtext 450 ₽ через 3-4 часа
-                                    button.addresses__content-btn.catalog.catalog__text Заказать в магазине
-                            .addresses__content-map#addresses-map
-                                iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A569485ffd878a27cc6807133c2820cc65fefd1e0d27d1cb06a84768c9c4fcc14&amp;source=constructor" width="880" height="800" frameborder="0")
+                    .agreement__wrapper 
+                        .agreement__item
+                            h1.agreement__title.title Пользовательское соглашение
+                            .agreement__text 
+                                p.agreement__text-p 
+                                    | Добро пожаловать на сайт компании BUKEDO (
+                                    a(href="index.html") https://bukedo.ru/
+                                    | ), интернет-ресурс, который гарантирует лучшее качество сервиса и оптимальные условия доставки.
+                                p.agreement__text-p Сайт bukedo.ru (Далее – «Сайт») является частным ресурсом и управляется в соответствии с политикой, определяемой владельцами. Зарегистрировавшись на Сайте, Вы подтверждаете, что прочитали данное соглашение, поняли свои права, обязанности, условия и положения, содержащиеся в данном документе и согласны соблюдать условия настоящего Пользовательского соглашения. Пользовательское соглашение вступает в силу с момента выражения Вами согласия с его условиями путем регистрации на Сайте.
+                            h2.agreement__item-subtitle Терминология
+                            .agreement__text 
+                                p.agreement__text-p Сайт – результат интеллектуальной деятельности, представляющий собой составное произведение, расположенное в информационно-телекоммуникационной сети Интернет под определенным сетевым адресом (доменным именем) и включающее в себя программы для ЭВМ (программное обеспечение), обеспечивающие его техническое функционирование, графическое решение (дизайн), контент, размещенный на нем, в том числе, но не ограничиваясь, текстовую информацию, фотографические изображения, картинки, видеозаписи и другие результаты интеллектуальной деятельности. Под Сайтом в тексте настоящего Договора понимается Сайт, расположенный в сети Интернет под доменным именем (адресом) – bukedo.ru.
+                                p.agreement__text-p Пользователь сайта (далее — Пользователь) – зарегистрированный на Сайте посетитель, а также индивидуальный предприниматель или юридическое лицо, осуществляющее продажу товаров и оказывающее услуги по доставке представленного на Сайте ассортимента товаров и услуг.
+                                p.agreement__text-p Магазин – зарегистрированный на Сайте индивидуальный предприниматель или юридическое лицо, создающее/приобретающее и желающее продать горшечные растения, букеты, а также иные товары и услуги, предназначенные для продажи через Сайт.
+                                p.agreement__text-p Клиент – зарегистрированный пользователь Сайта, физическое или юридическое лицо, которое с целью решения релевантных задач в собственных интересах имеет намерение заказать или приобрести представленные на Сайте товары и услуги, исключительно для личных, семейных и иных нужд, не связанных с осуществлением предпринимательской деятельности.
+                                p.agreement__text-p Администрация Сайта (Администрация) – лицо (лица), обладающее правами управления Сайтом и предоставления его в пользование третьим лицам, оказывающее Магазинам и Клиентам услуги, указанные, в том числе, в тексте настоящего Соглашения.
+                                p.agreement__text-p 
+                                    | Электронная платежная система – 
+                                    a(href="index.html") система для расчётов
+                                    |  между Агентом, Принципиалом и Клиентами за Продукты через сеть интернет. Агент использует платежную систему «ЮKassa» и «CloudPayments».
+                        .agreement__item
+                            h2.agreement__item-title 1. Статус пользовательского соглашения
+                            .agreement__text
+                                p.agreement__text-p 1.1. Настоящее Пользовательское соглашение разработано Администрацией Сайта и определяет условия использования и развития Сайта, а также права и обязанности его Пользователей и Администрации. Действия Пользовательского соглашения распространяются также на отношения, связанные с правами и интересами третьих лиц, не являющимися Пользователями Сайта, но чьи права и интересы могут быть затронуты в результате действий Пользователей Сайта.
+                                p.agreement__text-p 1.2. Настоящее Пользовательское соглашение является юридически обязательным соглашением между Пользователем и Администрацией Сайта, предметом которого является предоставление Администрацией Сайта Пользователю услуг по использованию Сайта и его сервисов (далее – Услуги). Помимо настоящего Пользовательского соглашения, к соглашению между Пользователем и Администрацией Сайта относятся все специальные документы, регулирующие предоставление отдельных сервисов Сайта и размещенные в соответствующих разделах Сайта в сети интернет.
+                                p.agreement__text-p 1.3. Пользователь обязан полностью ознакомиться с настоящим Пользовательским соглашением до момента регистрации на Сайте. Регистрация Пользователя на Сайте означает полное и безоговорочное принятие Пользователем настоящего Пользовательского соглашения в соответствии со статьей 438 Гражданского кодекса Российской Федерации.
+                                p.agreement__text-p 1.4. Настоящее Пользовательское соглашение может быть изменено и/или дополнено Администрацией Сайта в одностороннем порядке без какого-либо специального уведомления. Настоящее Пользовательское соглашение является открытым и общедоступным документом.
+                                p.agreement__text-p 1.5. Администрация Сайта рекомендует Пользователям регулярно проверять условия настоящего Пользовательского соглашения на предмет его изменения и/или дополнения. Продолжение использования Сайта Пользователем после внесения изменений и/или дополнений в настоящее Пользовательское соглашение означает принятие и согласие Пользователя с такими изменениями и/или дополнениями.
+                        .agreement__item   
+                            h2.agreement__item-title 2. Статус сайта
+                            .agreement__text
+                                p.agreement__text-p 
+                                    | 2.1. Сайт является интернет-ресурсом и представляет собой совокупность информации и программ для ЭВМ, содержащихся в информационной системе, обеспечивающей доступность такой информации в сети интернет по сетевому адресу 
+                                    a(href="index.html") https://bukedo.ru/
+                                    | .
+                                p.agreement__text-p 
+                                    | 2.2. Все права на Сайт в целом и на использование сетевого адреса (доменного имени) 
+                                    a(href="index.html") https://bukedo.ru/
+                                    |  принадлежат Администрации Сайта. Последняя предоставляет доступ к Сайту всем заинтересованным лицам в соответствии с настоящим Пользовательским соглашением и действующим законодательством Российской Федерации.
+                                p.agreement__text-p 2.3. Настоящим Пользовательским соглашением установлены условия, в соответствии с которыми права на использование информации и результатов интеллектуальной деятельности (включая, но не ограничиваясь литературными, музыкальными, аудиовизуальными произведениями и фонограммами, произведениями графики и дизайна, фотографическими произведениями, программами для ЭВМ) в составе отдельных разделов Сайта, могут принадлежать Пользователям Сайта и иным лицам, самостоятельно создавшим и/или разместившим указанные объекты на Сайте без непосредственного участия Администрации Сайта.  
+                                p.agreement__text-p 1.2. Настоящее Пользовательское соглашение является юридически обязательным соглашением между Пользователем и Администрацией Сайта, предметом которого является предоставление Администрацией Сайта Пользователю услуг по использованию Сайта и его сервисов (далее – Услуги). Помимо настоящего Пользовательского соглашения, к соглашению между Пользователем и Администрацией Сайта относятся все специальные документы, регулирующие предоставление отдельных сервисов Сайта и размещенные в соответствующих разделах Сайта в сети интернет.
+                                p.agreement__text-p 1.3. Пользователь обязан полностью ознакомиться с настоящим Пользовательским соглашением до момента регистрации на Сайте. Регистрация Пользователя на Сайте означает полное и безоговорочное принятие Пользователем настоящего Пользовательского соглашения в соответствии со статьей 438 Гражданского кодекса Российской Федерации.
+                                p.agreement__text-p 1.4. Настоящее Пользовательское соглашение может быть изменено и/или дополнено Администрацией Сайта в одностороннем порядке без какого-либо специального уведомления. Настоящее Пользовательское соглашение является открытым и общедоступным документом.
+                                p.agreement__text-p 1.5. Администрация Сайта рекомендует Пользователям регулярно проверять условия настоящего Пользовательского соглашения на предмет его изменения и/или дополнения. Продолжение использования Сайта Пользователем после внесения изменений и/или дополнений в настоящее Пользовательское соглашение означает принятие и согласие Пользователя с такими изменениями и/или дополнениями.
+        
+        
+        
+        
+        
+        
         footer.footer
             .decorfooter.decorfooter__full
                 .decorfooter__left 
@@ -522,17 +448,17 @@ html(lang="ru")
                                     path(d="M13 0.915039L7.70711 6.60043C7.31658 7.01991 6.68342 7.01991 6.29289 6.60043L1 0.915041" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
                             ul.footer__list 
                                 li.footer__list-item 
-                                    a(href="#").footer__list-link Адреса магазинов
+                                    a(href="addresses.html").footer__list-link Адреса магазинов
                                 li.footer__list-item 
                                     a(href="#").footer__list-link Отзывы
                                 li.footer__list-item 
-                                    a(href="#").footer__list-link О компании
+                                    a(href="about.html").footer__list-link О компании
                                 li.footer__list-item 
                                     a(href="#").footer__list-link Корпоративным клиентам   
                                 li.footer__list-item 
                                     a(href="#").footer__list-link Оплата и доставка
                                 li.footer__list-item 
-                                    a(href="#").footer__list-link Правила сайта 
+                                    a(href="agreement.html").footer__list-link Правила сайта 
                                 li.footer__list-item 
                                     a(href="#").footer__list-link Бонусная программа 
                                 li.footer__list-item 
