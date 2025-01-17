@@ -290,7 +290,7 @@ body {
   width: 100%;
   margin-bottom: 24px;
   padding: 13px 24px 13px 58px;
-  border: 1px solid #93949B;
+  border: 1px solid var(--grey);
   border-radius: 12px;
   background-image: url("../img/calendar.svg");
   background-position: center left 24px;
@@ -357,7 +357,7 @@ body {
   justify-content: space-between;
   width: 205px;
   padding: 13px 24px;
-  border: 1px solid #93949B;
+  border: 1px solid var(--grey);
   border-radius: 12px;
   font: 500 16px/22px "PT Root UI", "sans-serif";
   color: var(--black);
@@ -441,7 +441,7 @@ body {
 .header__choice-check {
   width: 18px;
   height: 18px;
-  border: 1px solid #93949B;
+  border: 1px solid var(--grey);
   border-radius: 4px;
 }
 .header__choice-btn {
@@ -469,14 +469,14 @@ body {
 }
 .catalog[disabled] {
   background-color: #F6F6F6;
-  color: #93949B;
+  color: var(--grey);
   pointer-events: none;
 }
 .catalog[disabled] .catalog__text {
-  color: #93949B;
+  color: var(--grey);
 }
 .catalog[disabled] path {
-  stroke: #93949B;
+  stroke: var(--grey);
 }
 .catalog__text {
   font: 700 16px/20px "PT Root UI", "sans-serif";
@@ -540,7 +540,7 @@ body {
 .search__clue-title {
   margin-bottom: 12px;
   font: 400 14px/18px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .search__clue-items {
   display: flex;
@@ -659,7 +659,7 @@ body {
 }
 .tel__item-text {
   font: 500 12px/16px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 
 .modal-city {
@@ -702,11 +702,11 @@ body {
 }
 .modal-city__input::-moz-placeholder {
   font: 400 16px/21px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .modal-city__input::placeholder {
   font: 400 16px/21px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .modal-city__list {
   display: grid;
@@ -1008,10 +1008,10 @@ body {
   background-color: var(--bg-stack);
 }
 .allbouquets[disabled] .allbouquets__text {
-  color: #93949B;
+  color: var(--grey);
 }
 .allbouquets[disabled] path {
-  stroke: #93949B;
+  stroke: var(--grey);
 }
 .allbouquets__text {
   margin-right: 16px;
@@ -1138,7 +1138,7 @@ body {
   border: 1px solid #1C1C1D;
 }
 .products__btn[disabled] {
-  color: #93949B;
+  color: var(--grey);
   pointer-events: none;
 }
 
@@ -1630,14 +1630,14 @@ body {
 }
 .links__link {
   font: 400 14px/18px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .links__slash {
   color: #E3E6EC;
 }
 .links__text {
   font: 400 14px/18px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 
 .addresses {
@@ -1663,11 +1663,11 @@ body {
 }
 .addresses__input::-moz-placeholder {
   font: 400 16px/20px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .addresses__input::placeholder {
   font: 400 16px/20px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .addresses__content {
   display: flex;
@@ -1719,7 +1719,7 @@ body {
 }
 .addresses__content-subtitle {
   font: 500 12px/16px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .addresses__content-subtext {
   font: 400 14px/18px "PT Root UI", "sans-serif";
@@ -1843,7 +1843,6 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: #F5F5F5;
-  z-index: 50;
 }
 .card__content {
   display: flex;
@@ -1918,6 +1917,19 @@ body {
 }
 .card__choice-btn {
   display: contents;
+}
+.card__choice-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__choice-text {
+  font: 400 20px/20px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.card__choice-subtext {
+  font: 400 12px/16px "PT Root UI", "sans-serif";
+  color: var(--grey);
 }
 .card__btns {
   display: flex;
@@ -1998,7 +2010,7 @@ body {
 .card__about-parameter {
   flex: 0 0 100px;
   font: 400 14px/18px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .card__about-text {
   font: 400 14px/18px "PT Root UI", "sans-serif";
@@ -2035,7 +2047,7 @@ body {
   color: var(--black);
 }
 .card__review-dot {
-  color: #93949B;
+  color: var(--grey);
 }
 .card__review-line {
   display: grid;
@@ -2048,6 +2060,77 @@ body {
   border-radius: 8px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.card__review-card {
+  display: grid;
+  grid-template-columns: 368px 368px;
+  gap: 24px;
+  justify-content: center;
+}
+.card__review-big {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  padding-bottom: 32px;
+  border-radius: 16px;
+  background-color: #fff;
+}
+.card__review-comparisons {
+  display: flex;
+  gap: 8px;
+}
+.card__review-comparison {
+  flex: 0 0 calc(50% - 4px);
+}
+.card__review-img {
+  width: 100%;
+  height: 164px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__review-subtext {
+  font: 400 12px/16px "PT Root UI", "sans-serif";
+  color: var(--grey);
+  text-align: center;
+}
+.card__review-contant {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.card__review-head {
+  display: flex;
+  justify-content: space-between;
+}
+.card__review-name {
+  margin-bottom: 5px;
+  font: 500 16px/20px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.card__review-when {
+  font: 500 14px/18px "PT Root UI", "sans-serif";
+  color: var(--grey);
+}
+.card__review-stars svg {
+  margin-left: -2px;
+}
+.card__review-text {
+  max-height: 54px;
+  font: 400 14px/18px "PT Root UI", "sans-serif";
+  color: var(--black);
+  overflow: hidden;
+}
+.card__review-more {
+  position: absolute;
+  display: none;
+  bottom: 14px;
+  left: 24px;
+  font: 700 14px/18px "PT Root UI", "sans-serif";
+  color: var(--grey);
 }
 
 .popup {
@@ -2153,11 +2236,11 @@ body {
 }
 .dropdawn__header-input::-moz-placeholder {
   font: 400 14px/22px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .dropdawn__header-input::placeholder {
   font: 400 14px/22px "PT Root UI", "sans-serif";
-  color: #93949B;
+  color: var(--grey);
 }
 .dropdawn__header-btn {
   flex: 0 0 24px;
@@ -2220,7 +2303,7 @@ body {
 .dropdawn__content-check {
   width: 18px;
   height: 18px;
-  border: 1px solid #93949B;
+  border: 1px solid var(--grey);
   border-radius: 4px;
 }
 .dropdawn__content-circle {
@@ -2354,7 +2437,7 @@ body {
 .polzunok-input-5-left, .polzunok-input-5-right {
   width: 100%;
   padding: 14px 16px;
-  border: 1px solid #93949B;
+  border: 1px solid var(--grey);
   border-radius: 12px;
   font: 400 16px/20px "PT Root UI", "sans-serif";
 }

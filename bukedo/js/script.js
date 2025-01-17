@@ -1113,30 +1113,27 @@ for (let i = 0; i < productLinkArr.length; i++) {
     element.addEventListener('click', function(event){
         event.preventDefault()
         const product = element.parentElement
-
+        // получение информации
         const imgPath = product.querySelector('.product__img-source').srcset
         const titleText = product.querySelector('.product__title').textContent
         const priceText = product.querySelector('.product__sale').innerHTML
-
-
+        // вставка информации
         const cardImg = card.querySelector('.card__media-big')
         cardImg.setAttribute('src', `${imgPath}`)
         const cardTitle = card.querySelector('.card__title')
         cardTitle.textContent = titleText
         const cardPrice = card.querySelector('.card__price-text')
         cardPrice.innerHTML = priceText
-
         const cardImgSmall = card.querySelectorAll('.card__media-small')
         for (let i = 0; i < cardImgSmall.length; i++) {
             cardImgSmall[0].setAttribute('src', `${imgPath}`)
         }
-        
+        //открытие карточки
         card.classList.add('card-active')
-
+        // закрытие карточки
         const cardClose = card.querySelector('.card__close')
         const cardWrapper = card.querySelector('.card__wrapper')
-        console.log(cardClose)
-        cardClose.querySelector('click', function(){
+        cardClose.addEventListener('click', function(){
             card.classList.remove('card-active')
         })
         document.addEventListener( 'mousedown', (e) => {
@@ -1150,7 +1147,60 @@ for (let i = 0; i < productLinkArr.length; i++) {
                 card.classList.remove('card-active')
             }
         });
+        // кнопки + -
+        const cardMinus = card.querySelector('.card-minus')
+        const cardPlus = card.querySelector('.card-plus')
+        const cardChoiceText = card.querySelector('.card__choice-text')
+        const cardChoiceSubtext = card.querySelector('.card__choice-subtext')
+        cardMinus.addEventListener('click', function(){
+            let number = Number(cardChoiceText.textContent.split('%')[0])
+            if (number > -100) {
+                number = number - 10
+                createProcent(number)
+            }
+            subProcent(number)
+        })
+        cardPlus.addEventListener('click', function(){
+            let number = Number(cardChoiceText.textContent.split('%')[0])
+            if (number < 100) {
+                number = number + 10
+                createProcent(number)
+            }
+            subProcent(number)
+        })
+        function createProcent(number) {
+            if (number > 0) {
+                cardChoiceText.textContent = `+${number}% цветов`
+            } else {
+                cardChoiceText.textContent = `${number}% цветов`
+            }
+        }
+        function subProcent(number) {
+            if (number < 0 ) {
+                cardChoiceSubtext.textContent = 'Поменьше и подешевле'
+            }
+            if (number < -30 ) {
+                cardChoiceSubtext.textContent = 'Ещё меньше и дешевле'
+            }
+            if (number > 0 ) {
+                cardChoiceSubtext.textContent = 'Побольше и подороже'
+            }
+            if (number > 30 ) {
+                cardChoiceSubtext.textContent = 'Ещё больше и дороже'
+            }
+            if (number == 0 ) {
+                cardChoiceSubtext.textContent = 'Стандартный размер, стандартная цена'
+            }
+        }
+        // кнопка Ещё
+        const cardReviewTextArr = document.querySelectorAll('.card__review-text')
+        for (let i = 0; i < cardReviewTextArr.length; i++) {
+            const element = cardReviewTextArr[i];
+            const cardReviewMore = element.querySelector('.card__review-more')
+            if (element.scrollHeight > element.clientHeight) {
+                cardReviewMore.style.display = 'block'
+            }
+        }
     })
-
-    
 }
+

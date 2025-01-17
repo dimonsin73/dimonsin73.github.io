@@ -252,7 +252,7 @@ body
             width: 100%
             margin-bottom: 24px
             padding: 13px 24px 13px 58px
-            border: 1px solid #93949B
+            border: 1px solid var(--grey)
             border-radius: 12px
             background: 
                 image: url('../img/calendar.svg')
@@ -310,7 +310,7 @@ body
                 justify-content: space-between
                 width: 205px
                 padding: 13px 24px
-                border: 1px solid #93949B
+                border: 1px solid var(--grey)
                 border-radius: 12px
                 font: 500 16px/22px 'PT Root UI', 'sans-serif'
                 color: var(--black)
@@ -376,7 +376,7 @@ body
         &-check 
             width: 18px
             height: 18px
-            border: 1px solid #93949B
+            border: 1px solid var(--grey)
             border-radius: 4px 
         &-btn 
             width: 100%
@@ -397,12 +397,12 @@ body
         background-color: #CB3562
     &[disabled]
         background-color: #F6F6F6
-        color: #93949B
+        color: var(--grey)
         pointer-events: none
         & .catalog__text
-            color: #93949B
+            color: var(--grey)
         & path
-            stroke: #93949B
+            stroke: var(--grey)
     &__text
         @include text-btn
         color: #fff
@@ -448,7 +448,7 @@ body
         &-title 
             margin-bottom: 12px
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
-            color: #93949B
+            color: var(--grey)
         &-items 
             display: flex
             flex-direction: column
@@ -537,7 +537,7 @@ body
             color: var(--black)
         &-text
             font: 500 12px/16px 'PT Root UI', 'sans-serif'
-            color: #93949B
+            color: var(--grey)
 .modal-city
     position: fixed
     top: 0
@@ -572,7 +572,7 @@ body
         color: var(--black)
         &::placeholder
             font: 400 16px/21px 'PT Root UI', 'sans-serif'
-            color: #93949B
+            color: var(--grey)
     &__list 
         display: grid
         grid-template-columns: repeat(4, 161px)
@@ -782,9 +782,9 @@ body
         border: 1px solid var(--bg-stack)
         background-color: var(--bg-stack)
         & .allbouquets__text
-            color: #93949B
+            color: var(--grey)
         & path 
-            stroke: #93949B
+            stroke: var(--grey)
     &__text
         margin-right: 16px
     &__icon
@@ -868,7 +868,7 @@ body
         &:hover
             border: 1px solid #1C1C1D
         &[disabled]
-            color: #93949B
+            color: var(--grey)
             pointer-events: none
 .advantages
     margin-bottom: 90px
@@ -1201,12 +1201,12 @@ body
         height: 74px
     &__link
         font: 400 14px/18px 'PT Root UI', 'sans-serif'
-        color: #93949B
+        color: var(--grey)
     &__slash
         color: #E3E6EC
     &__text
         font: 400 14px/18px 'PT Root UI', 'sans-serif'
-        color: #93949B
+        color: var(--grey)
 .addresses
     position: relative
     margin-bottom: 100px
@@ -1228,7 +1228,7 @@ body
         color: var(--black)
         &::placeholder
             font: 400 16px/20px 'PT Root UI', 'sans-serif'
-            color: #93949B
+            color: var(--grey)
     &__content
         display: flex
         height: 800px
@@ -1269,7 +1269,7 @@ body
             gap: 4px
         &-subtitle 
             font: 500 12px/16px 'PT Root UI', 'sans-serif'
-            color: #93949B
+            color: var(--grey)
         &-subtext
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
             color: var(--black)
@@ -1363,7 +1363,6 @@ body
         height: 50px
         border-radius: 50%
         background-color: #F5F5F5
-        z-index: 50
     &__content 
         display: flex
     &__media 
@@ -1422,6 +1421,16 @@ body
         background-color: #F5F5F5
         &-btn 
             display: contents
+        &-info 
+            display: flex
+            flex-direction: column
+            align-items: center
+        &-text 
+            font: 400 20px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-subtext 
+            font: 400 12px/16px 'PT Root UI', 'sans-serif'
+            color: var(--grey)
     &__btns
         display: flex
         gap: 16px
@@ -1487,7 +1496,7 @@ body
         &-parameter
             flex: 0 0 100px
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
-            color: #93949B
+            color: var(--grey)
         &-text
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
             color: var(--black)
@@ -1516,7 +1525,7 @@ body
             font: 400 16px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
         &-dot 
-            color: #93949B
+            color: var(--grey)
         &-line 
             display: grid
             grid-template-columns: repeat(9, auto)
@@ -1526,6 +1535,64 @@ body
             height: 101px
             border-radius: 8px
             object-fit: cover
+        &-card
+            display: grid
+            grid-template-columns:368px 368px
+            gap: 24px
+            justify-content: center
+        &-big 
+            position: relative
+            display: flex
+            flex-direction: column
+            gap: 16px
+            padding: 24px
+            padding-bottom: 32px
+            border-radius: 16px
+            background-color: #fff
+        &-comparisons
+            display: flex
+            gap: 8px
+        &-comparison
+            flex: 0 0 calc( 50% - 4px )
+        &-img 
+            width: 100%
+            height: 164px
+            margin-bottom: 6px
+            border-radius: 8px
+            object-fit: cover
+        &-subtext
+            font: 400 12px/16px 'PT Root UI', 'sans-serif'
+            color: var(--grey)
+            text-align: center
+        &-contant
+            display: flex
+            flex-direction: column
+            gap: 14px
+        &-head 
+            display: flex
+            justify-content: space-between
+        &-name 
+            margin-bottom: 5px
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-when
+            font: 500 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--grey)
+        &-stars svg
+            margin-left: -2px
+        &-text 
+            max-height: 54px
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            overflow: hidden
+        &-more 
+            position: absolute
+            display: none
+            bottom: 14px
+            left: 24px
+            font: 700 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--grey)
+
 .popup
     position: absolute
     display: none
@@ -1612,7 +1679,7 @@ body
             color: var(--black)
             &::placeholder
                 font: 400 14px/22px 'PT Root UI', 'sans-serif'
-                color: #93949B
+                color: var(--grey)
         &-btn 
             flex: 0 0 24px
             height: 24px
@@ -1658,7 +1725,7 @@ body
         &-check 
             width: 18px
             height: 18px
-            border: 1px solid #93949B
+            border: 1px solid var(--grey)
             border-radius: 4px 
         &-circle 
             width: 30px
@@ -1761,7 +1828,7 @@ body
 .polzunok-input-5-left, .polzunok-input-5-right
     width: 100%
     padding: 14px 16px
-    border: 1px solid #93949B
+    border: 1px solid var(--grey)
     border-radius: 12px
     font: 400 16px/20px 'PT Root UI', 'sans-serif'
 .polzunok-input-3-left, 
