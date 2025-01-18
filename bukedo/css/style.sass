@@ -1192,7 +1192,7 @@ body
 
 .links
     position: relative
-    margin-bottom: 32px
+    margin-bottom: 48px
     z-index: 20
     &__wrapper
         display: flex
@@ -1710,11 +1710,11 @@ body
         &-text 
             font: 400 16px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
-    &__contacts 
-        display: grid
-        grid-template-columns: repeat(4, 1fr)
-        gap: 24px
-    &__contact 
+.contacts
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 24px
+    &__item 
         display: flex
         flex-direction: column
         gap: 24px
@@ -1791,13 +1791,124 @@ body
         display: flex
         flex-direction: column
         gap: 16px
-        text-align: justify
         &-p 
             font: 400 16px/22px 'PT Root UI', 'sans-serif'
             color: var(--black) 
             & a 
                 color: var(--black)
                 text-decoration: underline
+.corporate 
+    margin-bottom: 100px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 48px
+    &__title 
+        text-align: center      
+    &__card 
+        display: flex
+        justify-content: space-between
+        border-radius: 24px 
+        overflow: hidden
+        &-first
+            padding: 60px 110px
+            background:
+                color: #F5F5F5
+                image: url('../img/corporate1.png')
+                repeat: no-repeat 
+                position: right
+                size: 60% 100%
+            & .corporate__item
+                max-width: 416px
+        &-second
+            gap: 32px
+            padding: 48px 0
+        &-third
+            padding: 60px 110px
+            background:
+                color: #F5F5F5
+                image: url('../img/corporate2.png')
+                repeat: no-repeat 
+                position: right
+                size: 44% 100%
+        &-fourth 
+            display: flex
+            justify-content: center
+            padding: 131px
+            background:
+                color: #F5F5F5
+                image: url('../img/corporate3.png')
+                repeat: no-repeat
+                position: bottom
+                size: contain
+            text-align: center
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 32px
+        flex: 0 0 calc( 50% - 12px )
+        &-title 
+            font: 500 32px/42px 'PT Root UI', 'sans-serif'
+            color: var(--black) 
+        &-text
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-ol 
+            padding-left: 20px
+        &-ul li
+            list-style: disc
+        &-li 
+            margin-bottom: 16px
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-h 
+            margin-bottom: 16px
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+.bonus 
+    margin-bottom: 100px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 32px
+    &__title 
+        margin-bottom: 16px
+    &__text 
+        font: 400 18px/24px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        text-align: center
+    &__content 
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        gap: 24px
+        width: 100%
+        &-item 
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-direction: column
+            gap: 24px
+            flex: 0 0 auto
+            width: 306px
+            padding: 32px 24px
+            border-radius: 24px
+            background-color: #F5F5F5
+        &-img 
+            @include flex
+            width: 250px
+            height: 250px
+        &-title
+            margin-bottom: 16px
+            font: 500 32px/42px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            text-align: center
+        &-text 
+            font: 400 18px/24px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            text-align: center
 .dropdawn
     position: absolute    
     top: 50px   
@@ -1925,6 +2036,137 @@ body
             z-index: 100
             & .dropdawn__content 
                 height: 250px
+.payment 
+    &__wrapper
+        padding: 48px 48px 60px
+        border-radius: 24px
+        background-color: #F5F5F5
+    &__title 
+        margin-bottom: 24px
+        text-align: center
+    &__content 
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 24px
+        &-item 
+            padding: 24px 24px 48px 
+            border-radius: 16px
+            background-color: #fff
+            &-big 
+                padding: 48px 110px
+                display: flex
+                grid-column: span 4
+                gap: 24px
+        &-img 
+            flex: 0 0 calc( 50% - 12px )
+        &-info 
+            display: flex
+            justify-content: center
+            flex-direction: column
+            gap: 24px
+        &-gentitle
+            font: 700 22px/29px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-list 
+            padding-left: 20px
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            & li 
+                margin-bottom: 16px
+                &:last-child
+                    margin-bottom: 0
+        &-title 
+            margin-bottom: 16px
+            font: 700 18px/24px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text 
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+.line 
+    margin: 100px 0
+    border: 1px solid #E5E7EB
+.delivery 
+    margin-bottom: 100px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 32px
+    &__header 
+        display: flex
+        flex-direction: column
+        justify-content: center
+        gap: 32px
+    &__title 
+        text-align: center
+    &__text
+        font: 400 24px/32px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        text-align: center
+    &__content 
+        display: flex
+        gap: 24px
+        &-img 
+            @include flex
+            flex: 0 0 calc( 50% - 12px )
+        &-accordion 
+            display: flex
+            flex-direction: column
+            gap: 16px
+        &-item 
+            &-active  
+                border: 1px solid #E5E7EB
+                border-radius: 16px
+                box-shadow: 0px 4px 6px -2px #1212170D, 0px 10px 15px -3px #12121714
+                background-color: #fff
+                & .delivery__content-content 
+                    opacity: 1
+                    overflow: visible
+                & .delivery__content-head 
+                    background-color: #fff
+                & .delivery__content-v
+                    height: 0
+        &-head 
+            display: flex
+            align-items: center
+            padding: 25px 24px
+            border-radius: 16px
+            background-color: #F5F5F5
+            transition: background-color 0.3s ease
+        &-title 
+            font: 500 22px/30px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-icon 
+            position: relative
+            flex: 0 0 auto
+            width: 30px
+            height: 30px
+            margin-left: auto
+        &-h 
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 20px
+            height: 2px
+            background-color: #969092
+            transform: translate(-50%, -50%)
+        &-v
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 2px
+            height: 20px
+            background-color: #969092
+            transform: translate(-50%, -50%)
+            transition: height 0.3s ease
+        &-content 
+            height: 0
+            overflow: hidden
+            transition: height 0.3s ease, overflow 0.3s ease
+        &-text 
+            padding: 0 24px
+            padding-bottom: 30px
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
 #filter-prices .dropdawn-active
     width: 375px
     height: 215px
@@ -2095,12 +2337,19 @@ body
     .about
         &__content
             grid-template-columns: 1fr
-        &__contacts 
-            grid-template-columns: repeat(2, 1fr)
+    .contacts 
+        grid-template-columns: repeat(2, 1fr)
 @media (max-width: 1100px)
     #filter-sizes .dropdawn 
         left: inherit
         right: 0
+    .corporate__card 
+        &-first 
+            padding: 30px 24px
+        &-third
+            padding: 30px 24px
+        &-fourth
+            padding: 30px 24px 170px
 @media (max-width: 1023px)
     .search 
         display: none
@@ -2256,6 +2505,37 @@ body
             padding: 16px
             &-card 
                 gap: 16px
+    .corporate__card 
+        flex-direction: column
+        &-first 
+            padding-bottom: 330px
+            background-position: bottom
+            background-size: 100%
+        &-third
+            padding-bottom: 330px
+            background-position: bottom
+            background-size: 50% 50%
+        &-fourth
+            padding-bottom: 290px
+            background-position: left bottom
+            background-size: 140% 70%
+    .bonus 
+        &__content 
+            flex-direction: column
+    .payment__content 
+        grid-template-columns: 1fr
+        &-item
+            padding: 24px
+            &-big
+                flex-direction: column
+                grid-column: span 1
+                padding: 24px 16px
+    .delivery
+        margin-top: 50px
+        &__content 
+            flex-direction: column
+    .line 
+        display: none
 @media (max-width: 947px)
     #filter-sizes .dropdawn 
         left: 0
@@ -2535,9 +2815,9 @@ body
         &__card 
             flex-direction: column
             align-items: flex-start
-        &__contacts
-            grid-template-columns: 1fr 
-        &__contact
+    .contacts
+        grid-template-columns: 1fr 
+        &__item
             gap: 18px
             padding: 24px
             &-line 
@@ -2557,6 +2837,27 @@ body
     .agreement__item-title
         font-size: 22px
         line-height: 29px
+    .corporate__wrapper
+        gap: 0
+    .corporate__item-title
+        font-size: 22px
+        line-height: 29px
+    .corporate__card 
+        flex-direction: column
+        &-first 
+            background-image: url('../img/corporate1-1.png')
+        &-third
+            padding-bottom: 250px
+            background-image: url('../img/corporate2-1.png')
+            background-size: contain
+        &-fourth    
+            margin-bottom: 48px
+            background-size: 250% 70%
+    .payment__wrapper 
+        margin: 0 -16px
+        padding: 24px
+    .payment__content-img
+        flex: initial
 @media (max-width: 639px) 
     .offer
         &__bouquet
