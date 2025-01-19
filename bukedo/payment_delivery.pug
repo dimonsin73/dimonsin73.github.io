@@ -99,22 +99,22 @@ html(lang="ru")
                             li.header__menu-item
                                 a(href="#").header__menu-link.link Отзывы
                             li.header__menu-item#header-info
-                                a(href="#").header__menu-link.link Информация
+                                .header__menu-link.link Информация
                                     .header__menu-chevron 
                                         svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M1 1L4.5286 4.79026C4.78894 5.06991 5.21106 5.06991 5.4714 4.79026L9 1" stroke="#1C1C1D" stroke-linecap="round")
                                 .header__dropdawn
                                     ul.header__dropdawn-list 
                                         li.header__dropdawn-item 
-                                            a(href="#").header__dropdawn-link.link Доставка
+                                            a(href="payment_delivery.html#delivery").header__dropdawn-link.link Доставка
                                         li.header__dropdawn-item 
-                                            a(href="#").header__dropdawn-link.link Оплата
+                                            a(href="payment_delivery.html#payment").header__dropdawn-link.link Оплата
                                         li.header__dropdawn-item 
                                             a(href="about.html").header__dropdawn-link.link О нас
                                         li.header__dropdawn-item 
-                                            a(href="#").header__dropdawn-link.link Контакты 
+                                            a(href="about.html#contacts").header__dropdawn-link.link Контакты 
                     .header__top-small
-                        a(href="").logo 
+                        a(href="index.html").logo 
                             img(src="img/logo.png", alt="BUCEDO").logo__small
                         .header__top-btns
                             button.glass 
@@ -127,7 +127,7 @@ html(lang="ru")
             .header__bottom
                 .container
                     .header__bottom-full
-                        a(href="").logo 
+                        a(href="index.html").logo 
                             img(src="img/logo.png", alt="BUCEDO")
                         button.catalog#catalog
                             .catalog__icon
@@ -369,7 +369,7 @@ html(lang="ru")
                         a(href="index.html").links__link Главная
                         p.links__slash / 
                         p.links__text Оплата и доставка
-            section.payment 
+            section.payment#payment 
                 .container
                     .payment__wrapper 
                         h1.payment__title.title Оплата
@@ -410,7 +410,7 @@ html(lang="ru")
                                 h2.payment__content-title Оплата по счёту
                                 p.payment__content-text Для компаний мы предоставляем скидки за объем, оплату по счету и полный документооборот. 
             section.line
-            section.delivery 
+            section.delivery#delivery 
                 .container
                     .delivery__wrapper 
                         .delivery__header
@@ -492,7 +492,7 @@ html(lang="ru")
                 .container
                     .footer__wrapper 
                         .footer__item.footer__item-logo
-                            a(href="").logo 
+                            a(href="index.html").logo 
                                 img(src="img/logo.png", alt="BUCEDO")
                             .seller
                                 h5.footer__item-title.seller__title Продавайте на Букедо
@@ -509,13 +509,13 @@ html(lang="ru")
                                 li.footer__list-item 
                                     a(href="about.html").footer__list-link О компании
                                 li.footer__list-item 
-                                    a(href="#").footer__list-link Корпоративным клиентам   
+                                    a(href="corporate.html").footer__list-link Корпоративным клиентам   
                                 li.footer__list-item 
-                                    a(href="#").footer__list-link Оплата и доставка
+                                    a(href="payment_delivery.html").footer__list-link Оплата и доставка
                                 li.footer__list-item 
                                     a(href="agreement.html").footer__list-link Правила сайта 
                                 li.footer__list-item 
-                                    a(href="#").footer__list-link Бонусная программа 
+                                    a(href="bonus.html").footer__list-link Бонусная программа 
                                 li.footer__list-item 
                                     a(href="#").footer__list-link Политика обработки данных
                         .footer__item

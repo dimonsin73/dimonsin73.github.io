@@ -453,6 +453,10 @@ body {
   color: #fff;
 }
 
+#header-info {
+  cursor: pointer;
+}
+
 .catalog {
   display: flex;
   justify-content: center;
