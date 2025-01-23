@@ -1440,6 +1440,8 @@ body
     &__text
         font: 400 14px/18px 'PT Root UI', 'sans-serif'
         color: var(--grey)
+    &__small
+        display: none
 .addresses
     position: relative
     margin-bottom: 100px
@@ -2807,9 +2809,11 @@ body
     &__wrapper
     &__selected
         display: flex
+        flex-wrap: wrap
         gap: 32px
         margin-bottom: 22px
         &-img
+            flex: 0 0 auto
             width: 150px
             height: 150px
             border-radius: 16px
@@ -2821,11 +2825,6 @@ body
         &-text 
             font: 500 18px/24px 'PT Root UI', 'sans-serif'
             color: var(--black)
-        &-address
-            display: flex
-            align-items: center
-            gap: 16px
-            margin-bottom: 8px
         &-link
             font: 400 18px/24px 'PT Root UI', 'sans-serif'
             color: var(--burgundy)
@@ -2864,6 +2863,10 @@ body
         &-contacnt
             display: flex
             align-items: flex-start
+            gap: 16px
+        &-information
+            display: flex
+            flex-direction: column
             gap: 16px
         &-info 
             display: flex
@@ -3746,6 +3749,34 @@ body
                 width: 100%
             &-line 
                 flex-direction: column
+    .shop__selected
+        &-content
+            flex: 0 1 auto
+        &-title
+            font-size: 32px
+            line-height: 42px
+        &-footer
+            flex-direction: column
+        &-address
+            flex-wrap: wrap
+        &-contacnts
+            width: 100%
+            gap: 16px
+        &-info 
+            flex-direction: row
+            justify-content: space-between
+            width: 100%
+    .links 
+        margin-bottom: 40px
+        &__wrapper
+            height: 51px
+        &__full 
+            display: none
+        &__small
+            display: flex
+            &-text
+                font: 500 16px/20px 'PT Root UI', 'sans-serif'
+                color: var(--black)
 @media (max-width: 639px) 
     .offer
         &__bouquet

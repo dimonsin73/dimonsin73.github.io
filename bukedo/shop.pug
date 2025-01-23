@@ -369,12 +369,16 @@ html(lang="ru")
         main
             section.links 
                 .container
-                    .links__wrapper 
+                    .links__wrapper.links__full
                         a(href="index.html").links__link Главная
                         p.links__slash / 
                         a(href="addresses.html").links__link Адреса магазинов 
                         p.links__slash / 
                         p.links__text Московские букеты
+                    .links__wrapper.links__small 
+                        svg(width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M11.625 15.875L5.25 9.5L11.625 3.125" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                        a(href="addresses.html").links__small-text Вернуться
             section.shop 
                 .container 
                     .shop__wrapper 
@@ -383,10 +387,11 @@ html(lang="ru")
                                 img(src="img/shop1.png", alt="")
                             .shop__selected-content 
                                 h2.shop__selected-title Московские букеты
-                                .shop__selected-info 
+                                .shop__selected-information 
                                     .shop__selected-address
-                                        p.shop__selected-text г. Москва, 2-я Звенигородская улица, 13с42
-                                        a(href="", target="_blank").shop__selected-link На карте
+                                        p.shop__selected-text 
+                                            | г. Москва, 2-я Звенигородская улица, 13с42 
+                                            a(href="", target="_blank").shop__selected-link На карте
                                     .shop__selected-footer
                                         .shop__selected-item 
                                             .shop__selected-rating

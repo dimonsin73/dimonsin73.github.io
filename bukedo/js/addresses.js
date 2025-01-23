@@ -24,3 +24,11 @@ for (let i = 0; i < addressesTabsBtn.length; i++) {
         }
     })
 }
+// переход в магазин 
+const addressesContentBtnArr = document.querySelectorAll('.addresses__content-btn')
+for (let i = 0; i < addressesContentBtnArr.length; i++) {
+    const element = addressesContentBtnArr[i];
+    element.addEventListener('click', function(){
+        window.location.href = 'shop.html'
+    })
+}
