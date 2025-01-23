@@ -8,6 +8,10 @@ html(lang="ru")
         link(rel="stylesheet" href="css/reset.css")
         link(rel="stylesheet" href="css/fonts.css")
         link(rel="stylesheet" href="css/style.css")
+        script(defer="true" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(defer="true" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js")
+        script(defer="true" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js")
+        script(src="js/placing.js" defer type="module") 
     body
         header.header
             .decorheader
@@ -17,7 +21,7 @@ html(lang="ru")
                 .container
                     .header__bottom-full
                         .header__bottom-left
-                            a(href="index.html").header__bottom-link
+                            a(href="").header__bottom-link
                                 svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
                                     path(d="M1.77734 15.8931H30.2218" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                                     path(d="M11.4485 25.5644L1.77734 15.8933L11.4485 6.22217" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
@@ -58,51 +62,170 @@ html(lang="ru")
                                             path(d="M5.80666 10.4754C3.50457 8.36858 2.89966 6.18659 2.7746 4.82125C2.69835 3.98875 3.35325 3.35038 4.17922 3.22138L5.13082 3.07277C6.06767 2.92646 6.9514 3.55053 7.1269 4.48235L7.27884 5.28906C7.34789 5.65568 7.14487 6.01922 6.79652 6.15274C6.39843 6.30532 6.20339 6.75099 6.40671 7.12571C6.65003 7.57417 7.024 8.15538 7.51698 8.60655C8.00997 9.05771 8.62196 9.37883 9.09018 9.58155C9.48141 9.75094 9.90808 9.51726 10.0249 9.10724C10.1271 8.74845 10.4712 8.51408 10.8425 8.55045L11.6595 8.63047C12.6032 8.7229 13.303 9.548 13.2401 10.4941L13.1762 11.4551C13.1207 12.2893 12.5427 12.998 11.7067 12.9957C10.3357 12.9918 8.10876 12.5822 5.80666 10.4754Z" fill="#03A050")
                                     .tel__item-info 
                                         .tel__item-title 8 495 215-20-97
+                    .header__bottom-small 
+                        .header__bottom-left
+                            a(href="").header__bottom-link
+                                svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M1.77734 15.8931H30.2218" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                                    path(d="M11.4485 25.5644L1.77734 15.8933L11.4485 6.22217" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                            h1.header__bottom-title Оформление заказа
+                        button.icons__burger
+                                svg(width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M25 11.5H1M25 1.5H1M25 21.5H1" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
             .header__line
         main 
             section.placing 
                 .container 
                     .placing__wrapper
+                        .deliverymethod.deliverymethod-active
+                            .placing__item
+                                .placing__item-line
+                                        button.placing__item-btn.placing__item-btn-active(data-placing="delivery") Адрес доставки
+                                        button.placing__item-btn(data-placing="pickup") Самовывоз
+                            .deliverymethod__delivery.deliverymethod__delivery-active
+                                .deliverymethod__item
+                                    .deliverymethod__item-line
+                                        .deliverymethod__item-radio
+                                            input#deliverymethod-know(type="radio", name="address" checked="checked").deliverymethod__item-input
+                                            label(for="deliverymethod-know").deliverymethod__item-label
+                                                .deliverymethod__item-check 
+                                                .deliverymethod__item-text Знаю адрес
+                                        .deliverymethod__item-radio
+                                            input#deliverymethod-specify(type="radio", name="address").deliverymethod__item-input
+                                            label(for="deliverymethod-specify").deliverymethod__item-label
+                                                .deliverymethod__item-check
+                                                .deliverymethod__item-text Уточнить у получателя
+                                    .deliverymethod__item-vert
+                                        .deliverymethod__item-subtitle Нужна доставка за город? Выберите населенный пункт
+                                        .deliverymethod__item-address
+                                            input(type="text" placeholder="г. Москва").deliverymethod__item-input.deliverymethod__item-city
+                                            .deliverymethod__item-options
+                                            input(type="text" placeholder="Укажите адрес доставки").deliverymethod__item-input
+                                .deliverymethod__item
+                                    .deliverymethod__item-title Дата и время доставки
+                                    .deliverymethod__item-line
+                                        .deliverymethod__item-datetime
+                                            input(type="datetime-local", name="delivery").deliverymethod__item-input
+                                            svg.deliverymethod__item-svg(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M10.4177 3.75C10.4177 3.33579 10.0819 3 9.6677 3C9.25349 3 8.9177 3.33579 8.9177 3.75H10.4177ZM8.9177 7.26979C8.9177 7.684 9.25349 8.01979 9.6677 8.01979C10.0819 8.01979 10.4177 7.684 10.4177 7.26979H8.9177ZM18.2531 7.26979C18.2531 7.684 18.5889 8.01979 19.0031 8.01979C19.4173 8.01979 19.7531 7.684 19.7531 7.26979H18.2531ZM19.7531 3.75003C19.7531 3.33582 19.4173 3.00003 19.0031 3.00003C18.5889 3.00003 18.2531 3.33582 18.2531 3.75003H19.7531ZM5.00001 20.2492L5.75001 20.2492V20.2492H5.00001ZM5.00001 8.57998L5.75001 8.57998V8.57998H5.00001ZM8.9177 3.75V7.26979H10.4177V3.75H8.9177ZM19.0031 5.8292H20.17V4.3292H19.0031V5.8292ZM18.2531 5.0792V7.26979H19.7531V5.0792H18.2531ZM19.7531 5.0792V3.75003H18.2531V5.0792H19.7531ZM4.25001 20.2492C4.25 22.5969 6.15314 24.5 8.50078 24.5V23C6.98157 23 5.75 21.7684 5.75001 20.2492L4.25001 20.2492ZM22.9208 20.2492C22.9208 21.7684 21.6892 23 20.17 23V24.5C22.5177 24.5 24.4208 22.5969 24.4208 20.2492H22.9208ZM24.4208 8.57998C24.4208 6.23234 22.5177 4.3292 20.17 4.3292V5.8292C21.6892 5.8292 22.9208 7.06077 22.9208 8.57998H24.4208ZM5.75001 8.57998C5.75001 7.06077 6.98158 5.8292 8.50079 5.8292V4.3292C6.15315 4.3292 4.25001 6.23234 4.25001 8.57998H5.75001ZM5 11.7914H23.6708V10.2914H5V11.7914ZM22.9208 8.57998V20.2492H24.4208V8.57998H22.9208ZM5.75001 20.2492L5.75001 8.57998L4.25001 8.57998L4.25001 20.2492H5.75001ZM8.50079 5.8292H19.0031V4.3292H8.50079V5.8292ZM20.17 23H8.50078V24.5H20.17V23Z" fill="#AD2950")
+                            .deliverymethod__pickup
+                                .deliverymethod__item
+                                    .deliverymethod__item-map 
+                                        h2.deliverymethod__item-maptitle г. Москва, Нижегородская, 25
+                                        .deliverymethod__item-info 
+                                            .deliverymethod__item-col 
+                                                p.deliverymethod__item-p Время работы
+                                                p.deliverymethod__item-subtext Пн-Вс 8:00-22:00
+                                            .deliverymethod__item-col 
+                                                p.deliverymethod__item-p Телефон
+                                                p.deliverymethod__item-subtext +7 901 634-66-28
+                                        .deliverymethod__item-img 
+                                            img(src="img/map.png", alt="").deliverymethod__item-map-img
+                                            img(src="img/map-marker.png", alt="").deliverymethod__item-map-marker
+                                .deliverymethod__item
+                                    .deliverymethod__item-title Когда заберете заказ
+                                    .deliverymethod__item-line
+                                        .deliverymethod__item-datetime
+                                            input(type="datetime-local", name="delivery").deliverymethod__item-input
+                                            svg.deliverymethod__item-svg(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M10.4177 3.75C10.4177 3.33579 10.0819 3 9.6677 3C9.25349 3 8.9177 3.33579 8.9177 3.75H10.4177ZM8.9177 7.26979C8.9177 7.684 9.25349 8.01979 9.6677 8.01979C10.0819 8.01979 10.4177 7.684 10.4177 7.26979H8.9177ZM18.2531 7.26979C18.2531 7.684 18.5889 8.01979 19.0031 8.01979C19.4173 8.01979 19.7531 7.684 19.7531 7.26979H18.2531ZM19.7531 3.75003C19.7531 3.33582 19.4173 3.00003 19.0031 3.00003C18.5889 3.00003 18.2531 3.33582 18.2531 3.75003H19.7531ZM5.00001 20.2492L5.75001 20.2492V20.2492H5.00001ZM5.00001 8.57998L5.75001 8.57998V8.57998H5.00001ZM8.9177 3.75V7.26979H10.4177V3.75H8.9177ZM19.0031 5.8292H20.17V4.3292H19.0031V5.8292ZM18.2531 5.0792V7.26979H19.7531V5.0792H18.2531ZM19.7531 5.0792V3.75003H18.2531V5.0792H19.7531ZM4.25001 20.2492C4.25 22.5969 6.15314 24.5 8.50078 24.5V23C6.98157 23 5.75 21.7684 5.75001 20.2492L4.25001 20.2492ZM22.9208 20.2492C22.9208 21.7684 21.6892 23 20.17 23V24.5C22.5177 24.5 24.4208 22.5969 24.4208 20.2492H22.9208ZM24.4208 8.57998C24.4208 6.23234 22.5177 4.3292 20.17 4.3292V5.8292C21.6892 5.8292 22.9208 7.06077 22.9208 8.57998H24.4208ZM5.75001 8.57998C5.75001 7.06077 6.98158 5.8292 8.50079 5.8292V4.3292C6.15315 4.3292 4.25001 6.23234 4.25001 8.57998H5.75001ZM5 11.7914H23.6708V10.2914H5V11.7914ZM22.9208 8.57998V20.2492H24.4208V8.57998H22.9208ZM5.75001 20.2492L5.75001 8.57998L4.25001 8.57998L4.25001 20.2492H5.75001ZM8.50079 5.8292H19.0031V4.3292H8.50079V5.8292ZM20.17 23H8.50078V24.5H20.17V23Z" fill="#AD2950")
+                            .placing__item
+                                .deliverymethod__item
+                                    .deliverymethod__item-title Ваш телефон
+                                    .deliverymethod__item-line
+                                        input(type="text" id="phone-input" name="phone" placeholder="+7 ( ").deliverymethod__item-input
+                            .placing__item
+                                .deliverymethod__item
+                                    button(type="submit").placing__btn.placing__btn-next.catalog.catalog__text Продолжить
+                             
                         .design
-                            .design__item 
-                                .design__item-line 
-                                    button.design__item-btn Доставить получателю
-                                    button.design__item-btn Получать буду я 
-                                .design__item-line
-                                    input.design__item-input(type="text", placeholder="Имя получателя *")
-                                    input.design__item-input(type="text", placeholder="Телефон получателя *")
-                                .design__checkboxs
-                                    .design__checkboxs-item
-                                        input.design__checkboxs-input#design1(type="checkbox", name="raffaello")
-                                        label.design__checkboxs-label(for="design1")
-                                            .design__checkboxs-check
-                                            p.design__checkboxs-text Прислать мне фотоотчет получателя с букетом +160 ₽
-                                    .design__checkboxs-item
-                                        input.design__checkboxs-input#design2(type="checkbox", name="raffaello")
-                                        label.design__checkboxs-label(for="design2")
-                                            .design__checkboxs-check
-                                            p.design__checkboxs-text Добавить открытку +90 ₽
-                                .design__quantity
+                            .placing__item
+                                .placing__item-line
+                                        button.placing__item-btn.placing__item-btn-active(data-placing="recipient") Доставить получателю
+                                        button.placing__item-btn(data-placing="me") Получать буду я 
+                            .design__recipient.design__recipient-active
+                                .design__item 
                                     .design__item-line
-                                        p.design__quantity-subtext Кол-во открыток
-                                        button.design__quantity-btn
-                                            svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                                path(d="M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
-                                        p.design__quantity-text 1
-                                        button.design__quantity-btn
-                                            svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                                path(d="M9 3L9 15M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
-                                    textarea.design__item-textarea(placeholder="Текст открытки. Если открыток нужно несколько, то укажите явно какой текст к какому товару нужно приложить.") 
-                            .design__item 
-                                h2.design__item-title Email для чека и фото букета
-                                input.design__item-input(type="email", name="" placeholder="Введите Email")
-                            .design__item 
-                                h2.design__item-title Особые пожелания
-                                textarea.design__item-textarea(placeholder="Комментарии")
-                            .design__item 
-                                button.design__btn.catalog.catalog__text(type="submit") Оформить заказ
-                                input.design__checkboxs-input#design3(type="checkbox", name="raffaello")
-                                label.design__checkboxs-label(for="design3")
+                                        input.design__item-input(type="text", placeholder="Имя получателя *")
+                                        input.design__item-input(type="text", placeholder="Телефон получателя *")
+                                    .design__checkboxs
+                                        .design__checkboxs-item
+                                            input.design__checkboxs-input#design1(type="checkbox", name="raffaello")
+                                            label.design__checkboxs-label(for="design1")
+                                                .design__checkboxs-check
+                                                p.design__checkboxs-text
+                                                    | Прислать мне фотоотчет получателя с букетом 
+                                                    span.design__checkboxs-price +160 ₽
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_568_9094)">
+                                                            <path d="M10.0013 18.3332C14.6037 18.3332 18.3346 14.6022 18.3346 9.99984C18.3346 5.39746 14.6037 1.6665 10.0013 1.6665C5.39893 1.6665 1.66797 5.39746 1.66797 9.99984C1.66797 14.6022 5.39893 18.3332 10.0013 18.3332Z" stroke="#93949B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                            <path d="M10.0026 15.4163C10.5779 15.4163 11.0443 14.95 11.0443 14.3747C11.0443 13.7994 10.5779 13.333 10.0026 13.333C9.42731 13.333 8.96094 13.7994 8.96094 14.3747C8.96094 14.95 9.42731 15.4163 10.0026 15.4163Z" fill="#93949B"/>
+                                                            <path d="M7.70312 6.97398C8.05479 5.63398 9.14729 4.94065 10.3706 5.00398C11.579 5.06648 12.7031 5.73065 12.6515 7.27232C12.5773 9.46398 10.2481 9.16648 9.98729 11.2498H9.99646" stroke="#93949B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_568_9094">
+                                                                <rect width="20" height="20" fill="white"/>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                        .design__checkboxs-item
+                                            input.design__checkboxs-input#design2(type="checkbox", name="raffaello")
+                                            label.design__checkboxs-label(for="design2")
+                                                .design__checkboxs-check
+                                                p.design__checkboxs-text 
+                                                    | Добавить открытку 
+                                                    span.design__checkboxs-price +90 ₽
+                                    .design__quantity
+                                        .design__item-line
+                                            p.design__quantity-subtext Кол-во открыток
+                                            button.design__quantity-btn.design__quantity-minus
+                                                svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                    path(d="M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
+                                            p.design__quantity-text 1
+                                            button.design__quantity-btn.design__quantity-plus
+                                                svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                    path(d="M9 3L9 15M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
+                                        textarea.design__item-textarea(placeholder="Текст открытки. Если открыток нужно несколько, то укажите явно какой текст к какому товару нужно приложить.") 
+                                .design__item 
+                                    h2.design__item-title Email для чека и фото букета
+                                    input.design__item-input(type="email", name="" placeholder="Введите Email")
+                                .design__item 
+                                    h2.design__item-title Особые пожелания
+                                    textarea.design__item-textarea(placeholder="Комментарии")
+                            .design__me
+                                .design__item 
+                                    .design__item-line
+                                        input.design__item-input(type="text", placeholder="Имя получателя *")
+                                        input.design__item-input(type="text", placeholder="Телефон получателя *" disabled="true")#phone-output
+                                    .design__checkboxs
+                                        .design__checkboxs-item
+                                            input.design__checkboxs-input#design4(type="checkbox", name="raffaello")
+                                            label.design__checkboxs-label(for="design4")
+                                                .design__checkboxs-check
+                                                p.design__checkboxs-text 
+                                                    | Добавить открытку 
+                                                    span.design__checkboxs-price +90 ₽
+                                    .design__quantity
+                                        .design__item-line
+                                            p.design__quantity-subtext Кол-во открыток
+                                            button.design__quantity-btn.design__quantity-minus
+                                                svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                    path(d="M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
+                                            p.design__quantity-text 1
+                                            button.design__quantity-btn.design__quantity-plus
+                                                svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                    path(d="M9 3L9 15M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
+                                        textarea.design__item-textarea(placeholder="Текст открытки. Если открыток нужно несколько, то укажите явно какой текст к какому товару нужно приложить.") 
+                                .design__item 
+                                    h2.design__item-title Email для чека и фото букета
+                                    input.design__item-input(type="email", name="" placeholder="Введите Email")
+                                .design__item 
+                                    h2.design__item-title Особые пожелания
+                                    textarea.design__item-textarea(placeholder="Комментарии")
+                            .placing__item
+                                button.placing__btn.catalog.catalog__text(type="submit") Оформить заказ
+                                input.design__checkboxs-input#design5(type="checkbox", name="raffaello")
+                                label.design__checkboxs-label(for="design5")
                                     .design__checkboxs-check
                                     p.design__checkboxs-text Я соглашаюсь на хранение и обработку своих персональных данных в соответствии с законом №152-ФЗ "О персональных данных" от 27.07.2006, подтверждаю, что самостоятельно получил(-а) согласие третьих лиц на хранение и обработку их персональных данных и принимаю условия пользовательского соглашения.
                         .compound
@@ -129,9 +252,15 @@ html(lang="ru")
                                 .compound__item-img 
                                     img(src="img/footer-item1.png", alt="")
                             .compound__item-total
-                                .compound__item-promo
-                                    input(type="text" placeholder="Введите промокод").compound__item-input
-                                    button.compound__item-ok Ок
+                                .compound__item-head
+                                    .compound__item-visible
+                                        p.compound__item-p Есть промокод?
+                                        .compound__item-icon
+                                            svg(width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M4.5 7.64209L8.46967 11.9061C8.76256 12.2207 9.23744 12.2207 9.53033 11.9061L13.5 7.64209" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
+                                    .compound__item-promo
+                                        input(type="text" placeholder="Введите промокод").compound__item-input
+                                        button.compound__item-ok Ок
                                 .compound__item-check
                                     .compound__item-line 
                                         p.compound__item-point Товары
@@ -145,5 +274,52 @@ html(lang="ru")
                                     .compound__item-line 
                                         p.compound__item-point-bold Итого
                                         p.compound__item-meaning-bold 5 786 ₽
+        footer.footer
+            .footer__bottom(style="padding-top: 48px")
+                .container
+                    .footer__wrapper
+                        p.footer__bottom-rights © 2014 – 2024 «БУКЕДО»
+                        .footer__cards
+                            .footer__card 
+                                .footer__card-icon
+                                    svg(width="38" height="13" viewBox="0 0 38 13" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(fill-rule="evenodd" clip-rule="evenodd" d="M9.86888 12.073H6.7078L4.33738 2.76374C4.22487 2.33552 3.98598 1.95694 3.63458 1.77851C2.75762 1.33012 1.79127 0.973264 0.737061 0.793285V0.434879H5.8293C6.5321 0.434879 7.0592 0.973264 7.14706 1.59854L8.37696 8.31361L11.5365 0.434879H14.6097L9.86888 12.073ZM16.3667 12.073H13.3814L15.8396 0.434879H18.825L16.3667 12.073ZM22.6873 3.65903C22.7752 3.0322 23.3023 2.6738 23.9172 2.6738C24.8836 2.58381 25.9363 2.76379 26.8148 3.21063L27.3419 0.704889C26.4634 0.346483 25.497 0.166504 24.6201 0.166504C21.7225 0.166504 19.6141 1.77856 19.6141 4.01588C19.6141 5.71793 21.1076 6.61161 22.1618 7.15C23.3023 7.68683 23.7415 8.04524 23.6537 8.58207C23.6537 9.38733 22.7752 9.74573 21.8982 9.74573C20.844 9.74573 19.7898 9.47731 18.825 9.02892L18.2979 11.5362C19.3521 11.9831 20.4926 12.163 21.5468 12.163C24.7958 12.2515 26.8148 10.641 26.8148 8.22367C26.8148 5.17954 22.6873 5.00111 22.6873 3.65903ZM37.2628 12.073L34.8924 0.434879H32.3463C31.8192 0.434879 31.2921 0.793285 31.1164 1.33012L26.7269 12.073H29.8001L30.4136 10.3725H34.1896L34.541 12.073H37.2628ZM32.7855 3.56909L33.6624 7.9553H31.2042L32.7855 3.56909Z" fill="#93949B")
+                            .footer__card 
+                                .footer__card-icon
+                                    svg(width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M15.0001 2.8964C14.8801 2.9904 14.7641 3.0834 14.6511 3.1844C12.6961 4.8894 11.4671 7.3844 11.4671 10.1664C11.4671 12.9484 12.6951 15.4434 14.6391 17.1394L14.6501 17.1484C14.7621 17.2484 14.8811 17.3454 14.9991 17.4384C15.1191 17.3464 15.2351 17.2484 15.3481 17.1484C17.3031 15.4434 18.5311 12.9484 18.5311 10.1664C18.5311 7.3844 17.3031 4.8894 15.3591 3.1934L15.3481 3.1844C15.2361 3.0844 15.1181 2.9894 14.9991 2.8964H15.0001ZM20.7211 0.9114C20.7161 0.9114 20.7101 0.9114 20.7031 0.9114C18.8001 0.9114 17.0331 1.4884 15.5651 2.4774L15.5981 2.4564C15.6731 2.5154 15.7411 2.5774 15.8031 2.6424L15.8041 2.6434C17.9201 4.4794 19.2501 7.1714 19.2501 10.1744C19.2501 13.1704 17.9271 15.8564 15.8331 17.6814L15.8211 17.6914C15.7491 17.7524 15.6711 17.8134 15.5951 17.8734C17.0361 18.8434 18.8111 19.4224 20.7201 19.4224C25.8321 19.4224 29.9761 15.2784 29.9761 10.1664C29.9761 5.0544 25.8331 0.9124 20.7211 0.9114ZM14.1801 17.6924C14.2521 17.7534 14.3301 17.8144 14.4061 17.8744C12.9661 18.8434 11.1921 19.4214 9.28308 19.4214C4.17108 19.4214 0.0280762 15.2774 0.0280762 10.1664C0.0280762 5.0554 4.17208 0.9114 9.28308 0.9114C11.1901 0.9114 12.9631 1.4884 14.4361 2.4774L14.4031 2.4564C14.3281 2.5154 14.2601 2.5774 14.1981 2.6424L14.1971 2.6434C12.0811 4.4794 10.7511 7.1714 10.7511 10.1744C10.7511 13.1704 12.0741 15.8564 14.1681 17.6814L14.1801 17.6924Z" fill="#93949B")
+                            .footer__card 
+                                .footer__card-icon
+                                    svg(width="40" height="12" viewBox="0 0 40 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        g(clip-path="url(#clip0_546_17211)")
+                                            path(fill-rule="evenodd" clip-rule="evenodd" d="M35.5103 0.452148H27.9185C28.3266 2.98276 30.7756 5.35011 33.4695 5.35011H39.5103C39.5919 5.10521 39.5919 4.77868 39.5919 4.53378C39.5919 2.24807 37.796 0.452148 35.5103 0.452148Z" fill="#93949B")
+                                            path(fill-rule="evenodd" clip-rule="evenodd" d="M28.5715 5.7583V11.8807H32.245V8.61544H35.5103C37.3062 8.61544 38.8572 7.39095 39.347 5.7583H28.5715Z" fill="#93949B")
+                                            path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5103 0.452148V11.8807H18.7756C18.7756 11.8807 19.5919 11.8807 20.0001 11.0644C22.2041 6.65623 22.8572 5.35011 22.8572 5.35011H23.2654V11.8807H26.9388V0.452148H23.6735C23.6735 0.452148 22.8572 0.533781 22.449 1.26847C20.5715 5.02358 19.5919 6.98276 19.5919 6.98276H19.1837V0.452148H15.5103Z" fill="#93949B")
+                                            path(fill-rule="evenodd" clip-rule="evenodd" d="M0 11.8807V0.452148H3.67347C3.67347 0.452148 4.73469 0.452148 5.30612 2.0848C6.77551 6.41133 6.93878 6.98276 6.93878 6.98276C6.93878 6.98276 7.26531 5.92154 8.57143 2.0848C9.14286 0.452148 10.2041 0.452148 10.2041 0.452148H13.8776V11.8807H10.2041V5.75827H9.79592L7.7551 11.8807H6.12245L4.08163 5.75827H3.67347V11.8807H0Z" fill="#93949B")
+                                        defs
+                                        clipPath(id="clip0_546_17211")
+                                            rect(width="40" height="11.4286" fill="white" transform="translate(0 0.452148)")
+                            .footer__card 
+                                .footer__card-icon
+                                    svg(width="40" height="21" viewBox="0 0 40 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        g(clip-path="url(#clip0_546_17217)")
+                                            path(d="M35.0628 8.09531V13.0045H33.3098V9.56081H31.6219V13.0045H29.8689V8.09497H35.0628V8.09531Z" fill="#93949B")
+                                            path(fill-rule="evenodd" clip-rule="evenodd" d="M26.2687 13.1799C27.8381 13.1799 29.0035 12.2178 29.0035 10.7593C29.0035 9.34751 28.1437 8.43086 26.7068 8.43086C26.0437 8.43086 25.4965 8.66429 25.0843 9.06706C25.1827 8.23458 25.8867 7.62682 26.6618 7.62682C26.8407 7.62682 28.1874 7.62398 28.1874 7.62398L28.9487 6.1665C28.9487 6.1665 27.2582 6.20499 26.4722 6.20499C24.6764 6.23645 23.4634 7.86879 23.4634 9.85118C23.4634 12.1611 24.6464 13.1801 26.2689 13.1801L26.2687 13.1799ZM26.2784 9.72167C26.8611 9.72167 27.265 10.1045 27.265 10.7591C27.265 11.3481 26.9061 11.8337 26.2784 11.8351C25.678 11.8351 25.2741 11.3853 25.2741 10.7692C25.2741 10.1144 25.678 9.72167 26.2784 9.72167Z" fill="#93949B")
+                                            path(d="M22.0364 11.361C22.0364 11.361 21.6224 11.5996 21.0039 11.6448C20.2933 11.6659 19.6599 11.2169 19.6599 10.4193C19.6599 9.64116 20.2188 9.19521 20.9862 9.19521C21.4567 9.19521 22.0792 9.52135 22.0792 9.52135C22.0792 9.52135 22.5347 8.68552 22.7706 8.26752C22.3386 7.94005 21.7631 7.7605 21.0938 7.7605C19.4046 7.7605 18.0962 8.86189 18.0962 10.4094C18.0962 11.9766 19.3259 13.0524 21.0938 13.0198C21.5879 13.0014 22.2697 12.828 22.6851 12.5611L22.0364 11.361Z" fill="#93949B")
+                                            path(d="M0.480957 4.49731L2.91264 8.8438V11.495L0.483802 15.833L0.480957 4.49731Z" fill="#93949B")
+                                            path(d="M9.81763 7.262L12.0962 5.86543L16.7594 5.86108L9.81763 10.1137V7.262Z" fill="#93949B")
+                                            path(d="M9.80462 4.47161L9.8175 10.2262L7.38013 8.72857V0.126465L9.80462 4.47161Z" fill="#93949B")
+                                            path(d="M16.7593 5.86115L12.0959 5.8655L9.80462 4.47161L7.38013 0.126465L16.7593 5.86115Z" fill="#93949B")
+                                            path(d="M9.8175 15.8571V13.0651L7.38013 11.5959L7.38147 20.2066L9.8175 15.8571Z" fill="#93949B")
+                                            path(d="M12.0905 14.4732L2.91248 8.8438L0.480957 4.49731L16.7496 14.4675L12.0905 14.4732Z" fill="#93949B")
+                                            path(d="M7.38184 20.2066L9.81754 15.8571L12.0904 14.4732L16.7495 14.4675L7.38184 20.2066Z" fill="#93949B")
+                                            path(d="M0.483643 15.8328L7.40003 11.5959L5.07477 10.1692L2.91249 11.4948L0.483643 15.8328Z" fill="#93949B")
+                                        defs
+                                            clipPat(id="clip0_546_17217")
+                                                rect(width="40" height="20.08" fill="white" transform="translate(0 0.126465)")
+            .footer__decor-left
+                img(src="img/footer_decor-left.png", alt="")
+            .footer__decor-right
+                img(src="img/footer_decor-right.png", alt="")
                         
                     

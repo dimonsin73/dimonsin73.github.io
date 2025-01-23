@@ -27,6 +27,7 @@ for (let i = 0; i < productBtns.length; i++) {
        
     });
 };
+// в карточке
 const cardBtnsBasket = document.querySelector('.card__btns-basket');
 cardBtnsBasket.addEventListener('click', function(){
     cardBtnsBasket.classList.toggle('card__btns-basket-active');
@@ -59,7 +60,6 @@ if (window.screen.width < '544') {
         };
     };
 };
-
 // Цветы 
 // построение фильтра по цветам
 const filterFlowers = document.getElementById('filter-flowers')
@@ -967,143 +967,9 @@ for (let i = 0; i < dropdawnItemSizesArr.length; i++) {
         }
     })
 }
-// Фильтр по цене отдельный
-$(".polzunok-3").slider({
-    min: 0,
-    max: 100000,
-    values: [0, 100000],
-    range: true,
-    animate: "fast",
-    slide : function(event, ui) {    
-        $(".polzunok-input-3-left").val(ui.values[ 0 ]);   
-        $(".polzunok-input-3-right").val(ui.values[ 1 ]);  
-    }    
-});
-$(".polzunok-input-3-left").val($(".polzunok-3").slider("values", 0));
-$(".polzunok-input-3-right").val($(".polzunok-3").slider("values", 1));
-$(".polzunok-container-3 input").change(function() {
-    var input_left = $(".polzunok-input-3-left").val().replace(/[^0-9]/g, ''),    
-    opt_left = $(".polzunok-3").slider("option", "min"),
-    where_right = $(".polzunok-3").slider("values", 1),
-    input_right = $(".polzunok-input-3-right").val().replace(/[^0-9]/g, ''),    
-    opt_right = $(".polzunok-3").slider("option", "max"),
-    where_left = $(".polzunok-3").slider("values", 0); 
-    if (input_left > where_right) { 
-        input_left = where_right; 
-    }
-    if (input_left < opt_left) {
-        input_left = opt_left; 
-    }
-    if (input_left == "") {
-        input_left = 0;    
-    }        
-    if (input_right < where_left) { 
-        input_right = where_left; 
-    }
-    if (input_right > opt_right) {
-        input_right = opt_right; 
-    }
-    if (input_right == "") {
-        input_right = 0;    
-    }    
-    $(".polzunok-input-3-left").val(`${input_left.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`); 
-    $(".polzunok-input-3-right").val(`${input_right.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`); 
-    if (input_left != where_left) {
-        $(".polzunok-3").slider("values", 0, input_left);
-    }
-    if (input_right != where_right) {
-        $(".polzunok-3").slider("values", 1, input_right);
-    }
-});
-const pil3 = document.querySelector('.polzunok-input-3-left')
-const pir3 = document.querySelector('.polzunok-input-3-right')
-const p3 = document.querySelector('.polzunok-3')
-pil3.value = `${pil3.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-pir3.value = `${pir3.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-p3.addEventListener('mouseup', function(){
-    pil3.value = `${pil3.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-    pir3.value = `${pir3.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-})
 
 
-// открытие\закрытие каталога
-const catalog = document.getElementById('catalog')
-const popup = document.querySelector('.popup')
-const popupFilters = popup.querySelector('.filters')
-const popupListItemArr = popupFilters.querySelectorAll('.popup__list-item')
-const contantItemArr = popup.querySelector('.contant').children
-catalog.addEventListener('click', function(){
-    popup.classList.toggle('popup-active')
-    document.addEventListener( 'mousedown', (e) => {
-        const withinBoundaries = e.composedPath().includes(popup);
-        const withinBoundariesCatalog = e.composedPath().includes(catalog);
-        if ( ! withinBoundaries ) {
-            if (! withinBoundariesCatalog) {
-                popup.classList.remove('popup-active')
-            }
-        }
-    })
-    document.addEventListener('keydown', function(e) {
-        if( e.keyCode == 27 ){ 
-            popup.classList.remove('popup-active')
-        }
-    });
-})
-// Работа подменю  
-for (let i = 0; i < popupListItemArr.length; i++) {
-    const element = popupListItemArr[i];
-    element.addEventListener('mouseenter', function () {
-        for (let i = 0; i < popupListItemArr.length; i++) {
-            const element = popupListItemArr[i];
-            element.classList.remove('popup__list-item-active')
-        }
-        element.classList.add('popup__list-item-active')
-        for (let i = 0; i < contantItemArr.length; i++) {
-            const el = contantItemArr[i];
-            if (element.dataset.choice === el.dataset.contant) {
-                el.style.display = 'grid'
-            } else {
-                el.style.display = 'none'
-            }
-        }
-        
-    })
-}
-// построение подменю
-for (let i = 0; i < contantItemArr.length; i++) {
-    const element = contantItemArr[i];
-    switch (element.dataset.contant) {
-        case 'flowers':
-            for (let i = 0; i < flowers.length; i++) {
-                const el = flowers[i];
-                const itemLi = document.createElement('li')
-                itemLi.classList.add('contant__list-item')
-                itemLi.textContent = el
-                element.append(itemLi)
-            }
-            break;
-        case 'sizes':
-            for (let i = 0; i < sizes.length; i++) {
-                const el = sizes[i];
-                const itemLi = document.createElement('li')
-                itemLi.classList.add('contant__list-item')
-                itemLi.textContent = el
-                element.append(itemLi)
-            }
-            break;
-        case 'colors':
-            for (let i = 0; i < colors.length; i++) {
-                const el = colors[i];
-                const itemLi = document.createElement('li')
-                itemLi.classList.add('contant__list-item')
-                itemLi.textContent = el
-                element.append(itemLi)
-            }
-            break;
-        default:
-            break;
-    }
-}
+
 
 // Работа Card
 const productLinkArr = document.querySelectorAll('.product__link')
@@ -1130,30 +996,13 @@ for (let i = 0; i < productLinkArr.length; i++) {
         }
         //открытие карточки
         card.classList.add('card-active')
-        // закрытие карточки
-        const cardClose = card.querySelector('.card__close')
-        const cardWrapper = card.querySelector('.card__wrapper')
-        cardClose.addEventListener('click', function(){
-            card.classList.remove('card-active')
-        })
-        document.addEventListener( 'mousedown', (e) => {
-            const withinBoundaries = e.composedPath().includes(cardWrapper)
-            if ( ! withinBoundaries ) {
-                card.classList.remove('card-active')
-            }
-        })
-        document.addEventListener('keydown', function(e) {
-            if( e.keyCode == 27 ){ 
-                card.classList.remove('card-active')
-            }
-        });
         // кнопки + -
         const cardMinus = card.querySelector('.card-minus')
         const cardPlus = card.querySelector('.card-plus')
         const cardChoiceText = card.querySelector('.card__choice-text')
         const cardChoiceSubtext = card.querySelector('.card__choice-subtext')
+        let number = Number(cardChoiceText.textContent.split('%')[0])
         cardMinus.addEventListener('click', function(){
-            let number = Number(cardChoiceText.textContent.split('%')[0])
             if (number > -100) {
                 number = number - 10
                 createProcent(number)
@@ -1161,7 +1010,6 @@ for (let i = 0; i < productLinkArr.length; i++) {
             subProcent(number)
         })
         cardPlus.addEventListener('click', function(){
-            let number = Number(cardChoiceText.textContent.split('%')[0])
             if (number < 100) {
                 number = number + 10
                 createProcent(number)
@@ -1192,6 +1040,10 @@ for (let i = 0; i < productLinkArr.length; i++) {
                 cardChoiceSubtext.textContent = 'Стандартный размер, стандартная цена'
             }
         }
+        function resetNumber() {
+            cardChoiceText.textContent = 0
+            cardChoiceSubtext.textContent = 'Стандартный размер, стандартная цена'
+        }
         // кнопка Ещё
         const cardReviewTextArr = document.querySelectorAll('.card__review-text')
         for (let i = 0; i < cardReviewTextArr.length; i++) {
@@ -1201,92 +1053,32 @@ for (let i = 0; i < productLinkArr.length; i++) {
                 cardReviewMore.style.display = 'block'
             }
         }
+        // закрытие карточки
+        const cardClose = card.querySelector('.card__close')
+        const cardWrapper = card.querySelector('.card__wrapper')
+        cardClose.addEventListener('click', function(){
+            card.classList.remove('card-active')
+            resetNumber()
+        })
+        document.addEventListener( 'mousedown', (e) => {
+            const withinBoundaries = e.composedPath().includes(cardWrapper)
+            if ( ! withinBoundaries ) {
+                card.classList.remove('card-active')
+                resetNumber()
+            }
+        })
+        document.addEventListener('keydown', function(e) {
+            if( e.keyCode == 27 ){ 
+                card.classList.remove('card-active')
+                resetNumber()
+            }
+        });
     })
 }
 
-// Работа корзины
-const btnCorf = document.querySelector('.icons__corf')
-const basket = document.querySelector('.basket')
-btnCorf.addEventListener('click', function(){
-    basket.classList.add('basket-active')
-    const basketClose = basket.querySelector('.basket__close')
-    const basketWrapper = basket.querySelector('.basket__wrapper')
-    basketClose.addEventListener('click', function(){
-        basket.classList.remove('basket-active')
-    })
-    document.addEventListener( 'mousedown', (e) => {
-        const withinBoundaries = e.composedPath().includes(basketWrapper)
-        if ( ! withinBoundaries ) {
-            basket.classList.remove('basket-active')
-        }
-    })
-    document.addEventListener('keydown', function(e) {
-        if( e.keyCode == 27 ){ 
-            basket.classList.remove('basket-active')
-        }
-    });
-    // Подсчёт стоимости 
-    function priceBasket() {
-        const basketContentItemArr = basket.querySelectorAll('.basket__content-item')
-        const basketContentSum = basket.querySelector('.basket__content-sum')
-        const basketContentDelivery = basket.querySelector('.basket__content-delivery')
-        const totalPrice = basket.querySelector('.basket__content-meaning-bold')
-        let sumPrice = 0
-        for (let i = 0; i < basketContentItemArr.length; i++) {
-            const element = basketContentItemArr[i];
-            const price = Number(element.querySelector('.basket__content-price').textContent.slice(0, -1).replaceAll(' ', ''))
-            sumPrice = sumPrice + price
-        }
-        const delivery = Number(basketContentDelivery.textContent.slice(0, -1).replaceAll(' ', ''))
-        basketContentSum.textContent = `${sumPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-        totalPrice.textContent = `${(sumPrice+delivery).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-    }
-    priceBasket()
-    
 
-    // Кнопки навигации
-    const basketBtnNavArr = document.querySelectorAll('.basket__btn-nav')
-    for (let i = 0; i < basketBtnNavArr.length; i++) {
-        const element = basketBtnNavArr[i];
-        element.addEventListener('click', function(){
-            for (let i = 0; i < basketBtnNavArr.length; i++) {
-                const el = basketBtnNavArr[i];
-                el.classList.remove('basket__btn-nav-active')
-            }
-            element.classList.add('basket__btn-nav-active')
-        })
-    }
-
-    // Удаление продукта 
-    const basketContentDeleteArr = basket.querySelectorAll('.basket__content-delete')
-    for (let i = 0; i < basketContentDeleteArr.length; i++) {
-        const element = basketContentDeleteArr[i];
-        element.addEventListener('click', function(){
-            const product = element.parentElement.parentElement.parentElement
-            product.remove()
-            priceBasket()
-        })
-    }
-
-    const basketContentBtnArr = document.querySelectorAll('.basket__content-btn')
-    for (let i = 0; i < basketContentBtnArr.length; i++) {
-        const element = basketContentBtnArr[i];
-        element.addEventListener('click', function(){
-            const basketContentChoice = element.parentElement
-            const basketContentNumber = basketContentChoice.querySelector('.basket__content-number')
-            const basketContentprice = basketContentChoice.parentElement.querySelector('.basket__content-price')
-            const price = Number(basketContentprice.textContent.slice(0, -1).replaceAll(' ', ''))
-            let basketQuantity = Number(basketContentNumber.textContent)
-            const pricePerUnit = price / basketQuantity
-            if (element.classList.contains('basket__content-minus')) {
-                basketContentNumber.textContent = basketQuantity - 1
-            }
-            if (element.classList.contains('basket__content-plus')) {
-                basketContentNumber.textContent = basketQuantity + 1
-            }
-            basketContentprice.textContent = `${(pricePerUnit * basketContentNumber.textContent).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-            priceBasket()
-        })
-        
-    }
+// Переход к оформлению 
+const basketBtn  = document.querySelector('.basket__btn')
+basketBtn.addEventListener('click', function(){
+    window.location.href = 'placing.html';
 })
