@@ -400,7 +400,7 @@ p3.addEventListener('mouseup', function(){
 // Работа корзины
 const btnCorf = document.querySelector('.icons__corf')
 const basket = document.querySelector('.basket')
-btnCorf.addEventListener('click', function(){
+function basketOpen() {
     basket.classList.add('basket-active')
     const basketClose = basket.querySelector('.basket__close')
     const basketWrapper = basket.querySelector('.basket__wrapper')
@@ -478,6 +478,9 @@ btnCorf.addEventListener('click', function(){
             priceBasket()
         })
     }
+}
+btnCorf.addEventListener('click', function(){
+    basketOpen()
 })
 // Переход к оформлению 
 const basketBtn  = document.querySelector('.basket__btn')
@@ -488,5 +491,27 @@ basketBtn.addEventListener('click', function(){
 // Переход в Профиль
 const iconsLogin = document.querySelector('.icons__login ')
 iconsLogin.addEventListener('click', function(){
+    window.location.href = 'profil.html'
+})
+
+// Работа нижнего меню 
+const menuMain = document.getElementById('menu-main')
+const menuCatalog = document.getElementById('menu-catalog')
+const menuBasket = document.getElementById('menu-basket')
+const menuHeart = document.getElementById('menu-heart')
+const menuProfil = document.getElementById('menu-profil')
+menuMain.addEventListener('click', function(){
+    window.location.href = 'index.html'
+})
+menuCatalog.addEventListener('click', function(){
+    basketOpen()
+})
+menuBasket.addEventListener('click', function(){
+    basketOpen()
+})
+menuHeart.addEventListener('click', function(){
+    basketOpen()
+})
+menuProfil.addEventListener('click', function(){
     window.location.href = 'profil.html'
 })
