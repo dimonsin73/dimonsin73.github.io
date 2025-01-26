@@ -5,24 +5,6 @@ const SCROLLBTN = document.getElementById('news__sctoll-btn');
 const SCROLL = document.getElementById('scroll');
 const btn = document.querySelector('.expanded-btn');
 
-// Ф-ия разворачивания и сворачивания меню
-NAVBTN.addEventListener('click', function(){
-    let classes = NEWSNAV.classList.value;
-    if ( classes.includes('expanded') ) {
-        NEWSNAV.classList.remove('expanded');
-        if (screenWidth < '1023') {
-            NEWSNAV.style.height = '150px';
-        } else {
-            NEWSNAV.style.height = '400px';
-        }
-        btn.innerHTML = 'Открыть полностью';
-    } else {
-        NEWSNAV.classList.add('expanded');
-        NEWSNAV.style.height = 'calc(100% - 40px)';
-        btn.innerHTML = 'Свернуть оглавление';
-    };
-});
-
 // Ф-ия разворачивания и сворачивания большого текста
 SCROLLBTN.addEventListener('click', function(){
     let classes = SCROLL.classList.value;
@@ -108,3 +90,35 @@ const swiper = new Swiper('#swiper-news', {
       prevEl: '.swiper-button-prev',
     },
   });
+
+  const imgArr = document.getElementsByTagName('img')
+  const body = document.body
+  for (let i = 0; i < imgArr.length; i++) {
+    const element = imgArr[i];
+    element.addEventListener('click', function(){
+      const imgPath = element.src
+      const modalImg = document.createElement('div')
+      modalImg.classList.add('modal-img')
+      const modalImgWrapper = document.createElement('div')
+      modalImgWrapper.classList.add('modal-img__wrapper')
+      const modalImgImg = document.createElement('img')
+      modalImgImg.classList.add('modal-img__img')
+      modalImgImg.setAttribute('src', `${imgPath}`)
+      modalImgImg.setAttribute('alt', 'увеличенная картинка')
+      modalImgWrapper.append(modalImgImg)
+      modalImg.append(modalImgWrapper)
+      body.append(modalImg)
+      document.addEventListener( 'mousedown', (e) => {
+        const withinBoundaries = e.composedPath().includes(modalImgWrapper)
+        if ( ! withinBoundaries ) {
+          modalImg.remove()
+        }
+      })
+      document.addEventListener('keydown', function(e) {
+          if( e.keyCode == 27 ){ 
+            modalImg.remove()
+          }
+      });
+    })
+    
+  }

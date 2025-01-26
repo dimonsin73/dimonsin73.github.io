@@ -222,9 +222,6 @@
     .nav{
         grid-row-start: 1;
     }
-    .news__nav{
-        height: 150px;
-    }
     .news__nav-item{
         margin-bottom: 20px;
     }
@@ -381,9 +378,6 @@
     }
     .news__nav-item{
         margin-bottom: 10px;
-    }
-    .news__nav {
-        height: 150px;
     }
     .news__item-title{
         margin-bottom: 15px;
