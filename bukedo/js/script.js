@@ -1077,8 +1077,3 @@ for (let i = 0; i < productLinkArr.length; i++) {
 }
 
 
-// Переход к оформлению 
-const basketBtn  = document.querySelector('.basket__btn')
-basketBtn.addEventListener('click', function(){
-    window.location.href = 'placing.html';
-})
