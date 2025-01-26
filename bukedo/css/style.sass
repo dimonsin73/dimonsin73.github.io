@@ -2580,9 +2580,11 @@ body
             color: var(--black)
         &-img 
             position: relative
-        &-map-img
-                min-height: 200px
-                object-fit: cover
+            border-radius: 16px
+            overflow: hidden
+        &-map iframe
+            min-height: 200px
+            object-fit: cover
         &-map-marker 
             position: absolute
             top: 44%

@@ -3393,8 +3393,10 @@ body {
 }
 .deliverymethod__item-img {
   position: relative;
+  border-radius: 16px;
+  overflow: hidden;
 }
-.deliverymethod__item-map-img {
+.deliverymethod__item-map iframe {
   min-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
