@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{HTTPS} =off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+Redirect 301 /cards/1 https://isbusiness.ru/lesson/103
+Redirect 301 /cards/2 https://isbusiness.ru/lesson/104
+Redirect 301 /cards/3 https://isbusiness.ru/lesson/105
+Redirect 301 /cards/4 https://isbusiness.ru/lesson/106
+Redirect 301 /cards/5 https://isbusiness.ru/lesson/107
+Redirect 301 /cards/6 https://isbusiness.ru/lesson/108
+Redirect 301 /cards/7 https://isbusiness.ru/lesson/109
+Redirect 301 /cards/8 https://isbusiness.ru/lesson/110
