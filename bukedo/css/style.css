@@ -3544,6 +3544,16 @@ body {
   font: 500 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
 }
+.design__checkboxs-text-bottom {
+  display: inline;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+.design__checkboxs-text-bottom a {
+  color: var(--black);
+  text-decoration: underline;
+}
 .design__checkboxs-price {
   font-weight: 700;
 }
@@ -4001,7 +4011,7 @@ body {
   flex-direction: column;
   gap: 8px;
   padding: 16px;
-  background-color: rgba(135, 3, 41, 0.8);
+  background-color: rgba(133, 1, 40, 0.85);
 }
 .navigation__check-money {
   display: flex;
