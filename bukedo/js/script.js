@@ -996,6 +996,23 @@ for (let i = 0; i < productLinkArr.length; i++) {
         }
         //открытие карточки
         card.classList.add('card-active')
+        // от цены
+        const productPrice  = card.querySelector('.product__price')
+        const cardDeliverySpan = card.querySelector('.card__delivery-span')
+        const cardDeliverySpanprice = card.querySelector('.card__delivery-spanprice')
+        const cardDeliverySpanbonus = card.querySelector('.card__delivery-spanbonus')
+        const productPriceNumber = Number(productPrice.textContent.slice(0, -1).replace(/\s+/g, ''))
+        if (productPriceNumber > 4999) {
+            cardDeliverySpan.textContent = 'Бесплатная доставка '
+            cardDeliverySpan.classList.add('card__delivery-spangreen')
+            cardDeliverySpanprice.textContent = ''
+            cardDeliverySpanbonus.textContent = '+120 бонусов с покупки'
+        } else {
+            cardDeliverySpan.textContent = 'Доставка '
+            cardDeliverySpan.classList.remove('card__delivery-spangreen')
+            cardDeliverySpanprice.textContent = ', 350 ₽'
+            cardDeliverySpanbonus.textContent = '+90 бонусов с покупки'
+        }
         // кнопки + -
         const cardMinus = card.querySelector('.card-minus')
         const cardPlus = card.querySelector('.card-plus')

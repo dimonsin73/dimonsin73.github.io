@@ -2143,6 +2143,42 @@ body {
 .card-active {
   display: flex;
 }
+.card .product__price {
+  font-size: 32px;
+  line-height: 42px;
+}
+.card .product__sale-oldprice {
+  font-size: 16px;
+  line-height: 20px;
+}
+.card .product__sale-discount {
+  position: relative;
+  padding-left: 8px;
+  font-size: 13px;
+  line-height: 17px;
+  background-color: var(--burgundy);
+  color: #fff;
+}
+.card .product__sale-discount::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  height: 17px;
+  width: 5px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.card .product__sale-discount::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 17px;
+  width: 5px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
 .card__wrapper {
   position: relative;
   margin-top: 50px;
@@ -2306,6 +2342,9 @@ body {
   gap: 10px;
   font: 400 16px/21px "PT Root UI", "sans-serif";
   color: var(--black);
+}
+.card__delivery-spangreen {
+  color: var(--green);
 }
 .card__size {
   display: flex;
@@ -2495,7 +2534,7 @@ body {
   display: flex;
   min-height: 760px;
   border-radius: 16px;
-  box-shadow: 0px 20px 65px -5px rgba(18, 18, 23, 0.0392156863);
+  box-shadow: 0px 20px 65px -5px rgba(18, 18, 23, 0.0392156863), 0px 10px 20px -5px rgba(18, 18, 23, 0.0392156863);
   background-color: #fff;
   overflow: hidden;
 }
@@ -2541,7 +2580,7 @@ body {
        column-gap: 24px;
   margin: 22px 0;
 }
-.contant__list-item {
+.contant__list-link {
   font: 400 18px/22px "PT Root UI", "sans-serif";
   color: var(--black);
   white-space: nowrap;
@@ -3008,12 +3047,11 @@ body {
 .dropdawn__found {
   position: relative;
   height: 0;
-  opacity: 0;
+  overflow: hidden;
   transition: height 0.3s ease, z-index 0.3s ease;
   z-index: -100;
 }
 .dropdawn__found-active {
-  opacity: 1;
   z-index: 100;
 }
 .dropdawn__found-active .dropdawn__content {
@@ -5903,6 +5941,9 @@ body {
   }
   .basket__content-check {
     width: 100%;
+  }
+  .basket__content-footer {
+    flex-direction: row-reverse;
   }
   .basket__footer {
     margin-right: -16px;

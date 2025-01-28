@@ -311,8 +311,12 @@ for (let i = 0; i < contantItemArr.length; i++) {
             for (let i = 0; i < flowers.length; i++) {
                 const el = flowers[i];
                 const itemLi = document.createElement('li')
+                const itemLink = document.createElement('a')
                 itemLi.classList.add('contant__list-item')
-                itemLi.textContent = el
+                itemLink.classList.add('contant__list-link')
+                itemLink.setAttribute('href', '')
+                itemLink.textContent = el
+                itemLi.append(itemLink)
                 element.append(itemLi)
             }
             break;
@@ -320,8 +324,12 @@ for (let i = 0; i < contantItemArr.length; i++) {
             for (let i = 0; i < sizes.length; i++) {
                 const el = sizes[i];
                 const itemLi = document.createElement('li')
+                const itemLink = document.createElement('a')
                 itemLi.classList.add('contant__list-item')
-                itemLi.textContent = el
+                itemLink.classList.add('contant__list-link')
+                itemLink.setAttribute('href', '')
+                itemLink.textContent = el
+                itemLi.append(itemLink)
                 element.append(itemLi)
             }
             break;
@@ -329,8 +337,12 @@ for (let i = 0; i < contantItemArr.length; i++) {
             for (let i = 0; i < colors.length; i++) {
                 const el = colors[i];
                 const itemLi = document.createElement('li')
+                const itemLink = document.createElement('a')
                 itemLi.classList.add('contant__list-item')
-                itemLi.textContent = el
+                itemLink.classList.add('contant__list-link')
+                itemLink.setAttribute('href', '')
+                itemLink.textContent = el
+                itemLi.append(itemLink)
                 element.append(itemLi)
             }
             break;

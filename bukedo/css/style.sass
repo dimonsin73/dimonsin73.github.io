@@ -1590,6 +1590,37 @@ body
     z-index: 1000
     &-active 
         display: flex
+    & .product__price 
+        font-size: 32px
+        line-height: 42px
+    & .product__sale-oldprice
+        font-size: 16px
+        line-height: 20px
+    & .product__sale-discount
+        position: relative
+        padding-left: 8px
+        font-size: 13px
+        line-height: 17px
+        background-color: var(--burgundy)
+        color: #fff
+        &::before
+            content: ''
+            position: absolute
+            top: -5px
+            left: 0
+            height: 17px
+            width: 5px
+            background-color: #fff
+            transform: rotate(45deg)
+        &::after
+            content: ''
+            position: absolute
+            bottom: -5px
+            left: 0
+            height: 17px
+            width: 5px
+            background-color: #fff
+            transform: rotate(-45deg)
     &__wrapper 
         position: relative
         margin-top: 50px
@@ -1721,6 +1752,8 @@ body
             gap: 10px
             font: 400 16px/21px 'PT Root UI', 'sans-serif'
             color: var(--black)
+        &-spangreen
+            color: var(--green)
     &__size 
         display: flex
         flex-direction: column
@@ -1873,7 +1906,7 @@ body
         display: flex
         min-height: 760px
         border-radius: 16px
-        box-shadow: 0px 20px 65px -5px #1212170A
+        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
         background-color: #fff
         overflow: hidden
     &__list 
@@ -1910,7 +1943,7 @@ body
         row-gap: 24px 
         column-gap: 24px
         margin: 22px 0
-        &-item 
+        &-link
             font: 400 18px/22px 'PT Root UI', 'sans-serif'
             color: var(--black)
             white-space: nowrap
@@ -2277,11 +2310,10 @@ body
     &__found 
         position: relative
         height: 0
-        opacity: 0
+        overflow: hidden
         transition: height 0.3s ease, z-index 0.3s ease
         z-index: -100
         &-active 
-            opacity: 1
             z-index: 100
             & .dropdawn__content 
                 height: 250px
@@ -4534,6 +4566,8 @@ body
                 width: 100%
             &-check
                 width: 100%
+            &-footer
+                flex-direction: row-reverse
         &__footer
             margin-right: -16px
             margin-left: -16px
