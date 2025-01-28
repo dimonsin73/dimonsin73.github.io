@@ -1,3 +1,16 @@
+const compoundItemVisibleArr = document.querySelectorAll('.compound__item-visible')
+for (let i = 0; i < compoundItemVisibleArr.length; i++) {
+    const element = compoundItemVisibleArr[i];
+    element.addEventListener('click', function(){
+        const compoundItemPromo = element.parentElement.querySelector('.compound__item-promo')
+        compoundItemPromo.classList.toggle('compound__item-promo-active')
+        if (compoundItemPromo.classList.contains('compound__item-promo-active')) {
+            compoundItemPromo.style.height = `${compoundItemPromo.scrollHeight}px`
+        } else {
+            compoundItemPromo.style.height = 0
+        }
+    })
+}
 // показать пароль
 const dataPasswordShowArr = document.querySelectorAll('.data__password-show')
 for (let i = 0; i < dataPasswordShowArr.length; i++) {
@@ -92,11 +105,14 @@ const navigationListItemArr = document.querySelectorAll('.navigation__list-item'
 const accountArr = document.querySelector('.account').children
 const data = document.querySelector('.data')
 const myorders = document.querySelector('.myorders')
-const compound = document.querySelector('.compound')
+const compoundArr = document.querySelectorAll('.compound')
 for (let i = 0; i < navigationListItemArr.length; i++) {
     const element = navigationListItemArr[i];
     element.addEventListener('click', function(){
-        compound.style.display = 'none'
+        for (let i = 0; i < compoundArr.length; i++) {
+            const element = compoundArr[i];
+            element.style.display = 'none'
+        }
         for (let i = 0; i < navigationListItemArr.length; i++) {
             const el = navigationListItemArr[i];
             el.classList.remove('navigation__list-item-active')
@@ -146,7 +162,10 @@ for (let i = 0; i < myordersActiveBtnArr.length; i++) {
             }
         }
         myorders.style.display = 'none'
-        compound.style.display = 'flex'
+        for (let i = 0; i < compoundArr.length; i++) {
+            const element = compoundArr[i];
+            element.style.display = 'flex'
+        }
     })
     myordersActiveBtnArr[1].addEventListener('click', function(){
         for (let i = 0; i < navigationListItemArr.length; i++) {
@@ -160,7 +179,10 @@ for (let i = 0; i < myordersActiveBtnArr.length; i++) {
             }
         }
         myorders.style.display = 'none'
-        compound.style.display = 'flex'
+        for (let i = 0; i < compoundArr.length; i++) {
+            const element = compoundArr[i];
+            element.style.display = 'flex'
+        }
     })
 }
 
@@ -179,7 +201,10 @@ for (let i = 0; i < myordersCompletedBtnArr.length; i++) {
             }
         }
         myorders.style.display = 'none'
-        compound.style.display = 'flex'
+        for (let i = 0; i < compoundArr.length; i++) {
+            const element = compoundArr[i];
+            element.style.display = 'flex'
+        }
     })
 }
 // Открытие редактирования 

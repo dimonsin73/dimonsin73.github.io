@@ -1,5 +1,6 @@
 // Экспорт массивов
 import {citys} from './arrays.js';
+
 const compoundItemVisible = document.querySelector('.compound__item-visible')
 const compoundItemPromo = document.querySelector('.compound__item-promo')
 compoundItemVisible.addEventListener('click', function(){
