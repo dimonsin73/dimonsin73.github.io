@@ -1339,13 +1339,22 @@ html(lang="ru")
         .card 
             .card__wrapper 
                 .card__content 
-                    .card__media 
-                        img(src="img/flowers1.png", alt="").card__media-big 
+                    .card__media
+                        .card__media-top
+                            img(src="img/flowers1.png", alt="").card__media-big 
                         .card__media-bottom 
-                            img(src="img/flowers1.png", alt="").card__media-small.card__media-small-active
-                            img(src="img/flowers1_1.png", alt="").card__media-small
-                            img(src="img/flowers1_2.png", alt="").card__media-small
-                            img(src="img/flowers1_3.png", alt="").card__media-small
+                            .card__media-sm
+                                img(src="img/flowers1.png", alt="").card__media-small.card__media-small-active
+                            .card__media-sm
+                                video(src="video/flower1.mp4").card__media-small
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="30" height="30" rx="15" fill="white" fill-opacity="0.7"/>
+                                    <path d="M9.167 10.3063C9.167 8.84146 10.7091 7.88873 12.0198 8.54382L19.744 13.2375C21.1969 13.9636 21.1969 16.0362 19.744 16.7624L12.0198 21.456C10.7091 22.1111 9.16699 21.1584 9.16699 19.6936L9.167 10.3063Z" fill="#AD2950"/>
+                                </svg>
+                            .card__media-sm
+                                img(src="img/flowers1_2.png", alt="").card__media-small
+                            .card__media-sm
+                                img(src="img/flowers1_3.png", alt="").card__media-small
                     .card__info 
                         h3.card__title Ароматные розы Пинк Охара
                         .card__basket
@@ -1418,7 +1427,6 @@ html(lang="ru")
                             .card__about-item 
                                 p.card__about-parameter Сезон
                                 p.card__about-text Нет, доступны круглый год
-                
                 .card__review
                     .card__review-header 
                         h3.card__review-title Отзывы покупателей
