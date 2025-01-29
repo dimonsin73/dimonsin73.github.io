@@ -2584,6 +2584,7 @@ body {
   max-width: 1298px;
   width: 100%;
   margin-top: 32px;
+  box-shadow: 0px 20px 65px -5px rgba(18, 18, 23, 0.04), 0px 10px 20px -5px rgba(18, 18, 23, 0.04);
 }
 .popup-active {
   display: block;
