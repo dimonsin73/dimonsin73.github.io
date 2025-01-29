@@ -530,3 +530,7 @@ menuHeart.addEventListener('click', function(){
 menuProfil.addEventListener('click', function(){
     window.location.href = 'profil.html'
 })
+const iconsBurger = document.querySelector('.icons__burger')
+iconsBurger.addEventListener('click', function(){
+    popupOpen()
+})

@@ -1312,8 +1312,8 @@ body
             cursor: pointer
         &-active
             opacity: 1
-
 .footer
+    margin-top: auto
     background-color: var(--bg-stack)
     overflow-x: hidden
     &__top
@@ -1942,7 +1942,7 @@ body
         display: flex
         min-height: 760px
         border-radius: 16px
-        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
+        box-shadow: 0px 20px 65px -5px rgba(18, 18, 23, 0.04), 0px 10px 20px -5px rgba(18, 18, 23, 0.04)
         background-color: #fff
         overflow: hidden
     &__list 
@@ -3106,19 +3106,19 @@ body
             color: #93949B
     &__check
         border-radius: 16px
-        background: 
-            image: url('../img/money.png')
-            position: center center 
-            repeat: no-repeat
-            size: cover
+        background:
+            color: rgba(133, 1, 40, 0.85)
         overflow: hidden
         &-wrapper 
             display: flex
             flex-direction: column
             gap: 8px
             padding: 16px
-            background:
-                color: rgba(133, 1, 40, 0.85)
+            background: 
+                image: url('../img/profil.png')
+                position: center center 
+                repeat: no-repeat
+                size: cover
         &-money
             display: flex
             gap: 8px
