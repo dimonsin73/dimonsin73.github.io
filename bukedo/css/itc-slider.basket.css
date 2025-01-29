@@ -1,0 +1,94 @@
+.itc-slider {
+  position: relative;
+}
+
+.itc-slider-wrapper {
+  overflow: hidden;
+}
+
+.itc-slider-items {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.itc-slider-transition-none {
+  transition: none;
+}
+
+.itc-slider-item {
+  flex: 0 0 120px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 100%;
+  user-select: none;
+  will-change: transform;
+}
+
+/* кнопки влево и вправо */
+.basket .itc-slider-btn {
+  position: absolute;
+  top: -74px;
+}
+  
+.basket .itc-slider-btn-prev {
+  right: 66px;
+}
+
+.basket .itc-slider-btn-next {
+  right: 0;
+}
+.categories .itc-slider-items {
+    gap: 4px;
+  }
+.categories-btn {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    background-color: #fff;
+    transform: translateY(-50%);
+    transition: color 0.3s ease, border 0.3s ease;
+}
+.categories .itc-slider-btn-hide {
+    display: none;
+}
+  
+.categories .itc-slider-btn-prev {
+    left: 0;
+}
+  
+.categories .itc-slider-btn-next {
+    right: 0;
+}
+
+.categories .itc-slider-item {
+    opacity: 0.5;
+}
+.categories .itc-slider-item-active {
+    opacity: 1;
+}
+.categories-btn-right {
+    position: absolute;
+    top: -46px;
+    bottom: -46px;
+    right: 0;
+    width: 100px;
+    opacity: 0.5;
+    background-color: #fff;
+}
+.categories-btn-left {
+    position: absolute;
+    top: -46px;
+    bottom: -46px;
+    left: 0;
+    width: 100px;
+    opacity: 0.5;
+    background-color: #fff;
+}

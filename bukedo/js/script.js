@@ -970,7 +970,6 @@ for (let i = 0; i < dropdawnItemSizesArr.length; i++) {
 
 
 
-
 // Работа Card
 const productLinkArr = document.querySelectorAll('.product__link')
 const card = document.querySelector('.card')
@@ -1069,6 +1068,43 @@ for (let i = 0; i < productLinkArr.length; i++) {
             if (element.scrollHeight > element.clientHeight) {
                 cardReviewMore.style.display = 'block'
             }
+        }
+        // заменя основной картинки 
+        const cardMediaSmArr = card.querySelectorAll('.card__media-sm')
+        for (let i = 0; i < cardMediaSmArr.length; i++) {
+            const element = cardMediaSmArr[i];
+            element.addEventListener('click', function(){
+                for (let i = 0; i < cardMediaSmArr.length; i++) {
+                    const el = cardMediaSmArr[i];
+                    el.classList.remove('card__media-sm-active')
+                }
+                const cardMediaSmallArr = card.querySelectorAll('.card__media-small')
+                for (let i = 0; i < cardMediaSmallArr.length; i++) {
+                    const el = cardMediaSmallArr[i];
+                    el.classList.remove('card__media-small-active')
+                }
+                const cardMediaSmall = element.querySelector('.card__media-small')
+                const cardMediaTop = card.querySelector('.card__media-top')
+                cardMediaTop.innerHTML = ''
+                const extensionArr = cardMediaSmall.src.split('.')
+                const extension = extensionArr[extensionArr.length-1]
+                if (extension == 'png' || extension == 'webp') {
+                    const createImg = document.createElement('img')
+                    createImg.classList.add('card__media-big')
+                    createImg.setAttribute('src', cardMediaSmall.src)
+                    cardMediaTop.append(createImg)
+                }
+                if (extension == 'mp4') {
+                    const createVideo = document.createElement('video')
+                    createVideo.classList.add('card__media-big')
+                    createVideo.setAttribute('src', cardMediaSmall.src)
+                    createVideo.setAttribute('controls', 'true')
+                    cardMediaTop.append(createVideo)
+                }
+                element.classList.add('card__media-sm-active')
+                cardMediaSmall.classList.add('card__media-small-active')
+                
+            })
         }
         // закрытие карточки
         const cardClose = card.querySelector('.card__close')

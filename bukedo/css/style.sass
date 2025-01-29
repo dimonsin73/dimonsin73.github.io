@@ -792,6 +792,10 @@ body
             display: flex
             gap: 16px
             overflow-x: scroll
+        &-vert 
+            display: flex
+            flex-direction: column
+            gap: 24px
         &-item 
             display: flex
             flex-direction: column
@@ -1540,6 +1544,18 @@ body
                 color: var(--burgundy)
                 & path 
                     stroke: var(--burgundy)
+.ymaps-2-1-79-balloon
+    border-radius: 16px
+    overflow: hidden
+.ymaps-2-1-79-balloon__close-button
+    position: absolute
+    top: 16px
+    right: 16px
+    width: 40px
+    height: 40px
+    background-color: #f5f5f5
+    opacity: 1
+    border-radius: 50%
 .menu
     display: none
     &__wrapper
@@ -1647,19 +1663,36 @@ body
         width: 636px
         &-big 
             display: block
+            width: 100%
+            height: 100%
+            object-fit: cover
+        &-top 
+            border-bottom-right-radius: 24px
             max-width: 636px
             width: 100%
             max-height: 636px
             height: 100%
-            border-bottom-right-radius: 24px
+            overflow: hidden
         &-bottom
             @include flex
-            
             gap: 10px
         &-small
             width: 60px
             height: 60px
+            object-fit: cover
             border-radius: 8px
+            overflow: hidden
+            cursor: pointer
+            &-active 
+                outline: 1px solid #AD2950
+        &-sm 
+            position: relative
+            cursor: pointer
+            & svg 
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate( -50%, -50% )
     &__info
         flex: 1 0 auto
         display: flex
@@ -4104,8 +4137,6 @@ body
             border: none
         &__top
             border: none
-        &__bottom
-            margin-bottom: 48px
             &-rights
                 font-size: 14px
                 line-height: 18.2px
@@ -4147,13 +4178,12 @@ body
     .decorfooter
         right: 0
         left: 0
-        bottom: 70px
         &__left
             &-1
                 position: absolute
                 left: 0
                 bottom: 0
-                height: 330px
+                height: 260px
             &-2
                 position: absolute
                 left: 0
@@ -4165,13 +4195,11 @@ body
                 position: absolute
                 right: 0
                 bottom: 0
-                height: 330px
+                height: 260px
             &-2
                 position: absolute
                 right: 0
                 bottom: 0
-    .menu
-        display: block
     .contant__list
         grid-template-columns: 1fr
         grid-auto-flow: row
@@ -4461,6 +4489,7 @@ body
         &__small
             display: block
     .decorfooter
+        bottom: 70px
         &__left
             &-1
                 left: -100px
@@ -4500,11 +4529,13 @@ body
                 right: 0
                 left: 0
                 flex-direction: row
-            &-small
+            &-sm
                 width: 10px
                 height: 10px
+                border-radius: 50%
+                overflow: hidden
                 filter: brightness(100)
-                opacity: 0.7
+                opacity: 0.5
                 &-active 
                     opacity: 1
             &-big 
@@ -4674,6 +4705,19 @@ body
             margin-left: -76px
     .order__review
         display: none
+    .popup 
+        &-active 
+            position: fixed
+            top: 77px
+            left: 0
+            right: 0
+            bottom: 0
+            margin: 0
+            box-shadow: 0px -20px 65px -5px #1212170A, 0px -10px 20px -5px #1212170A
+            overflow-y: scroll
+            z-index: 10000
+        &__wrapper 
+            flex-direction: column
 @media (max-width: 639px) 
     .paymentcard
         &__wrapper
@@ -4736,6 +4780,8 @@ body
     .modal-city__list 
         grid-template-columns: repeat(1, 161px)
         grid-auto-flow: row
+    .itc-slider-btn
+        display: none
 @media (max-width: 449px)
     .footer__decor-left
         left: -100px

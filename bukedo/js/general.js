@@ -267,6 +267,9 @@ const popupFilters = popup.querySelector('.filters')
 const popupListItemArr = popupFilters.querySelectorAll('.popup__list-item')
 const contantItemArr = popup.querySelector('.contant').children
 catalog.addEventListener('click', function(){
+    popupOpen()
+})
+function popupOpen() {
     popup.classList.toggle('popup-active')
     document.addEventListener( 'mousedown', (e) => {
         const withinBoundaries = e.composedPath().includes(popup);
@@ -282,7 +285,7 @@ catalog.addEventListener('click', function(){
             popup.classList.remove('popup-active')
         }
     });
-})
+}
 // Работа подменю  
 for (let i = 0; i < popupListItemArr.length; i++) {
     const element = popupListItemArr[i];
@@ -516,7 +519,7 @@ menuMain.addEventListener('click', function(){
     window.location.href = 'index.html'
 })
 menuCatalog.addEventListener('click', function(){
-    basketOpen()
+    popupOpen()
 })
 menuBasket.addEventListener('click', function(){
     basketOpen()
