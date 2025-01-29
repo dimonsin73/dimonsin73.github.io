@@ -113,8 +113,7 @@ function init(){
         iconImageSize: [44, 50]
     }),
 
-
-    
+  
     myMap.geoObjects
         .add(shop1)
         .add(shop2)
