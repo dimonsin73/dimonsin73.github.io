@@ -2101,6 +2101,12 @@ body {
 
 .menu {
   display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 1000;
 }
 .menu__wrapper {
   display: flex;
