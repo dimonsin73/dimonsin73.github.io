@@ -82,6 +82,9 @@ main {
 body {
   position: relative;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .header__top {
@@ -5913,6 +5916,13 @@ body {
     display: block;
     max-width: 100%;
     max-height: 100%;
+  }
+  .card__media-top {
+    border-radius: 0;
+  }
+  .card__review-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
   .card__review-card {
     grid-template-columns: 368px;
