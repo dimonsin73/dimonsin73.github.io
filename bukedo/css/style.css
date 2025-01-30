@@ -5270,6 +5270,11 @@ body {
     display: none;
     width: 100%;
   }
+  .popup {
+    width: calc(100% - 32px);
+    right: 16px;
+    left: 16px;
+  }
 }
 @media (max-width: 1199px) {
   .popup__list {
@@ -6163,6 +6168,9 @@ body {
   }
   .order__review {
     display: none;
+  }
+  .popup {
+    width: 100%;
   }
   .popup-active {
     position: fixed;
