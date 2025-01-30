@@ -350,11 +350,13 @@ html(lang="ru")
                                                 path(d="M16.25 5.25L19.25 8.25" stroke="#212121" stroke-width="1.5" stroke-miterlimit="10")
                                                 path(d="M12 15.4999L8 16.4999L9 12.4999L18 3.49991C18.828 2.67191 20.172 2.67191 21 3.49991C21.828 4.32791 21.828 5.67191 21 6.49991L12 15.4999Z" stroke="#212121" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square")
                                     .data__head-item
-                                        input(type="text" required).data__input
-                                        h3.data__head-subtitle Имя
+                                        input(type="text" required).data__input#data-name
+                                        label(for="data-name").data__head-subtitle Имя
+                                        p.data__head-error Имя сликом короткое
                                     .data__head-item
-                                        input(type="text" required).data__input
-                                        h3.data__head-subtitle Ваш Email
+                                        input(type="text").data__input#data-email
+                                        label(for="data-email").data__head-subtitle Ваш Email
+                                        p.data__head-error Email введён не верно
                                         p.data__text Необязательно, на него мы будем отправлять электронный чек
                                 .data__password
                                     h3.data__password-title Изменить пароль

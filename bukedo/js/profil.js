@@ -32,10 +32,20 @@ dataForm.addEventListener('input', function(){
     dataBtn.removeAttribute('disabled')
 })
 // Верификация
+const dataName = document.getElementById('data-name')
+const dataEmail = document.getElementById('data-email')
 const passwordFirst = document.getElementById('password-first')
 const passwordSecond = document.getElementById('password-second')
 dataForm.addEventListener('submit', function(event){
     event.preventDefault()
+    if (dataName.value.length <= 3) {
+        dataName.parentElement.classList.add('data__head-item-error')
+    }
+    if (dataEmail.value.includes('@')) {
+        console.log(dataEmail.value.includes('@'))
+    } else {
+        dataEmail.parentElement.classList.add('data__head-item-error')
+    }
     if (passwordFirst.value.length <= 5) {
         passwordFirst.parentElement.classList.add('data__password-item-error')
     }
@@ -43,7 +53,30 @@ dataForm.addEventListener('submit', function(event){
         passwordSecond.parentElement.classList.add('data__password-item-error')
     }
 })
+dataName.addEventListener('input', function(){
+    const label = dataName.parentElement.querySelector('.data__head-subtitle')
+    if (dataName.value.length > 0) {
+        label.classList.add('data__head-subtitle-up')
+    } else {
+        label.classList.remove('data__head-subtitle-up')
+    }
+})
+dataEmail.addEventListener('input', function(){
+    const label = dataEmail.parentElement.querySelector('.data__head-subtitle')
+    if (dataEmail.value.length > 0) {
+        label.classList.add('data__head-subtitle-up')
+    } else {
+        label.classList.remove('data__head-subtitle-up')
+    }
+})
 // Удаление ошибок
+const dataInputArr = document.querySelectorAll('.data__input')
+for (let i = 0; i < dataInputArr.length; i++) {
+    const element = dataInputArr[i];
+    element.addEventListener('input', function(){
+        element.parentElement.classList.remove('data__head-item-error')
+    })
+}
 const dataPasswordInputArr = document.querySelectorAll('.data__password-input')
 for (let i = 0; i < dataPasswordInputArr.length; i++) {
     const element = dataPasswordInputArr[i];
