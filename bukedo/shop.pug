@@ -603,61 +603,6 @@ html(lang="ru")
                                             svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                                                 path(d="M7 14L10.9994 12M17 1H1V3.99957L7 8.49945V17L10.9994 15L10.9999 8.49951L17 3.99957V1Z" stroke="#1C1C1D" stroke-linecap="round" stroke-linejoin="round")
                                         p Фильтры
-                                    .dropdawn
-                                        .dropdawn__wrapper 
-                                            .dropdawn__item
-                                                .dropdawn__head
-                                                    h4.dropdawn__title Цена
-                                                    .products__filter-icon.head-chevrone
-                                                        svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                                            path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
-                                                .dropdawn__found
-                                                    .polzunok-container-4
-                                                        input(type="text").polzunok-input-4-left
-                                                        input(type="text").polzunok-input-4-right
-                                                        .polzunok-4
-                                            .dropdawn__item.dropdawn__item-flowers
-                                                .dropdawn__head.dropdawn__head-active
-                                                    h4.dropdawn__title Цветы
-                                                        p.dropdawn__title-number.products__filter-number
-                                                    .products__filter-icon.head-chevrone
-                                                        svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                                            path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
-                                                .dropdawn__found.dropdawn__found-active
-                                                    .dropdawn__header 
-                                                        .dropdawn__header-icon 
-                                                        input.dropdawn__header-input(type="text" placeholder="Поиск по цветам")
-                                                        .dropdawn__header-btn
-                                                    .dropdawn__content 
-                                            .dropdawn__item.dropdawn__item-colors
-                                                .dropdawn__head
-                                                    h4.dropdawn__title Цвет
-                                                        p.dropdawn__title-number.products__filter-number 
-                                                    .products__filter-icon.head-chevrone
-                                                        svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                                            path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
-                                                .dropdawn__found
-                                                    .dropdawn__header 
-                                                        .dropdawn__header-icon 
-                                                        input.dropdawn__header-input(type="text" placeholder="Поиск по цветам")
-                                                        .dropdawn__header-btn
-                                                    .dropdawn__content 
-                                            .dropdawn__item.dropdawn__item-sizes
-                                                .dropdawn__head
-                                                    h4.dropdawn__title Размер
-                                                        p.dropdawn__title-number.products__filter-number
-                                                    .products__filter-icon.head-chevrone
-                                                        svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                                            path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
-                                                .dropdawn__found
-                                                    .dropdawn__header 
-                                                        .dropdawn__header-icon 
-                                                        input.dropdawn__header-input(type="text" placeholder="Поиск по цветам")
-                                                        .dropdawn__header-btn
-                                                    .dropdawn__content 
-                                            .dropdawn__footer 
-                                                button.dropdawn__footer-btn.catalog.catalog__text Показать
-                                                button.dropdawn__footer-btn.products__btn.btn-text.filters-reset Сбросить
                                 .products__container#filter-sorter
                                     button.products__filter 
                                         .products__filter-icon
@@ -1778,3 +1723,62 @@ html(lang="ru")
                 button.basket__btn.catalog
                     p.basket__btn-text.catalog__text Оформить заказ 
                     p.basket__btn-price.catalog__text 5 786 ₽
+        .popup-filter
+            .popup-filter__wrapper 
+                button.popup-filter__close
+                    svg(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M7.49994 7.5L14.9999 15M14.9999 15L22.4999 22.5M14.9999 15L22.4999 7.5M14.9999 15L7.49994 22.5" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
+                h2.dropdawn__title-main Фильтр
+                .dropdawn__item
+                    .dropdawn__head
+                        h4.dropdawn__title Цена
+                        .products__filter-icon.head-chevrone
+                            svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                    .dropdawn__found
+                        .polzunok-container-4
+                            input(type="text").polzunok-input-4-left
+                            input(type="text").polzunok-input-4-right
+                            .polzunok-4
+                .dropdawn__item.dropdawn__item-flowers
+                    .dropdawn__head.dropdawn__head-active
+                        h4.dropdawn__title Цветы
+                            p.dropdawn__title-number.products__filter-number
+                        .products__filter-icon.head-chevrone
+                            svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                    .dropdawn__found.dropdawn__found-active
+                        .dropdawn__header 
+                            .dropdawn__header-icon 
+                            input.dropdawn__header-input(type="text" placeholder="Поиск по цветам")
+                            .dropdawn__header-btn
+                        .dropdawn__content 
+                .dropdawn__item.dropdawn__item-colors
+                    .dropdawn__head
+                        h4.dropdawn__title Цвет
+                            p.dropdawn__title-number.products__filter-number 
+                        .products__filter-icon.head-chevrone
+                            svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                    .dropdawn__found
+                        .dropdawn__header 
+                            .dropdawn__header-icon 
+                            input.dropdawn__header-input(type="text" placeholder="Поиск по цветам")
+                            .dropdawn__header-btn
+                        .dropdawn__content 
+                .dropdawn__item.dropdawn__item-sizes
+                    .dropdawn__head
+                        h4.dropdawn__title Размер
+                            p.dropdawn__title-number.products__filter-number
+                        .products__filter-icon.head-chevrone
+                            svg(width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M0.5 0.75L4.46967 5.01404C4.76256 5.32865 5.23744 5.32865 5.53033 5.01404L9.5 0.750002" stroke="#1C1C1D" stroke-linecap="round")
+                    .dropdawn__found
+                        .dropdawn__header 
+                            .dropdawn__header-icon 
+                            input.dropdawn__header-input(type="text" placeholder="Поиск по цветам")
+                            .dropdawn__header-btn
+                        .dropdawn__content 
+                .dropdawn__footer 
+                    button.dropdawn__footer-btn.catalog.catalog__text Показать
+                    button.dropdawn__footer-btn.products__btn.btn-text.filters-reset Сбросить

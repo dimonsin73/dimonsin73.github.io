@@ -543,7 +543,6 @@ productsFilterReset.addEventListener('click', function(){
     });
 })
 
-
 // открытие фильтра сортировки
 const filterSorter = document.getElementById('filter-sorter')
 const productsFilterBtnSorter = filterSorter.querySelector('.products__filter')
@@ -577,36 +576,26 @@ productsFilterBtnSorter.addEventListener('click', function(){
     });
 })
 
-
 // открытие фильтров
 const filterFilters = document.getElementById('filter-filters')
 const productsFilterBtnFilters= filterFilters.querySelector('.products__filter')
-const dropdawn = filterFilters.querySelector('.dropdawn')
-//const dropdawnWrapper = filterFilters.querySelector('.dropdawn__wrapper')
+const popupFilter = document.querySelector('.popup-filter')
+const popupFilterClose = document.querySelector('.popup-filter__close')
 productsFilterBtnFilters.addEventListener('click', function(){
-    dropdawn.classList.toggle('dropdawn-active')
-    /*
-    dropdawn.style.height = `${dropdawnWrapper.clientHeight}px`
-    */
-    // закрытие
-    document.addEventListener( 'mousedown', (e) => {
-        const withinBoundaries = e.composedPath().includes(filterFilters);
-        if ( ! withinBoundaries ) {
-            dropdawn.classList.remove('dropdawn-active')
-            filterFilters.classList.remove('products__container-active')
-        }
+    popupFilter.classList.add('popup-filter-active')
+    popupFilterClose.addEventListener( 'mousedown', (e) => {
+        popupFilter.classList.remove('popup-filter-active')
     })
     document.addEventListener('keydown', function(e) {
         if( e.keyCode == 27 ){ 
-            dropdawn.classList.remove('dropdawn-active')
-            filterFilters.classList.remove('products__container-active')
+            popupFilter.classList.remove('popup-filter-active')
         }
     });
     // кнопка сбросить
-    const resetBtn = filterFilters.querySelector('.products__btn')
+    const resetBtn = popupFilter.querySelector('.products__btn')
     resetBtn.addEventListener('click', function(){
-        const dropdawnContentInputArr = filterFilters.querySelectorAll('.dropdawn__content-input:checked')
-        const dropdawnTitleNumberArr = filterFilters.querySelectorAll('.dropdawn__title-number')
+        const dropdawnContentInputArr = popupFilter.querySelectorAll('.dropdawn__content-input:checked')
+        const dropdawnTitleNumberArr = popupFilter.querySelectorAll('.dropdawn__title-number')
         for (let i = 0; i < dropdawnContentInputArr.length; i++) {
             const element = dropdawnContentInputArr[i];
             element.checked = false
