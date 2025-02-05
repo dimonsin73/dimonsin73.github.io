@@ -2277,6 +2277,7 @@ body {
   outline: 1px solid #AD2950;
 }
 .card__media-sm {
+  height: 60px;
   position: relative;
   cursor: pointer;
 }
