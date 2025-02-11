@@ -1,0 +1,185 @@
+:root {
+  --Primary-10: #003B73;
+  --Primary-20: #004C95;
+  --Primary-30: #005EB8;
+  --Primary-40: #006FD8;
+  --Primary-50: #0095FF;
+  --Primary-60: #199FFF;
+  --Primary-70: #3FAFFF;
+  --Primary-80: #66BFFF;
+  --Primary-90: #8FD0FF;
+  --Primary-100: #B8E1FF;
+  --Gray-10: #3F3F45;
+  --Gray-20: #53535A;
+  --Gray-30: #65656F;
+  --Gray-40: #898990;
+  --Gray-50: #A0A1A9;
+  --Gray-60: #B4B5BE;
+  --Gray-70: #C7C9CF;
+  --Gray-80: #DBDDE1;
+  --Gray-90: #E6E8EC;
+  --Gray-100: #F2F3F5;
+  --Gray-110: #F7F7F7;
+  --White: #FFFFFF;
+  --Black: #202123;
+  --Red-error: #FF0034;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("../image/earth.png") lightgray 50%/cover no-repeat;
+}
+
+main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, #FFF 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 80px;
+  width: 772px;
+  padding: 80px;
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo svg {
+  width: 340px;
+  height: 80px;
+}
+
+.info {
+  display: flex;
+}
+
+.title {
+  padding: 0 24px;
+  font: 600 80px/80px "Inter", "sans-serif";
+  letter-spacing: -0.133px;
+  color: var(--Gray-10);
+}
+
+.text {
+  font: 700 26px/150% "Inter", "sans-serif";
+  color: var(--Gray-10);
+  letter-spacing: -0.2px;
+}
+
+.btns {
+  display: flex;
+  gap: 36px;
+  width: 100%;
+}
+.btns__col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  flex: 2 0 50%;
+}
+.btns__col-btn {
+  width: 100%;
+  border-radius: 18px;
+  padding: 24px 36px;
+  font: 600 24px/150% "Inter", "sans-serif";
+  letter-spacing: -0.72px;
+  color: var(--Gray-10);
+  text-decoration: none !important;
+  text-align: center;
+  background-color: var(--Primary-40);
+  color: var(--White);
+}
+.btns__col-btn:hover {
+  background-color: var(--Primary-30);
+}
+.btns__col-btn:active {
+  background-color: var(--Primary-20);
+}
+.btns__col-clue {
+  font: 500 16px/21px "Inter", "sans-serif";
+  color: var(--Gray-10);
+}
+.btns__col a {
+  text-decoration: underline;
+  outline: none;
+}
+
+.links {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.links__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+}
+.links__link {
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Primary-40);
+}
+.links a {
+  text-decoration: underline;
+}
+.links a:visited {
+  color: var(--Primary-40);
+}
+
+@media (max-width: 767px) {
+  main {
+    align-items: flex-end;
+  }
+  .container {
+    position: relative;
+    row-gap: 64px;
+    width: 390px;
+    margin-bottom: 62px;
+    padding: 0 40px;
+  }
+  .logo svg {
+    height: 64px;
+  }
+  .info {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 24px;
+  }
+  .text {
+    text-align: center;
+    font-size: 16px;
+  }
+  .btns {
+    flex-direction: column;
+  }
+  .btns__col {
+    gap: 16px;
+  }
+  .btns__col-btn {
+    font-size: 16px;
+  }
+  .links {
+    right: 0;
+  }
+  .links__wrapper {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    padding: 16px;
+  }
+}/*# sourceMappingURL=style.css.map */

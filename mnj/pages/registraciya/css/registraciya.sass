@@ -1,0 +1,424 @@
+:root
+    --Primary-10: #003B73
+    --Primary-20: #004C95
+    --Primary-30: #005EB8
+    --Primary-40: #006FD8
+    --Primary-50: #0095FF
+    --Primary-60: #199FFF
+    --Primary-70: #3FAFFF
+    --Primary-80: #66BFFF
+    --Primary-90: #8FD0FF
+    --Primary-100: #B8E1FF
+    --Gray-10: #3F3F45
+    --Gray-20: #53535A
+    --Gray-30: #65656F
+    --Gray-40: #898990
+    --Gray-50: #A0A1A9
+    --Gray-60: #B4B5BE
+    --Gray-70: #C7C9CF
+    --Gray-80: #DBDDE1
+    --Gray-90: #E6E8EC
+    --Gray-100: #F2F3F5
+    --Gray-110: #F7F7F7
+    --White: #FFFFFF
+    --Black: #202123
+    --Red-error: #FF0034
+    --Green: #369869
+    --Orange: #F80
+    --Border: #E7E8EA
+    --Shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1)
+    --Shadow-dropdawn: 0px 2px 16px 0px rgba(0, 0, 0, 0.20)
+
+@mixin headline-large
+    font: 700 40px/48px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin headline-medium
+    font: 700 30px/36px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin headline-small
+    font: 700 20px/30px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin title-large
+    font: 600 20px/28px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin title-medium
+    font: 600 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin title-small
+    font: 600 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-extralarge
+    font: 500 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin subtitle-large
+    font: 500 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin subtitle-medium
+    font: 500 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-small
+    font: 500 10px/14px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin body-large
+    font: 400 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin body-medium
+    font: 400 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin body-small
+    font: 400 13px/16px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin label-large
+    font: 600 13px/18px 'Inter', 'sans-serif'
+    letter-spacing: +0.1px
+@mixin label-medium
+    font: 600 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: +0.5px
+@mixin label-small
+    font: 600 11px/16px 'Inter', 'sans-serif'
+    letter-spacing: +12%
+@mixin btn-medium
+    font: 600 15px/150% 'Inter', 'sans-serif'
+    letter-spacing: +0.01em 
+@mixin btn-small
+    font: 600 13px/150% 'Inter', 'sans-serif'
+    letter-spacing: +0.03em   
+@mixin text-medium
+    font: 500 14px/140% 'Inter', 'sans-serif'
+    letter-spacing: +0.02em   
+@mixin currency
+    font: 500 18px/20px 'Inter', 'sans-serif'
+    letter-spacing: 0  
+
+html 
+    scroll-behavior: smooth
+    user-select: none
+body
+    background-color: var(--Gray-100)
+.main
+    display: none
+    grid-template-columns: 296px auto
+.container
+    max-width: 1090px
+    min-width: 856px
+    margin: 0 auto
+    padding: 0 24px
+.svg-container
+    display: flex
+    justify-content: center
+    align-items: center
+.title
+    &-large
+        @include title-large
+        color: var(--Black)
+    &-medium
+        margin-bottom: 16px
+        @include title-medium
+        color: var(--Black)
+    &-mb24
+        margin-bottom: 24px
+.btn
+    padding: 11px 24px
+    border-radius: 8px
+    @include btn-medium
+    transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+    &-primary
+        border: 1px solid var(--Primary-40)
+        background-color: var(--Primary-40)
+        color: var(--White)
+        &:hover
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+        &:active
+            border: 1px solid var(--Primary-20)
+            background-color: var(--Primary-20)
+    &-bg-gray
+        border: 1px solid var(--Gray-80)
+        background-color: var(--Gray-80)
+        color: var(--Black)
+        &:hover
+            border: 1px solid var(--Gray-70)
+            background-color: var(--Gray-70)
+        &:active
+            border: 1px solid var(--Gray-60)
+            background-color: var(--Gray-60)
+    &-transparent
+        border: 1px solid var(--Black)
+        background-color: initial
+        color: var(--Black)
+        & path
+            stroke: var(--Black)
+            transition: stroke 0.3s ease
+        &:hover path
+            stroke: var(--White)
+        &:hover
+            border: 1px solid var(--Primary-40)
+            background-color: var(--Primary-40)
+            color: var(--White)
+        &:active
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+            color: var(--White)
+    &-black 
+        border: 1px solid var(--Black)
+        background-color: initial
+        color: var(--Black)
+        & path
+            stroke: var(--Black)
+            transition: stroke 0.3s ease
+        &:hover path
+            stroke: var(--White)
+        &:hover
+            border: 1px solid var(--Black)
+            background-color: var(--Black)
+            color: var(--White)
+        &:active
+            border: 1px solid var(--Black)
+            background-color: var(--Black)
+            color: var(--White)
+        &-active 
+            border: 1px solid var(--Black)
+            background-color: var(--Black)
+            color: var(--White)
+            & path
+                stroke: var(--White)
+.hero
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: var(--Gray-100)
+    &__wrapper
+        display: grid
+        grid-template-columns: 1fr 1fr
+        width: 1200px
+        min-height: 866px
+        border-radius: 32px
+        overflow: hidden
+    &__left
+        background-color: var(--Primary-40)
+    &__items
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+        padding: 40px
+    &__logo 
+        height: 50px
+    &__content 
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 24px
+        align-self: stretch
+        &-title 
+            font: 700 48px/150% 'Inter', 'sans-serif'
+            letter-spacing: -0.2px
+            color: var(--White)
+        &-text
+            font: 400 24px/150% 'Inter', 'sans-serif'
+            letter-spacing: -0.5px
+            color: var(--White)
+    &__space 
+        height: 50px
+    &__right
+        position: relative
+        display: flex
+        justify-content: center
+        background-color: var(--White)
+    &__btn 
+        margin-top: 190px
+        padding: 16px 48px
+        border-radius: 12px
+        background-color: var(--Primary-40)
+        font: 600 16px/150% 'Inter', 'sans-serif'
+        letter-spacing: -0.48px
+        color: var(--White)
+        z-index: 100
+    &__rocket
+        position: absolute
+        top: 195px
+        transition: top 3s ease
+        &-active 
+            top: -800px
+
+.form
+    display: flex
+    flex-direction: column
+    gap: 32px
+    width: 100%
+    padding: 40px 60px
+    &__head 
+        display: flex
+        align-items: center
+        justify-content: space-between
+        &-title 
+            @include headline-large
+            color: var(--Black)
+    &__wantfind
+        display: flex
+        flex-direction: column
+        gap: 16px
+        &-title 
+            @include title-large
+            color: var(--Gray-10)
+        &-checked 
+            display: flex
+            gap: 24px
+        &-content
+            display: grid 
+            grid-template-columns: 1fr 1fr 
+            gap: 24px
+        &-radio 
+            position: absolute
+            width: 0
+            opacity: 0
+            &:checked ~ .form__wantfind-label
+                border: 2px solid var(--Primary-40)
+            &:checked ~ .form__wantfind-label .form__wantfind-check
+                border: 7px solid var(--Primary-40)
+        &-label 
+            display: grid
+            grid-template-columns: 20px auto
+            column-gap: 16px
+            align-items: center
+            padding: 18px 24px
+            border: 2px solid var(--Gray-60)
+            border-radius: 8px
+        &-check 
+            width: 20px
+            height: 20px
+            border: 1.5px solid var(--Gray-40)
+            border-radius: 50%
+        &-text 
+            @include title-medium
+            color: var(--Gray-20)
+    &__btn
+        width: 240px
+        padding: 15.75px 24px
+    &__footer
+        display: flex
+        flex-direction: column
+        gap: 16px
+        &-bottom
+            display: flex
+            gap: 5px
+            @include title-medium
+        &-text 
+            color: var(--Gray-20)
+        &-link
+            color: var(--Primary-40)
+            
+
+
+.attribut
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 8px
+    &__title
+        position: absolute
+        top: 16px
+        left: 12px
+        @include body-large
+        color: var(--Gray-30)
+        pointer-events: none
+        transition: all 0.3s ease
+    &__input
+        width: 100%
+        height: 56px
+        padding: 24px 12px 8px
+        border-radius: 8px 
+        background-color: var(--Gray-90)
+        @include body-large
+        color: var(--Black)
+        &::placeholder
+            @include body-large
+            color: var(--Gray-30)
+        &:hover
+            background-color: var(--Gray-100)
+        &:focus
+            padding-top: 24px
+            outline: 2px solid var(--Gray-40)
+            background-color: var(--White)
+            & ~ .attribut__title
+                top: 7px
+                @include body-small
+        &:valid
+            & ~ .attribut__title
+                top: 7px
+                @include body-small
+        &-error
+            outline: 2px solid var(--Red-error)
+            & ~ .attribut__item-icon path
+                fill: var(--Red-error)
+            & ~ .attribut__item-error 
+                display: flex
+                position: absolute
+                top: 50%
+                right: 12px
+                transform: translateY(-50%)
+            &:focus
+                outline: 2px solid var(--Red-error)
+    &__line4
+        display: flex
+        gap: 11px
+        &-item 
+            flex: 0 0 calc( 25% - (11px * 3 / 4) )
+            height: 8px
+            border-radius: 4px
+            background-color: var(--Gray-80)
+            transition: background-color 0.3s ease
+        &-success 
+            background-color: var(--Green)
+        &-orange 
+            background-color: var(--Orange)
+        &-error 
+            background-color: var(--Red-error)
+    &__item
+        position: relative
+        &-icon
+            position: absolute
+            top: 50%
+            left: 12px
+            transform: translateY(-50%)
+        &-icons .attribut__input
+            padding-left: 44px
+        &-icons .attribut__title
+            padding-left: 32px
+        &-error
+            display: none
+    &__error 
+        opacity: 0
+        @include body-small
+        color: var(--Red-error)
+        transition: opacity 0.3s ease
+    &-hide
+        display: none
+@media (max-width:1201px)
+    .hero__wrapper
+        height: 100%
+        border-radius: 0
+@media (max-width:1023px)
+    .hero
+        background-color: var(--White)
+        &__wrapper
+            grid-template-columns: minmax(390px, 600px)
+            justify-content: center
+        &__left
+            display: none
+@media (max-width:599px)
+    .hero
+        position: static
+    .form
+        padding: 32px 24px
+        &__wantfind-content
+            grid-template-columns: 1fr
+@media ( max-height: 980px )
+    .hero
+        position: static
+    
