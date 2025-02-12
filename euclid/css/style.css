@@ -861,11 +861,6 @@ a{
   .swiper-pagination-custom, .swiper-pagination-fraction{
     bottom: 15px;
   }
-  .hero__wrapper{
-    padding: 40px 20px 60px;
-    border-radius: 16px;
-    text-align: center;
-  }
   .hero__nav{
     bottom: 15px;
   }
