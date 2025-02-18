@@ -12,26 +12,6 @@
     --gray-800: #333333
     --gray-900: #191919
     --gray-950: #000000
-    --main-rope-fill: #D4C9BD
-    --main-rope-outline: #988E82
-    --default-rope-fill: #EDEDED
-    --default-rope-outline: #D2D2D2
-    --rope-1-fill: #58BF90
-    --rope-1-outline: #329467
-    --rope-2-fill: #CEC927
-    --rope-2-outline: #ACA824
-    --rope-3-fill: #DD3434
-    --rope-3-outline: #AF1E1E
-    --rope-4-fill: #994DC5
-    --rope-4-outline: #762CA1
-    --rope-5-fill: #5173E3
-    --rope-5-outline: #3551AD
-    --rope-6-fill: #DE8342
-    --rope-6-outline: #A45A25
-    --rope-7-fill: #DB42AD
-    --rope-7-outline: #B42A8A
-    --rope-8-fill: #52A5CE
-    --rope-8-outline: #2779A3
 
 .title-main
     font: 700 92px/92px 'Manrope', 'sans-serif'
@@ -90,6 +70,9 @@
 
 
 @media (max-width:767px)
+    .title-main
+        font-size: 40px
+        line-height: 40px
     .title-4 
         font-size: 18px
         line-height: 24px
@@ -138,13 +121,12 @@ body
 .section
     position: relative
     display: flex
-    width: 1920px
+    width: 100vw
 .header 
     position: fixed
     top: 0
     right: 0
     left: 0
-    opacity: 0.9
     z-index: 10
     &__wrapper 
         display: flex
@@ -233,7 +215,7 @@ body
         height: 24px
 .hero 
     flex: 0 0 auto
-    width: 1920px
+    width: 100vw
     height: 100%
     &__wrapper 
         position: relative
@@ -259,7 +241,7 @@ body
             transition: stroke 0.3s ease
 .trading 
     flex: 0 0 auto
-    width: 960px
+    width: 50vw
     height: 100%
     &__wrapper 
         position: relative
@@ -289,7 +271,7 @@ body
         margin-top: auto
 .support
     flex: 0 0 auto
-    width: 960px
+    width: 50vw
     height: 100%
     &__wrapper 
         position: relative
@@ -314,7 +296,7 @@ body
         margin-top: auto
 .feedback
     flex: 0 0 auto
-    width: 960px
+    width: 50vw
     height: 100%
     &__wrapper 
         position: relative
@@ -346,6 +328,7 @@ body
                 opacity: 0.5
         &-label
             display: flex
+            align-items: center
             column-gap: 16px
         &-check
             width: 20px
@@ -365,7 +348,7 @@ body
         
 .contacts
     flex: 0 0 auto
-    width: 960px
+    width: 50vw
     height: 100%
     &__wrapper 
         position: relative
@@ -550,6 +533,7 @@ body
         &-img
             position: relative
         &-img2
+            position: relative
             padding-top: 4px
         &-title
             padding-left: 8px   
@@ -593,7 +577,7 @@ body
 .menu
     position: fixed
     top: 92px
-    left: -101%
+    left: -105%
     bottom: 0
     width: 100vw
     transition: left 0.3s ease 
@@ -627,7 +611,6 @@ body
         row-gap: 40px
         flex: 0 1 auto
         max-width: 848px
-        min-width: 360px
         width: 100%
     &__item 
         display: flex
@@ -648,9 +631,7 @@ body
     left: 0
     top: 0
     height: 20px
-    background: 
-        repeat: no-repeat
-    & img
+    &-main
         min-width: 100%
         height: 20px
         object-fit: cover
@@ -658,9 +639,10 @@ body
     &-vert  
         position: absolute
         top: -12px
-        left: 80px
         display: flex
-        column-gap: 70px
+        justify-content: space-between
+        &-main 
+            width: calc( 100% - 160px )
         &__item 
             display: flex
             flex-direction: column
@@ -680,6 +662,10 @@ body
                 margin-top: 32px
             &-expertise
                 margin-top: -15px
+            &-knot 
+                position: relative
+            &-year
+                margin-top: -7px
         &__sec 
             margin-top: 2px
             & .rope-vert__item-units
@@ -691,6 +677,8 @@ body
         &__bottom
             margin-top: -7px
             padding: 0 18px
+        &__left 
+            margin-left: -80px
     &-contacts
         left: -30px
     &__line 
@@ -710,7 +698,7 @@ body
         left: -90px
     &-about
         top: 0
-        left: -78px
+        left: -70px
     &-directions
         top: 64px
         left: -72px
@@ -746,43 +734,6 @@ body
         margin-top: -30px
         margin-left: -12px
         margin-right: -12px
-
-@media ( max-width: 1023px )
-    .menu
-        &__wrapper 
-            flex-direction: column
-            overflow-y: scroll
-            scrollbar-width: none
-@media ( max-width: 767px )
-    main 
-        padding-top: 84px
-    .small-hide
-        display: none
-    .small-viseble
-        display: block
-    .header 
-        &__wrapper
-            flex-direction: row-reverse
-            padding: 20px 16px
-        &__logo svg 
-            height: 34px
-    .menu
-        top: 74px
-        &__wrapper 
-            padding: 40px 16px
-        &__nav 
-            row-gap: 24px
-        &__item
-            &-item 
-                padding: 16px 0
-            &-title 
-                margin-bottom: 8px
-    .contacts
-        row-gap: 24px
-        &__head
-            row-gap: 12px
-        &__content
-            row-gap: 16px
 
 .light-theme
     background-color: var(--white)
@@ -854,7 +805,6 @@ body
     & .dark-line
         display: none
 
-
 .dark-theme
     background-color: var(--black)
     color: var(--white)
@@ -920,11 +870,91 @@ body
     & #feedback-checkbox:checked ~ .checkbox-theme .check-theme
         border-color: var(--white)
         background-color: var(--white)
-
-
     & .light-line
         display: none
     & .dark-line
         display: flex
+
+@media (max-height: 1000px)
+    .hero__wrapper
+        padding: 60px 80px
+    .trading__wrapper 
+        padding-top: 44px
+    .support__wrapper
+        padding-top: 44px
+    .feedback__wrapper
+        padding-top: 44px
+    .contacts__wrapper
+        padding: 44px 
+    .rope-vert
+        &__item-units
+            margin-top: -45px
+        &__up 
+            margin-top: -150px
+@media ( max-width: 1023px )
+    .body
+        height: auto
+        max-height: auto
+        overflow-y: scroll
+        overflow-x: hidden
+    .menu
+        &__wrapper 
+            flex-direction: column
+            overflow-y: scroll
+            scrollbar-width: none
+@media ( max-width: 767px )
+    .main 
+        flex-direction: column
+        padding-top: 84px
+    .small-hide
+        display: none !important
+    .small-viseble
+        display: block
+    .header 
+        &__wrapper
+            flex-direction: row-reverse
+            padding: 20px 16px
+        &__logo svg 
+            height: 34px
+    .menu
+        top: 74px
+        &__wrapper 
+            padding: 40px 16px
+        &__nav 
+            row-gap: 24px
+        &__item
+            &-item 
+                padding: 16px 0
+            &-title 
+                margin-bottom: 8px
+    .contacts
+        row-gap: 24px
+        &__head
+            row-gap: 12px
+        &__content
+            row-gap: 16px
+    .hero 
+        &__wrapper 
+            flex-direction: column
+            row-gap: 400px
+            align-items: center
+            padding: 60px 16px 60px
+        &__title 
+            height: 160px
+        &__arrow 
+            transform: rotate(90deg)
+    .rope 
+        top: 261px
+        &-main
+            height: 10px
+        &-vert
+            top: 255px
+            &-main 
+                width: calc( 100% - 32px )
+            &__item
+                width: 30px
+
+
+
 
     
