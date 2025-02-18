@@ -1,0 +1,837 @@
+:root
+    --white: #ffffff
+    --black: #000000
+    --gray-050: #F2F2F2
+    --gray-100: #E5E5E5
+    --gray-200: #CCCCCC
+    --gray-300: #B2B2B2
+    --gray-400: #999999
+    --gray-500: #7F7F7F
+    --gray-600: #666666
+    --gray-700: #4C4C4C
+    --gray-800: #333333
+    --gray-900: #191919
+    --gray-950: #000000
+    --main-rope-fill: #D4C9BD
+    --main-rope-outline: #988E82
+    --default-rope-fill: #EDEDED
+    --default-rope-outline: #D2D2D2
+    --rope-1-fill: #58BF90
+    --rope-1-outline: #329467
+    --rope-2-fill: #CEC927
+    --rope-2-outline: #ACA824
+    --rope-3-fill: #DD3434
+    --rope-3-outline: #AF1E1E
+    --rope-4-fill: #994DC5
+    --rope-4-outline: #762CA1
+    --rope-5-fill: #5173E3
+    --rope-5-outline: #3551AD
+    --rope-6-fill: #DE8342
+    --rope-6-outline: #A45A25
+    --rope-7-fill: #DB42AD
+    --rope-7-outline: #B42A8A
+    --rope-8-fill: #52A5CE
+    --rope-8-outline: #2779A3
+
+.title-main
+    font: 700 92px/92px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.title-1 
+    font: 700 52px/60px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.title-2 
+    font: 700 44px/52px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.title-3 
+    font: 700 32px/36px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.title-4 
+    font: 700 24px/28px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.title-5 
+    font: 700 20px/24px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.title-prod
+    font: 700 22px/28px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.title-year
+    font: 700 28px/36px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.title-year2
+    font: 700 36px/44px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.subtitle 
+    font: 600 20px/28px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.text-large
+    font: 400 20px/32px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.text-medium
+    font: 400 18px/28px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.text-regular
+    font: 400 18px/20px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.text-small
+    font: 400 16px/24px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.text-btn 
+    font: 700 18px/24px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.text-about 
+    font: 500 20px/32px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.menu-title 
+    font: 700 32px/40px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+.menu-text
+    font: 500 18px/24px 'Manrope', 'sans-serif'
+    letter-spacing: 0px
+
+
+@media (max-width:767px)
+    .title-4 
+        font-size: 18px
+        line-height: 24px
+    .menu-title 
+        font-size: 20px
+        line-height: 24px
+    .menu-text
+        font-size: 16px
+
+html 
+    scrollbar-width: thin
+    scroll-behavior: smooth
+body 
+    position: relative
+    transition: background-color 0.3s ease, color 0.3s ease
+.body
+    height: 100vh
+    max-height: 100vh
+    overflow-y: hidden
+    overflow-x: scroll
+.wb-theme
+    transition: background-color 0.3s ease
+.black_btn-theme 
+    transition: background-color 0.3s ease, color 0.3s ease
+.border-theme
+    transition: border-color 0.3s ease
+.border18-theme
+    transition: border-color 0.3s ease
+.text8w-theme, .text27-theme
+    transition: color 0.3s ease
+.small-viseble
+    display: none
+main
+.main 
+    display: flex
+    height: 100%
+    padding-top: 114px 
+.section
+    position: relative
+    display: flex
+    width: 1920px
+.header 
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    opacity: 0.9
+    z-index: 10
+    &__wrapper 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 32px 32px 28px
+    &__burger 
+        display: flex
+        flex-direction: column
+        justify-content: center
+        row-gap: 10px
+        height: 32px
+        &-line 
+            width: 32px
+            height: 1px
+            transition: all 0.3s ease
+        &-active 
+            row-gap: 0
+        &-active .header__burger-line:first-child
+            transform: rotate(45deg)
+        &-active .header__burger-line:last-child
+            transform: rotate(-45deg)
+        &-active .header__burger-line:nth-child(2)
+            display: none
+    &__logo 
+        display: contents
+        & path
+            transition: fill 0.3s ease
+    &__buttons 
+        display: flex
+        align-items: center
+        column-gap: 24px
+        &-global 
+            display: flex
+            align-items: center
+        &-global path 
+            transition: stroke 0.3s ease
+    &__switch
+        position: relative
+        flex: 0 0 44px
+        width: 44px
+        height: 24px
+    &__input 
+        display: none
+    &__slider 
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        border: 1px solid var(--white)
+        border-radius: 22px
+        background-color: var(--gray-100)
+        transition: .3s ease
+        cursor: pointer
+        &:before 
+            position: absolute
+            content: ""
+            height: 18px
+            width: 18px
+            left: 2px
+            bottom: 2px
+            border-radius: 50%
+            background-color: var(--gray-400)
+            transition: .3s
+    &__input:checked + .header__slider 
+        background-color: var(--black)
+    &__input:focus + .header__slider 
+        box-shadow: 0 0 1px var(--green)
+    &__input:checked + .header__slider:before 
+        transform: translateX(20px)
+        background-color: var(--white)
+    &__duo 
+        display: block
+        width: 24px
+        height: 24px
+.hero 
+    flex: 0 0 auto
+    width: 1920px
+    height: 100%
+    &__wrapper 
+        position: relative
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+        height: 100%
+        padding: 80px
+    &__title 
+        max-width: 874px
+    &__arrow
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 0 0 auto
+        width: 72px
+        height: 72px
+        padding: 28px 23px
+        border: 1px solid 
+        border-radius: 50%
+        transition: border-color 0.3s ease
+        & path 
+            transition: stroke 0.3s ease
+.trading 
+    flex: 0 0 auto
+    width: 960px
+    height: 100%
+    &__wrapper 
+        position: relative
+        display: flex
+        flex-direction: column
+        height: 100%
+        padding: 96px 100px 130px 180px
+    &__title 
+        margin-bottom: 32px
+        text-transform: uppercase
+    &__head 
+        display: flex
+        flex-direction: column
+        row-gap: 12px
+        margin-bottom: 44px
+    &__content
+        display: flex
+        flex-direction: column
+        row-gap: 60px
+        margin-bottom: 40px
+        &-item
+            position: relative
+    &__footer 
+        display: flex
+        flex-direction: column
+        row-gap: 12px
+        margin-top: auto
+.support
+    flex: 0 0 auto
+    width: 960px
+    height: 100%
+    &__wrapper 
+        position: relative
+        display: flex
+        flex-direction: column
+        height: 100%
+        padding: 96px 100px 130px 180px
+    &__title 
+        margin-bottom: 80px
+        text-transform: uppercase
+    &__content
+        display: flex
+        flex-direction: column
+        row-gap: 60px
+        margin-bottom: 40px
+        &-item
+            position: relative
+    &__footer 
+        display: flex
+        flex-direction: column
+        row-gap: 12px
+        margin-top: auto
+.feedback
+    flex: 0 0 auto
+    width: 960px
+    height: 100%
+    &__wrapper 
+        position: relative
+        display: flex
+        flex-direction: column
+        height: 100%
+        padding: 96px 300px 130px 80px
+    &__title 
+        margin-bottom: 60px
+        text-transform: uppercase
+    &__text 
+        color: var(--gray-400)
+    &__form 
+        display: flex
+        flex-direction: column
+        row-gap: 40px
+        &-content
+            display: flex
+            flex-direction: column
+            row-gap: 20px   
+        &-input 
+            padding: 18px 20px
+            border-bottom: 2px solid
+            &:placolder 
+                font: 400 16px/24px 'Manrope', 'sans-serif'
+                color: var(--gray-500)
+        &-label
+            display: flex
+            column-gap: 16px
+        &-check
+            width: 20px
+            height: 20px
+            border: 2px solid 
+            border-radius: 6px
+        &-span 
+            color: var(--gray-500)
+        &-btn 
+            padding: 24px
+            border-radius: 12px
+#feedback-checkbox 
+    display: none
+.contacts
+    flex: 0 0 auto
+    width: 960px
+    height: 100%
+    &__wrapper 
+        position: relative
+        display: flex
+        flex-direction: column
+        row-gap: 60px
+        padding: 96px 100px 130px 160px
+    &__menu
+        position: relative
+        display: flex
+        flex-direction: column
+        row-gap: 60px
+        height: 100%
+    &__head 
+        display: flex
+        flex-direction: column
+        row-gap: 24px
+    &__link 
+        text-transform: uppercase
+    &__content 
+        display: flex
+        flex-direction: column
+        row-gap: 40px
+        &-title 
+            margin-bottom: 12px
+            color: var(--gray-500)
+.products 
+    display: flex
+    flex-direction: column
+    row-gap: 160px
+    margin-bottom: 10px
+    padding: 160px
+    padding-bottom: 300px
+.breadcrumbs
+    display: flex
+    column-gap: 5px
+    color: var(--gray-500)
+    &__link
+        color: var(--gray-500)
+.product
+    display: flex
+    flex-direction: column
+    row-gap: 40px
+    &__wrapper
+        display: flex
+        justify-content: space-between
+    &__title 
+        flex: 0 0 auto
+        max-width: 440px
+        text-transform: uppercase
+    &__text 
+        max-width: 800px
+    &__content 
+        position: relative
+        display: flex
+        column-gap: 80px
+        &-denser
+            column-gap: 48px
+            height: 412px
+    &__item 
+        position: relative
+        flex: 0 0 200px
+        display: flex
+        align-items: flex-end
+        height: 264px
+        padding-bottom: 180px
+        &-reverse
+            align-items: flex-start
+            padding-top: 180px
+            padding-bottom: 0
+        &-title 
+            text-transform: uppercase
+        &-dot
+            position: absolute
+            top: 115px
+            left: -10px
+            &-dark
+                left: -50px
+    &__part
+        position: relative
+        flex: 0 0 282px
+        display: flex
+        flex-direction: column
+        row-gap: 20px
+        height: 312px
+        padding-top: 100px
+        padding-left: 7px
+        &-title
+            display: flex
+            align-items: flex-end
+            min-height: 84px
+            padding-left: 43px
+            text-transform: uppercase
+        &-list
+            display: flex
+            flex-direction: column
+            row-gap: 20px
+        &-item
+            position: relative
+            display: flex
+            column-gap: 24px
+            height: 56px
+.footer
+    position: absolute
+    bottom: 0
+    right: 0
+    left: 0
+    &__wrapper 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 40px 80px
+    &__item 
+        display: flex
+        column-gap: 60px
+    &__link 
+        color: var(--gray-500)
+    &__text
+        color: var(--gray-500)
+.about 
+    position: relative
+    flex: 0 0 auto
+    width: 640px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        row-gap: 160px
+        padding: 96px 100px 20px 120px
+    &__title 
+        text-transform: uppercase
+    &__content 
+        display: flex
+        flex-direction: column
+        row-gap: 40px
+        &-title 
+            text-transform: uppercase
+.year
+    position: relative
+    flex: 0 0 auto
+    width: 640px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        row-gap: 32px
+        padding: 96px 40px 20px 180px
+    &__pt
+        padding-top: 256px
+    &__title 
+        text-transform: uppercase
+    &__subtitle 
+        text-transform: uppercase
+    &__content 
+        display: flex
+        flex-direction: column
+        &-title 
+            color: var(--gray-500)
+.mission 
+    position: relative
+    flex: 0 0 auto
+    width: 1920px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        row-gap: 36px
+        padding: 96px 100px 20px 168px
+    &__head 
+        display: flex
+        flex-direction: column
+        row-gap: 36px
+        width: 660px
+    &__title 
+        text-transform: uppercase
+    &__content 
+        position: relative
+        display: flex
+        column-gap: 80px
+    &__item
+        display: flex
+        flex-direction: column
+        row-gap: 20px
+        width: 268px
+        &-img
+            position: relative
+        &-img2
+            padding-top: 4px
+        &-title
+            padding-left: 8px   
+            text-transform: uppercase
+        &-text
+            padding-left: 8px   
+
+.directions 
+    position: relative
+    flex: 0 0 auto
+    width: 1920px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        row-gap: 36px
+        padding: 96px 135px 20px 160px
+    &__head 
+        display: flex
+        flex-direction: column
+        row-gap: 36px
+        width: 660px
+    &__title 
+        text-transform: uppercase
+    &__content 
+        position: relative
+        display: flex
+        column-gap: 40px
+    &__item 
+        display: flex
+        flex-direction: column
+        align-items: center
+        row-gap: 8px
+        width: 168px
+        &-title 
+            text-align: center
+        &-img
+            position: relative
+            display: flex
+            flex-direction: column
+
+.menu
+    position: fixed
+    top: 92px
+    left: -101%
+    bottom: 0
+    width: 100vw
+    transition: left 0.3s ease 
+    &-active
+        left: 0
+    &__wrapper
+        position: relative
+        display: flex
+        justify-content: space-between
+        column-gap: 40px
+        row-gap: 40px
+        width: 100%
+        height: 100%
+        padding: 80px 32px
+    &__rope
+        position: absolute
+        top: 11px
+        right: 0
+        left: 0
+        width: 100%
+        height: 20px
+        transition: border 0.3s ease
+        & img 
+            width: 100%
+            height: 20px
+            object-fit: cover
+            transition: opacity 0.3s ease
+    &__nav
+        display: flex
+        flex-direction: column
+        row-gap: 40px
+        flex: 0 1 auto
+        max-width: 848px
+        min-width: 360px
+        width: 100%
+    &__item 
+        display: flex
+        flex-direction: column
+        &-title 
+            margin-bottom: 20px
+            color: var(--gray-500)
+        &-item  
+            padding: 20px 0
+            border-bottom: 2px solid
+        &-link 
+            padding: 5px 0
+            transition: color 0.3s ease
+
+.rope 
+    position: absolute
+    right: 0
+    left: 0
+    top: 0
+    height: 20px
+    background: 
+        repeat: no-repeat
+    & img
+        min-width: 100%
+        height: 20px
+        object-fit: cover
+        transition: opacity 0.3s ease
+    &-vert  
+        position: absolute
+        top: -12px
+        left: 80px
+        display: flex
+        column-gap: 70px
+        &__item 
+            display: flex
+            flex-direction: column
+            &-units 
+                margin-top: -7px
+            &-dark
+                margin-top: 24px
+            &-top
+                margin-top: 8px
+                margin-bottom: -13px
+            &-top2
+                margin-top: -5px
+                margin-bottom: -13px
+            &-line 
+                margin-top: 14px
+            &-divider
+                margin-top: 32px
+            &-expertise
+                margin-top: -15px
+        &__sec 
+            margin-top: 2px
+            & .rope-vert__item-units
+                margin-top: -5px
+        &-ls
+            display: flex
+            flex-direction: column
+            left: 60px
+        &__bottom
+            margin-top: -7px
+            padding: 0 18px
+    &-contacts
+        left: -30px
+    &__line 
+        max-height: 6px
+        margin-top: 14px
+
+.knot
+    position: absolute
+    left: -110px
+    display: flex
+    &-dark 
+        left: -120px
+    &-product
+        top: 110px
+        left: -92px
+    &-product2
+        left: -90px
+    &-about
+        top: 0
+        left: -78px
+    &-directions
+        top: 64px
+        left: -72px
+        &-dark
+            left: -70px
+    &__units
+        margin-left: -6px
+        &-dark
+            margin-left: -12px
+    &__bottom
+        margin-left: -6px
+    &__left
+        margin-left: 3px
+    &__dot
+        margin-left: 7px
+        margin-right: -7px
+    
+.advantages
+    position: absolute
+    top: 4px
+    left: 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    &-dark 
+        margin-top: 18px
+    &__units
+        margin-top: -5px
+        &-dark 
+            width: 2px
+            margin: 0 15px
+    &__point 
+        margin-top: -30px
+        margin-left: -12px
+        margin-right: -12px
+
+@media ( max-width: 1023px )
+    .menu
+        &__wrapper 
+            flex-direction: column
+            overflow-y: scroll
+            scrollbar-width: none
+@media ( max-width: 767px )
+    main 
+        padding-top: 84px
+    .small-hide
+        display: none
+    .small-viseble
+        display: block
+    .header 
+        &__wrapper
+            flex-direction: row-reverse
+            padding: 20px 16px
+        &__logo svg 
+            height: 34px
+    .menu
+        top: 74px
+        &__wrapper 
+            padding: 40px 16px
+        &__nav 
+            row-gap: 24px
+        &__item
+            &-item 
+                padding: 16px 0
+            &-title 
+                margin-bottom: 8px
+    .contacts
+        row-gap: 24px
+        &__head
+            row-gap: 12px
+        &__content
+            row-gap: 16px
+
+.light-theme
+    background-color: var(--white)
+    color: var(--gray-800)
+    & .header
+        &__burger-line
+            background-color: var(--gray-500)
+        &__logo path
+            fill: var(--gray-800)
+        &__buttons path 
+            stroke: var(--gray-400)
+    & .menu__rope
+        border-top: 0 solid var(--white)
+        & img 
+            opacity: 1
+    & .hero
+        &__arrow path 
+            stroke: var(--gray-800)
+    & .wb-theme 
+        background-color: var(--white)
+    & .black_btn-theme
+        background-color: var(--gray-800)  
+        color: var(--white)
+    & .border-theme
+        border-color: var(--gray-100)
+    & .border18-theme
+        border-color: var(--gray-100)
+    & .border8w-theme
+        border-color: var(--gray-800)
+    & .text8w-theme
+        color: var(--gray-800)
+    & .text27-theme
+        color: var(--gray-200)
+    & .light-line
+        display: flex
+    & .dark-line
+        display: none
+
+
+.dark-theme
+    background-color: var(--black)
+    color: var(--white)
+    & .header
+        &__burger-line
+            background-color: var(--white)
+        &__logo path
+            fill: var(--white)
+        &__buttons path 
+            stroke: var(--white)
+    & .menu__rope
+        border-top: 6px solid var(--gray-900)
+        & img 
+            opacity: 0
+    & .hero
+        &__arrow path 
+            stroke: var(--white)
+    & .wb-theme 
+        background-color: var(--black)
+    & .black_btn-theme
+        background-color: var(--white)  
+        color: var(--gray-800)
+    & .border-theme
+        border-color: var(--gray-900)
+    & .border18-theme
+        border-color: var(--gray-800)
+    & .border8w-theme
+        border-color: var(--white)
+    & .text8w-theme
+        color: var(--white)
+    & .text27-theme
+        color: var(--gray-700)
+    & .light-line
+        display: none
+    & .dark-line
+        display: flex
+
+    
