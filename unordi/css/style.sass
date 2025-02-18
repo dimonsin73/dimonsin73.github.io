@@ -114,15 +114,23 @@ body
     transition: background-color 0.3s ease
 .black_btn-theme 
     transition: background-color 0.3s ease, color 0.3s ease
+    &:disabled
+        opacity: 0.3
 .border-theme
     transition: border-color 0.3s ease
-.border18-theme
+.border__input-theme
     transition: border-color 0.3s ease
-.text8w-theme, .text27-theme
+.check-theme
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: border-color 0.3s ease, background-color 0.3s ease
+.checkbox-theme path
+    transition: stroke 0.3s ease
+.text8w-theme, .text27-theme, .span-theme
     transition: color 0.3s ease
 .small-viseble
     display: none
-main
 .main 
     display: flex
     height: 100%
@@ -166,6 +174,7 @@ main
         & path
             transition: fill 0.3s ease
     &__buttons 
+        position: relative
         display: flex
         align-items: center
         column-gap: 24px
@@ -179,17 +188,34 @@ main
         flex: 0 0 44px
         width: 44px
         height: 24px
+        outline-offset: 2px
+        border-radius: 26px
+        transition: outline 0.3s ease
+        &:hover .header__slider:before 
+            background-color: var(--gray-500)
+        &:active .header__slider:before 
+            background-color: var(--black)
     &__input 
-        display: none
+        position: absolute
+        width: 0
+        height: 0
+        opacity: 0
+        &:checked ~ .header__switch .header__slider 
+            background-color: var(--black)
+        &:checked ~ .header__switch .header__slider:before 
+            transform: translateX(20px)
+            background-color: var(--white)
+        &:disabled ~ .header__switch
+            opacity: 0.5
     &__slider 
         position: absolute
         top: 0
         left: 0
         right: 0
         bottom: 0
-        border: 1px solid var(--white)
+        border: 1px solid var(--gray-200)
         border-radius: 22px
-        background-color: var(--gray-100)
+        background-color: var(--white)
         transition: .3s ease
         cursor: pointer
         &:before 
@@ -202,15 +228,7 @@ main
             border-radius: 50%
             background-color: var(--gray-400)
             transition: .3s
-    &__input:checked + .header__slider 
-        background-color: var(--black)
-    &__input:focus + .header__slider 
-        box-shadow: 0 0 1px var(--green)
-    &__input:checked + .header__slider:before 
-        transform: translateX(20px)
-        background-color: var(--white)
     &__duo 
-        display: block
         width: 24px
         height: 24px
 .hero 
@@ -320,9 +338,12 @@ main
         &-input 
             padding: 18px 20px
             border-bottom: 2px solid
+            border-radius: 4px
             &:placolder 
                 font: 400 16px/24px 'Manrope', 'sans-serif'
                 color: var(--gray-500)
+            &:disabled
+                opacity: 0.5
         &-label
             display: flex
             column-gap: 16px
@@ -331,13 +352,17 @@ main
             height: 20px
             border: 2px solid 
             border-radius: 6px
-        &-span 
-            color: var(--gray-500)
         &-btn 
             padding: 24px
             border-radius: 12px
 #feedback-checkbox 
-    display: none
+    position: absolute
+    width: 0
+    height: 0
+    opacity: 0
+    &:disabled .checkbox-theme
+        opacity: 0.5
+        
 .contacts
     flex: 0 0 auto
     width: 960px
@@ -769,6 +794,9 @@ main
             fill: var(--gray-800)
         &__buttons path 
             stroke: var(--gray-400)
+        &__input 
+            &:focus ~ .header__switch
+                outline: 2px solid var(--black)
     & .menu__rope
         border-top: 0 solid var(--white)
         & img 
@@ -781,16 +809,46 @@ main
     & .black_btn-theme
         background-color: var(--gray-800)  
         color: var(--white)
+        &:hover 
+            background-color: var(--gray-700) 
+        &:active 
+            background-color: var(--gray-600)
+        &:focus 
+           outline: 2px solid var(--gray-800)
+           outline-offset: 2px
     & .border-theme
         border-color: var(--gray-100)
-    & .border18-theme
+    & .border__input-theme
         border-color: var(--gray-100)
+        &:hover
+            border-color: var(--gray-200)
+        &:active 
+            border-color: var(--black)
+        &:focus 
+            outline: 2px solid var(--black)
     & .border8w-theme
         border-color: var(--gray-800)
     & .text8w-theme
         color: var(--gray-800)
     & .text27-theme
         color: var(--gray-200)
+    & .checkbox-theme 
+        & path
+            stroke: var(--white)
+        & .check-theme 
+            border-color: var(--gray-100)
+        & .span-theme
+            color: var(--gray-500)
+        &:hover .check-theme 
+            border-color: var(--gray-200)
+        &:hover .span-theme
+            color: var(--gray-400)
+    & #feedback-checkbox:focus ~ .checkbox-theme .check-theme 
+        outline: 2px solid var(--black)
+        outline-offset: 2px
+    & #feedback-checkbox:checked ~ .checkbox-theme .check-theme
+        border-color: var(--black)
+        background-color: var(--black)
     & .light-line
         display: flex
     & .dark-line
@@ -807,6 +865,9 @@ main
             fill: var(--white)
         &__buttons path 
             stroke: var(--white)
+        &__input 
+            &:focus ~ .header__switch
+                outline: 2px solid var(--white)
     & .menu__rope
         border-top: 6px solid var(--gray-900)
         & img 
@@ -819,16 +880,48 @@ main
     & .black_btn-theme
         background-color: var(--white)  
         color: var(--gray-800)
+        &:hover 
+            background-color: var(--gray-050) 
+        &:active 
+            background-color: var(--gray-100)
+        &:focus 
+           outline: 1px solid var(--white)
+           outline-offset: 2px
     & .border-theme
         border-color: var(--gray-900)
-    & .border18-theme
-        border-color: var(--gray-800)
+    & .border__input-theme
+        border-color: var(--gray-900)
+        &:hover
+            border-color: var(--gray-800)
+        &:active 
+            border-color: var(--white)
+        &:focus 
+            outline: 2px solid var(--white)
     & .border8w-theme
         border-color: var(--white)
     & .text8w-theme
         color: var(--white)
     & .text27-theme
         color: var(--gray-700)
+    & .checkbox-theme 
+        & path
+            stroke: var(--black)
+        & .check-theme 
+            border-color: var(--gray-800)
+        & .span-theme
+            color: var(--gray-500)
+        &:hover .check-theme 
+            border-color: var(--gray-700)
+        &:hover .span-theme
+            color: var(--gray-400)
+    & #feedback-checkbox:focus ~ .checkbox-theme .check-theme 
+        outline: 2px solid var(--white)
+        outline-offset: 2px
+    & #feedback-checkbox:checked ~ .checkbox-theme .check-theme
+        border-color: var(--white)
+        background-color: var(--white)
+
+
     & .light-line
         display: none
     & .dark-line

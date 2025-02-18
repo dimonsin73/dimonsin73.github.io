@@ -43,8 +43,8 @@ html(lang='en')
                             <path d="M10 1.87239V18.1224" stroke-miterlimit="10"/>
                             <path d="M18.125 9.99737H1.875" stroke-miterlimit="10"/>
                         </svg>
+                    input(type="checkbox").header__input
                     label.header__switch
-                        input(type="checkbox").header__input
                         span.header__slider.small-hide 
                         span.header__duo.small-viseble
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,15 +241,18 @@ html(lang='en')
                                 h3.text-large Have questions or ready to start?
                                 p.feedback__text.text-large Our team is here to help!
                             .feedback__form-content
-                                input(type="text" placeholder="Your Name").feedback__form-input.text-small.border-theme
-                                input(type="text" placeholder="Phone Number").feedback__form-input.text-small.border-theme
-                                input(type="text" placeholder="E-mail").feedback__form-input.text-small.border-theme
+                                input(type="text" placeholder="Your Name").feedback__form-input.text-small.border__input-theme
+                                input(type="text" placeholder="Phone Number").feedback__form-input.text-small.border__input-theme
+                                input(type="text" placeholder="E-mail").feedback__form-input.text-small.border__input-theme
                             .feedback__form-checkbox
                                 input#feedback-checkbox(type="checkbox", name="I agree")
-                                label(for="feedback-checkbox").feedback__form-label
-                                    .feedback__form-check.border18-theme
+                                label(for="feedback-checkbox").feedback__form-label.checkbox-theme
+                                    .feedback__form-check.check-theme
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.75 2.99847L4.5 8.99847L2.25 6.74847" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
                                     p.feedback__form-text 
-                                        span.feedback__form-span I agree to the 
+                                        span.span-theme I agree to the 
                                         | data processing policy 
                             button(type="submit").feedback__form-btn.text-btn.black_btn-theme Send Message
                 .contacts
