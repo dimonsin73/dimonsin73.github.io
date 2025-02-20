@@ -116,10 +116,14 @@
     line-height: 60px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 959px) {
   .title-main {
     font-size: 40px;
     line-height: 40px;
+  }
+  .title-2 {
+    font-size: 28px;
+    line-height: 32px;
   }
   .title-4 {
     font-size: 18px;
@@ -978,6 +982,9 @@ body {
   margin-left: 7px;
   margin-right: -7px;
 }
+.knot-small {
+  display: none;
+}
 
 .advantages {
   position: absolute;
@@ -1270,12 +1277,84 @@ body {
   .hero__wrapper {
     flex-direction: column;
     align-items: center;
+    padding: 60px 80px 160px;
   }
   .hero__title {
     height: 160px;
   }
   .hero__arrow {
     transform: rotate(90deg);
+  }
+  .trading {
+    width: 100vw;
+  }
+  .trading__wrapper {
+    padding: 48px 32px 32px;
+  }
+  .trading__head {
+    row-gap: 40px;
+    margin-bottom: 20px;
+  }
+  .trading__content {
+    row-gap: 20px;
+    background-image: url(../image/list_rope.svg);
+    background-position: left 4px center;
+    background-repeat: repeat-y;
+  }
+  .trading__content-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .trading__title {
+    margin-top: 28px;
+    margin-bottom: 16px;
+  }
+  .support {
+    width: 100vw;
+  }
+  .support__wrapper {
+    padding: 48px 32px 160px;
+  }
+  .support__content {
+    row-gap: 32px;
+  }
+  .support__content-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+  .support__title {
+    margin-top: 28px;
+    margin-bottom: 16px;
+  }
+  .feedback {
+    width: 100vw;
+  }
+  .feedback__wrapper {
+    padding: 48px 32px 160px;
+  }
+  .feedback__form {
+    margin-top: 32px;
+    row-gap: 32px;
+  }
+  .feedback__title {
+    margin-top: 28px;
+    margin-bottom: 16px;
+  }
+  .contacts {
+    position: relative;
+    width: 100vw;
+  }
+  .contacts__wrapper {
+    row-gap: 32px;
+    padding: 76px 32px 160px;
+  }
+  .footer {
+    position: relative;
+  }
+  .footer__wrapper {
+    padding: 48px 32px 32px;
   }
   .rope-hero {
     top: 261px;
@@ -1288,6 +1367,9 @@ body {
   }
   .rope-vert-main .rope-vert__item {
     width: 30px;
+  }
+  .knot-small {
+    display: block;
   }
 }
 @media (max-width: 767px) {
@@ -1308,5 +1390,27 @@ body {
   }
   .header__wrapper {
     padding: 20px 16px;
+  }
+  .hero__wrapper {
+    padding: 60px 16px 160px;
+  }
+  .trading__wrapper {
+    padding: 48px 16px 32px;
+  }
+  .support__wrapper {
+    padding: 48px 16px 32px;
+  }
+  .footer__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 32px;
+  }
+  .footer__item {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 16px;
+  }
+  .rope-vert-main {
+    width: calc(100% - 32px);
   }
 }/*# sourceMappingURL=style.css.map */

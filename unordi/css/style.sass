@@ -76,10 +76,13 @@
     .title-main
         font-size: 60px
         line-height: 60px
-@media (max-width:767px)
+@media (max-width: 959px)
     .title-main
         font-size: 40px
         line-height: 40px
+    .title-2
+        font-size: 28px
+        line-height: 32px
     .title-4 
         font-size: 18px
         line-height: 24px
@@ -725,6 +728,8 @@ body
     &__dot
         margin-left: 7px
         margin-right: -7px
+    &-small 
+        display: none
     
 .advantages
     position: absolute
@@ -942,10 +947,64 @@ body
         &__wrapper 
             flex-direction: column
             align-items: center
+            padding: 60px 80px 160px
         &__title 
             height: 160px
         &__arrow 
             transform: rotate(90deg)
+    .trading
+        width: 100vw
+        &__wrapper 
+            padding: 48px 32px 32px
+        &__head 
+            row-gap: 40px
+            margin-bottom: 20px
+        &__content 
+            row-gap: 20px
+            background: 
+                image: url(../image/list_rope.svg)
+                position: left 4px center 
+                repeat: repeat-y
+            &-item 
+                display: flex
+                align-items: center
+                gap: 20px
+        &__title 
+            margin-top: 28px
+            margin-bottom: 16px
+    .support
+        width: 100vw
+        &__wrapper 
+            padding: 48px 32px 160px
+        &__content
+            row-gap: 32px
+            &-item
+                display: flex
+                flex-direction: column
+                row-gap: 8px
+        &__title 
+            margin-top: 28px
+            margin-bottom: 16px
+    .feedback
+        width: 100vw
+        &__wrapper 
+            padding: 48px 32px 160px
+        &__form
+            margin-top: 32px
+            row-gap: 32px
+        &__title 
+            margin-top: 28px
+            margin-bottom: 16px
+    .contacts
+        position: relative
+        width: 100vw
+        &__wrapper 
+            row-gap: 32px
+            padding: 76px 32px 160px
+    .footer 
+        position: relative
+        &__wrapper 
+            padding: 48px 32px 32px
     .rope-hero
         top: 261px
         &-main
@@ -955,6 +1014,8 @@ body
             top: 255px
             & .rope-vert__item
                 width: 30px
+    .knot-small 
+        display: block
 
 @media ( max-width: 767px )
     .small-hide
@@ -970,6 +1031,26 @@ body
     .header 
         &__wrapper
             padding: 20px 16px
+    .hero
+        &__wrapper 
+            padding: 60px 16px 160px
+    .trading
+        &__wrapper 
+            padding: 48px 16px 32px
+    .support
+        &__wrapper 
+            padding: 48px 16px 32px
+    .footer 
+        &__wrapper
+            flex-direction: column
+            align-items: flex-start
+            row-gap: 32px
+        &__item 
+            flex-direction: column
+            align-items: flex-start
+            row-gap: 16px
+    .rope-vert-main 
+        width: calc(100% - 32px)
         
     
 

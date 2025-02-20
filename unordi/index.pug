@@ -194,43 +194,51 @@ html(lang='en')
                             p.text-large Our key areas of expertise empower global trade, including:
                         .trading__content
                             .trading__content-item
+                                .knot-small
+                                    img(src="image/list_rope_item.svg", alt="")
                                 p.subtitle Financial Operations
-                                .knot.light-line
+                                .knot.medium-hide.light-line
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-1.svg", alt="").knot__units
                                     img(src="image/expertise_knot_bottom.svg", alt="").knot__bottom
-                                .knot.knot-dark.dark-line
+                                .knot.knot-dark.medium-hide.dark-line
                                     img(src="image/expertise_line-1.svg", alt="")
                             .trading__content-item
+                                .knot-small
+                                    img(src="image/list_rope_item.svg", alt="")
                                 p.subtitle Logistics
-                                .knot.light-line
+                                .knot.medium-hide.light-line
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-2.svg", alt="").knot__units
                                     img(src="image/expertise_knot_bottom.svg", alt="").knot__bottom
-                                .knot.knot-dark.dark-line
+                                .knot.knot-dark.medium-hide.dark-line
                                     img(src="image/expertise_line-2.svg", alt="")
                             .trading__content-item
+                                .knot-small
+                                    img(src="image/list_rope_item.svg", alt="")
                                 p.subtitle Consulting
-                                .knot.light-line
+                                .knot.medium-hide.light-line
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-3.svg", alt="").knot__units
                                     img(src="image/expertise_knot_bottom.svg", alt="").knot__bottom
-                                .knot.knot-dark.dark-line
+                                .knot.knot-dark.medium-hide.dark-line
                                     img(src="image/expertise_line-3.svg", alt="")
                             .trading__content-item
+                                .knot-small
+                                    img(src="image/list_rope_item.svg", alt="")
                                 p.subtitle Innovative Technological Solutions
-                                .knot.light-line 
+                                .knot.medium-hide.light-line 
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-4.svg", alt="").knot__units
                                     img(src="image/expertise_knot_bottom.svg", alt="").knot__bottom
-                                .knot.knot-dark.dark-line
+                                .knot.knot-dark.medium-hide.dark-line
                                     img(src="image/expertise_line-4.svg", alt="")
                         .trading__footer
                             p.text-large We combine years of experience in traditional trade with cutting-edge digital technologies to deliver exceptional results.
                             p.text-large Partnering with Unordi Trading grants access to a global network of business opportunities.
                 .support
                     .support__wrapper
-                        .rope-vert.rope-vert-ls
+                        .rope-vert.rope-vert-ls.medium-hide 
                             .rope-vert__item.light-line
                                 img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
                                 picture.rope-vert__item-units
@@ -244,34 +252,42 @@ html(lang='en')
                         .support__content
                             .support__content-item
                                 p.subtitle Expanding into new markets
-                                .knot.light-line
+                                .knot.light-line.medium-hide
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-5.svg", alt="").knot__units
                                     img(src="image/expertise_knot_bottom.svg", alt="").knot__bottom
-                                .knot.knot-dark.dark-line
+                                .knot.knot-dark.dark-line.medium-hide
                                     img(src="image/expertise_line-5.svg", alt="")
+                                .knot-small
+                                    img(src="image/expertise_knot-small.svg", alt="")
                             .support__content-item
                                 p.subtitle Optimizing international operations
-                                .knot.light-line
+                                .knot.light-line.medium-hide
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-6.svg", alt="").knot__units
                                     img(src="image/expertise_knot_bottom.svg", alt="").knot__bottom
-                                .knot.knot-dark.dark-line
+                                .knot.knot-dark.dark-line.medium-hide
                                     img(src="image/expertise_line-6.svg", alt="")
+                                .knot-small
+                                    img(src="image/expertise_knot-small.svg", alt="")
                             .support__content-item
                                 p.subtitle Finding reliable partners
-                                .knot.light-line
+                                .knot.light-line.medium-hide
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-7.svg", alt="").knot__units
                                     img(src="image/expertise_knot_bottom.svg", alt="").knot__bottom
-                                .knot.knot-dark.dark-line
+                                .knot.knot-dark.dark-line.medium-hide
                                     img(src="image/expertise_line-7.svg", alt="")
+                                .knot-small
+                                    img(src="image/expertise_knot-small.svg", alt="")
                         .support__footer
                             p.text-large We prioritize long-term partnerships where every client's success contributes to the advancement of international trade. 
                             p.text-large Together, we are shaping the future of global collaboration by offering solutions that set new standards of efficiency.
             section.section
                 .rope
-                    img(src="image/rope_main.svg", alt="").rope-main.light-line
+                    picture.light-line
+                        source(media="(max-width: 959px)" srcset="image/rope_menu.svg")
+                        img(src="image/rope_main.svg", alt="").rope-main
                     img(src="image/line_main.svg", alt="").rope-main.dark-line
                 .feedback
                     .feedback__wrapper
@@ -296,8 +312,10 @@ html(lang='en')
                                         | data processing policy 
                             button(type="submit").feedback__form-btn.text-btn.black_btn-theme Send Message
                 .contacts
+                    .rope.medium-viseble
+                        img(src="image/rope_menu.svg", alt="").rope-main
                     .contacts__wrapper
-                        .rope-vert.rope-contacts
+                        .rope-vert.rope-contacts.medium-hide 
                             .rope-vert__item.light-line
                                 img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
                                 picture.rope-vert__item-units
@@ -319,6 +337,8 @@ html(lang='en')
                                 h3.contacts__content-title.text-medium Head Office Address:
                                 a(href="").contacts__link.text8w-theme.title-4 Address
                 footer.footer 
+                    .rope.medium-viseble
+                        img(src="image/rope_menu.svg", alt="").rope-main
                     .footer__wrapper
                         .footer__item
                             a(href="").footer__link.text-small Privacy Policy
