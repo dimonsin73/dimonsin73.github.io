@@ -1035,6 +1035,9 @@ body {
 .light-theme .hero__arrow path {
   stroke: var(--gray-800);
 }
+.light-theme .trading__content {
+  background-image: url(../image/list_rope.svg);
+}
 .light-theme .wb-theme {
   background-color: var(--white);
 }
@@ -1130,6 +1133,9 @@ body {
 }
 .dark-theme .hero__arrow path {
   stroke: var(--white);
+}
+.dark-theme .trading__content {
+  background-image: url(../image/list_rope-dark.svg);
 }
 .dark-theme .wb-theme {
   background-color: var(--black);
@@ -1277,7 +1283,7 @@ body {
   .hero__wrapper {
     flex-direction: column;
     align-items: center;
-    padding: 60px 80px 160px;
+    padding: 60px 80px;
   }
   .hero__title {
     height: 160px;
@@ -1297,7 +1303,6 @@ body {
   }
   .trading__content {
     row-gap: 20px;
-    background-image: url(../image/list_rope.svg);
     background-position: left 4px center;
     background-repeat: repeat-y;
   }
@@ -1305,6 +1310,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+    height: 28px;
   }
   .trading__title {
     margin-top: 28px;
@@ -1362,6 +1368,12 @@ body {
   .rope-hero-main {
     height: 10px;
   }
+  .rope-main-dark {
+    height: 3px;
+  }
+  .rope-vert__item-line {
+    margin: 0;
+  }
   .rope-vert-main {
     top: 255px;
   }
@@ -1369,7 +1381,15 @@ body {
     width: 30px;
   }
   .knot-small {
-    display: block;
+    display: flex;
+    justify-content: center;
+  }
+  .knot-small-dark {
+    height: 42px;
+    margin-right: -12px;
+    margin-left: -12px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (max-width: 767px) {

@@ -770,6 +770,9 @@ body
     & .hero
         &__arrow path 
             stroke: var(--gray-800)
+    & .trading__content 
+            background: 
+                image: url(../image/list_rope.svg)
     & .wb-theme 
         background-color: var(--white)
     & .black_btn-theme
@@ -840,6 +843,9 @@ body
     & .hero
         &__arrow path 
             stroke: var(--white)
+    & .trading__content 
+            background: 
+                image: url(../image/list_rope-dark.svg)
     & .wb-theme 
         background-color: var(--black)
     & .black_btn-theme
@@ -906,7 +912,6 @@ body
 @media (max-width: 1199px )
     .sec-hide 
         display: none !important
-        
 @media ( max-width: 959px )
     .medium-hide 
         display: none !important
@@ -947,7 +952,7 @@ body
         &__wrapper 
             flex-direction: column
             align-items: center
-            padding: 60px 80px 160px
+            padding: 60px 80px 
         &__title 
             height: 160px
         &__arrow 
@@ -962,13 +967,13 @@ body
         &__content 
             row-gap: 20px
             background: 
-                image: url(../image/list_rope.svg)
                 position: left 4px center 
                 repeat: repeat-y
             &-item 
                 display: flex
                 align-items: center
                 gap: 20px
+                height: 28px
         &__title 
             margin-top: 28px
             margin-bottom: 16px
@@ -1010,12 +1015,23 @@ body
         &-main
             height: 10px
     .rope
-        &-vert-main
-            top: 255px
-            & .rope-vert__item
-                width: 30px
+        &-main-dark 
+            height: 3px
+        &-vert
+            &__item-line 
+                margin: 0
+            &-main
+                top: 255px
+                & .rope-vert__item
+                    width: 30px
     .knot-small 
-        display: block
+        display: flex
+        justify-content: center
+        &-dark
+            height: 42px
+            margin-right: -12px
+            margin-left: -12px
+            object-fit: cover
 
 @media ( max-width: 767px )
     .small-hide
