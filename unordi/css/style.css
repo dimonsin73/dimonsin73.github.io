@@ -1277,7 +1277,7 @@ body {
   .hero__wrapper {
     flex-direction: column;
     align-items: center;
-    padding: 60px 80px 160px;
+    padding: 60px 80px;
   }
   .hero__title {
     height: 160px;
