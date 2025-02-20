@@ -34,7 +34,7 @@ html(lang='en')
                         <path d="M131.876 39.1459C131.876 38.3307 131.999 37.6465 132.243 37.0933C132.426 36.6857 132.674 36.3199 132.988 35.996C133.306 35.6721 133.652 35.4319 134.028 35.2754C134.528 35.0643 135.105 34.9588 135.759 34.9588C136.941 34.9588 137.887 35.3245 138.595 36.0561C139.307 36.7876 139.663 37.8048 139.663 39.1077C139.663 40.3997 139.311 41.4115 138.606 42.143C137.902 42.8709 136.96 43.2348 135.781 43.2348C134.587 43.2348 133.638 42.8727 132.933 42.1485C132.229 41.4206 131.876 40.4197 131.876 39.1459ZM133.546 39.0914C133.546 39.9976 133.756 40.6854 134.176 41.1549C134.596 41.6208 135.129 41.8537 135.775 41.8537C136.421 41.8537 136.951 41.6226 137.363 41.1604C137.779 40.6945 137.987 39.9976 137.987 39.0695C137.987 38.1524 137.785 37.4682 137.38 37.0169C136.978 36.5656 136.443 36.3399 135.775 36.3399C135.107 36.3399 134.569 36.5692 134.16 37.0278C133.751 37.4827 133.546 38.1706 133.546 39.0914Z"/>
                     </svg>
                 .header__buttons
-                    button.header__buttons-global.small-hide 
+                    button.header__buttons-global.medium-hide
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 1.87242C5.51289 1.87242 1.875 5.51031 1.875 9.99742C1.875 14.4845 5.51289 18.1224 10 18.1224C14.4871 18.1224 18.125 14.4845 18.125 9.99742C18.125 5.51031 14.4871 1.87242 10 1.87242Z" stroke-miterlimit="10"/>
                             <path d="M9.99883 1.87242C7.73047 1.87242 5.59766 5.51031 5.59766 9.99742C5.59766 14.4845 7.73047 18.1224 9.99883 18.1224C12.2672 18.1224 14.4 14.4845 14.4 9.99742C14.4 5.51031 12.2672 1.87242 9.99883 1.87242Z" stroke-miterlimit="10"/>
@@ -45,8 +45,8 @@ html(lang='en')
                         </svg>
                     input(type="checkbox").header__input
                     label.header__switch
-                        span.header__slider.small-hide 
-                        span.header__duo.small-viseble
+                        span.header__slider.medium-hide 
+                        span.header__duo.medium-viseble
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.0007 21.7463C6.61637 21.7463 2.25148 17.3814 2.25148 11.9971C2.25148 6.6127 6.61637 2.2478 12.0007 2.2478C17.3851 2.2478 21.75 6.6127 21.75 11.9971C21.75 17.3814 17.3851 21.7463 12.0007 21.7463Z" fill="#ffffff" stroke="#000000" stroke-linejoin="round"/>
                                 <path d="M12.0007 21.7463C17.3853 21.7463 21.75 17.3817 21.75 11.9971C21.75 6.61247 17.3853 2.2478 12.0007 2.2478V21.7463Z" fill="#000000"/>
@@ -54,85 +54,115 @@ html(lang='en')
 
         main.main
             section.section
-                .rope
-                    img(src="image/rope_main.svg", alt="").rope-main.light-line
-                    img(src="image/line_main.svg", alt="").dark-line
+                .rope.rope-hero
+                    img(src="image/rope_main.svg", alt="").rope-main.rope-hero-main.light-line
+                    img(src="image/line_main.svg", alt="").rope-main-main.dark-line
                 .hero
                     .hero__wrapper
                         .rope-vert.rope-vert-main
                             .rope-vert__item.light-line
                                 img(src="image/rope-1_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/rope-1.svg", alt="").rope-vert__item-units
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/rope-1-2.svg")
+                                    img(src="image/rope-1.svg", alt="")
                             .rope-vert__item.dark-line
                                 img(src="image/line-1.svg", alt="")
-                            .rope-vert__item.rope-vert__sec.light-line.small-hide
+                            .rope-vert__item.rope-vert__sec.light-line.sec-hide
                                 img(src="image/sec_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/sec_rope-1.svg", alt="").rope-vert__item-units
-                            .rope-vert__item.dark-line.small-hide
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/sec_rope-1-2.svg")
+                                    img(src="image/sec_rope-1.svg", alt="")
+                            .rope-vert__item.dark-line.sec-hide
                                 img(src="image/sec_line-1.svg", alt="")
                             .rope-vert__item.light-line
                                 img(src="image/rope-2_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/rope-2.svg", alt="").rope-vert__item-units
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/rope-2-2.svg")
+                                    img(src="image/rope-2.svg", alt="")
                             .rope-vert__item.dark-line
                                 img(src="image/line-2.svg", alt="")
-                            .rope-vert__item.rope-vert__sec.light-line.small-hide
+                            .rope-vert__item.rope-vert__sec.light-line.sec-hide
                                 img(src="image/sec_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/sec_rope-2.svg", alt="").rope-vert__item-units
-                            .rope-vert__item.dark-line.small-hide
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/sec_rope-2-2.svg")
+                                    img(src="image/sec_rope-2.svg", alt="")
+                            .rope-vert__item.dark-line.sec-hide
                                 img(src="image/sec_line-2.svg", alt="")
                             .rope-vert__item.light-line
                                 img(src="image/rope-3_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/rope-3.svg", alt="").rope-vert__item-units
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/rope-3-2.svg")
+                                    img(src="image/rope-3.svg", alt="")
                             .rope-vert__item.dark-line
                                 img(src="image/line-3.svg", alt="").rope-vert__item-line
-                            .rope-vert__item.rope-vert__sec.light-line.small-hide
+                            .rope-vert__item.rope-vert__sec.light-line.sec-hide
                                 img(src="image/sec_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/sec_rope-3.svg", alt="").rope-vert__item-units
-                            .rope-vert__item.dark-line.small-hide
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/sec_rope-3-2.svg")
+                                    img(src="image/sec_rope-3.svg", alt="")
+                            .rope-vert__item.dark-line.sec-hide
                                 img(src="image/sec_line-3.svg", alt="").rope-vert__item-line
                             .rope-vert__item.light-line
                                 img(src="image/rope-4_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/rope-4.svg", alt="").rope-vert__item-units
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/rope-4-2.svg")
+                                    img(src="image/rope-4.svg", alt="")
                             .rope-vert__item.dark-line
                                 img(src="image/line-4.svg", alt="").rope-vert__item-line
-                            .rope-vert__item.rope-vert__sec.light-line.small-hide
+                            .rope-vert__item.rope-vert__sec.light-line.sec-hide
                                 img(src="image/sec_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/sec_rope-4.svg", alt="").rope-vert__item-units
-                            .rope-vert__item.dark-line.small-hide
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/sec_rope-4-2.svg")
+                                    img(src="image/sec_rope-4.svg", alt="")
+                            .rope-vert__item.dark-line.sec-hide
                                 img(src="image/sec_line-4.svg", alt="").rope-vert__item-line
                             .rope-vert__item.light-line
                                 img(src="image/rope-5_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/rope-5.svg", alt="").rope-vert__item-units
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/rope-5-2.svg")
+                                    img(src="image/rope-5.svg", alt="")
                             .rope-vert__item.dark-line
                                 img(src="image/line-5.svg", alt="").rope-vert__item-line
-                            .rope-vert__item.rope-vert__sec.light-line.small-hide
+                            .rope-vert__item.rope-vert__sec.light-line.sec-hide
                                 img(src="image/sec_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/sec_rope-5.svg", alt="").rope-vert__item-units
-                            .rope-vert__item.dark-line.small-hide
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/sec_rope-5-2.svg")
+                                    img(src="image/sec_rope-5.svg", alt="")
+                            .rope-vert__item.dark-line.sec-hide
                                 img(src="image/sec_line-5.svg", alt="").rope-vert__item-line
                             .rope-vert__item.light-line
                                 img(src="image/rope-6_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/rope-6.svg", alt="").rope-vert__item-units
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/rope-6-2.svg")
+                                    img(src="image/rope-6.svg", alt="")
                             .rope-vert__item.dark-line
                                 img(src="image/line-6.svg", alt="").rope-vert__item-line
-                            .rope-vert__item.rope-vert__sec.light-line.small-hide
+                            .rope-vert__item.rope-vert__sec.light-line.sec-hide
                                 img(src="image/sec_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/sec_rope-6.svg", alt="").rope-vert__item-units
-                            .rope-vert__item.dark-line.small-hide
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/sec_rope-6-2.svg")
+                                    img(src="image/sec_rope-6.svg", alt="")
+                            .rope-vert__item.dark-line.sec-hide
                                 img(src="image/sec_line-6.svg", alt="")
                             .rope-vert__item.light-line
                                 img(src="image/rope-7_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/rope-7.svg", alt="").rope-vert__item-units
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/rope-7-2.svg")
+                                    img(src="image/rope-7.svg", alt="")
                             .rope-vert__item.dark-line
                                 img(src="image/line-7.svg", alt="")
-                            .rope-vert__item.rope-vert__sec.light-line.small-hide
+                            .rope-vert__item.rope-vert__sec.light-line.sec-hide
                                 img(src="image/sec_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/sec_rope-7.svg", alt="").rope-vert__item-units
-                            .rope-vert__item.dark-line.small-hide
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/sec_rope-7-2.svg")
+                                    img(src="image/sec_rope-7.svg", alt="")
+                            .rope-vert__item.dark-line.sec-hide
                                 img(src="image/sec_line-7.svg", alt="")
                             .rope-vert__item.light-line
                                 img(src="image/rope-8_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/rope-8.svg", alt="").rope-vert__item-units
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/rope-8-2.svg")
+                                    img(src="image/rope-8.svg", alt="")
                             .rope-vert__item.dark-line
                                 img(src="image/line-8.svg", alt="")
                         h1.hero__title.title-main BUILDING A GLOBAL <br>LEGACY TOGETHER
@@ -143,15 +173,19 @@ html(lang='en')
             section.section#section
                 .rope
                     img(src="image/rope_main.svg", alt="").rope-main.light-line
-                    img(src="image/line_main.svg", alt="").dark-line
+                    img(src="image/line_main.svg", alt="").rope-main.dark-line
                 .trading
                     .trading__wrapper
                         .rope-vert.rope-vert-ls
                             .rope-vert__item.light-line
                                 img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/expertise_rope-1.svg", alt="").rope-vert__item-units.rope-vert__up
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/expertise_rope-1-2.svg")
+                                    img(src="image/expertise_rope-1.svg", alt="")
                             .rope-vert__item.dark-line
-                                img(src="image/expertise_main_line.svg", alt="").rope-vert__item-expertise
+                                picture.rope-vert__item-expertise
+                                    source(media="(max-height: 1000px)" srcset="image/expertise_main_line-2.svg")
+                                    img(src="image/expertise_main_line.svg", alt="")
                         h2.trading__title.title-2 Unordi Trading
                         .trading__head
                             p.text-large is an international trading company that bridges businesses worldwide, creating powerful, result-driven connections in the global market.
@@ -197,9 +231,13 @@ html(lang='en')
                         .rope-vert.rope-vert-ls
                             .rope-vert__item.light-line
                                 img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/expertise_rope-1.svg", alt="").rope-vert__item-units.rope-vert__up
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/expertise_rope-1-2.svg")
+                                    img(src="image/expertise_rope-1.svg", alt="")
                             .rope-vert__item.dark-line
-                                img(src="image/expertise_main_line.svg", alt="")
+                                picture
+                                    source(media="(max-height: 1000px)" srcset="image/expertise_main_line-2.svg")
+                                    img(src="image/expertise_main_line.svg", alt="")
                         h2.support__title.title-2 We support businesses of all sizes in
                         .support__content
                             .support__content-item
@@ -232,7 +270,7 @@ html(lang='en')
             section.section
                 .rope
                     img(src="image/rope_main.svg", alt="").rope-main.light-line
-                    img(src="image/line_main.svg", alt="").dark-line
+                    img(src="image/line_main.svg", alt="").rope-main.dark-line
                 .feedback
                     .feedback__wrapper
                         h2.feedback__title.title-2 Your Journey to Global Success Starts Here
@@ -260,9 +298,13 @@ html(lang='en')
                         .rope-vert.rope-contacts
                             .rope-vert__item.light-line
                                 img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
-                                img(src="image/expertise_rope-2.svg", alt="").rope-vert__item-units.rope-vert__up
+                                picture.rope-vert__item-units
+                                    source(media="(max-height: 1000px)" srcset="image/expertise_rope-2-2.svg")
+                                    img(src="image/expertise_rope-2.svg", alt="")
                             .rope-vert__item.dark-line
-                                img(src="image/divider_line.svg", alt="").rope-vert__item-divider
+                                picture.rope-vert__item-divider
+                                    source(media="(max-height: 1000px)" srcset="image/divider_line-2.svg")
+                                    img(src="image/divider_line.svg", alt="")
                         .contacts__head
                             h2.contacts__head-title.title-2 OUR CONTACTS
                             p.contacts__head-text.text-medium Get in touch with us in any convenient way
@@ -309,19 +351,18 @@ html(lang='en')
                                 a(href="product.html").menu__item-link.text8w-theme.menu-text Potato flakes
                             li.menu__item-item.border-theme
                                 a(href="product.html").menu__item-link.text8w-theme.menu-text Studio microphones
-                .contacts
-                    .contacts__menu
-                        .contacts__head
-                            h2.contacts__head-title.menu-title OUR CONTACTS
-                            p.contacts__head-text.text-medium Get in touch with us in any convenient way
-                        .contacts__content 
-                            .contacts__item 
-                                a(href="mailto:info@unordi.com ").contacts__link.text8w-theme.title-4 info@unordi.com 
-                            .contacts__item 
-                                a(href="tel:+70000000000").contacts__link.text8w-theme.title-4 +7 000 000 0000
-                            .contacts__item
-                                h3.contacts__content-title.text-small Head Office Address:
-                                a(href="").contacts__link.text8w-theme.title-4 Address
+                .contacts.contacts__menu
+                    .contacts__head
+                        h2.contacts__head-title.menu-title OUR CONTACTS
+                        p.contacts__head-text.text-medium Get in touch with us in any convenient way
+                    .contacts__content 
+                        .contacts__item 
+                            a(href="mailto:info@unordi.com ").contacts__link.text8w-theme.title-4 info@unordi.com 
+                        .contacts__item 
+                            a(href="tel:+70000000000").contacts__link.text8w-theme.title-4 +7 000 000 0000
+                        .contacts__item
+                            h3.contacts__content-title.text-small Head Office Address:
+                            a(href="").contacts__link.text8w-theme.title-4 Address
 
 
     

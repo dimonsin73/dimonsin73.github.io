@@ -104,6 +104,18 @@
   letter-spacing: 0px;
 }
 
+@media (max-width: 1199px) {
+  .title-main {
+    font-size: 80px;
+    line-height: 80px;
+  }
+}
+@media (max-width: 999px) {
+  .title-main {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
 @media (max-width: 767px) {
   .title-main {
     font-size: 40px;
@@ -134,8 +146,8 @@ body {
 .body {
   height: 100vh;
   max-height: 100vh;
-  overflow-y: hidden;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .wb-theme {
@@ -185,7 +197,6 @@ body {
 .section {
   position: relative;
   display: flex;
-  width: 100vw;
 }
 
 .header {
@@ -338,7 +349,7 @@ body {
 
 .trading {
   flex: 0 0 auto;
-  width: 50vw;
+  width: 960px;
   height: 100%;
 }
 .trading__wrapper {
@@ -376,7 +387,7 @@ body {
 
 .support {
   flex: 0 0 auto;
-  width: 50vw;
+  width: 960px;
   height: 100%;
 }
 .support__wrapper {
@@ -408,7 +419,7 @@ body {
 
 .feedback {
   flex: 0 0 auto;
-  width: 50vw;
+  width: 960px;
   height: 100%;
 }
 .feedback__wrapper {
@@ -476,7 +487,7 @@ body {
 
 .contacts {
   flex: 0 0 auto;
-  width: 50vw;
+  width: 960px;
   height: 100%;
 }
 .contacts__wrapper {
@@ -491,6 +502,9 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 60px;
+  flex: 0 1 auto;
+  max-width: 848px;
+  width: 100%;
   height: 100%;
 }
 .contacts__head {
@@ -616,7 +630,8 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  left: 0;
+  max-width: 1920px;
+  width: 100vw;
 }
 .footer__wrapper {
   display: flex;
@@ -778,7 +793,7 @@ body {
 
 .menu {
   position: fixed;
-  top: 92px;
+  top: 103px;
   left: -105%;
   bottom: 0;
   width: 100vw;
@@ -1185,47 +1200,37 @@ body {
     padding: 60px 80px;
   }
   .trading__wrapper {
-    padding-top: 44px;
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
   .support__wrapper {
-    padding-top: 44px;
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
   .feedback__wrapper {
-    padding-top: 44px;
+    padding-top: 40px;
   }
   .contacts__wrapper {
-    padding: 44px;
-  }
-  .rope-vert__item-units {
-    margin-top: -45px;
-  }
-  .rope-vert__up {
-    margin-top: -150px;
+    padding-top: 40px;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
+  .sec-hide {
+    display: none !important;
+  }
+}
+@media (max-width: 959px) {
+  .medium-hide {
+    display: none !important;
+  }
+  .medium-viseble {
+    display: block;
+  }
   .body {
     height: auto;
     max-height: auto;
     overflow-y: scroll;
     overflow-x: hidden;
-  }
-  .menu__wrapper {
-    flex-direction: column;
-    overflow-y: scroll;
-    scrollbar-width: none;
-  }
-}
-@media (max-width: 767px) {
-  .main {
-    flex-direction: column;
-    padding-top: 84px;
-  }
-  .small-hide {
-    display: none !important;
-  }
-  .small-viseble {
-    display: block;
   }
   .header__wrapper {
     flex-direction: row-reverse;
@@ -1234,10 +1239,17 @@ body {
   .header__logo svg {
     height: 34px;
   }
+  .main {
+    flex-direction: column;
+    padding-top: 74px;
+  }
   .menu {
     top: 74px;
   }
   .menu__wrapper {
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none;
     padding: 40px 16px;
   }
   .menu__nav {
@@ -1249,6 +1261,39 @@ body {
   .menu__item-title {
     margin-bottom: 8px;
   }
+  .hero {
+    height: calc(100vh - 74px);
+  }
+  .hero__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero__title {
+    height: 160px;
+  }
+  .hero__arrow {
+    transform: rotate(90deg);
+  }
+  .rope-hero {
+    top: 261px;
+  }
+  .rope-hero-main {
+    height: 10px;
+  }
+  .rope-vert-main {
+    top: 255px;
+  }
+  .rope-vert-main .rope-vert__item {
+    width: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .small-hide {
+    display: none !important;
+  }
+  .small-viseble {
+    display: block;
+  }
   .contacts {
     row-gap: 24px;
   }
@@ -1258,31 +1303,7 @@ body {
   .contacts__content {
     row-gap: 16px;
   }
-  .hero__wrapper {
-    flex-direction: column;
-    row-gap: 400px;
-    align-items: center;
-    padding: 60px 16px 60px;
-  }
-  .hero__title {
-    height: 160px;
-  }
-  .hero__arrow {
-    transform: rotate(90deg);
-  }
-  .rope {
-    top: 261px;
-  }
-  .rope-main {
-    height: 10px;
-  }
-  .rope-vert {
-    top: 255px;
-  }
-  .rope-vert-main {
-    width: calc(100% - 32px);
-  }
-  .rope-vert__item {
-    width: 30px;
+  .header__wrapper {
+    padding: 20px 16px;
   }
 }/*# sourceMappingURL=style.css.map */
