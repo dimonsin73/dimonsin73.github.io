@@ -1243,6 +1243,9 @@ body {
     flex-direction: column;
     padding-top: 74px;
   }
+  .section {
+    flex-direction: column;
+  }
   .menu {
     top: 74px;
   }

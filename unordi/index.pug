@@ -172,11 +172,13 @@ html(lang='en')
                             </svg>
             section.section#section
                 .rope
-                    img(src="image/rope_main.svg", alt="").rope-main.light-line
+                    picture.light-line
+                        source(media="(max-width: 959px)" srcset="image/rope_menu.svg")
+                        img(src="image/rope_main.svg", alt="").rope-main
                     img(src="image/line_main.svg", alt="").rope-main.dark-line
                 .trading
                     .trading__wrapper
-                        .rope-vert.rope-vert-ls
+                        .rope-vert.rope-vert-ls.medium-hide 
                             .rope-vert__item.light-line
                                 img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
                                 picture.rope-vert__item-units
