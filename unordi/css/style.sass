@@ -938,6 +938,25 @@ body
         display: none
     & .dark-line
         display: flex
+@keyframes example
+    0% 
+        transform: skewX(0)
+    16% 
+        transform: skewX(0.1deg)
+    33% 
+        transform: skewX(-0.2deg)
+    50% 
+        transform: skewX(0.3deg)
+    66% 
+        transform: skewX(-0.2deg)
+    83% 
+        transform: skewX(0.1deg)
+    100% 
+        transform: skewX(0)
+
+
+.rope-skew:hover
+    animation: example 3s infinite
 
 @media (max-height: 1000px)
     .hero__wrapper
