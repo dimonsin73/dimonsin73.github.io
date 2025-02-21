@@ -89,6 +89,9 @@
     .menu-title 
         font-size: 20px
         line-height: 24px
+    .subtitle
+        font-size: 15px
+        line-height: 22px
     .menu-text
         font-size: 16px
 
@@ -123,7 +126,9 @@ body
 .text8w-theme, .text27-theme, .span-theme
     transition: color 0.3s ease
 .small-viseble
-    display: none
+    display: none !important
+.medium-viseble
+    display: none !important
 .main 
     display: flex
     height: 100%
@@ -485,10 +490,12 @@ body
     position: relative
     flex: 0 0 auto
     width: 640px
+    height: calc(100vh - 114px)
     &__wrapper 
         display: flex
         flex-direction: column
         row-gap: 160px
+        height: 100%
         padding: 96px 100px 20px 120px
     &__title 
         text-transform: uppercase
@@ -498,10 +505,16 @@ body
         row-gap: 40px
         &-title 
             text-transform: uppercase
+.years
+    display: flex
+    overflow-x: scroll
+    scrollbar-width: none
+    margin-top: -12px
 .year
     position: relative
     flex: 0 0 auto
     width: 640px
+    background: none
     &__wrapper 
         display: flex
         flex-direction: column
@@ -531,7 +544,8 @@ body
         display: flex
         flex-direction: column
         row-gap: 36px
-        width: 660px
+        max-width: 660px
+        width: 100%
     &__title 
         text-transform: uppercase
     &__content 
@@ -580,7 +594,9 @@ body
         align-items: center
         row-gap: 8px
         width: 168px
+        min-width: 130px
         &-title 
+            height: 56px
             text-align: center
         &-img
             position: relative
@@ -697,6 +713,16 @@ body
     &__line 
         max-height: 6px
         margin-top: 14px
+    &-about 
+        top: 12px
+        background: 
+            image: url(../image/rope_main.svg)
+            repeat: repeat-x
+    &__about 
+        display: flex
+        overflow-x: hidden
+    &__year
+        top: 0
 
 .knot
     position: absolute
@@ -719,6 +745,7 @@ body
             left: -70px
     &__units
         margin-left: -6px
+        object-fit: cover
         &-dark
             margin-left: -12px
     &__bottom
@@ -916,7 +943,7 @@ body
     .medium-hide 
         display: none !important
     .medium-viseble
-        display: block
+        display: block !important
     .body
         height: auto
         max-height: auto
@@ -1006,6 +1033,50 @@ body
         &__wrapper 
             row-gap: 32px
             padding: 76px 32px 160px
+    .about
+        width: 100vw
+        height: calc( 100vh - 74px )
+        &__wrapper 
+            justify-content: center
+            padding: 48px 32px 160px
+    .years 
+        height: 100vh
+        margin-bottom: 30px
+    .year 
+        width: 345px
+        min-height: 728px
+        background: 
+            image: url(../image/years_main.svg)
+            repeat: repeat-x
+            position-y: 5px
+        .year__wrapper
+            row-gap: 16px
+            padding: 73px 32px 20px 76px
+    .mission  
+        width: 100vw
+        &__wrapper 
+            padding: 76px 32px 160px
+        &__content 
+            flex-direction: column
+            row-gap: 40px
+    .directions
+        width: 100vw
+        &__wrapper 
+            padding: 76px 32px 160px
+        &__content
+            column-gap: 16px
+            margin: 0 -32px
+            padding: 0 32px
+            background: 
+                image: url(../image/direction_rope-small.svg)
+                position-y: 76px
+                repeat: no-repeat
+            overflow-x: scroll
+            scrollbar-width: none
+        &__item-img 
+            display: flex
+            align-items: center
+            margin-top: 16px
     .footer 
         position: relative
         &__wrapper 
@@ -1024,6 +1095,10 @@ body
                 top: 255px
                 & .rope-vert__item
                     width: 30px
+            &__left 
+                margin-left: -44px
+            &__direction 
+                width: 45px
     .knot-small 
         display: flex
         justify-content: center
@@ -1061,6 +1136,18 @@ body
     .feedback
         &__wrapper 
             padding: 48px 16px 160px
+    .about
+        &__wrapper 
+            padding: 48px 16px 160px
+    .mission
+        &__wrapper 
+            padding: 48px 16px 160px
+    .directions
+        &__wrapper 
+            padding: 48px 16px 160px
+        &__content 
+            margin: 0 -16px 
+            padding: 0 16px
     .footer 
         &__wrapper
             flex-direction: column

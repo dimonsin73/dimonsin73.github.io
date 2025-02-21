@@ -133,6 +133,10 @@
     font-size: 20px;
     line-height: 24px;
   }
+  .subtitle {
+    font-size: 15px;
+    line-height: 22px;
+  }
   .menu-text {
     font-size: 16px;
   }
@@ -189,7 +193,11 @@ body {
 }
 
 .small-viseble {
-  display: none;
+  display: none !important;
+}
+
+.medium-viseble {
+  display: none !important;
 }
 
 .main {
@@ -659,11 +667,13 @@ body {
   position: relative;
   flex: 0 0 auto;
   width: 640px;
+  height: calc(100vh - 114px);
 }
 .about__wrapper {
   display: flex;
   flex-direction: column;
   row-gap: 160px;
+  height: 100%;
   padding: 96px 100px 20px 120px;
 }
 .about__title {
@@ -678,10 +688,18 @@ body {
   text-transform: uppercase;
 }
 
+.years {
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  margin-top: -12px;
+}
+
 .year {
   position: relative;
   flex: 0 0 auto;
   width: 640px;
+  background: none;
 }
 .year__wrapper {
   display: flex;
@@ -721,7 +739,8 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 36px;
-  width: 660px;
+  max-width: 660px;
+  width: 100%;
 }
 .mission__title {
   text-transform: uppercase;
@@ -785,8 +804,10 @@ body {
   align-items: center;
   row-gap: 8px;
   width: 168px;
+  min-width: 130px;
 }
 .directions__item-title {
+  height: 56px;
   text-align: center;
 }
 .directions__item-img {
@@ -939,6 +960,18 @@ body {
   max-height: 6px;
   margin-top: 14px;
 }
+.rope-about {
+  top: 12px;
+  background-image: url(../image/rope_main.svg);
+  background-repeat: repeat-x;
+}
+.rope__about {
+  display: flex;
+  overflow-x: hidden;
+}
+.rope__year {
+  top: 0;
+}
 
 .knot {
   position: absolute;
@@ -968,6 +1001,8 @@ body {
 }
 .knot__units {
   margin-left: -6px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .knot__units-dark {
   margin-left: -12px;
@@ -1237,7 +1272,7 @@ body {
     display: none !important;
   }
   .medium-viseble {
-    display: block;
+    display: block !important;
   }
   .body {
     height: auto;
@@ -1356,6 +1391,61 @@ body {
     row-gap: 32px;
     padding: 76px 32px 160px;
   }
+  .about {
+    width: 100vw;
+    height: calc(100vh - 74px);
+  }
+  .about__wrapper {
+    justify-content: center;
+    padding: 48px 32px 160px;
+  }
+  .years {
+    height: 100vh;
+    margin-bottom: 30px;
+  }
+  .year {
+    width: 345px;
+    min-height: 728px;
+    background-image: url(../image/years_main.svg);
+    background-repeat: repeat-x;
+    background-position-y: 5px;
+  }
+  .year .year__wrapper {
+    row-gap: 16px;
+    padding: 73px 32px 20px 76px;
+  }
+  .mission {
+    width: 100vw;
+  }
+  .mission__wrapper {
+    padding: 76px 32px 160px;
+  }
+  .mission__content {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  .directions {
+    width: 100vw;
+  }
+  .directions__wrapper {
+    padding: 76px 32px 160px;
+  }
+  .directions__content {
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    margin: 0 -32px;
+    padding: 0 32px;
+    background-image: url(../image/direction_rope-small.svg);
+    background-position-y: 76px;
+    background-repeat: no-repeat;
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+  .directions__item-img {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+  }
   .footer {
     position: relative;
   }
@@ -1379,6 +1469,12 @@ body {
   }
   .rope-vert-main .rope-vert__item {
     width: 30px;
+  }
+  .rope-vert__left {
+    margin-left: -44px;
+  }
+  .rope-vert__direction {
+    width: 45px;
   }
   .knot-small {
     display: flex;
@@ -1425,6 +1521,19 @@ body {
   }
   .feedback__wrapper {
     padding: 48px 16px 160px;
+  }
+  .about__wrapper {
+    padding: 48px 16px 160px;
+  }
+  .mission__wrapper {
+    padding: 48px 16px 160px;
+  }
+  .directions__wrapper {
+    padding: 48px 16px 160px;
+  }
+  .directions__content {
+    margin: 0 -16px;
+    padding: 0 16px;
   }
   .footer__wrapper {
     flex-direction: column;

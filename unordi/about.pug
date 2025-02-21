@@ -2,14 +2,15 @@ doctype
 html(lang='en')
     head
         meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title UNORDI ABOUT
         link(rel="stylesheet", href="css/reset.css")
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet", href="css/style.css")
         script(type="text/javascript", src="js/script.js", defer) 
     body.light-theme
-        header.header.wb-theme
-            .header__wrapper 
+        header.header
+            .header__wrapper.wb-theme
                 button.header__burger 
                     .header__burger-line
                     .header__burger-line
@@ -34,7 +35,7 @@ html(lang='en')
                         <path d="M131.876 39.1459C131.876 38.3307 131.999 37.6465 132.243 37.0933C132.426 36.6857 132.674 36.3199 132.988 35.996C133.306 35.6721 133.652 35.4319 134.028 35.2754C134.528 35.0643 135.105 34.9588 135.759 34.9588C136.941 34.9588 137.887 35.3245 138.595 36.0561C139.307 36.7876 139.663 37.8048 139.663 39.1077C139.663 40.3997 139.311 41.4115 138.606 42.143C137.902 42.8709 136.96 43.2348 135.781 43.2348C134.587 43.2348 133.638 42.8727 132.933 42.1485C132.229 41.4206 131.876 40.4197 131.876 39.1459ZM133.546 39.0914C133.546 39.9976 133.756 40.6854 134.176 41.1549C134.596 41.6208 135.129 41.8537 135.775 41.8537C136.421 41.8537 136.951 41.6226 137.363 41.1604C137.779 40.6945 137.987 39.9976 137.987 39.0695C137.987 38.1524 137.785 37.4682 137.38 37.0169C136.978 36.5656 136.443 36.3399 135.775 36.3399C135.107 36.3399 134.569 36.5692 134.16 37.0278C133.751 37.4827 133.546 38.1706 133.546 39.0914Z"/>
                     </svg>
                 .header__buttons
-                    button.header__buttons-global.small-hide 
+                    button.header__buttons-global.medium-hide
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 1.87242C5.51289 1.87242 1.875 5.51031 1.875 9.99742C1.875 14.4845 5.51289 18.1224 10 18.1224C14.4871 18.1224 18.125 14.4845 18.125 9.99742C18.125 5.51031 14.4871 1.87242 10 1.87242Z" stroke-miterlimit="10"/>
                             <path d="M9.99883 1.87242C7.73047 1.87242 5.59766 5.51031 5.59766 9.99742C5.59766 14.4845 7.73047 18.1224 9.99883 18.1224C12.2672 18.1224 14.4 14.4845 14.4 9.99742C14.4 5.51031 12.2672 1.87242 9.99883 1.87242Z" stroke-miterlimit="10"/>
@@ -45,8 +46,8 @@ html(lang='en')
                         </svg>
                     input(type="checkbox").header__input
                     label.header__switch
-                        span.header__slider.small-hide 
-                        span.header__duo.small-viseble
+                        span.header__slider.medium-hide 
+                        span.header__duo.medium-viseble
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.0007 21.7463C6.61637 21.7463 2.25148 17.3814 2.25148 11.9971C2.25148 6.6127 6.61637 2.2478 12.0007 2.2478C17.3851 2.2478 21.75 6.6127 21.75 11.9971C21.75 17.3814 17.3851 21.7463 12.0007 21.7463Z" fill="#ffffff" stroke="#000000" stroke-linejoin="round"/>
                                 <path d="M12.0007 21.7463C17.3853 21.7463 21.75 17.3817 21.75 11.9971C21.75 6.61247 17.3853 2.2478 12.0007 2.2478V21.7463Z" fill="#000000"/>
@@ -55,185 +56,204 @@ html(lang='en')
         main.main
 
             section.section
-                .rope
-                    img(src="image/rope_main.svg", alt="").rope-main.light-line
-                    img(src="image/rope_line_main-1.svg", alt="").dark-line
+                .rope.medium-hide
+                    .rope__about.light-line
+                        img(src="image/rope_main.svg", alt="")
+                        img(src="image/rope_main.svg", alt="")
+                        img(src="image/rope_main.svg", alt="")
+                    .rope__about.dark-line
+                        img(src="image/rope_line_main-1.svg", alt="")
+                        img(src="image/rope_line_main-2.svg", alt="").rope__line
+                        img(src="image/rope_line_main-2.svg", alt="").rope__line
                 .about
                     .about__wrapper 
                         h1.about__title.title-1 About Unordi Trading sro
                         .about__content 
                             h2.about__content-title.title-2 Company History
                             p.about__content-text.text-about Unordi Trading sro started its journey in 2017 as a company specializing in premium ceramic tiles trade from Italy and Spain
-                .year
-                    .year__wrapper 
-                        .rope-vert.rope-vert__left
-                            .rope-vert__item.light-line
-                                img(src="image/year_rope_top.svg", alt="")
-                                img(src="image/year_rope-1.svg", alt="").rope-vert__item-year
-                            .rope-vert__item.rope-vert__item-dark.dark-line
-                                img(src="image/year_line_top.svg", alt="")
-                                img(src="image/year_line-1.svg", alt="")
-                                img(src="image/year_line_bottom.svg", alt="")
-                        h3.year__title.title-year.text27-theme 2018
-                        h4.year__subtitle.title-5 Establishing Strong Position in Flooring
-                        .year__content 
-                            h5.year__content-title.text-medium Italian brands:
-                            p.year__content-text.text-medium Atlas Concorde, Novabell, Caesar, Flaviker, Settecento, Ariana
-                        .year__content 
-                            h5.year__content-title.text-medium Spanish brands:
-                            p.year__content-text.text-medium Peronda, Pamesa, Gayafores
-                        .year__content 
-                            h5.year__content-title.text-medium Portuguese brands:
-                            p.year__content-text.text-medium Love Ceramics
-                .year
-                    .year__wrapper.year__pt
-                        .rope-vert.rope-vert__left
-                            .rope-vert__item.light-line
-                                img(src="image/year_rope_top.svg", alt="")
-                                img(src="image/year_rope-2.svg", alt="").rope-vert__item-year
-                            .rope-vert__item.rope-vert__item-dark.dark-line
-                                img(src="image/year_line_top.svg", alt="")
-                                img(src="image/year_line-2.svg", alt="")
-                                img(src="image/year_line_bottom.svg", alt="")
-                        h3.year__title.title-year.text27-theme 2019
-                        h4.year__subtitle.title-5 Strengthening Market Position
-                        .year__content 
-                            h5.year__content-title.text-medium Italian brands:
-                            p.year__content-text.text-medium expanding portfolio with Versace, LaFabbrica, Gardenia
-                        .year__content 
-                            h5.year__content-title.text-medium Spanish brands:
-                            p.year__content-text.text-medium Vives, Apavisa
-                        .year__content 
-                            h5.year__content-title.text-medium Italian decorative profiles:
-                            p.year__content-text.text-medium Progress
+                .years
+                    .year
+                        .year__wrapper 
+                            .rope-vert.rope-vert__left.rope__year
+                                .rope-vert__item.light-line.medium-hide
+                                    img(src="image/year_rope_top.svg", alt="")
+                                    img(src="image/year_rope-1.svg", alt="").rope-vert__item-year
+                                .rope-vert__item.rope-vert__item-dark.dark-line.medium-hide
+                                    img(src="image/year_line_top.svg", alt="")
+                                    img(src="image/year_line-1.svg", alt="")
+                                    img(src="image/year_line_bottom.svg", alt="")
+                                .rope-vert__item.light-line.medium-viseble
+                                    img(src="image/year_rope-small-1.svg", alt="")
+                            h3.year__title.title-year.text27-theme 2018
+                            h4.year__subtitle.title-5 Establishing Strong Position in Flooring
+                            .year__content 
+                                h5.year__content-title.text-medium Italian brands:
+                                p.year__content-text.text-medium Atlas Concorde, Novabell, Caesar, Flaviker, Settecento, Ariana
+                            .year__content 
+                                h5.year__content-title.text-medium Spanish brands:
+                                p.year__content-text.text-medium Peronda, Pamesa, Gayafores
+                            .year__content 
+                                h5.year__content-title.text-medium Portuguese brands:
+                                p.year__content-text.text-medium Love Ceramics
+                    .year
+                        .year__wrapper.year__pt
+                            .rope-vert.rope-vert__left.rope__year
+                                .rope-vert__item.light-line.medium-hide
+                                    img(src="image/year_rope_top.svg", alt="")
+                                    img(src="image/year_rope-2.svg", alt="").rope-vert__item-year
+                                .rope-vert__item.rope-vert__item-dark.dark-line.medium-hide
+                                    img(src="image/year_line_top.svg", alt="")
+                                    img(src="image/year_line-2.svg", alt="")
+                                    img(src="image/year_line_bottom.svg", alt="")
+                                .rope-vert__item.light-line.medium-viseble
+                                    img(src="image/year_rope-small-1.svg", alt="")
+                            h3.year__title.title-year.text27-theme 2019
+                            h4.year__subtitle.title-5 Strengthening Market Position
+                            .year__content 
+                                h5.year__content-title.text-medium Italian brands:
+                                p.year__content-text.text-medium expanding portfolio with Versace, LaFabbrica, Gardenia
+                            .year__content 
+                                h5.year__content-title.text-medium Spanish brands:
+                                p.year__content-text.text-medium Vives, Apavisa
+                            .year__content 
+                                h5.year__content-title.text-medium Italian decorative profiles:
+                                p.year__content-text.text-medium Progress
+                    .year
+                        .year__wrapper
+                            .rope-vert.rope-vert__left.rope__year
+                                .rope-vert__item.light-line.medium-hide
+                                    img(src="image/year_rope_top.svg", alt="")
+                                    img(src="image/year_rope-3.svg", alt="").rope-vert__item-year
+                                .rope-vert__item.rope-vert__item-dark.dark-line.medium-hide
+                                    img(src="image/year_line_top.svg", alt="")
+                                    img(src="image/year_line-3.svg", alt="")
+                                    img(src="image/year_line_bottom.svg", alt="")
+                                .rope-vert__item.light-line.medium-viseble
+                                    img(src="image/year_rope-small-1.svg", alt="")
+                            h3.year__title.title-year.text27-theme 2020
+                            h4.year__subtitle.title-5 Entering New Market Segments
+                            .year__content 
+                                h5.year__content-title.text-medium Ceramics:
+                                p.year__content-text.text-medium expanding portfolio with Mutina, Bisazza, Petracers
+                            .year__content 
+                                h5.year__content-title.text-medium Sanitary ware:
+                                p.year__content-text.text-medium partnership with Catalano
+                    .year
+                        .year__wrapper.year__pt
+                            .rope-vert.rope-vert__left.rope__year
+                                .rope-vert__item.light-line.medium-hide
+                                    img(src="image/year_rope_top.svg", alt="")
+                                    img(src="image/year_rope-4.svg", alt="").rope-vert__item-year
+                                .rope-vert__item.rope-vert__item-dark.dark-line.medium-hide
+                                    img(src="image/year_line_top.svg", alt="")
+                                    img(src="image/year_line-4.svg", alt="")
+                                    img(src="image/year_line_bottom.svg", alt="")
+                                .rope-vert__item.light-line.medium-viseble
+                                    img(src="image/year_rope-small-1.svg", alt="")
+                            h3.year__title.title-year.text27-theme 2021
+                            h4.year__subtitle.title-5 Premium Segment Development
+                            .year__content 
+                                h5.year__content-title.text-medium Furniture:
+                                p.year__content-text.text-medium Minotti, Baxter
+                            .year__content 
+                                h5.year__content-title.text-medium Lighting: 
+                                p.year__content-text.text-medium Brand Van Egmond
+                            .year__content 
+                                h5.year__content-title.text-medium Ceramics: 
+                                p.year__content-text.text-medium CasalGrande, LaFabbrica, Ornamenta
+                    .year
+                        .year__wrapper  
+                            .rope-vert.rope-vert__left.rope__year
+                                .rope-vert__item.light-line.medium-hide
+                                    img(src="image/year_rope_top.svg", alt="")
+                                    img(src="image/year_rope-5.svg", alt="").rope-vert__item-year
+                                .rope-vert__item.rope-vert__item-dark.dark-line.medium-hide
+                                    img(src="image/year_line_top.svg", alt="")
+                                    img(src="image/year_line-5.svg", alt="")
+                                    img(src="image/year_line_bottom.svg", alt="")
+                                .rope-vert__item.light-line.medium-viseble
+                                    img(src="image/year_rope-small-1.svg", alt="")
+                            h3.year__title.title-year.text27-theme 2022
+                            h4.year__subtitle.title-5 Automotive Industry Entry
+                            .year__content 
+                                h5.year__content-title.text-medium Lubricants and parts:
+                                p.year__content-text.text-medium partnerships with BMW and Shell distributors
+                            .year__content 
+                                h5.year__content-title.text-medium Ceramics:
+                                p.year__content-text.text-medium portfolio expansion with Decoratori Bassanesi, Ceramica 41zero42
+                    .year
+                        .year__wrapper.year__pt
+                            .rope-vert.rope-vert__left.rope__year
+                                .rope-vert__item.light-line.medium-hide
+                                    img(src="image/year_rope_top.svg", alt="")
+                                    img(src="image/year_rope-6.svg", alt="").rope-vert__item-year
+                                .rope-vert__item.rope-vert__item-dark.dark-line.medium-hide
+                                    img(src="image/year_line_top.svg", alt="")
+                                    img(src="image/year_line-6.svg", alt="")
+                                    img(src="image/year_line_bottom.svg", alt="")
+                                .rope-vert__item.light-line.medium-viseble
+                                    img(src="image/year_rope-small-1.svg", alt="")
+                            h3.year__title.title-year.text27-theme 2023
+                            h4.year__subtitle.title-5 Significant Expansion Year
+                            .year__content 
+                                h5.year__content-title.text-medium Lubricants and parts:
+                                p.year__content-text.text-medium expanding partnerships with Mercedes-Benz, Nissan, Total, Hepu distributors
+                            .year__content 
+                                h5.year__content-title.text-medium Ceramics:
+                                p.year__content-text.text-medium adding Gigacer, Marazzi, Fiandre, Fondovalle, Ce.si brands
+                    .year
+                        .year__wrapper  
+                            .rope-vert.rope-vert__left.rope__year
+                                .rope-vert__item.light-line.medium-hide
+                                    img(src="image/year_rope_top.svg", alt="")
+                                    img(src="image/year_rope-7.svg", alt="").rope-vert__item-year
+                                .rope-vert__item.rope-vert__item-dark.dark-line.medium-hide
+                                    img(src="image/year_line_top.svg", alt="")
+                                    img(src="image/year_line-7.svg", alt="")
+                                    img(src="image/year_line_bottom.svg", alt="")
+                                .rope-vert__item.light-line.medium-viseble
+                                    img(src="image/year_rope-small-2.svg", alt="")
+                            h3.year__title.title-year.text27-theme 2024
+                            h4.year__subtitle.title-5 Business Diversification
+                            .year__content 
+                                h5.year__content-title.text-medium Lubricants and parts:
+                                p.year__content-text.text-medium new partnerships with Ford, Volkswagen, Volvo, Toyota, John Deere, Schmitz distributors, expanding portfolio with Mobil, Elf, Unil
+                            .year__content 
+                                h5.year__content-title.text-medium Office equipment:
+                                p.year__content-text.text-medium Epson, Canon, Xerox, HP, Konica Minolta, Sharp, Kyocera, OKI, Lexmark, Ricoh
+                            .year__content 
+                                h5.year__content-title.text-medium Industrial components:
+                                p.year__content-text.text-medium partnering with Koh-i-Noor for aerosol valves
+                            .year__content 
+                                h5.year__content-title.text-medium Agricultural products:
+                                p.year__content-text.text-medium * potato flakes supplies from Germany and Czech Republic to Romania, Spain, and Hungary <br>* flaxseed supplies to Poland
+                    .year
+                        .year__wrapper.year__pt
+                            .rope-vert.rope-vert__left.rope__year
+                                .rope-vert__item.light-line.medium-hide
+                                    img(src="image/year_rope_top.svg", alt="")
+                                    img(src="image/year_rope-8.svg", alt="").rope-vert__item-year
+                                .rope-vert__item.rope-vert__item-dark.dark-line.medium-hide
+                                    img(src="image/year_line_top.svg", alt="")
+                                    img(src="image/year_line-8.svg", alt="")
+                                    img(src="image/year_line_bottom.svg", alt="")
+                                .rope-vert__item.light-line.medium-viseble
+                                    img(src="image/year_rope-small-1.svg", alt="")
+                            h3.year__title.title-year.text27-theme Today
+                            h4.year__subtitle.title-year2 Unordi Trading sro
+                            .year__content 
+                                p.year__content-text.text-medium is an international trading company successfully operating in several key industries, with established connections within the European Union and beyond.
             section.section
                 .rope
-                    img(src="image/rope_main.svg", alt="").rope-main.light-line
-                    img(src="image/rope_line_main-2.svg", alt="").rope__line.dark-line
-                .year
-                    .year__wrapper
-                        .rope-vert.rope-vert__left
-                            .rope-vert__item.light-line
-                                img(src="image/year_rope_top.svg", alt="")
-                                img(src="image/year_rope-3.svg", alt="").rope-vert__item-year
-                            .rope-vert__item.rope-vert__item-dark.dark-line
-                                img(src="image/year_line_top.svg", alt="")
-                                img(src="image/year_line-3.svg", alt="")
-                                img(src="image/year_line_bottom.svg", alt="")
-                        h3.year__title.title-year.text27-theme 2020
-                        h4.year__subtitle.title-5 Entering New Market Segments
-                        .year__content 
-                            h5.year__content-title.text-medium Ceramics:
-                            p.year__content-text.text-medium expanding portfolio with Mutina, Bisazza, Petracers
-                        .year__content 
-                            h5.year__content-title.text-medium Sanitary ware:
-                            p.year__content-text.text-medium partnership with Catalano
-                .year
-                    .year__wrapper.year__pt
-                        .rope-vert.rope-vert__left
-                            .rope-vert__item.light-line
-                                img(src="image/year_rope_top.svg", alt="")
-                                img(src="image/year_rope-4.svg", alt="").rope-vert__item-year
-                            .rope-vert__item.rope-vert__item-dark.dark-line
-                                img(src="image/year_line_top.svg", alt="")
-                                img(src="image/year_line-4.svg", alt="")
-                                img(src="image/year_line_bottom.svg", alt="")
-                        h3.year__title.title-year.text27-theme 2021
-                        h4.year__subtitle.title-5 Premium Segment Development
-                        .year__content 
-                            h5.year__content-title.text-medium Furniture:
-                            p.year__content-text.text-medium Minotti, Baxter
-                        .year__content 
-                            h5.year__content-title.text-medium Lighting: 
-                            p.year__content-text.text-medium Brand Van Egmond
-                        .year__content 
-                            h5.year__content-title.text-medium Ceramics: 
-                            p.year__content-text.text-medium CasalGrande, LaFabbrica, Ornamenta
-                .year
-                    .year__wrapper  
-                        .rope-vert.rope-vert__left
-                            .rope-vert__item.light-line
-                                img(src="image/year_rope_top.svg", alt="")
-                                img(src="image/year_rope-5.svg", alt="").rope-vert__item-year
-                            .rope-vert__item.rope-vert__item-dark.dark-line
-                                img(src="image/year_line_top.svg", alt="")
-                                img(src="image/year_line-5.svg", alt="")
-                                img(src="image/year_line_bottom.svg", alt="")
-                        h3.year__title.title-year.text27-theme 2022
-                        h4.year__subtitle.title-5 Automotive Industry Entry
-                        .year__content 
-                            h5.year__content-title.text-medium Lubricants and parts:
-                            p.year__content-text.text-medium partnerships with BMW and Shell distributors
-                        .year__content 
-                            h5.year__content-title.text-medium Ceramics:
-                            p.year__content-text.text-medium portfolio expansion with Decoratori Bassanesi, Ceramica 41zero42
-            section.section
-                .rope
-                    img(src="image/rope_main.svg", alt="").rope-main.light-line
-                    img(src="image/rope_line_main-2.svg", alt="").rope__line.dark-line
-                .year
-                    .year__wrapper.year__pt
-                        .rope-vert.rope-vert__left
-                            .rope-vert__item.light-line
-                                img(src="image/year_rope_top.svg", alt="")
-                                img(src="image/year_rope-6.svg", alt="").rope-vert__item-year
-                            .rope-vert__item.rope-vert__item-dark.dark-line
-                                img(src="image/year_line_top.svg", alt="")
-                                img(src="image/year_line-6.svg", alt="")
-                                img(src="image/year_line_bottom.svg", alt="")
-                        h3.year__title.title-year.text27-theme 2023
-                        h4.year__subtitle.title-5 Significant Expansion Year
-                        .year__content 
-                            h5.year__content-title.text-medium Lubricants and parts:
-                            p.year__content-text.text-medium expanding partnerships with Mercedes-Benz, Nissan, Total, Hepu distributors
-                        .year__content 
-                            h5.year__content-title.text-medium Ceramics:
-                            p.year__content-text.text-medium adding Gigacer, Marazzi, Fiandre, Fondovalle, Ce.si brands
-                .year
-                    .year__wrapper  
-                        .rope-vert.rope-vert__left
-                            .rope-vert__item.light-line
-                                img(src="image/year_rope_top.svg", alt="")
-                                img(src="image/year_rope-7.svg", alt="").rope-vert__item-year
-                            .rope-vert__item.rope-vert__item-dark.dark-line
-                                img(src="image/year_line_top.svg", alt="")
-                                img(src="image/year_line-7.svg", alt="")
-                                img(src="image/year_line_bottom.svg", alt="")
-                        h3.year__title.title-year.text27-theme 2024
-                        h4.year__subtitle.title-5 Business Diversification
-                        .year__content 
-                            h5.year__content-title.text-medium Lubricants and parts:
-                            p.year__content-text.text-medium new partnerships with Ford, Volkswagen, Volvo, Toyota, John Deere, Schmitz distributors, expanding portfolio with Mobil, Elf, Unil
-                        .year__content 
-                            h5.year__content-title.text-medium Office equipment:
-                            p.year__content-text.text-medium Epson, Canon, Xerox, HP, Konica Minolta, Sharp, Kyocera, OKI, Lexmark, Ricoh
-                        .year__content 
-                            h5.year__content-title.text-medium Industrial components:
-                            p.year__content-text.text-medium partnering with Koh-i-Noor for aerosol valves
-                        .year__content 
-                            h5.year__content-title.text-medium Agricultural products:
-                            p.year__content-text.text-medium * potato flakes supplies from Germany and Czech Republic to Romania, Spain, and Hungary <br>* flaxseed supplies to Poland
-                .year
-                    .year__wrapper.year__pt
-                        .rope-vert.rope-vert__left
-                            .rope-vert__item.light-line
-                                img(src="image/year_rope_top.svg", alt="")
-                                img(src="image/year_rope-8.svg", alt="").rope-vert__item-year
-                            .rope-vert__item.rope-vert__item-dark.dark-line
-                                img(src="image/year_line_top.svg", alt="")
-                                img(src="image/year_line-8.svg", alt="")
-                                img(src="image/year_line_bottom.svg", alt="")
-                        h3.year__title.title-year.text27-theme Today
-                        h4.year__subtitle.title-year2 Unordi Trading sro
-                        .year__content 
-                            p.year__content-text.text-medium is an international trading company successfully operating in several key industries, with established connections within the European Union and beyond.
-            section.section
-                .rope
-                    img(src="image/rope_main.svg", alt="").rope-main.light-line
-                    img(src="image/rope_line_main-2.svg", alt="").rope__line.dark-line
+                    picture.light-line
+                        source(media="(max-width: 959px)" srcset="image/rope_menu.svg")
+                        img(src="image/rope_main.svg", alt="").rope-main
+                    picture.dark-line
+                        source(media="(max-width: 959px)" srcset="image/line_main-small-2.svg")
+                        img(src="image/rope_line_main-2.svg", alt="").rope-main.rope-main-dark
                 .mission
                     .mission__wrapper 
-                        .rope-vert.rope-vert__left
+                        .rope-vert.rope-vert__left.medium-hide
                             .rope-vert__item.light-line
                                 img(src="image/year_rope_top.svg", alt="").rope-vert__item-knot
                                 picture.rope-vert__item-units
@@ -249,22 +269,22 @@ html(lang='en')
                             h2.mission__title.title-2 Our Mission
                             p.mission__text.text-about  To ensure sustainable business development of our partners through the supply of high-quality products and creation of efficient supply chains between leading manufacturers and end consumers
                         .mission__content 
-                            .knot.knot-about.light-line
+                            .knot.knot-about.light-line.medium-hide
                                 img(src="image/about_rope_left.svg", alt="")
                                 img(src="image/about_rope.svg", alt="").knot__units
                                 img(src="image/about_rope_bottom.svg", alt="").knot__bottom
-                            .knot.knot-about.dark-line
+                            .knot.knot-about.dark-line.medium-hide
                                 img(src="image/about_line_left.svg", alt="").knot__dot
                                 img(src="image/about_line.svg", alt="").knot__units
                                 img(src="image/about_line_bottom.svg", alt="").knot__bottom
                             .mission__item
-                                .mission__item-img
+                                .mission__item-img.medium-hide
                                     img(src="image/mission_rope-1.svg", alt="").light-line
                                     img(src="image/mission_line-1.svg", alt="").dark-line
                                 h.mission__item-title.title-5 Sustainable Development
                                 p.mission__item-text.text-medium We believe in building long-term relationships and stable growth, preferring evolutionary development over quick wins.
                             .mission__item
-                                .mission__item-img
+                                .mission__item-img.medium-hide
                                     picture.light-line
                                         source(media="(max-height: 1000px)" srcset="image/mission_rope-2-2.svg")
                                         img(src="image/mission_rope-2.svg", alt="")
@@ -274,13 +294,13 @@ html(lang='en')
                                 h.mission__item-title.title-5 Innovation and Adaptability
                                 p.mission__item-text.text-medium We constantly explore market opportunities and swiftly adapt to changing conditions and partner needs.
                             .mission__item
-                                .mission__item-img
+                                .mission__item-img.medium-hide
                                     img(src="image/mission_rope-1.svg", alt="").light-line
                                     img(src="image/mission_line-1.svg", alt="").dark-line
                                 h.mission__item-title.title-5 Responsibility
                                 p.mission__item-text.text-medium We make balanced decisions and take full responsibility for our actions before partners and society.
                             .mission__item
-                                .mission__item-img
+                                .mission__item-img.medium-hide
                                     picture.light-line
                                         source(media="(max-height: 1000px)" srcset="image/mission_rope-2-2.svg")
                                         img(src="image/mission_rope-2.svg", alt="")
@@ -290,18 +310,22 @@ html(lang='en')
                                 h.mission__item-title.title-5 Transparency
                                 p.mission__item-text.text-medium We build relationships on principles of openness and honest dialogue, creating an atmosphere of trust with partners.
                             .mission__item
-                                .mission__item-img
+                                .mission__item-img.medium-hide
                                     img(src="image/mission_rope-1.svg", alt="").light-line
                                     img(src="image/mission_line-1.svg", alt="").dark-line
                                 h.mission__item-title.title-5 Expertise
                                 p.mission__item-text.text-medium We continuously develop our competencies and share knowledge with partners, helping them make optimal decisions.
             section.section
                 .rope
-                    img(src="image/rope_main.svg", alt="").rope-main.light-line
-                    img(src="image/rope_line_main-3.svg", alt="").dark-line
+                    picture.light-line
+                        source(media="(max-width: 959px)" srcset="image/rope_menu.svg")
+                        img(src="image/rope_main.svg", alt="").rope-main
+                    picture.dark-line
+                        source(media="(max-width: 959px)" srcset="image/line_main-small-2.svg")
+                        img(src="image/rope_line_main-3.svg", alt="").rope-main.rope-main-dark
                 .mission
                     .mission__wrapper 
-                        .rope-vert.rope-vert__left
+                        .rope-vert.rope-vert__left.medium-hide
                             .rope-vert__item.light-line
                                 img(src="image/year_rope_top.svg", alt="").rope-vert__item-knot
                                 picture.rope-vert__item-units
@@ -315,56 +339,60 @@ html(lang='en')
                                 img(src="image/about_line_main_bottom.svg", alt="")
                         h2.mission__title.title-2 Advantages <br>of Working With Us
                         .mission__content 
-                            .knot.knot-about.light-line
+                            .knot.knot-about.light-line.medium-hide
                                 img(src="image/about_rope_left.svg", alt="")
                                 img(src="image/about_rope.svg", alt="").knot__units
                                 img(src="image/about_rope_bottom.svg", alt="").knot__bottom
-                            .knot.knot-about.dark-line
+                            .knot.knot-about.dark-line.medium-hide
                                 img(src="image/about_line_left.svg", alt="").knot__dot
                                 img(src="image/about_line.svg", alt="").knot__units
                                 img(src="image/about_line_bottom.svg", alt="").knot__bottom
                             .mission__item
-                                .mission__item-img2.light-line
+                                .mission__item-img2.light-line.medium-hide
                                     img(src="image/mission_rope-3.svg", alt="")
-                                .mission__item-img.dark-line
+                                .mission__item-img.dark-line.medium-hide
                                     img(src="image/mission_line-3.svg", alt="")
                                 h.mission__item-title.title-5 Access to Leading Global Manufacturers
                                 p.mission__item-text.text-medium We carefully select suppliers and guarantee original quality of all products.
                             .mission__item
-                                .mission__item-img2.light-line
+                                .mission__item-img2.light-line.medium-hide
                                     img(src="image/mission_rope-3.svg", alt="")
-                                .mission__item-img.dark-line
+                                .mission__item-img.dark-line.medium-hide
                                     img(src="image/mission_line-3.svg", alt="")
                                 h.mission__item-title.title-5 Time and Resource Efficiency
                                 p.mission__item-text.text-medium Working with a single supplier across various directions reduces administrative and operational costs.
                             .mission__item
-                                .mission__item-img2.light-line
+                                .mission__item-img2.light-line.medium-hide
                                     img(src="image/mission_rope-3.svg", alt="")
-                                .mission__item-img.dark-line
+                                .mission__item-img.dark-line.medium-hide
                                     img(src="image/mission_line-3.svg", alt="")
                                 h.mission__item-title.title-5 Business Process Optimization
                                 p.mission__item-text.text-medium We handle all supply chain operations, customs clearance, and logistics.
                             .mission__item
-                                .mission__item-img2.light-line
+                                .mission__item-img2.light-line.medium-hide
                                     img(src="image/mission_rope-3.svg", alt="")
-                                .mission__item-img.dark-line
+                                .mission__item-img.dark-line.medium-hide
                                     img(src="image/mission_line-3.svg", alt="")
                                 h.mission__item-title.title-5 Reliable Long-term Partnership
                                 p.mission__item-text.text-medium We build transparent and stable relationships, providing continuous support at all stages of cooperation.
                             .mission__item
-                                .mission__item-img2.light-line
+                                .mission__item-img2.light-line.medium-hide
                                     img(src="image/mission_rope-3.svg", alt="")
-                                .mission__item-img.dark-line
+                                .mission__item-img.dark-line.medium-hide
                                     img(src="image/mission_line-3.svg", alt="")
                                 h.mission__item-title.title-5 Business Development
                                 p.mission__item-text.text-medium We offer relevant solutions and new products helping you stay competitive in the market.
             section.section
                 .rope
-                    img(src="image/rope_main.svg", alt="").rope-main.light-line
-                    img(src="image/rope_line_main-4.svg", alt="").dark-line
+                    picture.light-line
+                        source(media="(max-width: 959px)" srcset="image/rope_menu.svg")
+                        img(src="image/rope_main.svg", alt="").rope-main
+                    picture.dark-line
+                        source(media="(max-width: 959px)" srcset="image/line_main-small-2.svg")
+                        img(src="image/rope_line_main-4.svg", alt="").rope-main.rope-main-dark
                 .directions
                     .directions__wrapper 
-                        .rope-vert.rope-vert__left
+                        .rope-vert.rope-vert__left.medium-hide
                             .rope-vert__item.light-line
                                 img(src="image/year_rope_top.svg", alt="").rope-vert__item-knot
                                 picture.rope-vert__item-units
@@ -379,9 +407,9 @@ html(lang='en')
                         h2.direction__title.title-2 Business <br>Directions
                         .directions__content 
                             .knot.knot-directions.light-line
-                                img(src="image/direction_rope_left.svg", alt="")
-                                img(src="image/direction_rope.svg", alt="").knot__units
-                                img(src="image/direction_rope_bottom.svg", alt="").knot__bottom
+                                img(src="image/direction_rope_left.svg", alt="").medium-hide
+                                img(src="image/direction_rope.svg", alt="").knot__units.medium-hide
+                                img(src="image/direction_rope_bottom.svg", alt="").knot__bottom.medium-hide
                             .knot.knot-directions.knot-directions-dark.dark-line
                                 img(src="image/about_line_left.svg", alt="").knot__dot
                                 img(src="image/about_line.svg", alt="").knot__units
@@ -389,8 +417,10 @@ html(lang='en')
                             .directions__item 
                                 .directions__item-title.subtitle Premium Floor Coverings
                                 .directions__item-img.light-line
-                                    img(src="image/direction_rope-1_top.svg", alt="").rope-vert__item-knot
                                     picture.rope-vert__item-units
+                                        source(media="(max-width: 959px)" srcset="image/direction_rope-1_top-small.svg")
+                                        img(src="image/direction_rope-1_top.svg", alt="").rope-vert__item-knot
+                                    picture.rope-vert__item-units.rope-vert__direction
                                         source(media="(max-height: 1000px)" srcset="image/direction_rope-1-2.svg")
                                         img(src="image/direction_rope-1.svg", alt="")
                                 .directions__item-img.dark-line
@@ -400,8 +430,10 @@ html(lang='en')
                             .directions__item
                                 .directions__item-title.subtitle Premium Sanitary Ware
                                 .directions__item-img.light-line
-                                    img(src="image/direction_rope-2_top.svg", alt="").rope-vert__item-knot
                                     picture.rope-vert__item-units
+                                        source(media="(max-width: 959px)" srcset="image/direction_rope-2_top-small.svg")
+                                        img(src="image/direction_rope-2_top.svg", alt="").rope-vert__item-knot
+                                    picture.rope-vert__item-units.rope-vert__direction
                                         source(media="(max-height: 1000px)" srcset="image/direction_rope-2-2.svg")
                                         img(src="image/direction_rope-2.svg", alt="")
                                 .directions__item-img.dark-line
@@ -411,8 +443,10 @@ html(lang='en')
                             .directions__item 
                                 .directions__item-title.subtitle Premium Furniture
                                 .directions__item-img.light-line
-                                    img(src="image/direction_rope-3_top.svg", alt="").rope-vert__item-knot
                                     picture.rope-vert__item-units
+                                        source(media="(max-width: 959px)" srcset="image/direction_rope-3_top-small.svg")
+                                        img(src="image/direction_rope-3_top.svg", alt="").rope-vert__item-knot
+                                    picture.rope-vert__item-units.rope-vert__direction
                                         source(media="(max-height: 1000px)" srcset="image/direction_rope-3-2.svg")
                                         img(src="image/direction_rope-3.svg", alt="")
                                 .directions__item-img.dark-line
@@ -422,8 +456,10 @@ html(lang='en')
                             .directions__item
                                 .directions__item-title.subtitle Designer Lighting
                                 .directions__item-img.light-line
-                                    img(src="image/direction_rope-4_top.svg", alt="").rope-vert__item-knot
                                     picture.rope-vert__item-units
+                                        source(media="(max-width: 959px)" srcset="image/direction_rope-4_top-small.svg")
+                                        img(src="image/direction_rope-4_top.svg", alt="").rope-vert__item-knot
+                                    picture.rope-vert__item-units.rope-vert__direction
                                         source(media="(max-height: 1000px)" srcset="image/direction_rope-4-2.svg")
                                         img(src="image/direction_rope-4.svg", alt="")
                                 .directions__item-img.dark-line
@@ -433,8 +469,10 @@ html(lang='en')
                             .directions__item 
                                 .directions__item-title.subtitle Lubricants and Spare Parts
                                 .directions__item-img.light-line
-                                    img(src="image/direction_rope-5_top.svg", alt="").rope-vert__item-knot
                                     picture.rope-vert__item-units
+                                        source(media="(max-width: 959px)" srcset="image/direction_rope-5_top-small.svg")
+                                        img(src="image/direction_rope-5_top.svg", alt="").rope-vert__item-knot
+                                    picture.rope-vert__item-units.rope-vert__direction
                                         source(media="(max-height: 1000px)" srcset="image/direction_rope-5-2.svg")
                                         img(src="image/direction_rope-5.svg", alt="")
                                 .directions__item-img.dark-line
@@ -444,8 +482,10 @@ html(lang='en')
                             .directions__item 
                                 .directions__item-title.subtitle Office Equipment and IT Solutions
                                 .directions__item-img.light-line
-                                    img(src="image/direction_rope-6_top.svg", alt="").rope-vert__item-knot
                                     picture.rope-vert__item-units
+                                        source(media="(max-width: 959px)" srcset="image/direction_rope-6_top-small.svg")
+                                        img(src="image/direction_rope-6_top.svg", alt="").rope-vert__item-knot
+                                    picture.rope-vert__item-units.rope-vert__direction
                                         source(media="(max-height: 1000px)" srcset="image/direction_rope-6-2.svg")
                                         img(src="image/direction_rope-6.svg", alt="")
                                 .directions__item-img.dark-line
@@ -455,8 +495,10 @@ html(lang='en')
                             .directions__item
                                 .directions__item-title.subtitle Industrial Components
                                 .directions__item-img.light-line
-                                    img(src="image/direction_rope-7_top.svg", alt="").rope-vert__item-knot
                                     picture.rope-vert__item-units
+                                        source(media="(max-width: 959px)" srcset="image/direction_rope-7_top-small.svg")
+                                        img(src="image/direction_rope-7_top.svg", alt="").rope-vert__item-knot
+                                    picture.rope-vert__item-units.rope-vert__direction
                                         source(media="(max-height: 1000px)" srcset="image/direction_rope-7-2.svg")
                                         img(src="image/direction_rope-7.svg", alt="")
                                 .directions__item-img.dark-line
@@ -466,14 +508,26 @@ html(lang='en')
                             .directions__item 
                                 .directions__item-title.subtitle Agricultural Products
                                 .directions__item-img.light-line
-                                    img(src="image/direction_rope-8_top.svg", alt="").rope-vert__item-knot
                                     picture.rope-vert__item-units
+                                        source(media="(max-width: 959px)" srcset="image/direction_rope-8_top-small.svg")
+                                        img(src="image/direction_rope-8_top.svg", alt="").rope-vert__item-knot
+                                    picture.rope-vert__item-units.rope-vert__direction
                                         source(media="(max-height: 1000px)" srcset="image/direction_rope-8-2.svg")
                                         img(src="image/direction_rope-8.svg", alt="")
                                 .directions__item-img.dark-line
                                     picture
                                         source(media="(max-height: 1000px)" srcset="image/direction_line-8-2.svg")
                                         img(src="image/direction_line-8.svg", alt="")
+        footer.footer.medium-visible
+            .rope.medium-viseble
+                img(src="image/rope_menu.svg", alt="").rope-main.light-line
+                img(src="image/line_main-small-2.svg", alt="").rope-main.rope-main-dark.dark-line
+            .footer__wrapper
+                .footer__item
+                    a(href="").footer__link.text-small Privacy Policy
+                    a(href="").footer__link.text-small  Data Processing Policy
+                .footer__item
+                    p.footer__text.text-small © 2024 Unordi Trading sro
         .menu 
             .menu__wrapper.wb-theme
                 .menu__rope
