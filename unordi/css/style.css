@@ -1266,31 +1266,22 @@ body {
   display: flex;
 }
 
-@keyframes example {
+@keyframes swaying {
   0% {
-    transform: skewX(0);
+    transform: skewX(0deg) translateX(0px);
   }
-  16% {
-    transform: skewX(0.1deg);
+  8% {
+    transform: skewX(0.2deg) translateX(0.6px);
   }
-  33% {
-    transform: skewX(-0.2deg);
-  }
-  50% {
-    transform: skewX(0.3deg);
-  }
-  66% {
-    transform: skewX(-0.2deg);
-  }
-  83% {
-    transform: skewX(0.1deg);
+  32% {
+    transform: skewX(-0.4deg) translateX(-1.2px);
   }
   100% {
-    transform: skewX(0);
+    transform: skewX(0.6deg) translateX(2px);
   }
 }
-.rope-skew:hover {
-  animation: example 3s infinite;
+.rope-skew-active {
+  animation: swaying 1.5s linear 0s 2 alternate;
 }
 
 @media (max-height: 1000px) {

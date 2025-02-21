@@ -42,3 +42,13 @@ function theme() {
         localStorage.setItem('theme', 'light');
     }
 }
+const ropeSkewArr = document.querySelectorAll('.rope-skew')
+for (let i = 0; i < ropeSkewArr.length; i++) {
+    const element = ropeSkewArr[i];
+    element.addEventListener('mouseenter', function(){
+        element.classList.add('rope-skew-active')
+        setTimeout(() => {
+            element.classList.remove('rope-skew-active')
+          }, "3000");
+    })
+}
