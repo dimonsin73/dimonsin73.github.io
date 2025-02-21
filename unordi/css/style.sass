@@ -80,12 +80,18 @@
     .title-main
         font-size: 40px
         line-height: 40px
+    .title-1 
+        font-size: 32px
+        line-height: 36px
     .title-2
         font-size: 28px
         line-height: 32px
     .title-4 
         font-size: 18px
         line-height: 24px
+    .title-year
+        font-size: 26px
+        line-height: 28px
     .menu-title 
         font-size: 20px
         line-height: 24px
@@ -94,6 +100,12 @@
         line-height: 22px
     .menu-text
         font-size: 16px
+    .text-about
+        font-size: 16px
+        line-height: 24px
+    .text-medium
+        font-size: 16px
+        line-height: 24px
 
 html 
     scrollbar-width: thin
@@ -125,9 +137,9 @@ body
     transition: stroke 0.3s ease
 .text8w-theme, .text27-theme, .span-theme
     transition: color 0.3s ease
-.small-viseble
+.small-visible
     display: none !important
-.medium-viseble
+.medium-visible
     display: none !important
 .main 
     display: flex
@@ -397,7 +409,7 @@ body
     flex-direction: column
     row-gap: 160px
     margin-bottom: 10px
-    padding: 160px
+    padding: 160px 32px 160px 160px
     padding-bottom: 300px
 .breadcrumbs
     display: flex
@@ -490,7 +502,6 @@ body
     position: relative
     flex: 0 0 auto
     width: 640px
-    height: calc(100vh - 114px)
     &__wrapper 
         display: flex
         flex-direction: column
@@ -506,10 +517,17 @@ body
         &-title 
             text-transform: uppercase
 .years
+    position: relative
     display: flex
     overflow-x: scroll
     scrollbar-width: none
     margin-top: -12px
+    &__text 
+        position: absolute
+        top: 10px
+        left: 32px
+        display: block
+        color: var(--gray-500)
 .year
     position: relative
     flex: 0 0 auto
@@ -602,6 +620,8 @@ body
             position: relative
             display: flex
             flex-direction: column
+            &-light
+                margin-top: 7px
 
 .menu
     position: fixed
@@ -658,7 +678,7 @@ body
     position: absolute
     right: 0
     left: 0
-    top: 0
+    top: 12px
     height: 20px
     &-main
         min-width: 100%
@@ -667,7 +687,7 @@ body
         transition: opacity 0.3s ease
     &-vert  
         position: absolute
-        top: -12px
+        top: 0
         display: flex
         justify-content: space-between
         &-main 
@@ -695,6 +715,8 @@ body
                 position: relative
             &-year
                 margin-top: -7px
+        &__year
+            margin-top: -4px
         &__sec 
             margin-top: 2px
             & .rope-vert__item-units
@@ -722,7 +744,7 @@ body
         display: flex
         overflow-x: hidden
     &__year
-        top: 0
+        top: 12px
 
 .knot
     position: absolute
@@ -797,9 +819,6 @@ body
     & .hero
         &__arrow path 
             stroke: var(--gray-800)
-    & .trading__content 
-            background: 
-                image: url(../image/list_rope.svg)
     & .wb-theme 
         background-color: var(--white)
     & .black_btn-theme
@@ -870,9 +889,6 @@ body
     & .hero
         &__arrow path 
             stroke: var(--white)
-    & .trading__content 
-            background: 
-                image: url(../image/list_rope-dark.svg)
     & .wb-theme 
         background-color: var(--black)
     & .black_btn-theme
@@ -936,13 +952,71 @@ body
         padding-top: 40px
     .contacts__wrapper
         padding-top: 40px 
+@media (max-width: 1799px)
+    .product__content
+        column-gap: 32px
+@media (max-width: 1724px)
+    .breadcrumbs
+        flex-wrap: wrap
+    .product
+        &__content
+            flex-direction: column
+            row-gap: 40px
+            &-denser
+                height: auto
+        &__item
+            flex: 0 0 auto
+            height: auto
+            padding: 0
+            &-dot 
+                top: 0
+                left: -83px
+                &-dark 
+                    top: -6px
+                    left: -90px
+        &__part
+            flex: 0 0 auto
+            height: auto
+            padding: 0
+            &-item 
+                left: -80px
+                column-gap: 59px
+                height: auto
+            &-title
+                min-height: auto
+                padding-left: 0
+    .advantages 
+        display: none !important
+        &-small
+            position: absolute
+            left: -83px
+            &-dark
+                position: relative
+                top: -6px
+                left: -9px
+        &__point
+            margin-top: -8px
+    .knot-product, .knot-product2
+        display: none !important
+    .rope-vert-ls
+        top: -180px
+        align-items: center
+        &-dark 
+            position: relative
+            left: 28px
+@media (max-width: 1499px)
+    .product__wrapper
+        flex-direction: column
+        row-gap: 40px
+    .rope-vert-ls
+        top: -50px
 @media (max-width: 1199px )
     .sec-hide 
         display: none !important
 @media ( max-width: 959px )
     .medium-hide 
         display: none !important
-    .medium-viseble
+    .medium-visible
         display: block !important
     .body
         height: auto
@@ -1013,6 +1087,7 @@ body
             &-item
                 display: flex
                 flex-direction: column
+                align-items: flex-start
                 row-gap: 8px
         &__title 
             margin-top: 28px
@@ -1040,18 +1115,20 @@ body
             justify-content: center
             padding: 48px 32px 160px
     .years 
-        height: 100vh
+        padding-top: 70px
         margin-bottom: 30px
+        &-text 
+            left: 16px
     .year 
         width: 345px
         min-height: 728px
         background: 
-            image: url(../image/years_main.svg)
             repeat: repeat-x
             position-y: 5px
         .year__wrapper
             row-gap: 16px
             padding: 73px 32px 20px 76px
+    
     .mission  
         width: 100vw
         &__wrapper 
@@ -1059,6 +1136,18 @@ body
         &__content 
             flex-direction: column
             row-gap: 40px
+            &-vert 
+                background: 
+                    position: left 4px center 
+                    repeat: repeat-y
+        &__item
+            width: 328px
+            &-left 
+                padding-left: 40px
+                background: 
+                    image: url(../image/list_rope_item.svg)
+                    repeat: no-repeat
+                    position-y: 3px
     .directions
         width: 100vw
         &__wrapper 
@@ -1068,7 +1157,6 @@ body
             margin: 0 -32px
             padding: 0 32px
             background: 
-                image: url(../image/direction_rope-small.svg)
                 position-y: 76px
                 repeat: no-repeat
             overflow-x: scroll
@@ -1077,6 +1165,8 @@ body
             display: flex
             align-items: center
             margin-top: 16px
+            &-dark 
+                margin-top: -14px
     .footer 
         position: relative
         &__wrapper 
@@ -1099,6 +1189,11 @@ body
                 margin-left: -44px
             &__direction 
                 width: 45px
+        &__year 
+            top: 0
+        &__line 
+            max-height: 6px
+            margin-top: 14px
     .knot-small 
         display: flex
         justify-content: center
@@ -1107,11 +1202,38 @@ body
             margin-right: -12px
             margin-left: -12px
             object-fit: cover
-
+    .light-theme 
+        & .year 
+            background: 
+                image: url(../image/years_main.svg)
+        & .mission
+            &__content
+                &-vert 
+                    background-image: url(../image/list_rope.svg)
+        & .trading__content 
+            background: 
+                image: url(../image/list_rope.svg)
+        & .directions__content 
+            background: 
+                image: url(../image/direction_rope-small.svg)
+    .dark-theme 
+        & .year 
+            background: 
+                image: url(../image/line_main-small-2.svg)
+        & .mission
+            &__content
+                &-vert 
+                    background-image: url(../image/list_rope-dark.svg)
+        & .trading__content 
+            background: 
+                image: url(../image/list_rope-dark.svg)
+        & .directions__content 
+            background: 
+                image: url(../image/direction_line-small.svg)
 @media ( max-width: 767px )
     .small-hide
         display: none !important
-    .small-viseble
+    .small-visible
         display: block
     .contacts
         row-gap: 24px
@@ -1148,6 +1270,28 @@ body
         &__content 
             margin: 0 -16px 
             padding: 0 16px
+    .products
+        row-gap: 40px
+        padding-top: 90px
+        padding-left: 60px
+        padding-bottom: 0
+        padding-right: 16px
+    .product
+        margin-bottom: 100px
+        &__part-item
+            left: -39px
+            column-gap: 20px
+            &-img
+                flex: 0 0 18px
+        &__item-dot
+            left: -43px
+            &-dark 
+                left: -50px
+    .advantages-small
+        left: -43px
+    .rope-vert-ls
+        left: 0
+        top: 0
     .footer 
         &__wrapper
             flex-direction: column

@@ -55,9 +55,13 @@ html(lang='en')
 
         main
             .rope-vert.rope-vert-ls
-                img(src="image/service_main.svg", alt="").light-line
+                picture.light-line
+                    source(media="(max-width: 1724px)" srcset="image/service_main-small.svg")
+                    img(src="image/service_main.svg", alt="")
                 img(src="image/service_main_bottom.svg", alt="").rope-vert__bottom.light-line
-                img(src="image/service_main_line.svg", alt="").dark-line
+                picture.dark-line
+                    source(media="(max-width: 1724px)" srcset="image/service_main_line-small.svg")
+                    img(src="image/service_main_line.svg", alt="").rope-vert-ls-dark
             .products
                 section
                     .breadcrumbs
@@ -88,39 +92,63 @@ html(lang='en')
                             .product__item
                                 h4.product__item-title.title-4 Aerosol valves
                                 .product__item-dot.light-line
-                                    img(src="image/service_rope-1_knot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small.svg")
+                                        img(src="image/service_rope-1_knot.svg", alt="")
                                 .product__item-dot.product__item-dot-dark.dark-line
-                                    img(src="image/service_rope-1_dot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/advantages_point_dot.svg")
+                                        img(src="image/service_rope-1_dot.svg", alt="")
                             .product__item.product__item-reverse
                                 h4.product__item-title.title-4 Actuators
                                 .product__item-dot.light-line
-                                    img(src="image/service_rope-1_knot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small.svg")
+                                        img(src="image/service_rope-1_knot.svg", alt="")
                                 .product__item-dot.product__item-dot-dark.dark-line
-                                    img(src="image/service_rope-1_dot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/advantages_point_dot.svg")
+                                        img(src="image/service_rope-1_dot.svg", alt="")
                             .product__item
                                 h4.product__item-title.title-4 Spare parts and components
                                 .product__item-dot.light-line
-                                    img(src="image/service_rope-1_knot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small.svg")
+                                        img(src="image/service_rope-1_knot.svg", alt="")
                                 .product__item-dot.product__item-dot-dark.dark-line
-                                    img(src="image/service_rope-1_dot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/advantages_point_dot.svg")
+                                        img(src="image/service_rope-1_dot.svg", alt="")
                             .product__item.product__item-reverse
                                 h4.product__item-title.title-4 Component selection consulting
                                 .product__item-dot.light-line
-                                    img(src="image/service_rope-1_knot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small.svg")
+                                        img(src="image/service_rope-1_knot.svg", alt="")
                                 .product__item-dot.product__item-dot-dark.dark-line
-                                    img(src="image/service_rope-1_dot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/advantages_point_dot.svg")
+                                        img(src="image/service_rope-1_dot.svg", alt="")
                             .product__item
                                 h4.product__item-title.title-4 Logistics solutions
                                 .product__item-dot.light-line
-                                    img(src="image/service_rope-1_knot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small.svg")
+                                        img(src="image/service_rope-1_knot.svg", alt="")
                                 .product__item-dot.product__item-dot-dark.dark-line
-                                    img(src="image/service_rope-1_dot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/advantages_point_dot.svg")
+                                        img(src="image/service_rope-1_dot.svg", alt="")
                             .product__item.product__item-reverse
                                 h4.product__item-title.title-4 Technical support
                                 .product__item-dot.light-line
-                                    img(src="image/service_rope-1_knot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small.svg")
+                                        img(src="image/service_rope-1_knot.svg", alt="")
                                 .product__item-dot.product__item-dot-dark.dark-line
-                                    img(src="image/service_rope-1_dot.svg", alt="")
+                                    picture
+                                        source(media="(max-width: 1724px)" srcset="image/advantages_point_dot.svg")
+                                        img(src="image/service_rope-1_dot.svg", alt="")
                 section
                     .product 
                         h2.product__title.title-2 Our Advantages
@@ -140,18 +168,27 @@ html(lang='en')
                                 .advantages.advantages-dark.dark-line
                                     img(src="image/advantages_top_dot.svg", alt="")
                                     img(src="image/advantages_line.svg", alt="").advantages__units.advantages__units-dark
+                                .advantages-small 
+                                    img(src="image/service_rope-1_knot-small.svg", alt="").light-line
+                                    img(src="image/service_line-1_knot-small.svg", alt="").advantages-small-dark.dark-line
                                 h4.product__part-title.title-prod Access to Leading Global Manufacturers
                                 ul.product__part-list
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Partnership with recognized manufacturer Koh-i-Noor
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Guarantee of original product quality
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Access to manufacturer's complete product range
                             .product__part
@@ -161,18 +198,27 @@ html(lang='en')
                                 .advantages.advantages-dark.dark-line
                                     img(src="image/advantages_top_dot.svg", alt="")
                                     img(src="image/advantages_line.svg", alt="").advantages__units.advantages__units-dark
+                                .advantages-small 
+                                    img(src="image/service_rope-1_knot-small.svg", alt="").light-line
+                                    img(src="image/service_line-1_knot-small.svg", alt="").advantages-small-dark.dark-line
                                 h4.product__part-title.title-prod Business Process Optimization
                                 ul.product__part-list
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Full supply chain management
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Customs clearance handling
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Logistics process optimization
                             .product__part
@@ -182,18 +228,27 @@ html(lang='en')
                                 .advantages.advantages-dark.dark-line
                                     img(src="image/advantages_top_dot.svg", alt="")
                                     img(src="image/advantages_line.svg", alt="").advantages__units.advantages__units-dark
+                                .advantages-small 
+                                    img(src="image/service_rope-1_knot-small.svg", alt="").light-line
+                                    img(src="image/service_line-1_knot-small.svg", alt="").advantages-small-dark.dark-line
                                 h4.product__part-title.title-prod Business Development
                                 ul.product__part-list
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Relevant solutions for production needs
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Updates on new products and technologies
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Support in maintaining market competitiveness
                             .product__part
@@ -203,18 +258,27 @@ html(lang='en')
                                 .advantages.advantages-dark.dark-line
                                     img(src="image/advantages_top_dot.svg", alt="")
                                     img(src="image/advantages_line.svg", alt="").advantages__units.advantages__units-dark
+                                .advantages-small 
+                                    img(src="image/service_rope-1_knot-small.svg", alt="").light-line
+                                    img(src="image/service_line-1_knot-small.svg", alt="").advantages-small-dark.dark-line
                                 h4.product__part-title.title-prod Time and Resource Efficiency
                                 ul.product__part-list
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Single supplier workflow
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Reduced administrative costs
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Optimized operational expenses
                             .product__part
@@ -224,21 +288,33 @@ html(lang='en')
                                 .advantages.advantages-dark.dark-line
                                     img(src="image/advantages_top_dot.svg", alt="")
                                     img(src="image/advantages_line.svg", alt="").advantages__units.advantages__units-dark
+                                .advantages-small 
+                                    img(src="image/service_rope-1_knot-small.svg", alt="").light-line
+                                    img(src="image/service_line-1_knot-small.svg", alt="").advantages-small-dark.dark-line
                                 h4.product__part-title.title-prod Reliable Long-term Partnership
                                 ul.product__part-list
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Transparent and stable relationships
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Continuous support at all cooperation stages
                                     li.product__part-item
-                                        img(src="image/advantages_point.svg", alt="").light-line
+                                        picture.product__part-item-img.light-line
+                                            source(media="(max-width: 1724px)" srcset="image/service_rope-1_knot-small-2.svg")
+                                            img(src="image/advantages_point.svg", alt="")
                                         img(src="image/advantages_point_dot.svg", alt="").advantages__point.dark-line
                                         p.text-medium Flexible terms tailored to client needs
         footer.footer 
+            .rope.medium-visible
+                img(src="image/rope_menu.svg", alt="").rope-main.light-line
+                img(src="image/line_main-small-2.svg", alt="").rope-main.rope-main-dark.dark-line
             .footer__wrapper
                 .footer__item
                     a(href="").footer__link.text-small Privacy Policy
