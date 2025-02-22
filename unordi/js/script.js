@@ -70,6 +70,11 @@ const options = {
 const observer = new IntersectionObserver(callback, options)
 vies.forEach((vie) => observer.observe(vie))
 
-
 const vieups = document.querySelectorAll('.vie-up')
 vieups.forEach((vie) => observer.observe(vie))
+
+const vieuplittles = document.querySelectorAll('.vie-uplittle')
+vieuplittles.forEach((vie) => observer.observe(vie))
+
+const vielefts = document.querySelectorAll('.vie-left')
+vielefts.forEach((vie) => observer.observe(vie))

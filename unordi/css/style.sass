@@ -145,6 +145,27 @@ body
     display: flex
     height: 100%
     padding-top: 114px 
+@keyframes main-lf
+    0% 
+        opacity: 0 
+        transform: translateX(-100%)
+    100% 
+        opacity: 1 
+        transform: translateX(0)
+@keyframes main-rt
+    0% 
+        opacity: 0 
+        transform: translateX(100%)
+    100% 
+        opacity: 1 
+        transform: translateX(0)
+@keyframes main-rtpx
+    0% 
+        opacity: 0 
+        transform: translateX(200px)
+    100% 
+        opacity: 1 
+        transform: translateX(0)
 .section
     position: relative
     display: flex
@@ -252,6 +273,7 @@ body
         padding: 80px
     &__title 
         max-width: 874px
+        animation: main-lf 1.5s linear forwards
     &__arrow
         display: flex
         align-items: center
@@ -263,6 +285,7 @@ body
         border: 1px solid 
         border-radius: 50%
         transition: border-color 0.3s ease
+        animation: main-rtpx 1.5s linear forwards
         & path 
             transition: stroke 0.3s ease
 .trading 
@@ -382,6 +405,7 @@ body
         flex-direction: column
         row-gap: 60px
         padding: 96px 100px 130px 160px
+        overflow: hidden
     &__menu
         position: relative
         display: flex
@@ -415,6 +439,7 @@ body
     display: flex
     column-gap: 5px
     color: var(--gray-500)
+    animation: main-lf 1s linear forwards
     &__link
         color: var(--gray-500)
 .product
@@ -428,8 +453,11 @@ body
         flex: 0 0 auto
         max-width: 440px
         text-transform: uppercase
+        &-main
+            animation: main-lf 1.5s linear forwards
     &__text 
         max-width: 800px
+        animation: main-rt 1.5s linear forwards
     &__content 
         position: relative
         display: flex
@@ -480,6 +508,8 @@ body
             display: flex
             column-gap: 24px
             height: 56px
+            &-img 
+                flex: 0 0 auto
 .footer
     position: absolute
     bottom: 0
@@ -508,6 +538,7 @@ body
         row-gap: 160px
         height: 100%
         padding: 96px 100px 20px 120px
+        animation: main-lf 1.5s linear forwards
     &__title 
         text-transform: uppercase
     &__content 
@@ -730,6 +761,8 @@ body
             padding: 0 18px
         &__left 
             margin-left: -80px
+        &-lf
+            left: 60px
     &-contacts
         left: -30px
     &__line 
@@ -798,6 +831,8 @@ body
         margin-top: -30px
         margin-left: -12px
         margin-right: -12px
+    &-small 
+        display: none
 
 .vie 
     opacity: 0
@@ -807,12 +842,18 @@ body
         opacity: 0
         transform: translateY(100px)
         transition: opacity 1s ease, transform 1s ease
+    &-uplittle
+        opacity: 0
+        transform: translateY(50px)
+        transition: opacity 1s ease, transform 1s ease
+    &-left
+        opacity: 0
+        transform: translateX(-200px)
+        transition: opacity 1.5s ease, transform 1s ease
     &-active 
         opacity: 1
         transform: translate(0)
     
-    
-        
 .light-theme
     background-color: var(--white)
     color: var(--gray-800)
@@ -1016,6 +1057,7 @@ body
         &-small
             position: absolute
             left: -83px
+            display: block
             &-dark
                 position: relative
                 top: -6px
@@ -1060,6 +1102,7 @@ body
         padding-top: 74px
     .section 
         flex-direction: column
+        overflow: hidden
     .menu
         top: 74px
         &__wrapper 
@@ -1082,7 +1125,7 @@ body
             padding: 60px 80px 
         &__title 
             height: 160px
-        &__arrow 
+        &__arrow svg
             transform: rotate(90deg)
     .trading
         width: 100vw
@@ -1216,6 +1259,8 @@ body
                 margin-left: -44px
             &__direction 
                 width: 45px
+            &-ls 
+                top: -250px
         &__year 
             top: 0
         &__line 
@@ -1318,7 +1363,7 @@ body
         left: -43px
     .rope-vert-ls
         left: 0
-        top: 0
+        top: -585px
     .footer 
         &__wrapper
             flex-direction: column
@@ -1331,7 +1376,24 @@ body
             row-gap: 16px
     .rope-vert-main 
         width: calc(100% - 32px)
-        
+@media (max-width: 599px)
+    .rope-vert-ls 
+        top: -500px
+@media (max-width: 519px)
+    .rope-vert-ls 
+        top: -400px
+@media (max-width: 499px)
+    .rope-vert-ls 
+        top: -300px
+@media (max-width: 459px)
+    .rope-vert-ls 
+        top: -200px
+@media (max-width: 424px)
+    .rope-vert-ls 
+        top: -100px
+@media (max-width: 399px)
+    .rope-vert-ls 
+        top: 0
     
 
 
