@@ -46,7 +46,6 @@ html(lang='en')
                             <path d="M18.125 9.99737H1.875" stroke-miterlimit="10"/>
                         </svg>
                     input(type="checkbox").header__input
-                    script(type="text/javascript", src="js/checked.js") 
                     label.header__switch
                         span.header__slider.medium-hide 
                         span.header__duo.medium-visible
@@ -170,9 +169,9 @@ html(lang='en')
                                     img(src="image/rope-8.svg", alt="").rope-skew
                             .rope-vert__item.dark-line
                                 img(src="image/line-8.svg", alt="")
-                        h1.hero__title.title-main BUILDING A GLOBAL <br>LEGACY TOGETHER
-                        a(href="#section").hero__arrow.border8w-theme  
-                            <svg width="26" height="16" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        h1.hero__title.title-main.vie BUILDING A GLOBAL <br>LEGACY TOGETHER
+                        a(href="#section").hero__arrow.border8w-themex
+                            <svg class="vie" width="26" height="16" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18 0.999757L25 7.99976L18 14.9998M24.6759 7.99951L1 7.99999" stroke="#333333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
             section.section#section
@@ -184,27 +183,27 @@ html(lang='en')
                         source(media="(max-width: 959px)" srcset="image/line_main-small-2.svg")
                         img(src="image/line_main.svg", alt="").rope-main.rope-main-dark
                 .trading
+                    .rope-vert.rope-vert-ls.medium-hide 
+                        .rope-vert__item.light-line
+                            img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
+                            picture.rope-vert__item-units
+                                source(media="(max-height: 1000px)" srcset="image/expertise_rope-1-2.svg")
+                                img(src="image/expertise_rope-1.svg", alt="")
+                        .rope-vert__item.dark-line
+                            picture.rope-vert__item-expertise
+                                source(media="(max-height: 1000px)" srcset="image/expertise_main_line-2.svg")
+                                img(src="image/expertise_main_line.svg", alt="")
                     .trading__wrapper
-                        .rope-vert.rope-vert-ls.medium-hide 
-                            .rope-vert__item.light-line
-                                img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
-                                picture.rope-vert__item-units
-                                    source(media="(max-height: 1000px)" srcset="image/expertise_rope-1-2.svg")
-                                    img(src="image/expertise_rope-1.svg", alt="")
-                            .rope-vert__item.dark-line
-                                picture.rope-vert__item-expertise
-                                    source(media="(max-height: 1000px)" srcset="image/expertise_main_line-2.svg")
-                                    img(src="image/expertise_main_line.svg", alt="")
-                        h2.trading__title.title-2 Unordi Trading
+                        h2.trading__title.title-2.vie Unordi Trading
                         .trading__head
-                            p.text-large is an international trading company that bridges businesses worldwide, creating powerful, result-driven connections in the global market.
-                            p.text-large Our key areas of expertise empower global trade, including:
+                            p.text-large.vie is an international trading company that bridges businesses worldwide, creating powerful, result-driven connections in the global market.
+                            p.text-large.vie Our key areas of expertise empower global trade, including:
                         .trading__content
                             .trading__content-item
                                 .knot-small
                                     img(src="image/list_rope_item.svg", alt="").light-line
                                     img(src="image/list_rope_item-dark.svg", alt="").knot-small-dark.dark-line
-                                p.subtitle Financial Operations
+                                p.subtitle.vie.vie2 Financial Operations
                                 .knot.medium-hide.light-line
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-1.svg", alt="").knot__units
@@ -215,7 +214,7 @@ html(lang='en')
                                 .knot-small
                                     img(src="image/list_rope_item.svg", alt="").light-line
                                     img(src="image/list_rope_item-dark.svg", alt="").knot-small-dark.dark-line
-                                p.subtitle Logistics
+                                p.subtitle.vie.vie2 Logistics
                                 .knot.medium-hide.light-line
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-2.svg", alt="").knot__units
@@ -226,7 +225,7 @@ html(lang='en')
                                 .knot-small
                                     img(src="image/list_rope_item.svg", alt="").light-line
                                     img(src="image/list_rope_item-dark.svg", alt="").knot-small-dark.dark-line
-                                p.subtitle Consulting
+                                p.subtitle.vie Consulting
                                 .knot.medium-hide.light-line
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-3.svg", alt="").knot__units
@@ -237,7 +236,7 @@ html(lang='en')
                                 .knot-small
                                     img(src="image/list_rope_item.svg", alt="").light-line
                                     img(src="image/list_rope_item-dark.svg", alt="").knot-small-dark.dark-line
-                                p.subtitle Innovative Technological Solutions
+                                p.subtitle.vie Innovative Technological Solutions
                                 .knot.medium-hide.light-line 
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-4.svg", alt="").knot__units
@@ -245,24 +244,24 @@ html(lang='en')
                                 .knot.knot-dark.medium-hide.dark-line
                                     img(src="image/expertise_line-4.svg", alt="")
                         .trading__footer
-                            p.text-large We combine years of experience in traditional trade with cutting-edge digital technologies to deliver exceptional results.
-                            p.text-large Partnering with Unordi Trading grants access to a global network of business opportunities.
+                            p.text-large.vie We combine years of experience in traditional trade with cutting-edge digital technologies to deliver exceptional results.
+                            p.text-large.vie Partnering with Unordi Trading grants access to a global network of business opportunities.
                 .support
+                    .rope-vert.rope-vert-ls.medium-hide 
+                        .rope-vert__item.light-line
+                            img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
+                            picture.rope-vert__item-units
+                                source(media="(max-height: 1000px)" srcset="image/expertise_rope-1-2.svg")
+                                img(src="image/expertise_rope-1.svg", alt="")
+                        .rope-vert__item.dark-line
+                            picture
+                                source(media="(max-height: 1000px)" srcset="image/expertise_main_line-2.svg")
+                                img(src="image/expertise_main_line.svg", alt="")
                     .support__wrapper
-                        .rope-vert.rope-vert-ls.medium-hide 
-                            .rope-vert__item.light-line
-                                img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
-                                picture.rope-vert__item-units
-                                    source(media="(max-height: 1000px)" srcset="image/expertise_rope-1-2.svg")
-                                    img(src="image/expertise_rope-1.svg", alt="")
-                            .rope-vert__item.dark-line
-                                picture
-                                    source(media="(max-height: 1000px)" srcset="image/expertise_main_line-2.svg")
-                                    img(src="image/expertise_main_line.svg", alt="")
-                        h2.support__title.title-2 We support businesses of all sizes in
+                        h2.support__title.title-2.vie We support businesses of all sizes in
                         .support__content
                             .support__content-item
-                                p.subtitle Expanding into new markets
+                                p.subtitle.vie Expanding into new markets
                                 .knot.light-line.medium-hide
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-5.svg", alt="").knot__units
@@ -273,7 +272,7 @@ html(lang='en')
                                     img(src="image/expertise_knot-small-1.svg", alt="").light-line
                                     img(src="image/expertise_knot_line-1.svg", alt="").dark-line
                             .support__content-item
-                                p.subtitle Optimizing international operations
+                                p.subtitle.vie Optimizing international operations
                                 .knot.light-line.medium-hide
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-6.svg", alt="").knot__units
@@ -284,7 +283,7 @@ html(lang='en')
                                     img(src="image/expertise_knot-small-2.svg", alt="").light-line
                                     img(src="image/expertise_knot_line-2.svg", alt="").dark-line
                             .support__content-item
-                                p.subtitle Finding reliable partners
+                                p.subtitle.vie Finding reliable partners
                                 .knot.light-line.medium-hide
                                     img(src="image/expertise_knot_left.svg", alt="")
                                     img(src="image/expertise_knot-7.svg", alt="").knot__units
@@ -295,8 +294,8 @@ html(lang='en')
                                     img(src="image/expertise_knot-small-3.svg", alt="").light-line
                                     img(src="image/expertise_knot_line-3.svg", alt="").dark-line
                         .support__footer
-                            p.text-large We prioritize long-term partnerships where every client's success contributes to the advancement of international trade. 
-                            p.text-large Together, we are shaping the future of global collaboration by offering solutions that set new standards of efficiency.
+                            p.text-large.vie We prioritize long-term partnerships where every client's success contributes to the advancement of international trade. 
+                            p.text-large.vie Together, we are shaping the future of global collaboration by offering solutions that set new standards of efficiency.
             section.section
                 .rope
                     picture.light-line
@@ -307,16 +306,16 @@ html(lang='en')
                         img(src="image/line_main.svg", alt="").rope-main.rope-main-dark
                 .feedback
                     .feedback__wrapper
-                        h2.feedback__title.title-2 Your Journey to Global Success Starts Here
+                        h2.feedback__title.title-2.vie Your Journey to Global Success Starts Here
                         form.feedback__form
                             .feedback__form-head
-                                h3.text-large Have questions or ready to start?
-                                p.feedback__text.text-large Our team is here to help!
+                                h3.text-large.vie Have questions or ready to start?
+                                p.feedback__text.text-large.vie Our team is here to help!
                             .feedback__form-content
-                                input(type="text" placeholder="Your Name").feedback__form-input.text-small.border__input-theme
-                                input(type="text" placeholder="Phone Number").feedback__form-input.text-small.border__input-theme
-                                input(type="text" placeholder="E-mail").feedback__form-input.text-small.border__input-theme
-                            .feedback__form-checkbox
+                                input(type="text" placeholder="Your Name").feedback__form-input.text-small.border__input-theme.vie
+                                input(type="text" placeholder="Phone Number").feedback__form-input.text-small.border__input-theme.vie
+                                input(type="text" placeholder="E-mail").feedback__form-input.text-small.border__input-theme.vie
+                            .feedback__form-checkbox.vie
                                 input#feedback-checkbox(type="checkbox", name="I agree")
                                 label(for="feedback-checkbox").feedback__form-label.checkbox-theme
                                     .feedback__form-check.check-theme
@@ -326,13 +325,12 @@ html(lang='en')
                                     p.feedback__form-text.text-small
                                         span.span-theme I agree to the 
                                         | data processing policy 
-                            button(type="submit").feedback__form-btn.text-btn.black_btn-theme Send Message
+                            button(type="submit").feedback__form-btn.text-btn.black_btn-theme.vie Send Message
                 .contacts
                     .rope.medium-visible
                         img(src="image/rope_menu.svg", alt="").rope-main.light-line
                         img(src="image/line_main-small-2.svg", alt="").rope-main.rope-main-dark.dark-line
-                    .contacts__wrapper
-                        .rope-vert.rope-contacts.medium-hide 
+                    .rope-vert.rope-contacts.medium-hide 
                             .rope-vert__item.light-line
                                 img(src="image/expertise_rope_top.svg", alt="").rope-vert__item-knot
                                 picture.rope-vert__item-units
@@ -342,14 +340,15 @@ html(lang='en')
                                 picture.rope-vert__item-divider
                                     source(media="(max-height: 1000px)" srcset="image/divider_line-2.svg")
                                     img(src="image/divider_line.svg", alt="")
+                    .contacts__wrapper.vie
                         .contacts__head
                             h2.contacts__head-title.title-2 OUR CONTACTS
                             p.contacts__head-text.text-medium Get in touch with us in any convenient way
                         .contacts__content 
                             .contacts__item 
-                                a(href="mailto:info@unordi.com ").contacts__link.text8w-theme.title-4 info@unordi.com 
+                                a(href="mailto:info@unordi.com ").contacts__link.text8w-theme.title-4.vie info@unordi.com 
                             .contacts__item 
-                                a(href="tel:+70000000000").contacts__link.text8w-theme.title-4 +7 000 000 0000
+                                a(href="tel:+70000000000").contacts__link.text8w-theme.title-4.vie +7 000 000 0000
                             .contacts__item
                                 h3.contacts__content-title.text-medium Head Office Address:
                                 a(href="").contacts__link.text8w-theme.title-4 Address

@@ -52,3 +52,24 @@ for (let i = 0; i < ropeSkewArr.length; i++) {
           }, "3000");
     })
 }
+
+
+const vies = document.querySelectorAll('.vie')
+const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('vie-active')
+            observer.unobserve(entry.target)
+        }
+    })
+}
+const options = {
+    rootMargin: '0px',
+    threshold: 0.5,
+}
+const observer = new IntersectionObserver(callback, options)
+vies.forEach((vie) => observer.observe(vie))
+
+
+const vieups = document.querySelectorAll('.vie-up')
+vieups.forEach((vie) => observer.observe(vie))

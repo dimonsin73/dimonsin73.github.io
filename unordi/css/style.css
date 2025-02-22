@@ -376,12 +376,12 @@ body {
 }
 
 .trading {
+  position: relative;
   flex: 0 0 auto;
   width: 960px;
   height: 100%;
 }
 .trading__wrapper {
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -414,12 +414,12 @@ body {
 }
 
 .support {
+  position: relative;
   flex: 0 0 auto;
   width: 960px;
   height: 100%;
 }
 .support__wrapper {
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -514,12 +514,12 @@ body {
 }
 
 .contacts {
+  position: relative;
   flex: 0 0 auto;
   width: 960px;
   height: 100%;
 }
 .contacts__wrapper {
-  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 60px;
@@ -706,7 +706,7 @@ body {
 .years {
   position: relative;
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   scrollbar-width: none;
   margin-top: -12px;
 }
@@ -728,10 +728,10 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 32px;
-  padding: 96px 40px 20px 180px;
+  padding: 120px 40px 20px 180px;
 }
 .year__pt {
-  padding-top: 256px;
+  padding-top: 280px;
 }
 .year__title {
   text-transform: uppercase;
@@ -1072,6 +1072,21 @@ body {
   margin-top: -30px;
   margin-left: -12px;
   margin-right: -12px;
+}
+
+.vie {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.vie-up {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.vie-active {
+  opacity: 1;
+  transform: translate(0);
 }
 
 .light-theme {
@@ -1525,6 +1540,7 @@ body {
   .years {
     padding-top: 70px;
     margin-bottom: 30px;
+    overflow-x: scroll;
   }
   .years-text {
     left: 16px;
