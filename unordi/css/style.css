@@ -388,7 +388,7 @@ body {
 }
 .hero__title {
   max-width: 874px;
-  animation: main-lf 1.5s linear forwards;
+  animation: main-lf 0.5s linear forwards;
 }
 .hero__arrow {
   display: flex;
@@ -401,7 +401,7 @@ body {
   border: 1px solid;
   border-radius: 50%;
   transition: border-color 0.3s ease;
-  animation: main-rtpx 1.5s linear forwards;
+  animation: main-rtpx 0.5s linear forwards;
 }
 .hero__arrow path {
   transition: stroke 0.3s ease;
@@ -730,7 +730,7 @@ body {
   row-gap: 160px;
   height: 100%;
   padding: 96px 100px 20px 120px;
-  animation: main-lf 1.5s linear forwards;
+  animation: main-lf 0.5s linear forwards;
 }
 .about__title {
   text-transform: uppercase;
@@ -1045,6 +1045,14 @@ body {
 }
 .rope__year {
   top: 12px;
+  height: 0;
+  overflow: hidden;
+  transition: height 1s ease;
+}
+.rope-height {
+  height: 0;
+  overflow: hidden;
+  transition: height 1s ease;
 }
 
 .knot {
@@ -1125,7 +1133,7 @@ body {
 .vie {
   opacity: 0;
   transform: translateX(150px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 2s ease, transform 2s ease;
 }
 .vie-up {
   opacity: 0;
@@ -1142,9 +1150,19 @@ body {
   transform: translateX(-150px);
   transition: opacity 1.5s ease, transform 1s ease;
 }
+.vie-opacity {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
 .vie-active {
   opacity: 1;
   transform: translate(0);
+}
+.vie-active .rope__year {
+  height: 600px;
+}
+.vie-active .rope-height {
+  height: 900px;
 }
 
 @keyframes blic1 {
@@ -1919,6 +1937,520 @@ body {
     }
   }
 }
+@keyframes blic12 {
+  0% {
+    top: 9px;
+    left: 31px;
+    opacity: 1;
+  }
+  20% {
+    top: 128px;
+    left: 31px;
+  }
+  25% {
+    top: 147px;
+    left: 16px;
+  }
+  45% {
+    top: 290px;
+    left: 16px;
+  }
+  50% {
+    top: 312px;
+    left: 31px;
+  }
+  75% {
+    top: 412px;
+    left: 31px;
+  }
+  80% {
+    top: 433px;
+    left: 46px;
+  }
+  95% {
+    top: 571px;
+    left: 46px;
+    opacity: 1;
+  }
+  100% {
+    top: 571px;
+    left: 46px;
+    opacity: 0;
+  }
+}
+@keyframes blic22 {
+  0% {
+    top: 9px;
+    left: 31px;
+    opacity: 1;
+  }
+  55% {
+    top: 269px;
+    left: 31px;
+  }
+  60% {
+    top: 288px;
+    left: 16px;
+  }
+  95% {
+    top: 484px;
+    left: 16px;
+    opacity: 1;
+  }
+  100% {
+    top: 484px;
+    left: 16px;
+    opacity: 0;
+  }
+}
+@keyframes blic32 {
+  0% {
+    top: 9px;
+    left: 31px;
+    opacity: 1;
+  }
+  5% {
+    top: 60px;
+    left: 31px;
+  }
+  10% {
+    top: 77px;
+    left: 16px;
+  }
+  40% {
+    top: 215px;
+    left: 16px;
+  }
+  45% {
+    top: 232px;
+    left: 31px;
+  }
+  95% {
+    top: 433px;
+    left: 31px;
+    opacity: 1;
+  }
+  100% {
+    top: 433px;
+    left: 31px;
+    opacity: 0;
+  }
+}
+@keyframes blic42 {
+  0% {
+    top: 9px;
+    left: 16px;
+    opacity: 1;
+  }
+  20% {
+    top: 110px;
+    left: 16px;
+  }
+  25% {
+    top: 127px;
+    left: 31px;
+  }
+  55% {
+    top: 304px;
+    left: 31px;
+  }
+  60% {
+    top: 322px;
+    left: 16px;
+  }
+  95% {
+    top: 580px;
+    left: 16px;
+    opacity: 1;
+  }
+  100% {
+    top: 580px;
+    left: 16px;
+    opacity: 0;
+  }
+}
+@keyframes blic52 {
+  0% {
+    top: 9px;
+    left: 31px;
+    opacity: 1;
+  }
+  30% {
+    top: 182px;
+    left: 31px;
+  }
+  35% {
+    top: 199px;
+    left: 16px;
+  }
+  95% {
+    top: 520px;
+    left: 16px;
+    opacity: 1;
+  }
+  100% {
+    top: 520px;
+    left: 16px;
+    opacity: 0;
+  }
+}
+@keyframes blic62 {
+  0% {
+    top: 9px;
+    left: 16px;
+    opacity: 1;
+  }
+  15% {
+    top: 70px;
+    left: 16px;
+  }
+  20% {
+    top: 87px;
+    left: 31px;
+  }
+  55% {
+    top: 323px;
+    left: 31px;
+  }
+  60% {
+    top: 342px;
+    left: 16px;
+  }
+  95% {
+    top: 545px;
+    left: 16px;
+    opacity: 1;
+  }
+  100% {
+    top: 545px;
+    left: 16px;
+    opacity: 0;
+  }
+}
+@keyframes blic72 {
+  0% {
+    top: 9px;
+    left: 31px;
+    opacity: 1;
+  }
+  30% {
+    top: 125px;
+    left: 31px;
+  }
+  35% {
+    top: 144px;
+    left: 16px;
+  }
+  65% {
+    top: 330px;
+    left: 16px;
+  }
+  70% {
+    top: 347px;
+    left: 31px;
+  }
+  95% {
+    top: 495px;
+    left: 31px;
+    opacity: 1;
+  }
+  100% {
+    top: 495px;
+    left: 31px;
+    opacity: 0;
+  }
+}
+@keyframes blic82 {
+  0% {
+    top: 9px;
+    left: 16px;
+    opacity: 1;
+  }
+  30% {
+    top: 180px;
+    left: 16px;
+  }
+  35% {
+    top: 196px;
+    left: 31px;
+  }
+  65% {
+    top: 363px;
+    left: 31px;
+  }
+  70% {
+    top: 380px;
+    left: 16px;
+  }
+  95% {
+    top: 545px;
+    left: 16px;
+    opacity: 1;
+  }
+  100% {
+    top: 545px;
+    left: 16px;
+    opacity: 0;
+  }
+}
+@media (max-height: 1000px) {
+  @keyframes blic12 {
+    0% {
+      top: 9px;
+      left: 31px;
+      opacity: 1;
+    }
+    20% {
+      top: 95px;
+      left: 31px;
+    }
+    25% {
+      top: 109px;
+      left: 16px;
+    }
+    45% {
+      top: 215px;
+      left: 16px;
+    }
+    50% {
+      top: 230px;
+      left: 31px;
+    }
+    75% {
+      top: 303px;
+      left: 31px;
+    }
+    80% {
+      top: 319px;
+      left: 46px;
+    }
+    95% {
+      top: 427px;
+      left: 46px;
+      opacity: 1;
+    }
+    100% {
+      top: 427px;
+      left: 46px;
+      opacity: 0;
+    }
+  }
+  @keyframes blic22 {
+    0% {
+      top: 9px;
+      left: 31px;
+      opacity: 1;
+    }
+    55% {
+      top: 186px;
+      left: 31px;
+    }
+    60% {
+      top: 200px;
+      left: 16px;
+    }
+    95% {
+      top: 336px;
+      left: 16px;
+      opacity: 1;
+    }
+    100% {
+      top: 336px;
+      left: 16px;
+      opacity: 0;
+    }
+  }
+  @keyframes blic32 {
+    0% {
+      top: 9px;
+      left: 31px;
+      opacity: 1;
+    }
+    5% {
+      top: 49px;
+      left: 31px;
+    }
+    10% {
+      top: 63px;
+      left: 16px;
+    }
+    40% {
+      top: 155px;
+      left: 16px;
+    }
+    45% {
+      top: 172px;
+      left: 31px;
+    }
+    95% {
+      top: 363px;
+      left: 31px;
+      opacity: 1;
+    }
+    100% {
+      top: 363px;
+      left: 31px;
+      opacity: 0;
+    }
+  }
+  @keyframes blic42 {
+    0% {
+      top: 9px;
+      left: 16px;
+      opacity: 1;
+    }
+    20% {
+      top: 86px;
+      left: 16px;
+    }
+    25% {
+      top: 102px;
+      left: 31px;
+    }
+    55% {
+      top: 288px;
+      left: 31px;
+    }
+    60% {
+      top: 244px;
+      left: 16px;
+    }
+    95% {
+      top: 430px;
+      left: 16px;
+      opacity: 1;
+    }
+    100% {
+      top: 430px;
+      left: 16px;
+      opacity: 0;
+    }
+  }
+  @keyframes blic52 {
+    0% {
+      top: 9px;
+      left: 31px;
+      opacity: 1;
+    }
+    30% {
+      top: 133px;
+      left: 31px;
+    }
+    35% {
+      top: 147px;
+      left: 16px;
+    }
+    95% {
+      top: 371px;
+      left: 16px;
+      opacity: 1;
+    }
+    100% {
+      top: 371px;
+      left: 16px;
+      opacity: 0;
+    }
+  }
+  @keyframes blic62 {
+    0% {
+      top: 9px;
+      left: 16px;
+      opacity: 1;
+    }
+    15% {
+      top: 56px;
+      left: 16px;
+    }
+    20% {
+      top: 71px;
+      left: 31px;
+    }
+    55% {
+      top: 236px;
+      left: 31px;
+    }
+    60% {
+      top: 249px;
+      left: 16px;
+    }
+    95% {
+      top: 392px;
+      left: 16px;
+      opacity: 1;
+    }
+    100% {
+      top: 392px;
+      left: 16px;
+      opacity: 0;
+    }
+  }
+  @keyframes blic72 {
+    0% {
+      top: 9px;
+      left: 31px;
+      opacity: 1;
+    }
+    30% {
+      top: 90px;
+      left: 31px;
+    }
+    35% {
+      top: 105px;
+      left: 16px;
+    }
+    65% {
+      top: 228px;
+      left: 16px;
+    }
+    70% {
+      top: 242px;
+      left: 31px;
+    }
+    95% {
+      top: 348px;
+      left: 31px;
+      opacity: 1;
+    }
+    100% {
+      top: 348px;
+      left: 31px;
+      opacity: 0;
+    }
+  }
+  @keyframes blic82 {
+    0% {
+      top: 9px;
+      left: 16px;
+      opacity: 1;
+    }
+    30% {
+      top: 130px;
+      left: 16px;
+    }
+    35% {
+      top: 144px;
+      left: 31px;
+    }
+    65% {
+      top: 264px;
+      left: 31px;
+    }
+    70% {
+      top: 278px;
+      left: 16px;
+    }
+    95% {
+      top: 392px;
+      left: 16px;
+      opacity: 1;
+    }
+    100% {
+      top: 392px;
+      left: 16px;
+      opacity: 0;
+    }
+  }
+}
 .blic {
   position: absolute;
   top: 0px;
@@ -1953,6 +2485,30 @@ body {
 }
 .blic-active #lightning-8 {
   animation: blic8 0.5s linear 0s;
+}
+.blic-active #lightning-12 {
+  animation: blic12 0.5s linear 0s;
+}
+.blic-active #lightning-22 {
+  animation: blic22 0.5s linear 0s;
+}
+.blic-active #lightning-32 {
+  animation: blic32 0.5s linear 0s;
+}
+.blic-active #lightning-42 {
+  animation: blic42 0.5s linear 0s;
+}
+.blic-active #lightning-52 {
+  animation: blic52 0.5s linear 0s;
+}
+.blic-active #lightning-62 {
+  animation: blic62 0.5s linear 0s;
+}
+.blic-active #lightning-72 {
+  animation: blic72 0.5s linear 0s;
+}
+.blic-active #lightning-82 {
+  animation: blic82 0.5s linear 0s;
 }
 
 .light-theme {

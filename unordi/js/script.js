@@ -54,7 +54,7 @@ for (let i = 0; i < ropeSkewArr.length; i++) {
 }
 
 
-const vies = document.querySelectorAll('.vie')
+
 const callback = (entries, observer) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -68,20 +68,33 @@ const options = {
     threshold: 0.4,
 }
 const observer = new IntersectionObserver(callback, options)
+const vies = document.querySelectorAll('.vie')
 vies.forEach((vie) => observer.observe(vie))
-
 const vieups = document.querySelectorAll('.vie-up')
 vieups.forEach((vie) => observer.observe(vie))
-
 const vieuplittles = document.querySelectorAll('.vie-uplittle')
 vieuplittles.forEach((vie) => observer.observe(vie))
-
 const vielefts = document.querySelectorAll('.vie-left')
 vielefts.forEach((vie) => observer.observe(vie))
+const vieopacitys = document.querySelectorAll('.vie-opacity')
+vieopacitys.forEach((vie) => observer.observe(vie))
+const vieyears = document.querySelectorAll('.vie-year')
+vieyears.forEach((vie) => observer.observe(vie))
 
 const ropeVertItemArr = document.querySelectorAll('.rope-vert__item')
 for (let i = 0; i < ropeVertItemArr.length; i++) {
     const element = ropeVertItemArr[i];
+    element.addEventListener('mouseenter', function(){
+        element.classList.add('blic-active')
+        setTimeout(() => {
+            element.classList.remove('blic-active')
+          }, "500");
+    })
+}
+
+const directionsItemImgDarkArr = document.querySelectorAll('.directions__item-img-dark')
+for (let i = 0; i < directionsItemImgDarkArr.length; i++) {
+    const element = directionsItemImgDarkArr[i];
     element.addEventListener('mouseenter', function(){
         element.classList.add('blic-active')
         setTimeout(() => {
