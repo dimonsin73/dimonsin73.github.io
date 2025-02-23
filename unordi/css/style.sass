@@ -1018,6 +1018,16 @@ body
         padding-top: 40px
     .contacts__wrapper
         padding-top: 40px 
+@media (max-height: 700px)
+    .hero__title
+        margin-top: -50px
+    .rope-hero 
+        margin-top: -50px
+    .rope-vert-main 
+        margin-top: -50px
+@media (max-height: 650px)
+    .hero__arrow 
+        margin-bottom: -50px
 @media (max-width: 1799px)
     .product__content
         column-gap: 32px
@@ -1129,7 +1139,7 @@ body
         &__wrapper 
             flex-direction: column
             align-items: center
-            padding: 60px 80px 160px
+            padding: 60px 80px 
         &__arrow svg
             transform: rotate(90deg)
     .trading
@@ -1326,6 +1336,12 @@ body
     .hero
         &__wrapper 
             padding: 60px 16px
+        &__arrow 
+            width: 40px
+            height: 40px
+            padding: 0
+            & svg 
+                width: 14px
     .trading
         &__wrapper 
             padding: 48px 16px 32px
