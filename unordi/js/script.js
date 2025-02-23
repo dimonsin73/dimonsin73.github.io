@@ -65,7 +65,7 @@ const callback = (entries, observer) => {
 }
 const options = {
     rootMargin: '0px',
-    threshold: 0.5,
+    threshold: 0.4,
 }
 const observer = new IntersectionObserver(callback, options)
 vies.forEach((vie) => observer.observe(vie))

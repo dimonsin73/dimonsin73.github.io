@@ -836,7 +836,7 @@ body
 
 .vie 
     opacity: 0
-    transform: translateX(200px)
+    transform: translateX(150px)
     transition: opacity 1s ease, transform 1s ease
     &-up
         opacity: 0
@@ -848,7 +848,7 @@ body
         transition: opacity 1s ease, transform 1s ease
     &-left
         opacity: 0
-        transform: translateX(-200px)
+        transform: translateX(-150px)
         transition: opacity 1.5s ease, transform 1s ease
     &-active 
         opacity: 1
@@ -1072,15 +1072,23 @@ body
         &-dark 
             position: relative
             left: 28px
+    .rope-vert__item-line2
+        margin-top: 14px
 @media (max-width: 1499px)
     .product__wrapper
         flex-direction: column
         row-gap: 40px
     .rope-vert-ls
         top: -50px
+@media (max-width: 1389px )
+    .rope-vert__item-line3
+        margin-top: 14px
 @media (max-width: 1199px )
     .sec-hide 
         display: none !important
+@media (max-width: 1099px )
+    .rope-vert__item-line4
+        margin-top: 14px
 @media ( max-width: 959px )
     .medium-hide 
         display: none !important
@@ -1122,9 +1130,7 @@ body
         &__wrapper 
             flex-direction: column
             align-items: center
-            padding: 60px 80px 
-        &__title 
-            height: 160px
+            padding: 60px 80px 160px
         &__arrow svg
             transform: rotate(90deg)
     .trading
@@ -1242,17 +1248,17 @@ body
         &__wrapper 
             padding: 48px 32px 32px
     .rope-hero
-        top: 261px
+        top: 180px
         &-main
             height: 10px
     .rope
         &-main-dark 
             height: 3px
         &-vert
-            &__item-line 
+            &__item-line, .rope-vert__item-line2, .rope-vert__item-line3, .rope-vert__item-line4
                 margin: 0
             &-main
-                top: 255px
+                top: 174px
                 & .rope-vert__item
                     width: 30px
             &__left 
@@ -1389,6 +1395,10 @@ body
     .rope-vert-ls 
         top: -200px
 @media (max-width: 424px)
+    .rope-hero
+        top: 261px
+    .rope-vert-main 
+        top: 255px
     .rope-vert-ls 
         top: -100px
 @media (max-width: 399px)
