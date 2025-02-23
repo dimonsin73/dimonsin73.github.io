@@ -78,3 +78,14 @@ vieuplittles.forEach((vie) => observer.observe(vie))
 
 const vielefts = document.querySelectorAll('.vie-left')
 vielefts.forEach((vie) => observer.observe(vie))
+
+const ropeVertItemArr = document.querySelectorAll('.rope-vert__item')
+for (let i = 0; i < ropeVertItemArr.length; i++) {
+    const element = ropeVertItemArr[i];
+    element.addEventListener('mouseenter', function(){
+        element.classList.add('blic-active')
+        setTimeout(() => {
+            element.classList.remove('blic-active')
+          }, "500");
+    })
+}

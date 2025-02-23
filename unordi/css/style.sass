@@ -723,6 +723,7 @@ body
         &-main 
             width: calc( 100% - 160px )
         &__item 
+            position: relative
             display: flex
             flex-direction: column
             &-units 
@@ -852,7 +853,151 @@ body
     &-active 
         opacity: 1
         transform: translate(0)
-    
+@keyframes blic1
+    0% 
+        top: 9px
+        left: 31px
+        opacity: 1
+    20% 
+        top: 128px
+        left: 31px
+    25% 
+        top: 147px
+        left: 16px
+    45% 
+        top: 290px
+        left: 16px
+    50% 
+        top: 312px
+        left: 31px
+    75% 
+        top: 412px
+        left: 31px
+    80% 
+        top: 433px
+        left: 46px
+    95% 
+        top: 571px
+        left: 46px
+        opacity: 1
+    100%
+        top: 571px
+        left: 46px
+        opacity: 0
+@keyframes blic2
+    0% 
+        top: 9px
+        left: 31px
+        opacity: 1
+    55% 
+        top: 269px
+        left: 31px
+    60% 
+        top: 288px
+        left: 16px
+    95% 
+        top: 484px
+        left: 16px
+        opacity: 1
+    100%
+        top: 484px
+        left: 16px
+        opacity: 0
+@keyframes blic3
+    0% 
+        top: 9px
+        left: 31px
+        opacity: 1
+    5% 
+        top: 60px
+        left: 31px
+    10% 
+        top: 77px
+        left: 16px
+    40% 
+        top: 215px
+        left: 16px
+    45% 
+        top: 232px
+        left: 31px
+    95% 
+        top: 433px
+        left: 31px
+        opacity: 1
+    100%
+        top: 433px
+        left: 31px
+        opacity: 0
+@keyframes blic4
+    0% 
+        top: 9px
+        left: 16px
+        opacity: 1
+    20% 
+        top: 110px
+        left: 16px
+    25% 
+        top: 127px
+        left: 31px
+    55% 
+        top: 304px
+        left: 31px
+    60% 
+        top: 322px
+        left: 16px
+    95% 
+        top: 580px
+        left: 16px
+        opacity: 1
+    100%
+        top: 580px
+        left: 16px
+        opacity: 0
+@keyframes blic5
+    0% 
+        top: 9px
+        left: 31px
+        opacity: 1
+    30% 
+        top: 182px
+        left: 31px
+    35% 
+        top: 199px
+        left: 16px
+    95% 
+        top: 520px
+        left: 16px
+        opacity: 1
+    100%
+        top: 520px
+        left: 16px
+        opacity: 0
+.blic
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 12px
+    height: 16px
+    border-radius: 50%
+    background-color: var(--white)
+    opacity: 0
+    filter: blur(4px)
+    &-active #lightning-1
+        animation: blic1 0.5s linear 0s
+    &-active #lightning-2
+        animation: blic2 0.5s linear 0s
+    &-active #lightning-3
+        animation: blic3 0.5s linear 0s
+    &-active #lightning-4
+        animation: blic4 0.5s linear 0s
+    &-active #lightning-5
+        animation: blic5 0.5s linear 0s
+    &-active #lightning-6
+        animation: blic6 0.5s linear 0s
+    &-active #lightning-7
+        animation: blic7 0.5s linear 0s
+    &-active #lightning-8
+        animation: blic8 0.5s linear 0s
 .light-theme
     background-color: var(--white)
     color: var(--gray-800)
