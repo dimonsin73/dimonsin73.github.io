@@ -866,6 +866,7 @@ body {
        column-gap: 40px;
 }
 .directions__item {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1065,6 +1066,18 @@ body {
   height: 0;
   overflow: hidden;
 }
+.rope__last2 {
+  height: 0;
+  overflow: hidden;
+}
+.rope__last3 {
+  height: 0;
+  overflow: hidden;
+}
+.rope__last4 {
+  height: 0;
+  overflow: hidden;
+}
 
 .knot {
   position: absolute;
@@ -1170,7 +1183,26 @@ body {
     height: 0;
   }
   100% {
-    height: 200px;
+    height: 202px;
+  }
+}
+@keyframes anilast4 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 375px;
+  }
+}
+@keyframes opacity2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .vie {
@@ -1197,6 +1229,9 @@ body {
   opacity: 0;
   transition: opacity 1.5s ease;
 }
+.vie-opacity2 {
+  opacity: 0;
+}
 .vie-active {
   opacity: 1;
   transform: translate(0);
@@ -1205,7 +1240,7 @@ body {
   height: 700px;
 }
 .vie-active .rope-height {
-  height: 900px;
+  height: 770px;
 }
 .vie-active .rope-width {
   overflow: visible;
@@ -1219,6 +1254,12 @@ body {
 }
 .vie-active .rope__last3 {
   animation: anilast3 1s linear forwards;
+}
+.vie-active .rope__last4 {
+  animation: anilast4 1s linear forwards;
+}
+.vie-active .vie-opacity2 {
+  animation: opacity2 2s linear forwards;
 }
 
 @keyframes blic1 {

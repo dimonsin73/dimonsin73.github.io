@@ -18,13 +18,14 @@ form.addEventListener('submit', function(event){
     const emailRegularExpression = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w)$/
     const passwordRegularExpression = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{4,}/g
     // Валидация Названия компаниии
-    console.log(employee.checked)
     if (employee.checked) {
         if (companyRegularExpression.test(company.value)) {
             company.classList.remove('attribut__input-error')
             validation++
         } else {
             company.classList.add('attribut__input-error')
+            const errorStr = company.parentElement.querySelector('.attribut__errorstr')
+            errorStr.classList.add('attribut__errorstr-active')
         }
     } else {
         validation++
@@ -35,6 +36,8 @@ form.addEventListener('submit', function(event){
         validation++
     } else {
         name.classList.add('attribut__input-error')
+        const errorStr = name.parentElement.querySelector('.attribut__errorstr')
+        errorStr.classList.add('attribut__errorstr-active')
     }
     // Валидация Фамилия
     if (nameRegularExpression.test(surname.value)) {
@@ -42,6 +45,8 @@ form.addEventListener('submit', function(event){
         validation++
     } else {
         surname.classList.add('attribut__input-error')
+        const errorStr = surname.parentElement.querySelector('.attribut__errorstr')
+        errorStr.classList.add('attribut__errorstr-active')
     }
     // Валидация Email
     if (emailRegularExpression.test(email.value)) {
@@ -49,6 +54,8 @@ form.addEventListener('submit', function(event){
         validation++
     } else {
         email.classList.add('attribut__input-error')
+        const errorStr = email.parentElement.parentElement.querySelector('.attribut__errorstr')
+        errorStr.classList.add('attribut__errorstr-active')
     }
     // Валидация Пароль
     if (passwordRegularExpression.test(password.value)) {
@@ -56,6 +63,8 @@ form.addEventListener('submit', function(event){
         validation++
     } else {
         password.classList.add('attribut__input-error')
+        const errorStr = password.parentElement.parentElement.querySelector('.attribut__errorstr')
+        errorStr.classList.add('attribut__errorstr-active')
     }
     // Проверка совпадения паролей 
     if (passwordSecond.value == password.value) {

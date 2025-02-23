@@ -397,6 +397,15 @@ body
         @include body-small
         color: var(--Red-error)
         transition: opacity 0.3s ease
+    &__errorstr 
+        position: absolute
+        bottom: -20px
+        opacity: 0
+        @include body-small
+        color: var(--Red-error)
+        transition: opacity 0.3s ease
+        &-active
+            opacity: 1
     &-hide
         display: none
 @media (max-width:1201px)
@@ -418,7 +427,7 @@ body
         padding: 32px 24px
         &__wantfind-content
             grid-template-columns: 1fr
-@media ( max-height: 980px )
+@media ( max-height: 865px )
     .hero
         position: static
     

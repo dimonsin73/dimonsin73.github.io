@@ -639,6 +639,7 @@ body
         display: flex
         column-gap: 40px
     &__item 
+        flex: 0 0 auto
         display: flex
         flex-direction: column
         align-items: center
@@ -793,7 +794,15 @@ body
     &__last
         height: 0
         overflow: hidden
-
+    &__last2
+        height: 0
+        overflow: hidden
+    &__last3
+        height: 0
+        overflow: hidden
+    &__last4
+        height: 0
+        overflow: hidden
 .knot
     position: absolute
     left: -110px
@@ -867,7 +876,19 @@ body
     0%
         height: 0
     100%
-        height: 200px
+        height: 202px
+@keyframes anilast4
+    0%
+        height: 0
+    100%
+        height: 375px
+@keyframes opacity2
+    0%
+        opacity: 0
+    50%
+        opacity: 0
+    100%
+        opacity: 1
 .vie 
     opacity: 0
     transform: translateX(150px)
@@ -887,14 +908,15 @@ body
     &-opacity 
         opacity: 0
         transition: opacity 1.5s ease
-    &-horizont
+    &-opacity2
+        opacity: 0
     &-active 
         opacity: 1
         transform: translate(0)
         & .rope__year
             height: 700px
         & .rope-height
-            height: 900px
+            height: 770px
         & .rope-width 
             overflow: visible
             animation: aniwidth 0.5s linear forwards
@@ -904,6 +926,10 @@ body
             animation: anilast2 1s linear forwards
         & .rope__last3
             animation: anilast3 1s linear forwards
+        & .rope__last4
+            animation: anilast4 1s linear forwards
+        & .vie-opacity2 
+            animation: opacity2 2s linear forwards
         
 @keyframes blic1
     0% 

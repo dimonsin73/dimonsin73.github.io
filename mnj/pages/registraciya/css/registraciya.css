@@ -442,6 +442,18 @@ body {
   color: var(--Red-error);
   transition: opacity 0.3s ease;
 }
+.attribut__errorstr {
+  position: absolute;
+  bottom: -20px;
+  opacity: 0;
+  font: 400 13px/16px "Inter", "sans-serif";
+  letter-spacing: 0;
+  color: var(--Red-error);
+  transition: opacity 0.3s ease;
+}
+.attribut__errorstr-active {
+  opacity: 1;
+}
 .attribut-hide {
   display: none;
 }
@@ -475,7 +487,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
-@media (max-height: 980px) {
+@media (max-height: 865px) {
   .hero {
     position: static;
   }
