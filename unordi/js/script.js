@@ -65,7 +65,7 @@ const callback = (entries, observer) => {
 }
 const options = {
     rootMargin: '0px',
-    threshold: 0.4,
+    threshold: 0.1,
 }
 const observer = new IntersectionObserver(callback, options)
 const vies = document.querySelectorAll('.vie')
@@ -80,6 +80,11 @@ const vieopacitys = document.querySelectorAll('.vie-opacity')
 vieopacitys.forEach((vie) => observer.observe(vie))
 const vieyears = document.querySelectorAll('.vie-year')
 vieyears.forEach((vie) => observer.observe(vie))
+const viewidths = document.querySelectorAll('.vie-width')
+viewidths.forEach((vie) => observer.observe(vie))
+const vielasts = document.querySelectorAll('.vie-last')
+vielasts.forEach((vie) => observer.observe(vie))
+
 
 const ropeVertItemArr = document.querySelectorAll('.rope-vert__item')
 for (let i = 0; i < ropeVertItemArr.length; i++) {
