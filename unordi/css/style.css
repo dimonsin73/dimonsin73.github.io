@@ -625,7 +625,6 @@ body {
 }
 .product__text {
   max-width: 800px;
-  animation: main-rt 1.5s linear forwards;
 }
 .product__content {
   position: relative;
