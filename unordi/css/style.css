@@ -406,6 +406,17 @@ body {
 .hero__arrow path {
   transition: stroke 0.3s ease;
 }
+.hero__backlight {
+  position: absolute;
+  bottom: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  filter: blur(250px);
+}
 
 .trading {
   position: relative;
