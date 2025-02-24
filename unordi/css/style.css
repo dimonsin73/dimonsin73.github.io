@@ -2856,10 +2856,16 @@ body {
   .hero .rope-vert__item {
     width: 45px;
   }
+  .hero .rope-vert__sec {
+    width: 30px;
+  }
 }
 @media (max-height: 759px) {
   .hero .rope-vert__item {
     width: 30px;
+  }
+  .hero .rope-vert__sec {
+    width: 20px;
   }
 }
 @media (max-width: 1799px) {
