@@ -185,7 +185,7 @@ body {
   opacity: 0.3;
 }
 
-.border-theme {
+.border-theme, .border8w-theme {
   transition: border-color 0.3s ease;
 }
 
@@ -400,6 +400,7 @@ body {
   padding: 28px 23px;
   border: 1px solid;
   border-radius: 50%;
+  z-index: 100;
   transition: border-color 0.3s ease;
   animation: main-rtpx 0.5s linear forwards;
 }
@@ -408,12 +409,13 @@ body {
 }
 .hero__backlight {
   position: absolute;
-  bottom: -200px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   width: 700px;
-  height: 400px;
-  border-radius: 50%;
+  height: 300px;
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
   background-color: rgba(255, 255, 255, 0.5);
   filter: blur(250px);
 }
@@ -1030,7 +1032,9 @@ body {
 .rope-vert-ls {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   left: 60px;
+  bottom: 250px;
 }
 .rope-vert__bottom {
   margin-top: -7px;
@@ -2929,7 +2933,6 @@ body {
     display: none !important;
   }
   .rope-vert-ls {
-    top: -180px;
     align-items: center;
   }
   .rope-vert-ls-dark {
@@ -2944,9 +2947,6 @@ body {
   .product__wrapper {
     flex-direction: column;
     row-gap: 40px;
-  }
-  .rope-vert-ls {
-    top: -50px;
   }
 }
 @media (max-width: 1389px) {
@@ -3020,6 +3020,9 @@ body {
   }
   .hero__arrow svg {
     transform: rotate(90deg);
+  }
+  .hero__backlight {
+    display: none !important;
   }
   .trading {
     width: 100vw;
@@ -3190,15 +3193,18 @@ body {
   .rope-vert__direction {
     width: 45px;
   }
-  .rope-vert-ls {
-    top: -250px;
-  }
   .rope__year {
     top: 0;
   }
   .rope__line {
     max-height: 6px;
     margin-top: 14px;
+  }
+  .rope__last3 {
+    display: none;
+  }
+  .vie-width {
+    display: none;
   }
   .knot-small {
     display: flex;
@@ -3320,7 +3326,6 @@ body {
   }
   .rope-vert-ls {
     left: 0;
-    top: -585px;
   }
   .footer__wrapper {
     flex-direction: column;
@@ -3337,39 +3342,11 @@ body {
     width: calc(100% - 32px);
   }
 }
-@media (max-width: 599px) {
-  .rope-vert-ls {
-    top: -500px;
-  }
-}
-@media (max-width: 519px) {
-  .rope-vert-ls {
-    top: -400px;
-  }
-}
-@media (max-width: 499px) {
-  .rope-vert-ls {
-    top: -300px;
-  }
-}
-@media (max-width: 459px) {
-  .rope-vert-ls {
-    top: -200px;
-  }
-}
 @media (max-width: 424px) {
   .rope-hero {
     top: 261px;
   }
   .rope-vert-main {
     top: 255px;
-  }
-  .rope-vert-ls {
-    top: -150px;
-  }
-}
-@media (max-width: 399px) {
-  .rope-vert-ls {
-    top: 0;
   }
 }/*# sourceMappingURL=style.css.map */
