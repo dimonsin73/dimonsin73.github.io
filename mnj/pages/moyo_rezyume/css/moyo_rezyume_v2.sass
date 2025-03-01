@@ -1,0 +1,501 @@
+:root
+    --Primary-10: #003B73
+    --Primary-20: #004C95
+    --Primary-30: #005EB8
+    --Primary-40: #006FD8
+    --Primary-50: #0095FF
+    --Primary-60: #199FFF
+    --Primary-70: #3FAFFF
+    --Primary-80: #66BFFF
+    --Primary-90: #8FD0FF
+    --Primary-100: #B8E1FF
+    --Gray-10: #3F3F45
+    --Gray-20: #53535A
+    --Gray-30: #65656F
+    --Gray-40: #898990
+    --Gray-50: #A0A1A9
+    --Gray-60: #B4B5BE
+    --Gray-70: #C7C9CF
+    --Gray-80: #DBDDE1
+    --Gray-90: #E6E8EC
+    --Gray-100: #F2F3F5
+    --Gray-110: #F7F7F7
+    --White: #FFFFFF
+    --Black: #202123
+    --Red-error: #FF0034
+    --Border: #E7E8EA
+    --Shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1)
+    --Shadow-dropdawn: 0px 2px 16px 0px rgba(0, 0, 0, 0.20)
+
+@mixin headline-large
+    font: 700 40px/48px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin headline-medium
+    font: 700 30px/36px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin headline-small
+    font: 700 22px/30px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin title-large
+    font: 600 20px/28px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin title-medium
+    font: 600 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin title-small
+    font: 600 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-extralarge
+    font: 500 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin subtitle-large
+    font: 500 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin subtitle-medium
+    font: 500 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-small
+    font: 500 10px/14px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin body-large
+    font: 400 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin body-medium
+    font: 400 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin body-small
+    font: 400 13px/16px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin label-large
+    font: 600 13px/18px 'Inter', 'sans-serif'
+    letter-spacing: +0.1px
+@mixin label-medium
+    font: 600 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: +0.5px
+@mixin label-small
+    font: 600 11px/16px 'Inter', 'sans-serif'
+    letter-spacing: +12%
+@mixin btn-medium
+    font: 600 15px/150% 'Inter', 'sans-serif'
+    letter-spacing: +0.01em 
+@mixin btn-small
+    font: 600 13px/150% 'Inter', 'sans-serif'
+    letter-spacing: +0.03em   
+@mixin text-medium
+    font: 500 14px/140% 'Inter', 'sans-serif'
+    letter-spacing: +0.02em   
+@mixin currency
+    font: 500 18px/20px 'Inter', 'sans-serif'
+    letter-spacing: 0  
+
+body
+    background-color: var(--Gray-100)
+.container
+    max-width: 1090px
+    min-width: 390px
+    margin: 0 auto
+.wrapper
+    display: grid
+    grid-template-columns: 360px 1fr
+    gap: 24px
+    grid-auto-flow: dense
+.svg-container
+    display: flex
+    justify-content: center
+    align-items: center
+.title
+    &-h2 
+        @include headline-medium
+        color: var(--Black)
+    &-h3
+        @include headline-small 
+        color: var(--Black)
+    &-large
+        @include title-large
+        color: var(--Black)
+    &-medium
+        margin-bottom: 16px
+        @include title-medium
+        color: var(--Black)
+    &-mb24
+        margin-bottom: 24px
+.btn
+    padding: 11.75px 24px
+    border-radius: 8px
+    @include btn-medium
+    transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+    &-primary
+        border: 1px solid var(--Primary-40)
+        background-color: var(--Primary-40)
+        color: var(--White)
+        &:hover
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+        &:active
+            border: 1px solid var(--Primary-20)
+            background-color: var(--Primary-20)
+    &-bg-gray
+        border: 1px solid var(--Gray-80)
+        background-color: var(--Gray-80)
+        color: var(--Black)
+        &:hover
+            border: 1px solid var(--Gray-70)
+            background-color: var(--Gray-70)
+        &:active
+            border: 1px solid var(--Gray-60)
+            background-color: var(--Gray-60)
+    &-transparent
+        border: 1px solid var(--Black)
+        background-color: initial
+        color: var(--Black)
+        &:hover
+            border: 1px solid var(--Primary-40)
+            background-color: var(--Primary-40)
+            color: var(--White)
+        &:active
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+            color: var(--White)
+.small-visible
+    display: none
+.burger
+    flex: 0 0 20px
+    margin-right: 24px
+.logo
+    flex: 0 0 auto
+    margin-right: 32px
+
+.attribut
+    position: relative
+    display: flex
+    flex-direction: column
+    padding-bottom: 36px
+    border-radius: 16px
+    box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.10)
+    background-color: var(--White)
+    &__items
+        display: flex
+        flex-direction: column
+        gap: 36px
+        margin-top: 24px
+    &__item
+        display: flex
+        flex-direction: column
+        gap: 10px
+        padding: 0 36px
+    &-vline24
+        display: flex
+        gap: 24px
+        padding-top: 36px
+    &__info
+        display: flex
+        flex-direction: column
+        gap: 24px
+        width: 100%
+        padding: 0 36px
+        overflow: hidden
+        &-text 
+            @include subtitle-large
+            color: var(--Gray-60)
+        &-btn 
+            margin-top: auto
+            padding: 5.25px 16px
+            border-radius: 6px
+            @include btn-small     
+    &__part
+        display: flex
+        flex-direction: column
+        gap: 18px
+        padding-left: 16px
+        &-title 
+            font: 600 21px/36px 'Inter', 'sans-serif'
+            line-height: -0.75px
+    &__salary
+        display: flex
+        align-items: center
+    &__tags
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 12px
+        flex-wrap: wrap
+        &-tag 
+            padding: 8px 12px
+            border: 0.75px solid var(--Gray-70)
+            border-radius: 18px
+            @include subtitle-large
+            color: var(--Gray-20)
+            white-space: nowrap
+    &-grid
+        display: grid
+        grid-template-columns: 1fr 56px
+        column-gap: 16px
+    &-border
+        padding: 24px 0
+        border-top: 1px solid var(--Border)
+        border-bottom: 1px solid var(--Border)
+    &__avatar
+        flex: 0 0 auto
+        width: 160px
+        height: 160px
+        margin: 0 36px
+        border-radius: 12px
+        overflow: hidden
+    &__social
+        display: flex
+        flex-direction: column
+        row-gap: 24px
+        justify-content: space-between
+        &-title 
+            @include title-small
+            color: var(--Black)
+        &-text 
+            @include subtitle-small
+            color: var(--Gray-40)
+        &-item 
+            display: flex
+            gap: 8px
+        &-col 
+            display: flex
+            flex-direction: column
+            row-gap: 12px 
+            &:first-child
+                overflow: hidden
+        &-content
+            overflow: hidden
+            white-space: nowrap
+    &__titlesmall
+        display: flex
+        gap: 12px
+        padding: 17.5px 36px
+        border-bottom: 1px solid var(--Gray-80)
+        font: 500 15px/24px 'Inter', 'sans-serif'
+        color: var(--Gray-20)
+    &__left
+        display: flex
+        gap: 5px
+        align-items: center
+        &-title 
+            @include subtitle-large
+            color: var(--Black)
+        &-text
+            @include subtitle-large
+            color: var(--Gray-30)
+    &__right
+        display: flex
+        flex-direction: column
+        gap: 8px
+        &-subtitle 
+            margin-bottom: 0px
+        &-subtext 
+            @include subtitle-medium
+            color: var(--Gray-30)
+        &-text
+            @include body-medium
+            color: var(--Black)
+    &__head
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        flex-direction: column
+        gap: 12px
+    &__name
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+.insearch
+    display: flex
+    padding: 4px 8px
+    border-radius: 16px
+    background-color: rgba(0, 111, 216, 0.1)
+    @include subtitle-small
+    color: var(--Primary-40)
+
+.header
+    padding: 0 24px
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__menu
+        display: flex
+        align-items: center
+        padding: 10.5px 0
+        &-item
+            display: flex
+            align-items: stretch
+            column-gap: 24px
+            height: 40px
+            padding: 0 32px
+            border-right: 1px solid var(--Gray-80)
+            &:first-child
+                padding-left: 0
+            &:last-child
+                padding-right: 0
+                border-right: none
+    &__search
+        flex: 0 0 auto
+        display: flex
+        align-items: center
+        column-gap: 6px
+        &-text 
+            font: 500 13px/18px 'Inter', sans-serif
+            letter-spacing: 0.01em
+            color: var(--Gray-30)
+    &__mail, &__bell
+        position: relative
+        flex: 0 0 auto
+        width: 20px
+        margin-right: 16px
+        &-num
+            position: absolute
+            top: -2px
+            right: -14px
+            width: 16px
+            height: 16px
+            border-radius: 50%
+            background-color: var(--Primary-50)
+            font: 700 12px/140% 'Inter', sans-serif
+            letter-spacing: 0.01em
+            color: #fff
+    &__account
+        flex: 0 2 auto
+        overflow: hidden
+        text-wrap: nowrap
+        &-company
+            margin-bottom: 3px
+            overflow: hidden
+            font: 700 14px/20px 'Inter', sans-serif
+            color: var(--Black)
+            text-transform: uppercase
+            text-wrap: nowrap
+        &-name
+            font: 500 12px/17px 'Inter', sans-serif
+            color: var(--Gray-40)
+    &__setting
+        flex: 0 0 auto
+        width: 20px
+    &__logout
+        flex: 0 0 auto
+        width: 20px
+    &__print
+        padding: 10px 0
+        &-logo svg
+            height: 20px
+    &__starts
+        font: 700 9px/16px 'Inter', 'sans-serif'
+        letter-spacing: -0.16px
+        color: var(--Primary-50)
+.head
+    margin-bottom: 24px
+    &__title
+        margin-bottom: 24px
+        @include headline-large
+        color: var(--Black)
+    &__path
+        display: flex
+        column-gap: 8px
+        margin-bottom: 4px
+        @include subtitle-medium
+        color: var(--Gray-30)
+        &-link 
+            color: var(--Gray-30)
+    &__btns
+        display: flex
+        gap: 24px
+    &__btn
+        margin-right: auto
+        &-icon 
+            padding: 9px 11px
+            border-radius: 8px
+            border: 0.5px solid var(--Black)
+.resume
+    margin-bottom: 24px
+.print
+    &__container
+        width: 595px
+    &__wrapper
+        padding: 32px
+        border-radius: 0
+
+@media (max-width:1473px)
+    .main
+        grid-template-columns: auto
+        gap: 0
+    .head
+        margin-left: 16px
+        margin-right: 16px
+        overflow: hidden
+    .videovacancy
+        display: none
+@media (max-width:1023px)
+    .wrapper
+        grid-template-columns: 240px 1fr
+        margin: 0 24px
+    .header
+        &__search-text
+            display: none
+        &__account
+            width: 161px
+    .attribut
+        &__item
+            padding-left: 16px
+            padding-right: 16px
+        &__titlesmall
+            padding-left: 16px
+            padding-right: 16px
+        &__avatar
+            margin-left: 16px
+            margin-right: 16px
+        &__info
+            padding-left: 16px
+            padding-right: 16px
+
+@media (max-width:767px)
+    .logo svg
+        width: 102px
+        height: 24px
+    .wrapper
+        grid-template-columns: 1fr
+    .small-hidden
+        display: none
+    .small-visible
+        display: block
+    .btn
+        padding: 11.95px 23.2px
+    .logo
+        margin-right: 24px
+    .header
+        padding: 0 32px
+        &__menu
+            padding: 12px 0
+            &-item
+                padding-right: 0
+                border: none
+    .head
+        &__title
+            @include headline-medium
+        &__btns
+            gap: 16px
+        &__btn
+            margin-right: 0
+    .attribut
+        &__wrapper
+            grid-template-columns: 1fr
+        &-vline24
+            padding-top: 16px
+        &__textarea
+            height: 240px
+            &-headlong
+                padding-top: 68px
+    .attributes .attribut__textarea
+        height: 152px
+    .difference__item
+        flex: 0 1 auto     
+                display: block
+    .tabcontent__btns 
+        margin-left: 16px
+        margin-right: 16px
+    .insearch
+        margin-left: 0
+    

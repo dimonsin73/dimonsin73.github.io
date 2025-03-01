@@ -8,6 +8,7 @@ const password = document.getElementById('password')
 const passwordSecond = document.getElementById('password-second')
 // Радиокнопка 
 const employee = document.getElementById('employee')
+const wantfind = document.getElementById('wantfind')
 
 form.addEventListener('submit', function(event){
     event.preventDefault()
@@ -70,9 +71,22 @@ form.addEventListener('submit', function(event){
     if (passwordSecond.value == password.value) {
         validation++
     }
-
     if (validation == '6') {
-        alert("Данный введены правильно");
+        const userMNJ = {
+            company: company.value,
+            name: name.value,
+            surname: surname.value,
+            email: email.value,
+            password: password.value
+        }
+        localStorage.setItem('userMNJ', JSON.stringify(userMNJ));
+
+        if (wantfind.checked) {
+            location.href = '../moj_profil_kandidat/moj_profil_kandidat.html';
+        }
+        if (employee.checked) {
+            location.href = '../moj_profil_rabotodatel/moj_profil_rabotodatel.html';
+        }
     }
 })
 // Убрать состояние Error
