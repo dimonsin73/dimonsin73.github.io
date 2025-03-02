@@ -145,6 +145,7 @@ body {
   border: 1px solid var(--Gray-80);
   background-color: initial;
   color: var(--Black);
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 .btn-black path {
   stroke: var(--Black);
@@ -215,6 +216,11 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.header__left {
+  display: flex;
+  gap: 24px;
+  margin-right: 32px;
+}
 .header__menu {
   display: flex;
   align-items: center;
@@ -283,11 +289,24 @@ body {
   font: 500 12px/17px "Inter", sans-serif;
   color: var(--Gray-40);
 }
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header__user-account {
+  overflow: hidden;
+  font: 700 14px/20px "Inter", sans-serif;
+  color: var(--Black);
+  text-transform: uppercase;
+  text-wrap: nowrap;
+}
 .header__setting {
   flex: 0 0 auto;
   width: 20px;
 }
 .header__logout {
+  display: flex;
   flex: 0 0 auto;
   width: 20px;
 }
@@ -591,7 +610,7 @@ body {
   align-items: center;
   margin-left: auto;
   padding: 11px;
-  transition: stroke 0.3s ease, fill 0.3s ease;
+  transition: stroke 0.3s ease, fill 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 .card__btnheart-active path {
   stroke: var(--Red-error);
@@ -734,6 +753,7 @@ body {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
 }
 .modal__wrapper {
   width: 700px;

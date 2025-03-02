@@ -329,6 +329,23 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.header__left {
+  display: flex;
+  gap: 24px;
+  margin-right: 32px;
+}
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header__user-account {
+  overflow: hidden;
+  font: 700 14px/20px "Inter", sans-serif;
+  color: var(--Black);
+  text-transform: uppercase;
+  text-wrap: nowrap;
+}
 .header__menu {
   display: flex;
   align-items: center;
@@ -402,6 +419,7 @@ body {
   width: 20px;
 }
 .header__logout {
+  display: flex;
   flex: 0 0 auto;
   width: 20px;
 }

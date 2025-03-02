@@ -307,6 +307,20 @@ body
         display: flex
         justify-content: space-between
         align-items: center
+    &__left 
+        display: flex
+        gap: 24px
+        margin-right: 32px
+    &__user 
+        display: flex
+        align-items: center
+        gap: 8px
+        &-account
+            overflow: hidden
+            font: 700 14px/20px 'Inter', sans-serif
+            color: var(--Black)
+            text-transform: uppercase
+            text-wrap: nowrap
     &__menu
         display: flex
         align-items: center
@@ -366,6 +380,7 @@ body
         flex: 0 0 auto
         width: 20px
     &__logout
+        display: flex
         flex: 0 0 auto
         width: 20px
     &__print

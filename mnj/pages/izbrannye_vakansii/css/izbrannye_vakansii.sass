@@ -172,6 +172,7 @@ body
         border: 1px solid var(--Gray-80)
         background-color: initial
         color: var(--Black)
+        transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease
         & path
             stroke: var(--Black)
             transition: stroke 0.3s ease
@@ -220,6 +221,10 @@ body
         display: flex
         justify-content: space-between
         align-items: center
+    &__left 
+        display: flex
+        gap: 24px
+        margin-right: 32px
     &__menu
         display: flex
         align-items: center
@@ -275,10 +280,21 @@ body
         &-name
             font: 500 12px/17px 'Inter', sans-serif
             color: var(--Gray-40)
+    &__user 
+        display: flex
+        align-items: center
+        gap: 8px
+        &-account
+            overflow: hidden
+            font: 700 14px/20px 'Inter', sans-serif
+            color: var(--Black)
+            text-transform: uppercase
+            text-wrap: nowrap
     &__setting
         flex: 0 0 auto
         width: 20px
     &__logout
+        display: flex
         flex: 0 0 auto
         width: 20px
     &__print
@@ -510,7 +526,7 @@ body
         align-items: center
         margin-left: auto
         padding: 11px
-        transition: stroke 0.3s ease, fill 0.3s ease
+        transition: stroke 0.3s ease, fill 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease
         &-active path
             stroke: var(--Red-error)
             fill: var(--Red-error)
@@ -622,6 +638,7 @@ body
     align-items: center
     justify-content: center
     background: rgba(0, 0, 0, 0.70)
+    z-index: 1000
     &__wrapper
         width: 700px
         padding: 40px

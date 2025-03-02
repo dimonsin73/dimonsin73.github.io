@@ -8,6 +8,8 @@ fullname.textContent = `${ret.surname} ${ret.name}`;
 fullname.classList.remove('text-gray');
 emailTitle.textContent = `${ret.email}`;
 
+const headerUserAccount = document.querySelector('.header__user-account')
+headerUserAccount.textContent = `${ret.surname} ${ret.name.charAt(0)}.`
 // Маска для телефона
 $(function(){
     $("#phone-input").mask("+7 (999) 999-9999");
