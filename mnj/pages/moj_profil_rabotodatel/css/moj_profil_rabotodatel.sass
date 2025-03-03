@@ -915,6 +915,9 @@ body
         display: flex
         justify-content: space-between
         align-items: center
+    &__left 
+        display: flex
+        gap: 24px
     &__menu
         display: flex
         align-items: center
@@ -974,6 +977,7 @@ body
         flex: 0 0 auto
         width: 20px
     &__logout
+        display: flex
         flex: 0 0 auto
         width: 20px
     &__print
@@ -1247,6 +1251,7 @@ input[type="number"]::-webkit-inner-spin-button
     border-right: 1px solid var(--Gray-80)
     background-color: var(--Gray-100)
     transition: left 0.3s ease
+    z-index: 100
     &__wrapper 
         display: flex
         flex-direction: column
