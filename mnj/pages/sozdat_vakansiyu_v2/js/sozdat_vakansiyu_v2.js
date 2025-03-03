@@ -1,3 +1,4 @@
+const ret = JSON.parse(localStorage.getItem('userMNJ'));
 const headerAccountCompany = document.querySelector('.header__account-company')
 const headerAccountName = document.querySelector('.header__account-name')
 headerAccountCompany.textContent = `${ret.company}`

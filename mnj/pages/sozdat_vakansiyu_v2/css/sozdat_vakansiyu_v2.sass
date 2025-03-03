@@ -91,7 +91,7 @@ body
     background-color: var(--Gray-100)
 .main
     display: grid
-    grid-template-columns: 350px 726px 350px
+    grid-template-columns: 264px 726px 350px
     column-gap: 24px
     justify-content: center
     &__center
@@ -504,6 +504,9 @@ body
         display: flex
         justify-content: space-between
         align-items: center
+    &__left 
+        display: flex
+        gap: 24px
     &__menu
         display: flex
         align-items: center
@@ -563,6 +566,7 @@ body
         flex: 0 0 auto
         width: 20px
     &__logout
+        display: flex
         flex: 0 0 auto
         width: 20px
 .head
@@ -570,8 +574,11 @@ body
     margin-bottom: 24px
     &__title
         margin-bottom: 24px
+        margin-left: -44px
         @include headline-large
         color: var(--Black)
+    &__btn 
+        margin-left: -44px
 .attributes
     margin-bottom: 24px
 .respons  
@@ -653,12 +660,16 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button 
     -webkit-appearance: none
 
-@media (max-width:1473px)
+@media (max-width:1439px)
     .main
         grid-template-columns: auto
         gap: 0
     .head
         grid-column: span 1
+        &__title
+            margin-left: 0
+        &__btn
+            margin-left: 0
     .videovacancy
         display: none
 @media (max-width:1023px)
@@ -734,4 +745,89 @@ input[type="number"]::-webkit-inner-spin-button
         margin-right: 16px
     .insearch
         margin-left: 0           
-                
+.aside 
+    position: fixed
+    top: 0
+    width: 264px
+    height: 100%
+    border-right: 1px solid var(--Gray-80)
+    background-color: var(--Gray-100)
+    transition: left 0.3s ease
+    z-index: 100
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        row-gap: 8px
+        padding: 0 16px
+    &__logo 
+        padding: 24px 50px
+    &__line 
+        width: 100%
+        height: 1px
+        margin: 8px 0
+        background-color: var(--Gray-80)
+    &__item 
+        display: flex
+        align-items: center
+        column-gap: 12px
+        height: 40px
+        padding: 8px
+        border-radius: 8px
+        transition: background-color 0.3s ease
+        & path 
+            fill: var(--Gray-30)
+            transition: fill 0.3s ease
+        &-bgwhite 
+            background-color: var(--White)
+        &-active 
+            background-color: var(--Gray-90)
+            & path 
+                fill: var(--Black)
+            & .aside__item-text 
+                color: var(--Black)
+        &-text 
+            font: 600 13px/130% 'Inter', 'sans-serif'
+            letter-spacing: 0.39px
+            color: var(--Gray-10)
+            white-space: nowrap
+            transition: color 0.3s ease
+        &-num 
+            margin-left: auto
+            padding: 2px 8px
+            border-radius: 12px
+            background: rgba(0, 111, 216, 0.10)
+            @include title-small
+            color: var(--Primary-40)
+@media (max-width: 1439px)
+    .aside
+        left: -264px
+        &-active 
+            left: 0
+    .burger 
+        display: block
+@media (max-width:1023px)
+    .header
+        &__search-text
+            display: none
+        &__account
+            width: 161px
+@media (max-width:767px)
+    .logo svg
+        width: 102px
+        height: 24px
+    .small-hidden
+        display: none
+    .small-visible
+        display: block
+    .btn
+        flex: 0 0 auto
+        padding: 11px   
+    .logo
+        margin-right: 24px
+    .header
+        padding: 0 24px
+        &__menu
+            padding: 12px 0
+            &-item
+                padding-right: 0
+                border: none 
