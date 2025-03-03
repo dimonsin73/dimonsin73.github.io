@@ -182,4 +182,25 @@ main {
     gap: 40px;
     padding: 16px;
   }
+}
+.verstka {
+  display: flex;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+}
+.verstka__item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.verstka__link {
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Primary-40);
+}
+
+@media (max-width: 767px) {
+  .verstka {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */

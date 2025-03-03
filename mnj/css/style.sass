@@ -205,3 +205,17 @@ main
             gap: 40px
             padding: 16px
 
+.verstka
+    display: flex
+    column-gap: 16px
+    &__item 
+        display: flex
+        flex-direction: column
+        row-gap: 16px
+    &__link
+        font: 600 16px/22px 'Inter', 'sans-serif'
+        letter-spacing: -0.1px  
+        color: var(--Primary-40)
+@media (max-width: 767px)
+    .verstka
+        flex-direction: column
