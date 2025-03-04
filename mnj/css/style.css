@@ -185,8 +185,7 @@ main {
 }
 .verstka {
   display: flex;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
+  gap: 16px;
 }
 .verstka__item {
   display: flex;
@@ -202,5 +201,8 @@ main {
 @media (max-width: 767px) {
   .verstka {
     flex-direction: column;
+    height: 400px;
+    padding-right: 20px;
+    overflow-y: scroll;
   }
 }/*# sourceMappingURL=style.css.map */
