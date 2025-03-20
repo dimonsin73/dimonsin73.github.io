@@ -3,8 +3,9 @@
   flex-direction: column;
   align-items: center;
   row-gap: 56px;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
   background: linear-gradient(112.84deg, #1F50FE -88.75%, #FF5821 1.31%, #002BC5 101.15%);
 }
 
