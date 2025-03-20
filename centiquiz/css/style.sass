@@ -1,0 +1,136 @@
+.body   
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 56px
+    width: 100vw
+    height: 100vh
+    background: linear-gradient(112.84deg, #1F50FE -88.75%, #FF5821 1.31%, #002BC5 101.15%)
+.header
+    padding-top: 62px
+.logo 
+    width: 144px
+    height: 40px
+.main
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 56px
+    padding-bottom: 62px
+.title 
+    padding: 0 26px
+    font: 800 80px/109px 'Open Sans', 'sans-serif'
+    letter-spacing: 4%
+    color: #fff
+.form
+    display: flex
+    flex-direction: column
+    row-gap: 16px
+    &__input
+        width: 308px
+        padding: 16px
+        border: 1px solid #fff
+        border-radius: 6px
+        font: 600 16px/24px 'Open Sans', 'sans-serif'
+        letter-spacing: 0.5px
+        color: #fff
+        &::placeholder 
+            color: #fff
+            opacity: 0.5
+    &__label
+        display: flex
+        align-items: center
+        column-gap: 16px
+        padding-left: 5px
+        &-active .form__check
+            background-color: #fff
+    &__check
+        flex: 0 0 auto
+        width: 10px
+        height: 10px
+        outline: 2px solid #fff
+        outline-offset: 3px
+        border-radius: 50%
+        transition: background-color 0.3s ease
+    &__radio 
+        display: none
+    &__option
+        font: 600 16px/24px 'Open Sans', 'sans-serif'
+        letter-spacing: 0.5px
+        color: #fff
+.question
+    display: none
+    flex-direction: column
+    align-items: flex-start
+    row-gap: 56px
+    width: 308px
+    &-active 
+        display: flex
+    &__title 
+        width: 308px
+        font: 800 24px/33px 'Open Sans', 'sans-serif'
+        letter-spacing: 4%
+        color: #fff
+.send
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 308px
+    padding: 10px
+    margin-top: 40px
+    border-radius: 8px
+    background-color: #fff
+    font: 600 14px/20px 'Open Sans', 'sans-serif'
+    letter-spacing: 0.1px
+.view
+    align-items: center
+.modal 
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    display: none
+    align-items: center
+    justify-content: center
+    background-color: #191919CC
+    z-index: 100
+    &-active 
+        display: flex
+    &__wrapper
+        display: flex
+        flex-direction: column
+        row-gap: 16px
+        width: 312px
+        padding: 24px 16px
+        border-radius: 8px
+        background-color: #fff
+    &__title 
+        margin-bottom: 18px
+        font: 700 16px/22px 'Open Sans', 'sans-serif'
+        letter-spacing: 4%
+        color: #191919
+    &__text 
+        font: 600 12px/16px 'Open Sans', 'sans-serif'
+        letter-spacing: 4%
+        color: #191919
+    &__number 
+        font-weight: 800
+    &__btn 
+        margin-left: auto
+        padding: 10px 24px
+        border-radius: 8px
+        background-color: #1F50FE
+        font: 600 14px/22px 'Open Sans', 'sans-serif'
+        letter-spacing: 0.1px
+        color: #fff
+@media (max-width: 767px)
+    .body
+        background: linear-gradient(167.99deg, #FF5821 0%, #002BC5 100%)
+    .header
+        padding-top: 58px
+    .main
+        padding-bottom: 58px
+    .title
+        font-size: 40px
+        line-height: 54px
