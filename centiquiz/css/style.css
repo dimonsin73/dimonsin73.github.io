@@ -29,7 +29,7 @@
 .title {
   padding: 0 26px;
   font: 800 80px/109px "Open Sans", "sans-serif";
-  letter-spacing: 4%;
+  letter-spacing: 0.04em;
   color: #fff;
 }
 
@@ -39,7 +39,6 @@
   row-gap: 16px;
 }
 .form__input {
-  width: 308px;
   padding: 16px;
   border: 1px solid #fff;
   border-radius: 6px;
@@ -86,17 +85,15 @@
 .question {
   display: none;
   flex-direction: column;
-  align-items: flex-start;
   row-gap: 56px;
-  width: 308px;
+  width: 480px;
 }
 .question-active {
   display: flex;
 }
 .question__title {
-  width: 308px;
   font: 800 24px/33px "Open Sans", "sans-serif";
-  letter-spacing: 4%;
+  letter-spacing: 0.04em;
   color: #fff;
 }
 
@@ -105,8 +102,9 @@
   align-items: center;
   justify-content: center;
   width: 308px;
-  padding: 10px;
+  margin: 0 auto;
   margin-top: 40px;
+  padding: 10px;
   border-radius: 8px;
   background-color: #fff;
   font: 600 14px/20px "Open Sans", "sans-serif";
@@ -144,12 +142,12 @@
 .modal__title {
   margin-bottom: 18px;
   font: 700 16px/22px "Open Sans", "sans-serif";
-  letter-spacing: 4%;
+  letter-spacing: 0.04em;
   color: #191919;
 }
 .modal__text {
   font: 600 12px/16px "Open Sans", "sans-serif";
-  letter-spacing: 4%;
+  letter-spacing: 0.04em;
   color: #191919;
 }
 .modal__number {
@@ -178,5 +176,8 @@
   .title {
     font-size: 40px;
     line-height: 54px;
+  }
+  .question {
+    width: 308px;
   }
 }/*# sourceMappingURL=style.css.map */
