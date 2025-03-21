@@ -18,15 +18,14 @@ for (let i = 0; i < formRadioArr.length; i++) {
     })
 }
 
-const sendButtons = document.querySelectorAll('.send')
+const nextButtons = document.querySelectorAll('.next')
 const questions = document.querySelectorAll('.question')
 const modal = document.querySelector('.modal')
-for (let i = 0; i < sendButtons.length; i++) {
-    const sendButton = sendButtons[i];
-    sendButton.addEventListener('click', function(event){
-        event.preventDefault()
-        const fr = sendButton.parentElement.querySelectorAll('.form__radio')
-        const datasetText = sendButton.dataset.btn
+for (let i = 0; i < nextButtons.length; i++) {
+    const nextButton = nextButtons[i];
+    nextButton.addEventListener('click', function(){
+        const fr = nextButton.parentElement.querySelectorAll('.form__radio')
+        const datasetText = nextButton.dataset.btn
         let fre = 0
         for (let i = 0; i < fr.length; i++) {
             const element = fr[i];
@@ -38,22 +37,21 @@ for (let i = 0; i < sendButtons.length; i++) {
             fre ++
         }
         if (fre === 1) {
-            if (datasetText === 'last') {
-                modal.classList.add('modal-active')
-            } else {
-                for (let i = 0; i < questions.length; i++) {
-                    const question = questions[i];
-                    question.classList.remove('question-active')
-                    if (question.dataset.view === datasetText) {
-                        question.classList.add('question-active')
-                    }
+            for (let i = 0; i < questions.length; i++) {
+                const question = questions[i];
+                question.classList.remove('question-active')
+                if (question.dataset.view === datasetText) {
+                    question.classList.add('question-active')
                 }
             }
         } 
         
     })
 }
-
+const send = document.querySelector('.send')
+send.addEventListener('click', function(){
+    modal.classList.add('modal-active')
+})
 const modalBtn = document.querySelector('.modal__btn')
 const view = document.querySelector('.view')
 modalBtn.addEventListener('click', function(){

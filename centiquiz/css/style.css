@@ -19,10 +19,6 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 56px;
   padding-bottom: 62px;
 }
 
@@ -33,10 +29,17 @@
   color: #fff;
 }
 
-.form {
+.question__content {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 56px;
 }
 .form__input {
   padding: 16px;
@@ -95,6 +98,20 @@
   font: 800 24px/33px "Open Sans", "sans-serif";
   letter-spacing: 0.04em;
   color: #fff;
+}
+
+.next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 308px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  font: 600 14px/20px "Open Sans", "sans-serif";
+  letter-spacing: 0.1px;
 }
 
 .send {

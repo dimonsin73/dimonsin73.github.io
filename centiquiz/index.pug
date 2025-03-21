@@ -13,153 +13,154 @@ html(lang="ru")
             .logo 
                 img(src="images/logo.svg", alt="")
         main.main
-            form.question.question-active.view(data-view="main")
-                h1.title CentiQuiz
-                .form
-                    input(type="text" placeholder='ФИО').form__input
-                    input(type="tel" placeholder='Номер телефона').form__input
-                    input(type="text" placeholder='Ник в Telegram').form__input
-                    button.send(data-btn='question-1') Отправить
-            form.question(data-view="question-1")
-                h2.question__title Когда была выпущена первая банковская карта?
-                .form
-                    label(for="first-card-1").form__label
-                        input(type="radio", name="first-card").form__radio#first-card-1
-                        .form__check
-                        p.form__option 1930-е
-                    label(for="first-card-2").form__label
-                        input(type="radio", name="first-card").form__radio#first-card-2
-                        .form__check 
-                        p.form__option 1940-е
-                    label(for="first-card-3").form__label
-                        input(type="radio", name="first-card").form__radio#first-card-3
-                        .form__check
-                        p.form__option 1950-е
-                    label(for="first-card-4").form__label
-                        input(type="radio", name="first-card").form__radio#first-card-4
-                        .form__check
-                        p.form__option 1960-е
-                    button.send(data-btn='question-2') Отправить
-            form.question(data-view="question-2")
-                h2.question__title Сколько кредитных организаций работает в России в 2025 году?
-                .form
-                    label(for="organizations-1").form__label
-                        input(type="radio", name="organizations").form__radio#organizations-1
-                        .form__check
-                        p.form__option 353
-                    label(for="organizations-2").form__label
-                        input(type="radio", name="organizations").form__radio#organizations-2
-                        .form__check 
-                        p.form__option 561
-                    label(for="organizations-3").form__label
-                        input(type="radio", name="organizations").form__radio#organizations-3
-                        .form__check
-                        p.form__option 120
-                    label(for="organizations-4").form__label
-                        input(type="radio", name="organizations").form__radio#organizations-4
-                        .form__check
-                        p.form__option 39
-                    button.send(data-btn='question-3') Отправить
-            form.question(data-view="question-3")
-                h2.question__title Какие IT-специалисты задействованы в разработке решений для финансового сектора?
-                .form
-                    label(for="IT-specialists-1").form__label
-                        input(type="radio", name="IT-specialists").form__radio#IT-specialists-1
-                        .form__check
-                        p.form__option Системный аналитик
-                    label(for="IT-specialists-2").form__label
-                        input(type="radio", name="IT-specialists").form__radio#IT-specialists-2
-                        .form__check 
-                        p.form__option UI/UX-дизайнер
-                    label(for="IT-specialists-3").form__label
-                        input(type="radio", name="IT-specialists").form__radio#IT-specialists-3
-                        .form__check
-                        p.form__option Архитектор
-                    label(for="IT-specialists-4").form__label
-                        input(type="radio", name="IT-specialists").form__radio#IT-specialists-4
-                        .form__check
-                        p.form__option Все вышеперечисленные ответы
-                    button.send(data-btn='question-4') Отправить
-            form.question(data-view="question-4")
-                h2.question__title Какие задачи выполняет Data Scientist на банковских проектах?
-                .form
-                    label(for="data-scientist-1").form__label
-                        input(type="radio", name="data-scientist").form__radio#data-scientist-1
-                        .form__check
-                        p.form__option Анализирует Big Data, строит модели прогнозирования и отчетности
-                    label(for="data-scientist-2").form__label
-                        input(type="radio", name="data-scientist").form__radio#data-scientist-2
-                        .form__check 
-                        p.form__option Оценивает риски и потенциальные уязвимости, внедряет меры защиты данных
-                    label(for="data-scientist-3").form__label
-                        input(type="radio", name="data-scientist").form__radio#data-scientist-3
-                        .form__check
-                        p.form__option Управляет ресурсами и взаимодействует со стейкхолдерами
-                    label(for="data-scientist-4").form__label
-                        input(type="radio", name="data-scientist").form__radio#data-scientist-4
-                        .form__check
-                        p.form__option Отвечает за автоматизацию процессов разработки и развертывания приложений
-                    button.send(data-btn='question-5') Отправить
-            form.question(data-view="question-5")
-                h2.question__title Сколько операций в секунду способен обрабатывать Storm Blockchain?
-                .form
-                    label(for="storm-blockchain-1").form__label
-                        input(type="radio", name="storm-blockchain").form__radio#storm-blockchain-1
-                        .form__check
-                        p.form__option до 100 000 операций в секунду
-                    label(for="storm-blockchain-2").form__label
-                        input(type="radio", name="storm-blockchain").form__radio#storm-blockchain-2
-                        .form__check 
-                        p.form__option до 250 000 операций в секунду
-                    label(for="storm-blockchain-3").form__label
-                        input(type="radio", name="storm-blockchain").form__radio#storm-blockchain-3
-                        .form__check
-                        p.form__option до 50 000 операций в секунду
-                    label(for="storm-blockchain-4").form__label
-                        input(type="radio", name="storm-blockchain").form__radio#storm-blockchain-4
-                        .form__check
-                        p.form__option до 10 000 операций в секунду
-                    button.send(data-btn='question-6') Отправить
-            form.question(data-view="question-6")
-                h2.question__title В какие сроки наши специалисты проводят интеграцию Storm Blockchain в IT-инфраструктуру?
-                .form
-                    label(for='integration-1').form__label
-                        input(type="radio", name="integration").form__radio#integration-1
-                        .form__check
-                        p.form__option около месяца
-                    label(for='integration-2').form__label
-                        input(type="radio", name="integration").form__radio#integration-2
-                        .form__check 
-                        p.form__option от 7 до 14 дней
-                    label(for='integration-3').form__label
-                        input(type="radio", name="integration").form__radio#integration-3
-                        .form__check
-                        p.form__option до 3 месяцев
-                    label(for='integration-4').form__label
-                        input(type="radio", name="integration").form__radio#integration-4
-                        .form__check
-                        p.form__option 1-2 месяца
-                    button.send(data-btn='question-7') Отправить
-            form.question(data-view="question-7")
-                h2.question__title Какие преимущества можно выделить при использовании аутстаффинга для банковских проектов?
-                .form
-                    label(for='advantages-1').form__label
-                        input(type="radio", name="advantages").form__radio#advantages-1
-                        .form__check
-                        p.form__option Привлечение узкопрофильных специалистов под конкретные задачи
-                    label(for='advantages-2').form__label
-                        input(type="radio", name="advantages").form__radio#advantages-2
-                        .form__check 
-                        p.form__option Оперативное расширение или сокращение команды без долгого внутреннего найма
-                    label(for='advantages-3').form__label
-                        input(type="radio", name="advantages").form__radio#advantages-3
-                        .form__check
-                        p.form__option Снижение административных издержек
-                    label(for='advantages-4').form__label
-                        input(type="radio", name="advantages").form__radio#advantages-4
-                        .form__check
-                        p.form__option Все вышеперечисленные ответы верны
-                    button.send(data-btn='last') Отправить
+            form(action="" method="post").form 
+                .question.question-active.view(data-view="main")
+                    h1.title CentiQuiz
+                    .question__content
+                        input(type="text" name="name" placeholder='ФИО').form__input
+                        input(type="tel" name="tel" placeholder='Номер телефона').form__input
+                        input(type="text" name="telegram" placeholder='Ник в Telegram').form__input
+                        button.next(type="button" data-btn='question-1') Отправить
+                .question(data-view="question-1")
+                    h2.question__title Когда была выпущена первая банковская карта?
+                    .question__content
+                        label(for="first-card-1").form__label
+                            input(type="radio", name="q0" value="1930-е").form__radio#first-card-1
+                            .form__check
+                            p.form__option 1930-е
+                        label(for="first-card-2").form__label
+                            input(type="radio", name="q0" value="1940-е").form__radio#first-card-2
+                            .form__check 
+                            p.form__option 1940-е
+                        label(for="first-card-3").form__label
+                            input(type="radio", name="q0" value="1950-е").form__radio#first-card-3
+                            .form__check
+                            p.form__option 1950-е
+                        label(for="first-card-4").form__label
+                            input(type="radio", name="q0" value="1960-е").form__radio#first-card-4
+                            .form__check
+                            p.form__option 1960-е
+                        button.next(type="button" data-btn='question-2') Отправить
+                .question(data-view="question-2")
+                    h2.question__title Сколько кредитных организаций работает в России в 2025 году?
+                    .question__content
+                        label(for="organizations-1").form__label
+                            input(type="radio", name="q1" value="353").form__radio#organizations-1
+                            .form__check
+                            p.form__option 353
+                        label(for="organizations-2").form__label
+                            input(type="radio", name="q1" value="561").form__radio#organizations-2
+                            .form__check 
+                            p.form__option 561
+                        label(for="organizations-3").form__label
+                            input(type="radio", name="q1" value="120").form__radio#organizations-3
+                            .form__check
+                            p.form__option 120
+                        label(for="organizations-4").form__label
+                            input(type="radio", name="q1" value="39").form__radio#organizations-4
+                            .form__check
+                            p.form__option 39
+                        button.next(type="button" data-btn='question-3') Отправить
+                .question(data-view="question-3")
+                    h2.question__title Какие IT-специалисты задействованы в разработке решений для финансового сектора?
+                    .question__content
+                        label(for="IT-specialists-1").form__label
+                            input(type="radio", name="q2" value="Системный аналитик").form__radio#IT-specialists-1
+                            .form__check
+                            p.form__option Системный аналитик
+                        label(for="IT-specialists-2").form__label
+                            input(type="radio", name="q2" value="UI/UX-дизайнер").form__radio#IT-specialists-2
+                            .form__check 
+                            p.form__option UI/UX-дизайнер
+                        label(for="IT-specialists-3").form__label
+                            input(type="radio", name="q2" value="Архитектор").form__radio#IT-specialists-3
+                            .form__check
+                            p.form__option Архитектор
+                        label(for="IT-specialists-4").form__label
+                            input(type="radio", name="q2" value="Все вышеперечисленные ответы").form__radio#IT-specialists-4
+                            .form__check
+                            p.form__option Все вышеперечисленные ответы
+                        button.next(type="button" data-btn='question-4') Отправить
+                .question(data-view="question-4")
+                    h2.question__title Какие задачи выполняет Data Scientist на банковских проектах?
+                    .question__content
+                        label(for="data-scientist-1").form__label
+                            input(type="radio", name="q3" value="Анализирует Big Data, строит модели прогнозирования и отчетности").form__radio#data-scientist-1
+                            .form__check
+                            p.form__option Анализирует Big Data, строит модели прогнозирования и отчетности
+                        label(for="data-scientist-2").form__label
+                            input(type="radio", name="q3" value="Оценивает риски и потенциальные уязвимости, внедряет меры защиты данных").form__radio#data-scientist-2
+                            .form__check 
+                            p.form__option Оценивает риски и потенциальные уязвимости, внедряет меры защиты данных
+                        label(for="data-scientist-3").form__label
+                            input(type="radio", name="q3" value="Управляет ресурсами и взаимодействует со стейкхолдерами").form__radio#data-scientist-3
+                            .form__check
+                            p.form__option Управляет ресурсами и взаимодействует со стейкхолдерами
+                        label(for="data-scientist-4").form__label
+                            input(type="radio", name="q3" value="Отвечает за автоматизацию процессов разработки и развертывания приложений").form__radio#data-scientist-4
+                            .form__check
+                            p.form__option Отвечает за автоматизацию процессов разработки и развертывания приложений
+                        button.next(type="button" data-btn='question-5') Отправить
+                .question(data-view="question-5")
+                    h2.question__title Сколько операций в секунду способен обрабатывать Storm Blockchain?
+                    .question__content
+                        label(for="storm-blockchain-1").form__label
+                            input(type="radio", name="q4" value="до 100 000 операций в секунду").form__radio#storm-blockchain-1
+                            .form__check
+                            p.form__option до 100 000 операций в секунду
+                        label(for="storm-blockchain-2").form__label
+                            input(type="radio", name="q4" value="до 250 000 операций в секунду").form__radio#storm-blockchain-2
+                            .form__check 
+                            p.form__option до 250 000 операций в секунду
+                        label(for="storm-blockchain-3").form__label
+                            input(type="radio", name="q4" value="до 50 000 операций в секунду").form__radio#storm-blockchain-3
+                            .form__check
+                            p.form__option до 50 000 операций в секунду
+                        label(for="storm-blockchain-4").form__label
+                            input(type="radio", name="q4" value="до 10 000 операций в секунду").form__radio#storm-blockchain-4
+                            .form__check
+                            p.form__option до 10 000 операций в секунду
+                        button.next(type="button" data-btn='question-6') Отправить
+                .question(data-view="question-6")
+                    h2.question__title В какие сроки наши специалисты проводят интеграцию Storm Blockchain в IT-инфраструктуру?
+                    .question__content
+                        label(for='integration-1').form__label
+                            input(type="radio", name="q5" value="около месяца").form__radio#integration-1
+                            .form__check
+                            p.form__option около месяца
+                        label(for='integration-2').form__label
+                            input(type="radio", name="q5" value="от 7 до 14 дней").form__radio#integration-2
+                            .form__check 
+                            p.form__option от 7 до 14 дней
+                        label(for='integration-3').form__label
+                            input(type="radio", name="q5" value="до 3 месяцев").form__radio#integration-3
+                            .form__check
+                            p.form__option до 3 месяцев
+                        label(for='integration-4').form__label
+                            input(type="radio", name="q5" value="1-2 месяца").form__radio#integration-4
+                            .form__check
+                            p.form__option 1-2 месяца
+                        button.next(type="button" data-btn='question-7') Отправить
+                .question(data-view="question-7")
+                    h2.question__title Какие преимущества можно выделить при использовании аутстаффинга для банковских проектов?
+                    .question__content
+                        label(for='advantages-1').form__label
+                            input(type="radio", name="q6" value="Привлечение узкопрофильных специалистов под конкретные задачи").form__radio#advantages-1
+                            .form__check
+                            p.form__option Привлечение узкопрофильных специалистов под конкретные задачи
+                        label(for='advantages-2').form__label
+                            input(type="radio", name="q6" value="Оперативное расширение или сокращение команды без долгого внутреннего найма").form__radio#advantages-2
+                            .form__check 
+                            p.form__option Оперативное расширение или сокращение команды без долгого внутреннего найма
+                        label(for='advantages-3').form__label
+                            input(type="radio", name="q6" value="Снижение административных издержек").form__radio#advantages-3
+                            .form__check
+                            p.form__option Снижение административных издержек
+                        label(for='advantages-4').form__label
+                            input(type="radio", name="q6" value="Все вышеперечисленные ответы верны").form__radio#advantages-4
+                            .form__check
+                            p.form__option Все вышеперечисленные ответы верны
+                        button.send(type="submit" data-btn='last') Отправить
         .modal
             .modal__wrapper 
                 .modal__victory
