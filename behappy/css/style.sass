@@ -90,7 +90,7 @@ s
         border-radius: 45px
         box-shadow: 0 12px 60px rgba(247,93,187,1)
         background: linear-gradient(180deg, rgba(247,93,187,1) 0%, rgba(195,39,244,1) 100%)
-        font: 700 19px/20px 'Montserrat', 'sans-serif'
+        font: 700 18px/20px 'Montserrat', 'sans-serif'
         color: #fff
         text-transform: uppercase
 .modules
@@ -446,7 +446,8 @@ s
         display: flex
         flex-direction: column
         gap: 26px
-        width: 600px
+        max-width: 600px
+        width: 100%
         padding: 40px 75px
         border-radius: 8px
         background-color: #fff
@@ -483,3 +484,65 @@ s
         grid-template-columns: 1fr
         justify-items: center
         row-gap: 32px
+@media (max-width: 1023px)
+    .rate__timer
+        flex-direction: column
+        width: 100%
+        margin: 0
+@media (max-width: 767px)
+    .behappy__author-title
+        font-size: 24px
+        line-height: 28px
+    .behappy__author-text
+        font-size: 28px
+        line-height: 30px
+    .behappy__title
+        font-size: 46px
+        line-height: 50px
+    .behappy__text
+        font-size: 24px
+        line-height: 36px
+    .modules__title
+        text-align: center
+        line-height: 46px
+    .modules__item
+        padding: 0 12px
+    .rate__timer 
+        padding: 12px
+    .rate__timer .cd_timer ul li .cd_bg 
+        width: 100px !important
+    .rate__timer .cd_timer ul li .cd_bg
+        margin: 0 6px !important
+        font-size: 16px
+    .rate__timer .cd_timer .cd_num
+        font-size: 50px !important
+        line-height: 60px !important
+    .increase__title
+        font-size: 36px
+        line-height: 40px
+    .increase__text
+        font-size: 18px
+        line-height: 24px
+    .increase__item-text
+        font-size: 20px
+        line-height: 23px
+    .increase__item-btext
+        font-size: 23px
+        line-height: 23px
+    .increase__item-img 
+        padding: 0
+    .increase__item-subtext
+        font-size: 18px
+    .increase__item-rose
+        padding: 12px
+    .increase__item-line
+        gap: 10px
+    .increase__item-lineb
+        gap: 10px  
+    .modal
+        align-items: start
+        height: 100% 
+    .modal__form 
+        padding: 40px 16px
+    .modal__btn
+        margin: 0
