@@ -1,5 +1,10 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
+  min-width: 390px;
 }
 
 main {
@@ -114,7 +119,7 @@ s {
 .main-btn {
   padding: 35px 50px;
   border-radius: 45px;
-  box-shadow: 0 12px 60px rgb(247, 93, 187);
+  box-shadow: 0 11px 27px rgba(247, 93, 187, 0.68);
   background: linear-gradient(180deg, rgb(247, 93, 187) 0%, rgb(195, 39, 244) 100%);
   font: 700 18px/20px "Montserrat", "sans-serif";
   color: #fff;
@@ -253,7 +258,6 @@ s {
 .rate__title {
   font: 400 70px/70px "Appetite pro", "sans-serif";
   color: #ff3399;
-  text-transform: uppercase;
 }
 .rate__content {
   display: grid;
@@ -307,6 +311,9 @@ s {
 }
 .rate__item-rose .rate__btn {
   border: 2px solid #fff;
+}
+.rate__item-rose .rate__price-full s {
+  color: #313131;
 }
 .rate__item-title {
   width: calc(100% - 66px);
@@ -381,10 +388,6 @@ s {
   font: 700 30px/36px "Montserrat", "sans-serif";
   color: #ff3399;
   text-align: center;
-}
-
-.rate__timer .cd_days {
-  display: none !important;
 }
 
 .rate__timer .cd_timer ul li .cd_bg {
@@ -601,7 +604,19 @@ s {
   .rate__content {
     grid-template-columns: 1fr;
   }
+  .rate__timer {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .rate__timer .cd_timer ul li .cd_bg {
+    margin: 0 6px !important;
+  }
+  .increase {
+    padding-bottom: 175px;
+  }
   .increase__wrapper {
+    position: relative;
     flex-direction: column;
   }
   .increase__content {
@@ -610,17 +625,20 @@ s {
   .increase__item {
     flex: 0 0 100%;
   }
+  .increase__rose-rt {
+    top: -25%;
+  }
+  .increase__rose-lb {
+    bottom: -25%;
+  }
   .footer__wrapper {
     grid-template-columns: 1fr;
     justify-items: center;
     row-gap: 32px;
   }
-}
-@media (max-width: 1023px) {
-  .rate__timer {
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
+  .increase__btn {
+    position: absolute;
+    bottom: -110px;
   }
 }
 @media (max-width: 767px) {
@@ -635,10 +653,12 @@ s {
   .behappy__title {
     font-size: 46px;
     line-height: 50px;
+    text-align: center;
   }
   .behappy__text {
     font-size: 24px;
     line-height: 36px;
+    text-align: center;
   }
   .modules__title {
     text-align: center;
@@ -660,6 +680,9 @@ s {
   .rate__timer .cd_timer .cd_num {
     font-size: 50px !important;
     line-height: 60px !important;
+  }
+  .rate__timer .cd_timer .cd_text {
+    font: 400 14px/20px "Montserrat", "sans-serif" !important;
   }
   .increase__title {
     font-size: 36px;
@@ -695,11 +718,41 @@ s {
   .modal {
     align-items: start;
     height: 100%;
+    overflow-y: scroll;
   }
   .modal__form {
-    padding: 40px 16px;
+    gap: 16px;
+    padding: 30px 16px;
   }
   .modal__btn {
     margin: 0;
+  }
+  .modal__input {
+    padding: 10px 20px;
+  }
+  .modal__btn {
+    padding: 20px 50px;
+  }
+  .behappy {
+    background-position: -485px;
+  }
+  .behappy__content {
+    align-items: center;
+  }
+  .footer__item {
+    align-items: center;
+  }
+}
+@media (max-width: 499px) {
+  .rate__timer .cd_timer ul li .cd_bg {
+    width: 70px !important;
+  }
+  .rate__timer .cd_timer .cd_num {
+    font-size: 24px !important;
+    line-height: 24px !important;
+  }
+  .rate__timer .cd_timer .cd_text {
+    margin-left: -10px;
+    font-size: 10px;
   }
 }/*# sourceMappingURL=style.css.map */

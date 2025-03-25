@@ -26,7 +26,7 @@ html(lang="ru")
                                 p.behappy__author-text Надежды Майер
                             h1.behappy__title Искусство быть счастливой
                             p.behappy__text Научись правильно подбирать ключи к умам и сердцам людей, чтобы стать везучей в отношениях женщиной
-                            button(type="button" data-rate="vip").main-btn.modal-btn Хочу быть счастливой
+                            a(href="#rate").main-btn Хочу быть счастливой
             section.modules
                 img.modules__rose.modules__rose-lt(src="images/modul_rose-l.png", alt="")
                 img.modules__rose.modules__rose-rt(src="images/modul_rose-r.png", alt="")
@@ -109,7 +109,7 @@ html(lang="ru")
                                 .modules__result
                                     h3.modules__result-title Результат: 
                                     p.modules__result-text У тебя будет невероятно крутая и подробная инструкция: как выстроить продуктивное и взаимовыгодное деловое общение с клиентами, руководителем, подчиненными, коллегами и пр. В зависимости от их психотипа. Практически, набор ключей к сердцу и уму любого человека. Если твой финансовый результаты связаны с общением (продажи, организация мероприятий, услуги), этот модуль - просто must have      
-            section.rate
+            section.rate#rate
                 .container 
                     .rate__wrapper 
                         h2.rate__title Тарифы
@@ -129,34 +129,34 @@ html(lang="ru")
                                 p.rate__item-text Куратор
                                 .rate__item-line
                                 p.rate__item-text 
-                                    | Домашние задания с проверкой куратором,<br>
+                                    | Домашние задания<br> с проверкой куратором,<br>
                                     strong
                                         s без обратной связи
                                 .rate__item-line
-                                p.rate__item-text Тесты на проверку понимания материала по каждому из доступных модулей
+                                p.rate__item-text Тесты на проверку понимания материала<br> по каждому из доступных модулей
                                 .rate__item-line
                                 p.rate__item-text 
-                                    s Нет доступа в чат по профайлингу
+                                    s Нет доступа в чат<br> по профайлингу
                                 .rate__item-line
                                 p.rate__item-text 
-                                    s Нет доступа к участию в вебинарах поддержки, только записи
+                                    s Нет доступа к участию<br> в вебинарах поддержки, только записи
                                 .rate__item-line
                                 p.rate__item-text 
-                                    | Ответы на вопросы по материалам программы от куратора<br>
+                                    | Ответы на вопросы<br> по материалам программы<br> от куратора<br>
                                     span.rate__item-span (только в личном кабинете)
                                 .rate__item-line
                                 p.rate__item-text 
-                                    | Работа с тренажерами на отработку навыков профайлинга - 
+                                    | Работа с тренажерами<br> на отработку навыков профайлинга - 
                                     span.rate__item-span 3 месяца
                                 .rate__item-line
                                 p.rate__item-text
-                                    s Нет личной работы с психологом
+                                    s Нет личной работы<br> с психологом
                                 .rate__item-line
                                 p.rate__item-text
                                     s Нет персональной консультации профайлера
                                 .rate__item-line
                                 p.rate__item-text
-                                    s Нет возможности поступить на программу повышения квалификации <br>“Профайлинг в консультировании”
+                                    s Нет возможности поступить на программу повышения квалификации <br>“Профайлинг<br> в консультировании”
                                 .rate__item-line
                                 .rate__price 
                                     .rate__price-left 
@@ -165,7 +165,7 @@ html(lang="ru")
                                         p.rate__price-discount Скидка 45 %
                                     p.rate__price-right 49 900 руб
                                 button(type="button" data-rate="min").rate__btn.modal-btn Заказать
-                                p.rate__installment Оформить рассрочку от 4 990 руб./месяц
+                                button(type="button" data-rate="min").rate__installment.modal-btn Оформить рассрочку от 4 990 руб./месяц
                             .rate__item.rate__item-rose
                                 h3.rate__item-title Стандарт
                                 p.rate__item-text 
@@ -181,32 +181,32 @@ html(lang="ru")
                                 p.rate__item-text Куратор
                                 .rate__item-line
                                 p.rate__item-text 
-                                    | Домашние задания с проверкой куратором и с персональной обратной связью
+                                    | Домашние задания<br> с проверкой куратором и&nbsp;с&nbsp;персональной обратной связью
                                 .rate__item-line
-                                p.rate__item-text Тесты на проверку понимания материала по каждому из доступных модулей
+                                p.rate__item-text Тесты на проверку понимания материала<br> по каждому из доступных модулей
                                 .rate__item-line
                                 p.rate__item-text 
-                                    | Доступ в чат тренинга по профайлингу <br>
+                                    | Доступ в чат тренинга<br> по профайлингу <br>
                                     span.rate__item-span - 5 месяцев
                                 .rate__item-line
                                 p.rate__item-text 
                                     | Участие в вебинарах поддержки, разборах кейсов<br>(“Кто это по психотипу?”)<br>+  записи вебинаров<br>
                                     span.rate__item-span - 5 месяцев
                                 .rate__item-line
-                                p.rate__item-text Ответы на вопросы по материалам программы от куратора (в личном кабинете, в чате тренинга, на вебинарах)
+                                p.rate__item-text Ответы на вопросы<br> по материалам программы<br> от куратора (в личном кабинете, в чате тренинга, на вебинарах)
                                 .rate__item-line
                                 p.rate__item-text 
-                                    | Работа с тренажерами на отработку навыков профайлинга - 
+                                    | Работа с тренажерами<br> на отработку навыков профайлинга - 
                                     span.rate__item-span 5 месяца
                                 .rate__item-line
                                 p.rate__item-text
-                                    s Нет личной работы с психологом
+                                    s Нет личной работы<br> с психологом
                                 .rate__item-line
                                 p.rate__item-text
                                     s Нет персональной консультации профайлера
                                 .rate__item-line
                                 p.rate__item-text
-                                    s Нет возможности поступить на программу повышения квалификации <br>“Профайлинг в консультировании”
+                                    s Нет возможности поступить на программу повышения квалификации <br>“Профайлинг<br> в консультировании”
                                 .rate__item-line
                                 .rate__price 
                                     .rate__price-left 
@@ -215,7 +215,7 @@ html(lang="ru")
                                         p.rate__price-discount Скидка 45 %
                                     p.rate__price-right 59 900 руб
                                 button(type="button" data-rate="standart").rate__btn.modal-btn Заказать
-                                p.rate__installment Оформить рассрочку от 5 990 руб./месяц
+                                button(type="button" data-rate="standart").rate__installment.modal-btn Оформить рассрочку от 5 990 руб./месяц
                             .rate__item.rate__item-white
                                 h3.rate__item-title VIP
                                 p.rate__item-text 
@@ -225,42 +225,42 @@ html(lang="ru")
                                 .rate__item-line
                                 p.rate__item-text 
                                     | Личный кабинет 24/7<br>
-                                    span.rate__item-span на 8 месяца
+                                    span.rate__item-span на 8 месяцев
                                 .rate__item-line
                                 p.rate__item-text Куратор
                                 .rate__item-line
-                                p.rate__item-text Домашние задания с проверкой куратором и с персональной обратной связью
+                                p.rate__item-text Домашние задания<br> с проверкой куратором и&nbsp;с&nbsp;персональной обратной связью
                                 .rate__item-line
-                                p.rate__item-text Тесты на проверку понимания материала по каждому из доступных модулей
+                                p.rate__item-text Тесты на проверку понимания материала<br> по каждому из доступных модулей
                                 .rate__item-line
                                 p.rate__item-text 
-                                    | Доступ в чат тренинга по профайлингу<br>
+                                    | Доступ в чат тренинга<br> по профайлингу<br>
                                     span.rate__item-span - 8 месяцев
                                 .rate__item-line
                                 p.rate__item-text 
                                     | Участие в вебинарах поддержки, разборах кейсов<br>(“Кто это по психотипу?”)<br>+  записи вебинаров<br>
                                     span.rate__item-span - 8 месяцев
                                 .rate__item-line
-                                p.rate__item-text Ответы на вопросы по материалам программы от куратора (в личном кабинете, в чате тренинга, на вебинарах)
+                                p.rate__item-text Ответы на вопросы<br> по материалам программы<br> от куратора (в личном кабинете, в чате тренинга, на вебинарах)
                                 .rate__item-line
                                 p.rate__item-text 
-                                    | Работа с тренажерами на отработку навыков профайлинга - 
+                                    | Работа с тренажерами<br> на отработку навыков профайлинга - 
                                     span.rate__item-span 8 месяца
                                 .rate__item-line
-                                p.rate__item-text Личная консультация с психологом<br> + чат с психологом 
+                                p.rate__item-text Личная консультация<br> с психологом<br> + чат с психологом 
                                 .rate__item-line
                                 p.rate__item-text Консультация профайлера
                                 .rate__item-line
-                                p.rate__item-text Возможность поступить на программу повышения квалификации<br> “Профайлинг в консультировании”
+                                p.rate__item-text Возможность поступить<br> на программу повышения квалификации<br> “Профайлинг<br> в консультировании”
                                 .rate__item-line
                                 .rate__price 
                                     .rate__price-left 
                                         p.rate__price-full
                                             s 169 900 руб
-                                        p.rate__price-discount Скидка 45 %
+                                        p.rate__price-discount Скидка 53 %
                                     p.rate__price-right 79 900 руб
                                 button(type="button" data-rate="vip").rate__btn.modal-btn Заказать
-                                p.rate__installment Оформить рассрочку от 4 990 руб./месяц
+                                button(type="button" data-rate="vip").rate__installment.modal-btn Оформить рассрочку от 4 990 руб./месяц
                         .rate__timer
                             h3.rate__timer-title Акция<br> закончится через:
                             <div>Загрузка таймера</div>
@@ -277,7 +277,7 @@ html(lang="ru")
                             img.increase__img(src="images/present.png", alt="present")
                             h2.increase__title Повышение тарифа
                             p.increase__text за быструю оплату во время эфира
-                            button(type="button" data-rate="vip").main-btn.modal-btn  Хочу быть счастливой 
+                            a(href="#rate").increase__btn.main-btn Хочу быть счастливой 
                         .increase__item.increase__item-rose
                             .increase__item-line
                                 p.increase__item-text Минимум
@@ -303,12 +303,13 @@ html(lang="ru")
                     .footer__item 
                         a.footer__link(href="") Политика конфиденциальности
         modal.modal 
-            form.modal__form(method="post")
+            form.modal__form(id="ltForm7456756" class="lt-normal-form lt-form-inner lt-form" action="https://womanproject.ru/pl/lite/block-public/process-html?id=2146414631" method="post" data-open-new-window="0")
                 button(type="button").modal__close
                     img.modal__close-img(src="images/close.png", alt="close")
                 .modal__head
                     h2.modal__title.modal__rate Тариф VIP
                     h2.modal__title.modal__price 79 900 руб 
+                <input type="hidden" name="formParams[setted_offer_id]" >
                 input(type="email" placeholder="Ваш электронный адрес").modal__input
                 input(type="text" placeholder="Введите ваше имя").modal__input
                 input(type="tel" placeholder="Введите ваш телефон").modal__input
@@ -322,4 +323,24 @@ html(lang="ru")
                     | и 
                     a(href="").modal__link согласен 
                     | получать новости и рассылки 
-                button(type="submit").modal__btn.main-btn Оформить заказ
+                button(type="submit" id="button8347342" style="color: white; background-color: ; " onclick="if(window['btnprs67e1199741aef']){return false;}window['btnprs67e1199741aef']=true;setTimeout(function(){window['btnprs67e1199741aef']=false},6000);return true;").modal__btn.main-btn Оформить заказ
+                <input type="hidden" id="139207367e1199735b73" name="__gc__internal__form__helper" class="__gc__internal__form__helper" value="">
+                <input type="hidden" id="139207367e1199735b73ref" name="__gc__internal__form__helper_ref" class="__gc__internal__form__helper_ref" value="">
+                <input type="hidden" name="requestTime" value="1742805399">
+                <input type="hidden" name="requestSimpleSign" value="45333f5ec4e853a32ea8b55feb87b8e2">
+                <input type="hidden" name="isHtmlWidget" value="1"/>
+                <span id="gccounterImgContainer"></span>
+
+<script>
+	window.addEventListener('load', function(){
+		let loc = document.getElementById("139207367e1199735b73");
+		loc.value = window.location.href;
+		let ref = document.getElementById("139207367e1199735b73ref");
+		ref.value = document.referrer;
+
+		let statUrl = "https://womanproject.ru/stat/counter?ref=" + encodeURIComponent(document.referrer)
+			+ "&loc=" + encodeURIComponent(document.location.href);
+		document.getElementById('gccounterImgContainer').innerHTML
+			= "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
+	});
+</script>
