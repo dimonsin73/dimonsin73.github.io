@@ -196,20 +196,42 @@ main
         justify-content: space-between
         gap: 40px
         height: 100%
-        padding: 30px 25px 40px 50px
+        padding: 30px 25px 40px 20px
         &-item 
+            display: flex
+            gap: 10px
             font: 400 22px/36px 'Gilroy', 'sans-serif'
             color: #333333  
 .happy
     &__head
         background: linear-gradient(90deg, rgba(255,158,110,1) 0%, rgba(255,90,154,1) 100%)
     &__item 
-        list-style-image: url(../images/happy.png)
+        &::before
+            content: ""
+            flex: 0 0 auto
+            display: block
+            width: 30px
+            height: 30px
+            margin-top: 2px
+            background:
+                image: url(../images/happy.png)
+                repeat: no-repeat
+                position: center
 .sad
     &__head
         background-color: #272727
     &__item 
-        list-style-image: url(../images/sad.png)
+        &::before
+            content: ""
+            flex: 0 0 auto
+            display: block
+            width: 30px
+            height: 30px
+            margin-top: 2px
+            background:
+                image: url(../images/sad.png)
+                repeat: no-repeat
+                position: center
 .reasons
     padding-top: 40px
     padding-bottom: 60px
@@ -297,7 +319,7 @@ main
             width: 80px
             height: 80px
             border-radius: 50%
-            background-color: red
+            background-color: #f71d4f
             transform: translateX(-50%)
         &-text 
             font: 400 24px/30px 'Gilroy', 'sans-serif'
@@ -581,13 +603,15 @@ main
     &__block 
         display: flex
         flex-direction: column
-        gap: 40px
+        gap: 26px
         padding: 16px
+        padding-bottom: 26px
         border-radius: 10px
         background-color: #1c1c1c
         &-img 
             border-radius: 10px
         &-text 
+            padding: 0 10px
             font: 600 24px/36px 'Gilroy', 'sans-serif'
             color: #fff
     &__text 
@@ -597,6 +621,7 @@ main
         color: #fff
         text-align: center
     &__baner 
+        margin: 0 70px
         padding: 40px
         border-radius: 10px
         background: linear-gradient(180deg, rgba(255,158,110,1) 0%, rgba(255,90,154,1) 100%)
@@ -623,8 +648,8 @@ main
         bottom: 0
         left: 0
         right: 0
-        opacity: 0.3
-        background: linear-gradient(0, rgba(255,158,110,1) 0%, rgba(255,90,154,1) 100%)
+        opacity: 0.7
+        background: linear-gradient(0deg, rgba(255,159,110,1) 0%, rgba(255,90,154,1) 100%)
         z-index: 20
     &__wrapper 
         position: relative
@@ -636,15 +661,20 @@ main
     &__item 
         display: flex
         flex-direction: column
+        align-items: center
         gap: 20px
+        &-img
+            width: 370px
     &__text
         font: 700 26px/36px 'Gilroy', 'sans-serif'
         color: #fff
         text-align: center
     &__head 
         display: flex
-        gap: 60px
-        padding: 25px
+        justify-content: space-between
+        gap: 20px
+        width: 550px
+        padding: 25px 30px 25px 70px
         border-radius: 30px 
         background-color: rgba(255, 255, 255, 0.3)
         &-item 
@@ -764,9 +794,11 @@ main
     z-index: 30
 .block-4
     width: 420px
-    top: 100px
+    top: 145px
     right: -120px
     z-index: 10
+    & p 
+        font-size: 20px
 .block-5
     width: 380px
     top: 650px
