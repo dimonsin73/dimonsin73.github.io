@@ -315,6 +315,9 @@ s {
 .rate__item-rose .rate__price-full s {
   color: #313131;
 }
+.rate__item-rose .rate__price-discount {
+  color: #313131;
+}
 .rate__item-title {
   width: calc(100% - 66px);
   margin: 0 33px;
@@ -358,7 +361,7 @@ s {
   margin-bottom: 30px;
   padding: 16px 70px;
   border-radius: 45px;
-  box-shadow: 0 12px 60px rgb(247, 93, 187);
+  box-shadow: 0 11px 27px rgba(247, 93, 187, 0.68);
   background: linear-gradient(180deg, rgb(247, 93, 187) 0%, rgb(195, 39, 244) 100%);
   font: 700 27px/38px "Montserrat", "sans-serif";
   color: #fff;
@@ -391,9 +394,9 @@ s {
 }
 
 .rate__timer .cd_timer ul li .cd_bg {
-  width: 160px !important;
+  width: 125px !important;
   margin: 0 12px !important;
-  padding: 35px 20px !important;
+  padding: 20px !important;
   border-radius: 8px;
   background-color: #ff70b7;
 }
@@ -402,7 +405,7 @@ s {
   height: auto !important;
   border: none !important;
   box-shadow: none !important;
-  font: 700 84px/84px "Montserrat", "sans-serif" !important;
+  font: 700 60px/60px "Montserrat", "sans-serif" !important;
   color: #fff !important;
 }
 
@@ -706,9 +709,6 @@ s {
   .increase__item-subtext {
     font-size: 18px;
   }
-  .increase__item-rose {
-    padding: 12px;
-  }
   .increase__item-line {
     gap: 10px;
   }
@@ -734,25 +734,65 @@ s {
     padding: 20px 50px;
   }
   .behappy {
-    background-position: -485px;
+    background-position: -220px;
   }
   .behappy__content {
     align-items: center;
+  }
+  .behappy__author {
+    padding: 20px;
   }
   .footer__item {
     align-items: center;
   }
 }
+@media (max-width: 641px) {
+  .behappy {
+    background-position: -290px;
+  }
+}
+@media (max-width: 559px) {
+  .behappy {
+    background-position: -330px;
+  }
+}
+@media (max-width: 519px) {
+  .behappy {
+    background-position: -350px;
+  }
+}
+@media (max-width: 479px) {
+  .behappy {
+    background-position: -370px;
+  }
+}
+@media (max-width: 454px) {
+  .behappy {
+    background-position: -485px;
+  }
+  .behappy__author {
+    position: relative;
+    top: -50px;
+  }
+}
+@media (max-width: 404px) {
+  .behappy__author {
+    top: 0;
+  }
+}
 @media (max-width: 499px) {
+  .rate__timer {
+    gap: 15px;
+  }
   .rate__timer .cd_timer ul li .cd_bg {
     width: 70px !important;
+    padding: 15px 10px !important;
   }
   .rate__timer .cd_timer .cd_num {
     font-size: 24px !important;
     line-height: 24px !important;
   }
   .rate__timer .cd_timer .cd_text {
-    margin-left: -10px;
     font-size: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
