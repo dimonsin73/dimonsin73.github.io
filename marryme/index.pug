@@ -280,7 +280,7 @@ html(lang="ru")
                                 .noneed__block
                                     img(src="images/noneed-2.jpg", alt="").noneed__block-img
                                     p.noneed__block-text Рисковать доверять с пустого места едва знакомым мужчинам (просто потому, что у вас начались отношения)
-                            .noneed__item 
+                            .noneed__item.noneed__item-order
                                 h2.noneed__item-title Вам не нужно:
                                 .noneed__block
                                     img(src="images/noneed-3.jpg", alt="").noneed__block-img
@@ -309,19 +309,24 @@ html(lang="ru")
                             input(type="tel" placeholder="Введите ваш телефон").registration__form-input
                             p.registration__form-text Выберите удобное время вебинара:
                             .registration__radios 
-                                input#registration__radio-1(type="radio", name="time").registration__radio
-                                label(for='registration__radio-1').registration__radios-label
-                                    .registration__radios-check 
-                                    p.registration__radios-text 15:00
-                                input#registration__radio-2(type="radio", name="time").registration__radio
-                                label(for='registration__radio-2').registration__radios-label
-                                    .registration__radios-check 
-                                    p.registration__radios-text 20:00
-
-                                    
-
+                                .registration__radio
+                                    input#registration__radio-1(type="radio", name="time").registration__radio-input
+                                    label(for='registration__radio-1').registration__radios-label
+                                        .registration__radios-check 
+                                        p.registration__radios-text 15:00
+                                .registration__radio
+                                    input#registration__radio-2(type="radio", name="time").registration__radio-input
+                                    label(for='registration__radio-2').registration__radios-label
+                                        .registration__radios-check 
+                                        p.registration__radios-text 20:00
                             button(type="submit").registration__form-btn Зарегистрироваться
-
+                            .registration__checkbox
+                                input#agreement(type="checkbox", name="").registration__checkbox-input
+                                label(for="agreement").registration__checkbox-label
+                                    .registration__checkbox-check 
+                                    p.registration__checkbox-text 
+                                        | Согласие на обработку персональных данных в соответствии с 
+                                        a(href="")  Условиями
         footer.footer
             .container 
                 .footer__wrapper 

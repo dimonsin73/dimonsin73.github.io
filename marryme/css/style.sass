@@ -608,13 +608,31 @@ main
             margin-top: 55px
             font-size: 45px
 .registration 
+    position: relative
     padding-top: 60px
     padding-bottom: 20px
-    background: linear-gradient(0, rgba(255,158,110,1) 0%, rgba(255,90,154,1) 100%)
+    background:
+        image: url(../images/reg_bg.jpg)
+        position: cener 
+        repeat: no-repeat
+        size: cover
+    &::after
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        opacity: 0.3
+        background: linear-gradient(0, rgba(255,158,110,1) 0%, rgba(255,90,154,1) 100%)
+        z-index: 20
     &__wrapper 
+        position: relative
         display: grid 
         grid-template-columns: 1fr 1fr
+        align-items: center
         gap: 70px
+        z-index: 300
     &__item 
         display: flex
         flex-direction: column
@@ -659,6 +677,7 @@ main
             border-radius: 10px
             font: 300 20px/20px 'Gilroy', 'sans-serif'
             color: #323232
+            transition: border 0.3s ease
             &::placeholder
                 color: #676767
             &:focus 
@@ -669,6 +688,7 @@ main
             font: 600 22px/22px 'Gilroy', 'sans-serif'
             color: #2d2d2d
         &-btn 
+            margin-bottom: 30px
             padding: 25px 70px
             border-radius: 48px
             box-shadow: 0 11px 27px rgba(255,7,47, 0.68)
@@ -677,7 +697,6 @@ main
             letter-spacing: 100
             color: #fff
             text-transform: uppercase
-
     &__radios 
         display: flex
         justify-content: space-around
@@ -685,16 +704,49 @@ main
         margin-bottom: 35px
         &-label 
             display: flex
+            align-items: center
             gap: 10px
             font: 600 20px/20px 'Gilroy', 'sans-serif'
             color: #2d2d2d
         &-check 
+            width: 12px
+            height: 12px
+            outline: 1px solid #2d2d2d
+            outline-offset: 4px
+            border-radius: 50%
+            transition: background-color 0.3s ease
+    &__radio
+        display: flex
+        &-input
+            display: none
+            &:checked ~ .registration__radios-label .registration__radios-check
+                background: 
+                    color: #6cb258
+    &__checkbox
+        display: flex
+        align-items: flex-start
+        max-width: 320px
+        &-input
+            display: none
+            &:checked ~ .registration__checkbox-label .registration__checkbox-check
+                border: 1px solid #6cb258
+                background: 
+                    color: #6cb258
+        &-check 
+            flex: 0 0 auto
             width: 20px
             height: 20px
             border: 1px solid #2d2d2d
-            border-radius: 50%
-    &__radio
-        display: none
+            background: 
+                image: url(../images/check.png)
+                position: center
+                repeat: no-repeat
+            transition: border 0.3s ease, background-color 0.3s ease
+        &-label 
+            display: flex
+            gap: 10px
+            font: 400 15px/24px 'Gilroy', 'sans-serif'
+            color: #2d2d2d
 
 .block-1
     width: 380px
@@ -750,6 +802,79 @@ main
         color: #fff
         text-decoration: underline !important
         text-underline-offset: 4px
+@media (max-width: 1199px)
+    .header__btn
+        padding: 25px 20px
+    .marryme
+        &__title
+            font-size: 100px
+            line-height: 100px
+    .block-4 
+        right: -95px
+    .registration__wrapper
+        gap: 32px
+    .registration__head 
+        gap: 32px
+    .footer__wrapper
+        grid-template-columns: 1fr
+        justify-items: center
+        row-gap: 32px
+@media (max-width:1023px)
+    .marryme__wrapper
+        margin-top: 140px   
+    .marryme__content
+        align-items: center
+    .marryme__title 
+        font-size: 75px
+        line-height: 75px
+    .header__item
+        display: none
+    .header
+        justify-content: center
+    .essence__items
+        flex-wrap: wrap
+    .who__wrapper 
+        padding: 0 16px
+    .what__content 
+        grid-template-columns: 1fr
+    .struggle__content
+        background-position: -685px
+    .differently__grid 
+        grid-template-columns: 1fr
+    .differently__itembig
+        grid-column: span 1
+        flex-direction: column
+    .noneed__head 
+        grid-template-columns: 1fr
+    .noneed__item-order
+        order: -1
+    .registration__wrapper
+        grid-template-columns: 1fr
+    .registration__head
+        justify-content: space-between
 @media (max-width: 767px)
     .footer__item
         align-items: center
+    .block-1, .block-2, .block-3, .block-4, .block-4
+        display: none
+    .essence__wrapper
+        padding: 0
+    .essence__title
+        padding: 0
+    .essence__text
+        padding: 0
+    .essence__tags
+        padding: 0
+    .reasons__content
+        padding: 32px 16px
+    .who__item
+        grid-template-columns: 1fr 
+        justify-items: center
+    .who__item-arrow 
+        transform: rotate(90deg)
+    .struggle__content 
+        grid-template-columns: 1fr
+    .struggle__wrapper
+        padding: 0
+    .noneed__wrapper
+        padding: 0

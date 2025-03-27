@@ -741,14 +741,32 @@ main {
 }
 
 .registration {
+  position: relative;
   padding-top: 60px;
   padding-bottom: 20px;
+  background-image: url(../images/reg_bg.jpg);
+  background-position: cener;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.registration::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.3;
   background: linear-gradient(0, rgb(255, 158, 110) 0%, rgb(255, 90, 154) 100%);
+  z-index: 20;
 }
 .registration__wrapper {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: 70px;
+  z-index: 300;
 }
 .registration__item {
   display: flex;
@@ -802,6 +820,7 @@ main {
   border-radius: 10px;
   font: 300 20px/20px "Gilroy", "sans-serif";
   color: #323232;
+  transition: border 0.3s ease;
 }
 .registration__form-input::-moz-placeholder {
   color: #676767;
@@ -819,6 +838,7 @@ main {
   color: #2d2d2d;
 }
 .registration__form-btn {
+  margin-bottom: 30px;
   padding: 25px 70px;
   border-radius: 48px;
   box-shadow: 0 11px 27px rgba(255, 7, 47, 0.68);
@@ -836,18 +856,55 @@ main {
 }
 .registration__radios-label {
   display: flex;
+  align-items: center;
   gap: 10px;
   font: 600 20px/20px "Gilroy", "sans-serif";
   color: #2d2d2d;
 }
 .registration__radios-check {
+  width: 12px;
+  height: 12px;
+  outline: 1px solid #2d2d2d;
+  outline-offset: 4px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.registration__radio {
+  display: flex;
+}
+.registration__radio-input {
+  display: none;
+}
+.registration__radio-input:checked ~ .registration__radios-label .registration__radios-check {
+  background-color: #6cb258;
+}
+.registration__checkbox {
+  display: flex;
+  align-items: flex-start;
+  max-width: 320px;
+}
+.registration__checkbox-input {
+  display: none;
+}
+.registration__checkbox-input:checked ~ .registration__checkbox-label .registration__checkbox-check {
+  border: 1px solid #6cb258;
+  background-color: #6cb258;
+}
+.registration__checkbox-check {
+  flex: 0 0 auto;
   width: 20px;
   height: 20px;
   border: 1px solid #2d2d2d;
-  border-radius: 50%;
+  background-image: url(../images/check.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: border 0.3s ease, background-color 0.3s ease;
 }
-.registration__radio {
-  display: none;
+.registration__checkbox-label {
+  display: flex;
+  gap: 10px;
+  font: 400 15px/24px "Gilroy", "sans-serif";
+  color: #2d2d2d;
 }
 
 .block-1 {
@@ -922,8 +979,114 @@ main {
   text-underline-offset: 4px;
 }
 
+@media (max-width: 1199px) {
+  .header__btn {
+    padding: 25px 20px;
+  }
+  .marryme__title {
+    font-size: 100px;
+    line-height: 100px;
+  }
+  .block-4 {
+    right: -95px;
+  }
+  .registration__wrapper {
+    gap: 32px;
+  }
+  .registration__head {
+    gap: 32px;
+  }
+  .footer__wrapper {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 32px;
+  }
+}
+@media (max-width: 1023px) {
+  .marryme__wrapper {
+    margin-top: 140px;
+  }
+  .marryme__content {
+    align-items: center;
+  }
+  .marryme__title {
+    font-size: 75px;
+    line-height: 75px;
+  }
+  .header__item {
+    display: none;
+  }
+  .header {
+    justify-content: center;
+  }
+  .essence__items {
+    flex-wrap: wrap;
+  }
+  .who__wrapper {
+    padding: 0 16px;
+  }
+  .what__content {
+    grid-template-columns: 1fr;
+  }
+  .struggle__content {
+    background-position: -685px;
+  }
+  .differently__grid {
+    grid-template-columns: 1fr;
+  }
+  .differently__itembig {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+  .noneed__head {
+    grid-template-columns: 1fr;
+  }
+  .noneed__item-order {
+    order: -1;
+  }
+  .registration__wrapper {
+    grid-template-columns: 1fr;
+  }
+  .registration__head {
+    justify-content: space-between;
+  }
+}
 @media (max-width: 767px) {
   .footer__item {
     align-items: center;
+  }
+  .block-1, .block-2, .block-3, .block-4, .block-4 {
+    display: none;
+  }
+  .essence__wrapper {
+    padding: 0;
+  }
+  .essence__title {
+    padding: 0;
+  }
+  .essence__text {
+    padding: 0;
+  }
+  .essence__tags {
+    padding: 0;
+  }
+  .reasons__content {
+    padding: 32px 16px;
+  }
+  .who__item {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .who__item-arrow {
+    transform: rotate(90deg);
+  }
+  .struggle__content {
+    grid-template-columns: 1fr;
+  }
+  .struggle__wrapper {
+    padding: 0;
+  }
+  .noneed__wrapper {
+    padding: 0;
   }
 }/*# sourceMappingURL=style.css.map */
