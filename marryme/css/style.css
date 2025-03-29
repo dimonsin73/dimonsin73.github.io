@@ -11,6 +11,10 @@ main {
   overflow-x: hidden;
 }
 
+#ltForm8871401 {
+  display: none;
+}
+
 .container {
   position: relative;
   max-width: 1170px;
@@ -73,18 +77,23 @@ main {
   gap: 30px;
 }
 .marryme__text {
-  width: 600px;
+  max-width: 600px;
   font: 700 32px/40px "Gilroy", "sans-serif";
   color: #fff;
+}
+.marryme__tblock {
+  position: relative;
 }
 .marryme__title {
   font: 900 105px/105px "Gilroy", "sans-serif";
   color: #fff;
   text-transform: uppercase;
+  text-shadow: rgba(255, 255, 255, 0.3333333333) 40px 0 12px, rgba(255, 255, 255, 0.3333333333) -40px 0 12px;
 }
 .marryme__bottom {
   display: flex;
   justify-content: space-around;
+  gap: 20px;
 }
 .marryme__item {
   position: relative;
@@ -154,15 +163,17 @@ main {
   padding: 0 85px;
 }
 .essence__title {
+  max-width: 770px;
+  margin: 0 auto;
   margin-bottom: 35px;
-  padding: 0 100px;
   font: 700 38px/38px "Gilroy", "sans-serif";
   color: #3d3d3d;
   text-align: center;
 }
 .essence__text {
+  max-width: 770px;
+  margin: 0 auto;
   margin-bottom: 80px;
-  padding: 0 100px;
   font: 400 24px/38px "Gilroy", "sans-serif";
   color: #3d3d3d;
   text-align: center;
@@ -172,8 +183,9 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  max-width: 770px;
+  margin: 0 auto;
   margin-bottom: 50px;
-  padding: 0 100px;
 }
 .essence__tags-title {
   font: 600 26px/40px "Gilroy", "sans-serif";
@@ -208,6 +220,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 485px;
+  margin: 0 auto;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 10px;
@@ -732,7 +746,7 @@ main {
   background-color: #1c1c1c;
 }
 .noneed__block-img {
-  border-radius: 10px;
+  border-radius: 16px;
 }
 .noneed__block-text {
   padding: 0 10px;
@@ -799,6 +813,7 @@ main {
   width: 370px;
 }
 .registration__text {
+  max-width: 600px;
   font: 700 26px/36px "Gilroy", "sans-serif";
   color: #fff;
   text-align: center;
@@ -807,8 +822,8 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  width: 550px;
-  padding: 25px 30px 25px 70px;
+  max-width: 550px;
+  padding: 25px 30px 25px 55px;
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 0.3);
 }
@@ -1017,13 +1032,35 @@ main {
     font-size: 100px;
     line-height: 100px;
   }
+  .block-1 {
+    left: -10px;
+    width: 330px;
+  }
+  .block-2 {
+    top: 405px;
+    left: -10px;
+    width: 330px;
+  }
+  .block-3 {
+    top: 710px;
+    left: -10px;
+    width: 330px;
+  }
   .block-4 {
-    right: -95px;
+    top: 175px;
+    right: -10px;
+    width: 330px;
+  }
+  .block-5 {
+    top: 690px;
+    right: -10px;
+    width: 330px;
+  }
+  .differently__head-block p {
+    font-size: 18px;
+    line-height: 24px;
   }
   .registration__wrapper {
-    gap: 32px;
-  }
-  .registration__head {
     gap: 32px;
   }
   .footer__wrapper {
@@ -1034,7 +1071,7 @@ main {
 }
 @media (max-width: 1023px) {
   .marryme__wrapper {
-    margin-top: 140px;
+    margin-top: 100px;
   }
   .marryme__content {
     align-items: center;
@@ -1043,14 +1080,24 @@ main {
     font-size: 75px;
     line-height: 75px;
   }
-  .header__item {
-    display: none;
-  }
   .header {
     justify-content: center;
+    flex-wrap: wrap;
+    -moz-column-gap: 32px;
+         column-gap: 32px;
+    row-gap: 20px;
+  }
+  .header__btn {
+    order: 3;
   }
   .essence__items {
     flex-wrap: wrap;
+  }
+  .essence__wrapper {
+    padding: 0;
+  }
+  .struggle__content {
+    background-position: -220px;
   }
   .who__wrapper {
     padding: 0 16px;
@@ -1058,8 +1105,8 @@ main {
   .what__content {
     grid-template-columns: 1fr;
   }
-  .struggle__content {
-    background-position: -685px;
+  .differently__wrapper {
+    padding: 0;
   }
   .differently__grid {
     grid-template-columns: 1fr;
@@ -1074,6 +1121,12 @@ main {
   .noneed__item-order {
     order: -1;
   }
+  .noneed__item-title {
+    margin-bottom: 80px;
+  }
+  .noneed__baner {
+    margin: 0;
+  }
   .registration__wrapper {
     grid-template-columns: 1fr;
   }
@@ -1081,21 +1134,101 @@ main {
     justify-content: space-between;
   }
 }
+@media (max-width: 899px) {
+  .struggle__content {
+    background-position: -620px;
+  }
+  .differently__head-title {
+    margin-bottom: 35px;
+  }
+  .differently__head-ray {
+    margin-bottom: 15px;
+  }
+  .differently__head-img {
+    margin-bottom: 15px;
+  }
+  .differently__head-block {
+    position: static;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .differently__head {
+    padding: 20px;
+  }
+  .differently__head-block {
+    padding: 15px;
+  }
+  .noneed__baner {
+    padding: 20px;
+  }
+}
 @media (max-width: 767px) {
+  .header__item-title {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  .header__item-text {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .header__btn {
+    padding: 20px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .marryme__wrapper {
+    gap: 75px;
+    margin-top: 75px;
+  }
+  .marryme__title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .marryme__text {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .marryme__item-first {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .marryme__item-text {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .marryme__bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+  .marryme__link {
+    justify-content: space-between;
+  }
+  .marryme__link-title {
+    font-size: 17px;
+  }
+  .marryme__link-text {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .marryme__link-circle {
+    width: 54px;
+    height: 54px;
+  }
   .footer__item {
     align-items: center;
   }
-  .block-1, .block-2, .block-3, .block-4, .block-4 {
-    display: none;
-  }
-  .essence__wrapper {
-    padding: 0;
-  }
   .essence__title {
     padding: 0;
+    font-size: 28px;
+    line-height: 28px;
   }
   .essence__text {
+    margin-bottom: 40px;
     padding: 0;
+    font-size: 20px;
+    line-height: 30px;
   }
   .essence__tags {
     padding: 0;
@@ -1118,5 +1251,48 @@ main {
   }
   .noneed__wrapper {
     padding: 0;
+  }
+  .noneed__item-title {
+    margin-bottom: 20px;
+  }
+  .registration__form-btn {
+    padding: 25px;
+  }
+}
+@media (max-width: 519px) {
+  .registration__head {
+    padding: 16px;
+  }
+  .registration__head-title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .registration__text {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .noneed__baner {
+    font-size: 22px;
+    line-height: 36px;
+  }
+  .noneed__baner-span {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .noneed__text {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .registration__form {
+    padding: 20px;
+  }
+  .registration__form-text {
+    font-size: 18px;
+  }
+  .struggle__content {
+    padding: 20px;
+  }
+  .struggle__item-text {
+    padding: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
