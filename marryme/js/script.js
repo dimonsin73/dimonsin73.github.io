@@ -2,8 +2,8 @@ const rr1 = document.getElementById('registration__radio-1')
 const rr2 = document.getElementById('registration__radio-2')
 const rr3 = document.getElementById('registration__radio-3')
 const rr4 = document.getElementById('registration__radio-4')
-const form1 = document.getElementById('ltForm1582131')
-const form2 = document.getElementById('ltForm8871401')
+const form1 = document.getElementById('ltForm8871401')
+const form2 = document.getElementById('ltForm1582131')
 const checks = document.querySelectorAll('.registration__radio-input')
 const email1 = document.getElementById('email1')
 const name1 = document.getElementById('name1')
@@ -55,6 +55,23 @@ for (let i = 0; i < checks.length; i++) {
 
     })
 }
+const agreement1 = document.getElementById('agreement1')
+form1.addEventListener('submit', function(event){
+    if (agreement1.checked) {
+    } else {
+        event.preventDefault()
+        alert(' Для регистрации отметьте согласие с условиями обработки данных.')
+    }
+})
+const agreement2 = document.getElementById('agreement2')
+form2.addEventListener('submit', function(event){
+    if (agreement2.checked) {
+    } else {
+        event.preventDefault()
+        alert(' Для регистрации отметьте согласие с условиями обработки данных.')
+    }
+})
+
 window.addEventListener('load', function(){
     let loc = document.getElementById("139470367e54822bf917");
     loc.value = window.location.href;

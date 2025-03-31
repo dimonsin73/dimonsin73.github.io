@@ -1,11 +1,12 @@
 html 
     scroll-behavior: smooth
+    user-select: none
 body
     overflow-x: hidden
     min-width: 390px
 main
     overflow-x: hidden
-#ltForm8871401
+#ltForm1582131
     display: none
 .container
     position: relative
@@ -424,7 +425,7 @@ main
         border-radius: 24px
         background: 
             color: #525253
-            image: url(../images/struggle_bg.jpg)
+            image: url(../images/struggle_bg.png)
             size: cover
             repeat: no-repeat
     &__item 
@@ -686,7 +687,7 @@ main
         justify-content: space-between
         gap: 20px
         max-width: 550px
-        padding: 25px 30px 25px 55px
+        padding: 25px 30px
         border-radius: 30px 
         background-color: rgba(255, 255, 255, 0.3)
         &-item 
@@ -704,6 +705,8 @@ main
         display: flex
         flex-direction: column
         align-items: center
+        max-width: 535px
+        margin: 0 auto
         padding: 40px 50px
         border-radius: 10px
         background-color: #fff
@@ -891,10 +894,11 @@ main
         line-height: 75px
     .header
         justify-content: center
-        flex-wrap: wrap
+        flex-wrap: wrap-reverse
         column-gap: 32px
         row-gap: 20px
         &__btn 
+            padding: 10px
             order: 3
     .essence__items
         flex-wrap: wrap
@@ -918,7 +922,7 @@ main
     .noneed__item-order
         order: -1
     .noneed__item-title
-        margin-bottom: 80px
+        margin-bottom: 20px
     .noneed__baner
         margin: 0
     .registration__wrapper
@@ -952,23 +956,31 @@ main
         font-size: 24px
         line-height: 24px
     .header__btn 
-        padding: 20px
+        margin: 0 20px
         font-size: 20px
         line-height: 20px
+    .header__item-hidden 
+        display: none
     .marryme__wrapper
         gap: 75px
-        margin-top: 75px
+        margin-top: 50px
     .marryme__title
         font-size: 36px
         line-height: 36px
+    .marryme__content
+        gap: 50px
     .marryme__text 
         font-size: 20px
         line-height: 24px
         text-align: center
+    .marryme__content
+        flex-direction: column-reverse
     .marryme__item-first
+        top: 50px
         font-size: 18px
         line-height: 18px
     .marryme__item-text
+        margin-top: 125px
         font-size: 18px
         line-height: 26px
     .marryme__bottom
@@ -1015,6 +1027,13 @@ main
         margin-bottom: 20px
     .registration__form-btn 
         padding: 25px
+@media (max-width: 780px)
+    .header__item-title
+        font-size: 24px
+        line-height: 24px
+    .header__item-text
+        font-size: 20px
+        line-height: 20px
 @media (max-width:519px)
     .registration__head
         padding: 16px
@@ -1041,3 +1060,9 @@ main
         padding: 20px
     .struggle__item-text
         padding: 20px
+    .header__item-title
+        font-size: 20px
+        line-height: 20px
+    .header__item-text
+        font-size: 16px
+        line-height: 16px

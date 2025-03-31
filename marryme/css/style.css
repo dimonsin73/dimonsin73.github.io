@@ -1,5 +1,8 @@
 html {
   scroll-behavior: smooth;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 body {
@@ -11,7 +14,7 @@ main {
   overflow-x: hidden;
 }
 
-#ltForm8871401 {
+#ltForm1582131 {
   display: none;
 }
 
@@ -510,7 +513,7 @@ main {
   padding: 30px 40px;
   border-radius: 24px;
   background-color: #525253;
-  background-image: url(../images/struggle_bg.jpg);
+  background-image: url(../images/struggle_bg.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -823,7 +826,7 @@ main {
   justify-content: space-between;
   gap: 20px;
   max-width: 550px;
-  padding: 25px 30px 25px 55px;
+  padding: 25px 30px;
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 0.3);
 }
@@ -845,6 +848,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 535px;
+  margin: 0 auto;
   padding: 40px 50px;
   border-radius: 10px;
   background-color: #fff;
@@ -1082,12 +1087,13 @@ main {
   }
   .header {
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     -moz-column-gap: 32px;
          column-gap: 32px;
     row-gap: 20px;
   }
   .header__btn {
+    padding: 10px;
     order: 3;
   }
   .essence__items {
@@ -1122,7 +1128,7 @@ main {
     order: -1;
   }
   .noneed__item-title {
-    margin-bottom: 80px;
+    margin-bottom: 20px;
   }
   .noneed__baner {
     margin: 0;
@@ -1172,28 +1178,39 @@ main {
     line-height: 24px;
   }
   .header__btn {
-    padding: 20px;
+    margin: 0 20px;
     font-size: 20px;
     line-height: 20px;
   }
+  .header__item-hidden {
+    display: none;
+  }
   .marryme__wrapper {
     gap: 75px;
-    margin-top: 75px;
+    margin-top: 50px;
   }
   .marryme__title {
     font-size: 36px;
     line-height: 36px;
+  }
+  .marryme__content {
+    gap: 50px;
   }
   .marryme__text {
     font-size: 20px;
     line-height: 24px;
     text-align: center;
   }
+  .marryme__content {
+    flex-direction: column-reverse;
+  }
   .marryme__item-first {
+    top: 50px;
     font-size: 18px;
     line-height: 18px;
   }
   .marryme__item-text {
+    margin-top: 125px;
     font-size: 18px;
     line-height: 26px;
   }
@@ -1259,6 +1276,16 @@ main {
     padding: 25px;
   }
 }
+@media (max-width: 780px) {
+  .header__item-title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .header__item-text {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
 @media (max-width: 519px) {
   .registration__head {
     padding: 16px;
@@ -1294,5 +1321,13 @@ main {
   }
   .struggle__item-text {
     padding: 20px;
+  }
+  .header__item-title {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .header__item-text {
+    font-size: 16px;
+    line-height: 16px;
   }
 }/*# sourceMappingURL=style.css.map */
