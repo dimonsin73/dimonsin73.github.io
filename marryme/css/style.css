@@ -780,7 +780,6 @@ main {
 
 .registration {
   position: relative;
-  padding-top: 60px;
   padding-bottom: 20px;
   background-image: url(../images/reg_bg.jpg);
   background-position: cener;
@@ -804,6 +803,7 @@ main {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 70px;
+  padding-top: 60px;
   z-index: 300;
 }
 .registration__item {
@@ -844,12 +844,20 @@ main {
   font: 400 24px/24px "Gilroy", "sans-serif";
   color: #fff;
 }
+.registration__f {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-top: -110px;
+}
 .registration__form {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 535px;
+  width: 100%;
   margin: 0 auto;
+  margin-top: 110px;
   padding: 40px 50px;
   border-radius: 10px;
   background-color: #fff;

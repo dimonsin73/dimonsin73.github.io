@@ -646,7 +646,6 @@ main
             font-size: 45px
 .registration 
     position: relative
-    padding-top: 60px
     padding-bottom: 20px
     background:
         image: url(../images/reg_bg.jpg)
@@ -669,6 +668,7 @@ main
         grid-template-columns: 1fr 1fr
         align-items: center
         gap: 70px
+        padding-top: 60px
         z-index: 300
     &__item 
         display: flex
@@ -701,12 +701,19 @@ main
         &-text
             font: 400 24px/24px 'Gilroy', 'sans-serif'
             color: #fff
+    &__f 
+        display: flex
+        align-items: center
+        height: 100%
+        margin-top: -110px
     &__form 
         display: flex
         flex-direction: column
         align-items: center
         max-width: 535px
+        width: 100%
         margin: 0 auto
+        margin-top: 110px
         padding: 40px 50px
         border-radius: 10px
         background-color: #fff
