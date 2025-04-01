@@ -1,0 +1,139 @@
+html {
+  scroll-behavior: smooth;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 390px;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.main-btn {
+  padding: 35px 50px;
+  border-radius: 45px;
+  box-shadow: 0 11px 27px rgba(247, 93, 187, 0.68);
+  background: linear-gradient(180deg, rgb(247, 93, 187) 0%, rgb(195, 39, 244) 100%);
+  font: 700 18px/20px "Montserrat", "sans-serif";
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.rate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e1e1e1;
+}
+.rate__btn {
+  margin-bottom: 30px;
+  padding: 16px 70px;
+  border-radius: 45px;
+  box-shadow: 0 11px 27px rgba(247, 93, 187, 0.68);
+  background: linear-gradient(180deg, rgb(247, 93, 187) 0%, rgb(195, 39, 244) 100%);
+  font: 700 27px/38px "Montserrat", "sans-serif";
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(31, 31, 31, 0.6);
+  z-index: 100;
+}
+.modal-active {
+  display: flex;
+}
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.modal__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal__title {
+  font: 700 30px/36px "Montserrat", "sans-serif";
+  color: #ff3399;
+}
+.modal__form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 75px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.modal__input {
+  padding: 25px 30px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  font: 300 20px/30px "Gilroy", "sans-serif";
+  color: #000;
+}
+.modal__input::-moz-placeholder {
+  color: #676767;
+}
+.modal__input::placeholder {
+  color: #676767;
+}
+.modal__link {
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  color: #00b0fa;
+}
+.modal__text {
+  font: 300 16px/30px "Gilroy", "sans-serif";
+  color: #676767;
+}
+.modal__btn {
+  margin: 0 40px;
+}
+
+@media (max-width: 767px) {
+  .modal {
+    align-items: start;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .modal__form {
+    gap: 16px;
+    padding: 30px 16px;
+  }
+  .modal__btn {
+    margin: 0;
+  }
+  .modal__input {
+    padding: 10px 20px;
+  }
+  .modal__btn {
+    padding: 20px 50px;
+  }
+}/*# sourceMappingURL=style.css.map */
