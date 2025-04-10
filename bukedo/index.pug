@@ -121,13 +121,11 @@ html(lang="ru")
                     .header__top-small
                         a(href="index.html").logo 
                             img(src="img/logo.png", alt="BUCEDO").logo__small
-                        .header__top-btns
-                            button.glass 
-                                svg(width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M24.9999 25L19.1999 19.2M22.3333 11.6667C22.3333 17.5577 17.5577 22.3333 11.6667 22.3333C5.77563 22.3333 1 17.5577 1 11.6667C1 5.77563 5.77563 1 11.6667 1C17.5577 1 22.3333 5.77563 22.3333 11.6667Z" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                            button.icons__burger
-                                svg(width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                    path(d="M25 11.5H1M25 1.5H1M25 21.5H1" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round")
+                        button.header__city 
+                            .header__city-icon
+                                svg(width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M14.1401 1.59323L1.44788 6.23101C0.913438 6.42656 0.928994 7.18767 1.47122 7.36212L7.2801 9.22101L9.13899 15.0299C9.31233 15.5721 10.0745 15.5877 10.2701 15.0532L14.9068 2.3599C15.0812 1.88212 14.6179 1.41878 14.1401 1.59323Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                            p.header__city-text Санкт-Петербург
             .header__line
             .header__bottom
                 .container
@@ -297,35 +295,7 @@ html(lang="ru")
                                         .header__choice-check 
                                         p.header__choice-text Уточнить у получателя
                                 button.header__choice-btn Применить
-                    .popup
-                        .popup__wrapper 
-                            .composition
-                                ul.popup__list 
-                                    li.popup__list-item Букеты
-                                    li.popup__list-item Цветы в коробке
-                                    li.popup__list-item Корзины с цветами
-                                    li.popup__list-item Букеты с фруктами
-                                    li.popup__list-item Шляпные коробки
-                                    li.popup__list-item Новогодние композиции
-                                    li.popup__list-item Подарочные корзины
-                                    li.popup__list-item Фруктовые корзины
-                                    li.popup__list-item Топперы
-                                    li.popup__list-item Съедобные букеты
-                                    li.popup__list-item Все подарки
-                            .filters
-                                ul.popup__list 
-                                    li.popup__list-item.popup__list-item-active(data-choice='prices') По цене
-                                    li.popup__list-item(data-choice='flowers') По цветам
-                                    li.popup__list-item(data-choice='sizes') По размеру
-                                    li.popup__list-item(data-choice='colors') По гамме
-                            .contant 
-                                .polzunok-container-3(data-contant='prices')
-                                    input(type="text").polzunok-input-3-left
-                                    input(type="text").polzunok-input-3-right
-                                    .polzunok-3
-                                ul.contant__list(data-contant='flowers')
-                                ul.contant__list(data-contant='sizes')
-                                ul.contant__list(data-contant='colors')
+                    
             .header__social
                 a(href="tel:+7 495 215-20-97" type="tel").header__social-item 
                     .header__social-icon
@@ -353,6 +323,68 @@ html(lang="ru")
                     .footer__social-info 
                         .footer__social-title Telegram
                         .footer__social-text @Bukedo
+        .popup
+            .popup__header
+                button.popup__close
+                    svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M1.5 1.5L9 9M9 9L16.5 16.5M9 9L16.5 1.5M9 9L1.5 16.5" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
+                button.glass 
+                    svg(width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M24.9999 25L19.1999 19.2M22.3333 11.6667C22.3333 17.5577 17.5577 22.3333 11.6667 22.3333C5.77563 22.3333 1 17.5577 1 11.6667C1 5.77563 5.77563 1 11.6667 1C17.5577 1 22.3333 5.77563 22.3333 11.6667Z" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            
+            .popup__wrapper 
+                .composition
+                    .popup__name 
+                        h2.popup__name-title Каталог товаров
+                    ul.popup__list 
+                        li.popup__list-item.composition__item Букеты
+                        li.popup__list-item.composition__item Цветы в коробке
+                        li.popup__list-item.composition__item Корзины с цветами
+                        li.popup__list-item.composition__item Букеты с фруктами
+                        li.popup__list-item.composition__item Шляпные коробки
+                        li.popup__list-item.composition__item Новогодние композиции
+                        li.popup__list-item.composition__item Подарочные корзины
+                        li.popup__list-item.composition__item Фруктовые корзины
+                        li.popup__list-item.composition__item Топперы
+                        li.popup__list-item.composition__item Съедобные букеты
+                        li.popup__list-item.composition__item Все подарки
+                .filters
+                    .popup__name 
+                        h2.popup__name-title.filters__name Каталог товаров
+                    ul.popup__list 
+                        li.popup__list-item.filters__item(data-choice='prices') По цене
+                        li.popup__list-item.filters__item(data-choice='flowers') По цветам
+                        li.popup__list-item.filters__item(data-choice='sizes') По размеру
+                        li.popup__list-item.filters__item(data-choice='colors') По гамме
+                .contants
+                    .popup__name 
+                        h2.popup__name-title.contant__name Каталог товаров
+                    .contant
+                        .polzunok-container-3(data-contant='prices')
+                            input(type="text").polzunok-input-3-left
+                            input(type="text").polzunok-input-3-right
+                            .polzunok-3
+                        ul.contant__list(data-contant='flowers')
+                        ul.contant__list(data-contant='sizes')
+                        ul.contant__list(data-contant='colors')
+            .popup__bottom 
+                ul.popup__links
+                    li.popup__links-item
+                        a(href="addresses.html").popup__links-link.link Адреса магазинов
+                    li.popup__links-item
+                        a(href="#").popup__links-link.link Отзывы
+                    li.popup__links-item
+                        .popup__links-link.popup__links-chevron.link Информация
+                
+                ul.popup__dropdawn
+                    li.popup__dropdawn-item 
+                        a(href="payment_delivery.html#delivery").popup__dropdawn-link.link Доставка
+                    li.popup__dropdawn-item 
+                        a(href="payment_delivery.html#payment").popup__dropdawn-link.link Оплата
+                    li.popup__dropdawn-item 
+                        a(href="about.html").popup__dropdawn-link.link О нас
+                    li.popup__dropdawn-item 
+                        a(href="about.html#contacts").popup__dropdawn-link.link Контакты 
         .modal-city
             .modal-city__wrapper
                 .modal-city__title Выберите город доставки
@@ -499,7 +531,7 @@ html(lang="ru")
                                 .product__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                a(href="#").product__link
+                                a(href="#" data-flower='rose').product__link
                                     picture.product__img
                                         source(srcset="img/favorites3.webp").product__img-source
                                         img(src="img/favorites3.png" alt="facorites3")
@@ -522,7 +554,7 @@ html(lang="ru")
                                 .product__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                a(href="#").product__link
+                                a(href="#" data-flower='rose').product__link
                                     picture.product__img
                                         source(srcset="img/favorites4.webp").product__img-source
                                         img(src="img/favorites4.png" alt="facorites4")
@@ -762,7 +794,7 @@ html(lang="ru")
                                 .product__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                a(href="").product__link
+                                a(href="" data-flower='rose').product__link
                                     picture.product__img
                                         source(srcset="img/flowers6.webp").product__img-source
                                         img(src="img/flowers6.png" alt="flower")
@@ -877,7 +909,7 @@ html(lang="ru")
                                 .product__heart
                                     svg(width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg")
                                         path(d="M10.294 18.7679C10.74 18.9999 11.26 18.9999 11.706 18.7679C14.062 17.5399 21.5 13.0859 21.5 5.84591C21.512 2.66591 18.944 0.0759082 15.76 0.0559082C13.844 0.0799082 12.064 1.04591 11 2.63591C9.93404 1.04591 8.15404 0.0799082 6.24004 0.0559082C3.05604 0.0759082 0.488042 2.66391 0.500042 5.84591C0.500042 13.0859 7.94004 17.5379 10.294 18.7679Z")
-                                a(href="").product__link
+                                a(href="" data-flower='rose').product__link
                                     picture.product__img
                                         source(srcset="img/flowers11.webp").product__img-source
                                         img(src="img/flowers11.png" alt="flower")
@@ -1331,28 +1363,89 @@ html(lang="ru")
         .card 
             .card__wrapper 
                 .card__content 
-                    .card__media
-                        .card__media-top
-                            img(src="img/flowers1.png", alt="").card__media-big 
-                        .card__media-bottom 
-                            .card__media-sm
-                                img(src="img/flowers1.png", alt="").card__media-small.card__media-small-active
-                            .card__media-sm
-                                video(src="video/flower1.mp4").card__media-small
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="30" height="30" rx="15" fill="white" fill-opacity="0.7"/>
-                                    <path d="M9.167 10.3063C9.167 8.84146 10.7091 7.88873 12.0198 8.54382L19.744 13.2375C21.1969 13.9636 21.1969 16.0362 19.744 16.7624L12.0198 21.456C10.7091 22.1111 9.16699 21.1584 9.16699 19.6936L9.167 10.3063Z" fill="#AD2950"/>
-                                </svg>
-                            .card__media-sm
-                                img(src="img/flowers1_2.png", alt="").card__media-small
-                            .card__media-sm
-                                img(src="img/flowers1_3.png", alt="").card__media-small
+                    .card__left
+                        .card__media
+                            .card__media-top
+                                img(src="img/flowers1.png", alt="").card__media-big 
+                            .card__media-bottom 
+                                .card__media-sm
+                                    img(src="img/flowers1.png", alt="").card__media-small.card__media-small-active
+                                .card__media-sm
+                                    video(src="video/flower1.mp4").card__media-small
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="30" height="30" rx="15" fill="white" fill-opacity="0.7"/>
+                                        <path d="M9.167 10.3063C9.167 8.84146 10.7091 7.88873 12.0198 8.54382L19.744 13.2375C21.1969 13.9636 21.1969 16.0362 19.744 16.7624L12.0198 21.456C10.7091 22.1111 9.16699 21.1584 9.16699 19.6936L9.167 10.3063Z" fill="#AD2950"/>
+                                    </svg>
+                                .card__media-sm
+                                    img(src="img/flowers1_2.png", alt="").card__media-small
+                                .card__media-sm
+                                    img(src="img/flowers1_3.png", alt="").card__media-small
+                        .card__packages
+                            h3.card__packages-title Выберите упаковку
+                            .card__packages-package.card__packages-package-active
+                                img(src="img/rose.png", alt="package")
+                            .card__packages-package
+                                img(src="img/rose.png", alt="package")
+                            .card__packages-package
+                                img(src="img/rose.png", alt="package")
+                            .card__packages-package
+                                img(src="img/rose.png", alt="package")
+                            .card__packages-package
+                                img(src="img/rose.png", alt="package")
+                            .card__packages-package
+                                img(src="img/rose.png", alt="package")
+                            .card__packages-package
+                                img(src="img/rose.png", alt="package")
+                            .card__packages-package
+                                img(src="img/rose.png", alt="package")
                     .card__info 
                         h3.card__title Ароматные розы Пинк Охара
+                        .card__rose 
+                            h3.card__rose-title Прозводитель розы
+                            p.card__rose-text У Эквадора крупнее бутон. Для Кении есть выбор упаковок
+                            .card__rose-countries
+                                button(type="button").card__rose-country.card__rose-country-active Кения
+                                button(type="button").card__rose-country Эквадор 
+                            h3.card__rose-title Цвет и длина розы
+                            .card__rose-colors 
+                                .card__rose-color.card__rose-color-red
+                                .card__rose-color.card__rose-color-white
+                                .card__rose-color.card__rose-color-creme 
+                                .card__rose-color.card__rose-color-active.card__rose-color-rose
+                                .card__rose-color.card__rose-color-yellow
+                                .card__rose-color.card__rose-color-burdo
+                            .card__rose-sizes
+                                button(type="button").card__rose-size.card__rose-size-active 40 см
+                                button(type="button").card__rose-size 40 см
+                                button(type="button").card__rose-size 50 см
+                                button(type="button").card__rose-size 40 см
+                                button(type="button").card__rose-size 50 см
+                                button(type="button").card__rose-size 40 см
+                                button(type="button").card__rose-size 50 см
+                                button(type="button").card__rose-size 40 см
+                                button(type="button").card__rose-size 50 см
+                                button(type="button").card__rose-size 40 см
+                        .card__change 
+                            .card__change-head 
+                                h3.card__change-title Состав
+                                button(type="button").card__change-close Закрыть
+                            .card__change-content
+                                .card__change-line 
+                                    p.card__change-text Хризантема Сантини (белый)
+                                    input(type="number", name="card__change" value='1').card__change-input
+                                .card__change-line 
+                                    p.card__change-text Пиафлор / оазис/ флор. губка
+                                    input(type="number", name="card__change" value='1').card__change-input
+                                .card__change-line 
+                                    p.card__change-text Хризантема кустовая ромашковая (белый)
+                                    input(type="number", name="card__change" value='1').card__change-input
+                                .card__change-line 
+                                    p.card__change-text Тишью
+                                    input(type="number", name="card__change" value='2').card__change-input
                         .card__basket
                             .card__price 
                                 p.card__price-text 3 450 ₽
-                                p.card__price-change Изменить состав
+                                button(type="button").card__price-change Изменить состав
                             .card__choice
                                 button.card__choice-btn.card-minus
                                     svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")

@@ -71,6 +71,8 @@
     font: 500 12px/16px 'PT Root UI', 'sans-serif'
     color: #fff    
 
+body
+    min-width: 390px
 .container
     max-width: 1330px
     margin: 0 auto
@@ -1568,7 +1570,7 @@ body
     right: 0
     left: 0
     background-color: #fff
-    z-index: 1000
+    z-index: 100000
     &__wrapper
         @include flex
         justify-content: space-between
@@ -1670,6 +1672,7 @@ body
     &__media 
         display: flex
         flex-direction: column
+        flex-wrap: wrap
         gap: 10px
         width: 636px
         &-big 
@@ -1705,6 +1708,25 @@ body
                 top: 50%
                 left: 50%
                 transform: translate( -50%, -50% )
+    &__packages
+        display: none
+        grid-template-columns: repeat(4, 1fr)
+        gap: 16px
+        padding: 24px 48px
+        &-active 
+            display: grid
+        &-title
+            grid-column: span 4
+            font: 700 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-package 
+            width: 120px
+            height: 120px
+            border-radius: 8px
+            overflow: hidden
+            cursor: pointer
+            &-active 
+                outline: 1px solid var(--burgundy)
     &__info
         flex: 1 0 auto
         display: flex
@@ -1716,6 +1738,43 @@ body
             color: var(--black)
         &-text 
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__change 
+        display: none
+        flex-direction: column
+        gap: 12px
+        &-active 
+            display: flex
+        &-head 
+            display: flex
+            justify-content: space-between
+            padding: 8px 0 4px
+        &-title 
+            font: 700 16px/22px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-close 
+            border-bottom: 0.5px dashed #1C1C1D
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-content
+            display: flex
+            flex-direction: column
+            gap: 20px
+        &-line 
+            display: flex
+            justify-content: space-between
+        &-text
+            max-width: 225px
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-input 
+            display: block
+            width: 80px
+            height: 40px
+            padding-left: 35px
+            border: 1px solid var(--grey)
+            border-radius: 12px
+            font: 400 16px/22px 'PT Root UI', 'sans-serif'
             color: var(--black)
     &__title 
         font: 500 24px/32px 'PT Root UI', 'sans-serif'
@@ -1735,6 +1794,8 @@ body
             border-bottom: 0.5px dashed #1C1C1D
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
             color: var(--black)
+            &-active 
+                display: none
     &__choice 
         display: flex
         justify-content: space-between
@@ -1939,14 +2000,118 @@ body
             display: flex
             flex-direction: column
             gap: 5px
+    &__rose 
+        display: none
+        flex-direction: column
+        gap: 12px
+        max-width: 368px
+        &-active 
+            display: flex
+        &-title 
+            font: 700 16px/22px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text 
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-countries
+            display: flex
+            gap: 10px
+        &-country
+            padding: 14px 24px
+            border: 1px solid var(--border-icon)
+            border-radius: 12px
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            transition: border-color 0.3s ease, color 0.3s ease
+            &-active 
+                border-color: var(--burgundy)
+                color: var(--burgundy)
+        &-colors 
+            display: flex
+            gap: 8px
+        &-color 
+            width: 30px
+            height: 30px
+            margin: 5px
+            border-radius: 50%
+            background-color: #fff
+            outline: 0px solid var(--border-icon)
+            outline-offset: 4px
+            cursor: pointer
+            &-active 
+                background:
+                    image: url(../img/check-w.svg)
+                    repeat: no-repeat 
+                    position: center center
+                outline-width: 1px  
+            &-red 
+                background-color: #EC3333
+                outline-color: #EC3333
+            &-white 
+                border: 1px solid var(--border-icon)
+            &-creme
+                background-color: #F2DDC6
+                outline-color: #F2DDC6
+            &-rose
+                background-color: #FFA9C3
+                outline-color: #FFA9C3
+            &-yellow
+                background-color: #FFC90A
+                outline-color: #FFC90A
+            &-burdo
+                background-color: #DC2D63
+                outline-color: #DC2D63
+            
+        &-sizes 
+            display: grid
+            grid-template-columns: repeat(5, 1fr)
+            gap: 8px
+        &-size 
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 14px 11px
+            border: 1px solid var(--border-icon)
+            border-radius: 12px
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            transition: border-color 0.3s ease, color 0.3s ease,
+            &-active 
+                border-color: var(--burgundy)
+                color: var(--burgundy)
+
 .popup
     position: absolute
+    right: 0
+    left: 0
     display: none
     max-width: 1298px
     width: 100%
-    margin-top: 32px
+    margin: 175px auto 0
+    z-index: 10000
     &-active 
         display: block
+    &__header 
+        display: none
+        justify-content: space-between
+        padding: 16px
+        background-color: #fff
+    &__name 
+        display: none
+        background-color: #fff
+        border-bottom: 1px solid var(--border-icon)
+        &-title 
+            padding: 20px
+            font: 500 18px/22px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__close 
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 36px
+        height: 36px
+        border-radius: 50%
+        background-color: var(--bg-stack)
     &__wrapper
         display: flex
         min-height: 760px
@@ -1975,8 +2140,11 @@ body
                     image: url('../img/arroy_right.png')
                     position: center right 32px
                     repeat: no-repeat
+.contants
+    width: 100%
 .contant
     width: 100%
+    height: 100%
     padding: 48px 32px
     background-color: var(--bg-stack)
     &__list
@@ -3989,7 +4157,20 @@ body
     border: 0
     background: var(--burgundy)
     
-
+.bouquet
+    position: static
+    display: block
+    max-width: 1070px
+    margin: 0 auto
+    box-shadow: none
+    background-color: #fff
+    overflow: visible
+    &__wrapper 
+        box-shadow: none
+    &__media-big 
+        border-radius: 24px
+    &__info 
+        padding-top: 0
 
 
 @media (max-width: 1750px) 
@@ -4263,6 +4444,8 @@ body
                 flex-direction: column
             &-big 
                 border-radius: 0
+            &-top 
+                border-bottom-right-radius: 0
         &__info
             padding: 16px
             padding-bottom: 48px
@@ -4558,12 +4741,16 @@ body
         display: block
     .modal-city
         position: absolute
+        align-items: flex-start
         bottom: inherit
+        height: 100%
     .modal-city__list 
         grid-template-columns: repeat(2, 161px)
         grid-template-rows: repeat(20, auto)
     .modal-city__title
-        margin-right: 40px
+        margin-right: 70px
+        font-size: 22px
+        line-height: 28px
     .card 
         &__media 
             position: relative
@@ -4595,6 +4782,10 @@ body
                 align-items: flex-start
             &-card 
                 grid-template-columns: 368px
+        &__packages 
+            justify-items: center
+            padding-left: 16px
+            padding-right: 16px
     .about
         &__title 
             margin-bottom: -8px
@@ -4759,16 +4950,146 @@ body
         width: 100%
         &-active 
             position: fixed
-            top: 77px
+            top: 0
             left: 0
             right: 0
             bottom: 0
             margin: 0
+            background-color: #fff
             box-shadow: 0px -20px 65px -5px #1212170A, 0px -10px 20px -5px #1212170A
             overflow-y: scroll
             z-index: 10000
+        &__header 
+            display: flex
+            border-bottom: 1px solid var(--border-icon)
+        &__name 
+            display: block
         &__wrapper 
-            flex-direction: column
+            min-height: max-content
+            border-radius: 0
+            box-shadow: none
+        &__list 
+            padding: 0
+            &-item 
+                position: relative
+                padding: 16px 20px
+                border-bottom: 1px solid var(--border-icon)
+                border-radius: 0
+                font-size: 14px
+                line-height: 17px
+                &::after
+                    content: ''
+                    position: absolute
+                    right: 20px
+                    top: 50%
+                    display: block
+                    width: 7px
+                    height: 12px
+                    background-image: url('../img/arroy_r.svg')
+                    transform: translateY(-50%)
+        &__bottom
+            display: flex
+            margin-bottom: 70px
+            padding: 20px 0
+            background-color: #fff
+        &__links
+            width: 100%
+            &-active 
+                width: 0
+                overflow: hidden
+            &-item 
+                padding: 12.5px 20px
+            &-link 
+                font: 400 14px/20px 'PT Root UI', 'sans-serif'
+                color: var(--black)
+            &-chevron 
+                position: relative
+                cursor: pointer
+                &::after
+                    content: ''
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    display: block
+                    width: 7px
+                    height: 12px
+                    background-image: url('../img/arroy_r.svg')
+                    transform: translateY(-50%)
+        &__dropdawn
+            width: 0
+            overflow: hidden
+            &-active 
+                width: 100%
+            &-item 
+                padding: 12.5px 20px
+            &-link 
+                font: 400 14px/20px 'PT Root UI', 'sans-serif'
+                color: var(--black)
+    .composition
+        display: block
+        width: 100%
+        &-active 
+            display: none
+            width: 0
+            overflow: hidden
+    .filters
+        display: none
+        width: 0
+        overflow: hidden
+        &-active 
+            display: block
+            width: 100%
+        &__name
+            position: relative
+            padding-left: 50px
+            cursor: pointer
+            &::after
+                content: ''
+                position: absolute
+                left: 16px
+                top: 50%
+                display: block
+                width: 18px
+                height: 18px
+                background:
+                    image: url('../img/arroy_l.svg')
+                    repeat: no-repeat
+                    posetion: center
+                transform: translateY(-50%)
+    .contants 
+        display: none
+        width: 0
+        background-color: #fff
+        overflow: hidden
+        &-active 
+            display: block
+            width: 100%
+    .contant
+        padding: 0 
+        background-color: #fff 
+        &__list 
+            gap: 0
+            margin: 0
+            &-item
+                padding: 13.5px 20px
+                border-bottom: 1px solid var(--border-icon)
+        &__name
+            position: relative
+            padding-left: 50px
+            cursor: pointer
+            &::after
+                content: ''
+                position: absolute
+                left: 16px
+                top: 50%
+                display: block
+                width: 18px
+                height: 18px
+                background:
+                    image: url('../img/arroy_l.svg')
+                    repeat: no-repeat
+                    posetion: center
+                transform: translateY(-50%)
 @media (max-width: 639px) 
     .paymentcard
         &__wrapper
@@ -4801,6 +5122,10 @@ body
                 right: -100px
     .footer__decor-left 
         left: -60px
+    .card__packages
+        grid-template-columns: repeat(2, 1fr)
+        &-title 
+            grid-column: span 2
 @media (max-width: 544px)
     .header
         &__top
@@ -4836,3 +5161,6 @@ body
 @media (max-width: 449px)
     .footer__decor-left
         left: -100px
+@media (max-width: 395px)
+    .modal-city__wrapper
+        border-radius: 0

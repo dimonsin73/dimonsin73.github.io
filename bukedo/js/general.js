@@ -196,35 +196,38 @@ function working(param) {
     })
 }
 // Выбор города
-const headerCityText = document.querySelector('.header__city-text')
+const headerCityArr = document.querySelectorAll('.header__city')
 const modalCity = document.querySelector('.modal-city')
 const modalCityWrapper = modalCity.querySelector('.modal-city__wrapper')
 const modalCityClose = modalCity.querySelector('.modal-city__close')
-headerCityText.addEventListener('click', function(){
-    modalCity.classList.add('modal-city-active')
-    const modalCityItemArr = modalCity.querySelectorAll('.modal-city__item')
-    for (let i = 0; i < modalCityItemArr.length; i++) {
-        const element = modalCityItemArr[i];
-        element.addEventListener('click', function(){
-            headerCityText.textContent = element.textContent
+for (let i = 0; i < headerCityArr.length; i++) {
+    const headerCity = headerCityArr[i];
+    headerCity.addEventListener('click', function(){
+        modalCity.classList.add('modal-city-active')
+        const modalCityItemArr = modalCity.querySelectorAll('.modal-city__item')
+        for (let i = 0; i < modalCityItemArr.length; i++) {
+            const element = modalCityItemArr[i];
+            element.addEventListener('click', function(){
+                headerCity.textContent = element.textContent
+                modalCity.classList.remove('modal-city-active')
+            })
+        }
+        modalCityClose.addEventListener('click', function(){
             modalCity.classList.remove('modal-city-active')
         })
-    }
-    modalCityClose.addEventListener('click', function(){
-        modalCity.classList.remove('modal-city-active')
+        document.addEventListener( 'mousedown', (e) => {
+            const withinBoundaries = e.composedPath().includes(modalCityWrapper);
+            if ( ! withinBoundaries ) {
+                modalCity.classList.remove('modal-city-active')
+            }
+        })
+        document.addEventListener('keydown', function(e) {
+            if( e.keyCode == 27 ){ 
+                modalCity.classList.remove('modal-city-active')
+            }
+        });
     })
-    document.addEventListener( 'mousedown', (e) => {
-        const withinBoundaries = e.composedPath().includes(modalCityWrapper);
-        if ( ! withinBoundaries ) {
-            modalCity.classList.remove('modal-city-active')
-        }
-    })
-    document.addEventListener('keydown', function(e) {
-        if( e.keyCode == 27 ){ 
-            modalCity.classList.remove('modal-city-active')
-        }
-    });
-})
+}
 const modalCityList = modalCity.querySelector('.modal-city__list')
 function createCitys(citys) {
     for (let i = 0; i < citys.length; i++) {
@@ -260,9 +263,50 @@ searchInput.addEventListener('input', function () {
 searchInput.addEventListener('blur', function () {
     searchClue.classList.remove('search__clue-active')
 })
+// работа каталога мобильной версии
+const popupLinksChevron = document.querySelector('.popup__links-chevron')
+const popupLinks = document.querySelector('.popup__links')
+const popupDropdawn = document.querySelector('.popup__dropdawn')
+const filtersName = document.querySelector('.filters__name')
+const contantsName = document.querySelector('.contant__name')
+popupLinksChevron.addEventListener('click', function(){
+    popupLinks.classList.add('popup__links-active')
+    popupDropdawn.classList.add('popup__dropdawn-active')
+})
+const compositionItems = document.querySelectorAll('.composition__item')
+const composition = document.querySelector('.composition')
+const filters = document.querySelector('.filters')
+for (let i = 0; i < compositionItems.length; i++) {
+    const compositionItem = compositionItems[i];
+    compositionItem.addEventListener('click', function(){
+        composition.classList.add('composition-active')
+        filters.classList.add('filters-active')
+        filtersName.textContent = compositionItem.textContent
+    })
+}
+const filtersItems = document.querySelectorAll('.filters__item')
+const contant = document.querySelector('.contants')
+for (let i = 0; i < filtersItems.length; i++) {
+    const filtersItem = filtersItems[i];
+    filtersItem.addEventListener('click', function(){
+        filters.classList.remove('filters-active')
+        contant.classList.add('contants-active')
+        contantsName.textContent = filtersItem.textContent
+    })
+}
+filtersName.addEventListener('click', function(){
+    composition.classList.remove('composition-active')
+    filters.classList.remove('filters-active')
+})
+contantsName.addEventListener('click', function(){
+    filters.classList.add('filters-active')
+    contant.classList.remove('contants-active')
+})
+
 // открытие\закрытие каталога
 const catalog = document.getElementById('catalog')
 const popup = document.querySelector('.popup')
+const popupClose = document.querySelector('.popup__close')
 const popupFilters = popup.querySelector('.filters')
 const popupListItemArr = popupFilters.querySelectorAll('.popup__list-item')
 const contantItemArr = popup.querySelector('.contant').children
@@ -280,9 +324,18 @@ function popupOpen() {
             }
         }
     })
+    popupClose.addEventListener('click', function(){
+        popup.classList.remove('popup-active')
+        composition.classList.remove('composition-active')
+        filters.classList.remove('filters-active')
+        contant.classList.remove('contants-active')
+    })
     document.addEventListener('keydown', function(e) {
         if( e.keyCode == 27 ){ 
             popup.classList.remove('popup-active')
+            composition.classList.remove('composition-active')
+            filters.classList.remove('filters-active')
+            contant.classList.remove('contants-active')
         }
     });
 }
@@ -290,11 +343,15 @@ function popupOpen() {
 for (let i = 0; i < popupListItemArr.length; i++) {
     const element = popupListItemArr[i];
     element.addEventListener('mouseenter', function () {
+        const screenWidth = window.innerWidth
+        console.log(screenWidth)
         for (let i = 0; i < popupListItemArr.length; i++) {
             const element = popupListItemArr[i];
             element.classList.remove('popup__list-item-active')
         }
-        element.classList.add('popup__list-item-active')
+        if (screenWidth > 767) {
+            element.classList.add('popup__list-item-active')
+        }
         for (let i = 0; i < contantItemArr.length; i++) {
             const el = contantItemArr[i];
             if (element.dataset.choice === el.dataset.contant) {

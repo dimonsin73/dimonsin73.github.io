@@ -962,10 +962,19 @@ for (let i = 0; i < dropdawnItemSizesArr.length; i++) {
 // Работа Card
 const productLinkArr = document.querySelectorAll('.product__link')
 const card = document.querySelector('.card')
+const cardRose = document.querySelector('.card__rose')
+const cardPackages = document.querySelector('.card__packages')
 for (let i = 0; i < productLinkArr.length; i++) {
     const element = productLinkArr[i];
     element.addEventListener('click', function(event){
         event.preventDefault()
+        if (element.dataset.flower === 'rose') {
+            cardRose.classList.add('card__rose-active')
+            cardPackages.classList.add('card__packages-active')
+        } else {
+            cardRose.classList.remove('card__rose-active')
+            cardPackages.classList.remove('card__packages-active')
+        }
         const product = element.parentElement
         // получение информации
         const imgPath = product.querySelector('.product__img-source').srcset
@@ -1117,5 +1126,57 @@ for (let i = 0; i < productLinkArr.length; i++) {
         });
     })
 }
+// работа выбора страны происхождения розы
+const cardChange= document.querySelector('.card__change')
+const cardPriceChange = document.querySelector('.card__price-change')
+const cardChangeClose = document.querySelector('.card__change-close')
+cardPriceChange.addEventListener('click', function(){
+    cardChange.classList.add('card__change-active')
+    cardPriceChange.classList.add('card__price-change-active')
+})
+cardChangeClose.addEventListener('click', function(){
+    cardChange.classList.remove('card__change-active')
+    cardPriceChange.classList.remove('card__price-change-active')
+})
 
-
+const cardRoseCountryArr = document.querySelectorAll('.card__rose-country')
+for (let i = 0; i < cardRoseCountryArr.length; i++) {
+    const cardRoseCountry = cardRoseCountryArr[i];
+    cardRoseCountry.addEventListener('click', function(){
+        for (let i = 0; i < cardRoseCountryArr.length; i++) {
+            const element = cardRoseCountryArr[i];
+            element.classList.remove('card__rose-country-active')
+        }
+        cardRoseCountry.classList.add('card__rose-country-active')
+    })
+}
+// работа выбора цвета розы
+const cardRoseColorArr = document.querySelectorAll('.card__rose-color')
+const cardRoseColorWhite = document.querySelector('.card__rose-color-white')
+for (let i = 0; i < cardRoseColorArr.length; i++) {
+    const cardRoseColor = cardRoseColorArr[i];
+    cardRoseColor.addEventListener('click', function(){
+        for (let i = 0; i < cardRoseColorArr.length; i++) {
+            const element = cardRoseColorArr[i];
+            element.classList.remove('card__rose-color-active')
+        }
+        cardRoseColor.classList.add('card__rose-color-active')
+        if (cardRoseColorWhite.classList.contains('card__rose-color-active')) {
+            cardRoseColorWhite.style.backgroundImage = 'url(img/check-b.svg)'
+        } else {
+            cardRoseColorWhite.style.backgroundImage = 'none'
+        }
+    })
+}
+// работа выбора размера розы
+const cardRoseSizeArr = document.querySelectorAll('.card__rose-size')
+for (let i = 0; i < cardRoseSizeArr.length; i++) {
+    const cardRoseSize = cardRoseSizeArr[i];
+    cardRoseSize.addEventListener('click', function(){
+        for (let i = 0; i < cardRoseSizeArr.length; i++) {
+            const element = cardRoseSizeArr[i];
+            element.classList.remove('card__rose-size-active')
+        }
+        cardRoseSize.classList.add('card__rose-size-active')
+    })
+}
