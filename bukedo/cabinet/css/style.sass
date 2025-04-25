@@ -1,0 +1,1347 @@
+:root
+    --black: #1c1c11
+    --grey: #93949B
+    --placeholder: #969091
+    --bg-stack: #f5f5f5
+    --burgundy: #AD2950
+    --green: #03A050
+    --whatsapp: #29A71A
+    --telegram: #23B7EC
+    --phone: #FEFAFC
+    --border: #DFE2E8
+    --rise: #FCE7F3
+    --border-icon: #E5E7EB
+    --border-footer: #CFCFCF
+    --acpid: #749597
+    --thumb: #EFEFEF
+
+@mixin flex
+    display: flex
+    justify-content: center
+    align-items: center
+@mixin title
+    font: 500 42px/55px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin title3
+    font: 500 32px/42px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin title5
+    font: 700 18px/23px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-content
+    font: 500 16px/20px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-content-small
+    font: 500 18px/23px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-btn
+    font: 700 16px/20px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-bold
+    font: 700 20px/26px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-up
+    font: 400 13px/16px 'PT Root UI', 'sans-serif'
+    color: var(--grey)
+@mixin text
+    font: 400 16px/20px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text2
+    font: 400 14px/18px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-product
+    font: 400 14px/18px 'PT Root UI', 'sans-serif'
+    color: var(--grey)
+@mixin text-price
+    font: 700 20px/26px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-map
+    font: 500 24px/28px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-map-span
+    font: 400 16px/19px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+@mixin text-footer
+    font: 400 16px/20px 'PT Root UI', 'sans-serif'
+    color: var(--grey)
+@mixin subtext-footer
+    font: 400 12px/16px 'PT Root UI', 'sans-serif'
+    color: var(--grey)
+@mixin text-filter
+    font: 500 12px/16px 'PT Root UI', 'sans-serif'
+    color: #fff    
+
+body
+    min-width: 390px
+.container
+    max-width: 1330px
+    margin: 0 auto
+    padding: 0 16px
+.link
+    font: 400 14px/18.2px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+    text-decoration: none
+.btn-icon
+    @include flex
+    width: 50px
+    height: 50px
+    border: 1px solid var(--border-icon)
+    border-radius: 12px
+    cursor: pointer
+.btn-text
+    @include flex
+    @include text
+    padding: 14px 24px
+    cursor: pointer
+.title
+    @include title
+.text
+    @include text
+
+@media (max-width: 424px)
+    .title
+        @include title3
+    .text
+        @include text2
+
+html
+    overflow-x: hidden
+main 
+    position: relative
+    z-index: 30
+body
+    position: relative
+    overflow-x: hidden
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+    display: none
+    -webkit-appearance: none
+    margin: 0
+.catalog
+    @include flex
+    column-gap: 8px
+    padding: 13px 16px
+    border-radius: 12px
+    background-color: var(--burgundy)
+    cursor: pointer
+    &:hover
+        background-color: #CB3562
+    &[disabled]
+        background-color: #F6F6F6
+        color: var(--grey)
+        pointer-events: none
+        & .catalog__text
+            color: var(--grey)
+        & path
+            stroke: var(--grey)
+    &__text
+        @include text-btn
+        color: #fff
+.menu
+    display: none
+    position: fixed
+    bottom: 0
+    right: 0
+    left: 0
+    background-color: #fff
+    z-index: 100000
+    &__wrapper
+        @include flex
+        justify-content: space-between
+        width: 100%
+        padding: 10px 16px
+    &__item
+        @include flex
+        flex-direction: column
+        gap: 4px
+        cursor: pointer
+        &-text 
+            font: 400 11px/11px 'PT Root UI', 'sans-serif'
+        &-textbur
+            color: var(--burgundy)
+        &-active p
+            color: var(--burgundy)
+        &-active path
+            stroke: var(--burgundy)
+        &-heart path
+            fill: var(--burgundy)
+        &-icon 
+            position: relative
+        &-num 
+            position: absolute
+            right: 0
+            bottom: 0
+            @include flex
+            width: 15px
+            height: 15px
+            border: 2px solid #fff
+            border-radius: 50%
+            background-color: var(--burgundy)
+            font: 400 11px/11px 'PT Root UI', 'sans-serif'
+            color: #fff
+.icons
+    &__burger
+        @include flex
+        flex-direction: column
+        justify-content: space-around
+        width: 18px
+        height: 18px    
+        &-line
+            width: 16.5px
+            height: 2px
+            background-color: var(--black)
+@media (max-width: 767px)
+    .menu
+        display: block
+.login 
+    display: none
+    justify-content: space-between
+    max-width: 1440px 
+    width: 100%
+    height: 100vh
+    margin: 0 auto
+    padding: 24px
+    background-color: #fff
+    &-active 
+        display: flex
+    &__left 
+        position: relative
+        max-width: 800px
+        width: 100%
+        height: 100%
+        padding: 48px 24px
+        border-radius: 20px 
+        background: 
+            image: url('../img/hello.jpg')
+            position: center 
+            repeat: no-repeat
+            size: cover 
+        overflow: hidden
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            border-radius: 20px 
+            background: linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%)
+    &__title 
+        position: relative
+        font: 700 36px/44px 'PT Root UI', 'sans-serif'
+        color: #fff
+        z-index: 10
+    &__right 
+        display: flex
+        flex-direction: column
+        justify-content: center
+        gap: 40px
+        max-width: 410px
+        width: 100%
+        min-width: 335px 
+        margin-right: 71px
+        &-title 
+            font: 500 30px/36px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__form 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        &-label 
+            display: flex
+            flex-direction: column
+            gap: 8px
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-input 
+            padding: 15px 16px 15px 52px
+            border: 1px solid #AFBACA
+            border-radius: 8px
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &::placeholder
+                color: #727C8A
+            &:focus 
+                border: 1px solid var(--black)
+    &__forgot
+        margin-bottom: 9px
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        text-align: right
+#login-email 
+    background:
+        image: url(../img/sms.svg)
+        repeat: no-repeat 
+        position: 16px
+#login-password 
+    background:
+        image: url(../img/lock.svg)
+        repeat: no-repeat 
+        position: 16px
+@media (max-width: 1349px)
+    .login__right
+        margin-right: 20px
+@media (max-width: 767px)
+    .login 
+        justify-content: center
+        padding: 20px
+        &__left
+            display: none
+        &__right 
+            margin-right: 0
+            &-title 
+                font-size: 18px
+.cabinet
+    display: flex
+    flex-direction: row
+.aside 
+    display: flex
+    flex-direction: column
+    gap: 24px
+    flex: 0 0 auto
+    width: 241px
+    border-right: 1px solid var(--border-icon)
+    background-color: #fff
+    z-index: 1000000
+    &__logo 
+        padding: 24px 20px
+    &__title
+        padding: 8px 0
+        font: 500 12px/16px 'PT Root UI', 'sans-serif'
+        color: #727C8A
+    &__menu
+        margin: 0 16px
+    &__tools 
+        margin: 0 16px
+        padding-top: 24px
+        border-top: 1px solid #E5E7EB
+    &__list 
+        display: flex
+        flex-direction: column
+        &-item 
+            display: flex
+            gap: 12px
+            padding: 15px 12px
+            border-radius: 8px
+            cursor: pointer
+            &:hover 
+                background-color: #F3F5F7
+            &-active 
+                background-color: #F3F5F7
+        &-subitem 
+            display: flex
+            gap: 12px
+            padding: 15px 12px 15px 42px
+            border-radius: 8px
+            cursor: pointer
+            &:hover 
+                background-color: #F3F5F7
+        &-text 
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-setting
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                right: 12px
+                width: 20px
+                height: 20px
+                background: 
+                    image: url(../img/arroy_l.svg)
+                    repeat: no-repeat
+                    position: center
+                transform: rotate(-90deg) 
+            &-active 
+                background-color: #F3F5F7
+                &::after
+                    transform: rotate(90deg)
+    &__sublist 
+        height: 0
+        overflow: hidden
+        transition: height 0.3s ease
+        &-active 
+            height: 150px
+    &__logout
+        margin: 0 16px
+        margin-top: auto
+.content 
+    display: flex
+    flex-direction: column
+    width: 100%
+.head
+    display: flex
+    justify-content: space-between
+    width: 100%
+    padding: 20px 32px 19px 24px
+    border-bottom: 1px solid #E5E7EB
+    background-color: #fff
+    &__search 
+        padding: 10px 16px 10px 44px
+        border: 1px solid #AFBACA
+        border-radius: 8px
+        background:
+            image: url('../img/search_bg.svg')
+            repeat: no-repeat
+            position: 16px
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        &::placeholder
+            color: #727C8A
+    &__left 
+        display: flex
+        gap: 20px
+    &__right 
+        display: flex
+        gap: 16px
+    &__searchbtn
+        display: none
+        width: 40px
+        height: 40px
+        border: 1px solid #DCE4E8
+        border-radius: 50%
+        background: 
+            image: url('../img/search-normal.svg')
+            repeat: no-repeat 
+            position: center
+    &__bell 
+        width: 40px
+        height: 40px
+        border: 1px solid #DCE4E8
+        border-radius: 50%
+        background: 
+            image: url('../img/bell.svg')
+            repeat: no-repeat 
+            position: center
+    &__rating 
+        display: flex
+        align-items: center
+        gap: 6px
+        &-star 
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            background: 
+                color: #F7AA281A
+                image: url('../img/star.svg')
+                repeat: no-repeat 
+                position: center
+        &-number 
+            font: 700 18px/20px 'PT Root UI', 'sans-serif'
+            color: #F7AA28
+    &__name
+        display: flex
+        &-avatar 
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            background: 
+                image: url('../img/avatar.png')
+                repeat: no-repeat 
+                position: center
+                size: cover
+        &-text 
+            width: 102px
+            padding: 13px 8px
+            overflow: hidden
+            font: 500 14px/14px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            white-space: nowrap
+            text-overflow: ellipsis
+    &__menu 
+        display: none
+        align-items: center
+        &-active 
+            display: flex
+    &__shop 
+        display: flex
+        gap: 30px
+        &-item 
+            margin: -29px 0
+            padding: 29px 0
+            border-bottom: 2px solid #ffffff00
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            white-space: nowrap
+            cursor: pointer
+            transition: border 0.3s ease, color 0.3s ease
+            &-active
+                border-bottom: 2px solid var(--burgundy)
+                font-weight: 500
+                color: var(--burgundy)
+.burger-aside
+    display: none
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 40px
+    border: 1px solid #DCE4E8
+    border-radius: 8px
+.orders
+    display: flex
+    flex-direction: column
+    gap: 24px
+    height: 100%
+    padding: 24px
+    background-color: #F3F5F7
+    &__top 
+        display: flex
+        gap: 24px
+        &-item 
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            width: 100% 
+            padding: 16px 24px
+            border-radius: 10px
+            background-color: #fff
+        &-content 
+            display: flex
+            flex-direction: column
+            gap: 2px
+        &-text 
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-number
+            font: 700 20px/26px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-icon 
+            width: 40px
+            height: 40px
+            border-radius: 8px 
+            background: 
+                position: center 
+                repeat: no-repeat
+        &-money
+            background:
+                color: #03A0501A
+                image: url('../img/moneys.svg')
+        &-sold
+            background:
+                color: #AD29501A
+                image: url('../img/sold.svg')
+        &-buyers
+            background:
+                color: #EEEFFF
+                image: url('../img/people.svg')
+    &__content 
+        display: flex
+        flex-direction: column
+        background-color: #fff
+        border-top-left-radius: 10px
+        border-top-right-radius: 10px
+    &__head 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 24px
+        padding-bottom: 32px
+        &-title 
+            font: 500 30px/30px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__line 
+        display: flex
+        justify-content: space-between
+        gap: 20px
+    &__tags 
+        display: flex
+        gap: 12px
+    &__tag 
+        display: flex
+        align-items: center
+        gap: 4px
+        padding: 15px 16px
+        border-radius: 10px
+        transition: background-color 0.3s ease
+        &-text 
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            transition: color 0.3s ease
+        &-number 
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            background-color: #F3F5F7
+            font: 500 12px/12px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            transition: background-color 0.3s ease, color 0.3s ease
+        &-active 
+            background-color: var(--burgundy)
+            & .orders__tag-text
+                color: #fff
+            & .orders__tag-number 
+                background-color: #FFFFFF33
+                color: #fff
+    &__date 
+        display: flex
+        align-items: center
+        gap: 4px
+        &-input 
+            width: 168px
+            padding: 14px 16px
+            border: 1px solid #DCE4E8
+            border-radius: 8px
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-p 
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__table 
+        display: flex
+        flex-direction: column
+        &-head 
+            display: grid
+            grid-template-columns: 50px 160px 70px 190px auto 110px 70px 70px
+            align-items: center
+            gap: 10px
+            padding: 14.5px 20px
+            border-bottom: 1px solid #DCE4E8
+        &-htext 
+            display: flex
+            gap: 4px
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-content 
+            display: flex
+            flex-direction: column
+        &-item 
+            display: grid
+            grid-template-columns: 50px 160px 70px 190px auto 110px 70px 70px
+            align-items: center
+            gap: 10px
+            padding: 14.5px 20px
+            border-bottom: 1px solid #DCE4E8
+            transition: background-color 0.3s ease
+            &:hover
+                background-color: var(--border-icon)
+        &-mitem 
+            display: flex
+            flex-direction: column
+            gap: 10px
+            width: 100%
+            padding: 20px
+            border-bottom: 1px solid #DCE4E8
+        &-line 
+            display: flex
+            justify-content: space-between
+            width: 100%
+        &-cont
+            display: flex
+            align-items: center
+            gap: 16px
+        &-both 
+            flex: 0 0 auto
+            width: 50px
+        &-img 
+            position: relative
+            width: 50px
+            border-radius: 10px
+        &-nums
+            position: absolute
+            bottom: -11px
+            left: 50%
+            width: 22px
+            height: 22px
+            display: flex
+            justify-content: center
+            align-items: center
+            border: 2px solid #fff
+            border-radius: 50%
+            background-color: var(--burgundy)
+            font: 700 11px/11px 'PT Root UI', 'sans-serif'
+            color: #fff
+            transform: translateX(-50%)
+        &-col 
+            display: flex
+            flex-direction: column
+            justify-content: center
+            gap: 2px
+        &-name
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-number 
+            font: 500 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text
+            font: 400 14px/21px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-status 
+            font: 500 14px/18px 'PT Root UI', 'sans-serif'
+        &-green 
+            color: #15803D
+        &-blue
+            color: #2335D6
+        &-orange
+            color: #F59E0B
+        &-red 
+            color: #BE123C
+        &-payment 
+            display: flex
+            align-items: center
+            gap: 4px
+        &-sum 
+            font: 500 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-title 
+            font: 500 12px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-small 
+            display: none
+        &-pages 
+            display: flex
+            justify-content: center
+            gap: 8px
+            margin-bottom: 70px
+            padding: 24px 20px
+            border-bottom: 1px solid #DCE4E8
+        &-page 
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 40px
+            height: 40px
+            border: 1.25px solid #DCE4E8
+            border-radius: 8px
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease
+            &-active 
+                background-color: var(--burgundy)
+                border: 1.25px solid var(--burgundy)
+                color: #fff
+        &-dots 
+            border: none
+@media (max-width: 1439px)
+    .burger-aside
+        display: flex
+    .aside 
+        position: fixed
+        left: -100%
+        top: 0
+        bottom: 0
+        transition: left 0.3s ease
+        &-active 
+            left: 0    
+@media (max-width:1199px)
+    .head 
+        position: relative
+        margin-bottom: 60px
+        bottom: -1px
+        &__menu
+            position: absolute
+            bottom: -60px
+            width: 100%
+            height: 60px
+            margin-left: -24px
+            padding: 0 20px
+            background-color: #F3F5F7
+            overflow-x: scroll
+            overflow-y: hidden
+            scrollbar-width: none
+        &__shop
+            &-item 
+                padding: 19px 0
+                border-bottom: 2px solid #ffffff00
+                &-active 
+                    border-bottom: 2px solid var(--burgundy)
+    .orders
+        &__line
+            flex-direction: column
+@media (max-width:1023px)
+    .orders
+        &__tags 
+            overflow-x: scroll
+        &__table
+            &-number
+                font-size: 16px
+                line-height: 30px
+            &-sum 
+                font-weight: 700
+            &-full 
+                display: none
+            &-small 
+                display: flex
+@media (max-width:767px)
+    .head
+        bottom: 0
+        padding: 10px 20px 9px
+        &__search 
+            display: none
+        &__rating
+            display: none
+        &__name-text
+            display: none
+        &__searchbtn
+            display: block
+        &__menu
+            margin-left: -20px
+    .orders
+        padding: 0
+        &__head 
+            padding: 24px 20px 20px
+        &__tags 
+            margin-left: -20px
+            margin-right: -20px
+        &__top 
+            display: none
+        &__table-dots
+            display: none
+.balance
+    display: flex
+    flex-direction: column
+    gap: 24px
+    height: 100%
+    padding: 24px
+    background-color: #F3F5F7
+    &__content 
+        display: flex
+        flex-direction: column
+        background-color: #fff
+        border-top-left-radius: 10px
+        border-top-right-radius: 10px
+    &__head 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 20px 24px
+        &-title 
+            font: 500 30px/30px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__table 
+        display: flex
+        flex-direction: column
+        padding: 0 24px
+        &-head 
+            display: grid
+            grid-template-columns: 120px 180px auto
+            border-bottom: 1px solid #DCE4E8
+        &-htext 
+            padding: 14px 20px
+        &-content
+            display: flex
+            flex-direction: column 
+        &-item 
+            display: grid
+            grid-template-columns: 120px 180px auto
+            border-bottom: 1px solid #DCE4E8
+        &-text 
+            padding: 19.5px 20px
+        &-minus 
+            font-weight: 700
+            color: var(--black)
+        &-plus 
+            font-weight: 700
+            color: #03A050
+    &__footer 
+        display: flex
+        justify-content: space-between
+        padding: 24px
+        &-left
+            display: flex
+            align-items: center
+            gap: 16px
+        &-select 
+            width: 70px
+            height: 40px
+            padding: 11px 14px
+            border: 1px solid #DCE4E8
+            border-radius: 8px
+            background: 
+                image: url(../img/arrow-down.svg)
+                repeat: no-repeat
+                position: right 14px center
+            font: 500 16px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-right
+            display: flex
+            align-items: center
+            gap: 8px
+select 
+    -webkit-appearance: none
+    -moz-appearance: none
+select::-ms-expand 
+    display: none
+@media (max-width:767px)
+    .balance
+        margin-bottom: 70px
+        padding: 0
+        &__table 
+            padding: 0
+            &-head 
+                grid-template-columns: 83px 152px auto
+            &-item
+                grid-template-columns: 1fr 1fr
+            &-time 
+                padding-top: 16px
+                padding-bottom: 0
+                text-align: right
+            &-comment 
+                grid-column: span 2
+                padding-top: 8px
+                padding-bottom: 16px
+            &-minus 
+                padding-top: 16px
+                padding-bottom: 0
+            &-plus 
+                padding-top: 16px
+                padding-bottom: 0
+        &__footer 
+            justify-content: center
+            &-left 
+                display: none
+.shops 
+    width: 100%
+    height: 100%
+    padding: 24px
+    background-color: #F3F5F7
+    &__wrapper 
+        display: none
+        flex-direction: column
+        width: 100%
+        background-color: #fff
+        border-radius: 10px
+        &-active 
+            display: flex
+    &__mw600
+        max-width: 600px
+    &__head 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 20px 24px
+        &-title 
+            font: 500 30px/30px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 0 24px
+        &-top 
+            display: flex
+            flex-direction: column 
+            gap: 16px
+        &-title
+            margin-top: 10px
+            font: 700 18px/23px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text 
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+    &__name
+        display: flex
+        flex-direction: column 
+        gap: 24px
+        &-input 
+            padding: 15px 16px
+            border: 1px solid #AFBACA
+            border-radius: 8px
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-view 
+            display: flex
+            align-items: center
+            gap: 24px
+            padding: 24px
+            border-radius: 16px
+            background-color: #F3F5F7
+        &-img 
+            position: relative
+            flex: 0 0 auto
+            width: 150px
+            height: 150px
+            border-radius: 16px
+            overflow: hidden
+        &-edit
+            position: absolute
+            top: 5px
+            left: 5px
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 50px
+            height: 50px
+            border-radius: 50%
+            background-color: #fff
+        &-info
+            display: flex
+            flex-direction: column
+            gap: 12px
+        &-title 
+            font: 700 18px/23px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-subtext
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-description
+            position: relative
+            display: flex
+            flex-direction: column
+            gap: 8px
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-textarea
+            width: 100%
+            height: 80px
+            resize: none
+            padding: 16px
+            border: 1px solid #AFBACA
+            border-radius: 8px
+            color: var(--black)
+            &:placeholder 
+                color: #727C8A
+        &-number 
+            position: absolute
+            bottom: 10px
+            right: 20px
+            display: flex
+    &__switch
+        font: 500 14px/24px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+    &__contact 
+        display: flex
+        flex-direction: column 
+        gap: 24px
+        &-line 
+            display: grid
+            grid-template-columns: auto 120px
+            gap: 16px
+        &-label 
+            display: flex
+            flex-direction: column
+            gap: 8px
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-input 
+            padding: 15px 16px
+            border: 1px solid #AFBACA
+            border-radius: 8px
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &:disabled
+                background-color: #F3F5F7
+                color: #727C8A
+    &__payment
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &-line 
+            display: grid
+            grid-template-columns: 1fr 1fr
+            gap: 24px
+        &-label 
+            position: relative
+            display: flex
+            flex-direction: column
+            gap: 8px
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-input 
+            padding: 15px 16px
+            border: 1px solid #AFBACA
+            border-radius: 8px
+            background-color: #fff
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &:disabled
+                background-color: #F3F5F7
+                color: #727C8A
+        &-select 
+            background: 
+                image: url(../img/arrow-down.svg)
+                repeat: no-repeat 
+                position: right 16px center
+            cursor: pointer
+        &-options 
+            position: absolute
+            top: 96px
+            display: none
+            flex-direction: column
+            width: 100%
+            border-radius: 8px
+            box-shadow: 0px 10px 45px -5px #1212171A, 0px 10px 15px -5px #1212171A
+            background-color: #fff
+            overflow: hidden
+            z-index: 100
+            &-active 
+                display: flex
+        &-option
+            padding: 16px 24px
+            border-bottom: 1px solid var(--border)
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            cursor: pointer
+            &:hover 
+                background-color: #F3F5F7
+        &-card
+            display: flex
+            flex-direction: column
+            gap: 24px
+            padding: 24px
+            border-radius: 16px
+            background-color: #F3F5F7
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-cardline
+            display: grid
+            grid-template-columns: 180px auto
+            gap: 16px
+    &__info
+        position: relative
+        display: flex
+        gap: 12px
+        align-items: center
+        &-btn 
+            display: flex
+        &-text 
+            position: absolute
+            top: -36px
+            right: 0
+            display: none
+            padding: 8px
+            border-radius: 8px
+            background-color: #F3F5F7
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &-active 
+                display: flex
+    &__service 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-head 
+            display: flex
+            gap: 12px
+            align-items: center
+        &-text 
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-input 
+            display: none
+            width: 350px
+            padding: 15px 16px
+            border: 1px solid #AFBACA
+            border-radius: 8px
+            background-color: #fff
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &:disabled
+                background-color: #F3F5F7
+                color: #727C8A
+            &-active 
+                display: block
+    &__holiday
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &-line 
+            display: grid
+            grid-template-columns: calc(50% - 12px) calc(50% - 12px)
+            gap: 24px
+        &-label 
+            display: flex
+            flex-direction: column
+            gap: 8px
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-input 
+            padding: 15px 16px
+            border: 1px solid #AFBACA
+            border-radius: 8px
+            background-color: #fff
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &:disabled
+                background-color: #F3F5F7
+                color: #727C8A
+    &__btn 
+        margin: 24px
+        padding-top: 24px
+        border-top: 1px solid #E5E7EB
+    &__grid 
+        display: flex
+        gap: 24px
+        align-items: flex-start
+        margin-bottom: 24px
+        padding: 0 24px
+        &-head 
+            display: flex
+            flex-direction: column
+            gap: 16px
+            max-width: 300px
+        &-title 
+            font: 700 18px/23px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-content 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 16px
+        &-item 
+            display: grid 
+            grid-template-columns: 165px minmax(370px, 600px)
+            gap: 16px
+            align-items: center
+        &-times 
+            display: none
+            align-items: center
+            gap: 16px
+            &-active 
+                display: flex
+        &-time 
+            width: 100%
+            height: 50px
+            padding: 13px 16px 
+            border: 1px solid #AFBACA
+            border-radius: 8px
+        &-notimes
+            display: none
+            font: 500 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &-active 
+                display: block
+        &-btn 
+            flex: 0 0 auto
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 50px
+            height: 50px
+            border-radius: 10px
+            background-color: #F3F5F7
+        &-D 
+            display: flex
+            flex-direction: column
+            gap: 16px
+        &-dates  
+            display: flex
+            gap: 16px
+            min-width: 370px
+        &-date 
+            width: 100%
+            padding: 13px 16px
+            border: 1px solid #AFBACA
+            border-radius: 8px
+            background-color: #fff
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-delete 
+            flex: 0 0 auto
+            width: 50px
+            height: 50px
+            background: 
+                image: url('../img/delete.svg')
+                position: center center 
+                repeat: no-repeat
+        &-plus 
+            display: flex
+            justify-content: flex-start
+            gap: 4px
+            align-items: center
+            padding: 13px 16px
+            border-radius: 10px
+            background-color: #F3F5F7
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__check 
+        display: flex
+        align-items: center
+        gap: 12px
+        height: 50px
+@media (max-width: 767px)
+    .shops 
+        margin-bottom: 70px
+        padding: 0
+        &__wrapper 
+            border-radius: 0
+        &__head 
+            padding: 20px
+        &__content 
+            padding: 0 20px
+        &__name
+            &-view
+                gap: 16px
+                padding: 16px
+            &-img
+                width: 120px
+                height: 120px
+            &-title 
+                font-size: 14px
+                line-height: 18px
+            &-subtext
+                font-size: 12px
+                line-height: 16px
+        &__payment
+            &-line
+                grid-template-columns: 1fr
+            &-cardline
+                grid-template-columns: 1fr
+        &__holiday 
+            &-line:last-child
+                grid-template-columns: 1fr
+.display-none 
+    display: none
+.switch 
+    position: relative
+    display: inline-block
+    width: 48px
+    height: 24px
+    &__input 
+        display: none
+    &__slider 
+        position: absolute
+        cursor: pointer
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background:
+            color: #AFBACA
+            image: url(../img/close-check.svg)
+            repeat: no-repeat
+            position: right 9px center
+        -webkit-transition: .4s
+        transition: .4s
+        &:before 
+            position: absolute
+            content: ""
+            height: 20px
+            width: 20px
+            left: 2px
+            bottom: 2px
+            background-color: white
+            -webkit-transition: .4s
+            transition: .4s
+    &__input:checked + .switch__slider
+        background:
+            color: var(--burgundy)
+            image: url(../img/check-check.svg)
+            repeat: no-repeat
+            position: 9px center
+    &__input:focus + .switch__slider 
+        box-shadow: 0 0 1px #2196F3
+    &__input:checked + .switch__slider:before 
+        -webkit-transform: translateX(24px)
+        -ms-transform: translateX(24px)
+        transform: translateX(24px)
+    &__round 
+        border-radius: 12px
+    &__round:before 
+        border-radius: 50%
+.main-block
+    display: none
+    &-active 
+        display: flex
