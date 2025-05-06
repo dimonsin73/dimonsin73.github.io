@@ -71,28 +71,258 @@
     font: 500 12px/16px 'PT Root UI', 'sans-serif'
     color: #fff    
 
-body
-    min-width: 390px
-.container
-    max-width: 1330px
-    margin: 0 auto
-    padding: 0 16px
-.link
-    font: 400 14px/18.2px 'PT Root UI', 'sans-serif'
-    color: var(--black)
-    text-decoration: none
-.btn-icon
+
+// Кнопки
+.btn 
     @include flex
-    width: 50px
+    column-gap: 8px
+    flex: 0 0 auto
     height: 50px
-    border: 1px solid var(--border-icon)
     border-radius: 12px
-    cursor: pointer
-.btn-text
-    @include flex
-    @include text
+    white-space: nowrap
+    &-primary
+        padding: 14px 16px
+        border: 1px solid var(--burgundy)
+        background-color: var(--burgundy)
+        @include text-btn
+        color: #fff
+        &:hover
+            background-color: #CB3562
+        &[disabled]
+            border: 1px solid #F6F6F6
+            background-color: #F6F6F6
+            color: var(--grey)
+            pointer-events: none
+            & path
+                stroke: var(--grey)
+    &-secondary
+        width: max-content
+        padding: 14px 16px
+        border: 1px solid var(--border-icon)
+        background-color: #fff
+        @include text
+        &:hover
+            border: 1px solid var(--black)
+        &[disabled]
+            border: 1px solid var(--bg-stack)
+            background-color: var(--bg-stack)
+            color: var(--grey)
+            & path 
+                stroke: var(--grey)
+    &-icon
+        width: 50px
+        height: 50px
+        border: 1px solid var(--border-icon)
+        &-large
+            width: 75px
+    &-circle
+        @include flex
+        border-radius: 50%
+        &-small
+            width: 20px
+            height: 20px
+        &-medium
+            width: 32px
+            height: 32px
+    &-green
+        background-color: var(--green)
+    &-whatsapp
+        background-color: var(--whatsapp)
+    &-telegram
+        background-color: var(--telegram)   
+    &-phone  
+        background-color: var(--phone)  
+    &-burger
+        @include flex
+        flex-direction: column
+        justify-content: space-around
+        width: 18px
+        height: 18px    
+        &-line
+            width: 16.5px
+            height: 2px
+            background-color: var(--black)
+    &-by
+        padding: 0 24px
+        @include text-btn
+        border: 1px solid var(--rise)
+        color: var(--burgundy)
+        &:hover
+            border: 1px solid var(--burgundy)
+        &-shop
+            display: none
+        &-active
+            content: 'В корзине'
+            border-color: var(--green)
+            color: var(--green)
+            &:hover 
+                border: 1px solid var(--green)
+            & .btn-by
+                display: none
+            & .btn-by-shop
+                display: block
+        &[disabled]
+            border: 1px solid var(--bg-stack)
+            background-color: var(--bg-stack)
+            color: var(--grey)
+        &-small
+            display: none
+    &-rating 
+        background-color: #fff
+        border-color: #fff
+    &-heart
+        @include flex
+        position: absolute
+        top: 10px
+        right: 10px
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background-color: #fff
+        cursor: pointer
+        & path
+            fill: #BECCD1
+        &-active 
+            & path
+                fill: var(--burgundy)
+    &-margin
+        margin: 48px auto 0
+    &-page 
+        font: 500 16px / 20px "PT Root UI", "sans-serif"
+        color: var(--black)
+        border-color: #fff
+        &-active 
+            border-color: var(--burgundy)
+            color: var(--burgundy)
+@media (max-width: 1023px)
+    .btn
+        &-by
+            width: 50px
+            padding: 0
+            &-full 
+                display: none
+            &-small
+                display: flex
+.check 
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .check__label .check__check
+            border-color: var(--burgundy)
+            background:
+                color: var(--burgundy)
+                image: url(../img/check.png)
+                repeat: no-repeat
+                position: center center
+    &__label 
+        @include flex
+        justify-content: start
+        column-gap: 8px
+    &__check 
+        flex: 0 0 auto
+        width: 24px
+        height: 24px
+        border: 2px solid var(--grey)
+        border-radius: 8px 
+    &__text 
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+.radio 
+    &__input[type="radio"]
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .radio__label .radio__label-check
+            background-color: var(--burgundy)
+            outline: 2px solid var(--burgundy)
+    &__label
+        display: flex
+        align-items: center
+        gap: 17px
+        margin-left: 8px
+        margin-right: 8px
+        &-check 
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            outline: 2px solid #93949B
+            outline-offset: 5px
+        &-title 
+            font: 700 18px/24px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text 
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+.input 
+    width: 306px
     padding: 14px 24px
-    cursor: pointer
+    border: 1px solid #93949B
+    border-radius: 12px
+    font: 400 16px/20px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+    &::placeholder
+        color: #93949B 
+.ial
+    position: relative
+    &-error .ial__input
+        border: 1px solid #AD2950
+        background-color: #AD295012
+    &-error .ial__error
+        display: block
+    &__input 
+        width: 100%
+        padding: 23px 24px 5px
+        border: 1px solid #93949B
+        border-radius: 12px
+        font: 400 16px/20px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        &::placeholder
+            color: #93949B
+        &:focus ~ .ial__label
+            top: 5px
+            font-size: 12px
+            line-height: 16px
+        &-show ~ .ial__show
+                background: 
+                    image: url('../img/hide.png')
+        
+
+    &__label 
+        position: absolute
+        top: 16px
+        left: 24px
+        font: 400 16px/20px 'PT Root UI', 'sans-serif'
+        color: #93949B
+        transition: all 0.3s ease
+        &-up
+            top: 5px
+            font-size: 12px
+            line-height: 16px
+    &__error
+        display: none
+        margin-top: 8px
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: var(--burgundy)
+    &__text 
+        margin-top: 8px
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: #93949B
+    &__show 
+        position: absolute
+        top: 13px
+        right: 24px
+        width: 24px
+        height: 24px
+        background: 
+            image: url('../img/show.png')
+    &__error 
+        display: none
+        margin-top: 8px
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: var(--burgundy)
+
+
 .title
     @include title
 .text
@@ -103,6 +333,20 @@ body
         @include title3
     .text
         @include text2
+
+body
+    min-width: 390px
+.container
+    max-width: 1330px
+    margin: 0 auto
+    padding: 0 16px
+.link
+    @include flex
+    gap: 16px
+    font: 400 14px/18px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+    text-decoration: none
+    white-space: nowrap
 
 html
     overflow-x: hidden
@@ -115,172 +359,143 @@ body
     display: flex
     flex-direction: column
     min-height: 100vh
-.header
-    &__top
-        position: relative
-        margin-top: 20px
-        padding: 13px 0
-        z-index: 50
-        &-full
-            position: relative
-            @include flex
-            justify-content: space-between
-        &-small
-            display: none
-        &-back
-            display: flex
-            align-items: center
-            gap: 16px
-            font: 500 22px/28px 'PT Root UI', 'sans-serif'
-            color: var(--black)
-            &-btn
-                @include flex
-    &__left
+.logo
+    flex: 0 0 auto
+.city
+    @include flex
+    column-gap: 8px
+    @include text-content
+    white-space: nowrap
+.working
+    @include flex
+    column-gap: 8px
+    white-space: nowrap
+    & .working__time svg
+        transition: transform 0.3s ease
+    &-active .working__time svg
+        transform: scale(1, -1)
+    &__time
         @include flex
-        column-gap: 24px
-        &-item 
-            position: relative
-    &__city
-        @include flex
-        column-gap: 8px
-        &-text
-            @include text-content
-            cursor: pointer
-    &__working
-        @include flex
-        column-gap: 8px
-        & .header__working-time svg
-            transition: transform 0.3s ease
-        &-active .header__working-time svg
-            transform: scale(1, -1)
-        &-chevron
-            @include flex
-        &-time
-            @include flex
-            gap: 8px
-            padding-right: 8px
-            cursor: pointer
+        gap: 8px
+        padding-right: 8px
+        cursor: pointer
         &-text
             @include text-content
             color: var(--burgundy)
-    &__line
-        width: 100%
-        border-bottom: 1px solid var(--border)
-    &__bottom
-        position: relative
-        padding: 24px 0
-        z-index: 40
-        &-full
-            @include flex
-            justify-content: space-between
-        &-small 
-            display: none
-            & .header__choice
-                top: calc( 100% + 16px )
-                left: 50%
-                transform: translateX(-50%)
-        &-left 
-            display: flex
-            gap: 20px
-            align-items: center
-        &-link
-            @include flex
-        &-title 
-            font: 500 32px/42px 'PT Root UI', 'sans-serif'
-            color: var(--black)
-    &__social
-        position: relative
-        display: none
-        z-index: 20
-    &__menu
+// Выбор даты и времени работы
+.choice
+    position: absolute
+    top: 27px
+    left: 0
+    height: 0
+    border-radius: 16px
+    box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
+    background-color: #fff
+    overflow: hidden
+    opacity: 0
+    transition: height 0.3s ease, opacity 0.3s ease
+    z-index: 10
+    &-active 
+        height: 425px
+        overflow: visible
+        opacity: 1
+    &__wrapper 
+        width: 360px
+        padding: 24px
+    &__title 
+        margin-bottom: 24px
+        font: 500 16px/21px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+    &__tabs 
+        display: flex
+        gap: 8px
+        margin-bottom: 16px
+    &__tab 
+        flex: 1 0 calc(25% - 6px)
         @include flex
-        column-gap: 24px
-        &-item
-            @include flex
-            column-gap: 8px
-        &-link
-            @include flex
-            gap: 8px
-        &-chevron
-            @include flex
-    &__dropdawn 
+        flex-direction: column
+        gap: 2px
+        padding: 10px 12px
+        border: 1px solid #E5E7EB
+        border-radius: 12px
+        color: var(--black)
+        cursor: pointer
+        &-active 
+            border: 1px solid var(--burgundy)
+            background-color: var(--burgundy)
+            color: #fff
+    &__days 
+        font: 500 12px/16px 'PT Root UI', 'sans-serif'
+    &__number 
+        font: 500 16px/20px 'PT Root UI', 'sans-serif'
+    &__select 
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        margin-bottom: 24px
+        padding: 13px 24px 13px 58px
+        border: 1px solid var(--grey)
+        border-radius: 12px
+        background: 
+            image: url('../img/calendar.svg')
+            position: center left 24px
+            repeat: no-repeat
+        font: 500 16px/22px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        cursor: pointer
+        & svg 
+            transition: transform 0.3s ease
+        &-active svg
+            transform: scale(1, -1)
+    &__options
         position: absolute
-        right: 0
-        top: 42px
+        left: 24px
+        right: 24px
         height: 0
-        border-radius: 8px
-        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
+        padding: 0 24px
+        border-radius: 12px
+        box-shadow: 0px 3px 10px -5px #12121712
         background-color: #fff
-        overflow: hidden
+        overflow-y: scroll
+        overflow-x: hidden
         transition: height 0.3s ease
         z-index: 100
         &-active 
-            height: 200px
-        &-list 
-            padding: 0 16px
-        &-item 
-            width: 175px
-            padding: 14px 8px
-            border-bottom: 1px solid #E5E7EB
-            cursor: pointer
-            &:last-child
-                border-bottom: none
-    &__choice
-        position: absolute
-        top: calc(100% + 7px)
-        left: 0
-        height: 0
-        border-radius: 16px
-        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
-        background-color: #fff
-        overflow: hidden
-        opacity: 0
-        transition: height 0.3s ease, opacity 0.3s ease
-        &-active 
-            height: 425px
-            opacity: 1
-        &-wrapper 
-            width: 360px
-            padding: 24px
-        &-title 
-            margin-bottom: 24px
-            font: 500 16px/21px 'PT Root UI', 'sans-serif'
-            color: var(--black)
-        &-tabs 
-            display: flex
-            gap: 8px
-            margin-bottom: 16px
-        &-tab 
-            flex: 1 0 calc(25% - 6px)
-            @include flex
-            flex-direction: column
-            gap: 2px
-            padding: 10px 12px
-            border: 1px solid #E5E7EB
-            border-radius: 12px
-            color: var(--black)
-            cursor: pointer
-            &-active 
-                border: 1px solid var(--burgundy)
-                background-color: var(--burgundy)
-                color: #fff
-        &-days 
-            font: 500 12px/16px 'PT Root UI', 'sans-serif'
-        &-number 
-            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            height: 255px
+        &::-webkit-scrollbar
+            width: 8px
+            background-color: #fff
+        &::-webkit-scrollbar-thumb 
+            border-radius: 4px
+            background-color: #E6E9ED
+    &__option
+        padding: 16px 0
+        border-bottom: 1px solid #E5E7EB
+        cursor: pointer
+        &:last-child
+            border-bottom: none
+        &-active    
+            background: 
+                image: url('../img/check-i.svg')
+                position: center right 
+                repeat: no-repeat
+            color: var(--burgundy)
+    &__time 
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 34px
+        margin-bottom: 24px
         &-select 
             display: flex
             align-items: center
             justify-content: space-between
-            width: 100%
-            margin-bottom: 24px
-            padding: 13px 24px 13px 58px
+            width: 205px
+            padding: 13px 24px
             border: 1px solid var(--grey)
             border-radius: 12px
-            background: 
-                image: url('../img/calendar.svg')
-                position: center left 24px
-                repeat: no-repeat
             font: 500 16px/22px 'PT Root UI', 'sans-serif'
             color: var(--black)
             cursor: pointer
@@ -290,8 +505,9 @@ body
                 transform: scale(1, -1)
         &-options
             position: absolute
-            left: 24px
-            right: 24px
+            top: calc( 100% + 16px )
+            left: 0
+            width: 205px
             height: 0
             padding: 0 24px
             border-radius: 12px
@@ -314,100 +530,18 @@ body
             cursor: pointer
             &:last-child
                 border-bottom: none
-            &-active    
-                background: 
-                    image: url('../img/check-i.svg')
-                    position: center right 
-                    repeat: no-repeat
-                color: var(--burgundy)
-        &-time 
-            position: relative
-            display: flex
-            justify-content: space-between
-            align-items: center
-            gap: 34px
-            margin-bottom: 24px
-            &-select 
-                display: flex
-                align-items: center
-                justify-content: space-between
-                width: 205px
-                padding: 13px 24px
-                border: 1px solid var(--grey)
-                border-radius: 12px
-                font: 500 16px/22px 'PT Root UI', 'sans-serif'
-                color: var(--black)
-                cursor: pointer
-                & svg 
-                    transition: transform 0.3s ease
-                &-active svg
-                    transform: scale(1, -1)
-            &-options
-                position: absolute
-                top: calc( 100% + 16px )
-                left: 0
-                width: 205px
-                height: 0
-                padding: 0 24px
-                border-radius: 12px
-                box-shadow: 0px 3px 10px -5px #12121712
-                background-color: #fff
-                overflow-y: scroll
-                transition: height 0.3s ease
-                z-index: 100
-                &-active 
-                    height: 255px
-                &::-webkit-scrollbar
-                    width: 8px
-                    background-color: #fff
-                &::-webkit-scrollbar-thumb 
-                    border-radius: 4px
-                    background-color: #E6E9ED
-            &-option
-                padding: 16px 0
-                border-bottom: 1px solid #E5E7EB
-                cursor: pointer
-                &:last-child
-                    border-bottom: none
-        &-local 
-            width: 56px
-            font: 400 14px/18px 'PT Root UI', 'sans-serif'
-            color: var(--black)
-            text-align: right
-        &-checkrecipient
-            margin-bottom: 24px
-            padding: 3px 0
-        &-input
-            display: none
-            width: 0
-            opacity: 0
-            &:checked ~ .header__choice-label .header__choice-check
-                background:
-                    color: var(--burgundy)
-                    image: url(../img/check.png)
-                    repeat: no-repeat
-                    position: center center
-            &:checked ~ .header__choice-label .header__choice-circle
-                outline: 1px solid var(--burgundy)
-        &-text 
-            font: 400 14px/18px 'PT Root UI', 'sans-serif'
-            color: var(--black)
-        &-label 
-            @include flex
-            justify-content: start
-            column-gap: 12px
-        &-check 
-            width: 18px
-            height: 18px
-            border: 1px solid var(--grey)
-            border-radius: 4px 
-        &-btn 
-            width: 100%
-            padding: 14.5px
-            border-radius: 12px
-            background-color: var(--burgundy)
-            font: 700 16px/21px 'PT Root UI' , 'sans-serif'
-            color: #fff
+    &__local 
+        width: 56px
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+        text-align: right
+    &__checkrecipient
+        margin-bottom: 24px
+        padding: 3px 0
+    &__btn 
+        width: 100%
+
+   
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button 
     display: none
@@ -415,44 +549,22 @@ input::-webkit-inner-spin-button
     margin: 0
 #header-info 
     cursor: pointer
-.catalog
-    @include flex
-    column-gap: 8px
-    padding: 13px 16px
-    border-radius: 12px
-    background-color: var(--burgundy)
-    cursor: pointer
-    &:hover
-        background-color: #CB3562
-    &[disabled]
-        background-color: #F6F6F6
-        color: var(--grey)
-        pointer-events: none
-        & .catalog__text
-            color: var(--grey)
-        & path
-            stroke: var(--grey)
-    &__text
-        @include text-btn
-        color: #fff
+
+// Поля поиска
 .search
     position: relative
-    &__icon
-        position: absolute
-        left: 20px
-        top: 50%
-        width: 18px
-        height: 18px
-        padding: 1px
-        background-image: url('../img/search_bg.svg')
-        transform: translateY(-50%)
+    width: 100%
     &__input
+        width: 100%
         @include text
-        width: 442px
-        padding: 13px 16px
+        padding: 14px 16px
         padding-left: 48px
         border: 1px solid var(--border)
         border-radius: 12px
+        background: 
+            image: url('../img/search_bg.svg')
+            repeat: no-repeat 
+            position: 20px center
         &::placeholder
             @include text
             color: var(--placeholder)
@@ -503,71 +615,7 @@ input::-webkit-inner-spin-button
         &-subtext
             font: 400 12px/14px 'PT Root UI', 'sans-serif'
             color: var(--black)
-.tel
-    position: relative
-    @include flex
-    flex-direction: column  
-    align-items: flex-start
-    background-color: #fff
-    cursor: pointer
-    &__uptext  
-        @include text-up
-        margin-bottom: 3px
-    &__content
-        @include flex
-        column-gap: 5px
-        border-bottom: 0.5px dashed var(--grey)
-    &__number
-        @include text-bold
-    &__icon
-        @include flex
-        width: 20px
-        height: 20px
-        border-radius: 50%
-        &-whatsapp
-            background-color: var(--whatsapp)
-        &-telegram
-            background-color: var(--telegram)   
-        &-phone  
-            background-color: var(--phone)   
-    &__wrapper
-        position: absolute
-        top: 100%
-        left: -24px
-        right: -24px
-        display: flex
-        flex-direction: column
-        gap: 10px
-        height: 0
-        padding: 0 24px
-        border-bottom-left-radius: 12px
-        border-bottom-right-radius: 12px
-        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
-        background-color: #fff
-        overflow: hidden
-        transition: height 0.3s ease, padding 0.3s ease
-        &-active 
-            height: 218px
-            padding: 24px
-        & .tel__icon
-            width: 30px
-            height: 30px
-    &__item 
-        display: flex
-        align-items: center
-        gap: 8px   
-        width: 100%
-        height: 50px
-        padding: 7px 16px
-        border-radius: 16px
-        background-color: #F5F5F5  
-        &-title 
-            font: 500 16px/20px 'PT Root UI', 'sans-serif'
-            color: var(--black)
-        &-text
-            font: 500 12px/16px 'PT Root UI', 'sans-serif'
-            color: var(--grey)
-.modal-city
+.modal 
     position: fixed
     top: 0
     bottom: 0
@@ -576,6 +624,16 @@ input::-webkit-inner-spin-button
     display: none
     background-color: #26262680
     z-index: 1000
+    &__close
+        position: absolute
+        top: 20px
+        right: 20px
+        @include flex
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background-color: var(--bg-stack)
+.modal-city
     &-active 
         @include flex
     &__wrapper
@@ -617,27 +675,11 @@ input::-webkit-inner-spin-button
             font: 500 18px/21px 'PT Root UI', 'sans-serif'
     & .allbouquets
         margin-top: 0
-    &__close 
-        position: absolute
-        top: 20px
-        right: 20px
-        @include flex
-        width: 40px
-        height: 40px
-        border-radius: 50%
-        background-color: var(--bg-stack)
+        
 .basket 
-    position: fixed
-    top: 0
-    bottom: 0
-    right: 0
-    left: 0
-    display: none
     justify-content: center
     align-items: flex-start
-    background-color: #26262680
     overflow-y: scroll
-    z-index: 1000
     &-active 
         display: flex
     &__wrapper 
@@ -652,15 +694,6 @@ input::-webkit-inner-spin-button
         border-radius: 24px
         box-shadow: 0px 8px 22px 0px #2626261A
         background-color: #fff
-    &__close 
-        position: absolute
-        top: 20px
-        right: 20px
-        @include flex
-        width: 50px
-        height: 50px
-        border-radius: 50%
-        background-color: var(--bg-stack)
     &__title 
         font: 500 42px/54px 'PT Root UI', 'sans-serif'
         color: var(--black)
@@ -851,30 +884,154 @@ input::-webkit-inner-spin-button
         &-active 
             border: 1px solid var(--burgundy)
             color: var(--burgundy)
+
+    
+// Хедер
+.header
+    &__top
+        position: relative
+        margin-top: 20px
+        padding: 13px 0
+        z-index: 50
+        &-full
+            position: relative
+            @include flex
+            justify-content: space-between
+        &-small
+            display: none
+        &-back
+            display: flex
+            align-items: center
+            gap: 16px
+            font: 500 22px/28px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            &-btn
+                @include flex
+    &__left
+        @include flex
+        column-gap: 24px
+        &-item 
+            position: relative
+    &__line
+        width: 100%
+        border-bottom: 1px solid var(--border)
+    &__bottom
+        position: relative
+        padding: 24px 0
+        z-index: 40
+        &-full
+            @include flex
+            justify-content: space-between
+            gap: 24px
+        &-small 
+            display: none
+            & .header__choice
+                top: calc( 100% + 16px )
+                left: 50%
+                transform: translateX(-50%)
+        &-left 
+            display: flex
+            gap: 20px
+            align-items: center
+        &-link
+            @include flex
+        &-title 
+            font: 500 32px/42px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__social
+        position: relative
+        display: none
+        z-index: 20
+    &__menu
+        @include flex
+        column-gap: 24px
+        &-item
+            @include flex
+            column-gap: 8px
+        &-link
+            @include flex
+            gap: 8px
+        &-chevron
+            @include flex
+    &__dropdawn 
+        position: absolute
+        right: 0
+        top: 42px
+        height: 0
+        border-radius: 8px
+        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
+        background-color: #fff
+        overflow: hidden
+        transition: height 0.3s ease
+        z-index: 100
+        &-active 
+            height: 200px
+        &-list 
+            padding: 0 16px
+        &-item 
+            width: 175px
+            padding: 14px 8px
+            border-bottom: 1px solid #E5E7EB
+            cursor: pointer
+            &:last-child
+                border-bottom: none
 .icons
     @include flex
     column-gap: 16px
-    &__login
-        column-gap: 8px
-        width: 75px
-        &-acount 
-            @include flex
-            justify-content: center
-            width: 32px
-            height: 32px
-            border-radius: 50%
-            background-color: var(--green)
-    &__burger
+.tel
+    position: relative
+    @include flex
+    flex-direction: column  
+    align-items: flex-start
+    flex: 0 0 auto
+    background-color: #fff
+    cursor: pointer
+    &__uptext  
+        @include text-up
+        margin-bottom: 3px
+    &__content
         @include flex
+        column-gap: 5px
+        border-bottom: 0.5px dashed var(--grey)
+    &__number
+        @include text-bold 
+    &__wrapper
+        position: absolute
+        top: 100%
+        left: -24px
+        right: -24px
+        display: flex
         flex-direction: column
-        justify-content: space-around
-        width: 18px
-        height: 18px    
-        &-line
-            width: 16.5px
-            height: 2px
-            background-color: var(--black)
-
+        gap: 10px
+        height: 0
+        padding: 0 24px
+        border-bottom-left-radius: 12px
+        border-bottom-right-radius: 12px
+        box-shadow: 0px 20px 65px -5px #1212170A, 0px 10px 20px -5px #1212170A
+        background-color: #fff
+        overflow: hidden
+        transition: height 0.3s ease, padding 0.3s ease
+        &-active 
+            height: 218px
+            padding: 24px
+        & .tel__icon
+            width: 30px
+            height: 30px
+    &__item 
+        display: flex
+        align-items: center
+        gap: 8px   
+        width: 100%
+        height: 50px
+        padding: 7px 16px
+        border-radius: 16px
+        background-color: #F5F5F5  
+        &-title 
+            font: 500 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-text
+            font: 500 12px/16px 'PT Root UI', 'sans-serif'
+            color: var(--grey)
 .stack
     margin-bottom: 90px
     z-index: 20
@@ -943,21 +1100,6 @@ input::-webkit-inner-spin-button
 
 .product
     position: relative
-    &__heart
-        @include flex
-        position: absolute
-        top: 10px
-        right: 10px
-        width: 40px
-        height: 40px
-        border-radius: 50%
-        background-color: #fff
-        cursor: pointer
-        & path
-            fill: #BECCD1
-        &-active 
-            & path
-                fill: var(--burgundy)
     &__link
         display: block
     &__img
@@ -982,32 +1124,6 @@ input::-webkit-inner-spin-button
         justify-content: space-between
     &__price
         @include text-price 
-    &__btn
-        @include text-btn
-        padding: 14px 24px
-        border: 1px solid var(--rise)
-        border-radius: 12px
-        color: var(--burgundy)
-        &:hover
-            border: 1px solid var(--burgundy)
-        &-shop
-            display: none
-        &-active
-            content: 'В корзине'
-            border-color: var(--green)
-            color: var(--green)
-            &:hover 
-                border: 1px solid var(--green)
-            & .product__btn-by
-                display: none
-            & .product__btn-shop
-                display: block
-        &[disabled]
-            border: 1px solid var(--bg-stack)
-            background-color: var(--bg-stack)
-            color: var(--grey)
-        &-small
-            display: none
     &__sale
         &-top
             @include flex
@@ -1023,26 +1139,6 @@ input::-webkit-inner-spin-button
             color: var(--burgundy)
         &-prace
             color: var(--burgundy)
-
-.allbouquets
-    @include flex
-    margin: 0 auto
-    margin-top: 48px
-    border: 1px solid var(--border-icon)
-    border-radius: 12px
-    &:hover 
-        border: 1px solid #1C1C1D
-    &[disabled]
-        border: 1px solid var(--bg-stack)
-        background-color: var(--bg-stack)
-        & .allbouquets__text
-            color: var(--grey)
-        & path 
-            stroke: var(--grey)
-    &__text
-        margin-right: 16px
-    &__icon
-        @include flex 
 
 .products
     margin-bottom: 90px
@@ -1208,7 +1304,7 @@ input::-webkit-inner-spin-button
         &-date
             @include subtext-footer
             
-.offer
+.features
     padding: 90px 0
     &__wrapper
         @include flex
@@ -1610,17 +1706,9 @@ input::-webkit-inner-spin-button
             font: 400 11px/11px 'PT Root UI', 'sans-serif'
             color: #fff
 .card 
-    position: fixed
-    top: 0
-    right: 0
-    left: 0
-    bottom: 0
-    display: none
     justify-content: center
     align-items: flex-start
-    background-color: #26262680
     overflow-y: scroll
-    z-index: 1000
     &-active 
         display: flex
     & .product__price 
@@ -1662,15 +1750,6 @@ input::-webkit-inner-spin-button
         box-shadow: 0px 8px 22px 0px #2626261A
         background-color: #fff
         overflow: hidden
-    &__close 
-        position: absolute
-        top: 20px
-        right: 20px
-        @include flex
-        width: 50px 
-        height: 50px
-        border-radius: 50%
-        background-color: #F5F5F5
     &__content 
         display: flex
     &__media 
@@ -1844,11 +1923,6 @@ input::-webkit-inner-spin-button
                     background-color: #fff
                     color: var(--green)   
         &-heart 
-            @include flex
-            width: 50px
-            height: 50px
-            border: 1px solid #E5E7EB
-            border-radius: 12px
             &-active path
                 fill: var(--burgundy)
     &__delivery 
@@ -2083,7 +2157,9 @@ input::-webkit-inner-spin-button
             &-active 
                 border-color: var(--burgundy)
                 color: var(--burgundy)
-
+.filters
+    &__item 
+        cursor: pointer
 .popup
     position: absolute
     right: 0
@@ -2136,7 +2212,6 @@ input::-webkit-inner-spin-button
             border-bottom-left-radius: 12px
             @include text-content-small
             white-space: nowrap
-            cursor: pointer
             &-active 
                 margin-right: -32px
                 background:
@@ -2144,6 +2219,11 @@ input::-webkit-inner-spin-button
                     image: url('../img/arroy_right.png')
                     position: center right 32px
                     repeat: no-repeat
+        &-link
+            padding: 14px 16px 
+            @include text-content-small
+            white-space: nowrap
+            cursor: pointer
 .contants
     width: 100%
 .contant
@@ -2549,14 +2629,6 @@ input::-webkit-inner-spin-button
     z-index: 1000
     &-active 
         display: block
-    &__close 
-        position: absolute
-        top: 16px
-        right: 16px
-        width: 40px
-        height: 40px
-        border-radius: 50%
-        background-color: #f5f5f5
     &__wrapper
         position: relative
 .payment 
@@ -2746,45 +2818,14 @@ input::-webkit-inner-spin-button
         flex-direction: column
         gap: 24px
         &-line 
-            display: flex
-            gap: 24px
-        &-input[type="radio"]
-            display: none
-            width: 0
-            opacity: 0
-            &:checked ~ .deliverymethod__item-label .deliverymethod__item-check
-                background-color: var(--burgundy)
-                outline: 2px solid var(--burgundy)
-        &-label
+            position: relative
             display: flex
             align-items: center
-            gap: 17px
-            margin-left: 8px
-            margin-right: 8px
-        &-check 
-            width: 14px
-            height: 14px
-            border-radius: 50%
-            outline: 2px solid #93949B
-            outline-offset: 5px
-        &-title 
-            font: 700 18px/24px 'PT Root UI', 'sans-serif'
-            color: var(--black)
-        &-text 
-            font: 400 16px/20px 'PT Root UI', 'sans-serif'
-            color: var(--black)
+            gap: 24px
         &-subtitle 
             font: 500 16px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
         &-input 
-            width: 306px
-            padding: 14px 24px
-            border: 1px solid #93949B
-            border-radius: 12px
-            font: 400 16px/20px 'PT Root UI', 'sans-serif'
-            color: var(--black)
-            &::placeholder
-                color: #93949B
         &-datetime
             position: relative
             & svg
@@ -2819,6 +2860,7 @@ input::-webkit-inner-spin-button
             border-radius: 16px
             background-color: #fff
             overflow-y: scroll
+            overflow-x: hidden
             z-index: 100
             transition: height 0.3s ease
             &-active 
@@ -4213,9 +4255,6 @@ input::-webkit-inner-spin-button
         left: -200px
         right: -210px
 @media (max-width: 1359px)
-    .search
-        &__input 
-            width: 260px
     .stack
         margin-bottom: 60px
         &__wrapper
@@ -4239,7 +4278,7 @@ input::-webkit-inner-spin-button
         margin-bottom: 60px
     .rating
         padding: 60px 0
-    .offer
+    .features
         padding: 60px 0
         &__bouquet
             background-position: right -130px center
@@ -4306,7 +4345,9 @@ input::-webkit-inner-spin-button
         &-fourth
             padding: 30px 24px 170px
 @media (max-width: 1023px)
-    .search 
+    #search-main
+        display: none
+    #search-div 
         display: none
     .stack
         &__wrapper
@@ -4325,12 +4366,6 @@ input::-webkit-inner-spin-button
             & img
                 min-width: 240px
                 height: 240px
-    .product
-        &__btn
-            &-full 
-                display: none
-            &-small
-                display: block
     .products
         &__content
             grid-template-columns: repeat(3, 1fr)
@@ -4340,7 +4375,7 @@ input::-webkit-inner-spin-button
         &__item
             flex: 0 0 calc( 50% - 8px )
             overflow: hidden
-    .offer
+    .features
         &__wrapper
             flex-direction: column
         &__item
@@ -4382,6 +4417,7 @@ input::-webkit-inner-spin-button
                 width: 100%
                 margin-bottom: 0
                 padding: 8.5px 0
+                cursor: pointer
             &-none 
                 display: none
             &-svg 
@@ -4652,7 +4688,7 @@ input::-webkit-inner-spin-button
         &__content
             margin-bottom: 24px
             overflow: hidden    
-    .offer
+    .features
         padding: 50px 0
         &__item
             min-height: 0
@@ -4978,16 +5014,6 @@ input::-webkit-inner-spin-button
                 border-radius: 0
                 font-size: 14px
                 line-height: 17px
-                &::after
-                    content: ''
-                    position: absolute
-                    right: 20px
-                    top: 50%
-                    display: block
-                    width: 7px
-                    height: 12px
-                    background-image: url('../img/arroy_r.svg')
-                    transform: translateY(-50%)
         &__bottom
             display: flex
             margin-bottom: 70px
@@ -5104,7 +5130,7 @@ input::-webkit-inner-spin-button
                 height: 512px
         &__tab
             flex: 1 0 auto
-    .offer
+    .features
         &__bouquet
             background-image: url('../img/row1-small.png')
         &__shops

@@ -82,17 +82,6 @@ for (let i = 0; i < designQuantityBtnArr.length; i++) {
     })
 }
 
-
-// открытие календаря
-const deliverymethodItemSvgArr = document.querySelectorAll('.deliverymethod__item-svg')
-for (let i = 0; i < deliverymethodItemSvgArr.length; i++) {
-    const element = deliverymethodItemSvgArr[i];
-    element.addEventListener('click', function(){
-        const deliverymethodItemInput = element.parentElement.querySelector('.deliverymethod__item-input')
-        deliverymethodItemInput.showPicker()
-    })
-}
-
 // меню выбора города
 const deliverymethodItemCity = document.querySelector('.deliverymethod__item-city')
 const deliverymethodItemOptions = document.querySelector('.deliverymethod__item-options')
@@ -168,5 +157,152 @@ for (let i = 0; i < headerBottomLinkArr.length; i++) {
         }
         
 
+    })
+}
+
+// Дата и время работы
+const deliverymethodDatetime1 = document.querySelector('.deliverymethod__datetime1')
+const deliverymethodDatetime2 = document.querySelector('.deliverymethod__datetime2')
+working(deliverymethodDatetime1)
+working(deliverymethodDatetime2)
+function working(param) {
+    const deliverymethodItemDatetime = param.querySelector('.deliverymethod__item-datetime')
+    const deliverymethodItemInput = deliverymethodItemDatetime.querySelector('.input')
+    const choice = param.querySelector('.choice')
+    const choiceSelect = param.querySelector('.choice__select')
+    const choiceSelectP = choiceSelect.querySelector('.choice__select-p')
+    const choiceOptions = param.querySelector('.choice__options')
+    const choiceTimeSelect = param.querySelector('.choice__time-select')
+    const choiceTimeOptions = param.querySelector('.choice__time-options')
+    // открытие и закрытие меню
+    deliverymethodItemDatetime.addEventListener('click', function(){
+        choice.classList.toggle('choice-active')
+        document.addEventListener('mousedown', (e) => {
+            const withinBoundaries = e.composedPath().includes(param);
+            if ( ! withinBoundaries ) {
+                choice.classList.remove('choice-active')
+                choiceSelect.classList.remove('choice__select-active')
+                choiceOptions.classList.remove('choice__options-active')
+                choiceTimeSelect.classList.remove('choice__time-select-active')
+                choiceTimeOptions.classList.remove('choice__time-options-active')
+            }
+        })
+        document.addEventListener('keydown', function(e) {
+            if( e.keyCode == 27 ){ 
+                workingText.classList.remove('working-active')
+                choice.classList.remove('choice-active')
+                choiceSelect.classList.remove('choice__select-active')
+                choiceOptions.classList.remove('choice__options-active')
+                choiceTimeSelect.classList.remove('choice__time-select-active')
+                choiceTimeOptions.classList.remove('choice__time-options-active')
+            }
+        });
+    })
+    // открытие и закрытие подменю
+    choiceSelect.addEventListener('click', function(){
+        choiceTimeSelect.classList.remove('choice__time-select-active')
+        choiceTimeOptions.classList.remove('choice__time-options-active')
+        choiceSelect.classList.toggle('choice__select-active')
+        choiceOptions.classList.toggle('choice__options-active')
+    })
+    choiceTimeSelect.addEventListener('click', function(){
+        choiceSelect.classList.remove('choice__select-active')
+        choiceOptions.classList.remove('choice__options-active')
+        choiceTimeSelect.classList.toggle('choice__time-select-active')
+        choiceTimeOptions.classList.toggle('choice__time-options-active')
+    })
+    // функции дней и месяцев 
+    function getWeekDay(date) {
+        let days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+        return days[date.getDay()];
+    }
+    function getMonth(month) {
+        let months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+        return months[month.getMonth()];
+    }
+    // Меняем текст в хедере
+    const today = new Date()
+    deliverymethodItemInput.value = `${today.getDate()} ${getMonth(today)}, с 11:00 до 21:00`
+    // построение контекта табов 
+    const choiceTabArr = param.querySelectorAll('.choice__tab')
+    const choiceOptionArr = param.querySelectorAll('.choice__option')
+    for (let i = 0; i < choiceTabArr.length; i++) {
+        const element = choiceTabArr[i];
+        const daysNumber = element.querySelector('.choice__number')
+        const daysDays = element.querySelector('.choice__days')
+        const today = new Date()
+        today.setDate(today.getDate() + i)
+        daysNumber.textContent = today.getDate()
+        if (i > 1) {
+            daysDays.textContent = getWeekDay(today)
+        }
+        element.addEventListener('click', function(){
+            for (let i = 0; i < choiceTabArr.length; i++) {
+                const el = choiceTabArr[i];
+                el.classList.remove('choice__tab-active')
+            }
+            element.classList.add('choice__tab-active')
+            for (let i = 0; i < choiceOptionArr.length; i++) {
+                const element = choiceOptionArr[i];
+                element.classList.remove('choice__option-active')
+            }
+            choiceOptionArr[i].classList.add('choice__option-active')
+            choiceSelectP.textContent = choiceOptionArr[i].textContent
+        })
+    }
+    // построение контента селектов
+    for (let i = 0; i < choiceOptionArr.length; i++) {
+        const element = choiceOptionArr[i];
+        const today = new Date()
+        today.setDate(today.getDate() + i)
+        switch (i) {
+            case 0:
+                element.textContent =  `Сегодня ${today.getDate()} ${getMonth(today)}`
+                break;
+            case 1:
+                element.textContent =  `Завтра ${today.getDate()} ${getMonth(today)}`
+                break;
+            default:
+                element.textContent = `${today.getDate()} ${getMonth(today)}`
+                break;
+        }
+        element.addEventListener('click', function(){
+            for (let i = 0; i < choiceOptionArr.length; i++) {
+                const el = choiceOptionArr[i];
+                el.classList.remove('choice__option-active')
+            }
+            element.classList.add('choice__option-active')
+            choiceSelectP.textContent = element.textContent
+            for (let i = 0; i < choiceTabArr.length; i++) {
+                const element = choiceTabArr[i];
+                element.classList.remove('choice__tab-active')
+            }
+            if (i < 4) {
+                choiceTabArr[i].classList.add('choice__tab-active')
+            } 
+            choiceSelect.classList.remove('choice__select-active')
+            choiceOptions.classList.remove('choice__options-active')
+        })
+    }
+    // Выбор времени
+    const choiceTimeOptionArr = param.querySelectorAll('.choice__time-option')
+    const choiceTimeText = param.querySelector('.choice__time-text')
+    for (let i = 0; i < choiceTimeOptionArr.length; i++) {
+        const element = choiceTimeOptionArr[i];
+        element.addEventListener('click', function () {
+            choiceTimeText.textContent = element.textContent
+            choiceTimeSelect.classList.remove('choice__time-select-active')
+            choiceTimeOptions.classList.remove('choice__time-options-active')
+        })
+    }
+    // Кнопка применить
+    const choiceBtn = param.querySelector('.choice__btn')
+    choiceBtn.addEventListener('click', function(){
+        deliverymethodItemInput.value = `${choiceSelect.textContent}, ${choiceTimeText.textContent}`
+        choice.classList.remove('choice-active')
+        choiceSelect.classList.remove('choice__select-active')
+        choiceOptions.classList.remove('choice__options-active')
+        choiceTimeSelect.classList.remove('choice__time-select-active')
+        choiceTimeOptions.classList.remove('choice__time-options-active')
     })
 }

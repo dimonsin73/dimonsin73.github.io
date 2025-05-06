@@ -1,56 +1,8 @@
 // Экспорт массивов
 import {flowers, colors, sizes, citys} from '../js/arrays.js';
-// футер раскрытие меню
-const buyer = document.getElementById('buyer');
-const list = document.querySelector('.footer__list')
-buyer.addEventListener('click', function(){
-    list.classList.toggle('footer__list-active')
-    if (list.classList.contains('footer__list-active')) {
-        list.style.height = `${list.scrollHeight}px`;
-    } else {
-        list.style.height = `0px`;
-    }
-})
-// Кнопка Информация
-const headerInfo = document.getElementById('header-info')
-const headerDropdawn = document.querySelector('.header__dropdawn')
-headerInfo.addEventListener('click', function(){
-    headerDropdawn.classList.toggle('header__dropdawn-active')
-    document.addEventListener( 'mousedown', (e) => {
-        const withinBoundaries = e.composedPath().includes(headerInfo);
-        if ( ! withinBoundaries ) {
-            headerDropdawn.classList.remove('header__dropdawn-active')
-        }
-    })
-    document.addEventListener('keydown', function(e) {
-        if( e.keyCode == 27 ){ 
-            headerDropdawn.classList.remove('header__dropdawn-active')
-        }
-    });
-})
-// Кнопка телефонов
-const tel = document.querySelector('.tel')
-const telChevrone = document.querySelector('.tel__content')
-const telWrapper = document.querySelector('.tel__wrapper')
-telChevrone.addEventListener('click', function(){
-    telWrapper.classList.toggle('tel__wrapper-active')
-    document.addEventListener( 'mousedown', (e) => {
-        const withinBoundaries = e.composedPath().includes(tel);
-        if ( ! withinBoundaries ) {
-            telWrapper.classList.remove('tel__wrapper-active')
-        }
-    })
-    document.addEventListener('keydown', function(e) {
-        if( e.keyCode == 27 ){ 
-            telWrapper.classList.remove('tel__wrapper-active')
-        }
-    });
-})
 // Дата и время работы
-const headerLeftItem = document.querySelector('.header__left-item')
-const headerBootomSmall = document.querySelector('.header__bottom-small')
-working(headerLeftItem)
-working(headerBootomSmall)
+const headerBottom = document.querySelector('.header__bottom')
+working(headerBottom)
 function working(param) {
     const working = param.querySelector('.working')
     const workingTimeText = param.querySelector('.working__time-text')
@@ -195,90 +147,33 @@ function working(param) {
         choiceTimeOptions.classList.remove('choice__time-options-active')
     })
 }
-
-// Выбор города
-const cityArr = document.querySelectorAll('.city')
-const cityTextArr = document.querySelectorAll('.city__text')
-const modalCity = document.querySelector('.modal-city')
-const modalCityWrapper = modalCity.querySelector('.modal-city__wrapper')
-const modalCityClose = modalCity.querySelector('.modal-city__close')
-const modalCityList = modalCity.querySelector('.modal-city__list')
-const modalCityInput = document.getElementById('search-city')
-for (let i = 0; i < cityArr.length; i++) {
-    const city = cityArr[i];
-    city.addEventListener('click', function(){
-        modalCity.classList.add('modal-city-active')
-        modalCityClose.addEventListener('click', function(){
-            modalCity.classList.remove('modal-city-active')
-            modalCityInput.value = ''
-            modalCityList.innerHTML = ''
-            createCitys(citys)
-        })
-        document.addEventListener( 'mousedown', (e) => {
-            const withinBoundaries = e.composedPath().includes(modalCityWrapper);
-            if ( ! withinBoundaries ) {
-                modalCity.classList.remove('modal-city-active')
-                modalCityInput.value = ''
-                modalCityList.innerHTML = ''
-                createCitys(citys)
-            }
-        })
-        document.addEventListener('keydown', function(e) {
-            if( e.keyCode == 27 ){ 
-                modalCity.classList.remove('modal-city-active')
-                modalCityInput.value = ''
-                modalCityList.innerHTML = ''
-                createCitys(citys)
-            }
-        });
-    })
-}
-function createCitys(citys) {
-    for (let i = 0; i < citys.length; i++) {
-        const element = citys[i];
-        const modalCityItem = document.createElement('li')
-        modalCityItem.classList.add('modal-city__item')
-        if (element == 'Москва' || element == 'Санкт-Петербург') {
-            modalCityItem.classList.add('modal-city__item-black')
+// купить\в корзине
+const productBtns = document.querySelectorAll('.btn-by');
+for (let i = 0; i < productBtns.length; i++) {
+    const element = productBtns[i];
+    element.addEventListener('click', function(){
+        if (window.innerWidth < '1023') {
+            element.classList.toggle('btn-by-active');
+            if (element.classList.contains('btn-by-active')) {
+                element.innerHTML = `<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.1665 12C6.21984 14.0493 7.8265 16.416 9.1665 19C12.2772 13.1107 16.1665 8.444 20.8332 5" stroke="#03A050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>`;
+            } else {
+                element.innerHTML = `<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.8335 1.03345H4.14073C5.11433 1.03345 5.95388 1.71764 6.15038 2.6712L8.34746 13.3331C8.60945 14.6045 9.72886 15.5168 11.027 15.5168H19.2706C20.5342 15.5168 21.6335 14.6513 21.93 13.423L23.1086 8.5411C23.4202 7.25014 22.442 6.00769 21.114 6.00769H6.80774M10.7871 20.9304C10.7871 21.4799 10.3417 21.9253 9.79229 21.9253C9.24285 21.9253 8.79744 21.4799 8.79744 20.9304C8.79744 20.381 9.24285 19.9356 9.79229 19.9356C10.3417 19.9356 10.7871 20.381 10.7871 20.9304ZM21.7305 20.9304C21.7305 21.4799 21.2851 21.9253 20.7356 21.9253C20.1862 21.9253 19.7408 21.4799 19.7408 20.9304C19.7408 20.381 20.1862 19.9356 20.7356 19.9356C21.2851 19.9356 21.7305 20.381 21.7305 20.9304Z" stroke="#AD2950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>`;
+            };
+        } else {
+            element.classList.toggle('btn-by-active');
+            if (element.classList.contains('btn-by-active')) {
+                element.innerHTML = 'В корзине';
+            } else {
+                element.innerHTML = 'Купить';
+            };
         }
-        modalCityItem.textContent = element
-        modalCityList.append(modalCityItem)
-    }
-    const modalCityItemArr = modalCity.querySelectorAll('.modal-city__item')
-        for (let i = 0; i < modalCityItemArr.length; i++) {
-            const element = modalCityItemArr[i];
-            element.addEventListener('click', function(){
-                for (let i = 0; i < cityTextArr.length; i++) {
-                    const cityText = cityTextArr[i];
-                    cityText.textContent = element.textContent
-                }
-                modalCity.classList.remove('modal-city-active')
-            })
-        }
-}
-createCitys(citys)
-modalCityInput.addEventListener('input', function () {
-    modalCityList.innerHTML = ''
-    for (let i = 0; i < citys.length; i++) {
-        const element = citys[i];
-        const citysInput = []
-        if (element.toLowerCase().includes(modalCityInput.value.toLowerCase())) {
-            citysInput.push(element)
-        }
-        createCitys(citysInput)
-    }
-})
-
-// Открытие подскаки при вводе
-const searchClue = document.querySelector('.search__clue')
-const searchInput = document.querySelector('.search__input')
-searchInput.addEventListener('input', function () {
-    searchClue.classList.add('search__clue-active')
-})
-searchInput.addEventListener('blur', function () {
-    searchClue.classList.remove('search__clue-active')
-})
-
+       
+    });
+};
 // открытие\закрытие каталога
 const catalog = document.getElementById('catalog')
 const popup = document.querySelector('.popup')
@@ -436,123 +331,138 @@ p3.addEventListener('mouseup', function(){
     pil3.value = `${pil3.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
     pir3.value = `${pir3.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
 })
-
-
-// Работа корзины
-const btnCorf = document.querySelector('.icons__corf')
-const basket = document.querySelector('.basket')
-function basketOpen() {
-    basket.classList.add('basket-active')
-    const basketClose = basket.querySelector('.basket__close')
-    const basketWrapper = basket.querySelector('.basket__wrapper')
-    basketClose.addEventListener('click', function(){
-        basket.classList.remove('basket-active')
-    })
-    document.addEventListener( 'mousedown', (e) => {
-        const withinBoundaries = e.composedPath().includes(basketWrapper)
-        if ( ! withinBoundaries ) {
-            basket.classList.remove('basket-active')
-        }
-    })
-    document.addEventListener('keydown', function(e) {
-        if( e.keyCode == 27 ){ 
-            basket.classList.remove('basket-active')
-        }
+// понравившиеся
+const productHears = document.querySelectorAll('.btn-heart')
+for (let i = 0; i < productHears.length; i++) {
+    const element = productHears[i];
+    element.addEventListener('click', function(){
+        element.classList.toggle('btn-heart-active');
     });
-    // Подсчёт стоимости 
-    function priceBasket() {
-        const basketContentItemArr = basket.querySelectorAll('.basket__content-item')
-        const basketContentSum = basket.querySelector('.basket__content-sum')
-        const basketContentDelivery = basket.querySelector('.basket__content-delivery')
-        const totalPrice = basket.querySelector('.basket__content-meaning-bold')
-        let sumPrice = 0
-        for (let i = 0; i < basketContentItemArr.length; i++) {
-            const element = basketContentItemArr[i];
-            const price = Number(element.querySelector('.basket__content-price').textContent.slice(0, -1).replaceAll(' ', ''))
-            sumPrice = sumPrice + price
-        }
-        const delivery = Number(basketContentDelivery.textContent.slice(0, -1).replaceAll(' ', ''))
-        basketContentSum.textContent = `${sumPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-        totalPrice.textContent = `${(sumPrice+delivery).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-    }
-    priceBasket()
-    // Кнопки навигации
-    const basketBtnNavArr = document.querySelectorAll('.basket__btn-nav')
-    for (let i = 0; i < basketBtnNavArr.length; i++) {
-        const element = basketBtnNavArr[i];
-        element.addEventListener('click', function(){
-            for (let i = 0; i < basketBtnNavArr.length; i++) {
-                const el = basketBtnNavArr[i];
-                el.classList.remove('basket__btn-nav-active')
-            }
-            element.classList.add('basket__btn-nav-active')
+};
+// Выбор города
+const cityArr = document.querySelectorAll('.city')
+const cityTextArr = document.querySelectorAll('.city__text')
+const modalCity = document.querySelector('.modal-city')
+const modalCityWrapper = modalCity.querySelector('.modal-city__wrapper')
+const modalCityClose = modalCity.querySelector('.modal-city__close')
+const modalCityList = modalCity.querySelector('.modal-city__list')
+const modalCityInput = document.getElementById('search-city')
+for (let i = 0; i < cityArr.length; i++) {
+    const city = cityArr[i];
+    city.addEventListener('click', function(){
+        modalCity.classList.add('modal-city-active')
+        modalCityClose.addEventListener('click', function(){
+            modalCity.classList.remove('modal-city-active')
+            modalCityInput.value = ''
+            modalCityList.innerHTML = ''
+            createCitys(citys)
         })
-    }
-    // Удаление продукта 
-    const basketContentDeleteArr = basket.querySelectorAll('.basket__content-delete')
-    for (let i = 0; i < basketContentDeleteArr.length; i++) {
-        const element = basketContentDeleteArr[i];
-        element.addEventListener('click', function(){
-            const product = element.parentElement.parentElement.parentElement
-            product.remove()
-            priceBasket()
-        })
-    }
-
-    const basketContentBtnArr = document.querySelectorAll('.basket__content-btn')
-    for (let i = 0; i < basketContentBtnArr.length; i++) {
-        const element = basketContentBtnArr[i];
-        element.addEventListener('click', function(){
-            const basketContentChoice = element.parentElement
-            const basketContentNumber = basketContentChoice.querySelector('.basket__content-number')
-            const basketContentprice = basketContentChoice.parentElement.querySelector('.basket__content-price')
-            const price = Number(basketContentprice.textContent.slice(0, -1).replaceAll(' ', ''))
-            let basketQuantity = Number(basketContentNumber.textContent)
-            const pricePerUnit = price / basketQuantity
-            if (element.classList.contains('basket__content-minus')) {
-                basketContentNumber.textContent = basketQuantity - 1
+        document.addEventListener( 'mousedown', (e) => {
+            const withinBoundaries = e.composedPath().includes(modalCityWrapper);
+            if ( ! withinBoundaries ) {
+                modalCity.classList.remove('modal-city-active')
+                modalCityInput.value = ''
+                modalCityList.innerHTML = ''
+                createCitys(citys)
             }
-            if (element.classList.contains('basket__content-plus')) {
-                basketContentNumber.textContent = basketQuantity + 1
-            }
-            basketContentprice.textContent = `${(pricePerUnit * basketContentNumber.textContent).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`
-            priceBasket()
         })
-    }
+        document.addEventListener('keydown', function(e) {
+            if( e.keyCode == 27 ){ 
+                modalCity.classList.remove('modal-city-active')
+                modalCityInput.value = ''
+                modalCityList.innerHTML = ''
+                createCitys(citys)
+            }
+        });
+    })
 }
-btnCorf.addEventListener('click', function(){
-    basketOpen()
+function createCitys(citys) {
+    for (let i = 0; i < citys.length; i++) {
+        const element = citys[i];
+        const modalCityItem = document.createElement('li')
+        modalCityItem.classList.add('modal-city__item')
+        if (element == 'Москва' || element == 'Санкт-Петербург') {
+            modalCityItem.classList.add('modal-city__item-black')
+        }
+        modalCityItem.textContent = element
+        modalCityList.append(modalCityItem)
+    }
+    const modalCityItemArr = modalCity.querySelectorAll('.modal-city__item')
+        for (let i = 0; i < modalCityItemArr.length; i++) {
+            const element = modalCityItemArr[i];
+            element.addEventListener('click', function(){
+                for (let i = 0; i < cityTextArr.length; i++) {
+                    const cityText = cityTextArr[i];
+                    cityText.textContent = element.textContent
+                }
+                modalCity.classList.remove('modal-city-active')
+            })
+        }
+}
+createCitys(citys)
+modalCityInput.addEventListener('input', function () {
+    modalCityList.innerHTML = ''
+    for (let i = 0; i < citys.length; i++) {
+        const element = citys[i];
+        const citysInput = []
+        if (element.toLowerCase().includes(modalCityInput.value.toLowerCase())) {
+            citysInput.push(element)
+        }
+        createCitys(citysInput)
+    }
 })
-// Переход к оформлению 
-const basketBtn  = document.querySelector('.basket__btn')
-basketBtn.addEventListener('click', function(){
-    window.location.href = 'placing.html';
+const dataForm = document.querySelector('.data__form')
+// активация кнопки Сохранить
+const dataBtn = document.querySelector('.data__btn-btn')
+dataForm.addEventListener('input', function(){
+    dataBtn.removeAttribute('disabled')
 })
-
-// Переход в Профиль
-const iconsLogin = document.querySelector('.icons__login ')
-iconsLogin.addEventListener('click', function(){
-    window.location.href = 'profil.html'
+// Верификация
+const ialArr = document.querySelectorAll('.ial')
+const dataName = document.getElementById('data-name')
+const dataEmail = document.getElementById('data-email')
+const passwordFirst = document.getElementById('password-first')
+const passwordSecond = document.getElementById('password-second')
+dataForm.addEventListener('submit', function(event){
+    event.preventDefault()
+    if (dataName.value.length <= 3) {
+        dataName.parentElement.classList.add('data__head-item-error')
+    }
+    if (dataEmail.value.includes('@')) {
+        console.log(dataEmail.value.includes('@'))
+    } else {
+        dataEmail.parentElement.classList.add('data__head-item-error')
+    }
+    if (passwordFirst.value.length <= 5) {
+        passwordFirst.parentElement.classList.add('data__password-item-error')
+    }
+    if (passwordFirst.value != passwordSecond.value) {
+        passwordSecond.parentElement.classList.add('data__password-item-error')
+    }
 })
-
-// Работа нижнего меню 
-const menuMain = document.getElementById('menu-main')
-const menuCatalog = document.getElementById('menu-catalog')
-const menuBasket = document.getElementById('menu-basket')
-const menuHeart = document.getElementById('menu-heart')
-const menuProfil = document.getElementById('menu-profil')
-menuMain.addEventListener('click', function(){
-    window.location.href = 'index.html'
-})
-menuCatalog.addEventListener('click', function(){
-    popupOpen()
-})
-menuBasket.addEventListener('click', function(){
-    basketOpen()
-})
-menuHeart.addEventListener('click', function(){
-    basketOpen()
-})
-menuProfil.addEventListener('click', function(){
-    window.location.href = 'profil.html'
-})
+for (let i = 0; i < ialArr.length; i++) {
+    const ial = ialArr[i];
+    ial.addEventListener('input', function(){
+        const label = ial.querySelector('.ial__label')
+        const input = ial.querySelector('.ial__input')
+        if (input.value.length > 0) {
+            label.classList.add('ial__label-up')
+        } else {
+            label.classList.remove('ial__label-up')
+        }
+    })
+}
+// показать пароль
+const dataPasswordShowArr = document.querySelectorAll('.ial__show')
+for (let i = 0; i < dataPasswordShowArr.length; i++) {
+    const element = dataPasswordShowArr[i];
+    element.addEventListener('click', function(){
+        const dataPasswordInput = element.parentElement.querySelector('.ial__input')
+        dataPasswordInput.classList.toggle('ial__input-show')
+        if (dataPasswordInput.classList.contains('ial__input-show')) {
+            dataPasswordInput.setAttribute('type', 'text')
+        } else {
+            dataPasswordInput.setAttribute('type', 'password')
+        }
+    })
+}
