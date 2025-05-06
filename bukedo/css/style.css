@@ -349,6 +349,14 @@
   color: var(--burgundy);
 }
 
+.medium-hidden {
+  display: flex;
+}
+
+.medium-visible {
+  display: none;
+}
+
 .title {
   font: 500 42px/55px "PT Root UI", "sans-serif";
   color: var(--black);
@@ -5606,6 +5614,12 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (max-width: 1023px) {
+  .medium-hidden {
+    display: none;
+  }
+  .medium-visible {
+    display: flex;
+  }
   #search-main {
     display: none;
   }
@@ -5870,6 +5884,9 @@ input::-webkit-inner-spin-button {
 @media (max-width: 767px) {
   .small-hidden {
     display: none;
+  }
+  .small-visible {
+    display: flex;
   }
   .header__top {
     margin-top: 0;

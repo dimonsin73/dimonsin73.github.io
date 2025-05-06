@@ -321,7 +321,10 @@
         margin-top: 8px
         font: 400 14px/18px 'PT Root UI', 'sans-serif'
         color: var(--burgundy)
-
+.medium-hidden
+    display: flex
+.medium-visible
+    display: none
 
 .title
     @include title
@@ -4345,6 +4348,10 @@ input::-webkit-inner-spin-button
         &-fourth
             padding: 30px 24px 170px
 @media (max-width: 1023px)
+    .medium-hidden
+        display: none
+    .medium-visible
+        display: flex
     #search-main
         display: none
     #search-div 
@@ -4549,6 +4556,8 @@ input::-webkit-inner-spin-button
 @media (max-width: 767px) 
     .small-hidden
         display: none
+    .small-visible
+        display: flex
     .header
         &__top
             margin-top: 0
