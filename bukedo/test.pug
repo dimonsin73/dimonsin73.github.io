@@ -13,7 +13,7 @@ html(lang="ru")
         script(src="js/jquery.ui.touch-punch.min.js" defer)
         script(src="js/test.js" type="module" defer)
     body 
-        .container
+        .container.test
             h1.title Доставка цветов в Санкт-Петербурге
             p.text Удобно ставить на стол. Можно поливать — внутри губка. Идеально для доставки на дом или работу.
             .search
@@ -23,6 +23,11 @@ html(lang="ru")
                 label.check__label(for="checkrecipient2")
                     .check__check 
                     p.check__text Уточнить у получателя
+            .radio 
+                input(type="radio", name="address" checked="checked").radio__input#deliverymethod-know
+                label(for="deliverymethod-know").radio__label
+                    .radio__label-check 
+                    .radio__label-text Знаю адрес
             input(type="text" placeholder="Укажите адрес доставки").input
             button(type="button").dropdawn__footer-btn.btn.btn-primary Показать
             a(href="").btn.btn-secondary
@@ -61,7 +66,7 @@ html(lang="ru")
                     .ial__show
                 .ial
                     input(type="password" placeholder="")#password-second.ial__input
-                    label(for="password-second  ").ial__label Новый пароль еще раз
+                    label(for="password-second").ial__label Новый пароль еще раз
                     .ial__show
                     p.ial__error Пароли не совпадают
                 .data__btn 
