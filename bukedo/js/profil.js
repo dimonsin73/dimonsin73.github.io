@@ -242,17 +242,17 @@ for (let i = 0; i < myordersCompletedBtnArr.length; i++) {
 const orderFooterEditArr = document.querySelectorAll('.order__footer-edit')
 const edit = document.querySelector('.edit')
 const editWrapper = document.querySelector('.edit__wrapper')
-const editClose = document.querySelector('.edit__close')
-const editBottomClose = document.querySelector('.edit__bottom-close')
+const editModalClose = edit.querySelector('.modal__close')
+const editClose = edit.querySelector('.edit__bottom-close')
 for (let i = 0; i < orderFooterEditArr.length; i++) {
     const element = orderFooterEditArr[i];
     element.addEventListener('click', function(){
         edit.classList.add('edit-active')
     })
-    editClose.addEventListener('click', function(){
+    editModalClose.addEventListener('click', function(){
         edit.classList.remove('edit-active')
     })
-    editBottomClose.addEventListener('click', function(){
+    editClose.addEventListener('click', function(){
         edit.classList.remove('edit-active')
     })
     document.addEventListener( 'mousedown', (e) => {
@@ -267,7 +267,44 @@ for (let i = 0; i < orderFooterEditArr.length; i++) {
         }
     });
 }
-
+// Открытие Отмены 
+const orderFooterCancellArr = document.querySelectorAll('.order__footer-cancell')
+const cancell = document.querySelector('.cancell')
+const cancellWrapper = document.querySelector('.cancell__wrapper')
+const cancellModalClose = cancell.querySelector('.modal__close')
+const cancellClose = cancell.querySelector('.cancell__bottom-close')
+const cancellOther = document.getElementById('cancell-other')
+const cancellTextarea = cancell.querySelector('.cancell-textarea')
+for (let i = 0; i < orderFooterCancellArr.length; i++) {
+    const element = orderFooterCancellArr[i];
+    element.addEventListener('click', function(){
+        cancell.classList.add('edit-active')
+    })
+    cancellModalClose.addEventListener('click', function(){
+        cancell.classList.remove('edit-active')
+    })
+    cancellClose.addEventListener('click', function(){
+        cancell.classList.remove('edit-active')
+    })
+    document.addEventListener( 'mousedown', (e) => {
+        const withinBoundaries = e.composedPath().includes(cancellWrapper);
+        if ( ! withinBoundaries ) {
+            cancell.classList.remove('edit-active')
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            cancell.classList.remove('edit-active')
+        }
+    });
+    cancellOther.addEventListener('input', function(){
+        if (cancellOther.checked) {
+            cancellTextarea.disabled = false
+        } else {
+            cancellTextarea.disabled = true
+        }
+    })
+}
 
 
 

@@ -499,7 +499,7 @@ html(lang="ru")
                                             p.myorders__item-subtext Себе, Москва, Ходынский б-р, 5
                                         .myorders__item-bottom 
                                             button.myorders__item-btn.myorders__item-details Подробнее
-                                            button.myorders__item-btn.btn-pay.catalog.catalog__text Оплатить
+                                            button.myorders__item-btn.btn-pay.btn.btn-primary Оплатить
                                 .myorders__item-card 
                                     .myorders__item-img 
                                         img(src="img/flowers6.png", alt="")
@@ -512,7 +512,7 @@ html(lang="ru")
                                             p.myorders__item-subtext Себе, Москва, Ходынский б-р, 5
                                         .myorders__item-bottom 
                                             button.myorders__item-btn.myorders__item-details Подробнее
-                                            button.myorders__item-btn.btn-pay.catalog.catalog__text Оплатить
+                                            button.myorders__item-btn.btn-pay.btn.btn-primary Оплатить
                             .myorders__item.myorders__completed
                                 h3.myorders__item-title Завершенные
                                 .myorders__item-card 
@@ -556,16 +556,16 @@ html(lang="ru")
                                             button.myorders__item-btn.myorders__item-repeat Повторить
                             .myorders__nav.products__nav
                                 .myorders__pages.products__pages 
-                                    a(href="").myorders__pages-prev.products__pages-prev.btn-icon 
+                                    a(href="").btn.btn-icon.btn-page
                                         svg(width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M8.25 16.5L1.14327 9.88388C0.618912 9.39573 0.618911 8.60427 1.14327 8.11612L8.25 1.5" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
-                                    a(href="").products__pages-page.btn-icon 1
-                                    a(href="").products__pages-page.products__pages-active.btn-icon 2
-                                    a(href="").products__pages-page.btn-icon 3
-                                    a(href="").myorders__pages-next.products__pages-next.btn-icon
+                                    a(href="").btn.btn-icon.btn-page.btn-page-active 1
+                                    a(href="").btn.btn-icon.btn-page 2
+                                    a(href="").btn.btn-icon.btn-page 3
+                                    a(href="").btn.btn-icon.btn-page
                                         svg(width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                                             path(d="M0.75 16.5L7.85673 9.88388C8.38109 9.39573 8.38109 8.60427 7.85673 8.11612L0.750002 1.5" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round")
-                                a.products__btn.btn-text(href="#") Показать еще        
+                                a(href="#").btn.btn-secondary Показать еще        
 
                         .order.order-collected
                             .order__head 
@@ -609,7 +609,7 @@ html(lang="ru")
                                     .order__head-line
                                         h3.order__head-title Заказ №6520
                                         p.order__head-status.order__head-status-yellow Ожидает оплаты
-                                    button.order__head-btn.btn-pay.catalog.catalog__text Оплатить 5 986 ₽
+                                    button.order__head-btn.btn-pay.btn.btn-primary Оплатить 5 986 ₽
                                 .order__verification 
                                     .order__verification-invalid
                                         h3.order__title Подтверждение телефона
@@ -640,14 +640,14 @@ html(lang="ru")
                                 p.order__footer-text Редактирование доступно еще 350 сек.
                                 .order__footer-line 
                                     button.order__footer-edit Редактировать заказ
-                                    button.order__footer-cancel Отменить заказ
+                                    button.order__footer-cancell Отменить заказ
                         .order.order-done
                             .order__head 
                                 .order__head-top
                                     .order__head-line
                                         h3.order__head-title Заказ №6520
                                         p.order__head-status.order__head-status-green Доставлен
-                                    button.order__head-btn.catalog.catalog__text Повторить заказ
+                                    button.order__head-btn.btn.btn-primary Повторить заказ
                             .order__delivery 
                                 h3.order__title Доставка и получатель
                                 .order__delivery-content
@@ -1536,7 +1536,7 @@ html(lang="ru")
                                 span.paymentcard__slider.paymentcard__round
                         p.paymentcard__subtext Бонусными рублями можно оплатить до 50% заказа
                     .paymentcard__btn
-                        button.paymentcard__btn-btn.catalog.catalog__text Оплатить 5 986 ₽ 
+                        button.paymentcard__btn-btn.btn.btn-primary Оплатить 5 986 ₽ 
                 form.paymentcard__legalentity
                     .paymentcard__check
                         h3.paymentcard__subtitle Создание счета
@@ -1571,28 +1571,58 @@ html(lang="ru")
                                 span.paymentcard__slider.paymentcard__round
                         p.paymentcard__subtext Бонусными рублями можно оплатить до 50% заказа
                     .paymentcard__btn
-                        button(type="submit").paymentcard__btn-btn.catalog.catalog__text Выставить счет на 5 986 ₽ 
-        .edit
+                        button(type="submit").paymentcard__btn-btn.btn.btn-primary Выставить счет на 5 986 ₽ 
+        .edit.modal
             .edit__wrapper 
-                .edit__close 
+                button(type="button").modal__close 
                     svg(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
                         path(d="M7.5 7.5L15 15M15 15L22.5 22.5M15 15L22.5 7.5M15 15L7.5 22.5" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
                 h2.edit__title Редактирование заказа
                 p.edit__text Изменить можно только некоторые данные заказа. Для изменения другихданных обратитесь в онлайн-чат с 8:00 по 20:00 МСК ежедневно или оформите заказ заново. Редактирование доступно еще 341 секунд.
                 form.edit__form
-                    .edit__input
-                        input(required type="text").edit__input-input#edit__address
-                        label(for="edit__address").edit__input-label Адрес доставки, подъезд, этаж, домофон
-                    .edit__input
-                        input(required type="text").edit__input-input#edit__name
-                        label(for="edit__name").edit__input-label Имя получателя
-                    .edit__input
-                        input(required type="text").edit__input-input#edit__phone
-                        label(for="edit__phone").edit__input-label Телефон получателя
-                    .edit__input
-                        textarea(placeholder="Комментарий").edit__input-textarea
+                    .ial
+                        input(required type="text").ial__input#edit__address
+                        label(for="edit__address").ial__label Адрес доставки, подъезд, этаж, домофон
+                    .ial
+                        input(required type="text").ial__input#edit__name
+                        label(for="edit__name").ial__label Имя получателя
+                    .ial
+                        input(required type="text").ial__input#edit__phone
+                        label(for="edit__phone").ial__label Телефон получателя
+                    textarea(placeholder="Комментарий").textarea
                     .edit__bottom
-                        button(type="submit").edit__bottom-btn Сохранить изменения
-                        button.edit__bottom-close Закрыть
-                
+                        button(type="button").edit__bottom-close.btn.btn-secondary Закрыть
+                        button(type="submit").edit__bottom-btn.btn.btn-primary Сохранить
+        .cancell.modal
+            .cancell__wrapper 
+                button(type="button").modal__close 
+                    svg(width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M7.5 7.5L15 15M15 15L22.5 22.5M15 15L22.5 7.5M15 15L7.5 22.5" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round")
+                h2.cancell__title Отмена заказа
+                p.cancell__text Тут текст пр оотмену. Изменить можно только некоторые данные заказа. Для изменения другихданных обратитесь в онлайн-чат с 8:00 по 20:00 МСК ежедневно или оформите заказ заново. 
+                form.cancell__form
+                    .check
+                        input.check__input#cancell-1(type="checkbox", name="cancell")
+                        label.check__label(for="cancell-1")
+                            .check__check 
+                            p.check__text Причина отмены заказа
+                    .check
+                        input.check__input#cancell-2(type="checkbox", name="cancell")
+                        label.check__label(for="cancell-2")
+                            .check__check 
+                            p.check__text Причина отмены заказа
+                    .check
+                        input.check__input#cancell-3(type="checkbox", name="cancell")
+                        label.check__label(for="cancell-3")
+                            .check__check 
+                            p.check__text Причина отмены заказа
+                    .check
+                        input.check__input#cancell-other(type="checkbox", name="cancell")
+                        label.check__label(for="cancell-other")
+                            .check__check 
+                            p.check__text Другое
+                    textarea(placeholder="Укажите причину" disabled).textarea.cancell-textarea
+                    .cancell__bottom
+                        button(type="button").cancell__bottom-close.btn.btn-secondary Закрыть
+                        button(type="submit").cancell__bottom-btn.btn.btn-primary Сохранить
 

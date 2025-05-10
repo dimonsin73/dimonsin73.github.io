@@ -263,6 +263,18 @@
     color: var(--black)
     &::placeholder
         color: #93949B 
+.textarea 
+    width: 100%
+    height: 94px
+    padding: 16px 24px
+    border: 1px solid #93949B
+    border-radius: 12px
+    font: 400 16px/20px 'PT Root UI', 'sans-serif'
+    color: var(--black)
+    resize: none
+    &::placeholder
+        color: #93949B
+
 .ial
     position: relative
     &-error .ial__input
@@ -388,7 +400,7 @@ body
 // Выбор даты и времени работы
 .choice
     position: absolute
-    top: 27px
+    top: 55px
     left: 0
     height: 0
     border-radius: 16px
@@ -2825,10 +2837,12 @@ input::-webkit-inner-spin-button
             display: flex
             align-items: center
             gap: 24px
+        &-title 
+            font: 700 18px/23px 'PT Root UI', 'sans-serif'
+            color: var(--black)
         &-subtitle 
             font: 500 16px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
-        &-input 
         &-datetime
             position: relative
             & svg
@@ -2949,16 +2963,6 @@ input::-webkit-inner-spin-button
             &:disabled
                 background-color: #F5F5F5
         &-textarea 
-            width: 100%
-            height: 94px
-            padding: 16px 24px
-            border: 1px solid #93949B
-            border-radius: 12px
-            font: 400 16px/20px 'PT Root UI', 'sans-serif'
-            color: var(--black)
-            resize: none
-            &::placeholder
-                color: #93949B
         &-title 
             margin-bottom: -6px
             font: 700 18px/24px 'PT Root UI', 'sans-serif'
@@ -3775,7 +3779,7 @@ input::-webkit-inner-spin-button
             background-color: var(--black)
             font: 700 16px/20px "PT Root UI", "sans-serif"
             color: #fff
-        &-cancel
+        &-cancell
             font: 400 16px/20px "PT Root UI", "sans-serif"
             color: #93949B
             text-decoration: underline
@@ -3820,14 +3824,6 @@ input::-webkit-inner-spin-button
 .account
     margin: 0 auto
 .edit
-    position: fixed
-    top: 0
-    bottom: 0
-    left: 0
-    right: 0
-    display: none
-    background: #26262680
-    z-index: 1000
     &-active 
         display: block
     &__wrapper 
@@ -3895,22 +3891,80 @@ input::-webkit-inner-spin-button
         gap: 24px
     &__bottom
         display: flex
-        justify-content: space-between
-        padding-top: 24px
-        &-btn 
-            padding: 15px 24px
-            border-radius: 12px
-            background-color: var(--green)
-            font: 700 16px/20px "PT Root UI", "sans-serif"
-            color: #fff
-        &-close
-            padding: 14px 24px
-            border: 1px solid #E5E7EB
+        justify-content: flex-end
+        gap: 16px
+#edit__address 
+    width: 100%
+.cancell
+    &-active 
+        display: block
+    &__wrapper 
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 24px
+        max-width: 636px
+        margin: 64px auto
+        padding: 48px
+        border-radius: 24px
+        background-color: #fff
+    &__close 
+        position: absolute
+        top: 20px
+        right: 20px
+        @include flex
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        background-color: #F5F5F5
+    &__title 
+        font: 500 32px/42px "PT Root UI", "sans-serif"
+        color: var(--black)
+    &__text 
+        font: 400 16px/20px "PT Root UI", "sans-serif"
+        color: var(--black)
+    &__input 
+        position: relative
+        &-input 
+            width: 306px
+            padding: 23px 24px 5px
+            border: 1px solid #93949B
             border-radius: 12px
             font: 400 16px/20px "PT Root UI", "sans-serif"
             color: var(--black)
-#edit__address 
-    width: 100%
+            &:focus ~ .edit__input-label
+                top: 5px
+                font-size: 12px
+                line-height: 16px
+            &:valid ~ .edit__input-label
+                top: 5px
+                font-size: 12px
+                line-height: 16px
+        &-label 
+            position: absolute
+            left: 24px
+            top: 16px
+            font: 400 16px/20px "PT Root UI", "sans-serif"
+            color: #93949B
+            transition: all 0.3s ease
+        &-textarea
+            width: 100%
+            height: 94px
+            padding: 16px 24px
+            border: 1px solid #93949B
+            border-radius: 12px
+            resize: none
+            &::placeholder
+                font: 400 16px/20px "PT Root UI", "sans-serif"
+                color: #93949B
+    &__form
+        display: flex
+        flex-direction: column
+        gap: 24px
+    &__bottom
+        display: flex
+        justify-content: flex-end
+        gap: 16px
 .paymentcard
     display: none
     position: fixed
