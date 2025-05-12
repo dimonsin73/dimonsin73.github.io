@@ -80,7 +80,7 @@
     height: 50px
     border-radius: 12px
     white-space: nowrap
-    &-primary
+    &_primary
         padding: 14px 16px
         border: 1px solid var(--burgundy)
         background-color: var(--burgundy)
@@ -95,7 +95,7 @@
             pointer-events: none
             & path
                 stroke: var(--grey)
-    &-secondary
+    &_secondary
         width: max-content
         padding: 14px 16px
         border: 1px solid var(--border-icon)
@@ -109,13 +109,13 @@
             color: var(--grey)
             & path 
                 stroke: var(--grey)
-    &-icon
+    &_icon
         width: 50px
         height: 50px
         border: 1px solid var(--border-icon)
         &-large
             width: 75px
-    &-circle
+    &_circle
         @include flex
         border-radius: 50%
         &-small
@@ -124,15 +124,15 @@
         &-medium
             width: 32px
             height: 32px
-    &-green
+    &_green
         background-color: var(--green)
-    &-whatsapp
+    &_whatsapp
         background-color: var(--whatsapp)
-    &-telegram
+    &_telegram
         background-color: var(--telegram)   
-    &-phone  
+    &_phone  
         background-color: var(--phone)  
-    &-burger
+    &_burger
         @include flex
         flex-direction: column
         justify-content: space-around
@@ -142,7 +142,7 @@
             width: 16.5px
             height: 2px
             background-color: var(--black)
-    &-by
+    &_buy
         padding: 0 24px
         @include text-btn
         border: 1px solid var(--rise)
@@ -167,10 +167,10 @@
             color: var(--grey)
         &-small
             display: none
-    &-rating 
+    &_rating 
         background-color: #fff
         border-color: #fff
-    &-heart
+    &_heart
         @include flex
         position: absolute
         top: 10px
@@ -185,9 +185,9 @@
         &-active 
             & path
                 fill: var(--burgundy)
-    &-margin
+    &_margin
         margin: 48px auto 0
-    &-page 
+    &_page 
         font: 500 16px / 20px "PT Root UI", "sans-serif"
         color: var(--black)
         border-color: #fff

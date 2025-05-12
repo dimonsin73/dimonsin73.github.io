@@ -28,7 +28,7 @@
   border-radius: 12px;
   white-space: nowrap;
 }
-.btn-primary {
+.btn_primary {
   padding: 14px 16px;
   border: 1px solid var(--burgundy);
   background-color: var(--burgundy);
@@ -36,19 +36,19 @@
   color: var(--black);
   color: #fff;
 }
-.btn-primary:hover {
+.btn_primary:hover {
   background-color: #CB3562;
 }
-.btn-primary[disabled] {
+.btn_primary[disabled] {
   border: 1px solid #F6F6F6;
   background-color: #F6F6F6;
   color: var(--grey);
   pointer-events: none;
 }
-.btn-primary[disabled] path {
+.btn_primary[disabled] path {
   stroke: var(--grey);
 }
-.btn-secondary {
+.btn_secondary {
   width: -moz-max-content;
   width: max-content;
   padding: 14px 16px;
@@ -57,52 +57,52 @@
   font: 400 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
 }
-.btn-secondary:hover {
+.btn_secondary:hover {
   border: 1px solid var(--black);
 }
-.btn-secondary[disabled] {
+.btn_secondary[disabled] {
   border: 1px solid var(--bg-stack);
   background-color: var(--bg-stack);
   color: var(--grey);
 }
-.btn-secondary[disabled] path {
+.btn_secondary[disabled] path {
   stroke: var(--grey);
 }
-.btn-icon {
+.btn_icon {
   width: 50px;
   height: 50px;
   border: 1px solid var(--border-icon);
 }
-.btn-icon-large {
+.btn_icon-large {
   width: 75px;
 }
-.btn-circle {
+.btn_circle {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
 }
-.btn-circle-small {
+.btn_circle-small {
   width: 20px;
   height: 20px;
 }
-.btn-circle-medium {
+.btn_circle-medium {
   width: 32px;
   height: 32px;
 }
-.btn-green {
+.btn_green {
   background-color: var(--green);
 }
-.btn-whatsapp {
+.btn_whatsapp {
   background-color: var(--whatsapp);
 }
-.btn-telegram {
+.btn_telegram {
   background-color: var(--telegram);
 }
-.btn-phone {
+.btn_phone {
   background-color: var(--phone);
 }
-.btn-burger {
+.btn_burger {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,51 +111,51 @@
   width: 18px;
   height: 18px;
 }
-.btn-burger-line {
+.btn_burger-line {
   width: 16.5px;
   height: 2px;
   background-color: var(--black);
 }
-.btn-by {
+.btn_buy {
   padding: 0 24px;
   font: 700 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   border: 1px solid var(--rise);
   color: var(--burgundy);
 }
-.btn-by:hover {
+.btn_buy:hover {
   border: 1px solid var(--burgundy);
 }
-.btn-by-shop {
+.btn_buy-shop {
   display: none;
 }
-.btn-by-active {
+.btn_buy-active {
   content: "В корзине";
   border-color: var(--green);
   color: var(--green);
 }
-.btn-by-active:hover {
+.btn_buy-active:hover {
   border: 1px solid var(--green);
 }
-.btn-by-active .btn-by {
+.btn_buy-active .btn-by {
   display: none;
 }
-.btn-by-active .btn-by-shop {
+.btn_buy-active .btn-by-shop {
   display: block;
 }
-.btn-by[disabled] {
+.btn_buy[disabled] {
   border: 1px solid var(--bg-stack);
   background-color: var(--bg-stack);
   color: var(--grey);
 }
-.btn-by-small {
+.btn_buy-small {
   display: none;
 }
-.btn-rating {
+.btn_rating {
   background-color: #fff;
   border-color: #fff;
 }
-.btn-heart {
+.btn_heart {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,21 +168,21 @@
   background-color: #fff;
   cursor: pointer;
 }
-.btn-heart path {
+.btn_heart path {
   fill: #BECCD1;
 }
-.btn-heart-active path {
+.btn_heart-active path {
   fill: var(--burgundy);
 }
-.btn-margin {
+.btn_margin {
   margin: 48px auto 0;
 }
-.btn-page {
+.btn_page {
   font: 500 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
   border-color: #fff;
 }
-.btn-page-active {
+.btn_page-active {
   border-color: var(--burgundy);
   color: var(--burgundy);
 }
