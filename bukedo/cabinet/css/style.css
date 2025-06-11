@@ -1494,6 +1494,9 @@ select::-ms-expand {
   padding: 14px 0;
   border-bottom: 1px solid #E5E7EB;
 }
+.shops__table-bighead {
+  grid-template-columns: 1fr 0.67fr 0.67fr 0.5fr 0.56fr 0.2fr;
+}
 .shops__table-htext {
   font: 500 14px/20px "PT Root UI", "sans-serif";
   color: #727C8A;
@@ -1506,6 +1509,9 @@ select::-ms-expand {
   padding: 20px 0;
   border-bottom: 1px solid #E5E7EB;
 }
+.shops__table-bigitem {
+  grid-template-columns: 1fr 0.67fr 0.67fr 0.5fr 0.56fr 0.2fr;
+}
 .shops__table-zone1 {
   font: 500 16px/20px "PT Root UI", "sans-serif";
   color: #552BC9;
@@ -1516,6 +1522,10 @@ select::-ms-expand {
 }
 .shops__table-text {
   font: 400 14px/20px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.shops__table-city {
+  font: 500 16px/20px "PT Root UI", "sans-serif";
   color: var(--black);
 }
 .shops__conditions {
