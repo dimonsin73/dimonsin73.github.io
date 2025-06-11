@@ -17,15 +17,15 @@ asideListSetting.addEventListener('click', function(){
     asideListSetting.classList.toggle('aside__list-setting-active')
     asideSublist.classList.toggle('aside__sublist-active')
 })
-const ordersTags = document.querySelectorAll('.orders__tag')
+const ordersTags = document.querySelectorAll('.tags__btn')
 for (let i = 0; i < ordersTags.length; i++) {
     const ordersTag = ordersTags[i];
     ordersTag.addEventListener('click', function(){
         for (let i = 0; i < ordersTags.length; i++) {
             const element = ordersTags[i];
-            element.classList.remove('orders__tag-active')
+            element.classList.remove('tags__btn-active')
         }
-        ordersTag.classList.add('orders__tag-active')
+        ordersTag.classList.add('tags__btn-active')
     })
 }
 // вывод нужного контента
@@ -66,12 +66,12 @@ shopsNameTextarea.addEventListener('input', function(){
 })
 
 // Селект 
-const shopsPaymentSelect = document.querySelector('.shops__payment-select')
-const shopsPaymentOptions = document.querySelector('.shops__payment-options')
+const shopsPaymentSelect = document.querySelector('.select')
+const shopsPaymentOptions = document.querySelector('.options')
 shopsPaymentSelect.addEventListener('click', function(){
-    shopsPaymentOptions.classList.toggle('shops__payment-options-active')
+    shopsPaymentOptions.classList.toggle('options-active')
 })
-const shopsPaymentOptionArr = document.querySelectorAll('.shops__payment-option')
+const shopsPaymentOptionArr = document.querySelectorAll('.option')
 for (let i = 0; i < shopsPaymentOptionArr.length; i++) {
     const shopsPaymentOption = shopsPaymentOptionArr[i];
     shopsPaymentOption.addEventListener('click', function(){
@@ -93,14 +93,14 @@ const switchInputArr = document.querySelectorAll('.switch__input')
 for (let i = 0; i < switchInputArr.length; i++) {
     const switchInput = switchInputArr[i];
     switchInput.addEventListener('click', function(){
-        const shopsServiceInput = switchInput.parentElement.parentElement.parentElement.querySelector('.shops__service-input')
+        const shopsServiceInput = switchInput.parentElement.parentElement.parentElement.querySelector('.input_service')
         const shopsGridTimes = switchInput.parentElement.parentElement.parentElement.querySelector('.shops__grid-times')
         const shopsGridNotimes = switchInput.parentElement.parentElement.parentElement.querySelector('.shops__grid-notimes')
         if (shopsServiceInput != null) {
             if (switchInput.checked) {
-                shopsServiceInput.classList.add('shops__service-input-active')
+                shopsServiceInput.classList.add('input_service-active')
             } else {
-                shopsServiceInput.classList.remove('shops__service-input-active')
+                shopsServiceInput.classList.remove('input_service-active')
             }
         }
         if (shopsGridTimes != null) {
@@ -154,3 +154,86 @@ shopsGridPlus.addEventListener('click', function(){
         shopsGridDates.remove()
     })
 })
+
+const helpItemHeadArray = document.querySelectorAll('.help__item-head')
+for (let i = 0; i < helpItemHeadArray.length; i++) {
+    const helpItemHead = helpItemHeadArray[i];
+    helpItemHead.addEventListener('click', function (){
+        const helpItem = helpItemHead.parentElement
+        helpItem.classList.toggle('help__item-active')        
+        const helpItemContent = helpItem.querySelector('.help__item-content')
+        console.log(helpItemContent.scrollHeight)
+        if (helpItem.classList.contains('help__item-active')) {
+            helpItemContent.style.height = `${helpItemContent.scrollHeight}px`
+        } else {
+            helpItemContent.style.height = '0px'
+        }
+    })
+}
+
+// Карта 
+
+ymaps.ready(init);
+    function init(){
+        // Создание карты.
+        var myMap = new ymaps.Map("shops__map", {
+            // Координаты центра карты.
+            center: [55.876611, 37.528009],
+            // Уровень масштабирования.
+            zoom: 9
+        });
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: 'img/marker.png',
+            // Размеры метки.
+            iconImageSize: [44, 50],
+            // Смещение левого верхнего угла иконки относительно её "ножки" (точки привязки).
+            iconImageOffset: [-22, -50]
+        })
+        var myCircle15 = new ymaps.Circle([
+            // Координаты центра круга.
+            [55.876611, 37.528009],
+            // Радиус круга в метрах.
+            15000
+        ], {
+        }, {
+            // Задаем опции круга.
+            // Выключаем возможность перетаскивания круга.
+            draggable: false,
+            // Цвет заливки.
+            fillColor: "#552BC91A",
+            // Цвет обводки.
+            strokeColor: "#552BC9",
+            // Ширина обводки в пикселях.
+            strokeWidth: 1
+        });
+        var myCircle20 = new ymaps.Circle([
+            // Координаты центра круга.
+            [55.876611, 37.528009],
+            // Радиус круга в метрах.
+            20000
+        ], {
+        }, {
+            // Задаем опции круга.
+            // Выключаем возможность перетаскивания круга.
+            draggable: false,
+            // Цвет заливки.
+            fillColor: "#03A0501A",
+            // Цвет обводки.
+            strokeColor: "#03A050",
+            // Ширина обводки в пикселях.
+            strokeWidth: 1
+        });
+
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(myCircle15)
+            .add(myCircle20)
+    }

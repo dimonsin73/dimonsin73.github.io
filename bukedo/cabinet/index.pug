@@ -8,6 +8,7 @@ html(lang="ru")
         link(rel="stylesheet" href="css/reset.css")
         link(rel="stylesheet" href="css/fonts.css")
         link(rel="stylesheet" href="css/style.css")
+        script(src="https://api-maps.yandex.ru/2.1/?apikey=74dbc5d7-1963-453d-9239-a429eb2d3ee2&lang=ru_RU" type="text/javascript")
         script(src="js/cabinet.js" defer) 
     body.cabinet 
         .login 
@@ -40,22 +41,22 @@ html(lang="ru")
                     li.aside__list-item(data-aside='shops')
                         img(src="img/aside-3.svg", alt="Магазины").aside__list-img
                         p.aside__list-text Магазины
-                    li.aside__list-item
+                    li.aside__list-item(data-aside='products')
                         img(src="img/aside-4.svg", alt="Мои товары").aside__list-img
                         p.aside__list-text Мои товары
-                    li.aside__list-item
+                    li.aside__list-item(data-aside='price')
                         img(src="img/aside-5.svg", alt="Мой прайс лист").aside__list-img
                         p.aside__list-text Мой прайс лист
-                    li.aside__list-item
+                    li.aside__list-item(data-aside='bukedo')
                         img(src="img/aside-6.svg", alt="Товары bukedo").aside__list-img
                         p.aside__list-text Товары bukedo
-                    li.aside__list-item
+                    li.aside__list-item(data-aside='rating')
                         img(src="img/aside-7.svg", alt="Рейтинг").aside__list-img
                         p.aside__list-text Рейтинг
             .aside__tools
                 h4.aside__title Настройки
                 ul.aside__list
-                    li.aside__list-item
+                    li.aside__list-item(data-aside='users')
                         img(src="img/aside-8.svg", alt="Пользователи").aside__list-img
                         p.aside__list-text Пользователи
                     li.aside__list-item.aside__list-setting
@@ -68,7 +69,7 @@ html(lang="ru")
                             p.aside__list-text Уведомления
                         li.aside__list-subitem
                             p.aside__list-text Реквизиты
-                    li.aside__list-item
+                    li.aside__list-item(data-aside='help')
                         img(src="img/aside-10.svg", alt="Помощь").aside__list-img
                         p.aside__list-text Помощь
             .aside__logout 
@@ -90,7 +91,7 @@ html(lang="ru")
                             li.head__shop-item(data-menuitem="time") Часы работы
                             li.head__shop-item(data-menuitem="delivery") Доставка
                             li.head__shop-item(data-menuitem="delivery-outside") Доставка за город
-                    input(type="search", name="" placeholder="Поиск").head__search
+                    input(type="search", name="search" placeholder="Поиск").search
                 .head__right 
                     button(type="button").head__searchbtn
                     button(type="button").head__bell 
@@ -119,28 +120,28 @@ html(lang="ru")
                         .orders__top-icon.orders__top-buyers
                 .orders__content
                     .orders__head 
-                        h2.orders__head-title Заказы 
+                        h2.main-title Заказы 
                         .orders__line
-                            .orders__tags 
-                                button(type="button").orders__tag.orders__tag-active
-                                    p.orders__tag-text Новые    
-                                    p.orders__tag-number 5
-                                button(type="button").orders__tag
-                                    p.orders__tag-text Тендер
-                                    p.orders__tag-number 5
-                                button(type="button").orders__tag
-                                    p.orders__tag-text Принятые
-                                    p.orders__tag-number 8
-                                button(type="button").orders__tag
-                                    p.orders__tag-text Доставленные
-                                    p.orders__tag-number 5
-                                button(type="button").orders__tag
-                                    p.orders__tag-text Отклоненные
-                                    p.orders__tag-number 1
-                            .orders__date
-                                input(type="date", name="").orders__date-input
-                                p.orders__date-p -
-                                input(type="date", name="").orders__date-input
+                            .tags 
+                                button(type="button").tags__btn.tags__btn-active
+                                    p.tags__btn-text Новые    
+                                    p.tags__btn-number 5
+                                button(type="button").tags__btn
+                                    p.tags__btn-text Тендер
+                                    p.tags__btn-number 5
+                                button(type="button").tags__btn
+                                    p.tags__btn-text Принятые
+                                    p.tags__btn-number 8
+                                button(type="button").tags__btn
+                                    p.tags__btn-text Доставленные
+                                    p.tags__btn-number 5
+                                button(type="button").tags__btn
+                                    p.tags__btn-text Отклоненные
+                                    p.tags__btn-number 1
+                            .date
+                                input(type="date", name="").date__input
+                                p.date__text -
+                                input(type="date", name="").date__input
                     .orders__table 
                         .orders__table-head.orders__table-full
                             p.orders__table-htext Товары
@@ -386,25 +387,25 @@ html(lang="ru")
                                             h5.orders__table-title Ваш доход
                                             .orders__table-income
                                                 p.orders__table-text 1 205 ₽
-                            .orders__table-pages 
-                                button(type="button").orders__table-page 
+                            .pages 
+                                button(type="button").pages__btn
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14.657 15L15.832 13.825L12.0154 10L15.832 6.175L14.657 5L9.65703 10L14.657 15Z" fill="#1C1C1D"/>
                                         <path d="M9.1668 15L10.3418 13.825L6.52513 10L10.3418 6.175L9.1668 5L4.1668 10L9.1668 15Z" fill="#1C1C1D"/>
                                     </svg>
-                                button(type="button").orders__table-page
+                                button(type="button").pages__btn
                                     <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12.742 15L13.917 13.825L10.1003 10L13.917 6.175L12.742 5L7.74199 10L12.742 15Z" fill="#1C1C1D"/>
                                     </svg>
-                                button(type="button").orders__table-page.orders__table-page-active 1
-                                button(type="button").orders__table-page 2
-                                .orders__table-page.orders__table-dots ...
-                                button(type="button").orders__table-page 10
-                                button(type="button").orders__table-page
+                                button(type="button").pages__btn.pages__btn-active 1
+                                button(type="button").pages__btn 2
+                                .pages__dots.orders__table-dots ...
+                                button(type="button").pages__btn 10
+                                button(type="button").pages__btn
                                     <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M9.50801 5L8.33301 6.175L12.1497 10L8.33301 13.825L9.50801 15L14.508 10L9.50801 5Z" fill="#1C1C1D"/>
                                     </svg>
-                                button(type="button").orders__table-page
+                                button(type="button").pages__btn
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5.34297 5L4.16797 6.175L7.98464 10L4.16797 13.825L5.34297 15L10.343 10L5.34297 5Z" fill="#1C1C1D"/>
                                         <path d="M10.8332 5L9.6582 6.175L13.4749 10L9.6582 13.825L10.8332 15L15.8332 10L10.8332 5Z" fill="#1C1C1D"/>
@@ -412,7 +413,7 @@ html(lang="ru")
             .balance.main-block(data-main='balance')
                 .balance__content
                     .balance__head 
-                        h2.balance__head-title Баланс 10 075 ₽ 
+                        h2.main-title Баланс 10 075 ₽ 
                     .balance__table 
                         .balance__table-head
                             p.balance__table-htext.orders__table-htext
@@ -474,31 +475,31 @@ html(lang="ru")
                                 p.balance__table-text.orders__table-text.balance__table-time 22 окт 2024 22:01
                                 p.balance__table-text.orders__table-text.balance__table-comment Агентское вознаграждение за счет принципала за заказ №461379
                     .balance__footer
-                        .balance__footer-left 
-                            p.orders__table-text Показывать по
-                            select(name="").balance__footer-select 
+                        .quantity
+                            p.quantity__text Показывать по
+                            select(name="").quantity__select 
                                 option(value="10") 10
                                 option(value="20") 20
                                 option(value="30") 30
-                        .balance__footer-right
-                            button(type="button").orders__table-page 
+                        .pages 
+                            button(type="button").pages__btn
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14.657 15L15.832 13.825L12.0154 10L15.832 6.175L14.657 5L9.65703 10L14.657 15Z" fill="#1C1C1D"/>
                                     <path d="M9.1668 15L10.3418 13.825L6.52513 10L10.3418 6.175L9.1668 5L4.1668 10L9.1668 15Z" fill="#1C1C1D"/>
                                 </svg>
-                            button(type="button").orders__table-page
+                            button(type="button").pages__btn
                                 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.742 15L13.917 13.825L10.1003 10L13.917 6.175L12.742 5L7.74199 10L12.742 15Z" fill="#1C1C1D"/>
                                 </svg>
-                            button(type="button").orders__table-page.orders__table-page-active 1
-                            button(type="button").orders__table-page 2
-                            .orders__table-page.orders__table-dots ...
-                            button(type="button").orders__table-page 10
-                            button(type="button").orders__table-page
+                            button(type="button").pages__btn.pages__btn-active 1
+                            button(type="button").pages__btn 2
+                            .pages__dots ...
+                            button(type="button").pages__btn 10
+                            button(type="button").pages__btn
                                 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M9.50801 5L8.33301 6.175L12.1497 10L8.33301 13.825L9.50801 15L14.508 10L9.50801 5Z" fill="#1C1C1D"/>
                                 </svg>
-                            button(type="button").orders__table-page
+                            button(type="button").pages__btn
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5.34297 5L4.16797 6.175L7.98464 10L4.16797 13.825L5.34297 15L10.343 10L5.34297 5Z" fill="#1C1C1D"/>
                                     <path d="M10.8332 5L9.6582 6.175L13.4749 10L9.6582 13.825L10.8332 15L15.8332 10L10.8332 5Z" fill="#1C1C1D"/>
@@ -506,12 +507,12 @@ html(lang="ru")
             .shops.main-block(data-main='shops')
                 .shops__wrapper.shops__wrapper-active(data-shops='data')
                     .shops__head.shops__mw600
-                        h2.shops__head-title Данные магазина
+                        h2.main-title Данные магазина
                     .shops__content.shops__mw600
                         .shops__name
                             .shops__content-top
                                 h3.shops__content-title Название магазина
-                                input(type="text", value="99 цветов").shops__name-input
+                                input(type="text", value="99 цветов").input
                             .shops__name-view 
                                 .shops__name-img
                                     img(src="img/shop1.png", alt="") 
@@ -524,7 +525,7 @@ html(lang="ru")
                                     p.shops__name-subtext Загрузите или измените логотип вашего магазина, чтобы придать ему уникальный вид. Минимально 300x300 px, PNG или JPEG
                             .shops__name-description
                                 h4.shops__name-title Описание
-                                textarea(placeholder="Описание магазина" maxlength='200').shops__name-textarea
+                                textarea(placeholder="Описание магазина" maxlength='200').textarea.shops__name-textarea
                                 .shops__name-number 
                                     p.shops__name-first 0
                                     p.shops__name-second /200
@@ -533,26 +534,26 @@ html(lang="ru")
                                 h3.shops__content-title Контакты для связи
                                 p.shops__content-text Настройте адрес, электронную почту и номер телефона для запросов клиентов. Все поля обязательны для заполнения.
                             .shops__contact-line
-                                input(type="text", name="GMT" value="Москва, GMT +3" disabled).shops__contact-input#shops__contact-gmt
+                                input(type="text", name="GMT" value="Москва, GMT +3" disabled).input#shops__contact-gmt
                             .shops__contact-line
-                                label(for="shops__contact-street").shops__contact-label Улица
-                                    input(type="text", name="street").shops__contact-input#shops__contact-street
-                                label(for="shops__contact-house").shops__contact-label Дом
-                                    input(type="text", name="house").shops__contact-input#shops__contact-house
-                            label(for="shops__contact-tel").shops__contact-label Телефон магазина
-                                input(type="text", name="tel").shops__contact-input#shops__contact-tel
-                            label(for="shops__contact-email").shops__contact-label Email
-                                input(type="email", name="email").shops__contact-input#shops__contact-email
+                                label(for="shops__contact-street").label Улица
+                                    input(type="text", name="street").input#shops__contact-street
+                                label(for="shops__contact-house").label Дом
+                                    input(type="text", name="house").input#shops__contact-house
+                            label(for="shops__contact-tel").label Телефон магазина
+                                input(type="text", name="tel").input#shops__contact-tel
+                            label(for="shops__contact-email").label Email
+                                input(type="email", name="email").input#shops__contact-email
                         .shops__payment 
                             h3.shops__content-title Оплата
                             .shops__payment-line
-                                label(for="shops__payment-payment").shops__payment-label Способ оплаты
-                                    input(type="text", name="payment" value="Выбрано 1" readonly).shops__payment-input.shops__payment-select#shops__payment-payment
-                                    ul.shops__payment-options
-                                        li.shops__payment-option Выбрано 1
-                                        li.shops__payment-option Выбрано 2
-                                        li.shops__payment-option Выбрано 3
-                                label(for="shops__payment-prepayment").shops__payment-label 
+                                label(for="shops__payment-payment").label Способ оплаты
+                                    input(type="text", name="payment" value="Выбрано 1" readonly).input.select#shops__payment-payment
+                                    ul.options
+                                        li.option Выбрано 1
+                                        li.option Выбрано 2
+                                        li.option Выбрано 3
+                                label(for="shops__payment-prepayment").label 
                                     .shops__info
                                         p Предоплата при заказе от, ₽ 
                                         button(type="button").shops__info-btn
@@ -560,14 +561,14 @@ html(lang="ru")
                                                 <path d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM10 16.875C8.64026 16.875 7.31105 16.4718 6.18046 15.7164C5.04987 14.9609 4.16868 13.8872 3.64833 12.6309C3.12798 11.3747 2.99183 9.99237 3.2571 8.65875C3.52238 7.32513 4.17716 6.10013 5.13864 5.13864C6.10013 4.17716 7.32514 3.52237 8.65876 3.2571C9.99238 2.99183 11.3747 3.12798 12.631 3.64833C13.8872 4.16868 14.9609 5.04987 15.7164 6.18045C16.4718 7.31104 16.875 8.64025 16.875 10C16.8729 11.8227 16.1479 13.5702 14.8591 14.8591C13.5702 16.1479 11.8227 16.8729 10 16.875ZM11.25 13.75C11.25 13.9158 11.1842 14.0747 11.0669 14.1919C10.9497 14.3092 10.7908 14.375 10.625 14.375C10.2935 14.375 9.97554 14.2433 9.74112 14.0089C9.5067 13.7745 9.375 13.4565 9.375 13.125V10C9.20924 10 9.05027 9.93415 8.93306 9.81694C8.81585 9.69973 8.75 9.54076 8.75 9.375C8.75 9.20924 8.81585 9.05027 8.93306 8.93306C9.05027 8.81585 9.20924 8.75 9.375 8.75C9.70652 8.75 10.0245 8.8817 10.2589 9.11612C10.4933 9.35054 10.625 9.66848 10.625 10V13.125C10.7908 13.125 10.9497 13.1908 11.0669 13.3081C11.1842 13.4253 11.25 13.5842 11.25 13.75ZM8.75 6.5625C8.75 6.37708 8.80499 6.19582 8.908 6.04165C9.01101 5.88748 9.15743 5.76732 9.32874 5.69636C9.50004 5.62541 9.68854 5.60684 9.8704 5.64301C10.0523 5.67919 10.2193 5.76848 10.3504 5.89959C10.4815 6.0307 10.5708 6.19775 10.607 6.3796C10.6432 6.56146 10.6246 6.74996 10.5536 6.92127C10.4827 7.09257 10.3625 7.23899 10.2084 7.342C10.0542 7.44502 9.87292 7.5 9.6875 7.5C9.43886 7.5 9.20041 7.40123 9.02459 7.22541C8.84878 7.0496 8.75 6.81114 8.75 6.5625Z" fill="#AFBACA"/>
                                             </svg>
                                             p.shops__info-text Здесь будет подсказка
-                                    input(type="number", name="prepayment").shops__payment-input#shops__payment-prepayment 
+                                    input(type="number", name="prepayment").input#shops__payment-prepayment 
                             .shops__payment-card 
                                 .shops__payment-title Укажите данные карты
                                 .shops__payment-cardline
-                                    label(for="shops__payment-numcard").shops__payment-label Номер карты
-                                        input(type="number", name="numcard" placeholder="0000 0000 0000 0000").shops__payment-input#shops__payment-numcard
-                                    label(for="shops__payment-fullname").shops__payment-label ФИО держателя карты
-                                        input(type="text", name="fullname").shops__payment-input#shops__payment-fullname
+                                    label(for="shops__payment-numcard").label Номер карты
+                                        input(type="number", name="numcard" placeholder="0000 0000 0000 0000").input#shops__payment-numcard
+                                    label(for="shops__payment-fullname").label ФИО держателя карты
+                                        input(type="text", name="fullname").input#shops__payment-fullname
                         .shops__service 
                             h3.shops__content-title Дополнительные услуги
                             .shops__service-item 
@@ -583,7 +584,7 @@ html(lang="ru")
                                             </svg>
                                             p.shops__info-text Здесь будет подсказка
                                 .shops__service-content 
-                                    input(type="number", name="").shops__service-input
+                                    input(type="number", name="").input.input_service
                             .shops__service-item 
                                 .shops__service-head 
                                     label.switch
@@ -597,7 +598,7 @@ html(lang="ru")
                                             </svg>
                                             p.shops__info-text Здесь будет подсказка
                                 .shops__service-content 
-                                    input(type="number", name="").shops__service-input
+                                    input(type="number", name="").input.input_service
                             .shops__service-item 
                                 .shops__service-head 
                                     label.switch
@@ -611,166 +612,774 @@ html(lang="ru")
                                             </svg>
                                             p.shops__info-text Здесь будет подсказка
                                 .shops__service-content 
-                                    input(type="number", name="").shops__service-input
+                                    input(type="number", name="").input.input_service
                         .shops__holiday 
                             .shops__content-top
                                 h3.shops__content-title Праздники - 8 марта
                                 p.shops__content-text Наценка действует 1- 10 марта, а условия доставки 7-8 марта
                             .shops__holiday-line
-                                label(for="shops__holiday-markup").shops__holiday-label Наценка, % 
-                                    input(type="number", name="markup").shops__holiday-input#shops__holiday-markup
-                                label(for="shops__holiday-price").shops__holiday-label Стоимость заказа, ₽ 
-                                    input(type="number", name="price").shops__holiday-input#shops__holiday-price
+                                label(for="shops__holiday-markup").label Наценка, % 
+                                    input(type="number", name="markup").input#shops__holiday-markup
+                                label(for="shops__holiday-price").label Стоимость заказа, ₽ 
+                                    input(type="number", name="price").input#shops__holiday-price
                             .shops__holiday-line
-                                label(for="shops__holiday-radius").shops__holiday-label Радиус доставки за город, км
-                                    input(type="number", name="radius").shops__holiday-input#shops__holiday-radius
-                                label(for="shops__holiday-priceholiday").shops__holiday-label Стоимость за км. в праздники, ₽/км 
-                                    input(type="number", name="priceholiday").shops__holiday-input#shops__holiday-priceholiday
+                                label(for="shops__holiday-radius").label Радиус доставки за город, км
+                                    input(type="number", name="radius").input#shops__holiday-radius
+                                label(for="shops__holiday-priceholiday").label Стоимость за км. в праздники, ₽/км 
+                                    input(type="number", name="priceholiday").input#shops__holiday-priceholiday
                     .shops__btn
-                        button(type="button").catalog.catalog__text Сохранить изменения
+                        button(type="button").btn.btn_primary Сохранить изменения
                 .shops__wrapper(data-shops='time')
                     .shops__head 
-                        h2.shops__head-title Часы работы
+                        h2.main-title Часы работы
                         .shops__check
                             label.switch
                                 input(type="checkbox", name="").switch__input
                                 span.switch__slider.switch__round
                             p.shops__switch Работает
-                    .shops__grid 
-                        .shops__grid-head
-                            h3.shops__grid-title Рабочие дни
-                            p.shops__grid-text По умолчанию с 00:00 до 24:00, магазин работает круглостуточно.
-                        .shops__grid-content  
-                            .shops__grid-item 
-                                .shops__check
-                                    label.switch
-                                        input(type="checkbox", name="").switch__input
-                                        span.switch__slider.switch__round
-                                    p.shops__switch Понедельник
-                                .shops__grid-times
-                                    input(type="time", name="" value="00:00").shops__grid-time
-                                    p -
-                                    input(type="time", name="" value="23:59").shops__grid-time
-                                    button(type="button").shops__grid-btn
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                p.shops__grid-notimes.shops__grid-notimes-active Не работает
-                            .shops__grid-item 
-                                .shops__check
-                                    label.switch
-                                        input(type="checkbox", name="").switch__input
-                                        span.switch__slider.switch__round
-                                    p.shops__switch Вторник
-                                .shops__grid-times
-                                    input(type="time", name="" value="00:00").shops__grid-time
-                                    p -
-                                    input(type="time", name="" value="23:59").shops__grid-time
-                                    button(type="button").shops__grid-btn
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                p.shops__grid-notimes.shops__grid-notimes-active Не работает
-                            .shops__grid-item 
-                                .shops__check
-                                    label.switch
-                                        input(type="checkbox", name="").switch__input
-                                        span.switch__slider.switch__round
-                                    p.shops__switch Среда
-                                .shops__grid-times
-                                    input(type="time", name="" value="00:00").shops__grid-time
-                                    p -
-                                    input(type="time", name="" value="23:59").shops__grid-time
-                                    button(type="button").shops__grid-btn
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                p.shops__grid-notimes.shops__grid-notimes-active Не работает
-                            .shops__grid-item 
-                                .shops__check
-                                    label.switch
-                                        input(type="checkbox", name="").switch__input
-                                        span.switch__slider.switch__round
-                                    p.shops__switch Четверг
-                                .shops__grid-times
-                                    input(type="time", name="" value="00:00").shops__grid-time
-                                    p -
-                                    input(type="time", name="" value="23:59").shops__grid-time
-                                    button(type="button").shops__grid-btn
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                p.shops__grid-notimes.shops__grid-notimes-active Не работает
-                            .shops__grid-item 
-                                .shops__check
-                                    label.switch
-                                        input(type="checkbox", name="").switch__input
-                                        span.switch__slider.switch__round
-                                    p.shops__switch Пятница
-                                .shops__grid-times
-                                    input(type="time", name="" value="00:00").shops__grid-time
-                                    p -
-                                    input(type="time", name="" value="23:59").shops__grid-time
-                                    button(type="button").shops__grid-btn
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                p.shops__grid-notimes.shops__grid-notimes-active Не работает
-                            .shops__grid-item 
-                                .shops__check
-                                    label.switch
-                                        input(type="checkbox", name="").switch__input
-                                        span.switch__slider.switch__round
-                                    p.shops__switch Суббота
-                                .shops__grid-times
-                                    input(type="time", name="" value="00:00").shops__grid-time
-                                    p -
-                                    input(type="time", name="" value="23:59").shops__grid-time
-                                    button(type="button").shops__grid-btn
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                p.shops__grid-notimes.shops__grid-notimes-active Не работает
-                            .shops__grid-item 
-                                .shops__check
-                                    label.switch
-                                        input(type="checkbox", name="").switch__input
-                                        span.switch__slider.switch__round
-                                    p.shops__switch Воскресенье
-                                .shops__grid-times
-                                    input(type="time", name="" value="00:00").shops__grid-time
-                                    p -
-                                    input(type="time", name="" value="23:59").shops__grid-time
-                                    button(type="button").shops__grid-btn
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                p.shops__grid-notimes.shops__grid-notimes-active Не работает
-                    .shops__grid 
-                        .shops__grid-head
-                            h3.shops__grid-title Не рабочие дни
-                            p.shops__grid-text Отметьте дни когда магазин не будет работать, чтобы не забыть закрыть.
-                        .shops__grid-content  
-                            .shops__grid-D
-                            button(type="button").shops__grid-plus
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                p Добавить дату
+                    .shops__content
+                        .shops__grid 
+                            .shops__grid-head
+                                h3.shops__grid-title Рабочие дни
+                                p.shops__grid-text По умолчанию с 00:00 до 24:00, магазин работает круглостуточно.
+                            .shops__grid-content  
+                                .shops__grid-item 
+                                    .shops__check
+                                        label.switch
+                                            input(type="checkbox", name="").switch__input
+                                            span.switch__slider.switch__round
+                                        p.shops__switch Понедельник
+                                    .shops__grid-times
+                                        .date.date_time
+                                            input(type="time", name="" value="00:00").date__input.date__input-time
+                                            p.date__text -
+                                            input(type="time", name="" value="23:59").date__input.date__input-time
+                                        button(type="button").shops__grid-btn
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    p.shops__grid-notimes.shops__grid-notimes-active Не работает
+                                .shops__grid-item 
+                                    .shops__check
+                                        label.switch
+                                            input(type="checkbox", name="").switch__input
+                                            span.switch__slider.switch__round
+                                        p.shops__switch Вторник
+                                    .shops__grid-times
+                                        .date.date_time
+                                            input(type="time", name="" value="00:00").date__input.date__input-time
+                                            p.date__text -
+                                            input(type="time", name="" value="23:59").date__input.date__input-time
+                                        button(type="button").shops__grid-btn
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    p.shops__grid-notimes.shops__grid-notimes-active Не работает
+                                .shops__grid-item 
+                                    .shops__check
+                                        label.switch
+                                            input(type="checkbox", name="").switch__input
+                                            span.switch__slider.switch__round
+                                        p.shops__switch Среда
+                                    .shops__grid-times
+                                        .date.date_time
+                                            input(type="time", name="" value="00:00").date__input.date__input-time
+                                            p.date__text -
+                                            input(type="time", name="" value="23:59").date__input.date__input-time
+                                        button(type="button").shops__grid-btn
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    p.shops__grid-notimes.shops__grid-notimes-active Не работает
+                                .shops__grid-item 
+                                    .shops__check
+                                        label.switch
+                                            input(type="checkbox", name="").switch__input
+                                            span.switch__slider.switch__round
+                                        p.shops__switch Четверг
+                                    .shops__grid-times
+                                        .date.date_time
+                                            input(type="time", name="" value="00:00").date__input.date__input-time
+                                            p.date__text -
+                                            input(type="time", name="" value="23:59").date__input.date__input-time
+                                        button(type="button").shops__grid-btn
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    p.shops__grid-notimes.shops__grid-notimes-active Не работает
+                                .shops__grid-item 
+                                    .shops__check
+                                        label.switch
+                                            input(type="checkbox", name="").switch__input
+                                            span.switch__slider.switch__round
+                                        p.shops__switch Пятница
+                                    .shops__grid-times
+                                        .date.date_time
+                                            input(type="time", name="" value="00:00").date__input.date__input-time
+                                            p.date__text -
+                                            input(type="time", name="" value="23:59").date__input.date__input-time
+                                        button(type="button").shops__grid-btn
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    p.shops__grid-notimes.shops__grid-notimes-active Не работает
+                                .shops__grid-item 
+                                    .shops__check
+                                        label.switch
+                                            input(type="checkbox", name="").switch__input
+                                            span.switch__slider.switch__round
+                                        p.shops__switch Суббота
+                                    .shops__grid-times
+                                        .date.date_time
+                                            input(type="time", name="" value="00:00").date__input.date__input-time
+                                            p.date__text -
+                                            input(type="time", name="" value="23:59").date__input.date__input-time
+                                        button(type="button").shops__grid-btn
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    p.shops__grid-notimes.shops__grid-notimes-active Не работает
+                                .shops__grid-item 
+                                    .shops__check
+                                        label.switch
+                                            input(type="checkbox", name="").switch__input
+                                            span.switch__slider.switch__round
+                                        p.shops__switch Воскресенье
+                                    .shops__grid-times
+                                        .date.date_time
+                                            input(type="time", name="" value="00:00").date__input.date__input-time
+                                            p.date__text -
+                                            input(type="time", name="" value="23:59").date__input.date__input-time
+                                        button(type="button").shops__grid-btn
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    p.shops__grid-notimes.shops__grid-notimes-active Не работает
+                        .shops__grid 
+                            .shops__grid-head
+                                h3.shops__grid-title Не рабочие дни
+                                p.shops__grid-text Отметьте дни когда магазин не будет работать, чтобы не забыть закрыть.
+                            .shops__grid-content  
+                                .shops__grid-D
+                                button(type="button").shops__grid-plus
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 12H18" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    p Добавить дату
                 .shops__wrapper(data-shops='delivery')
                     .shops__head 
-                        h2.shops__head-title Доставка
+                        h2.main-title Зоны доставки
+                        button(type="button").btn.btn_primary 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.1665 9.99984H15.8332M9.99984 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            | Добавить зону доставки 
+                    .shops__content
+                        .shops__regions
+                            .shops__region
+                                p.shops__content-text Стоимость доставки расчитывается по зонам в удаленности от вашего магазина. Вы сами создаете зоны доставки для вашего магазина и можете подробно настроить стоимость для полученного заказа.
+                                .shops__table 
+                                    .shops__table-head
+                                        p.shops__table-htext Название
+                                        p.shops__table-htext Область
+                                        p.shops__table-htext Время
+                                        p.shops__table-htext Стоимость
+                                        p.shops__table-htext 
+                                    .shops__table-item 
+                                        p.shops__table-zone1 Зона №1 
+                                        p.shops__table-text 15 км 
+                                        p.shops__table-text 90 минут 
+                                        p.shops__table-text 350 ₽
+                                        button(type="button") 
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 21H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                <path d="M8 15.9998L3 16.9998L4 11.9998L14.707 1.29276C15.098 0.901762 15.731 0.901762 16.121 1.29276L18.707 3.87876C19.098 4.26976 19.098 4.90276 18.707 5.29276L8 15.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                <path d="M12 4L16 8" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                            </svg>
+                                    .shops__table-item 
+                                        p.shops__table-zone2 Зона №2 
+                                        p.shops__table-text 20 км 
+                                        p.shops__table-text 90 минут 
+                                        p.shops__table-text 350 ₽
+                                        button(type="button") 
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 21H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                <path d="M8 15.9998L3 16.9998L4 11.9998L14.707 1.29276C15.098 0.901762 15.731 0.901762 16.121 1.29276L18.707 3.87876C19.098 4.26976 19.098 4.90276 18.707 5.29276L8 15.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                <path d="M12 4L16 8" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                            </svg>
+                            .shops__map#shops__map
+                        .shops__conditions
+                            h2.main-title Условия доставки
+                            .shops__conditions-line
+                                label(for="shops__conditions-time").label 
+                                    .shops__info
+                                        p Мин время на сборку заказ, мин
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM10 16.875C8.64026 16.875 7.31105 16.4718 6.18046 15.7164C5.04987 14.9609 4.16868 13.8872 3.64833 12.6309C3.12798 11.3747 2.99183 9.99237 3.2571 8.65875C3.52238 7.32513 4.17716 6.10013 5.13864 5.13864C6.10013 4.17716 7.32514 3.52237 8.65876 3.2571C9.99238 2.99183 11.3747 3.12798 12.631 3.64833C13.8872 4.16868 14.9609 5.04987 15.7164 6.18045C16.4718 7.31104 16.875 8.64025 16.875 10C16.8729 11.8227 16.1479 13.5702 14.8591 14.8591C13.5702 16.1479 11.8227 16.8729 10 16.875ZM11.25 13.75C11.25 13.9158 11.1842 14.0747 11.0669 14.1919C10.9497 14.3092 10.7908 14.375 10.625 14.375C10.2935 14.375 9.97554 14.2433 9.74112 14.0089C9.5067 13.7745 9.375 13.4565 9.375 13.125V10C9.20924 10 9.05027 9.93415 8.93306 9.81694C8.81585 9.69973 8.75 9.54076 8.75 9.375C8.75 9.20924 8.81585 9.05027 8.93306 8.93306C9.05027 8.81585 9.20924 8.75 9.375 8.75C9.70652 8.75 10.0245 8.8817 10.2589 9.11612C10.4933 9.35054 10.625 9.66848 10.625 10V13.125C10.7908 13.125 10.9497 13.1908 11.0669 13.3081C11.1842 13.4253 11.25 13.5842 11.25 13.75ZM8.75 6.5625C8.75 6.37708 8.80499 6.19582 8.908 6.04165C9.01101 5.88748 9.15743 5.76732 9.32874 5.69636C9.50004 5.62541 9.68854 5.60684 9.8704 5.64301C10.0523 5.67919 10.2193 5.76848 10.3504 5.89959C10.4815 6.0307 10.5708 6.19775 10.607 6.3796C10.6432 6.56146 10.6246 6.74996 10.5536 6.92127C10.4827 7.09257 10.3625 7.23899 10.2084 7.342C10.0542 7.44502 9.87292 7.5 9.6875 7.5C9.43886 7.5 9.20041 7.40123 9.02459 7.22541C8.84878 7.0496 8.75 6.81114 8.75 6.5625Z" fill="#AFBACA"/>
+                                        </svg>
+                                    input(type="number", name="Мин время на сборку заказ")#shops__conditions-time.input
+                            .shops__conditions-line 
+                                label(for="shops__conditions-price").label Стоимость доставки, ₽ 
+                                    input(type="number", name="Стоимость доставки")#shops__conditions-price.input
+                                label(for="shops__conditions-nightprice").label Стоимость ночной доставки, ₽ 
+                                    input(type="number", name="Стоимость ночной доставки")#shops__conditions-nightprice.input
+                    .shops__btn
+                        button(type="button").btn.btn_primary Сохранить изменения
                 .shops__wrapper(data-shops='delivery-outside')
                     .shops__head 
-                        h2.shops__head-title Доставка за город
+                        h2.main-title Доставка за город
+                        button(type="button").btn.btn_primary 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.1665 9.99984H15.8332M9.99984 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            | Добавить пункт
+                    .shops__content 
+                        p.shops__content-text Стоимость доставки расчитывается по зонам в удаленности от вашего магазина. Вы сами создаете зоны доставки для вашего магазина и можете подробно настроить стоимость для полученного заказа.
+                        .shops__table 
+                            .shops__table-head
+                                p.shops__table-htext Населенный пункт 
+                                p.shops__table-htext Область / район
+                                p.shops__table-htext Расстояние по дороге, км
+                                p.shops__table-htext Стоимость
+                                p.shops__table-htext Доставка в праздники
+                                p.shops__table-htext 
+
+            .products.main-block(data-main='products')
+                .products__top 
+                    .products__top-head
+                        h2.main-title Мои товары
+                        button(type="button").btn.btn_primary
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            | Добавить
+                    .tags 
+                        button(type="button").tags__btn.tags__btn-active
+                            p.tags__btn-text Все
+                            p.tags__btn-number 12
+                        button(type="button").tags__btn
+                            p.tags__btn-text Новые
+                            p.tags__btn-number 5
+                        button(type="button").tags__btn
+                            p.tags__btn-text Без состава
+                            p.tags__btn-number 5
+                        button(type="button").tags__btn
+                            p.tags__btn-text В наличии
+                            p.tags__btn-number 1
+                        button(type="button").tags__btn
+                            p.tags__btn-text Нет в наличии
+                            p.tags__btn-number 1
+                .products__content 
+                    .products__item
+                        .products__item-img 
+                        .products__item-description
+                            p Букет из хризантем и гипсофилы
+                        .products__item-footer
+                    .products__item
+                        .products__item-img 
+                        .products__item-description
+                            p Букет французских роз и хризантем
+                        .products__item-footer
+                    .products__item
+                        .products__item-img 
+                        .products__item-description
+                            p Букет махровых роз
+                        .products__item-footer
+                    .products__item
+                        .products__item-img 
+                        .products__item-description
+                            p Букет кустовых роз и альстромерий
+                        .products__item-footer
+                        
+
+            .price.main-block(data-main='price')
+                .price__wrapper
+                    .price__head
+                        h2.main-title Цветы
+                        button(type="button").btn.btn_primary
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            | Добавить
+                    .tags 
+                        button(type="button").tags__btn.tags__btn-active
+                            p.tags__btn-text Розы
+                        button(type="button").tags__btn
+                            p.tags__btn-text Другие цветы
+                    .price__table
+            .bukedo.main-block(data-main='bukedo')
+            .rating.main-block(data-main='rating')
+                h2.main-title Рейтинг за 60 дней
+                .rating__wrapper 
+                    .rating__content 
+                        .rating__col 
+                            .rating__item
+                                .rating__item-head 
+                                    .rating__item-image
+                                        img(src="img/bouquet_1.png", alt="").rating__item-img
+                                        p.rating__item-desc Что доставили
+                                    .rating__item-image
+                                        img(src="img/bouquet_2.png", alt="").rating__item-img
+                                        p.rating__item-desc Что заказывали
+                                .rating__item-content 
+                                    .rating__item-info
+                                        h3.rating__item-title Отправитель
+                                        p.rating__item-text 3 часа назад
+                                    .rating__item-rating
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#93949B"/>
+                                        </svg>
+                                p.rating__item-comment Отличные свежие цветы, интересные букеты, доставка четко в согласованное время. Рекомендую.
+                            .rating__item
+                                .rating__item-head 
+                                    .rating__item-image
+                                        img(src="img/bouquet_1.png", alt="").rating__item-img
+                                        p.rating__item-desc Что доставили
+                                    .rating__item-image
+                                        img(src="img/bouquet_2.png", alt="").rating__item-img
+                                        p.rating__item-desc Что заказывали
+                                .rating__item-content 
+                                    .rating__item-info
+                                        h3.rating__item-title Отправитель
+                                        p.rating__item-text 3 часа назад
+                                    .rating__item-rating
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#93949B"/>
+                                        </svg>
+                                p.rating__item-comment Отличные свежие цветы, интересные букеты, доставка четко в согласованное время. Рекомендую.
+                        .rating__col
+                            .rating__item
+                                .rating__item-head 
+                                    .rating__item-image
+                                        img(src="img/bouquet_1.png", alt="").rating__item-img
+                                        p.rating__item-desc Что доставили
+                                    .rating__item-image
+                                        img(src="img/bouquet_2.png", alt="").rating__item-img
+                                        p.rating__item-desc Что заказывали
+                                .rating__item-content 
+                                    .rating__item-info
+                                        h3.rating__item-title Отправитель
+                                        p.rating__item-text 3 часа назад
+                                    .rating__item-rating
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#93949B"/>
+                                        </svg>
+                                p.rating__item-comment
+                            .rating__item
+                                .rating__item-head 
+                                    .rating__item-image
+                                        img(src="img/bouquet_1.png", alt="").rating__item-img
+                                        p.rating__item-desc Что доставили
+                                    .rating__item-image
+                                        img(src="img/bouquet_2.png", alt="").rating__item-img
+                                        p.rating__item-desc Что заказывали
+                                .rating__item-content 
+                                    .rating__item-info
+                                        h3.rating__item-title Отправитель
+                                        p.rating__item-text 3 часа назад
+                                    .rating__item-rating
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#93949B"/>
+                                        </svg>
+                                p.rating__item-comment Отличные свежие цветы, интересные букеты, доставка четко в согласованное время. Рекомендую.
+                        .rating__info 
+                            .rating__info-head 
+                                h3.rating__info-title Как снизить процент плохих оценок
+                                button(type="button").rating__info-close
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.5 7.5L7.5 22.5M7.5 7.5L22.5 22.5" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            .rating__info-content 
+                                ol.rating__info-list 
+                                    li.rating__info-item Когда цветок или материал заканчивается — выключайте галочки наличия, а когда снова появляется — включайте наличие в личном кабинете.
+                                    li.rating__info-item Выполняйте заказы в точности как в составе и максимально приближенно к картинке.
+                                    li.rating__info-item Доставляйте именно в то время как указано в заказе.
+                                    li.rating__info-item При заменах и задержках — согласовывайте и предупреждайте заказчика.
+                                    li.rating__info-item Будьте вежливыми с клиентом и получателем.
+                                img(src="img/rating.svg", alt="")
+                        .rating__col
+                            .rating__item
+                                .rating__item-head 
+                                    .rating__item-image
+                                        img(src="img/bouquet_1.png", alt="").rating__item-img
+                                        p.rating__item-desc Что доставили
+                                    .rating__item-image
+                                        img(src="img/bouquet_2.png", alt="").rating__item-img
+                                        p.rating__item-desc Что заказывали
+                                .rating__item-content 
+                                    .rating__item-info
+                                        h3.rating__item-title Отправитель
+                                        p.rating__item-text 3 часа назад
+                                    .rating__item-rating
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#93949B"/>
+                                        </svg>
+                                p.rating__item-comment Отличные свежие цветы, интересные букеты, доставка четко в согласованное время. Рекомендую.
+                            .rating__item
+                                .rating__item-head 
+                                    .rating__item-image
+                                        img(src="img/bouquet_1.png", alt="").rating__item-img
+                                        p.rating__item-desc Что доставили
+                                    .rating__item-image
+                                        img(src="img/bouquet_2.png", alt="").rating__item-img
+                                        p.rating__item-desc Что заказывали
+                                .rating__item-content 
+                                    .rating__item-info
+                                        h3.rating__item-title Отправитель
+                                        p.rating__item-text 3 часа назад
+                                    .rating__item-rating
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#93949B"/>
+                                        </svg>
+                                p.rating__item-comment Отличные свежие цветы, интересные букеты, доставка четко в согласованное время. Рекомендую.
+                        .rating__col 
+                            .rating__item
+                                .rating__item-head 
+                                    .rating__item-image
+                                        img(src="img/bouquet_1.png", alt="").rating__item-img
+                                        p.rating__item-desc Что доставили
+                                    .rating__item-image
+                                        img(src="img/bouquet_2.png", alt="").rating__item-img
+                                        p.rating__item-desc Что заказывали
+                                .rating__item-content 
+                                    .rating__item-info
+                                        h3.rating__item-title Отправитель
+                                        p.rating__item-text 3 часа назад
+                                    .rating__item-rating
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#93949B"/>
+                                        </svg>
+                                p.rating__item-comment
+                            .rating__item
+                                .rating__item-head 
+                                    .rating__item-image
+                                        img(src="img/bouquet_1.png", alt="").rating__item-img
+                                        p.rating__item-desc Что доставили
+                                    .rating__item-image
+                                        img(src="img/bouquet_2.png", alt="").rating__item-img
+                                        p.rating__item-desc Что заказывали
+                                .rating__item-content 
+                                    .rating__item-info
+                                        h3.rating__item-title Отправитель
+                                        p.rating__item-text 3 часа назад
+                                    .rating__item-rating
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#AD2950"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.54241 0.584233C7.72961 0.204995 8.27039 0.204995 8.45759 0.584234L10.4157 4.55111C10.5642 4.85203 10.8512 5.0607 11.1833 5.10923L15.5629 5.74939C15.9814 5.81055 16.1481 6.32485 15.8452 6.61989L12.6773 9.70543C12.4366 9.9399 12.3267 10.2779 12.3835 10.6091L13.131 14.9675C13.2025 15.3844 12.7649 15.7023 12.3905 15.5054L8.47504 13.4463C8.17765 13.2899 7.82235 13.2899 7.52496 13.4463L3.60946 15.5054C3.23509 15.7023 2.79749 15.3844 2.86899 14.9675L3.61652 10.6091C3.67332 10.2779 3.56344 9.9399 3.32271 9.70543L0.154802 6.61988C-0.148108 6.32485 0.0186494 5.81055 0.437051 5.74939L4.81675 5.10923C5.14881 5.0607 5.43578 4.85203 5.58432 4.55111L7.54241 0.584233Z" fill="#93949B"/>
+                                        </svg>
+                                p.rating__item-comment Отличные свежие цветы, интересные букеты, доставка четко в согласованное время. Рекомендую.
+                    .rating__right
+                        .rating__floating
+                            h3.rating__floating-title Отлично
+                            p.rating__floating-number 4.6
+                            .rating__floating-stars 
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.4589 1.13972C10.7096 0.631812 11.4338 0.631812 11.6846 1.13972L14.307 6.4525C14.5059 6.85552 14.8903 7.13499 15.335 7.19999L21.2007 8.05735C21.761 8.13925 21.9844 8.82805 21.5787 9.22318L17.3359 13.3556C17.0135 13.6696 16.8664 14.1222 16.9424 14.5658L17.9436 20.4031C18.0394 20.9614 17.4533 21.3872 16.9519 21.1235L11.7079 18.3657C11.3096 18.1563 10.8338 18.1563 10.4355 18.3657L5.19153 21.1235C4.69014 21.3872 4.10406 20.9614 4.19982 20.4031L5.20097 14.5658C5.27705 14.1222 5.12989 13.6696 4.80748 13.3556L0.564746 9.22318C0.159062 8.82805 0.382399 8.13925 0.942759 8.05735L6.80843 7.19999C7.25315 7.13499 7.63749 6.85552 7.83642 6.4525L10.4589 1.13972Z" fill="#AD2950"/>
+                                </svg>
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.4589 1.13972C10.7096 0.631812 11.4338 0.631812 11.6846 1.13972L14.307 6.4525C14.5059 6.85552 14.8903 7.13499 15.335 7.19999L21.2007 8.05735C21.761 8.13925 21.9844 8.82805 21.5787 9.22318L17.3359 13.3556C17.0135 13.6696 16.8664 14.1222 16.9424 14.5658L17.9436 20.4031C18.0394 20.9614 17.4533 21.3872 16.9519 21.1235L11.7079 18.3657C11.3096 18.1563 10.8338 18.1563 10.4355 18.3657L5.19153 21.1235C4.69014 21.3872 4.10406 20.9614 4.19982 20.4031L5.20097 14.5658C5.27705 14.1222 5.12989 13.6696 4.80748 13.3556L0.564746 9.22318C0.159062 8.82805 0.382399 8.13925 0.942759 8.05735L6.80843 7.19999C7.25315 7.13499 7.63749 6.85552 7.83642 6.4525L10.4589 1.13972Z" fill="#AD2950"/>
+                                </svg>
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.4589 1.13972C10.7096 0.631812 11.4338 0.631812 11.6846 1.13972L14.307 6.4525C14.5059 6.85552 14.8903 7.13499 15.335 7.19999L21.2007 8.05735C21.761 8.13925 21.9844 8.82805 21.5787 9.22318L17.3359 13.3556C17.0135 13.6696 16.8664 14.1222 16.9424 14.5658L17.9436 20.4031C18.0394 20.9614 17.4533 21.3872 16.9519 21.1235L11.7079 18.3657C11.3096 18.1563 10.8338 18.1563 10.4355 18.3657L5.19153 21.1235C4.69014 21.3872 4.10406 20.9614 4.19982 20.4031L5.20097 14.5658C5.27705 14.1222 5.12989 13.6696 4.80748 13.3556L0.564746 9.22318C0.159062 8.82805 0.382399 8.13925 0.942759 8.05735L6.80843 7.19999C7.25315 7.13499 7.63749 6.85552 7.83642 6.4525L10.4589 1.13972Z" fill="#AD2950"/>
+                                </svg>
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.4589 1.13972C10.7096 0.631812 11.4338 0.631812 11.6846 1.13972L14.307 6.4525C14.5059 6.85552 14.8903 7.13499 15.335 7.19999L21.2007 8.05735C21.761 8.13925 21.9844 8.82805 21.5787 9.22318L17.3359 13.3556C17.0135 13.6696 16.8664 14.1222 16.9424 14.5658L17.9436 20.4031C18.0394 20.9614 17.4533 21.3872 16.9519 21.1235L11.7079 18.3657C11.3096 18.1563 10.8338 18.1563 10.4355 18.3657L5.19153 21.1235C4.69014 21.3872 4.10406 20.9614 4.19982 20.4031L5.20097 14.5658C5.27705 14.1222 5.12989 13.6696 4.80748 13.3556L0.564746 9.22318C0.159062 8.82805 0.382399 8.13925 0.942759 8.05735L6.80843 7.19999C7.25315 7.13499 7.63749 6.85552 7.83642 6.4525L10.4589 1.13972Z" fill="#AD2950"/>
+                                </svg>
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.4589 1.13972C10.7096 0.631812 11.4338 0.631812 11.6846 1.13972L14.307 6.4525C14.5059 6.85552 14.8903 7.13499 15.335 7.19999L21.2007 8.05735C21.761 8.13925 21.9844 8.82805 21.5787 9.22318L17.3359 13.3556C17.0135 13.6696 16.8664 14.1222 16.9424 14.5658L17.9436 20.4031C18.0394 20.9614 17.4533 21.3872 16.9519 21.1235L11.7079 18.3657C11.3096 18.1563 10.8338 18.1563 10.4355 18.3657L5.19153 21.1235C4.69014 21.3872 4.10406 20.9614 4.19982 20.4031L5.20097 14.5658C5.27705 14.1222 5.12989 13.6696 4.80748 13.3556L0.564746 9.22318C0.159062 8.82805 0.382399 8.13925 0.942759 8.05735L6.80843 7.19999C7.25315 7.13499 7.63749 6.85552 7.83642 6.4525L10.4589 1.13972Z" fill="#AD2950"/>
+                                </svg>
+                            .rating__floating-grades
+                                .rating__floating-line
+                                    p.rating__floating-grade 5
+                                    progress(value="75" max="100").rating__floating-progress
+                                    p.rating__floating-desc 12 оценок
+                                .rating__floating-line
+                                    p.rating__floating-grade 4
+                                    progress(value="12.5" max="100").rating__floating-progress 
+                                    p.rating__floating-desc 2 оценки
+                                .rating__floating-line
+                                    p.rating__floating-grade 3
+                                    progress(value="6.25" max="100").rating__floating-progress
+                                    p.rating__floating-desc 1 оценка
+                                .rating__floating-line
+                                    p.rating__floating-grade 2
+                                    progress(value="6.25" max="100").rating__floating-progress
+                                    p.rating__floating-desc 1 оценка
+                                .rating__floating-line
+                                    p.rating__floating-grade 1
+                                    progress(value="0" max="100").rating__floating-progress
+                                    p.rating__floating-desc 0 оценок
+            .users.main-block(data-main='users')
+                .users__wrapper    
+                    .users__head 
+                        h2.main-title Пользователи 
+                        button(type="button").btn.btn_primary
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            | Добавить нового
+                    .users__content 
+                        .users__item 
+                            label.switch
+                                input(type="checkbox", name="").switch__input
+                                span.switch__slider.switch__round
+                            .users__name
+                                h3.users__name-title Артур Петров
+                                p.users__name-mail arthur@mail.ru
+                            p.users__role Менеджер
+                            button(type="button").users__edit 
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1838_20354)">
+                                        <path d="M1.66602 18.3335H18.3327" stroke="#727C8A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M7.4987 14.1667L3.33203 15L4.16536 10.8334L13.0879 1.91088C13.4137 1.58505 13.9412 1.58505 14.2662 1.91088L16.4212 4.06588C16.747 4.39171 16.747 4.91921 16.4212 5.24421L7.4987 14.1667Z" stroke="#727C8A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M10.832 4.1665L14.1654 7.49984" stroke="#727C8A" stroke-width="1.5" stroke-miterlimit="10"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1838_20354">
+                                            <rect width="20" height="20" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                        .users__item 
+                            label.switch
+                                input(type="checkbox", name="").switch__input
+                                span.switch__slider.switch__round
+                            .users__name
+                                h3.users__name-title Елена
+                                p.users__name-mail lena@mail.ru
+                            p.users__role Продавец
+                            button(type="button").users__edit 
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1838_20354)">
+                                        <path d="M1.66602 18.3335H18.3327" stroke="#727C8A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M7.4987 14.1667L3.33203 15L4.16536 10.8334L13.0879 1.91088C13.4137 1.58505 13.9412 1.58505 14.2662 1.91088L16.4212 4.06588C16.747 4.39171 16.747 4.91921 16.4212 5.24421L7.4987 14.1667Z" stroke="#727C8A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M10.832 4.1665L14.1654 7.49984" stroke="#727C8A" stroke-width="1.5" stroke-miterlimit="10"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1838_20354">
+                                            <rect width="20" height="20" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                        .users__item 
+                            label.switch
+                                input(type="checkbox", name="").switch__input
+                                span.switch__slider.switch__round
+                            .users__name
+                                h3.users__name-title Елена
+                                p.users__name-mail lena@mail.ru
+                            p.users__role Продавец
+                            button(type="button").users__edit 
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1838_20354)">
+                                        <path d="M1.66602 18.3335H18.3327" stroke="#727C8A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M7.4987 14.1667L3.33203 15L4.16536 10.8334L13.0879 1.91088C13.4137 1.58505 13.9412 1.58505 14.2662 1.91088L16.4212 4.06588C16.747 4.39171 16.747 4.91921 16.4212 5.24421L7.4987 14.1667Z" stroke="#727C8A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M10.832 4.1665L14.1654 7.49984" stroke="#727C8A" stroke-width="1.5" stroke-miterlimit="10"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1838_20354">
+                                            <rect width="20" height="20" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+            .help.main-block(data-main='help')
+                .help__wrapper 
+                    .help__head
+                        h2.main-title Помощь
+                    .help__content
+                        .help__col 
+                            .help__item
+                                .help__item-head 
+                                    h3.help__item-title Как формируется рейтинг товаров?
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Как я получу оплату за заказ?
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Не могу выполнить заказ
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Как правильно заполнить страницу товара?
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Открытка с товаром
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Как клиент узнает статус заказа?
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                        .help__col 
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Как я получу оплату за заказ?
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Не могу выполнить заказ
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Как правильно заполнить страницу товара?
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Открытка с товаром
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
+                            .help__item
+                                .help__item-head
+                                    h3.help__item-title Как клиент узнает статус заказа?
+                                    button(type="button").help__btn
+                                        .help__btn-line.help__btn-vert
+                                        .help__btn-line.help__btn-hor
+                                .help__item-content 
+                                    p.help__item-text На рейтинг товара напрямую влияет его статистика: количество просмотров товара, просмотров каталога и покупок товара, а также конверсия в оплату. Статистика позволяет отслеживать популярность товара среди пользователей и покупателей, всегда быть в тренде и соответствовать спросу. Следите за показателями в приложении FW Продавец в разделе «Товары».<br>Использование любых накруток на платформе запрещено, но вы можете управлять витриной с помощью кнопки «Поднять товар», которая есть на каждой карточке товара. Добавить в топ можно не более 18 товаров, актуализировать его можно в любое время.
         .menu
             .menu__wrapper 
                 button#menu-main.menu__item 

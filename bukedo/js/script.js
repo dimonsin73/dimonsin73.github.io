@@ -1,13 +1,13 @@
 // Экспорт массивов
 import {flowers, colors, sizes} from '../js/arrays.js';
 // купить\в корзине
-const productBtns = document.querySelectorAll('.btn-by');
+const productBtns = document.querySelectorAll('.btn_buy');
 for (let i = 0; i < productBtns.length; i++) {
     const element = productBtns[i];
     element.addEventListener('click', function(){
         if (window.innerWidth < '1023') {
-            element.classList.toggle('btn-by-active');
-            if (element.classList.contains('btn-by-active')) {
+            element.classList.toggle('btn_buy-active');
+            if (element.classList.contains('btn_buy-active')) {
                 element.innerHTML = `<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.1665 12C6.21984 14.0493 7.8265 16.416 9.1665 19C12.2772 13.1107 16.1665 8.444 20.8332 5" stroke="#03A050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>`;
@@ -17,8 +17,8 @@ for (let i = 0; i < productBtns.length; i++) {
                                     </svg>`;
             };
         } else {
-            element.classList.toggle('btn-by-active');
-            if (element.classList.contains('btn-by-active')) {
+            element.classList.toggle('btn_buy-active');
+            if (element.classList.contains('btn_buy-active')) {
                 element.innerHTML = 'В корзине';
             } else {
                 element.innerHTML = 'Купить';
@@ -38,11 +38,11 @@ cardBtnsBasket.addEventListener('click', function(){
     }
 });
 // понравившиеся
-const productHears = document.querySelectorAll('.btn-heart')
+const productHears = document.querySelectorAll('.btn_heart')
 for (let i = 0; i < productHears.length; i++) {
     const element = productHears[i];
     element.addEventListener('click', function(){
-        element.classList.toggle('btn-heart-active');
+        element.classList.toggle('btn_heart-active');
     });
 };
 const cardBtnHear = document.querySelector('.card__btns-heart')
@@ -117,7 +117,7 @@ productsFilterBtnFlower.addEventListener('click', function(){
         }
     })
     // кнопка сбросить
-    const resetBtn = filterFlowers.querySelector('.btn-secondary')
+    const resetBtn = filterFlowers.querySelector('.btn_secondary')
     resetBtn.addEventListener('click', function(){
         const dropdawnContentInputArr = filterFlowers.querySelectorAll('.dropdawn__content-input:checked')
         for (let i = 0; i < dropdawnContentInputArr.length; i++) {
@@ -128,7 +128,7 @@ productsFilterBtnFlower.addEventListener('click', function(){
         productsFilterNumber.classList.remove('products__filter-number-active')
     })
     // кнопка показать
-    const showBtn = filterFlowers.querySelector('.btn-primary')
+    const showBtn = filterFlowers.querySelector('.btn_primary')
     showBtn.addEventListener('click', function(){
         const dropdawnContentInputArr = filterFlowers.querySelectorAll('.dropdawn__content-input:checked') 
         console.log(dropdawnContentInputArr)
@@ -265,7 +265,7 @@ productsFilterBtnColor.addEventListener('click', function(){
         }
     })
     // кнопка сбросить
-    const resetBtn = filterColors.querySelector('.btn-secondary')
+    const resetBtn = filterColors.querySelector('.btn_secondary')
     resetBtn.addEventListener('click', function(){
         const dropdawnContentInputArr = filterColors.querySelectorAll('.dropdawn__content-input:checked')
         for (let i = 0; i < dropdawnContentInputArr.length; i++) {
@@ -276,7 +276,7 @@ productsFilterBtnColor.addEventListener('click', function(){
         productsFilterNumber.classList.remove('products__filter-number-active')
     })
     // кнопка показать
-    const showBtn = filterColors.querySelector('.btn-primary')
+    const showBtn = filterColors.querySelector('.btn_primary')
     showBtn.addEventListener('click', function(){
         const dropdawnContentInputArr = filterColors.querySelectorAll('.dropdawn__content-input:checked') 
         console.log(dropdawnContentInputArr)
@@ -369,7 +369,7 @@ productsFilterBtnSizes.addEventListener('click', function(){
         }
     })
     // кнопка сбросить
-    const resetBtn = filterSizes.querySelector('.btn-secondary')
+    const resetBtn = filterSizes.querySelector('.btn_secondary')
     resetBtn.addEventListener('click', function(){
         const dropdawnContentInputArr = filterSizes.querySelectorAll('.dropdawn__content-input:checked')
         for (let i = 0; i < dropdawnContentInputArr.length; i++) {
@@ -380,7 +380,7 @@ productsFilterBtnSizes.addEventListener('click', function(){
         productsFilterNumber.classList.remove('products__filter-number-active')
     })
     // кнопка показать
-    const showBtn = filterSizes.querySelector('.btn-primary')
+    const showBtn = filterSizes.querySelector('.btn_primary')
     showBtn.addEventListener('click', function(){
         const dropdawnContentInputArr = filterSizes.querySelectorAll('.dropdawn__content-input:checked') 
         console.log(dropdawnContentInputArr)
@@ -424,7 +424,7 @@ productsFilterBtnPrices.addEventListener('click', function(){
     dropdawn.classList.toggle('dropdawn-active')
     filterPrices.classList.toggle('products__container-active')
     // кнопка сбросить
-    const resetBtn = filterPrices.querySelector('.btn-secondary')
+    const resetBtn = filterPrices.querySelector('.btn_secondary')
     resetBtn.addEventListener('click', function(){
         const pil = document.querySelector('.polzunok-input-5-left')
         const pir = document.querySelector('.polzunok-input-5-right')
@@ -432,7 +432,7 @@ productsFilterBtnPrices.addEventListener('click', function(){
         pir.value = `100 000 ₽`
     })
     // кнопка показать
-    const showBtn = filterPrices.querySelector('.btn-primary')
+    const showBtn = filterPrices.querySelector('.btn_primary')
     showBtn.addEventListener('click', function(){
         const dropdawnPriceInputArr = filterPrices.querySelectorAll('.dropdawn__price-input') 
         for (let i = 0; i < dropdawnPriceInputArr.length; i++) {
