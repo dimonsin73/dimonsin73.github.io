@@ -116,6 +116,17 @@ main
         height: 40px
         font: 500 16px/20px 'PT Root UI', 'sans-serif'
         color: var(--black)
+@media (max-width: 767px)
+    .pages__dots
+        display: none
+.green 
+    color: #15803D
+.blue
+    color: #2335D6
+.orange
+    color: #F59E0B
+.red 
+    color: #BE123C
 .tags 
     display: flex
     gap: 12px
@@ -193,6 +204,55 @@ input::-webkit-inner-spin-button
     display: none
     -webkit-appearance: none
     margin: 0
+.notifications   
+    position: absolute
+    top: 60px
+    right: 175px
+    display: none
+    flex-direction: column
+    gap: 16px
+    width: 375px
+    padding: 24px
+    border-radius: 24px
+    box-shadow: 1px 4px 12px 0px #0000000F
+    background-color: #fff
+    z-index: 100
+    &-active
+        display: flex
+    &__head 
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__title 
+        font: 700 18px/24px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+    &__setting 
+        @include flex
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 8px
+    &__text
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: var(--black)
+    &__time
+        font: 400 12px/12px 'PT Root UI', 'sans-serif'
+        color: #727C8A
+    &__link 
+        text-align: center
+        font: 500 14px/20px 'PT Root UI', 'sans-serif'
+        color: var(--burgundy)
+@media ( max-width: 767px )
+    .notifications
+        top: 50px
+        right: 0
+@media ( max-width: 414px )
+    .notifications
+        right: -20px
 .menu
     display: none
     position: fixed
@@ -502,6 +562,9 @@ input::-webkit-inner-spin-button
             position: right 14px center
         font: 500 16px/18px 'PT Root UI', 'sans-serif'
         color: var(--black)
+@media  (max-width: 767px)
+    .quantity
+        display: none
 .input 
     padding: 14px 16px
     border: 1px solid #AFBACA
@@ -575,6 +638,7 @@ input::-webkit-inner-spin-button
         gap: 20px
         width: 100%
     &__right 
+        position: relative
         display: flex
         gap: 16px
     &__searchbtn
@@ -817,8 +881,6 @@ input::-webkit-inner-spin-button
             color: #727C8A
         &-small 
             display: none
-        &-dots 
-            border: none
 
 @media (max-width:1199px)
     .head 
@@ -885,8 +947,6 @@ input::-webkit-inner-spin-button
             margin-left: -20px
             margin-right: -20px
         &__top 
-            display: none
-        &__table-dots
             display: none
 .balance
     display: flex
@@ -1426,15 +1486,35 @@ select::-ms-expand
         &-head 
             display: flex
             justify-content: space-between
+            align-items: center
     &__content 
         display: grid
         grid-template-columns: repeat(4, 1fr)
         row-gap: 20px
         column-gap: 16px
     &__item 
+        display: flex
+        flex-direction: column
+        gap: 12px
         padding: 12px
         border-radius: 16px
         background-color: #fff
+        &-description
+            font: 500 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-footer 
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-top: auto
+        &-left 
+            display: flex
+            flex-direction: column
+        &-price 
+            font: 700 18px/23px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-status 
+            font: 500 14px/18px 'PT Root UI', 'sans-serif'
 
 .price
     flex-direction: column

@@ -74,6 +74,27 @@ main {
   color: var(--black);
 }
 
+@media (max-width: 767px) {
+  .pages__dots {
+    display: none;
+  }
+}
+.green {
+  color: #15803D;
+}
+
+.blue {
+  color: #2335D6;
+}
+
+.orange {
+  color: #F59E0B;
+}
+
+.red {
+  color: #BE123C;
+}
+
 .tags {
   display: flex;
   gap: 12px;
@@ -185,6 +206,72 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.notifications {
+  position: absolute;
+  top: 60px;
+  right: 175px;
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  width: 375px;
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow: 1px 4px 12px 0px rgba(0, 0, 0, 0.0588235294);
+  background-color: #fff;
+  z-index: 100;
+}
+.notifications-active {
+  display: flex;
+}
+.notifications__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.notifications__title {
+  font: 700 18px/24px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.notifications__setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notifications__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.notifications__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.notifications__text {
+  font: 400 14px/18px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.notifications__time {
+  font: 400 12px/12px "PT Root UI", "sans-serif";
+  color: #727C8A;
+}
+.notifications__link {
+  text-align: center;
+  font: 500 14px/20px "PT Root UI", "sans-serif";
+  color: var(--burgundy);
+}
+
+@media (max-width: 767px) {
+  .notifications {
+    top: 50px;
+    right: 0;
+  }
+}
+@media (max-width: 414px) {
+  .notifications {
+    right: -20px;
+  }
+}
 .menu {
   display: none;
   position: fixed;
@@ -587,6 +674,11 @@ input::-webkit-inner-spin-button {
   color: var(--black);
 }
 
+@media (max-width: 767px) {
+  .quantity {
+    display: none;
+  }
+}
 .input {
   padding: 14px 16px;
   border: 1px solid #AFBACA;
@@ -678,6 +770,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 .head__right {
+  position: relative;
   display: flex;
   gap: 16px;
 }
@@ -964,9 +1057,6 @@ input::-webkit-inner-spin-button {
 .orders__table-small {
   display: none;
 }
-.orders__table-dots {
-  border: none;
-}
 
 @media (max-width: 1199px) {
   .head {
@@ -1051,9 +1141,6 @@ input::-webkit-inner-spin-button {
     margin-right: -20px;
   }
   .orders__top {
-    display: none;
-  }
-  .orders__table-dots {
     display: none;
   }
 }
@@ -1732,6 +1819,7 @@ select::-ms-expand {
 .products__top-head {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .products__content {
   display: grid;
@@ -1741,9 +1829,33 @@ select::-ms-expand {
        column-gap: 16px;
 }
 .products__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   padding: 12px;
   border-radius: 16px;
   background-color: #fff;
+}
+.products__item-description {
+  font: 500 14px/18px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.products__item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+.products__item-left {
+  display: flex;
+  flex-direction: column;
+}
+.products__item-price {
+  font: 700 18px/23px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.products__item-status {
+  font: 500 14px/18px "PT Root UI", "sans-serif";
 }
 
 .price {

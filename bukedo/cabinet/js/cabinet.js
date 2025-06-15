@@ -237,3 +237,22 @@ ymaps.ready(init);
             .add(myCircle15)
             .add(myCircle20)
     }
+
+// Уведомления 
+const headBell = document.querySelector('.head__bell')
+const notifications = document.querySelector('.notifications')
+headBell.addEventListener('click', function(){
+    notifications.classList.add('notifications-active')
+    // закрытие
+    document.addEventListener( 'mousedown', (e) => {
+        const withinBoundaries = e.composedPath().includes(notifications);
+        if ( ! withinBoundaries ) {
+            notifications.classList.remove('notifications-active')
+        }
+    })
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            notifications.classList.remove('notifications-active')
+        }
+    });
+})
