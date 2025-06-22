@@ -17,15 +17,17 @@ asideListSetting.addEventListener('click', function(){
     asideListSetting.classList.toggle('aside__list-setting-active')
     asideSublist.classList.toggle('aside__sublist-active')
 })
-const ordersTags = document.querySelectorAll('.tags__btn')
-for (let i = 0; i < ordersTags.length; i++) {
-    const ordersTag = ordersTags[i];
-    ordersTag.addEventListener('click', function(){
-        for (let i = 0; i < ordersTags.length; i++) {
-            const element = ordersTags[i];
+// Работа тегов
+const tagArray = document.querySelectorAll('.tags__btn')
+for (let i = 0; i < tagArray.length; i++) {
+    const tag = tagArray[i];
+    tag.addEventListener('click', function(){
+        const tagsView = tag.parentElement.querySelectorAll('.tags__btn')
+        for (let i = 0; i < tagsView.length; i++) {
+            const element = tagsView[i];
             element.classList.remove('tags__btn-active')
         }
-        ordersTag.classList.add('tags__btn-active')
+        tag.classList.add('tags__btn-active')
     })
 }
 // вывод нужного контента
@@ -58,26 +60,83 @@ for (let i = 0; i < asideListItemArr.length; i++) {
         aside.classList.remove('aside-active')
     })
 }
+// textarea
 const shopsNameTextarea = document.querySelector('.shops__name-textarea')
 const shopsNameFirst = document.querySelector('.shops__name-first')
 shopsNameTextarea.addEventListener('input', function(){
     const count = shopsNameTextarea.value.length
     shopsNameFirst.textContent = count
 })
+// textarea
+const modalAdditionallyTextarea = document.querySelector('.modal__additionally-textarea')
+const modalAdditionallyFirst = document.querySelector('.modal__additionally-first')
+modalAdditionallyTextarea.addEventListener('input', function(){
+    const count = modalAdditionallyTextarea.value.length
+    modalAdditionallyFirst.textContent = count
+})
 
 // Селект 
-const shopsPaymentSelect = document.querySelector('.select')
-const shopsPaymentOptions = document.querySelector('.options')
-shopsPaymentSelect.addEventListener('click', function(){
-    shopsPaymentOptions.classList.toggle('options-active')
-})
-const shopsPaymentOptionArr = document.querySelectorAll('.option')
-for (let i = 0; i < shopsPaymentOptionArr.length; i++) {
-    const shopsPaymentOption = shopsPaymentOptionArr[i];
-    shopsPaymentOption.addEventListener('click', function(){
-        shopsPaymentSelect.value = shopsPaymentOption.textContent
+const selectArray = document.querySelectorAll(".select")
+for (let i = 0; i < selectArray.length; i++) {
+    const select = selectArray[i];
+    select.addEventListener('click', function(){
+        const options = select.parentElement.querySelector('.options')
+        options.classList.toggle('options-active')
+        const optionArray = select.parentElement.querySelectorAll('.option')
+        for (let i = 0; i < optionArray.length; i++) {
+            const option = optionArray[i];
+            option.addEventListener('click', function(){
+                select.value = option.textContent
+            })
+        }
+    })
+    
+}
+// Кнопка нет в наличии
+const productsViewArray = document.querySelectorAll(".products__view")
+for (let i = 0; i < productsViewArray.length; i++) {
+    const productsView = productsViewArray[i];
+    productsView.addEventListener('click', function(){
+        const productsImage = productsView.parentElement.parentElement
+        productsImage.classList.toggle('products__item-noview')
     })
 }
+// Кнопка переключения
+const productsSort = document.querySelector('.products__sort')
+productsSort.addEventListener('click', function(){
+    const productsSortData = productsSort.dataset.sort
+    const productsWrapperArray = document.querySelectorAll('.products__wrapper')
+    for (let i = 0; i < productsWrapperArray.length; i++) {
+        const productsWrapper = productsWrapperArray[i];
+        if (productsWrapper.dataset.sort === productsSortData) {
+            productsWrapper.classList.remove('products__wrapper-active')
+        } else {
+            productsWrapper.classList.add('products__wrapper-active')
+        }
+    }
+    
+    switch (productsSortData) {
+        case 'grid':
+            productsSort.dataset.sort = 'table'
+            break;
+        case 'table':
+            productsSort.dataset.sort = 'grid'
+            break;
+        default:
+            break;
+    }
+
+    const productsSortSvgArray = document.querySelectorAll('.products__sort-svg')
+    for (let i = 0; i < productsSortSvgArray.length; i++) {
+        const productsSortSvg = productsSortSvgArray[i];
+        if (productsSortSvg.dataset.sort === productsSortData) {
+            productsSortSvg.classList.remove('products__sort-svg-active')
+        } else {
+            productsSortSvg.classList.add('products__sort-svg-active')
+        }
+    }
+})
+
 const shopsInfoBtnArr = document.querySelectorAll('.shops__info-btn')
 for (let i = 0; i < shopsInfoBtnArr.length; i++) {
     const shopsInfoBtn = shopsInfoBtnArr[i];
@@ -172,7 +231,6 @@ for (let i = 0; i < helpItemHeadArray.length; i++) {
 }
 
 // Карта 
-
 ymaps.ready(init);
     function init(){
         // Создание карты.
@@ -256,3 +314,28 @@ headBell.addEventListener('click', function(){
         }
     });
 })
+
+// Добавление товара 
+const productsAdd = document.getElementById('products-add')
+const modalArray= document.querySelectorAll('.modal')
+productsAdd.addEventListener('click', function(){
+    for (let i = 0; i < modalArray.length; i++) {
+        const modal = modalArray[i];
+        if (modal.dataset.modal === 'basic') {
+            console.log(modal.dataset.modal)
+            modal.classList.add('modal-active')
+        }
+        const modalClose = modal.querySelector('.modal__close')
+        modalClose.addEventListener('click', function(){
+            modal.classList.remove('modal-active')
+        })
+    }
+})
+const modalAdditionallyHeadArray = document.querySelectorAll('.modal__additionally-head')
+for (let i = 0; i < modalAdditionallyHeadArray.length; i++) {
+    const modalAdditionallyHead = modalAdditionallyHeadArray[i];
+    modalAdditionallyHead.addEventListener('click', function () {
+        const modalAdditionallyContent = modalAdditionallyHead.parentElement.querySelector('.modal__additionally-content')
+        modalAdditionallyContent.classList.toggle('modal__additionally-content-active')
+    })
+}

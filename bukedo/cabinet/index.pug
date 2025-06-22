@@ -5,9 +5,11 @@ html(lang="ru")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title BUCEDO
         link(rel="icon" type="image/x-icon" href="img/favicon.png")
+        link(rel="stylesheet", href="css/swiper-bundle.min.css")
         link(rel="stylesheet" href="css/reset.css")
         link(rel="stylesheet" href="css/fonts.css")
         link(rel="stylesheet" href="css/style.css")
+        script(type="module" src="js/swiper.js" defer) 
         script(src="https://api-maps.yandex.ru/2.1/?apikey=74dbc5d7-1963-453d-9239-a429eb2d3ee2&lang=ru_RU" type="text/javascript")
         script(src="js/cabinet.js" defer) 
     body.cabinet 
@@ -59,7 +61,7 @@ html(lang="ru")
                     li.aside__list-item(data-aside='users')
                         img(src="img/aside-8.svg", alt="Пользователи").aside__list-img
                         p.aside__list-text Пользователи
-                    li.aside__list-item.aside__list-setting
+                    li.aside__list-item.aside__list-setting(data-aside='setting')
                         img(src="img/aside-9.svg", alt="Настройки").aside__list-img
                         p.aside__list-text Настройки
                     ul.aside__list.aside__sublist
@@ -972,21 +974,20 @@ html(lang="ru")
                                         <path d="M8 15.9998L3 16.9998L4 11.9998L14.707 1.29276C15.098 0.901762 15.731 0.901762 16.121 1.29276L18.707 3.87876C19.098 4.26976 19.098 4.90276 18.707 5.29276L8 15.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
                                         <path d="M12 4L16 8" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
                                     </svg>
-
             .products.main-block(data-main='products')
                 .products__top 
                     .products__top-head
                         h2.main-title Мои товары
-                        button(type="button").btn.btn_primary
+                        button(type="button").btn.btn_primary#products-add
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                             | Добавить
-                    .products__setting 
+                    .products__tabmenu
                         .tags 
                             button(type="button").tags__btn.tags__btn-active
                                 p.tags__btn-text Все
-                                p.tags__btn-number 12
+                                p.tags__btn-number 8
                             button(type="button").tags__btn
                                 p.tags__btn-text Новые
                                 p.tags__btn-number 5
@@ -999,111 +1000,595 @@ html(lang="ru")
                             button(type="button").tags__btn
                                 p.tags__btn-text Нет в наличии
                                 p.tags__btn-number 1
-                .products__content 
-                    .products__item
-                        .products__item-img 
-                        p.products__item-description Букет из хризантем и гипсофилы
-                        .products__item-footer
-                            .products__item-left
-                                p.products__item-price 2 200 ₽
-                                p.products__item-status.green Продается
-                            button(type="button") 
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                        .products__setting  
+                            label(for="products__category").label 
+                                input(type="text", name="" value="Все категории" readonly).input.select#products__category
+                                ul.options
+                                    li.option Все категории
+                                    li.option Категория 1
+                                    li.option Категория 2
+                                    li.option Категория 3
+                            button(type="button" data-sort="grid").products__sort
+                                .products__sort-svg.products__sort-svg-active(data-sort='grid')
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.3887 4.16699H16.9442" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M11.3887 7.5H16.9442" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M11.3887 12.5H16.9442" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M11.3887 15.8335H16.9442" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.94455 3.05566H4.16678C3.55313 3.05566 3.05566 3.55313 3.05566 4.16678V6.94455C3.05566 7.5582 3.55313 8.05566 4.16678 8.05566H6.94455C7.5582 8.05566 8.05566 7.5582 8.05566 6.94455V4.16678C8.05566 3.55313 7.5582 3.05566 6.94455 3.05566Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.94455 11.9443H4.16678C3.55313 11.9443 3.05566 12.4418 3.05566 13.0554V15.8332C3.05566 16.4469 3.55313 16.9443 4.16678 16.9443H6.94455C7.5582 16.9443 8.05566 16.4469 8.05566 15.8332V13.0554C8.05566 12.4418 7.5582 11.9443 6.94455 11.9443Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                .products__sort-svg(data-sort='table')
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3333 7.09984V3.3165C18.3333 2.1415 17.8 1.6665 16.475 1.6665H13.1083C11.7833 1.6665 11.25 2.1415 11.25 3.3165V7.0915C11.25 8.27484 11.7833 8.7415 13.1083 8.7415H16.475C17.8 8.74984 18.3333 8.27484 18.3333 7.09984Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3333 16.475V13.1083C18.3333 11.7833 17.8 11.25 16.475 11.25H13.1083C11.7833 11.25 11.25 11.7833 11.25 13.1083V16.475C11.25 17.8 11.7833 18.3333 13.1083 18.3333H16.475C17.8 18.3333 18.3333 17.8 18.3333 16.475Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8.74935 7.09984V3.3165C8.74935 2.1415 8.21602 1.6665 6.89102 1.6665H3.52435C2.19935 1.6665 1.66602 2.1415 1.66602 3.3165V7.0915C1.66602 8.27484 2.19935 8.7415 3.52435 8.7415H6.89102C8.21602 8.74984 8.74935 8.27484 8.74935 7.09984Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8.74935 16.475V13.1083C8.74935 11.7833 8.21602 11.25 6.89102 11.25H3.52435C2.19935 11.25 1.66602 11.7833 1.66602 13.1083V16.475C1.66602 17.8 2.19935 18.3333 3.52435 18.3333H6.89102C8.21602 18.3333 8.74935 17.8 8.74935 16.475Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                .products__wrapper.products__wrapper-active(data-sort='grid')
+                    .products__content 
+                        .products__item
+                            .products__image
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide 
+                                            img(src="img/product_1.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_1.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_1.png", alt="")
+                                    .swiper-pagination
+                                        .bulletClass
+                                        .bulletClass
+                                        .bulletClass
+                                button(type="button").products__view 
+                                button(type="button").products__delete
+                                    <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                p.products__image-placeholder Нет в наличии
+                            p.products__item-description Букет из хризантем и гипсофилы
+                            .products__item-footer
+                                .products__item-left
+                                    p.products__item-price 2 200 ₽
+                                    p.products__item-status.green Продается
+                                button(type="button") 
+                                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                    </svg>
+                        .products__item
+                            .products__image
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide 
+                                            img(src="img/product_2.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_2.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_2.png", alt="")
+                                    .swiper-pagination
+                                        .bulletClass
+                                        .bulletClass
+                                        .bulletClass
+                                button(type="button").products__view
+                                button(type="button").products__delete
+                                    <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                p.products__image-placeholder Нет в наличии
+                            p.products__item-description Букет французских роз и хризантем
+                            .products__item-footer
+                                .products__item-left
+                                    p.products__item-price 2 775 ₽
+                                    p.products__item-status.orange На модерации
+                                button(type="button") 
+                                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                    </svg>
+                        .products__item
+                            .products__image
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide 
+                                            img(src="img/product_3.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_3.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_3.png", alt="")
+                                    .swiper-pagination
+                                        .bulletClass
+                                        .bulletClass
+                                        .bulletClass
+                                button(type="button").products__view
+                                button(type="button").products__delete
+                                    <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                p.products__image-placeholder Нет в наличии
+                            p.products__item-description Букет махровых роз
+                            .products__item-footer
+                                .products__item-left
+                                    p.products__item-price 2 775 ₽
+                                    p.products__item-status.green Продается
+                                button(type="button") 
+                                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                    </svg>
+                        .products__item
+                            .products__image
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide 
+                                            img(src="img/product_4.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_4.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_4.png", alt="")
+                                    .swiper-pagination
+                                        .bulletClass
+                                        .bulletClass
+                                        .bulletClass
+                                button(type="button").products__view 
+                                button(type="button").products__delete
+                                    <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                p.products__image-placeholder Нет в наличии
+                            p.products__item-description Букет кустовых роз и альстромерий
+                            .products__item-footer
+                                .products__item-left
+                                    p.products__item-price 2 805 ₽
+                                    p.products__item-status.green Продается
+                                button(type="button") 
+                                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                    </svg>
+                        .products__item
+                            .products__image
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide 
+                                            img(src="img/product_5.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_5.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_5.png", alt="")
+                                    .swiper-pagination
+                                        .bulletClass
+                                        .bulletClass
+                                        .bulletClass
+                                button(type="button").products__view 
+                                button(type="button").products__delete
+                                    <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                p.products__image-placeholder Нет в наличии
+                            p.products__item-description Букет французских роз и кустовых роз
+                            .products__item-footer
+                                .products__item-left
+                                    p.products__item-price 3 145 ₽
+                                    p.products__item-status.green Продается
+                                button(type="button") 
+                                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                    </svg>
+                        .products__item
+                            .products__image
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide 
+                                            img(src="img/product_6.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_6.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_6.png", alt="")
+                                    .swiper-pagination
+                                        .bulletClass
+                                        .bulletClass
+                                        .bulletClass
+                                button(type="button").products__view 
+                                button(type="button").products__delete
+                                    <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                p.products__image-placeholder Нет в наличии
+                            p.products__item-description Нежность Охары
+                            .products__item-footer
+                                .products__item-left
+                                    p.products__item-price 22 263 ₽
+                                    p.products__item-status.green Продается
+                                button(type="button") 
+                                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                    </svg>
+                        .products__item
+                            .products__image
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide 
+                                            img(src="img/product_7.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_7.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_7.png", alt="")
+                                    .swiper-pagination
+                                        .bulletClass
+                                        .bulletClass
+                                        .bulletClass
+                                button(type="button").products__view 
+                                button(type="button").products__delete
+                                    <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                p.products__image-placeholder Нет в наличии
+                            p.products__item-description Рэд Пиано
+                            .products__item-footer
+                                .products__item-left
+                                    p.products__item-price 19 150 ₽
+                                    p.products__item-status.green Продается
+                                button(type="button") 
+                                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                    </svg>
+                        .products__item.products__item-noview
+                            .products__image
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide 
+                                            img(src="img/product_8.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_8.png", alt="")
+                                        .swiper-slide 
+                                            img(src="img/product_8.png", alt="")
+                                    .swiper-pagination
+                                        .bulletClass
+                                        .bulletClass
+                                        .bulletClass
+                                button(type="button").products__view 
+                                button(type="button").products__delete
+                                    <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                p.products__image-placeholder Нет в наличии
+                            p.products__item-description Коралл Роуз
+                            .products__item-footer
+                                .products__item-left
+                                    p.products__item-price 2 770 ₽
+                                    p.products__item-status.grey Не продается
+                                button(type="button") 
+                                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                    </svg>
+                    .products__footer
+                        .pages 
+                            button(type="button").pages__btn
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.657 15L15.832 13.825L12.0154 10L15.832 6.175L14.657 5L9.65703 10L14.657 15Z" fill="#1C1C1D"/>
+                                    <path d="M9.1668 15L10.3418 13.825L6.52513 10L10.3418 6.175L9.1668 5L4.1668 10L9.1668 15Z" fill="#1C1C1D"/>
                                 </svg>
-                    .products__item
-                        .products__item-img 
-                        p.products__item-description Букет французских роз и хризантем
-                        .products__item-footer
-                            .products__item-left
-                                p.products__item-price 2 775 ₽
-                                p.products__item-status.orange На модерации
-                            button(type="button") 
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                            button(type="button").pages__btn
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.742 15L13.917 13.825L10.1003 10L13.917 6.175L12.742 5L7.74199 10L12.742 15Z" fill="#1C1C1D"/>
                                 </svg>
-                    .products__item
-                        .products__item-img 
-                        p.products__item-description Букет махровых роз
-                        .products__item-footer
-                            .products__item-left
-                                p.products__item-price 2 775 ₽
-                                p.products__item-status.green Продается
-                            button(type="button") 
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                            button(type="button").pages__btn.pages__btn-active 1
+                            button(type="button").pages__btn 2
+                            .pages__dots ...
+                            button(type="button").pages__btn 10
+                            button(type="button").pages__btn
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.50801 5L8.33301 6.175L12.1497 10L8.33301 13.825L9.50801 15L14.508 10L9.50801 5Z" fill="#1C1C1D"/>
                                 </svg>
-                    .products__item
-                        .products__item-img 
-                        p.products__item-description Букет кустовых роз и альстромерий
-                        .products__item-footer
-                            .products__item-left
-                                p.products__item-price 2 805 ₽
-                                p.products__item-status.green Продается
-                            button(type="button") 
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                            button(type="button").pages__btn
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.34297 5L4.16797 6.175L7.98464 10L4.16797 13.825L5.34297 15L10.343 10L5.34297 5Z" fill="#1C1C1D"/>
+                                    <path d="M10.8332 5L9.6582 6.175L13.4749 10L9.6582 13.825L10.8332 15L15.8332 10L10.8332 5Z" fill="#1C1C1D"/>
                                 </svg>
-                    .products__item
-                        .products__item-img 
-                        p.products__item-description Букет французских роз и кустовых роз
-                        .products__item-footer
-                            .products__item-left
-                                p.products__item-price 3 145 ₽
-                                p.products__item-status.green Продается
-                            button(type="button") 
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
-                                </svg>
-                    .products__item
-                        .products__item-img 
-                        p.products__item-description Нежность Охары
-                        .products__item-footer
-                            .products__item-left
-                                p.products__item-price 22 263 ₽
-                                p.products__item-status.green Продается
-                            button(type="button") 
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
-                                </svg>
-                    .products__item
-                        .products__item-img 
-                        p.products__item-description Рэд Пиано
-                        .products__item-footer
-                            .products__item-left
-                                p.products__item-price 19 150 ₽
-                                p.products__item-status.green Продается
-                            button(type="button") 
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
-                                </svg>
-                    .products__item
-                        .products__item-img 
-                        p.products__item-description Коралл Роуз
-                        .products__item-footer
-                            .products__item-left
-                                p.products__item-price 2 770 ₽
-                                p.products__item-status.green Продается
-                            button(type="button") 
-                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 21.5H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M8 16.4998L3 17.4998L4 12.4998L14.707 1.79276C15.098 1.40176 15.731 1.40176 16.121 1.79276L18.707 4.37876C19.098 4.76976 19.098 5.40276 18.707 5.79276L8 16.4998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
-                                    <path d="M12 4.5L16 8.5" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
-                                </svg>
+                .products__wrapper(data-sort='table')
+                    .products__table 
+                        .products__table-head 
+                            p.products__table-htext Фото
+                            p.products__table-htext Наименование
+                            p.products__table-htext Категория
+                            p.products__table-htext Цена
+                            p.products__table-htext Наличие
+                            p.products__table-htext Статус
+                            p.products__table-htext Обновлен
+                            p.products__table-htext 
+                        .products__table-content 
+                            .products__table-item
+                                .products__table-cell
+                                    img(src="img/product_1.png", alt="").products__table-img
+                                .products__table-cell
+                                    h3.products__table-title Букет из хризантем и гипсофилы
+                                .products__table-cell
+                                    p.products__table-text Букеты
+                                .products__table-cell
+                                    p.products__table-text 2 200 ₽
+                                .products__table-cell
+                                    p.products__table-text 2 
+                                .products__table-cell
+                                    h3.products__table-title.green Продается
+                                .products__table-cell
+                                    p.products__table-text 28.09.24, 15:25
+                                .products__table-cell.products__table-btns
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.19686 12.6275C1.06918 12.4428 1.00054 12.2237 1 11.9992C0.999468 11.7747 1.06706 11.5553 1.19386 11.37C2.43736 9.565 6.42336 4.5 11.9999 4.5C17.5264 4.5 21.5399 9.5575 22.7999 11.3665C22.9286 11.5524 22.9973 11.7733 22.9967 11.9995C22.9962 12.2256 22.9264 12.4462 22.7969 12.6315C21.5274 14.438 17.4829 19.5 11.9999 19.5C6.46686 19.5 2.44986 14.4305 1.19686 12.6275Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                            .products__table-item
+                                .products__table-cell
+                                    img(src="img/product_2.png", alt="").products__table-img
+                                .products__table-cell
+                                    h3.products__table-title Букет французских роз и хризантем
+                                .products__table-cell
+                                    p.products__table-text Букеты
+                                .products__table-cell
+                                    p.products__table-text 2 775 ₽
+                                .products__table-cell
+                                    p.products__table-text 2 
+                                .products__table-cell
+                                    h3.products__table-title.orange На модерации
+                                .products__table-cell
+                                    p.products__table-text 28.09.24, 15:25
+                                .products__table-cell.products__table-btns
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.19686 12.6275C1.06918 12.4428 1.00054 12.2237 1 11.9992C0.999468 11.7747 1.06706 11.5553 1.19386 11.37C2.43736 9.565 6.42336 4.5 11.9999 4.5C17.5264 4.5 21.5399 9.5575 22.7999 11.3665C22.9286 11.5524 22.9973 11.7733 22.9967 11.9995C22.9962 12.2256 22.9264 12.4462 22.7969 12.6315C21.5274 14.438 17.4829 19.5 11.9999 19.5C6.46686 19.5 2.44986 14.4305 1.19686 12.6275Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                            .products__table-item
+                                .products__table-cell
+                                    img(src="img/product_3.png", alt="").products__table-img
+                                .products__table-cell
+                                    h3.products__table-title Букет махровых роз
+                                .products__table-cell
+                                    p.products__table-text Букеты
+                                .products__table-cell
+                                    p.products__table-text 2 775 ₽
+                                .products__table-cell
+                                    p.products__table-text 2 
+                                .products__table-cell
+                                    h3.products__table-title.green Продается
+                                .products__table-cell
+                                    p.products__table-text 28.09.24, 15:25
+                                .products__table-cell.products__table-btns
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.19686 12.6275C1.06918 12.4428 1.00054 12.2237 1 11.9992C0.999468 11.7747 1.06706 11.5553 1.19386 11.37C2.43736 9.565 6.42336 4.5 11.9999 4.5C17.5264 4.5 21.5399 9.5575 22.7999 11.3665C22.9286 11.5524 22.9973 11.7733 22.9967 11.9995C22.9962 12.2256 22.9264 12.4462 22.7969 12.6315C21.5274 14.438 17.4829 19.5 11.9999 19.5C6.46686 19.5 2.44986 14.4305 1.19686 12.6275Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                            .products__table-item
+                                .products__table-cell
+                                    img(src="img/product_4.png", alt="").products__table-img
+                                .products__table-cell
+                                    h3.products__table-title Букет кустовых роз и альстромерий
+                                .products__table-cell
+                                    p.products__table-text Букеты
+                                .products__table-cell
+                                    p.products__table-text 2 805 ₽
+                                .products__table-cell
+                                    p.products__table-text 2 
+                                .products__table-cell
+                                    h3.products__table-title.green Продается
+                                .products__table-cell
+                                    p.products__table-text 28.09.24, 15:25
+                                .products__table-cell.products__table-btns
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.19686 12.6275C1.06918 12.4428 1.00054 12.2237 1 11.9992C0.999468 11.7747 1.06706 11.5553 1.19386 11.37C2.43736 9.565 6.42336 4.5 11.9999 4.5C17.5264 4.5 21.5399 9.5575 22.7999 11.3665C22.9286 11.5524 22.9973 11.7733 22.9967 11.9995C22.9962 12.2256 22.9264 12.4462 22.7969 12.6315C21.5274 14.438 17.4829 19.5 11.9999 19.5C6.46686 19.5 2.44986 14.4305 1.19686 12.6275Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                            .products__table-item
+                                .products__table-cell
+                                    img(src="img/product_5.png", alt="").products__table-img
+                                .products__table-cell
+                                    h3.products__table-title Букет французских роз и кустовых роз
+                                .products__table-cell
+                                    p.products__table-text Букеты
+                                .products__table-cell
+                                    p.products__table-text 3 145 ₽
+                                .products__table-cell
+                                    p.products__table-text 2 
+                                .products__table-cell
+                                    h3.products__table-title.green Продается
+                                .products__table-cell
+                                    p.products__table-text 28.09.24, 15:25
+                                .products__table-cell.products__table-btns
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.19686 12.6275C1.06918 12.4428 1.00054 12.2237 1 11.9992C0.999468 11.7747 1.06706 11.5553 1.19386 11.37C2.43736 9.565 6.42336 4.5 11.9999 4.5C17.5264 4.5 21.5399 9.5575 22.7999 11.3665C22.9286 11.5524 22.9973 11.7733 22.9967 11.9995C22.9962 12.2256 22.9264 12.4462 22.7969 12.6315C21.5274 14.438 17.4829 19.5 11.9999 19.5C6.46686 19.5 2.44986 14.4305 1.19686 12.6275Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                            .products__table-item
+                                .products__table-cell
+                                    img(src="img/product_6.png", alt="").products__table-img
+                                .products__table-cell
+                                    h3.products__table-title Нежность Охары
+                                .products__table-cell
+                                    p.products__table-text Букеты
+                                .products__table-cell
+                                    p.products__table-text 22 263 ₽
+                                .products__table-cell
+                                    p.products__table-text 2 
+                                .products__table-cell
+                                    h3.products__table-title.green Продается
+                                .products__table-cell
+                                    p.products__table-text 28.09.24, 15:25
+                                .products__table-cell.products__table-btns
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.19686 12.6275C1.06918 12.4428 1.00054 12.2237 1 11.9992C0.999468 11.7747 1.06706 11.5553 1.19386 11.37C2.43736 9.565 6.42336 4.5 11.9999 4.5C17.5264 4.5 21.5399 9.5575 22.7999 11.3665C22.9286 11.5524 22.9973 11.7733 22.9967 11.9995C22.9962 12.2256 22.9264 12.4462 22.7969 12.6315C21.5274 14.438 17.4829 19.5 11.9999 19.5C6.46686 19.5 2.44986 14.4305 1.19686 12.6275Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                            .products__table-item
+                                .products__table-cell
+                                    img(src="img/product_7.png", alt="").products__table-img
+                                .products__table-cell
+                                    h3.products__table-title Рэд Пиано
+                                .products__table-cell
+                                    p.products__table-text Букеты
+                                .products__table-cell
+                                    p.products__table-text 19 150 ₽
+                                .products__table-cell
+                                    p.products__table-text 2 
+                                .products__table-cell
+                                    h3.products__table-title.green Продается
+                                .products__table-cell
+                                    p.products__table-text 28.09.24, 15:25
+                                .products__table-cell.products__table-btns
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.19686 12.6275C1.06918 12.4428 1.00054 12.2237 1 11.9992C0.999468 11.7747 1.06706 11.5553 1.19386 11.37C2.43736 9.565 6.42336 4.5 11.9999 4.5C17.5264 4.5 21.5399 9.5575 22.7999 11.3665C22.9286 11.5524 22.9973 11.7733 22.9967 11.9995C22.9962 12.2256 22.9264 12.4462 22.7969 12.6315C21.5274 14.438 17.4829 19.5 11.9999 19.5C6.46686 19.5 2.44986 14.4305 1.19686 12.6275Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                            .products__table-item
+                                .products__table-cell
+                                    img(src="img/product_8.png", alt="").products__table-img
+                                .products__table-cell
+                                    h3.products__table-title Коралл Роуз
+                                .products__table-cell
+                                    p.products__table-text Букеты
+                                .products__table-cell
+                                    p.products__table-text 2 770 ₽
+                                .products__table-cell
+                                    p.products__table-text 2 
+                                .products__table-cell
+                                    h3.products__table-title.grey Не продается
+                                .products__table-cell
+                                    p.products__table-text 28.09.24, 15:25
+                                .products__table-cell.products__table-btns
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.19686 12.6275C1.06918 12.4428 1.00054 12.2237 1 11.9992C0.999468 11.7747 1.06706 11.5553 1.19386 11.37C2.43736 9.565 6.42336 4.5 11.9999 4.5C17.5264 4.5 21.5399 9.5575 22.7999 11.3665C22.9286 11.5524 22.9973 11.7733 22.9967 11.9995C22.9962 12.2256 22.9264 12.4462 22.7969 12.6315C21.5274 14.438 17.4829 19.5 11.9999 19.5C6.46686 19.5 2.44986 14.4305 1.19686 12.6275Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.5" stroke-miterlimit="10"/>
+                                        </svg>
+                                    button(type="button") 
+                                        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 4.5H3.5M3.5 4.5H6.5M3.5 4.5V18.5C3.5 20.1569 4.34315 21.5 6 21.5H14.5C16.1569 21.5 17.5 20.1569 17.5 18.5V4.5M17.5 4.5H19.5M17.5 4.5H14.5M6.5 4.5H14.5M6.5 4.5V3.5C6.5 2.39543 7.39543 1.5 8.5 1.5H12.5C13.6046 1.5 14.5 2.39543 14.5 3.5V4.5M8.5 10L8.5 16M12.5 10V16" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                        .products__table-footer 
+                            .quantity
+                                p.quantity__text Показывать по
+                                select(name="").quantity__select 
+                                    option(value="10") 10
+                                    option(value="20") 20
+                                    option(value="30") 30
+                            .pages 
+                                button(type="button").pages__btn
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.657 15L15.832 13.825L12.0154 10L15.832 6.175L14.657 5L9.65703 10L14.657 15Z" fill="#1C1C1D"/>
+                                        <path d="M9.1668 15L10.3418 13.825L6.52513 10L10.3418 6.175L9.1668 5L4.1668 10L9.1668 15Z" fill="#1C1C1D"/>
+                                    </svg>
+                                button(type="button").pages__btn
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.742 15L13.917 13.825L10.1003 10L13.917 6.175L12.742 5L7.74199 10L12.742 15Z" fill="#1C1C1D"/>
+                                    </svg>
+                                button(type="button").pages__btn.pages__btn-active 1
+                                button(type="button").pages__btn 2
+                                .pages__dots ...
+                                button(type="button").pages__btn 10
+                                button(type="button").pages__btn
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.50801 5L8.33301 6.175L12.1497 10L8.33301 13.825L9.50801 15L14.508 10L9.50801 5Z" fill="#1C1C1D"/>
+                                    </svg>
+                                button(type="button").pages__btn
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.34297 5L4.16797 6.175L7.98464 10L4.16797 13.825L5.34297 15L10.343 10L5.34297 5Z" fill="#1C1C1D"/>
+                                        <path d="M10.8332 5L9.6582 6.175L13.4749 10L9.6582 13.825L10.8332 15L15.8332 10L10.8332 5Z" fill="#1C1C1D"/>
+                                    </svg>
             .price.main-block(data-main='price')
                 .price__wrapper
                     .price__head
@@ -1489,6 +1974,122 @@ html(lang="ru")
                                         </clipPath>
                                     </defs>
                                 </svg>
+            .setting.main-block(data-main='setting')
+                .setting__wrapper 
+                    ul.setting__aside 
+                        li.setting__aside-item.setting__aside-item-active Основные
+                        li.setting__aside-item Уведомления
+                        li.setting__aside-item Реквизиты
+                    .setting__content 
+                        .setting__head
+                            h2.main-title Основные настройки
+                        .setting__item 
+                            .setting__item-left 
+                                h3.setting__item-title Данные профиля
+                                p.setting__item-text Данные для входа в личный кабинет
+                            .setting__item-right 
+                                input(type="text", name="" value="Стружикова Яна" disabled).input
+                                input(type="text", name="" value="+7 922 555 22 22" disabled).input
+                                input(type="email", name="" value="hello@ya.ru" placeholder="Email").input
+                        .setting__item 
+                            .setting__item-left 
+                                h3.setting__item-title Фото профиля
+                                p.setting__item-text Ваша аватарка
+                            .setting__item-line 
+                                .setting__item-avatar
+                                .setting__item-load
+                                    p.setting__item-load-first Перетащите изображение сюда
+                                    p.setting__item-load-second или
+                                    p.setting__item-load-third Выберите файл
+                        h3.setting__title Уведомления
+                        .setting__item 
+                            .setting__item-left 
+                                h3.setting__item-title Email
+                                p.setting__item-text Мы можем отправлять вам уведомления по электронной почте о любых новых прямых сообщениях
+                            .setting__item-right 
+                                .setting__item-check
+                                    .check
+                                        input.check__input#setting-news(type="checkbox", name="setting-news")
+                                        label.check__label(for="setting-news")
+                                            .check__setcheck
+                                            p.check__settext Настройки новостей и обновлений
+                                    p.setting__item-settext Последние новости о новейших функциях и настройках обновления программного обеспечения
+                                .setting__item-check
+                                    .check
+                                        input.check__input#setting-advertising(type="checkbox", name="setting-advertising")
+                                        label.check__label(for="setting-advertising")
+                                            .check__setcheck
+                                            p.check__settext Предложения и рекламные акции
+                                    p.setting__item-settext Последние новости о новейших функциях и настройках обновления программного обеспечения
+                        .setting__item 
+                            .setting__item-left 
+                                h3.setting__item-title SMS
+                                p.setting__item-text Мы можем отправлять вам уведомления по электронной почте о любых новых прямых сообщениях
+                            .setting__item-right 
+                                .setting__item-check
+                                    .check
+                                        input.check__input#setting-sms-news(type="checkbox", name="setting-sms-news")
+                                        label.check__label(for="setting-sms-news")
+                                            .check__setcheck
+                                            p.check__settext Настройки новостей и обновлений
+                                    p.setting__item-settext Последние новости о новейших функциях и настройках обновления программного обеспечения
+                                .setting__item-check
+                                    .check
+                                        input.check__input#setting-sms-advertising(type="checkbox", name="setting-sms-advertising")
+                                        label.check__label(for="setting-sms-advertising")
+                                            .check__setcheck
+                                            p.check__settext Предложения и рекламные акции
+                                    p.setting__item-settext Последние новости о новейших функциях и настройках обновления программного обеспечения
+                        .setting__item 
+                            .setting__item-left 
+                                h3.setting__title Смена пароля
+                            .setting__item-right
+                                .setting__item-line
+                                    h4.setting__item-subtitle Старый пароль
+                                    .label.setting__item-label
+                                        input(type="password", name="" ).input.setting__item-input
+                                        button(type="button").setting__item-eye
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1990_180087)">
+                                                    <path d="M14.4994 14.4998C13.2043 15.487 11.6275 16.0338 9.99935 16.0604C4.69632 16.0604 1.66602 9.99984 1.66602 9.99984C2.60836 8.2437 3.91536 6.70939 5.49935 5.49984M8.40844 4.12105C8.9299 3.99899 9.46379 3.93797 9.99935 3.93923C15.3024 3.93923 18.3327 9.99984 18.3327 9.99984C17.8728 10.8601 17.3244 11.6701 16.6963 12.4165M11.6054 11.6059C11.3973 11.8292 11.1464 12.0083 10.8676 12.1325C10.5889 12.2567 10.2879 12.3235 9.98275 12.3289C9.67759 12.3343 9.37447 12.2782 9.09148 12.1638C8.80848 12.0495 8.55141 11.8794 8.3356 11.6636C8.11978 11.4478 7.94965 11.1907 7.83534 10.9077C7.72103 10.6247 7.6649 10.3216 7.67028 10.0164C7.67567 9.71128 7.74246 9.41033 7.86668 9.13154C7.9909 8.85275 8.17 8.60184 8.39329 8.39378M1.66602 1.6665L18.3327 18.3332" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1990_180087">
+                                                        <rect width="20" height="20" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                .setting__item-line
+                                    h4.setting__item-subtitle Новый пароль
+                                    .label.setting__item-label
+                                        input(type="password", name="" ).input.setting__item-input
+                                        button(type="button").setting__item-eye
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1990_180087)">
+                                                    <path d="M14.4994 14.4998C13.2043 15.487 11.6275 16.0338 9.99935 16.0604C4.69632 16.0604 1.66602 9.99984 1.66602 9.99984C2.60836 8.2437 3.91536 6.70939 5.49935 5.49984M8.40844 4.12105C8.9299 3.99899 9.46379 3.93797 9.99935 3.93923C15.3024 3.93923 18.3327 9.99984 18.3327 9.99984C17.8728 10.8601 17.3244 11.6701 16.6963 12.4165M11.6054 11.6059C11.3973 11.8292 11.1464 12.0083 10.8676 12.1325C10.5889 12.2567 10.2879 12.3235 9.98275 12.3289C9.67759 12.3343 9.37447 12.2782 9.09148 12.1638C8.80848 12.0495 8.55141 11.8794 8.3356 11.6636C8.11978 11.4478 7.94965 11.1907 7.83534 10.9077C7.72103 10.6247 7.6649 10.3216 7.67028 10.0164C7.67567 9.71128 7.74246 9.41033 7.86668 9.13154C7.9909 8.85275 8.17 8.60184 8.39329 8.39378M1.66602 1.6665L18.3327 18.3332" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1990_180087">
+                                                        <rect width="20" height="20" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                .setting__item-line
+                                    h4.setting__item-subtitle Еще раз новый пароль
+                                    .label.setting__item-label
+                                        input(type="password", name="" ).input.setting__item-input
+                                        button(type="button").setting__item-eye
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1990_180087)">
+                                                    <path d="M14.4994 14.4998C13.2043 15.487 11.6275 16.0338 9.99935 16.0604C4.69632 16.0604 1.66602 9.99984 1.66602 9.99984C2.60836 8.2437 3.91536 6.70939 5.49935 5.49984M8.40844 4.12105C8.9299 3.99899 9.46379 3.93797 9.99935 3.93923C15.3024 3.93923 18.3327 9.99984 18.3327 9.99984C17.8728 10.8601 17.3244 11.6701 16.6963 12.4165M11.6054 11.6059C11.3973 11.8292 11.1464 12.0083 10.8676 12.1325C10.5889 12.2567 10.2879 12.3235 9.98275 12.3289C9.67759 12.3343 9.37447 12.2782 9.09148 12.1638C8.80848 12.0495 8.55141 11.8794 8.3356 11.6636C8.11978 11.4478 7.94965 11.1907 7.83534 10.9077C7.72103 10.6247 7.6649 10.3216 7.67028 10.0164C7.67567 9.71128 7.74246 9.41033 7.86668 9.13154C7.9909 8.85275 8.17 8.60184 8.39329 8.39378M1.66602 1.6665L18.3327 18.3332" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1990_180087">
+                                                        <rect width="20" height="20" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+
             .help.main-block(data-main='help')
                 .help__wrapper 
                     .help__head
@@ -1630,7 +2231,231 @@ html(lang="ru")
                             <path d="M24.5 17.5001H20.2222C18.7196 17.5001 17.5 16.2806 17.5 14.7779C17.5 13.2737 18.7196 12.0557 20.2222 12.0557H24.5C25.3587 12.0557 26.0556 12.7526 26.0556 13.6112V15.9446C26.0556 16.8032 25.3587 17.5001 24.5 17.5001Z" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     p.menu__item-text Баланс
-                        
+        .modal(data-modal='basic')
+            .modal__wrapper 
+                button(type="button").modal__close 
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7M7 7L13 13M7 7L13 1M7 7L1 13" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                h2.main-title Способ добавления
+                .modal__content 
+                    .modal__item 
+                        .modal__item-icon 
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 40.833H47.5" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12.5 50.833H47.5" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M46.6665 16.6665H38.3332C37.8065 16.6665 37.3265 16.9632 37.0899 17.4332C36.8565 17.9032 36.9065 18.4665 37.2199 18.8865L41.3865 24.4432C41.6499 24.7932 42.0599 24.9998 42.4965 24.9998C42.9332 24.9998 43.3465 24.7932 43.6065 24.4432L47.7732 18.8865C48.0899 18.4665 48.1399 17.9032 47.9032 17.4332C47.6665 16.9632 47.1865 16.6665 46.6599 16.6665H46.6665Z" fill="#AD2950"/>
+                                <path d="M30.833 9.1665V30.8332" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M47.4997 9.1665H12.4997C8.81778 9.1665 5.83301 12.1513 5.83301 15.8332V24.1665C5.83301 27.8484 8.81778 30.8332 12.4997 30.8332H47.4997C51.1816 30.8332 54.1663 27.8484 54.1663 24.1665V15.8332C54.1663 12.1513 51.1816 9.1665 47.4997 9.1665Z" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        h3.modal__item-title Добавить товар<br>на основе прайс-листа
+                        button(type="button").modal__item-btn.modal__item-bur Добавить с прайс-листа
+                        .modal__item-bottom 
+                            p.modal__item-text Авто расчет цены, исходя из цены<br>в прайс-листе.
+                            p.modal__item-text Если хотя бы 1 позиция выключена,<br>то букет не в наличии.
+                    .modal__item
+                        .modal__item-icon 
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5 27.5H39.1667" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17.5 45.833H30.2133" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17.5 9.1665H39.1667" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M49.1667 30.8332V24.1665C49.1667 21.4065 46.9267 19.1665 44.1667 19.1665H12.5C9.74 19.1665 7.5 21.4065 7.5 24.1665V30.8332C7.5 33.5932 9.74 35.8332 12.5 35.8332H27.5" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M37.0867 35.8932L56.8867 43.1266C57.7201 43.4299 57.6967 44.6199 56.8501 44.8899L47.7867 47.7899L44.8867 56.8532C44.6167 57.6999 43.4267 57.7232 43.1234 56.8899L35.8901 37.0899C35.6167 36.3466 36.3401 35.6232 37.0867 35.8932Z" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        h3.modal__item-title Добавить товар<br>с указанием цены
+                        button(type="button").modal__item-btn.modal__item-white Добавить с ценой
+                        .modal__item-bottom 
+                            p.modal__item-text Простое добавление.
+                            p.modal__item-text Цену товара указываете вы.
+                            p.modal__item-text Можно скрывать с сайта.
+                ol.modal__list 
+                    li Первые 2 дня товар получает максимум показов с пометкой «Готовый букет».
+                    li 30 дней выводится в разделе «Новинки».
+                    li Ваши товары всегда будут выводиться с приоритетом в разделах каталога. Указывайте подробные составы.
+        .modal(data-modal='price-list')
+            .modal__wrapper 
+                button(type="button").modal__close 
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7M7 7L13 13M7 7L13 1M7 7L1 13" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                h2.main-title 
+                    <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1L1.099 10.7643C0.967 10.8945 0.967001 11.1055 1.099 11.2357L11 21" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    | Данные товара
+                .modal__head
+                    h4.modal__title 
+                        | Фотографии букета
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM10 16.875C8.64026 16.875 7.31105 16.4718 6.18046 15.7164C5.04987 14.9609 4.16868 13.8872 3.64833 12.6309C3.12798 11.3747 2.99183 9.99237 3.2571 8.65875C3.52238 7.32513 4.17716 6.10013 5.13864 5.13864C6.10013 4.17716 7.32514 3.52237 8.65876 3.2571C9.99238 2.99183 11.3747 3.12798 12.631 3.64833C13.8872 4.16868 14.9609 5.04987 15.7164 6.18045C16.4718 7.31104 16.875 8.64025 16.875 10C16.8729 11.8227 16.1479 13.5702 14.8591 14.8591C13.5702 16.1479 11.8227 16.8729 10 16.875ZM11.25 13.75C11.25 13.9158 11.1842 14.0747 11.0669 14.1919C10.9497 14.3092 10.7908 14.375 10.625 14.375C10.2935 14.375 9.97554 14.2433 9.74112 14.0089C9.5067 13.7745 9.375 13.4565 9.375 13.125V10C9.20924 10 9.05027 9.93415 8.93306 9.81694C8.81585 9.69973 8.75 9.54076 8.75 9.375C8.75 9.20924 8.81585 9.05027 8.93306 8.93306C9.05027 8.81585 9.20924 8.75 9.375 8.75C9.70652 8.75 10.0245 8.8817 10.2589 9.11612C10.4933 9.35054 10.625 9.66848 10.625 10V13.125C10.7908 13.125 10.9497 13.1908 11.0669 13.3081C11.1842 13.4253 11.25 13.5842 11.25 13.75ZM8.75 6.5625C8.75 6.37708 8.80499 6.19582 8.908 6.04165C9.01101 5.88748 9.15743 5.76732 9.32874 5.69636C9.50004 5.62541 9.68854 5.60684 9.8704 5.64301C10.0523 5.67919 10.2193 5.76848 10.3504 5.89959C10.4815 6.0307 10.5708 6.19775 10.607 6.3796C10.6432 6.56146 10.6246 6.74996 10.5536 6.92127C10.4827 7.09257 10.3625 7.23899 10.2084 7.342C10.0542 7.44502 9.87292 7.5 9.6875 7.5C9.43886 7.5 9.20041 7.40123 9.02459 7.22541C8.84878 7.0496 8.75 6.81114 8.75 6.5625Z" fill="#AFBACA"/>
+                        </svg>
+                    .modal__image 
+                        .modal__image-big
+                            img(src="img/product_add.png", alt="")
+                        .modal__image-small 
+                            .modal__image-bg 
+                                img(src="img/foto_add.svg", alt="")
+                                p Добавить фото, основной вид
+                            img(src="img/product_add.png", alt="").modal__image-img
+                        .modal__image-small
+                            .modal__image-bg 
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M55.001 27.5V20C55.001 17.2386 52.7624 15 50.001 15H45.1769C43.5051 15 41.944 14.1645 41.0166 12.7735L38.9853 9.7265C38.058 8.3355 36.4968 7.5 34.8251 7.5H25.1769C23.5051 7.5 21.944 8.3355 21.0166 9.7265L18.9853 12.7735C18.058 14.1645 16.4968 15 14.8251 15H10.001C7.23955 15 5.00098 17.2386 5.00098 20V42.5C5.00098 45.2614 7.23955 47.5 10.001 47.5H30.001M40.001 45H55.001M47.501 37.5V52.5M37.501 30C37.501 34.1421 34.1431 37.5 30.001 37.5C25.8588 37.5 22.501 34.1421 22.501 30C22.501 25.8579 25.8588 22.5 30.001 22.5C34.1431 22.5 37.501 25.8579 37.501 30Z" stroke="#AFBACA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                p Добавить фото,<br>вид сбоку
+                        .modal__image-small
+                            .modal__image-bg 
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M55.001 27.5V20C55.001 17.2386 52.7624 15 50.001 15H45.1769C43.5051 15 41.944 14.1645 41.0166 12.7735L38.9853 9.7265C38.058 8.3355 36.4968 7.5 34.8251 7.5H25.1769C23.5051 7.5 21.944 8.3355 21.0166 9.7265L18.9853 12.7735C18.058 14.1645 16.4968 15 14.8251 15H10.001C7.23955 15 5.00098 17.2386 5.00098 20V42.5C5.00098 45.2614 7.23955 47.5 10.001 47.5H30.001M40.001 45H55.001M47.501 37.5V52.5M37.501 30C37.501 34.1421 34.1431 37.5 30.001 37.5C25.8588 37.5 22.501 34.1421 22.501 30C22.501 25.8579 25.8588 22.5 30.001 22.5C34.1431 22.5 37.501 25.8579 37.501 30Z" stroke="#AFBACA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                p Добавить фото,<br>близко
+                        .modal__image-small
+                            .modal__image-bg 
+                                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M26 51C39.8071 51 51 39.8071 51 26C51 12.1929 39.8071 1 26 1C12.1929 1 1 12.1929 1 26C1 39.8071 12.1929 51 26 51Z" stroke="#AFBACA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 16L36 26L21 36V16Z" stroke="#AFBACA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                p Добавить видео
+                .modal__name 
+                    label(for="modal__name-category").label Категория*
+                        input(type="text", name="" value="Монобукет" readonly).input.select#modal__name-category
+                        ul.options
+                            li.option Монобукет
+                            li.option Выбор 2
+                            li.option Выбор 3
+                    label(for="modal__name-name").label Название букета*
+                        input(type="text", name="" value='Звонкий голос в Москве').input#modal__name-name
+                    .check
+                        input.check__input#checkrecipient(type="checkbox", name="checkrecipient")
+                        label.check__label(for="checkrecipient")
+                            .check__check 
+                            p.check__text Уточнить у получателя
+                .modal__compound
+                    h4.modal__title 
+                        | Состав*
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM10 16.875C8.64026 16.875 7.31105 16.4718 6.18046 15.7164C5.04987 14.9609 4.16868 13.8872 3.64833 12.6309C3.12798 11.3747 2.99183 9.99237 3.2571 8.65875C3.52238 7.32513 4.17716 6.10013 5.13864 5.13864C6.10013 4.17716 7.32514 3.52237 8.65876 3.2571C9.99238 2.99183 11.3747 3.12798 12.631 3.64833C13.8872 4.16868 14.9609 5.04987 15.7164 6.18045C16.4718 7.31104 16.875 8.64025 16.875 10C16.8729 11.8227 16.1479 13.5702 14.8591 14.8591C13.5702 16.1479 11.8227 16.8729 10 16.875ZM11.25 13.75C11.25 13.9158 11.1842 14.0747 11.0669 14.1919C10.9497 14.3092 10.7908 14.375 10.625 14.375C10.2935 14.375 9.97554 14.2433 9.74112 14.0089C9.5067 13.7745 9.375 13.4565 9.375 13.125V10C9.20924 10 9.05027 9.93415 8.93306 9.81694C8.81585 9.69973 8.75 9.54076 8.75 9.375C8.75 9.20924 8.81585 9.05027 8.93306 8.93306C9.05027 8.81585 9.20924 8.75 9.375 8.75C9.70652 8.75 10.0245 8.8817 10.2589 9.11612C10.4933 9.35054 10.625 9.66848 10.625 10V13.125C10.7908 13.125 10.9497 13.1908 11.0669 13.3081C11.1842 13.4253 11.25 13.5842 11.25 13.75ZM8.75 6.5625C8.75 6.37708 8.80499 6.19582 8.908 6.04165C9.01101 5.88748 9.15743 5.76732 9.32874 5.69636C9.50004 5.62541 9.68854 5.60684 9.8704 5.64301C10.0523 5.67919 10.2193 5.76848 10.3504 5.89959C10.4815 6.0307 10.5708 6.19775 10.607 6.3796C10.6432 6.56146 10.6246 6.74996 10.5536 6.92127C10.4827 7.09257 10.3625 7.23899 10.2084 7.342C10.0542 7.44502 9.87292 7.5 9.6875 7.5C9.43886 7.5 9.20041 7.40123 9.02459 7.22541C8.84878 7.0496 8.75 6.81114 8.75 6.5625Z" fill="#AFBACA"/>
+                        </svg>
+                    .modal__grid 
+                        .modal__grid-head 
+                            p.modal__grid-htext Название
+                            p.modal__grid-htext Цвет
+                            p.modal__grid-htext Кол-во
+                            p.modal__grid-htext Цена ₽/ шт.
+                            p.modal__grid-htext
+                        .modal__grid-content 
+                            .modal__grid-item 
+                                input(type="text", name="" value="Роза кения").input
+                                input(type="text", name="" value="Роза кения").input
+                                input(type="number", name="" value="").input
+                                input(type="number", name="" value="").input
+                                button(type="button") 
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 4H3M3 4H6M3 4V18C3 19.6569 3.84315 21 5.5 21H14C15.6569 21 17 19.6569 17 18V4M17 4H19M17 4H14M6 4H14M6 4V3C6 1.89543 6.89543 1 8 1H12C13.1046 1 14 1.89543 14 3V4M8 9.5L8 15.5M12 9.5V15.5" stroke="#1C1C1D" stroke-linecap="round"/>
+                                    </svg>
+                            .modal__grid-item 
+                                input(type="text", name="" value="Альстромерия").input
+                                input(type="text", name="" value="Роза кения").input
+                                input(type="number", name="" value="").input
+                                input(type="number", name="" value="").input
+                                button(type="button") 
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 4H3M3 4H6M3 4V18C3 19.6569 3.84315 21 5.5 21H14C15.6569 21 17 19.6569 17 18V4M17 4H19M17 4H14M6 4H14M6 4V3C6 1.89543 6.89543 1 8 1H12C13.1046 1 14 1.89543 14 3V4M8 9.5L8 15.5M12 9.5V15.5" stroke="#1C1C1D" stroke-linecap="round"/>
+                                    </svg>
+                            .modal__grid-item 
+                                input(type="text", name="" value="Эустома махровая").input
+                                input(type="text", name="" value="Роза кения").input
+                                input(type="number", name="" value="").input
+                                input(type="number", name="" value="").input
+                                button(type="button") 
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 4H3M3 4H6M3 4V18C3 19.6569 3.84315 21 5.5 21H14C15.6569 21 17 19.6569 17 18V4M17 4H19M17 4H14M6 4H14M6 4V3C6 1.89543 6.89543 1 8 1H12C13.1046 1 14 1.89543 14 3V4M8 9.5L8 15.5M12 9.5V15.5" stroke="#1C1C1D" stroke-linecap="round"/>
+                                    </svg>
+                            .modal__grid-item 
+                                input(type="text", name="" value="Роза белая").input
+                                input(type="text", name="" value="Роза кения").input
+                                input(type="number", name="" value="").input
+                                input(type="number", name="" value="").input
+                                button(type="button") 
+                                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 4H3M3 4H6M3 4V18C3 19.6569 3.84315 21 5.5 21H14C15.6569 21 17 19.6569 17 18V4M17 4H19M17 4H14M6 4H14M6 4V3C6 1.89543 6.89543 1 8 1H12C13.1046 1 14 1.89543 14 3V4M8 9.5L8 15.5M12 9.5V15.5" stroke="#1C1C1D" stroke-linecap="round"/>
+                                    </svg>
+                        .modal__grid-total
+                            p
+                            p 
+                            p.modal__grid-ttext Итого
+                            p.modal__grid-ttext 6 700 ₽
+                            p
+                        button(type="button").modal__grid-btn
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.5 9H13.5" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 13.5V4.5" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            | Добавить состав
+                .modal__additionally
+                    .modal__additionally-head 
+                        h3.modal__title Дополнительно
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    .modal__additionally-content 
+                        .modal__additionally-item 
+                            h4.modal__additionally-title Размер букета*
+                            .modal__additionally-line
+                                label(for="modal__additionally-width").label Ширина, см
+                                    input(type="text", name="" value='10').input#modal__additionally-width
+                                label(for="modal__additionally-hight").label Ширина, см
+                                    input(type="text", name="" value='12').input#modal__additionally-hight
+                        .modal__additionally-item 
+                            h4.modal__additionally-title Описание и характеристики
+                            .modal__additionally-description
+                                textarea(placeholder="Описание магазина" maxlength='200').textarea.modal__additionally-textarea
+                                .modal__additionally-number 
+                                    p.modal__additionally-first 0
+                                    p.modal__additionally-second /200
+                            .modal__additionally-line
+                                label(for="modal__additionally-sort").label Сорт
+                                    input(type="text", name="").input#modal__additionally-sort
+                                label(for="modal__additionally-plantation").label Плантация
+                                    input(type="text", name="").input#modal__additionally-plantation
+                            .modal__additionally-line
+                                label(for="modal__additionally-durability").label 
+                                    input(type="text", name="" value="Стойкость" readonly).input.select#modal__additionally-durability
+                                    ul.options
+                                        li.option Стойкость
+                                        li.option Выбор 2
+                                        li.option Выбор 3
+                                label(for="modal__additionally-year-round").label 
+                                    input(type="text", name="" value="Круглогодичный" readonly).input.select#modal__additionally-year-round
+                                    ul.options
+                                        li.option Круглогодичный
+                                        li.option Выбор 2
+                                        li.option Выбор 3
+                .modal__additionally 
+                    .modal__additionally-head 
+                        h3.modal__title Скидка
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    .modal__additionally-content 
+                        .modal__additionally-grid
+                            label(for="modal__additionally-sale").label Скидка,%
+                                input(type="text", name="").input#modal__additionally-sale
+                            label(for="modal__additionally-period").label Период
+                                input(type="text", name="").input#modal__additionally-period
+                            button(type="button").modal__additionally-delete.btn
+                                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 4H3M3 4H6M3 4V18C3 19.6569 3.84315 21 5.5 21H14C15.6569 21 17 19.6569 17 18V4M17 4H19M17 4H14M6 4H14M6 4V3C6 1.89543 6.89543 1 8 1H12C13.1046 1 14 1.89543 14 3V4M8 9.5L8 15.5M12 9.5V15.5" stroke="#1C1C1D" stroke-linecap="round"/>
+                                </svg>
+                        button(type="button").modal__grid-btn
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.5 9H13.5" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 13.5V4.5" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            | Добавить cкидку
+                button(type="button").modal__btn.btn.btn_primary Создать букет
+
+
 
 
 
