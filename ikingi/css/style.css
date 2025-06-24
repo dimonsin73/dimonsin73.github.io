@@ -18,6 +18,7 @@ body {
   z-index: 10;
 }
 .hiro__img {
+  max-width: none;
   height: 75%;
   transition: height 0.3s linear;
 }
