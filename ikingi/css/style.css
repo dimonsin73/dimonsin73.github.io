@@ -150,6 +150,16 @@ body {
 }
 
 @media (max-width: 767px) {
+  .title {
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: 8px;
+  }
+  .btn {
+    padding: 20px 50px;
+    font-size: 20px;
+    line-height: 20px;
+  }
   .modal__wrapper {
     flex-direction: column;
   }

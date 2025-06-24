@@ -1,12 +1,22 @@
 const swiper = new Swiper('.swiper', {
     loop: true,
-    slidesPerView: 3,
     autoplay: {
         delay: 5000,
     },
     mousewheel: {
         invert: true,
     },
+    breakpoints: {
+        375: {
+            slidesPerView: 1
+        },
+        768: {
+            slidesPerView: 2
+        },
+        1024: {
+            slidesPerView: 3
+        }
+    }
 });
 const swiperWrapper = document.querySelector('.swiper-wrapper')
 const swiperScooterArray = document.querySelectorAll('.swiper-scooter')
@@ -119,8 +129,8 @@ window.addEventListener('touchend', function(e) {
     if (sumDelta > 0) {
         sumDelta = 0
     }
-    if (sumDelta < -80) {
-        sumDelta = -80
+    if (sumDelta < -60) {
+        sumDelta = -60
     }
     if (sumDelta < 0) {
         hiro.style.backgroundSize = 'auto 125%'
@@ -128,19 +138,19 @@ window.addEventListener('touchend', function(e) {
         menu.style.top = '100%'
         products.style.top = '100%'
     }
-    if (sumDelta < -20) {
+    if (sumDelta < -15) {
         hiro.style.backgroundSize = 'auto 100%'
         hiroImg.style.height = '100%'
         menu.style.top = '50%'
         hiro.style.top = '0%'
         products.style.top = '100%'
     }
-    if (sumDelta < -40) {
+    if (sumDelta < -30) {
             menu.style.top = '0'
             hiro.style.top = '-100%'
             products.style.top = '0%'
     }
-    if (sumDelta < -60) {
+    if (sumDelta < -45) {
             menu.style.top = '0'
             hiro.style.top = '-100%'
             products.style.top = '0%'
