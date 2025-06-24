@@ -162,5 +162,7 @@ body {
   }
   .modal__wrapper {
     flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: scroll;
   }
 }/*# sourceMappingURL=style.css.map */
