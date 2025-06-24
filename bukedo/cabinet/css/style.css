@@ -2590,6 +2590,39 @@ select::-ms-expand {
   font: 500 24px/24px "PT Root UI", "sans-serif";
   color: var(--black);
 }
+.setting__footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 30px;
+  border-top: 1px solid #E8EAED;
+  text-align: right;
+}
+.setting__notifications {
+  display: flex;
+  flex-direction: column;
+}
+.setting__notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+.setting__notification-title {
+  flex: 0 0 auto;
+  font: 500 14px/20px "PT Root UI", "sans-serif";
+  color: var(--black);
+}
+.setting__notification-time {
+  flex: 0 0 auto;
+  font: 400 12px/14px "PT Root UI", "sans-serif";
+  color: #727C8A;
+}
+.setting__part {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
 .modal {
   position: fixed;

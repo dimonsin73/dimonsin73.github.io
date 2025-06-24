@@ -2093,6 +2093,33 @@ select::-ms-expand
     &__title 
         font: 500 24px/24px 'PT Root UI', 'sans-serif'
         color: var(--black)
+    &__footer 
+        display: flex
+        justify-content: flex-end
+        padding-top: 30px
+        border-top: 1px solid #E8EAED
+        text-align: right
+    &__notifications
+        display: flex
+        flex-direction: column
+    &__notification
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 24px 0
+        border-bottom: 1px solid #E5E7EB
+        &-title
+            flex: 0 0 auto
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-time 
+            flex: 0 0 auto
+            font: 400 12px/14px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+    &__part 
+        display: flex
+        flex-direction: column
+        gap: 24px
 .modal 
     position: fixed
     top: 0
