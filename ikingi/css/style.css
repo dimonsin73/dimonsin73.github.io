@@ -68,6 +68,7 @@ body {
   background-color: #AD2950;
   font: 700 40px/40px "PT Root UI", "sans-serif";
   color: #fff;
+  text-transform: uppercase;
 }
 
 .modal {
@@ -129,9 +130,27 @@ body {
   font: 500 16px/24px "PT Root UI", "sans-serif";
   color: #fff;
 }
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #F5F5F5;
+}
 
 .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .modal__wrapper {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */
