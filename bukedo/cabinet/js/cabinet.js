@@ -11,12 +11,92 @@ burgerAside.addEventListener('click', function(){
         }
     })
 })
+
+// вывод нужного контента
+const asideListItemArr = document.querySelectorAll('.aside__list-item')
+const mainBlockArr = document.querySelectorAll('.main-block')
+const headMenuArr = document.querySelectorAll('.head__menu')
+const settingContentArray = document.querySelectorAll('.setting__content')
+const settingAsideItemArray = document.querySelectorAll('.setting__aside-item')
+for (let i = 0; i < asideListItemArr.length; i++) {
+    const asideListItem = asideListItemArr[i];
+    asideListItem.addEventListener('click', function(){
+        if (asideListItem.dataset.aside != undefined) {
+            for (let i = 0; i < asideListItemArr.length; i++) {
+                const element = asideListItemArr[i];
+                element.classList.remove('aside__list-item-active')
+            }
+            asideListItem.classList.add('aside__list-item-active')
+            const data = asideListItem.dataset.aside
+            const dataSetting = asideListItem.dataset.setting
+            for (let i = 0; i < mainBlockArr.length; i++) {
+                const mainBlock = mainBlockArr[i];
+                mainBlock.classList.remove('main-block-active')
+                if (mainBlock.dataset.main == data) {
+                    mainBlock.classList.add('main-block-active')
+                }
+                if (dataSetting != undefined) {
+                    for (let i = 0; i < settingContentArray.length; i++) {
+                        const settingContent = settingContentArray[i];
+                        settingContent.classList.remove('setting__content-active')
+                        if (settingContent.dataset.setting == dataSetting) {
+                            settingContent.classList.add('setting__content-active')
+                        }
+                    }
+                    for (let i = 0; i < settingAsideItemArray.length; i++) {
+                        const settingAsideItem = settingAsideItemArray[i];
+                        settingAsideItem.classList.remove('setting__aside-item-active')
+                        if (settingAsideItem.dataset.setting == dataSetting) {
+                            settingAsideItem.classList.add('setting__aside-item-active')
+                        }
+                    }
+                }
+            }
+            for (let i = 0; i < headMenuArr.length; i++) {
+                const headMenu = headMenuArr[i];
+                headMenu.classList.remove('head__menu-active')
+                if (headMenu.dataset.menu == data) {
+                    headMenu.classList.add('head__menu-active')
+                }
+            }
+            aside.classList.remove('aside-active')
+        }
+    })
+}
+// Работа настроек в Асайде
 const asideListSetting = document.querySelector('.aside__list-setting')
 const asideSublist = document.querySelector('.aside__sublist')
 asideListSetting.addEventListener('click', function(){
-    asideListSetting.classList.toggle('aside__list-setting-active')
     asideSublist.classList.toggle('aside__sublist-active')
 })
+// Переключние настроек 
+for (let i = 0; i < settingAsideItemArray.length; i++) {
+    const settingAsideItem = settingAsideItemArray[i];
+    settingAsideItem.addEventListener('click', function(){
+        const dataSetting = settingAsideItem.dataset.setting
+        for (let i = 0; i < settingContentArray.length; i++) {
+            const settingContent = settingContentArray[i];
+            settingContent.classList.remove('setting__content-active')
+            if (settingContent.dataset.setting == dataSetting) {
+                settingContent.classList.add('setting__content-active')
+            }
+        }
+        for (let i = 0; i < settingAsideItemArray.length; i++) {
+            const settingAsideItem = settingAsideItemArray[i];
+            settingAsideItem.classList.remove('setting__aside-item-active')
+            if (settingAsideItem.dataset.setting == dataSetting) {
+                settingAsideItem.classList.add('setting__aside-item-active')
+            }
+        }
+        for (let i = 0; i < asideListItemArr.length; i++) {
+            const asideListItem = asideListItemArr[i];
+            asideListItem.classList.remove('aside__list-item-active')
+            if (asideListItem.dataset.setting == dataSetting) {
+                asideListItem.classList.add('aside__list-item-active')
+            }
+        }
+    }) 
+}
 // Работа тегов
 const tagArray = document.querySelectorAll('.tags__btn')
 for (let i = 0; i < tagArray.length; i++) {
@@ -28,36 +108,6 @@ for (let i = 0; i < tagArray.length; i++) {
             element.classList.remove('tags__btn-active')
         }
         tag.classList.add('tags__btn-active')
-    })
-}
-// вывод нужного контента
-const asideListItemArr = document.querySelectorAll('.aside__list-item')
-const mainBlockArr = document.querySelectorAll('.main-block')
-const headMenuArr = document.querySelectorAll('.head__menu')
-for (let i = 0; i < asideListItemArr.length; i++) {
-    const asideListItem = asideListItemArr[i];
-    asideListItem.addEventListener('click', function(){
-        for (let i = 0; i < asideListItemArr.length; i++) {
-            const element = asideListItemArr[i];
-            element.classList.remove('aside__list-item-active')
-        }
-        asideListItem.classList.add('aside__list-item-active')
-        const data = asideListItem.dataset.aside
-        for (let i = 0; i < mainBlockArr.length; i++) {
-            const mainBlock = mainBlockArr[i];
-            mainBlock.classList.remove('main-block-active')
-            if (mainBlock.dataset.main == data) {
-                mainBlock.classList.add('main-block-active')
-            }
-        }
-        for (let i = 0; i < headMenuArr.length; i++) {
-            const headMenu = headMenuArr[i];
-            headMenu.classList.remove('head__menu-active')
-            if (headMenu.dataset.menu == data) {
-                headMenu.classList.add('head__menu-active')
-            }
-        }
-        aside.classList.remove('aside-active')
     })
 }
 // textarea
@@ -221,7 +271,6 @@ for (let i = 0; i < helpItemHeadArray.length; i++) {
         const helpItem = helpItemHead.parentElement
         helpItem.classList.toggle('help__item-active')        
         const helpItemContent = helpItem.querySelector('.help__item-content')
-        console.log(helpItemContent.scrollHeight)
         if (helpItem.classList.contains('help__item-active')) {
             helpItemContent.style.height = `${helpItemContent.scrollHeight}px`
         } else {
@@ -322,7 +371,6 @@ productsAdd.addEventListener('click', function(){
     for (let i = 0; i < modalArray.length; i++) {
         const modal = modalArray[i];
         if (modal.dataset.modal === 'basic') {
-            console.log(modal.dataset.modal)
             modal.classList.add('modal-active')
         }
         const modalClose = modal.querySelector('.modal__close')
@@ -339,3 +387,25 @@ for (let i = 0; i < modalAdditionallyHeadArray.length; i++) {
         modalAdditionallyContent.classList.toggle('modal__additionally-content-active')
     })
 }
+// Настройки фактический адрес 
+const checkaddress = document.getElementById('checkaddress')
+const settingAddress = document.getElementById('setting__address')
+const settingAddressActual = document.getElementById('setting__address-actual')
+checkaddress.addEventListener('change', function(){
+    if (checkaddress.checked) {
+        settingAddressActual.disabled = true
+        settingAddressActual.value = settingAddress.value
+    } else {
+        settingAddressActual.disabled = false
+        settingAddressActual.value = ''
+    }
+})
+const checkcopy = document.getElementById('checkcopy')
+const modalQuantity = document.querySelector('.modal__quantity')
+checkcopy.addEventListener('change', function(){
+    if (checkcopy.checked) {
+        modalQuantity.classList.add('modal__quantity-active')
+    } else {
+        modalQuantity.classList.remove('modal__quantity-active')
+    }
+})

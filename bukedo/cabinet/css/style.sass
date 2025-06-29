@@ -442,13 +442,7 @@ input::-webkit-inner-spin-button
             &-active 
                 background-color: #F3F5F7
         &-subitem 
-            display: flex
-            gap: 12px
-            padding: 15px 12px 15px 42px
-            border-radius: 8px
-            cursor: pointer
-            &:hover 
-                background-color: #F3F5F7
+            padding-left: 42px
         &-text 
             font: 400 16px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
@@ -2014,11 +2008,13 @@ select::-ms-expand
                 font-weight: 500
                 background-color: #F3F5F7
     &__content 
-        display: flex
+        display: none
         flex-direction: column
         gap: 24px
         width: 100%
         padding: 24px
+        &-active 
+            display: flex
     &__item 
         display: grid
         grid-template-columns: 330px auto
@@ -2033,6 +2029,10 @@ select::-ms-expand
             gap: 24px
         &-line 
             display: flex
+            gap: 24px
+        &-grid 
+            display: grid
+            grid-template-columns: 1fr 1fr 
             gap: 24px
         &-title 
             font: 700 16px/22px 'PT Root UI', 'sans-serif'
@@ -2066,22 +2066,27 @@ select::-ms-expand
             &-first
                 font: 400 16px/20px 'PT Root UI', 'sans-serif'
                 color: var(--black)
+                text-align: center
             &-second 
                 font: 400 12px/20px 'PT Root UI', 'sans-serif'
                 color: #727C8A
+                text-align: center
             &-third
                 font: 500 14px/20px 'PT Root UI', 'sans-serif'
                 color: var(--burgundy)
+                text-align: center
                 cursor: pointer
         &-label 
             position: relative
             width: 100%
+            &-text 
+                display: none
         &-eye 
             position: absolute
-            top: 50%
+            bottom: 25px
             @include flex
             right: 16px
-            transform: translateY(-50%)
+            transform: translateY(50%)
         &-settext
             padding-left: 35px
             font: 400 14px/20px 'PT Root UI', 'sans-serif'
@@ -2102,6 +2107,7 @@ select::-ms-expand
     &__notifications
         display: flex
         flex-direction: column
+        max-width: 570px
     &__notification
         display: flex
         justify-content: space-between
@@ -2109,7 +2115,6 @@ select::-ms-expand
         padding: 24px 0
         border-bottom: 1px solid #E5E7EB
         &-title
-            flex: 0 0 auto
             font: 500 14px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
         &-time 
@@ -2119,7 +2124,28 @@ select::-ms-expand
     &__part 
         display: flex
         flex-direction: column
-        gap: 24px
+        gap: 8px
+@media (max-width: 1023px)
+    .setting__aside 
+        display: none
+@media ( max-width: 767px )
+    .setting 
+        margin-bottom: 70px
+        padding: 0
+        &__wrapper 
+            border-radius: 0
+        &__content 
+            padding: 20px
+        &__item 
+            grid-template-columns: 1fr
+            &-subtitle 
+                display: none
+            &-label-text 
+                display: block
+            &-grid 
+                grid-template-columns: 1fr
+        & .btn_primary 
+            width: 100%
 .modal 
     position: fixed
     top: 0
@@ -2132,6 +2158,8 @@ select::-ms-expand
     background-color: #1C1C1D4D
     overflow-y: scroll
     z-index: 10000
+    &[data-modal='basic']
+        align-items: center
     &-active 
         display: flex
     &__wrapper 
@@ -2142,6 +2170,7 @@ select::-ms-expand
         max-width: 920px
         min-width: 375px
         width: 100%
+        margin: 100px 0
         padding: 32px
         border-radius: 24px
         background-color: #fff
@@ -2255,7 +2284,7 @@ select::-ms-expand
         gap: 8px
         &-head 
             display: grid
-            grid-template-columns: 260px 120px 110px 94px 50px
+            grid-template-columns: 2.5fr 1fr 1fr 1fr 50px
             gap: 16px
         &-htext 
             font: 500 14px/20px 'PT Root UI', 'sans-serif'
@@ -2266,11 +2295,11 @@ select::-ms-expand
             gap: 24px
         &-item 
             display: grid
-            grid-template-columns: 260px 120px 110px 94px 50px
+            grid-template-columns: 2.5fr 1fr 1fr 1fr 50px
             gap: 16px
         &-total 
             display: grid
-            grid-template-columns: 260px 120px 110px 94px 50px
+            grid-template-columns: 2.5fr 1fr 1fr 1fr 50px
             gap: 16px
         &-ttext 
             font: 700 18px/40px 'PT Root UI', 'sans-serif'
@@ -2284,6 +2313,28 @@ select::-ms-expand
             height: 50px
             border-radius: 10px
             background-color: #F3F5F7
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-input 
+            width: 100%
+        &-button 
+            width: 50px
+            margin-left: auto
+    &__field 
+        display: flex
+        flex-wrap: wrap
+        gap: 8px
+        padding: 16px
+        border: 1px solid #AFBACA
+        border-radius: 8px
+        &-item 
+            display: flex
+            gap: 8px
+            padding: 11px 16px
+            border-radius: 12px
+            background-color: #F5F5F5
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: var(--black)
     &__additionally
         display: flex
         flex-direction: column
@@ -2331,14 +2382,53 @@ select::-ms-expand
             gap: 16px
         &-delete
             margin-top: auto
+    &__quantity
+        display: flex
+        &-active 
+            display: none
+@media (max-width: 1023px)
+    .modal__wrapper 
+        margin: 32px 0
 @media (max-width: 919px)
     .modal
         align-items: flex-start
         overflow-y: scroll
         &__wrapper 
+            margin: 0
             border-radius: 0
         &__content 
             flex-direction: column
+@media (max-width: 767px )
+    .modal 
+        &__wrapper 
+            padding: 20px
+        &__image 
+            grid-template-columns: repeat(3, 1fr)
+            column-gap: 10px
+            &-big 
+                grid-column: span 3
+            &-bg 
+                gap: 4px
+                padding: 8px
+                font-size: 12px
+                line-height: 16px
+        &__grid 
+            &-head  
+                grid-template-columns: repeat(3, 1fr)
+            &-item 
+                grid-template-columns: repeat(3, 1fr)
+                grid-template-rows: repeat(2, 1fr)
+            &-name 
+                grid-column: span 2
+            &-total 
+                grid-template-columns: 1fr 1fr 1fr
+            &-clean
+                display: none
+        &__additionally
+            &-line
+                grid-template-columns: 1fr
+            &-grid 
+                grid-template-columns: auto 50px
 .green 
     color: #15803D
 .blue

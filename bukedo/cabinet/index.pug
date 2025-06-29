@@ -61,15 +61,15 @@ html(lang="ru")
                     li.aside__list-item(data-aside='users')
                         img(src="img/aside-8.svg", alt="Пользователи").aside__list-img
                         p.aside__list-text Пользователи
-                    li.aside__list-item.aside__list-setting(data-aside='setting')
+                    li.aside__list-item.aside__list-setting
                         img(src="img/aside-9.svg", alt="Настройки").aside__list-img
                         p.aside__list-text Настройки
                     ul.aside__list.aside__sublist
-                        li.aside__list-subitem
+                        li.aside__list-item.aside__list-subitem(data-aside='setting' data-setting='basic')
                             p.aside__list-text Основные
-                        li.aside__list-subitem
+                        li.aside__list-item.aside__list-subitem(data-aside='setting' data-setting='notifications')
                             p.aside__list-text Уведомления
-                        li.aside__list-subitem
+                        li.aside__list-item.aside__list-subitem(data-aside='setting' data-setting='details')
                             p.aside__list-text Реквизиты
                     li.aside__list-item(data-aside='help')
                         img(src="img/aside-10.svg", alt="Помощь").aside__list-img
@@ -1977,10 +1977,10 @@ html(lang="ru")
             .setting.main-block(data-main='setting')
                 .setting__wrapper 
                     ul.setting__aside 
-                        li.setting__aside-item.setting__aside-item-active Основные
-                        li.setting__aside-item Уведомления
-                        li.setting__aside-item Реквизиты
-                    .setting__content 
+                        li.setting__aside-item.setting__aside-item-active(data-setting='basic') Основные
+                        li.setting__aside-item(data-setting='notifications') Уведомления
+                        li.setting__aside-item(data-setting='details') Реквизиты
+                    .setting__content.setting__content-active(data-setting='basic')
                         .setting__head
                             h2.main-title Основные настройки
                         .setting__item 
@@ -2046,7 +2046,8 @@ html(lang="ru")
                             .setting__item-right
                                 .setting__item-line
                                     h4.setting__item-subtitle Старый пароль
-                                    .label.setting__item-label
+                                    label.label.setting__item-label
+                                        p.setting__item-label-text Старый пароль
                                         input(type="password", name="" ).input.setting__item-input
                                         button(type="button").setting__item-eye
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2061,7 +2062,8 @@ html(lang="ru")
                                             </svg>
                                 .setting__item-line
                                     h4.setting__item-subtitle Новый пароль
-                                    .label.setting__item-label
+                                    label.label.setting__item-label
+                                        p.setting__item-label-text Новый пароль
                                         input(type="password", name="" ).input.setting__item-input
                                         button(type="button").setting__item-eye
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2076,7 +2078,8 @@ html(lang="ru")
                                             </svg>
                                 .setting__item-line
                                     h4.setting__item-subtitle Еще раз новый пароль
-                                    .label.setting__item-label
+                                    label.label.setting__item-label 
+                                        p.setting__item-label-text Еще раз новый пароль
                                         input(type="password", name="" ).input.setting__item-input
                                         button(type="button").setting__item-eye
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2091,7 +2094,7 @@ html(lang="ru")
                                             </svg>
                         .setting__footer 
                             button(type="button").btn.btn_primary Сохранить изменения
-                    .setting__content 
+                    .setting__content(data-setting='notifications')
                         .setting__head
                             h2.main-title Уведомления
                         .setting__notifications
@@ -2110,19 +2113,48 @@ html(lang="ru")
                             .setting__notification
                                 h3.setting__notification-title Букет из хризантем и гипсофилы, опубликован
                                 p.setting__notification-time 20 минут назад
-                    .setting__content 
+                    .setting__content(data-setting='details')
                         .setting__head
                             h2.main-title Реквизиты
                         h3.setting__title Данные компании
                         .setting__part
-                            .label(for="setting__company") Название компании или ИНН *
+                            label.label(for="setting__company") Название компании или ИНН *
                                 input(type="text", name="", value="ООО «Моя компания», 770125544" ).input#setting__company
-                        .setting__item-line 
-                            .label(for="setting__inn") ИНН
-                                input(type="text", name="", value="" ).input#setting__inn
+                        .setting__item-grid
+                            .setting__part
+                                label.label(for="setting__inn") ИНН
+                                    input(type="text", name="setting__inn", value="" ).input#setting__inn
+                            .setting__part
+                                label.label(for="setting__kpp") КПП
+                                    input(type="text", name="setting__kpp", value="" ).input#setting__kpp
+                                .check
+                                    input.check__input#checknotpkk(type="checkbox", name="checknotpkk")
+                                    label.check__label(for="checknotpkk")
+                                        .check__check 
+                                        p.check__text ИП нет КПП
                         h3.setting__title Банковские реквизиты
+                        .setting__item-grid
+                            .setting__part
+                                label.label(for="setting__bik") БИК банка *
+                                    input(type="text", name="setting__bik", value="" ).input#setting__bik
+                            .setting__part
+                                label.label(for="setting__current") Расчетный счёт * 
+                                    input(type="text", name="setting__current", value="" ).input#setting__current
                         h3.setting__title Юридический адрес
+                        .setting__part
+                            label.label(for="setting__address") Область, город, улица, дом/корпус, офис
+                                input(type="text", name="setting__address", value="" ).input#setting__address
+                            .check
+                                input.check__input#checkaddress(type="checkbox", name="checkaddress")
+                                label.check__label(for="checkaddress")
+                                    .check__check 
+                                    p.check__text Фактический адрес совпадает с юридическим
                         h3.setting__title Фактический адрес
+                        .setting__part
+                            label.label(for="setting__address-actual") Область, город, улица, дом/корпус, офис
+                                input(type="text", name="setting__address-actual", value="" ).input#setting__address-actual
+                        .setting__footer 
+                            button(type="button").btn.btn_primary Сохранить
             .help.main-block(data-main='help')
                 .help__wrapper 
                     .help__head
@@ -2305,7 +2337,7 @@ html(lang="ru")
                     li Первые 2 дня товар получает максимум показов с пометкой «Готовый букет».
                     li 30 дней выводится в разделе «Новинки».
                     li Ваши товары всегда будут выводиться с приоритетом в разделах каталога. Указывайте подробные составы.
-        .modal(data-modal='price-list')
+        .modal(data-modal='price-list').modal-active
             .modal__wrapper 
                 button(type="button").modal__close 
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2327,7 +2359,9 @@ html(lang="ru")
                             img(src="img/product_add.png", alt="")
                         .modal__image-small 
                             .modal__image-bg 
-                                img(src="img/foto_add.svg", alt="")
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M55.001 27.5V20C55.001 17.2386 52.7624 15 50.001 15H45.1769C43.5051 15 41.944 14.1645 41.0166 12.7735L38.9853 9.7265C38.058 8.3355 36.4968 7.5 34.8251 7.5H25.1769C23.5051 7.5 21.944 8.3355 21.0166 9.7265L18.9853 12.7735C18.058 14.1645 16.4968 15 14.8251 15H10.001C7.23955 15 5.00098 17.2386 5.00098 20V42.5C5.00098 45.2614 7.23955 47.5 10.001 47.5H30.001M40.001 45H55.001M47.501 37.5V52.5M37.501 30C37.501 34.1421 34.1431 37.5 30.001 37.5C25.8588 37.5 22.501 34.1421 22.501 30C22.501 25.8579 25.8588 22.5 30.001 22.5C34.1431 22.5 37.501 25.8579 37.501 30Z" stroke="#AFBACA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                                 p Добавить фото, основной вид
                             img(src="img/product_add.png", alt="").modal__image-img
                         .modal__image-small
@@ -2359,10 +2393,12 @@ html(lang="ru")
                     label(for="modal__name-name").label Название букета*
                         input(type="text", name="" value='Звонкий голос в Москве').input#modal__name-name
                     .check
-                        input.check__input#checkrecipient(type="checkbox", name="checkrecipient")
-                        label.check__label(for="checkrecipient")
+                        input.check__input#checkcopy(type="checkbox", name="checkcopy")
+                        label.check__label(for="checkcopy")
                             .check__check 
-                            p.check__text Уточнить у получателя
+                            p.check__text В одном экземпляре
+                    label(for="modal__quantity").label.modal__quantity Количество, шт.
+                        input(type="number", name="modal__quantity").input#modal__quantity
                 .modal__compound
                     h4.modal__title 
                         | Состав*
@@ -2371,51 +2407,51 @@ html(lang="ru")
                         </svg>
                     .modal__grid 
                         .modal__grid-head 
-                            p.modal__grid-htext Название
+                            p.modal__grid-htext.modal__grid-name Название
                             p.modal__grid-htext Цвет
-                            p.modal__grid-htext Кол-во
-                            p.modal__grid-htext Цена ₽/ шт.
-                            p.modal__grid-htext
+                            p.modal__grid-htext.modal__grid-clean Кол-во
+                            p.modal__grid-htext.modal__grid-clean Цена ₽/ шт.
+                            p.modal__grid-htext.modal__grid-clean
                         .modal__grid-content 
                             .modal__grid-item 
-                                input(type="text", name="" value="Роза кения").input
-                                input(type="text", name="" value="Роза кения").input
-                                input(type="number", name="" value="").input
-                                input(type="number", name="" value="").input
-                                button(type="button") 
+                                input(type="text", name="" value="Роза кения").input.modal__grid-input.modal__grid-name
+                                input(type="text", name="" value="").input.modal__grid-input
+                                input(type="number", name="" value="").input.modal__grid-input
+                                input(type="number", name="" value="").input.modal__grid-input
+                                button(type="button").modal__grid-button
                                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 4H3M3 4H6M3 4V18C3 19.6569 3.84315 21 5.5 21H14C15.6569 21 17 19.6569 17 18V4M17 4H19M17 4H14M6 4H14M6 4V3C6 1.89543 6.89543 1 8 1H12C13.1046 1 14 1.89543 14 3V4M8 9.5L8 15.5M12 9.5V15.5" stroke="#1C1C1D" stroke-linecap="round"/>
                                     </svg>
                             .modal__grid-item 
-                                input(type="text", name="" value="Альстромерия").input
-                                input(type="text", name="" value="Роза кения").input
-                                input(type="number", name="" value="").input
-                                input(type="number", name="" value="").input
-                                button(type="button") 
+                                input(type="text", name="" value="Альстромерия").input.modal__grid-input.modal__grid-name
+                                input(type="text", name="" value="").input.modal__grid-input
+                                input(type="number", name="" value="").input.modal__grid-input
+                                input(type="number", name="" value="").input.modal__grid-input
+                                button(type="button").modal__grid-button
                                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 4H3M3 4H6M3 4V18C3 19.6569 3.84315 21 5.5 21H14C15.6569 21 17 19.6569 17 18V4M17 4H19M17 4H14M6 4H14M6 4V3C6 1.89543 6.89543 1 8 1H12C13.1046 1 14 1.89543 14 3V4M8 9.5L8 15.5M12 9.5V15.5" stroke="#1C1C1D" stroke-linecap="round"/>
                                     </svg>
                             .modal__grid-item 
-                                input(type="text", name="" value="Эустома махровая").input
-                                input(type="text", name="" value="Роза кения").input
-                                input(type="number", name="" value="").input
-                                input(type="number", name="" value="").input
-                                button(type="button") 
+                                input(type="text", name="" value="Эустома махровая").input.modal__grid-input.modal__grid-name
+                                input(type="text", name="" value="").input.modal__grid-input
+                                input(type="number", name="" value="").input.modal__grid-input
+                                input(type="number", name="" value="").input.modal__grid-input
+                                button(type="button").modal__grid-button 
                                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 4H3M3 4H6M3 4V18C3 19.6569 3.84315 21 5.5 21H14C15.6569 21 17 19.6569 17 18V4M17 4H19M17 4H14M6 4H14M6 4V3C6 1.89543 6.89543 1 8 1H12C13.1046 1 14 1.89543 14 3V4M8 9.5L8 15.5M12 9.5V15.5" stroke="#1C1C1D" stroke-linecap="round"/>
                                     </svg>
                             .modal__grid-item 
-                                input(type="text", name="" value="Роза белая").input
-                                input(type="text", name="" value="Роза кения").input
-                                input(type="number", name="" value="").input
-                                input(type="number", name="" value="").input
-                                button(type="button") 
+                                input(type="text", name="" value="Роза белая").input.modal__grid-input.modal__grid-name
+                                input(type="text", name="" value="").input.modal__grid-input
+                                input(type="number", name="" value="").input.modal__grid-input
+                                input(type="number", name="" value="").input.modal__grid-input
+                                button(type="button").modal__grid-button 
                                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 4H3M3 4H6M3 4V18C3 19.6569 3.84315 21 5.5 21H14C15.6569 21 17 19.6569 17 18V4M17 4H19M17 4H14M6 4H14M6 4V3C6 1.89543 6.89543 1 8 1H12C13.1046 1 14 1.89543 14 3V4M8 9.5L8 15.5M12 9.5V15.5" stroke="#1C1C1D" stroke-linecap="round"/>
                                     </svg>
                         .modal__grid-total
-                            p
-                            p 
+                            p.modal__grid-clean
+                            p.modal__grid-clean
                             p.modal__grid-ttext Итого
                             p.modal__grid-ttext 6 700 ₽
                             p
@@ -2425,6 +2461,43 @@ html(lang="ru")
                                 <path d="M9 13.5V4.5" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             | Добавить состав
+                .modal__compound
+                    h4.modal__title Состав*
+                    .modal__field 
+                        .modal__field-item
+                            p Роза кения 
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.625 11.375L11.375 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.375 11.375L2.625 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        .modal__field-item
+                            p Альстромерия 
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.625 11.375L11.375 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.375 11.375L2.625 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        .modal__field-item
+                            p Эустома махровая 
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.625 11.375L11.375 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.375 11.375L2.625 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        .modal__field-item
+                            p Эустома махровая 
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.625 11.375L11.375 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.375 11.375L2.625 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        .modal__field-item
+                            p Роза белая 
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.625 11.375L11.375 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.375 11.375L2.625 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                .modal__compound
+                    h4.modal__title Цена, ₽*
+                    .modal__name
+                        input(type="number", name="" value="10").input
                 .modal__additionally
                     .modal__additionally-head 
                         h3.modal__title Дополнительно
