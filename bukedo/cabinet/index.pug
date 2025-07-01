@@ -93,6 +93,13 @@ html(lang="ru")
                             li.head__shop-item(data-menuitem="time") Часы работы
                             li.head__shop-item(data-menuitem="delivery") Доставка
                             li.head__shop-item(data-menuitem="delivery-outside") Доставка за город
+                    .head__menu(data-menu="price")
+                        ul.head__shop
+                            li.head__shop-item.head__shop-item-active(data-menuitem="flowers") Цветы
+                            li.head__shop-item(data-menuitem="green") Зелень  
+                            li.head__shop-item(data-menuitem="materials") Материалы
+                            li.head__shop-item(data-menuitem="other") Прочее
+                            li.head__shop-item(data-menuitem="general-bouquets") Общие букеты
                     input(type="search", name="search" placeholder="Поиск").search
                 .head__right 
                     button(type="button").head__searchbtn
@@ -1590,20 +1597,141 @@ html(lang="ru")
                                         <path d="M10.8332 5L9.6582 6.175L13.4749 10L9.6582 13.825L10.8332 15L15.8332 10L10.8332 5Z" fill="#1C1C1D"/>
                                     </svg>
             .price.main-block(data-main='price')
-                .price__wrapper
-                    .price__head
-                        h2.main-title Цветы
-                        button(type="button").btn.btn_primary
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
-                            | Добавить
-                    .tags 
-                        button(type="button").tags__btn.tags__btn-active
-                            p.tags__btn-text Розы
-                        button(type="button").tags__btn
-                            p.tags__btn-text Другие цветы
+                .price__wrapper.price__wrapper-active(data-shops='flowers')
+                    .price__top
+                        .price__head
+                            h2.main-title Цветы
+                            button(type="button").btn.btn_primary
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
+                        .tags 
+                            button(type="button").tags__btn.tags__btn-active
+                                p.tags__btn-text Розы
+                            button(type="button").tags__btn
+                                p.tags__btn-text Другие цветы
                     .price__table
+                        .price__table-head
+                            p.price__table-htext 
+                                | Наименование
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.61108 9.72217L9.13886 12.2499L11.6666 9.72217" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.13892 12.2501V6.02783" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.33325 4.27778L4.86103 1.75L7.38881 4.27778" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.86108 1.75V7.97222" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            p.price__table-htext Цвет
+                            p.price__table-htext 
+                                | Цена
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.61108 9.72217L9.13886 12.2499L11.6666 9.72217" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.13892 12.2501V6.02783" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.33325 4.27778L4.86103 1.75L7.38881 4.27778" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.86108 1.75V7.97222" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            p.price__table-htext 
+                                | Количество
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.61108 9.72217L9.13886 12.2499L11.6666 9.72217" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.13892 12.2501V6.02783" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.33325 4.27778L4.86103 1.75L7.38881 4.27778" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.86108 1.75V7.97222" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            p.price__table-htext
+                        .price__table-item 
+                            p.price__table-text Роза Кения/Россия 40 см
+                            input(type="text", name="" value="").input
+                            input(type="number", name="" value="50").input
+                            input(type="number", name="" value="1").input
+                            button(type="button") 
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 21H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M8 15.9998L3 16.9998L4 11.9998L14.707 1.29276C15.098 0.901762 15.731 0.901762 16.121 1.29276L18.707 3.87876C19.098 4.26976 19.098 4.90276 18.707 5.29276L8 15.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M12 4L16 8" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .price__table-item 
+                            p.price__table-text Роза Кения/Россия 40 см
+                            input(type="text", name="" value="").input
+                            input(type="number", name="" value="50").input
+                            input(type="number", name="" value="1").input
+                            button(type="button") 
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 21H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M8 15.9998L3 16.9998L4 11.9998L14.707 1.29276C15.098 0.901762 15.731 0.901762 16.121 1.29276L18.707 3.87876C19.098 4.26976 19.098 4.90276 18.707 5.29276L8 15.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M12 4L16 8" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .price__table-item 
+                            p.price__table-text Роза Кения/Россия 40 см
+                            input(type="text", name="" value="").input
+                            input(type="number", name="" value="50").input
+                            input(type="number", name="" value="1").input
+                            button(type="button") 
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 21H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M8 15.9998L3 16.9998L4 11.9998L14.707 1.29276C15.098 0.901762 15.731 0.901762 16.121 1.29276L18.707 3.87876C19.098 4.26976 19.098 4.90276 18.707 5.29276L8 15.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M12 4L16 8" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .price__table-item 
+                            p.price__table-text Роза Кения/Россия 40 см
+                            input(type="text", name="" value="").input
+                            input(type="number", name="" value="50").input
+                            input(type="number", name="" value="1").input
+                            button(type="button") 
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 21H21" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M8 15.9998L3 16.9998L4 11.9998L14.707 1.29276C15.098 0.901762 15.731 0.901762 16.121 1.29276L18.707 3.87876C19.098 4.26976 19.098 4.90276 18.707 5.29276L8 15.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M12 4L16 8" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                .price__wrapper(data-shops='green')
+                    .price__top
+                        .price__head
+                            h2.main-title Зелень
+                            button(type="button").btn.btn_primary
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
+                .price__wrapper(data-shops='materials')
+                    .price__top
+                        .price__head
+                            h2.main-title Материалы
+                            button(type="button").btn.btn_primary
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
+                        .tags 
+                            button(type="button").tags__btn.tags__btn-active
+                                p.tags__btn-text Все
+                            button(type="button").tags__btn
+                                p.tags__btn-text Ленты
+                            button(type="button").tags__btn
+                                p.tags__btn-text Упаковки
+                            button(type="button").tags__btn
+                                p.tags__btn-text Коробки
+                            button(type="button").tags__btn
+                                p.tags__btn-text Шляпные коробки
+                            button(type="button").tags__btn
+                                p.tags__btn-text Корзины
+                .price__wrapper(data-shops='other')
+                    .price__top
+                        .price__head
+                            h2.main-title Прочее
+                            button(type="button").btn.btn_primary
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
+                .price__wrapper(data-shops='general-bouquets')
+                    .price__top
+                        .price__head
+                            h2.main-title Общие букеты
+                            button(type="button").btn.btn_primary
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
             .bukedo.main-block(data-main='bukedo')
             .rating.main-block(data-main='rating')
                 h2.main-title Рейтинг за 60 дней
@@ -2314,7 +2442,7 @@ html(lang="ru")
                                 <path d="M47.4997 9.1665H12.4997C8.81778 9.1665 5.83301 12.1513 5.83301 15.8332V24.1665C5.83301 27.8484 8.81778 30.8332 12.4997 30.8332H47.4997C51.1816 30.8332 54.1663 27.8484 54.1663 24.1665V15.8332C54.1663 12.1513 51.1816 9.1665 47.4997 9.1665Z" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         h3.modal__item-title Добавить товар<br>на основе прайс-листа
-                        button(type="button").modal__item-btn.modal__item-bur Добавить с прайс-листа
+                        button(type="button" data-add='price-list').modal__item-btn.modal__item-bur Добавить с прайс-листа
                         .modal__item-bottom 
                             p.modal__item-text Авто расчет цены, исходя из цены<br>в прайс-листе.
                             p.modal__item-text Если хотя бы 1 позиция выключена,<br>то букет не в наличии.
@@ -2328,7 +2456,7 @@ html(lang="ru")
                                 <path d="M37.0867 35.8932L56.8867 43.1266C57.7201 43.4299 57.6967 44.6199 56.8501 44.8899L47.7867 47.7899L44.8867 56.8532C44.6167 57.6999 43.4267 57.7232 43.1234 56.8899L35.8901 37.0899C35.6167 36.3466 36.3401 35.6232 37.0867 35.8932Z" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         h3.modal__item-title Добавить товар<br>с указанием цены
-                        button(type="button").modal__item-btn.modal__item-white Добавить с ценой
+                        button(type="button" data-add='price').modal__item-btn.modal__item-white Добавить с ценой
                         .modal__item-bottom 
                             p.modal__item-text Простое добавление.
                             p.modal__item-text Цену товара указываете вы.
@@ -2337,16 +2465,17 @@ html(lang="ru")
                     li Первые 2 дня товар получает максимум показов с пометкой «Готовый букет».
                     li 30 дней выводится в разделе «Новинки».
                     li Ваши товары всегда будут выводиться с приоритетом в разделах каталога. Указывайте подробные составы.
-        .modal(data-modal='price-list').modal-active
+        .modal(data-modal='add')
             .modal__wrapper 
                 button(type="button").modal__close 
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L7 7M7 7L13 13M7 7L13 1M7 7L1 13" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                 h2.main-title 
-                    <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 1L1.099 10.7643C0.967 10.8945 0.967001 11.1055 1.099 11.2357L11 21" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
+                    button(type="button").modal__back
+                        <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 1L1.099 10.7643C0.967 10.8945 0.967001 11.1055 1.099 11.2357L11 21" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
                     | Данные товара
                 .modal__head
                     h4.modal__title 
@@ -2357,6 +2486,10 @@ html(lang="ru")
                     .modal__image 
                         .modal__image-big
                             img(src="img/product_add.png", alt="")
+                            button(type="button").modal__image-edit
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.6032 5.39651L12.8922 7.10758M2.20656 18.3298L5.51714 17.9441C6.49165 17.8306 7.39928 17.3914 8.09302 16.6976L17.3409 7.44975C18.6639 6.12675 18.6639 3.98175 17.3409 2.65875C16.0179 1.33575 13.8729 1.33575 12.5499 2.65875L3.30202 11.9067C2.60828 12.6004 2.16907 13.508 2.05554 14.4825L1.66984 17.7931C1.6337 18.1033 1.8964 18.366 2.20656 18.3298Z" stroke="#1C1C1D" stroke-linecap="round"/>
+                                </svg>
                         .modal__image-small 
                             .modal__image-bg 
                                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2399,7 +2532,7 @@ html(lang="ru")
                             p.check__text В одном экземпляре
                     label(for="modal__quantity").label.modal__quantity Количество, шт.
                         input(type="number", name="modal__quantity").input#modal__quantity
-                .modal__compound
+                .modal__compound(data-modal='price-list')
                     h4.modal__title 
                         | Состав*
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2461,7 +2594,7 @@ html(lang="ru")
                                 <path d="M9 13.5V4.5" stroke="#1C1C1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             | Добавить состав
-                .modal__compound
+                .modal__compound(data-modal='price')
                     h4.modal__title Состав*
                     .modal__field 
                         .modal__field-item
@@ -2494,7 +2627,7 @@ html(lang="ru")
                                 <path d="M2.625 11.375L11.375 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M11.375 11.375L2.625 2.625" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                .modal__compound
+                .modal__compound(data-modal='price')
                     h4.modal__title Цена, ₽*
                     .modal__name
                         input(type="number", name="" value="10").input

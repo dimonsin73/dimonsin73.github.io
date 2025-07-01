@@ -226,12 +226,14 @@ for (let i = 0; i < switchInputArr.length; i++) {
 }
 const headShopItemArr = document.querySelectorAll('.head__shop-item')
 const shopsWrapperArr = document.querySelectorAll('.shops__wrapper')
+const priceWrapperArr = document.querySelectorAll('.price__wrapper')
 for (let i = 0; i < headShopItemArr.length; i++) {
     const headShopItem = headShopItemArr[i];
     headShopItem.addEventListener('click', function(){
-        for (let i = 0; i < headShopItemArr.length; i++) {
-            const element = headShopItemArr[i];
-            element.classList.remove('head__shop-item-active')
+        const headShopArray = headShopItem.parentElement.querySelectorAll('.head__shop-item')
+        for (let i = 0; i < headShopArray.length; i++) {
+            const headShop = headShopArray[i];
+            headShop.classList.remove('head__shop-item-active')
         }
         headShopItem.classList.add('head__shop-item-active')
         const menuItem = headShopItem.dataset.menuitem
@@ -240,6 +242,13 @@ for (let i = 0; i < headShopItemArr.length; i++) {
             shopsWrapper.classList.remove('shops__wrapper-active')
             if (shopsWrapper.dataset.shops == menuItem) {
                 shopsWrapper.classList.add('shops__wrapper-active')
+            }
+        }
+        for (let i = 0; i < priceWrapperArr.length; i++) {
+            const priceWrapper = priceWrapperArr[i];
+            priceWrapper.classList.remove('price__wrapper-active')
+            if (priceWrapper.dataset.shops == menuItem) {
+                priceWrapper.classList.add('price__wrapper-active')
             }
         }
     })
@@ -367,6 +376,9 @@ headBell.addEventListener('click', function(){
 // Добавление товара 
 const productsAdd = document.getElementById('products-add')
 const modalArray= document.querySelectorAll('.modal')
+const modalItemBtnArray = document.querySelectorAll('.modal__item-btn')
+const modalCompoundArray = document.querySelectorAll('.modal__compound')
+const modalBack = document.querySelector('.modal__back')
 productsAdd.addEventListener('click', function(){
     for (let i = 0; i < modalArray.length; i++) {
         const modal = modalArray[i];
@@ -377,6 +389,39 @@ productsAdd.addEventListener('click', function(){
         modalClose.addEventListener('click', function(){
             modal.classList.remove('modal-active')
         })
+    }
+})
+for (let i = 0; i < modalItemBtnArray.length; i++) {
+    const modalItemBtn = modalItemBtnArray[i];
+    modalItemBtn.addEventListener('click', function(){
+        const dataAdd = modalItemBtn.dataset.add
+        console.log(dataAdd)
+        for (let i = 0; i < modalArray.length; i++) {
+            const modal = modalArray[i];
+            modal.classList.remove('modal-active')
+            if (modal.dataset.modal === 'add') {
+                modal.classList.add('modal-active')
+            }
+            
+        }
+        for (let i = 0; i < modalCompoundArray.length; i++) {
+            const modalCompound = modalCompoundArray[i];
+            if (modalCompound.dataset.modal === dataAdd) {
+                modalCompound.classList.add('modal__compound-active')
+            } else {
+                modalCompound.classList.remove('modal__compound-active')
+            }
+        }
+    })
+}
+modalBack.addEventListener('click', function(){
+    for (let i = 0; i < modalArray.length; i++) {
+        const modal = modalArray[i];
+        if (modal.dataset.modal === 'basic') {
+            modal.classList.add('modal-active')
+        } else {
+            modal.classList.remove('modal-active')
+        }
     }
 })
 const modalAdditionallyHeadArray = document.querySelectorAll('.modal__additionally-head')

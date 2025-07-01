@@ -1682,12 +1682,47 @@ select::-ms-expand
     padding: 24px
     background-color: #F3F5F7
     &__wrapper 
-        padding: 24px
+        display: none
+        flex-direction: column
+        gap: 24px
         border-radius: 8px
         background-color: #fff
+        &-active 
+            display: flex
+    &__top 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 24px
     &__head 
         display: flex
+        align-items: center
         justify-content: space-between
+    &__table
+        display: flex
+        flex-direction: column
+        &-head 
+            display: grid
+            grid-template-columns: 1.75fr 1.35fr 1fr 1fr 50px
+            gap: 24px
+            padding: 14.5px 24px
+            border-bottom: 1px solid #E5E7EB
+        &-htext
+            display: flex
+            gap: 4px
+            align-items: center 
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-item 
+            display: grid
+            grid-template-columns: 1.75fr 1.35fr 1fr 1fr 50px
+            align-items: center
+            gap: 24px
+            padding: 14.5px 24px
+            border-bottom: 1px solid #E5E7EB
+        &-text
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
 .rating 
     flex-direction: column
     gap: 30px
@@ -2183,6 +2218,8 @@ select::-ms-expand
         height: 50px
         border-radius: 50px
         background-color: #F5F5F5
+    &__back 
+        width: 34px
     &__content 
         display: flex
         align-items: center
@@ -2237,6 +2274,7 @@ select::-ms-expand
         grid-template-rows: repeat(2, 1fr)
         gap: 16px
         &-big 
+            position: relative
             grid-column: span 2
             grid-row: span 2
             border-radius: 8px
@@ -2264,6 +2302,17 @@ select::-ms-expand
         &-img 
             position: relative
             z-index: 10
+        &-edit 
+            position: absolute
+            top: 16px
+            left: 16px
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 50px
+            height: 50px
+            border-radius: 50%
+            background-color: #fff
     &__name 
         display: flex
         flex-direction: column
@@ -2275,9 +2324,11 @@ select::-ms-expand
         font: 700 18px/20px 'PT Root UI', 'sans-serif'
         color: var(--black)
     &__compound 
-        display: flex
+        display: none
         flex-direction: column
         gap: 24px
+        &-active 
+            display: flex
     &__grid 
         display: flex
         flex-direction: column
