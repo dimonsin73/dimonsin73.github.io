@@ -454,3 +454,61 @@ checkcopy.addEventListener('change', function(){
         modalQuantity.classList.remove('modal__quantity-active')
     }
 })
+// Добавление в прайс лист
+const priceHeadBtnArray = document.querySelectorAll('.price__head-btn')
+const modalCancellationArray = document.querySelectorAll('.modal__cancellation')
+const modalNext = document.querySelector('.modal__next')
+const modalPriceArray = document.querySelectorAll('.modal__price')
+for (let i = 0; i < priceHeadBtnArray.length; i++) {
+    const priceHeadBtn = priceHeadBtnArray[i];
+    priceHeadBtn.addEventListener('click', function(){
+        for (let i = 0; i < modalArray.length; i++) {
+            const modal = modalArray[i];
+            if (modal.dataset.modal === 'price-add') {
+                modal.classList.add('modal-active')
+            }
+            const modalCloseArray = modal.querySelectorAll('.modal__close')
+            for (let i = 0; i < modalCloseArray.length; i++) {
+                const modalClose = modalCloseArray[i];
+                modalClose.addEventListener('click', function(){
+                    modal.classList.remove('modal-active')
+                    for (let i = 0; i < modalPriceArray.length; i++) {
+                        const modalPrice = modalPriceArray[i];
+                        if (modalPrice.dataset.price === 'first') {
+                            modalPrice.classList.add('modal__price-active')
+                        }
+                        if (modalPrice.dataset.price === 'second') {
+                            modalPrice.classList.remove('modal__price-active')
+                        }
+                    }
+                })
+            }
+            // Навигация в моальном окне
+            for (let i = 0; i < modalCancellationArray.length; i++) {
+                const modalCancellation = modalCancellationArray[i];
+                modalCancellation.addEventListener('click', function(){
+                    modal.classList.remove('modal-active')
+                })
+            }
+            modalNext.addEventListener('click', function(){
+                for (let i = 0; i < modalPriceArray.length; i++) {
+                    const modalPrice = modalPriceArray[i];
+                    if (modalPrice.dataset.price === 'first') {
+                        modalPrice.classList.remove('modal__price-active')
+                    }
+                    if (modalPrice.dataset.price === 'second') {
+                        modalPrice.classList.add('modal__price-active')
+                    }
+                }
+            })
+        }
+    })
+}
+// Цвета
+const colorItemArray = document.querySelectorAll('.color__item')
+for (let i = 0; i < colorItemArray.length; i++) {
+    const colorItem = colorItemArray[i];
+    colorItem.addEventListener('click', function(){
+        colorItem.classList.toggle('color__item-active')
+    })
+}

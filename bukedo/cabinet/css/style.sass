@@ -176,6 +176,13 @@ main
             pointer-events: none
             & path
                 stroke: var(--grey)
+    &_secondary
+        padding: 0 16px
+        background-color: #F7F7F7
+        @include text-btn
+        color: var(--black)
+        cursor: pointer
+        
 .btn-text
     @include flex
     @include text
@@ -1318,6 +1325,8 @@ select::-ms-expand
         &-city 
             font: 500 16px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
+    &__label 
+        display: none
     &__conditions 
         display: flex
         flex-direction: column
@@ -1394,6 +1403,35 @@ select::-ms-expand
         &__btn 
             margin-left: 20px
             margin-right: 20px
+        &__table 
+            &-head 
+                display: none
+            &-item 
+                grid-template-columns: repeat(3, 1fr)
+                gap: 8px
+            &-city 
+                grid-column: span 2
+                order: -2
+            &-area 
+                grid-column: span 2
+                order: -1
+            &-btn 
+                grid-row: span 2
+                order: -2
+                margin-left: auto
+            &-left 
+                align-items: flex-start
+                margin-top: 16px
+            &-center 
+                align-items: center
+                margin-top: 16px
+            &-right 
+                align-items: flex-end
+                margin-top: 16px
+            & .label 
+                gap: 4px
+        &__label 
+            display: block
 @media (max-width: 587px)
     .shops 
         &__head 
@@ -1684,7 +1722,6 @@ select::-ms-expand
     &__wrapper 
         display: none
         flex-direction: column
-        gap: 24px
         border-radius: 8px
         background-color: #fff
         &-active 
@@ -1698,6 +1735,10 @@ select::-ms-expand
         display: flex
         align-items: center
         justify-content: space-between
+    &__label 
+        display: none
+    &__input 
+        width: 100%
     &__table
         display: flex
         flex-direction: column
@@ -1723,6 +1764,82 @@ select::-ms-expand
         &-text
             font: 400 14px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
+    &__materials 
+        display: flex
+        flex-direction: column
+        &-head 
+            display: grid
+            grid-template-columns: 3fr 2fr 2.4fr 1.5fr 1.5fr 50px
+            align-items: center
+            gap: 16px
+            padding: 14.5px 24px
+            border-bottom: 1px solid #E5E7EB
+        &-htext 
+            display: flex
+            align-items: center
+            gap: 4px
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-item 
+            display: grid
+            grid-template-columns: 3fr 2fr 2.4fr 1.5fr 1.5fr 50px
+            align-items: center
+            gap: 16px
+            padding: 14.5px 24px
+            border-bottom: 1px solid #E5E7EB
+        &-text 
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__footer 
+        display: flex
+        justify-content: space-between
+
+@media (max-width: 1199px) 
+    .price 
+        margin-top: 36px
+@media (max-width: 767px) 
+    .price 
+        margin-top: 60px
+        margin-bottom: 70px
+        padding: 0
+        &__top 
+            padding: 20px   
+        &__label 
+            display: block
+        &__table 
+            &-head 
+                display: none
+            &-item 
+                grid-template-columns: 1fr 1fr 1fr 1fr
+                row-gap: 20px
+                padding: 20px 
+            &-text 
+                grid-column: span 3
+                order: -1
+            &-btn 
+                order: -1
+                margin-left: auto
+            & .label
+                grid-column: span 2
+        &__materials 
+            &-head 
+                display: none
+            &-item 
+                grid-template-columns: 1fr 1fr 1fr 1fr
+                row-gap: 20px
+                padding: 20px 
+            &-text 
+                grid-column: span 3
+                order: -1
+            &-btn 
+                order: -1
+                margin-left: auto
+            & .label
+                grid-column: span 2
+        &__footer 
+            justify-content: center
+        & .colors 
+            grid-column: span 4
 .rating 
     flex-direction: column
     gap: 30px
@@ -2209,6 +2326,31 @@ select::-ms-expand
         padding: 32px
         border-radius: 24px
         background-color: #fff
+    &__price 
+        position: relative
+        display: none
+        flex-direction: column
+        gap: 24px
+        max-width: 570px
+        min-width: 375px
+        width: 100%
+        margin: 100px 0
+        padding: 32px
+        border-radius: 24px
+        background-color: #fff
+        &-g40 
+            gap: 40px
+        &-active
+            display: flex
+        &-item 
+            display: flex
+            gap: 16px
+            align-items: center
+            & .label 
+                width: 100%
+            & .check 
+                flex: 0 0 auto
+                padding-top: 28px
     &__close 
         position: absolute
         top: 20px
@@ -2437,6 +2579,56 @@ select::-ms-expand
         display: flex
         &-active 
             display: none
+    &__footer 
+        display: flex
+        gap: 16px
+        justify-content: flex-end
+    &__order 
+        position: relative
+        display: none
+        flex-direction: column
+        gap: 24px
+        max-width: 800px
+        min-width: 375px
+        width: 100%
+        margin: 100px 0
+        padding: 32px
+        border-radius: 24px
+        background-color: #fff
+        &-active 
+            display: flex
+    &__top 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        &-text 
+            font: 400 16px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__status 
+        display: flex
+        overflow-x: scroll
+        scrollbar-width: none
+        &-item 
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 8px
+        &-image 
+            display: flex
+            align-items: center
+            gap: 8px
+        &-line 
+            width: 53.6px
+            height: 1px
+            background-color: #D4D4D8
+            &-bur 
+                background-color: var(--burgundy)
+        &-text 
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+            &-bur 
+                color: var(--burgundy)
+
 @media (max-width: 1023px)
     .modal__wrapper 
         margin: 32px 0
@@ -2480,6 +2672,20 @@ select::-ms-expand
                 grid-template-columns: 1fr
             &-grid 
                 grid-template-columns: auto 50px
+        &__price 
+            height: calc(100% - 60px)
+            margin-top: 60px
+            margin-bottom: 0
+            border-bottom-left-radius: 0
+            border-bottom-right-radius: 0
+            &-item 
+                flex-direction: column
+                align-items: flex-start
+                & .check 
+                    padding: 0
+        &__footer 
+            flex-direction: column
+            margin-top: auto
 .green 
     color: #15803D
 .blue
@@ -2531,3 +2737,88 @@ select::-ms-expand
     &__settext 
         font: 400 16px/20px 'PT Root UI', 'sans-serif'
         color: var(--black)
+.color
+    display: flex
+    gap: 8px
+    flex-wrap: wrap
+    &__item 
+        &-color
+            width: 30px
+            height: 30px
+            margin: 5px
+            border-radius: 50%
+        &-white 
+            border: 1px solid #E5E7EB
+            background-color: #fff
+        &-carmine
+            border: 1px solid #EC3333
+            background-color: #EC3333
+        &-rose
+            border: 1px solid #FFA9C3
+            background-color: #FFA9C3
+        &-cream
+            border: 1px solid #F2DDC6
+            background-color: #F2DDC6
+        &-yellow
+            border: 1px solid #FFC90A
+            background-color: #FFC90A
+        &-red
+            border: 1px solid #DC2D63
+            background-color: #DC2D63
+        &-orange
+            border: 1px solid #FFA500
+            background-color: #FFA500
+        &-sky
+            border: 1px solid #B9CFFF
+            background-color: #B9CFFF
+        &-blue
+            border: 1px solid #8B00FF
+            background-color: #8B00FF
+        &-green
+            border: 1px solid #71B267
+            background-color: #71B267
+        &-coral
+            border: 1px solid #FF7F50
+            background-color: #FF7F50
+        &-fuchsia
+            border: 1px solid #FF00FF
+            background-color: #FF00FF
+        &-lilac
+            border: 1px solid #C8A2C8
+            background-color: #C8A2C8
+        &-active 
+            & .color__item-color
+                outline-offset: 5px
+                background: 
+                    image: url(../img/setcheck.svg)
+                    position: center center 
+                    repeat: no-repeat
+                    size: 15px 
+            & .color__item-white 
+                outline: 1px solid #E5E7EB
+                background: 
+                    image: url(../img/setcheck-b.svg)
+            & .color__item-carmine
+                outline: 1px solid #EC3333
+            & .color__item-rose
+                outline: 1px solid #FFA9C3
+            & .color__item-cream
+                outline: 1px solid #F2DDC6
+            & .color__item-yellow
+                outline: 1px solid #FFC90A
+            & .color__item-red
+                outline: 1px solid #DC2D63
+            & .color__item-orange
+                outline: 1px solid #FFA500
+            & .color__item-sky
+                outline: 1px solid #B9CFFF
+            & .color__item-blue
+                outline: 1px solid #8B00FF
+            & .color__item-green
+                outline: 1px solid #71B267
+            & .color__item-coral
+                outline: 1px solid #FF7F50
+            & .color__item-fuchsia
+                outline: 1px solid #FF00FF
+            & .color__item-lilac
+                outline: 1px solid #C8A2C8
