@@ -124,7 +124,13 @@ modalAdditionallyTextarea.addEventListener('input', function(){
     const count = modalAdditionallyTextarea.value.length
     modalAdditionallyFirst.textContent = count
 })
-
+// textarea
+const modalTextareaTextarea = document.querySelector('.modal__textarea-textarea')
+const modalTextareaFirst = document.querySelector('.modal__textarea-first')
+modalTextareaTextarea.addEventListener('input', function(){
+    const count = modalTextareaTextarea.value.length
+    modalTextareaFirst.textContent = count
+})
 // Селект 
 const selectArray = document.querySelectorAll(".select")
 for (let i = 0; i < selectArray.length; i++) {
@@ -395,7 +401,6 @@ for (let i = 0; i < modalItemBtnArray.length; i++) {
     const modalItemBtn = modalItemBtnArray[i];
     modalItemBtn.addEventListener('click', function(){
         const dataAdd = modalItemBtn.dataset.add
-        console.log(dataAdd)
         for (let i = 0; i < modalArray.length; i++) {
             const modal = modalArray[i];
             modal.classList.remove('modal-active')
@@ -431,6 +436,60 @@ for (let i = 0; i < modalAdditionallyHeadArray.length; i++) {
         const modalAdditionallyContent = modalAdditionallyHead.parentElement.querySelector('.modal__additionally-content')
         modalAdditionallyContent.classList.toggle('modal__additionally-content-active')
     })
+}
+const ordersTableItemArray = document.querySelectorAll('.orders__table-item')
+const modalNextArray = document.querySelectorAll('.modal__next')
+const modalBackArray = document.querySelectorAll('.modal__top-back')
+const modalRefusal = document.getElementById('modal__refusal')
+for (let i = 0; i < ordersTableItemArray.length; i++) {
+    const ordersTableItem = ordersTableItemArray[i];
+    ordersTableItem.addEventListener("click", function(){
+        for (let i = 0; i < modalArray.length; i++) {
+            const modal = modalArray[i];
+            if (modal.dataset.modal === 'order') {
+                modal.classList.add('modal-active')
+                const modalWorkArray = modal.querySelectorAll('.modal-work')
+                const modalWorkBtn = document.getElementById('modal__work')
+                let modalNumber = 0
+                modalWorkFun (modalWorkArray, modalNumber)
+                modalWorkBtn.addEventListener('click', function(){
+                    modalNumber = 1
+                    modalWorkFun (modalWorkArray, modalNumber)
+                })
+                for (let i = 0; i < modalNextArray.length; i++) {
+                    const modalNext = modalNextArray[i];
+                    modalNext.addEventListener('click', function(){
+                        modalNumber++
+                        modalWorkFun (modalWorkArray, modalNumber)
+                    })
+                }
+                for (let i = 0; i < modalBackArray.length; i++) {
+                    const modalBack = modalBackArray[i];
+                    modalBack.addEventListener('click', function(){
+                        modalNumber--
+                        modalWorkFun (modalWorkArray, modalNumber)
+                    })
+                }
+            }
+            const modalClose = modal.querySelector('.modal__close')
+            modalClose.addEventListener('click', function(){
+                modal.classList.remove('modal-active')
+            })
+            modalRefusal.addEventListener('click', function(){
+                modal.classList.remove('modal-active')
+            })
+        }
+    })
+}
+function modalWorkFun (modalWorkArray, modalNumber){
+    for (let i = 0; i < modalWorkArray.length; i++) {
+        const modalWork = modalWorkArray[i];
+        if (modalWork.dataset.work == modalNumber) {
+            modalWork.classList.add('modal-work-active')
+        } else {
+            modalWork.classList.remove('modal-work-active')
+        }
+    }
 }
 // Настройки фактический адрес 
 const checkaddress = document.getElementById('checkaddress')
@@ -512,3 +571,14 @@ for (let i = 0; i < colorItemArray.length; i++) {
         colorItem.classList.toggle('color__item-active')
     })
 }
+
+const modalAreaHeadArray = document.querySelectorAll('.modal__area-head')
+for (let i = 0; i < modalAreaHeadArray.length; i++) {
+    const modalAreaHead = modalAreaHeadArray[i];
+    modalAreaHead.addEventListener('click', function(){
+        const modalArea = modalAreaHead.parentElement
+        modalArea.classList.toggle('modal__area-active')
+    })
+}
+
+
