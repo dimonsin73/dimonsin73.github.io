@@ -664,3 +664,25 @@ for (let i = 0; i < colorsArray.length; i++) {
         })
     }
 }
+
+const menuItemArray = document.querySelectorAll('.menu__item')
+for (let i = 0; i < menuItemArray.length; i++) {
+    const menuItem = menuItemArray[i];
+    menuItem.addEventListener('click', function(){
+        const dataMenu = menuItem.dataset.menu
+        for (let i = 0; i < mainBlockArr.length; i++) {
+            const mainBlock = mainBlockArr[i];
+            mainBlock.classList.remove('main-block-active')
+            if (mainBlock.dataset.main == dataMenu) {
+                mainBlock.classList.add('main-block-active')
+            }
+        }
+        for (let i = 0; i < headMenuArr.length; i++) {
+            const headMenu = headMenuArr[i];
+            headMenu.classList.remove('head__menu-active')
+            if (headMenu.dataset.menu == dataMenu) {
+                headMenu.classList.add('head__menu-active')
+            }
+        }
+    })
+}

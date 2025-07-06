@@ -446,6 +446,7 @@ input::-webkit-inner-spin-button
     width: 241px
     border-right: 1px solid var(--border-icon)
     background-color: #fff
+    overflow-y: scroll
     z-index: 1000
     &__logo 
         padding: 24px 20px
@@ -1984,7 +1985,7 @@ select::-ms-expand
         flex-direction: column
         &-head 
             display: grid
-            grid-template-columns: 3fr 2fr 2.4fr 1.5fr 1.5fr 50px
+            grid-template-columns: 50px 3fr 1.2fr 1.5fr 1.5fr 1.2fr 1.6fr 50px
             align-items: center
             gap: 16px
             padding: 14.5px 24px
@@ -1997,14 +1998,60 @@ select::-ms-expand
             color: #727C8A
         &-item 
             display: grid
-            grid-template-columns: 3fr 2fr 2.4fr 1.5fr 1.5fr 50px
+            grid-template-columns: 50px 3fr 1.2fr 1.5fr 1.5fr 1.2fr 1.6fr 50px
             align-items: center
             gap: 16px
             padding: 14.5px 24px
             border-bottom: 1px solid #E5E7EB
+        &-span2 
+            grid-column: span 2
+        &-img 
+            width: 50px
+            height: 50px
+            border-radius: 10px
+            background: 
+                color: #F5F5F5 
+                image: url('../img/box.svg')
+                position: center center 
+                repeat: no-repeat
+        &-title 
+            display: none
+            font: 500 12px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
         &-text 
             font: 400 14px/20px 'PT Root UI', 'sans-serif'
             color: var(--black)
+        &-textdot 
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+            text-decoration: underline
+            text-decoration-style: dotted
+            text-underline-offset: 25%
+            text-decoration-thickness: 10%
+        &-size 
+            display: flex
+            flex-direction: column
+            gap: 4px
+        &-form
+            display: flex
+            flex-direction: column
+            gap: 4px
+        &-price 
+            display: flex
+            flex-direction: column
+            gap: 4px
+        &-quantity
+            display: flex
+            flex-direction: column
+            gap: 4px
+        &-moderation 
+            display: flex
+            gap: 8px
+            align-items: center
+            justify-content: flex-start
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            & svg 
+                flex: 0 0 auto
     &__footer 
         display: flex
         justify-content: space-between
@@ -2041,12 +2088,33 @@ select::-ms-expand
             &-head 
                 display: none
             &-item 
-                grid-template-columns: 1fr 1fr 1fr 1fr
+                grid-template-columns: 50px 1fr 1fr 1fr 1fr
+                align-items: flex-start
                 row-gap: 20px
                 padding: 20px 
-            &-text 
-                grid-column: span 3
-                order: -1
+            &-title 
+                display: block
+            &-img 
+                grid-row: span 4
+                order: -2
+
+            &-name 
+                grid-column: span 2
+                padding: 15px 0
+                order: -2
+            &-moderation 
+                grid-column: span 2
+                margin-left: auto
+                padding: 15px 0
+                order: -2
+            &-size 
+                grid-column: span 2
+            &-form
+                grid-column: span 2
+            &-price
+                grid-column: span 2
+            &-quantity
+                grid-column: span 2
             &-btn 
                 order: -1
                 margin-left: auto

@@ -516,6 +516,7 @@ input::-webkit-inner-spin-button {
   width: 241px;
   border-right: 1px solid var(--border-icon);
   background-color: #fff;
+  overflow-y: scroll;
   z-index: 1000;
 }
 .aside__logo {
@@ -2452,7 +2453,7 @@ select::-ms-expand {
 }
 .bukedo__materials-head {
   display: grid;
-  grid-template-columns: 3fr 2fr 2.4fr 1.5fr 1.5fr 50px;
+  grid-template-columns: 50px 3fr 1.2fr 1.5fr 1.5fr 1.2fr 1.6fr 50px;
   align-items: center;
   gap: 16px;
   padding: 14.5px 24px;
@@ -2467,15 +2468,70 @@ select::-ms-expand {
 }
 .bukedo__materials-item {
   display: grid;
-  grid-template-columns: 3fr 2fr 2.4fr 1.5fr 1.5fr 50px;
+  grid-template-columns: 50px 3fr 1.2fr 1.5fr 1.5fr 1.2fr 1.6fr 50px;
   align-items: center;
   gap: 16px;
   padding: 14.5px 24px;
   border-bottom: 1px solid #E5E7EB;
 }
+.bukedo__materials-span2 {
+  grid-column: span 2;
+}
+.bukedo__materials-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  background-image: url("../img/box.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.bukedo__materials-title {
+  display: none;
+  font: 500 12px/20px "PT Root UI", "sans-serif";
+  color: #727C8A;
+}
 .bukedo__materials-text {
   font: 400 14px/20px "PT Root UI", "sans-serif";
   color: var(--black);
+}
+.bukedo__materials-textdot {
+  font: 400 14px/20px "PT Root UI", "sans-serif";
+  color: var(--black);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 25%;
+  text-decoration-thickness: 10%;
+}
+.bukedo__materials-size {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bukedo__materials-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bukedo__materials-price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bukedo__materials-quantity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bukedo__materials-moderation {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  font: 500 14px/20px "PT Root UI", "sans-serif";
+}
+.bukedo__materials-moderation svg {
+  flex: 0 0 auto;
 }
 .bukedo__footer {
   display: flex;
@@ -2525,13 +2581,40 @@ select::-ms-expand {
     display: none;
   }
   .bukedo__materials-item {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 50px 1fr 1fr 1fr 1fr;
+    align-items: flex-start;
     row-gap: 20px;
     padding: 20px;
   }
-  .bukedo__materials-text {
-    grid-column: span 3;
-    order: -1;
+  .bukedo__materials-title {
+    display: block;
+  }
+  .bukedo__materials-img {
+    grid-row: span 4;
+    order: -2;
+  }
+  .bukedo__materials-name {
+    grid-column: span 2;
+    padding: 15px 0;
+    order: -2;
+  }
+  .bukedo__materials-moderation {
+    grid-column: span 2;
+    margin-left: auto;
+    padding: 15px 0;
+    order: -2;
+  }
+  .bukedo__materials-size {
+    grid-column: span 2;
+  }
+  .bukedo__materials-form {
+    grid-column: span 2;
+  }
+  .bukedo__materials-price {
+    grid-column: span 2;
+  }
+  .bukedo__materials-quantity {
+    grid-column: span 2;
   }
   .bukedo__materials-btn {
     order: -1;
