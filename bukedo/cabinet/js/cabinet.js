@@ -233,6 +233,7 @@ for (let i = 0; i < switchInputArr.length; i++) {
 const headShopItemArr = document.querySelectorAll('.head__shop-item')
 const shopsWrapperArr = document.querySelectorAll('.shops__wrapper')
 const priceWrapperArr = document.querySelectorAll('.price__wrapper')
+const bukedoWrapperArr = document.querySelectorAll('.bukedo__wrapper')
 for (let i = 0; i < headShopItemArr.length; i++) {
     const headShopItem = headShopItemArr[i];
     headShopItem.addEventListener('click', function(){
@@ -243,20 +244,33 @@ for (let i = 0; i < headShopItemArr.length; i++) {
         }
         headShopItem.classList.add('head__shop-item-active')
         const menuItem = headShopItem.dataset.menuitem
-        for (let i = 0; i < shopsWrapperArr.length; i++) {
-            const shopsWrapper = shopsWrapperArr[i];
-            shopsWrapper.classList.remove('shops__wrapper-active')
-            if (shopsWrapper.dataset.shops == menuItem) {
-                shopsWrapper.classList.add('shops__wrapper-active')
+        if (headShopItem.parentElement.parentElement.dataset.menu === 'shops') {     
+            for (let i = 0; i < shopsWrapperArr.length; i++) {
+                const shopsWrapper = shopsWrapperArr[i];
+                shopsWrapper.classList.remove('shops__wrapper-active')
+                if (shopsWrapper.dataset.shops == menuItem) {
+                    shopsWrapper.classList.add('shops__wrapper-active')
+                }
             }
         }
-        for (let i = 0; i < priceWrapperArr.length; i++) {
-            const priceWrapper = priceWrapperArr[i];
-            priceWrapper.classList.remove('price__wrapper-active')
-            if (priceWrapper.dataset.shops == menuItem) {
-                priceWrapper.classList.add('price__wrapper-active')
+        if (headShopItem.parentElement.parentElement.dataset.menu === 'price') {
+            for (let i = 0; i < priceWrapperArr.length; i++) {
+                const priceWrapper = priceWrapperArr[i];
+                priceWrapper.classList.remove('price__wrapper-active')
+                if (priceWrapper.dataset.shops == menuItem) {
+                    priceWrapper.classList.add('price__wrapper-active')
+                }
             }
-        }
+        }   
+        if (headShopItem.parentElement.parentElement.dataset.menu === 'bukedo') {
+            for (let i = 0; i < bukedoWrapperArr.length; i++) {
+                const bukedoWrapper = bukedoWrapperArr[i];
+                bukedoWrapper.classList.remove('bukedo__wrapper-active')
+                if (bukedoWrapper.dataset.shops == menuItem) {
+                    bukedoWrapper.classList.add('bukedo__wrapper-active')
+                }
+            }
+        } 
     })
 }
 
@@ -439,8 +453,12 @@ for (let i = 0; i < modalAdditionallyHeadArray.length; i++) {
 }
 const ordersTableItemArray = document.querySelectorAll('.orders__table-item')
 const modalNextArray = document.querySelectorAll('.modal__next')
+const modalNext2Array = document.querySelectorAll('.modal__next2')
 const modalBackArray = document.querySelectorAll('.modal__top-back')
 const modalRefusal = document.getElementById('modal__refusal')
+const confirm = document.querySelector('.confirm')
+const confirmСancellation = document.querySelector('.confirm__cancellation')
+const confirmOk = document.querySelector('.confirm__ok')
 for (let i = 0; i < ordersTableItemArray.length; i++) {
     const ordersTableItem = ordersTableItemArray[i];
     ordersTableItem.addEventListener("click", function(){
@@ -453,14 +471,45 @@ for (let i = 0; i < ordersTableItemArray.length; i++) {
                 let modalNumber = 0
                 modalWorkFun (modalWorkArray, modalNumber)
                 modalWorkBtn.addEventListener('click', function(){
-                    modalNumber = 1
-                    modalWorkFun (modalWorkArray, modalNumber)
+                    confirm.classList.add('confirm-active')
+                    confirmOk.addEventListener('click', function(){
+                        modalNumber = 1
+                        modalWorkFun (modalWorkArray, modalNumber)
+                        confirm.classList.remove('confirm-active')
+                    })
+                    confirmСancellation.addEventListener('click', function(){
+                        confirm.classList.remove('confirm-active')
+                    })
                 })
+
+
                 for (let i = 0; i < modalNextArray.length; i++) {
                     const modalNext = modalNextArray[i];
                     modalNext.addEventListener('click', function(){
-                        modalNumber++
-                        modalWorkFun (modalWorkArray, modalNumber)
+                        confirm.classList.add('confirm-active')
+                        confirmOk.addEventListener('click', function(){
+                            modalNumber = 2
+                            modalWorkFun (modalWorkArray, modalNumber)
+                            confirm.classList.remove('confirm-active')
+                            
+                        })
+                        confirmСancellation.addEventListener('click', function(){
+                            confirm.classList.remove('confirm-active')
+                        })
+                    })
+                }
+                for (let i = 0; i < modalNext2Array.length; i++) {
+                    const modalNext2 = modalNext2Array[i];
+                    modalNext2.addEventListener('click', function(){
+                        confirm.classList.add('confirm-active')
+                        confirmOk.addEventListener('click', function(){
+                            modalNumber = 3
+                            modalWorkFun (modalWorkArray, modalNumber)
+                            confirm.classList.remove('confirm-active')
+                        })
+                        confirmСancellation.addEventListener('click', function(){
+                            confirm.classList.remove('confirm-active')
+                        })
                     })
                 }
                 for (let i = 0; i < modalBackArray.length; i++) {
@@ -547,6 +596,15 @@ for (let i = 0; i < priceHeadBtnArray.length; i++) {
                 const modalCancellation = modalCancellationArray[i];
                 modalCancellation.addEventListener('click', function(){
                     modal.classList.remove('modal-active')
+                    for (let i = 0; i < modalPriceArray.length; i++) {
+                        const modalPrice = modalPriceArray[i];
+                        if (modalPrice.dataset.price === 'first') {
+                            modalPrice.classList.add('modal__price-active')
+                        }
+                        if (modalPrice.dataset.price === 'second') {
+                            modalPrice.classList.remove('modal__price-active')
+                        }
+                    }
                 })
             }
             modalNext.addEventListener('click', function(){
@@ -582,3 +640,27 @@ for (let i = 0; i < modalAreaHeadArray.length; i++) {
 }
 
 
+const colorsArray = document.querySelectorAll('.colors')
+for (let i = 0; i < colorsArray.length; i++) {
+    const colors = colorsArray[i];
+    const colorsDropdawn = colors.querySelector('.colors__dropdawn')
+    const colorsActive = colors.querySelector('.colors__active')
+    colors.addEventListener('click', function(){
+        colorsDropdawn.classList.toggle('colors__dropdawn-active')
+    })
+    const colorItemArray = colors.querySelectorAll('.color__item')
+    for (let i = 0; i < colorItemArray.length; i++) {
+        const colorItem = colorItemArray[i];
+        colorItem.addEventListener('click', function(){
+            colorsActive.innerHTML = ''
+            for (let i = 0; i < colorItemArray.length; i++) {
+                const element = colorItemArray[i];
+                if (element.classList.contains('color__item-active')) {
+                    const colorsItem = document.createElement('div')
+                    colorsActive.append(colorsItem)
+                    colorsItem.classList = element.children[0].classList
+                }
+            }
+        })
+    }
+}

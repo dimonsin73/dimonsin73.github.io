@@ -202,6 +202,11 @@ main
         @include text-btn
         color: var(--burgundy)
         cursor: pointer
+    &_refusal 
+        padding-top: 29px
+        border-top: 1px solid #E5E7EB
+        font: 500 14px/20px 'PT Root UI', 'sans-serif'
+        color: #727C8A
 .btn-text
     @include flex
     @include text
@@ -819,6 +824,7 @@ input::-webkit-inner-spin-button
             gap: 10px
             padding: 14.5px 20px
             border-bottom: 1px solid #DCE4E8
+            cursor: pointer
             transition: background-color 0.3s ease
             &:hover
                 background-color: var(--border-icon)
@@ -888,12 +894,14 @@ input::-webkit-inner-spin-button
             align-items: center
             gap: 4px
         &-sum 
-            font: 500 14px/18px 'PT Root UI', 'sans-serif'
+            font: 500 14px/21px 'PT Root UI', 'sans-serif'
             color: var(--black)
         &-title 
             font: 500 12px/20px 'PT Root UI', 'sans-serif'
             color: #727C8A
-        &-small 
+        &-span 
+            display: none
+        &-name 
             display: none
 
 @media (max-width:1199px)
@@ -918,7 +926,7 @@ input::-webkit-inner-spin-button
                 &-active 
                     border-bottom: 2px solid var(--burgundy)
     .orders
-        &__line
+        &__line 
             flex-direction: column
 @media (max-width:1023px)
     .orders
@@ -926,15 +934,58 @@ input::-webkit-inner-spin-button
             overflow-x: scroll
             scrollbar-width: none
         &__table
+            &-head 
+                display: none
             &-number
                 font-size: 16px
                 line-height: 30px
             &-sum 
                 font-weight: 700
-            &-full 
-                display: none
-            &-small 
+            &-item 
+                grid-template-columns: 50px 1fr 1fr 1fr 1fr
+                align-items: flex-start
+                column-gap: 16px
+                row-gap: 4px
+            &-col 
+                grid-row: span 2
+                grid-column: span 3
+                width: 100%
+                order: -2
+            &-status 
+                grid-column: span 2
+                margin-left: auto
+                order: -2
+            &-payment 
+                grid-column: span 2
+                order: -2
+            &-img 
+                grid-row: span 4
+            &-name 
+                grid-column: span 4
+                padding: 16px 0
+                font: 400 14px/18px 'PT Root UI', 'sans-serif'
+                color: var(--black)
+            &-text 
                 display: flex
+                flex-direction: column
+                grid-column: span 4
+            &-delivery
+                grid-column: span 4
+                margin-top: 4px
+                margin-bottom: 4px
+            &-sum
+                display: flex
+                flex-direction: column
+                grid-column: span 2
+            &-income
+                display: flex
+                flex-direction: column
+                grid-column: span 2
+                margin-left: auto
+            &-span 
+                display: block
+                font: 500 12px/20px 'PT Root UI', 'sans-serif'
+                color: #727C8A
 @media (max-width:767px)
     .search 
         display: none
@@ -966,6 +1017,7 @@ input::-webkit-inner-spin-button
             margin-right: -20px
         &__top 
             display: none
+    
 .balance
     display: flex
     flex-direction: column
@@ -1524,7 +1576,10 @@ select::-ms-expand
     gap: 16px
     font: 500 30px/30px 'PT Root UI', 'sans-serif'
     color: var(--black)
-
+@media ( max-width: 767px)
+    .main-title 
+        font-size: 24px
+        line-height: 24px
 .products 
     flex-direction: column
     height: 100%
@@ -1812,7 +1867,6 @@ select::-ms-expand
     &__footer 
         display: flex
         justify-content: space-between
-
 @media (max-width: 1199px) 
     .price 
         margin-top: 36px
@@ -1859,6 +1913,183 @@ select::-ms-expand
             justify-content: center
         & .colors 
             grid-column: span 4
+.bukedo
+    flex-direction: column
+    gap: 24px
+    height: 100%
+    padding: 24px
+    background-color: #F3F5F7
+    &__wrapper 
+        display: none
+        flex-direction: column
+        border-radius: 8px
+        background-color: #fff
+        &-active 
+            display: flex
+    &__top 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 24px
+    &__head 
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__label 
+        display: none
+    &__input 
+        width: 100%
+    &__table
+        display: flex
+        flex-direction: column
+        &-head 
+            display: grid
+            grid-template-columns: 2.5fr 1fr 2.5fr 1.5fr 50px
+            gap: 24px
+            padding: 14.5px 24px
+            border-bottom: 1px solid #E5E7EB
+        &-htext
+            display: flex
+            gap: 4px
+            align-items: center 
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-item 
+            display: grid
+            grid-template-columns: 2.5fr 1fr 2.5fr 1.5fr 50px
+            align-items: center
+            gap: 24px
+            padding: 14.5px 24px
+            border-bottom: 1px solid #E5E7EB
+        &-text
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+        &-btn 
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+            text-decoration: underline
+            text-decoration-style: dotted
+            text-underline-offset: 25%
+            text-decoration-thickness: 10%
+        &-moderation 
+            display: flex
+            gap: 8px
+            align-items: center
+            justify-content: flex-end
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            & svg 
+                flex: 0 0 auto
+    &__materials 
+        display: flex
+        flex-direction: column
+        &-head 
+            display: grid
+            grid-template-columns: 3fr 2fr 2.4fr 1.5fr 1.5fr 50px
+            align-items: center
+            gap: 16px
+            padding: 14.5px 24px
+            border-bottom: 1px solid #E5E7EB
+        &-htext 
+            display: flex
+            align-items: center
+            gap: 4px
+            font: 500 14px/20px 'PT Root UI', 'sans-serif'
+            color: #727C8A
+        &-item 
+            display: grid
+            grid-template-columns: 3fr 2fr 2.4fr 1.5fr 1.5fr 50px
+            align-items: center
+            gap: 16px
+            padding: 14.5px 24px
+            border-bottom: 1px solid #E5E7EB
+        &-text 
+            font: 400 14px/20px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__footer 
+        display: flex
+        justify-content: space-between
+@media (max-width: 1199px) 
+    .bukedo 
+        margin-top: 36px
+@media (max-width: 767px) 
+    .bukedo 
+        margin-top: 60px
+        margin-bottom: 70px
+        padding: 0
+        &__top 
+            padding: 20px   
+        &__label 
+            display: block
+        &__table 
+            &-head 
+                display: none
+            &-item 
+                grid-template-columns: 1fr 1fr 1fr 1fr
+                row-gap: 20px
+                padding: 20px 
+            &-text 
+                grid-column: span 3
+                order: -1
+            &-btn 
+                grid-column: span 4
+                margin-left: auto
+            & .label
+                grid-column: span 2
+            &-moderation 
+                order: -1
+        &__materials 
+            &-head 
+                display: none
+            &-item 
+                grid-template-columns: 1fr 1fr 1fr 1fr
+                row-gap: 20px
+                padding: 20px 
+            &-text 
+                grid-column: span 3
+                order: -1
+            &-btn 
+                order: -1
+                margin-left: auto
+            & .label
+                grid-column: span 2
+        &__footer 
+            justify-content: center
+        & .colors 
+            grid-column: span 2
+.colors 
+    &__input 
+        padding-left: 40px
+        background: 
+            image: url('../img/colors.svg')
+            position: center left 16px 
+            repeat: no-repeat
+    &__dropdawn 
+        position: absolute
+        top: calc( 100% + 5px)
+        display: none
+        padding: 16px
+        border-radius: 16px
+        box-shadow: 0px 20px 65px -5px #1212171A, 0px 10px 20px -5px #1212171A
+        background-color: #fff
+        z-index: 100
+        &-active 
+            display: block
+        &-head 
+            display: flex
+            justify-content: space-between
+            margin-bottom: 20px
+        &-title 
+            font: 500 14px/24px 'PT Root UI', 'sans-serif'
+            color: var(--black)
+    &__active
+        position: absolute
+        right: 16px
+        bottom: 12.5px
+        display: flex
+        & .color__item-color 
+            width: 15px
+            height: 15px
+            margin: 2.5px
 .rating 
     flex-direction: column
     gap: 30px
@@ -2654,9 +2885,10 @@ select::-ms-expand
         &-text 
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
             color: #727C8A
+            text-align: center
             &-bur 
                 color: var(--burgundy)
-    &__content 
+    &__contents
         display: flex
         flex-direction: column
         gap: 16px
@@ -2777,7 +3009,7 @@ select::-ms-expand
         border-radius: 16px
         background: #F7F7F7
         &-bg 
-            display: flex
+            display: none
             flex-direction: column
             align-items: center
             justify-content: center
@@ -2786,6 +3018,8 @@ select::-ms-expand
             height: 212px
             border: 1px dashed #727C8A
             border-radius: 16px
+            &-active 
+                display: flex
         &-text 
             max-width: 274px
             font: 400 14px/18px 'PT Root UI', 'sans-serif'
@@ -2797,10 +3031,14 @@ select::-ms-expand
         &-main
             width: 100%
             height: 100%
-            display: flex
+            display: none
             align-items: center
             justify-content: center
             padding: 24px
+            border-radius: 16px
+            background: #F7F7F7
+            &-active 
+                display: flex
         &-image 
             position: relative
             width: 332px
@@ -2822,6 +3060,40 @@ select::-ms-expand
         gap: 24px
     &__next 
         flex: 0 0 calc( 50% - 12px )
+    &__next2
+        flex: 0 0 calc( 50% - 12px )
+    &__foto2 
+        display: flex
+        gap: 24px
+        align-items: center
+        &-top 
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-left 
+            display: none
+            flex-direction: column
+            align-items: center
+            flex: 0 0 auto
+            width: 350px
+            gap: 16px
+            padding: 24px
+            border: 1px dashed #727C8A
+            border-radius: 12px
+            background: #F7F7F7
+            &-active 
+                display: flex
+        &-right 
+            display: flex
+            flex-direction: column
+            gap: 24px 
+        &-bottom 
+            display: flex
+            flex-direction: column
+            gap: 16px
+        &-text 
+            font: 400 14px/18px 'PT Root UI', 'sans-serif'
+            color: #727C8A
     &-work 
         display: none
         &-active 
@@ -2884,6 +3156,79 @@ select::-ms-expand
         &__footer 
             flex-direction: column
             margin-top: auto
+        &__order
+            margin: 0
+            padding: 20px
+            border-radius: 0
+        &__area 
+            &-line2 
+                grid-template-columns: 1fr
+            &-text 
+                font-size: 14px
+        &__span2
+            grid-column: span 2
+        &__orders 
+            &-item 
+                align-items: flex-start
+                grid-template-columns: 60px 1fr 1fr
+            &-img 
+                grid-row: span 3
+            &-name
+                grid-column: span 2
+        &__btns 
+            flex-direction: column-reverse
+            gap: 16px
+        &__bg 
+            &-line
+                width: 100%
+        &__next 
+            flex: 0 0 auto
+        &__foto
+            &-image 
+                width: 287px
+                height: 287px
+        &__foto2 
+            flex-direction: column
+            &-left
+                width: auto
+.confirm 
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: none
+    justify-content: center
+    align-items: center
+    background-color: #1C1C1D4D
+    z-index: 100000
+    &-active 
+        display: flex
+    &__wrapper 
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 24px
+        max-width: 526px
+        padding: 32px
+        border-radius: 24px
+        background-color: #fff
+        & .main-title 
+            margin-right: 70px
+    &__btns 
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        gap: 16px
+    &__close 
+        position: absolute
+        top: 20px
+        right: 20px
+        @include flex
+        width: 50px
+        height: 50px
+        border-radius: 50px
+        background-color: #F5F5F5
 .flex-ais 
     align-items: flex-start
 .green 
@@ -2894,6 +3239,8 @@ select::-ms-expand
     color: #F59E0B
 .red 
     color: #BE123C
+.burgundy 
+    color: #AD2950
 .grey 
     color: #727C8A
 .check 

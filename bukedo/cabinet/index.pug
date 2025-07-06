@@ -100,6 +100,13 @@ html(lang="ru")
                             li.head__shop-item(data-menuitem="materials") Материалы
                             li.head__shop-item(data-menuitem="other") Прочее
                             li.head__shop-item(data-menuitem="general-bouquets") Общие букеты
+                    .head__menu(data-menu="bukedo")
+                        ul.head__shop
+                            li.head__shop-item.head__shop-item-active(data-menuitem="flowers") Цветы
+                            li.head__shop-item(data-menuitem="green") Зелень  
+                            li.head__shop-item(data-menuitem="materials") Материалы
+                            li.head__shop-item(data-menuitem="other") Прочее
+                            li.head__shop-item(data-menuitem="general-bouquets") Общие букеты
                     input(type="search", name="search" placeholder="Поиск").search
                 .head__right 
                     button(type="button").head__searchbtn
@@ -202,14 +209,21 @@ html(lang="ru")
                                     p.orders__table-number &#35;108099
                                     p.orders__table-text от 18 июн 2024, 11:35
                                 p.orders__table-status.orders__table-green Новый
-                                p.orders__table-text Доставка, 19 июн 2024 <br>с 10:00 до 11:00
+                                p.orders__table-name Букет французских роз и хризантем
+                                p.orders__table-text 
+                                    span.orders__table-span На время
+                                    | Доставка, 19 июн 2024 с 10:00 до 11:00
                                 .orders__table-delivery
+                                    span.orders__table-span Адрес
                                     p.orders__table-text Москва, Ленинский проспект 12
                                 .orders__table-payment
                                     img(src="img/credit-card.svg", alt="alt").orders__table-icon 
                                     p.orders__table-status.orders__table-green Оплачено
-                                .orders__table-sum 2 200 ₽ 
+                                .orders__table-sum 
+                                    span.orders__table-span Сумма
+                                    | 2 200 ₽ 
                                 .orders__table-income
+                                    span.orders__table-span Ваш доход
                                     p.orders__table-text 1 205 ₽
                             .orders__table-item
                                 .orders__table-img 
@@ -219,14 +233,21 @@ html(lang="ru")
                                     p.orders__table-number &#35;108099
                                     p.orders__table-text от 18 июн 2024, 11:35
                                 p.orders__table-status.orders__table-green Сборка
-                                p.orders__table-text Доставка, 19 июн 2024 <br>до 11:00
+                                p.orders__table-name Букет французских роз и хризантем
+                                p.orders__table-text
+                                    span.orders__table-span На время
+                                    | Доставка, 19 июн 2024 до 11:00
                                 .orders__table-delivery
+                                    span.orders__table-span Адрес
                                     p.orders__table-text Из «99 цветов«
                                 .orders__table-payment
                                     img(src="img/money-bill-coin.svg", alt="alt").orders__table-icon 
                                     p.orders__table-status.orders__table-blue Наличные
-                                .orders__table-sum 2 200 ₽ 
+                                .orders__table-sum
+                                    span.orders__table-span Сумма
+                                    | 2 200 ₽ 
                                 .orders__table-income
+                                    span.orders__table-span Ваш доход
                                     p.orders__table-text 1 205 ₽
                             .orders__table-item
                                 .orders__table-img 
@@ -236,14 +257,21 @@ html(lang="ru")
                                     p.orders__table-number &#35;108099
                                     p.orders__table-text от 18 июн 2024, 11:35
                                 p.orders__table-status.orders__table-blue Доставка
-                                p.orders__table-text Доставка, 19 июн 2024 <br>с 10:00 до 11:00
+                                p.orders__table-name Букет французских роз и хризантем
+                                p.orders__table-text 
+                                    span.orders__table-span На время
+                                    | Доставка, 19 июн 2024 с 10:00 до 11:00
                                 .orders__table-delivery
+                                    span.orders__table-span Адрес
                                     p.orders__table-text Москва, Ленинский проспект 12
                                 .orders__table-payment
                                     img(src="img/credit-card-refresh.svg", alt="alt").orders__table-icon 
                                     p.orders__table-status.orders__table-orange Не оплачено
-                                .orders__table-sum 2 200 ₽ 
+                                .orders__table-sum
+                                    span.orders__table-span Сумма
+                                    | 2 200 ₽ 
                                 .orders__table-income
+                                    span.orders__table-span Ваш доход
                                     p.orders__table-text 1 205 ₽
                             .orders__table-item
                                 .orders__table-img 
@@ -253,14 +281,21 @@ html(lang="ru")
                                     p.orders__table-number &#35;108099
                                     p.orders__table-text от 18 июн 2024, 11:35
                                 p.orders__table-status.orders__table-red Отменен
-                                p.orders__table-text Доставка, 19 июн 2024 <br>с 10:00 до 11:00
+                                p.orders__table-name Букет французских роз и хризантем
+                                p.orders__table-text 
+                                    span.orders__table-span На время
+                                    | Доставка, 19 июн 2024 с 10:00 до 11:00
                                 .orders__table-delivery
+                                    span.orders__table-span Адрес
                                     p.orders__table-text Москва, Ленинский проспект 12
                                 .orders__table-payment
                                     img(src="img/credit-card-red.svg", alt="alt").orders__table-icon 
                                     p.orders__table-status.orders__table-red Возврат
-                                .orders__table-sum 2 200 ₽ 
+                                .orders__table-sum
+                                    span.orders__table-span Сумма
+                                    | 2 200 ₽ 
                                 .orders__table-income
+                                    span.orders__table-span Ваш доход
                                     p.orders__table-text 1 205 ₽
                             .orders__table-item
                                 .orders__table-img 
@@ -270,157 +305,22 @@ html(lang="ru")
                                     p.orders__table-number &#35;108099
                                     p.orders__table-text от 18 июн 2024, 11:35
                                 p.orders__table-status.orders__table-red Отменен
-                                .orders__table-col 
-                                    p.orders__table-text Доставка, 19 июн 2024 <br>с 10:00 до 11:00
+                                p.orders__table-name Букет французских роз и хризантем
+                                p.orders__table-text 
+                                    span.orders__table-span На время
+                                    | Доставка, 19 июн 2024 с 10:00 до 11:00
                                 .orders__table-delivery
+                                    span.orders__table-span Адрес
                                     p.orders__table-text Москва, Ленинский проспект 12
                                 .orders__table-payment
                                     img(src="img/credit-card-red.svg", alt="alt").orders__table-icon 
                                     p.orders__table-status.orders__table-red Возврат
-                                .orders__table-sum 2 200 ₽ 
+                                .orders__table-sum
+                                    span.orders__table-span Сумма
+                                    | 2 200 ₽ 
                                 .orders__table-income
+                                    span.orders__table-span Ваш доход
                                     p.orders__table-text 1 205 ₽
-                        .orders__table-content.orders__table-small
-                            .orders__table-mitem
-                                .orders__table-line 
-                                    .orders__table-col
-                                        p.orders__table-number &#35;108099
-                                        p.orders__table-text от 18 июн 2024, 11:35
-                                    .orders__table-col
-                                        p.orders__table-status.orders__table-green Новый
-                                        .orders__table-payment
-                                            img(src="img/credit-card-refresh.svg", alt="alt").orders__table-icon 
-                                            p.orders__table-status.orders__table-orange Не оплачено
-                                .orders__table-cont
-                                    .orders__table-img 
-                                        img(src="img/order-1.png", alt="").orders__table-img 
-                                        p.orders__table-nums 1
-                                    .orders__table-name Букет французских роз и хризантем
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-col 
-                                        h5.orders__table-title На время
-                                        p.orders__table-text Доставка, 19 июн 2024 с 10:00 до 11:00
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-delivery
-                                        h5.orders__table-title Адрес
-                                        p.orders__table-text Москва, Ленинский проспект 12
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-line
-                                        .orders__table-col 
-                                            h5.orders__table-title Сумма
-                                            .orders__table-sum 2 200 ₽ 
-                                        .orders__table-col 
-                                            h5.orders__table-title Ваш доход
-                                            .orders__table-income
-                                                p.orders__table-text 1 205 ₽
-                            .orders__table-mitem
-                                .orders__table-line 
-                                    .orders__table-col
-                                        p.orders__table-number &#35;108099
-                                        p.orders__table-text от 18 июн 2024, 11:35
-                                    .orders__table-col
-                                        p.orders__table-status.orders__table-blue Доставка
-                                        .orders__table-payment
-                                            img(src="img/credit-card.svg", alt="alt").orders__table-icon 
-                                            p.orders__table-status.orders__table-green Оплачено
-                                .orders__table-cont
-                                    .orders__table-img 
-                                        img(src="img/order-1.png", alt="").orders__table-img 
-                                        p.orders__table-nums 1
-                                    .orders__table-name Букет французских роз и хризантем
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-col 
-                                        h5.orders__table-title На время
-                                        p.orders__table-text Доставка, 19 июн 2024 с 10:00 до 11:00
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-delivery
-                                        h5.orders__table-title Адрес
-                                        p.orders__table-text Москва, Ленинский проспект 12
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-line
-                                        .orders__table-col 
-                                            h5.orders__table-title Сумма
-                                            .orders__table-sum 2 200 ₽ 
-                                        .orders__table-col 
-                                            h5.orders__table-title Ваш доход
-                                            .orders__table-income
-                                                p.orders__table-text 1 205 ₽
-                            .orders__table-mitem
-                                .orders__table-line 
-                                    .orders__table-col
-                                        p.orders__table-number &#35;108099
-                                        p.orders__table-text от 18 июн 2024, 11:35
-                                    .orders__table-col
-                                        p.orders__table-status.orders__table-red Отменен
-                                        .orders__table-payment
-                                            img(src="img/credit-card-red.svg", alt="alt").orders__table-icon 
-                                            p.orders__table-status.orders__table-red Возврат
-                                .orders__table-cont
-                                    .orders__table-img 
-                                        img(src="img/order-1.png", alt="").orders__table-img 
-                                        p.orders__table-nums 1
-                                    .orders__table-name Букет французских роз и хризантем
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-col 
-                                        h5.orders__table-title На время
-                                        p.orders__table-text Доставка, 19 июн 2024 с 10:00 до 11:00
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-delivery
-                                        h5.orders__table-title Адрес
-                                        p.orders__table-text Москва, Ленинский проспект 12
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-line
-                                        .orders__table-col 
-                                            h5.orders__table-title Сумма
-                                            .orders__table-sum 2 200 ₽ 
-                                        .orders__table-col 
-                                            h5.orders__table-title Ваш доход
-                                            .orders__table-income
-                                                p.orders__table-text 1 205 ₽
-                            .orders__table-mitem
-                                .orders__table-line 
-                                    .orders__table-col
-                                        p.orders__table-number &#35;108099
-                                        p.orders__table-text от 18 июн 2024, 11:35
-                                    .orders__table-col
-                                        p.orders__table-status.orders__table-red Отменен
-                                        .orders__table-payment
-                                            img(src="img/credit-card-red.svg", alt="alt").orders__table-icon 
-                                            p.orders__table-status.orders__table-red Возврат
-                                .orders__table-cont
-                                    .orders__table-img 
-                                        img(src="img/order-1.png", alt="").orders__table-img 
-                                        p.orders__table-nums 1
-                                    .orders__table-name Букет французских роз и хризантем
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-col 
-                                        h5.orders__table-title На время
-                                        p.orders__table-text Доставка, 19 июн 2024 с 10:00 до 11:00
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-delivery
-                                        h5.orders__table-title Адрес
-                                        p.orders__table-text Москва, Ленинский проспект 12
-                                .orders__table-cont
-                                    .orders__table-both
-                                    .orders__table-line
-                                        .orders__table-col 
-                                            h5.orders__table-title Сумма
-                                            .orders__table-sum 2 200 ₽ 
-                                        .orders__table-col 
-                                            h5.orders__table-title Ваш доход
-                                            .orders__table-income
-                                                p.orders__table-text 1 205 ₽
                             .pages 
                                 button(type="button").pages__btn
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1691,9 +1591,45 @@ html(lang="ru")
                             p.price__table-text Роза Кения/Россия 40 см
                             label.label(for="price__table-color1").colors
                                 P.price__label Цвет 
-                                input(type="text", name="" value="").input.price__input#price__table-color1
+                                input(type="text", name="" value="Цвета" readonly).input.price__input#price__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
                             label.label(for="price__table-price1")
-                                P.price__label Цвет 
+                                P.price__label Цена 
                                 input(type="number", name="" value="50").input.price__input#price__table-price1
                             label.label(for="price__table-quantity1")
                                 P.price__label Количество 
@@ -1708,9 +1644,45 @@ html(lang="ru")
                             p.price__table-text Роза Кения/Россия 40 см
                             label.label(for="price__table-color2").colors
                                 P.price__label Цвет 
-                                input(type="text", name="" value="").input.price__input#price__table-color2
+                                input(type="text", name="" value="Цвета" readonly).input.price__input#price__table-color2.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
                             label.label(for="price__table-price2")
-                                P.price__label Цвет 
+                                P.price__label Цена 
                                 input(type="number", name="" value="50").input.price__input#price__table-price2
                             label.label(for="price__table-quantity2")
                                 P.price__label Количество 
@@ -1725,9 +1697,45 @@ html(lang="ru")
                             p.price__table-text Роза Кения/Россия 40 см
                             label.label(for="price__table-color3").colors
                                 P.price__label Цвет 
-                                input(type="text", name="" value="").input.price__input#price__table-color3
+                                input(type="text", name="" value="Цвета" readonly).input.price__input#price__table-color3.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
                             label.label(for="price__table-price3")
-                                P.price__label Цвет 
+                                P.price__label Цена 
                                 input(type="number", name="" value="50").input.price__input#price__table-price3
                             label.label(for="price__table-quantity3")
                                 P.price__label Количество 
@@ -1740,11 +1748,47 @@ html(lang="ru")
                                 </svg>
                         .price__table-item 
                             p.price__table-text Роза Кения/Россия 40 см
-                            label.label(for="price__table-color4").colors 
+                            label.label(for="price__table-color4").colors
                                 P.price__label Цвет 
-                                input(type="text", name="" value="").input.price__input#price__table-color4
+                                input(type="text", name="" value="Цвета" readonly).input.price__input#price__table-color4.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
                             label.label(for="price__table-price4") 
-                                P.price__label Цвет 
+                                P.price__label Цена
                                 input(type="number", name="" value="50").input.price__input#price__table-price4
                             label.label(for="price__table-quantity4")
                                 P.price__label Количество 
@@ -2116,6 +2160,899 @@ html(lang="ru")
                                 </svg>
                                 | Добавить
             .bukedo.main-block(data-main='bukedo')
+                .bukedo__wrapper.bukedo__wrapper-active(data-shops='flowers')
+                    .bukedo__top
+                        .bukedo__head
+                            h2.main-title Цветы
+                            button(type="button").btn.btn_primary.bukedo__head-btn
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
+                        .tags 
+                            button(type="button").tags__btn.tags__btn-active
+                                p.tags__btn-text Розы
+                            button(type="button").tags__btn
+                                p.tags__btn-text Другие цветы
+                    .bukedo__table
+                        .bukedo__table-head
+                            p.bukedo__table-htext 
+                                | Наименование
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.61108 9.72217L9.13886 12.2499L11.6666 9.72217" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.13892 12.2501V6.02783" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.33325 4.27778L4.86103 1.75L7.38881 4.27778" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.86108 1.75V7.97222" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            p.bukedo__table-htext 
+                                | Цена
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.61108 9.72217L9.13886 12.2499L11.6666 9.72217" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.13892 12.2501V6.02783" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.33325 4.27778L4.86103 1.75L7.38881 4.27778" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.86108 1.75V7.97222" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            p.bukedo__table-htext Цвет
+                            p.bukedo__table-htext Модерация
+                            p.bukedo__table-htext
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.burgundy
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V3.8M8 12.2V15M3.05078 3.05099L5.03178 5.032M10.968 10.968L12.949 12.949M1 8H3.8M12.2 8H15M3.05078 12.949L5.03178 10.968M10.968 5.032L12.949 3.051" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                | Модерация
+                            button(type="button").bukedo__table-btn История
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.burgundy
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V3.8M8 12.2V15M3.05078 3.05099L5.03178 5.032M10.968 10.968L12.949 12.949M1 8H3.8M12.2 8H15M3.05078 12.949L5.03178 10.968M10.968 5.032L12.949 3.051" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                | Модерация
+                            button(type="button").bukedo__table-btn История
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.burgundy
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V3.8M8 12.2V15M3.05078 3.05099L5.03178 5.032M10.968 10.968L12.949 12.949M1 8H3.8M12.2 8H15M3.05078 12.949L5.03178 10.968M10.968 5.032L12.949 3.051" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                | Модерация
+                            button(type="button").bukedo__table-btn История
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.green
+                                | Одобрено
+                            button(type="button").bukedo__table-btn История
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.burgundy
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V3.8M8 12.2V15M3.05078 3.05099L5.03178 5.032M10.968 10.968L12.949 12.949M1 8H3.8M12.2 8H15M3.05078 12.949L5.03178 10.968M10.968 5.032L12.949 3.051" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                | Модерация
+                            button(type="button").bukedo__table-btn История
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.burgundy
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V3.8M8 12.2V15M3.05078 3.05099L5.03178 5.032M10.968 10.968L12.949 12.949M1 8H3.8M12.2 8H15M3.05078 12.949L5.03178 10.968M10.968 5.032L12.949 3.051" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                | Модерация
+                            button(type="button").bukedo__table-btn История
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.burgundy
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V3.8M8 12.2V15M3.05078 3.05099L5.03178 5.032M10.968 10.968L12.949 12.949M1 8H3.8M12.2 8H15M3.05078 12.949L5.03178 10.968M10.968 5.032L12.949 3.051" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                | Модерация
+                            button(type="button").bukedo__table-btn История
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.burgundy
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V3.8M8 12.2V15M3.05078 3.05099L5.03178 5.032M10.968 10.968L12.949 12.949M1 8H3.8M12.2 8H15M3.05078 12.949L5.03178 10.968M10.968 5.032L12.949 3.051" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                | Модерация
+                            button(type="button").bukedo__table-btn История
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.burgundy
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V3.8M8 12.2V15M3.05078 3.05099L5.03178 5.032M10.968 10.968L12.949 12.949M1 8H3.8M12.2 8H15M3.05078 12.949L5.03178 10.968M10.968 5.032L12.949 3.051" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                | Модерация
+                            button(type="button").bukedo__table-btn История
+                        .bukedo__table-item 
+                            p.bukedo__table-text Роза Кения/Россия 40 см
+                            label.label(for="bukedo__table-bukedo1")
+                                P.bukedo__label Цена 
+                                input(type="number", name="" value="50").input.bukedo__input#bukedo__table-bukedo1
+                            label.label(for="bukedo__table-color1").colors
+                                P.bukedo__label Цвет 
+                                input(type="text", name="" value="Цвета" readonly).input.bukedo__input#bukedo__table-color1.colors__input
+                                .colors__active
+                                .colors__dropdawn
+                                    .colors__dropdawn-head 
+                                        h3.colors__dropdawn-title Выберите цвет
+                                        button(type="button").colors__dropdawn-close
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                    .colors__dropdawn-content 
+                                        .color
+                                            .color__item
+                                                .color__item-color.color__item-white
+                                            .color__item
+                                                .color__item-color.color__item-carmine
+                                            .color__item
+                                                .color__item-color.color__item-rose
+                                            .color__item
+                                                .color__item-color.color__item-cream
+                                            .color__item
+                                                .color__item-color.color__item-yellow
+                                            .color__item
+                                                .color__item-color.color__item-red
+                                            .color__item
+                                                .color__item-color.color__item-orange
+                                            .color__item
+                                                .color__item-color.color__item-sky
+                                            .color__item
+                                                .color__item-color.color__item-blue
+                                            .color__item
+                                                .color__item-color.color__item-green
+                                            .color__item
+                                                .color__item-color.color__item-coral
+                                            .color__item
+                                                .color__item-color.color__item-fuchsia
+                                            .color__item
+                                                .color__item-color.color__item-lilac
+                            p.bukedo__table-moderation.burgundy
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V3.8M8 12.2V15M3.05078 3.05099L5.03178 5.032M10.968 10.968L12.949 12.949M1 8H3.8M12.2 8H15M3.05078 12.949L5.03178 10.968M10.968 5.032L12.949 3.051" stroke="#AD2950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                | Модерация
+                            button(type="button").bukedo__table-btn История
+                        
+                .bukedo__wrapper(data-shops='green')
+                    .bukedo__top
+                        .bukedo__head
+                            h2.main-title Зелень
+                            button(type="button").btn.btn_primary.bukedo__head-btn
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
+                .bukedo__wrapper(data-shops='materials')
+                    .bukedo__top
+                        .bukedo__head
+                            h2.main-title Материалы
+                            button(type="button").btn.btn_primary.bukedo__head-btn
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
+                        .tags 
+                            button(type="button").tags__btn.tags__btn-active
+                                p.tags__btn-text Все
+                            button(type="button").tags__btn
+                                p.tags__btn-text Ленты
+                            button(type="button").tags__btn
+                                p.tags__btn-text Упаковки
+                            button(type="button").tags__btn
+                                p.tags__btn-text Коробки
+                            button(type="button").tags__btn
+                                p.tags__btn-text Шляпные коробки
+                            button(type="button").tags__btn
+                                p.tags__btn-text Корзины
+                    .bukedo__materials 
+                        .bukedo__materials-head 
+                            p.bukedo__materials-htext 
+                                | Название
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.61108 9.72217L9.13886 12.2499L11.6666 9.72217" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.13892 12.2501V6.02783" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.33325 4.27778L4.86103 1.75L7.38881 4.27778" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.86108 1.75V7.97222" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            p.bukedo__materials-htext Размер
+                            p.bukedo__materials-htext Форма
+                            p.bukedo__materials-htext 
+                                | Цена ₽/шт.
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.61108 9.72217L9.13886 12.2499L11.6666 9.72217" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.13892 12.2501V6.02783" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.33325 4.27778L4.86103 1.75L7.38881 4.27778" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.86108 1.75V7.97222" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            p.bukedo__materials-htext 
+                                | Наличие
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.61108 9.72217L9.13886 12.2499L11.6666 9.72217" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.13892 12.2501V6.02783" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.33325 4.27778L4.86103 1.75L7.38881 4.27778" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.86108 1.75V7.97222" stroke="#727C8A" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            p.bukedo__materials-htext
+                        .bukedo__materials-item 
+                            p.bukedo__materials-text Коробка
+                            label(for="").label 
+                                P.bukedo__label Размер
+                                input(type="text", name="" value="Маленький" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Маленький
+                                    li.option Средний
+                                    li.option Большой
+                            label(for="").label 
+                                P.bukedo__label Форма
+                                input(type="text", name="" value="Прямоугольный" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Прямоугольный
+                                    li.option Круглый
+                                    li.option Квадратный
+                            label.label
+                                P.bukedo__label Цена ₽/шт.
+                                input(type="number", name="" value="1").input.bukedo__input
+                            label.label
+                                P.bukedo__label Наличие
+                                input(type="number", name="" value="1").input.bukedo__input
+                            button(type="button").bukedo__materials-btn
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .bukedo__materials-item 
+                            p.bukedo__materials-text Коробка
+                            label(for="").label 
+                                P.bukedo__label Размер
+                                input(type="text", name="" value="Маленький" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Маленький
+                                    li.option Средний
+                                    li.option Большой
+                            label(for="").label 
+                                P.bukedo__label Форма
+                                input(type="text", name="" value="Прямоугольный" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Прямоугольный
+                                    li.option Круглый
+                                    li.option Квадратный
+                            label.label
+                                P.bukedo__label Цена ₽/шт.
+                                input(type="number", name="" value="1").input.bukedo__input
+                            label.label
+                                P.bukedo__label Наличие
+                                input(type="number", name="" value="1").input.bukedo__input
+                            button(type="button").bukedo__materials-btn
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .bukedo__materials-item 
+                            p.bukedo__materials-text Коробка
+                            label(for="").label 
+                                P.bukedo__label Размер
+                                input(type="text", name="" value="Маленький" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Маленький
+                                    li.option Средний
+                                    li.option Большой
+                            label(for="").label 
+                                P.bukedo__label Форма
+                                input(type="text", name="" value="Прямоугольный" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Прямоугольный
+                                    li.option Круглый
+                                    li.option Квадратный
+                            label.label
+                                P.bukedo__label Цена ₽/шт.
+                                input(type="number", name="" value="1").input.bukedo__input
+                            label.label
+                                P.bukedo__label Наличие
+                                input(type="number", name="" value="1").input.bukedo__input
+                            button(type="button").bukedo__materials-btn
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .bukedo__materials-item 
+                            p.bukedo__materials-text Коробка
+                            label(for="").label 
+                                P.bukedo__label Размер
+                                input(type="text", name="" value="Маленький" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Маленький
+                                    li.option Средний
+                                    li.option Большой
+                            label(for="").label 
+                                P.bukedo__label Форма
+                                input(type="text", name="" value="Прямоугольный" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Прямоугольный
+                                    li.option Круглый
+                                    li.option Квадратный
+                            label.label
+                                P.bukedo__label Цена ₽/шт.
+                                input(type="number", name="" value="1").input.bukedo__input
+                            label.label
+                                P.bukedo__label Наличие
+                                input(type="number", name="" value="1").input.bukedo__input
+                            button(type="button").bukedo__materials-btn
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .bukedo__materials-item 
+                            p.bukedo__materials-text Коробка
+                            label(for="").label 
+                                P.bukedo__label Размер
+                                input(type="text", name="" value="Маленький" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Маленький
+                                    li.option Средний
+                                    li.option Большой
+                            label(for="").label 
+                                P.bukedo__label Форма
+                                input(type="text", name="" value="Прямоугольный" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Прямоугольный
+                                    li.option Круглый
+                                    li.option Квадратный
+                            label.label
+                                P.bukedo__label Цена ₽/шт.
+                                input(type="number", name="" value="1").input.bukedo__input
+                            label.label
+                                P.bukedo__label Наличие
+                                input(type="number", name="" value="1").input.bukedo__input
+                            button(type="button").bukedo__materials-btn
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .bukedo__materials-item 
+                            p.bukedo__materials-text Коробка
+                            label(for="").label 
+                                P.bukedo__label Размер
+                                input(type="text", name="" value="Маленький" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Маленький
+                                    li.option Средний
+                                    li.option Большой
+                            label(for="").label 
+                                P.bukedo__label Форма
+                                input(type="text", name="" value="Прямоугольный" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Прямоугольный
+                                    li.option Круглый
+                                    li.option Квадратный
+                            label.label
+                                P.bukedo__label Цена ₽/шт.
+                                input(type="number", name="" value="1").input.bukedo__input
+                            label.label
+                                P.bukedo__label Наличие
+                                input(type="number", name="" value="1").input.bukedo__input
+                            button(type="button").bukedo__materials-btn
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .bukedo__materials-item 
+                            p.bukedo__materials-text Коробка
+                            label(for="").label 
+                                P.bukedo__label Размер
+                                input(type="text", name="" value="Маленький" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Маленький
+                                    li.option Средний
+                                    li.option Большой
+                            label(for="").label 
+                                P.bukedo__label Форма
+                                input(type="text", name="" value="Прямоугольный" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Прямоугольный
+                                    li.option Круглый
+                                    li.option Квадратный
+                            label.label
+                                P.bukedo__label Цена ₽/шт.
+                                input(type="number", name="" value="1").input.bukedo__input
+                            label.label
+                                P.bukedo__label Наличие
+                                input(type="number", name="" value="1").input.bukedo__input
+                            button(type="button").bukedo__materials-btn
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .bukedo__materials-item 
+                            p.bukedo__materials-text Коробка
+                            label(for="").label 
+                                P.bukedo__label Размер
+                                input(type="text", name="" value="Маленький" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Маленький
+                                    li.option Средний
+                                    li.option Большой
+                            label(for="").label 
+                                P.bukedo__label Форма
+                                input(type="text", name="" value="Прямоугольный" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Прямоугольный
+                                    li.option Круглый
+                                    li.option Квадратный
+                            label.label
+                                P.bukedo__label Цена ₽/шт.
+                                input(type="number", name="" value="1").input.bukedo__input
+                            label.label
+                                P.bukedo__label Наличие
+                                input(type="number", name="" value="1").input.bukedo__input
+                            button(type="button").bukedo__materials-btn
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>
+                        .bukedo__materials-item 
+                            p.bukedo__materials-text Коробка
+                            label(for="").label 
+                                P.bukedo__label Размер
+                                input(type="text", name="" value="Маленький" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Маленький
+                                    li.option Средний
+                                    li.option Большой
+                            label(for="").label 
+                                P.bukedo__label Форма
+                                input(type="text", name="" value="Прямоугольный" readonly).input.select.bukedo__input
+                                ul.options
+                                    li.option Прямоугольный
+                                    li.option Круглый
+                                    li.option Квадратный
+                            label.label
+                                P.bukedo__label Цена ₽/шт.
+                                input(type="number", name="" value="1").input.bukedo__input
+                            label.label
+                                P.bukedo__label Наличие
+                                input(type="number", name="" value="1").input.bukedo__input
+                            button(type="button").bukedo__materials-btn
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 22H22" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M9 16.9998L4 17.9998L5 12.9998L15.707 2.29276C16.098 1.90176 16.731 1.90176 17.121 2.29276L19.707 4.87876C20.098 5.26976 20.098 5.90276 19.707 6.29276L9 16.9998Z" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10" stroke-linecap="square"/>
+                                    <path d="M13 5L17 9" stroke="#1C1C1D" stroke-width="1.58" stroke-miterlimit="10"/>
+                                </svg>                        
+                        .bukedo__footer
+                            .quantity
+                                p.quantity__text Показывать по
+                                select(name="").quantity__select 
+                                    option(value="10") 10
+                                    option(value="20") 20
+                                    option(value="30") 30
+                            .pages 
+                                button(type="button").pages__btn
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.657 15L15.832 13.825L12.0154 10L15.832 6.175L14.657 5L9.65703 10L14.657 15Z" fill="#1C1C1D"/>
+                                        <path d="M9.1668 15L10.3418 13.825L6.52513 10L10.3418 6.175L9.1668 5L4.1668 10L9.1668 15Z" fill="#1C1C1D"/>
+                                    </svg>
+                                button(type="button").pages__btn
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.742 15L13.917 13.825L10.1003 10L13.917 6.175L12.742 5L7.74199 10L12.742 15Z" fill="#1C1C1D"/>
+                                    </svg>
+                                button(type="button").pages__btn.pages__btn-active 1
+                                button(type="button").pages__btn 2
+                                .pages__dots ...
+                                button(type="button").pages__btn 10
+                                button(type="button").pages__btn
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.50801 5L8.33301 6.175L12.1497 10L8.33301 13.825L9.50801 15L14.508 10L9.50801 5Z" fill="#1C1C1D"/>
+                                    </svg>
+                                button(type="button").pages__btn
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.34297 5L4.16797 6.175L7.98464 10L4.16797 13.825L5.34297 15L10.343 10L5.34297 5Z" fill="#1C1C1D"/>
+                                        <path d="M10.8332 5L9.6582 6.175L13.4749 10L9.6582 13.825L10.8332 15L15.8332 10L10.8332 5Z" fill="#1C1C1D"/>
+                                    </svg>
+                .bukedo__wrapper(data-shops='other')
+                    .bukedo__top
+                        .bukedo__head
+                            h2.main-title Прочее
+                            button(type="button").btn.btn_primary.bukedo__head-btn
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
+                .bukedo__wrapper(data-shops='general-bouquets')
+                    .bukedo__top
+                        .bukedo__head
+                            h2.main-title Общие букеты
+                            button(type="button").btn.btn_primary.confirm__head-btn
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16699 9.99984H15.8337M10.0003 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                | Добавить
             .rating.main-block(data-main='rating')
                 h2.main-title Рейтинг за 60 дней
                 .rating__wrapper 
@@ -3083,13 +4020,13 @@ html(lang="ru")
                         <path d="M1 1L7 7M7 7L13 13M7 7L13 1M7 7L1 13" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                 h2.main-title Выберите категорию
-                label(for="").label 
+                label(for="modal__category").label 
                     P.modal__label Выберите категорию новой позиции прайса
-                    input(type="text", name="" value="Выберите категорию" readonly).input.select
+                    input(type="text", name="" value="Выберите категорию" readonly).input.select#modal__category
                     ul.options
                         li.option Выберите категорию
-                        li.option Выберите категорию
-                        li.option Выберите категорию
+                        li.option Категория 2
+                        li.option Категория 3
                 .modal__footer  
                     button(type="button").btn.btn_secondary.modal__cancellation Отмена
                     button(type="button").btn.btn_primary.modal__next Продолжить
@@ -3360,20 +4297,49 @@ html(lang="ru")
                             </svg>
                             .modal__status-line
                         p.modal__status-text.modal__status-text-bur Завершение заказа
-                .modal__content
+                .modal__contents
                     .modal__foto.modal-work(data-work="1")
-                        .modal__foto-bg 
+                        .modal__foto-bg.modal__foto-bg-active
                             img(src="img/foto_bg.svg", alt="")
                             p.modal__foto-text
                                 a(href="").modal__foto-link Кликните для загрузки 
                                 | или перетащите файл сюда
-                        .modal__foto-main
+                        .modal__foto-main.modal__foto-main-active
                             .modal__foto-image 
                                 img(src="img/product_1.png", alt="")
                                 button(type="button").modal__foto-edit
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14.6037 5.39651L12.8927 7.10758M2.20705 18.3298L5.51763 17.9441C6.49214 17.8306 7.39977 17.3914 8.09351 16.6976L17.3414 7.44975C18.6644 6.12675 18.6644 3.98175 17.3414 2.65875C16.0184 1.33575 13.8734 1.33575 12.5504 2.65875L3.30251 11.9067C2.60877 12.6004 2.16956 13.508 2.05603 14.4825L1.67033 17.7931C1.63419 18.1033 1.89689 18.366 2.20705 18.3298Z" stroke="#1C1C1D" stroke-linecap="round"/>
                                     </svg>
+                    .modal__area.modal-work(data-work="3")
+                        .modal__foto2
+                            .modal__foto2-left.modal__foto2-left-active
+                                img(src="img/foto2_bg.svg", alt="")
+                                p.modal__foto-text
+                                    a(href="").modal__foto-link Кликните для загрузки 
+                                    | или перетащите файл сюда
+                            .modal__foto-main
+                                .modal__foto-image 
+                                    img(src="img/product_1.png", alt="")
+                                    button(type="button").modal__foto-edit
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.6037 5.39651L12.8927 7.10758M2.20705 18.3298L5.51763 17.9441C6.49214 17.8306 7.39977 17.3914 8.09351 16.6976L17.3414 7.44975C18.6644 6.12675 18.6644 3.98175 17.3414 2.65875C16.0184 1.33575 13.8734 1.33575 12.5504 2.65875L3.30251 11.9067C2.60877 12.6004 2.16956 13.508 2.05603 14.4825L1.67033 17.7931C1.63419 18.1033 1.89689 18.366 2.20705 18.3298Z" stroke="#1C1C1D" stroke-linecap="round"/>
+                                        </svg>
+                            .modal__foto2-right 
+                                .modal__foto2-top
+                                    h2.modal__title Фото получателя с букетом
+                                    p.modal__foto2-text Заказчик оплатил услугу фото с покупателем. Постарайтесь сделать удачное фото. 
+                                .modal__foto2-bottom
+                                    .check
+                                        input.check__input#foto-refusal(type="checkbox", name="foto-refusal")
+                                        label.check__label(for="foto-refusal")
+                                            .check__check
+                                            p.check__text Получатель отказался от фото
+                                    .check
+                                        input.check__input#foto-worknot(type="checkbox", name="foto-worknot")
+                                        label.check__label(for="foto-worknot")
+                                            .check__check
+                                            p.check__text Не получилось фото
                     .modal__area
                         .modal__area-head
                             h2.modal__title Получатель и доставка
@@ -3382,10 +4348,10 @@ html(lang="ru")
                             </svg>
                         .modal__area-content 
                             .modal__area-line
-                                .modal__area-item
+                                .modal__area-item.modal__span2
                                     h3.modal__area-title Доставить
                                     p.modal__area-text 08 окт 2024, 12:00 - 14:00  
-                                .modal__area-item
+                                .modal__area-item.modal__span2
                                     h3.modal__area-title Адрес доставки
                                     p.modal__area-text г. Москва, Ленинский пр-т, д.7, кв. 85
                             .modal__area-line
@@ -3492,15 +4458,26 @@ html(lang="ru")
                                     p.modal__textarea-first 0
                                     p.modal__textarea-second /200
                             button(type="button").btn.btn_green Сохранить
+                button(type="button" data-work="0").btn.btn_primary#modal__work.modal-work Принять в работу
                 .modal__btns.modal-work(data-work="1")
                     button(type="button").btn.btn_secondary.modal__next Пропустить шаг
                     button(type="button").btn.btn_primary.modal__next Загрузить и продолжить
                 .modal__btns.modal-work(data-work="2")
-                    button(type="button").btn.btn_white.modal__next Забрали самовывозом
-                    button(type="button").btn.btn_primary.modal__next Подтвердить передачу в доставку
-                button(type="button" data-work="0").btn.btn_primary#modal__work.modal-work Принять в работу
-                button(type="button").btn.btn_secondary#modal__refusal Отказаться от заказа
-
+                    button(type="button").btn.btn_white.modal__next2 Забрали самовывозом
+                    button(type="button").btn.btn_primary.modal__next2 Подтвердить передачу в доставку
+                button(type="button" data-work="3").btn.btn_primary.modal-work Завершить заказ
+                button(type="button").btn_refusal#modal__refusal Отказаться от заказа
+        .confirm
+            .confirm__wrapper
+                button(type="button").confirm__close 
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7M7 7L13 13M7 7L13 1M7 7L1 13" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                h2.main-title Вы точно хотите поменять статус заказа?
+                .confirm__btns 
+                    button(type="button").btn.btn_secondary.confirm__cancellation Отмена
+                    button(type="button").btn.btn_primary.confirm__ok Изменить статус
+            
 
 
             
