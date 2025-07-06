@@ -481,8 +481,6 @@ for (let i = 0; i < ordersTableItemArray.length; i++) {
                         confirm.classList.remove('confirm-active')
                     })
                 })
-
-
                 for (let i = 0; i < modalNextArray.length; i++) {
                     const modalNext = modalNextArray[i];
                     modalNext.addEventListener('click', function(){
@@ -491,7 +489,6 @@ for (let i = 0; i < ordersTableItemArray.length; i++) {
                             modalNumber = 2
                             modalWorkFun (modalWorkArray, modalNumber)
                             confirm.classList.remove('confirm-active')
-                            
                         })
                         confirmСancellation.addEventListener('click', function(){
                             confirm.classList.remove('confirm-active')
@@ -521,8 +518,12 @@ for (let i = 0; i < ordersTableItemArray.length; i++) {
                 }
             }
             const modalClose = modal.querySelector('.modal__close')
+            const confirmClose = confirm.querySelector('.confirm__close')
             modalClose.addEventListener('click', function(){
                 modal.classList.remove('modal-active')
+            })
+            confirmClose.addEventListener('click', function(){
+                confirm.classList.remove('confirm-active')
             })
             modalRefusal.addEventListener('click', function(){
                 modal.classList.remove('modal-active')
@@ -686,3 +687,21 @@ for (let i = 0; i < menuItemArray.length; i++) {
         }
     })
 }
+const offerBtn = document.querySelector('.offer-btn')
+offerBtn.addEventListener('click', function(){
+    for (let i = 0; i < modalArray.length; i++) {
+        const modal = modalArray[i];
+        if (modal.dataset.modal === 'offer') {
+            modal.classList.add('modal-active')
+            const modalClose = modal.querySelector('.modal__close')
+            modalClose.addEventListener('click', function(){
+                modal.classList.remove('modal-active')
+            })
+            const modalCancellation = modal.querySelector('.modal__cancellation')
+            modalCancellation.addEventListener('click', function(){
+                modal.classList.remove('modal-active')
+            })
+        }
+        
+    }
+})
