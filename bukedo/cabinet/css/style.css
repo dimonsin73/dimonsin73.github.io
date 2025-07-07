@@ -378,17 +378,15 @@ input::-webkit-inner-spin-button {
   }
 }
 .login {
-  display: none;
+  display: flex;
   justify-content: space-between;
+  gap: 70px;
   max-width: 1440px;
   width: 100%;
   height: 100vh;
   margin: 0 auto;
   padding: 24px;
   background-color: #fff;
-}
-.login-active {
-  display: flex;
 }
 .login__left {
   position: relative;
@@ -427,7 +425,7 @@ input::-webkit-inner-spin-button {
   max-width: 410px;
   width: 100%;
   min-width: 335px;
-  margin-right: 71px;
+  margin-right: 70px;
 }
 .login__right-title {
   font: 500 30px/36px "PT Root UI", "sans-serif";
@@ -481,11 +479,14 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 1349px) {
+  .login {
+    gap: 20px;
+  }
   .login__right {
     margin-right: 20px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .login {
     justify-content: center;
     padding: 20px;
