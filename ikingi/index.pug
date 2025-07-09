@@ -16,7 +16,7 @@ html(lang="ru")
             h1.title IKINGI
             button(type="button").btn Купить
         .products
-            .swiper
+            .swiper.swiper-main
                 .swiper-wrapper
                     .swiper-slide 
                         button(type="button" data-scooter='X7proTrike').swiper-scooter
@@ -43,40 +43,463 @@ html(lang="ru")
                 </svg>
             .modal__wrapper(data-scooter='X7proTrike') 
                 .modal__media 
-                    img(src="images/X7proTrike/TrikeOff1.png", alt="X7proTrike")
+                    .swiper.swiper-product
+                        .swiper-wrapper
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff1.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff1-1.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff1-2.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff1-3.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff1-4.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff2.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff3.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff4.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff5.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff6.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff7.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff8.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff9.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff13.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff14.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff15.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff16.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff17.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff18.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff19.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff20.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff21.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff22.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff23.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff24.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff26.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff27.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff28.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff29.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff30.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff31.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff32.png", alt="X7proTrike")
+                            .swiper-slide 
+                                img(src="images/X7proTrike/TrikeOff33.png", alt="X7proTrike")
+                        .swiper-pagination
+                        .swiper-button-prev
+                        .swiper-button-next
                 .modal__description
-                    h2.modal__title X7 PRO Trike
-                    p.modal__text Бренд электротранспорта IKINGI активно входит на белорусский рынок. Их модели CityCoco обещают стать популярными в 2024 году. Электроскутер IKINGI Х7 ПРО предоставит вам удобный способ передвижения как в большом городе, так и в провинциальных населенных пунктах, а даже и в сельской местности. Забудьте о ценах на бензин, расписаниях общественного транспорта и пересадках – мчитесь на скорости до 60 км/ч вместе с Икинги Х7 Про Трайк!
+                    h2.modal__title.modal__title-main IKINGI X7 PRO TRIKE
+                    p.modal__price 4 400 руб.
+                    button(type="button").btn.modal__btn Купить
+                    p.modal__text IKINGI X7 PRO TRIKE – Супермощный Трёхколёсник с Увеличенной Батареей
+                    p.modal__text X7 PRO TRIKE – улучшенная версия с двигателем 3000 Вт и аккумулятором 60V 25Ah, что обеспечивает пробег до 50 км и плавный разгон до 45 км/ч.
+                    h3.modal__title.modal__title-small Главные особенности:
+                    ul.modal__list 
+                        li.modal__list-item 
+                            | Усиленная стальная рама 
+                            span.modal__list-span – повышенная прочность и долговечность.
+                        li.modal__list-item
+                            | Гидравлическая тормозная система 
+                            span.modal__list-span – полный контроль на любой дороге.
+                        li.modal__list-item
+                            | Большая батарея 25Ah 
+                            span.modal__list-span – увеличенное время работы без подзарядки.
+                        li.modal__list-item
+                            | Эргономичное сиденье
+                            span.modal__list-span – комфорт даже при длительных поездках.
+                        li.modal__list-item
+                            | Бортовой компьютер 
+                            span.modal__list-span – мониторинг скорости, пробега и заряда.
+                    h3.modal__title.modal__title-small Кому подойдёт?
+                    ul.modal__list 
+                        li.modal__list-item.modal__list-item-square
+                            span.modal__list-span Тем, кому нужен 
+                            | самый мощный 
+                            span.modal__list-span трёхколёсный электроскутер.
+                        li.modal__list-item.modal__list-item-square
+                            span.modal__list-span Для 
+                            | перевозки грузов 
+                            span.modal__list-span или поездок вдвоём.
+                        li.modal__list-item.modal__list-item-square
+                            span.modal__list-span Для тех, кто ценит 
+                            | надёжность и долгий пробег.
+                    h3.modal__title.modal__title-small X7 PRO TRIKE – это максимум мощности, устойчивости и автономности!
                     h3.modal__title.modal__title-small Общие характеристики электроскутера IKINGI X7 PRO TRIKE
-                    ul.modal__list
-                        li.modal__list-item Мощность 2000 Вт
-                        li.modal__list-item Аккумулятор 60 В 20 Ач
-                        li.modal__list-item Скорость до 60 км/ч
-                        li.modal__list-item Запас хода до 45 км
-                        li.modal__list-item Нагрузка до 250 кг
+                    .modal__table
+                        .modal__table-line
+                            p.modal__table-text Мощность электродвигателя
+                            p.modal__table-text 3000 Вт
+                        .modal__table-line
+                            p.modal__table-text Время зарядки
+                            p.modal__table-text 8 час
+                        .modal__table-line
+                            p.modal__table-text Дистанция пробега
+                            p.modal__table-text 50 км
+                        .modal__table-line
+                            p.modal__table-text Максимальная скорость
+                            p.modal__table-text 45 км/ч
+                        .modal__table-line
+                            p.modal__table-text Количество колес
+                            p.modal__table-text 3 шт
+                        .modal__table-line
+                            p.modal__table-text Рекомендуемая предельная скорость
+                            p.modal__table-text 40 км/ч
+                        .modal__table-line
+                            p.modal__table-text Вес
+                            p.modal__table-text 94 кг
+                        .modal__table-line
+                            p.modal__table-text Страна производитель
+                            p.modal__table-text Китай
+                        .modal__table-line
+                            p.modal__table-text Состояние
+                            p.modal__table-text Новое
+                        .modal__table-line
+                            p.modal__table-text Цвет
+                            p.modal__table-text Черный
             .modal__wrapper(data-scooter='X12')
                 .modal__media 
-                    img(src="images/X12/1.png", alt="X12")
+                    .swiper.swiper-product
+                        .swiper-wrapper
+                            .swiper-slide 
+                                img(src="images/X12/1.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/1-1.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/2.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/3.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/3-3.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/4.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/5.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/5-5.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/6.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/6-6.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/7.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/8.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/9.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/10.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/11.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/12.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/13.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/14.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/15.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/16.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/17.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/18.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/19.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/20.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/21.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/22.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/23.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/24.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/25.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/26.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/27.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/29.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/30.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/31.png", alt="X12")
+                            .swiper-slide 
+                                img(src="images/X12/32.png", alt="X12")
+                        .swiper-pagination
+                        .swiper-button-prev
+                        .swiper-button-next
                 .modal__description
-                    h2.modal__title X12
-                    p.modal__text Бренд электротранспорта IKINGI активно входит на белорусский рынок. Их модели CityCoco обещают стать популярными в 2024 году. Электроскутер IKINGI Х7 ПРО предоставит вам удобный способ передвижения как в большом городе, так и в провинциальных населенных пунктах, а даже и в сельской местности. Забудьте о ценах на бензин, расписаниях общественного транспорта и пересадках – мчитесь на скорости до 60 км/ч вместе с Икинги Х7 Про Трайк!
-                    h3.modal__title.modal__title-small Общие характеристики электроскутера IKINGI X7 PRO TRIKE
-                    ul.modal__list
-                        li.modal__list-item Мощность 2000 Вт
-                        li.modal__list-item Аккумулятор 60 В 20 Ач
-                        li.modal__list-item Скорость до 60 км/ч
-                        li.modal__list-item Запас хода до 45 км
-                        li.modal__list-item Нагрузка до 250 кг
+                    h2.modal__title.modal__title-main IKINGI X12 PRO
+                    p.modal__price 4 000 руб.
+                    button(type="button").btn.modal__btn Купить
+                    p.modal__text IKINGI X12 PRO – Мощность и Свобода Передвижения!
+                    p.modal__text Электроскутер IKINGI X12 PRO – это современный, технологичный и мощный транспорт, созданный для комфортных поездок по городу и за его пределами. Благодаря мощному двигателю 3000 Вт и съемной батарее 60V 20Ah, он обеспечивает разгон до 60 км/ч и запас хода до 40 км на одном заряде.
+                    h3.modal__title.modal__title-small Ключевые преимущества:
+                    ul.modal__list 
+                        li.modal__list-item 
+                            | Мощность и скорость
+                            span.modal__list-span – 3000 Вт двигатель и разгон до 60 км/ч.
+                        li.modal__list-item
+                            | Дальность пробега
+                            span.modal__list-span – до 40 км без подзарядки.
+                        li.modal__list-item
+                            | Гидравлические тормоза
+                            span.modal__list-span – мгновенная остановка даже на высокой скорости.
+                        li.modal__list-item
+                            | Универсальность 
+                            span.modal__list-span – выдерживает нагрузку до 250 кг (подходит для двоих).
+                        li.modal__list-item
+                            | Удобство зарядки  
+                            span.modal__list-span – съемный аккумулятор можно заряжать где угодно.
+                        li.modal__list-item
+                            | Бортовой компьютер 
+                            span.modal__list-span – контроль скорости, пробега и уровня заряда.
+                        li.modal__list-item
+                            | Стильный дизайн 
+                            span.modal__list-span – современный внешний вид и эргономичная посадка.
+                    h3.modal__title.modal__title-small Безопасность и комфорт:
+                    ul.modal__list 
+                        li.modal__list-item.modal__list-item-square
+                            | Регулируемая тормозная ручка 
+                            span.modal__list-span – индивидуальная настройка под водителя.
+                        li.modal__list-item.modal__list-item-square
+                            | Усиленная рама 
+                            span.modal__list-span – устойчивость даже на неровных дорогах.
+                        li.modal__list-item.modal__list-item-square
+                            | Яркая светодиодная оптика
+                            span.modal__list-span – отличная видимость в темное время суток.
+                        li.modal__list-item.modal__list-item-square
+                            | Аварийные сигналы и поворотники
+                            span.modal__list-span – дополнительная безопасность в потоке.
+                    h3.modal__title.modal__title-small Для кого этот скутер?
+                    ul.modal__list 
+                        li.modal__list-item.modal__list-item-square
+                            | Для активных горожан 
+                            span.modal__list-span – быстрые и удобные поездки без пробок.
+                        li.modal__list-item.modal__list-item-square
+                            | Для любителей скорости
+                            span.modal__list-span – мощный двигатель и динамичный разгон.
+                        li.modal__list-item.modal__list-item-square
+                            | Для тех, кто ценит надежность
+                            span.modal__list-span – качественные материалы и продуманная конструкция.
+                    h3.modal__title.modal__title-small IKINGI X12 PRO – это не просто электроскутер, а свобода передвижения без компромиссов!
+                    h3.modal__title.modal__title-small Общие характеристики электроскутера IKINGI X12 PRO
+                    .modal__table
+                        .modal__table-line
+                            p.modal__table-text Мощность электродвигателя
+                            p.modal__table-text 3000 Вт
+                        .modal__table-line
+                            p.modal__table-text Время зарядки
+                            p.modal__table-text 7 час
+                        .modal__table-line
+                            p.modal__table-text Дистанция пробега
+                            p.modal__table-text 40 км
+                        .modal__table-line
+                            p.modal__table-text Максимальная скорость
+                            p.modal__table-text 60 км/ч
+                        .modal__table-line
+                            p.modal__table-text Количество колес
+                            p.modal__table-text 2 шт
+                        .modal__table-line
+                            p.modal__table-text Рекомендуемая предельная скорость
+                            p.modal__table-text 50 км/ч
+                        .modal__table-line
+                            p.modal__table-text Вес
+                            p.modal__table-text 75 кг
+                        .modal__table-line
+                            p.modal__table-text Производитель  
+                            p.modal__table-text ZHEJIANG ZHONGYI EXP.&IMP.CO.
+                        .modal__table-line
+                            p.modal__table-text Страна производитель
+                            p.modal__table-text Китай
+                        .modal__table-line
+                            p.modal__table-text Состояние
+                            p.modal__table-text Новое
+                        .modal__table-line
+                            p.modal__table-text Цвет
+                            p.modal__table-text Черный
             .modal__wrapper(data-scooter='X12Trike')
                 .modal__media 
-                    img(src="images/X12Trike/Trike1.png", alt="X12Trike")
+                    .swiper.swiper-product
+                        .swiper-wrapper
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike1.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike2.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike3.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike4.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike5.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike6.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike7.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike8.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike9.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike10.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike11.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike12.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike13.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike14.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike15.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike16.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike17.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike18.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike19.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike20.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike21.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike22.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike23.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike24.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike25.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike26.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike27.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike28.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike29.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike30.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike31.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike32.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike33.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike34.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike35.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike36.png", alt="X12Trike")
+                            .swiper-slide 
+                                img(src="images/X12Trike/Trike37.png", alt="X12Trike")
+                        .swiper-pagination
+                        .swiper-button-prev
+                        .swiper-button-next
                 .modal__description
-                    h2.modal__title X12 Trike
-                    p.modal__text Бренд электротранспорта IKINGI активно входит на белорусский рынок. Их модели CityCoco обещают стать популярными в 2024 году. Электроскутер IKINGI Х7 ПРО предоставит вам удобный способ передвижения как в большом городе, так и в провинциальных населенных пунктах, а даже и в сельской местности. Забудьте о ценах на бензин, расписаниях общественного транспорта и пересадках – мчитесь на скорости до 60 км/ч вместе с Икинги Х7 Про Трайк!
-                    h3.modal__title.modal__title-small Общие характеристики электроскутера IKINGI X7 PRO TRIKE
-                    ul.modal__list
-                        li.modal__list-item Мощность 2000 Вт
-                        li.modal__list-item Аккумулятор 60 В 20 Ач
-                        li.modal__list-item Скорость до 60 км/ч
-                        li.modal__list-item Запас хода до 45 км
-                        li.modal__list-item Нагрузка до 250 кг
+                    h2.modal__title.modal__title-main IKINGI X12 PRO TRIKE
+                    p.modal__price 4 500 руб.
+                    button(type="button").btn.modal__btn Купить
+                    p.modal__text IKINGI X12 PRO TRIKE – Мощность и Стабильность на Трёх Колёсах
+                    p.modal__text X12 PRO TRIKE – это трёхколёсный электроскутер с идеальным балансом мощности, комфорта и безопасности. Благодаря двигателю 3000 Вт и съёмному аккумулятору 60V 23Ah, он обеспечивает разгон до 50 км/ч и пробег до 50 км без подзарядки.
+                    h3.modal__title.modal__title-small Ключевые преимущества:
+                    ul.modal__list 
+                        li.modal__list-item 
+                            | Устойчивая трёхколёсная конструкция 
+                            span.modal__list-span – уверенность на поворотах и неровных дорогах.
+                        li.modal__list-item 
+                            | Гидравлические тормоза 
+                            span.modal__list-span – мгновенная остановка даже на высокой скорости.
+                        li.modal__list-item 
+                            | Съёмная батарея
+                            span.modal__list-span – возможность заряжать дома, в гараже или офисе.
+                        li.modal__list-item 
+                            | Бортовой компьютер
+                            span.modal__list-span – контроль скорости, пробега и уровня заряда.
+                        li.modal__list-item 
+                            | Грузоподъёмность 250 кг 
+                            span.modal__list-span – можно перевозить пассажира или груз.
+                    h3.modal__title.modal__title-small Для кого?
+                    ul.modal__list 
+                        li.modal__list-item.modal__list-item-square
+                            span.modal__list-span Для тех, кто ищет 
+                            | устойчивый и безопасный  
+                            span.modal__list-span электротранспорт.
+                        li.modal__list-item.modal__list-item-square
+                            span.modal__list-span Для поездок по городу
+                            | без пробок и стресса.
+                        li.modal__list-item.modal__list-item-square
+                            span.modal__list-span Для любителей 
+                            | мощных и надёжных  
+                            span.modal__list-span скутеров.
+                    h3.modal__title.modal__title-small X12 PRO TRIKE – это свобода передвижения с повышенным комфортом!
+                    h3.modal__title.modal__title-small Общие характеристики электроскутера IKINGI X12 PRO TRIKE
+                    .modal__table
+                        .modal__table-line
+                            p.modal__table-text Мощность электродвигателя
+                            p.modal__table-text 3000 Вт
+                        .modal__table-line
+                            p.modal__table-text Время зарядки
+                            p.modal__table-text 8 час
+                        .modal__table-line
+                            p.modal__table-text Дистанция пробега
+                            p.modal__table-text 50 км
+                        .modal__table-line
+                            p.modal__table-text Максимальная скорость
+                            p.modal__table-text 50 км/ч
+                        .modal__table-line
+                            p.modal__table-text Количество колес
+                            p.modal__table-text 3 шт
+                        .modal__table-line
+                            p.modal__table-text Рекомендуемая предельная скорость
+                            p.modal__table-text 45 км/ч
+                        .modal__table-line
+                            p.modal__table-text Вес
+                            p.modal__table-text 95 кг
+                        .modal__table-line
+                            p.modal__table-text Производитель  
+                            p.modal__table-text ZHEJIANG ZHONGYI EXP.&IMP.CO.
+                        .modal__table-line
+                            p.modal__table-text Страна производитель
+                            p.modal__table-text Китай
+                        .modal__table-line
+                            p.modal__table-text Состояние
+                            p.modal__table-text Новое
+                        .modal__table-line
+                            p.modal__table-text Цвет
+                            p.modal__table-text Черный

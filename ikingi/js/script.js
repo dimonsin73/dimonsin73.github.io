@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-main', {
     loop: true,
     autoplay: {
         delay: 5000,
@@ -17,6 +17,17 @@ const swiper = new Swiper('.swiper', {
             slidesPerView: 3
         }
     }
+});
+const swiperProduct = new Swiper('.swiper-product', {
+    loop: true,
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 });
 const swiperWrapper = document.querySelector('.swiper-wrapper')
 const swiperScooterArray = document.querySelectorAll('.swiper-scooter')

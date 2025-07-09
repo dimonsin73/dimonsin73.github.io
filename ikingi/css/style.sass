@@ -75,7 +75,6 @@ body
         display: block
     &__wrapper 
         display: none
-        align-items: center
         justify-content: center
         gap: 24px
         width: 100%
@@ -84,30 +83,54 @@ body
         &-active 
             display: flex
     &__media
-        display: flex
-        align-items: center
-        justify-content: center
-        flex: 0 0 calc(50% - 12px)
+        width: calc(50% - 12px)
+        overflow: hidden
     &__description
         display: flex
         flex-direction: column
         gap: 12px
         flex: 0 0 calc(50% - 12px)
+        overflow-y: scroll
+        scrollbar-width: none
+        &-wrapper
+            display: flex
+            flex-direction: column
+            gap: 12px
     &__title 
         font: 700 40px/40px 'PT Root UI', 'sans-serif'
         color: #fff
+        &-main 
+            text-align: center
         &-small 
             font-size: 24px 
     &__text
-        font: 500 16px/24px 'PT Root UI', 'sans-serif'
+        font: 500 20px/24px 'PT Root UI', 'sans-serif'
+        letter-spacing: 1px
         color: #fff
+    &__price 
+        padding: 32px
+        font: 700 40px/40px 'PT Root UI', 'sans-serif'
+        letter-spacing: 1px
+        color: #fff
+        text-align: center
+    &__btn 
+        width: max-content
+        margin: 0 auto
+        text-align: center
     &__list 
         display: flex
         flex-direction: column
         gap: 4px
+        padding-left: 40px
         &-item 
-            font: 500 16px/24px 'PT Root UI', 'sans-serif'
+            font: 700 20px/24px 'PT Root UI', 'sans-serif'
             color: #fff
+            list-style-type: disc 
+            &-square
+                list-style-type: square 
+        &-span 
+            font-weight: 400
+            font-size: 18px
     &__close 
         position: absolute
         top: 20px
@@ -119,12 +142,28 @@ body
         height: 32px
         border-radius: 50px
         background-color: #F5F5F5
+    &__table 
+        display: flex
+        flex-direction: column
+        &-line 
+            display: grid
+            grid-template-columns: 2fr 1fr
+            padding: 4px 0
+            border-bottom: 1px solid #F5F5F5
+        &-text
+            font: 400 16px/24px 'PT Root UI', 'sans-serif'
+            color: #fff
 .swiper 
-    &-wrapper 
+    &-product 
+        height: 95vh
     &-slide 
         display: flex
         align-items: center
         justify-content: center
+        max-height: 100vh
+        & img
+            padding: 32px
+        
 @media (max-width: 767px)
     .title 
         font-size: 32px

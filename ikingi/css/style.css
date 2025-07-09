@@ -90,7 +90,6 @@ body {
 }
 .modal__wrapper {
   display: none;
-  align-items: center;
   justify-content: center;
   gap: 24px;
   width: 100%;
@@ -101,36 +100,67 @@ body {
   display: flex;
 }
 .modal__media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 calc(50% - 12px);
+  width: calc(50% - 12px);
+  overflow: hidden;
 }
 .modal__description {
   display: flex;
   flex-direction: column;
   gap: 12px;
   flex: 0 0 calc(50% - 12px);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.modal__description-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .modal__title {
   font: 700 40px/40px "PT Root UI", "sans-serif";
   color: #fff;
 }
+.modal__title-main {
+  text-align: center;
+}
 .modal__title-small {
   font-size: 24px;
 }
 .modal__text {
-  font: 500 16px/24px "PT Root UI", "sans-serif";
+  font: 500 20px/24px "PT Root UI", "sans-serif";
+  letter-spacing: 1px;
   color: #fff;
+}
+.modal__price {
+  padding: 32px;
+  font: 700 40px/40px "PT Root UI", "sans-serif";
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+.modal__btn {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  text-align: center;
 }
 .modal__list {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding-left: 40px;
 }
 .modal__list-item {
-  font: 500 16px/24px "PT Root UI", "sans-serif";
+  font: 700 20px/24px "PT Root UI", "sans-serif";
   color: #fff;
+  list-style-type: disc;
+}
+.modal__list-item-square {
+  list-style-type: square;
+}
+.modal__list-span {
+  font-weight: 400;
+  font-size: 18px;
 }
 .modal__close {
   position: absolute;
@@ -144,11 +174,32 @@ body {
   border-radius: 50px;
   background-color: #F5F5F5;
 }
+.modal__table {
+  display: flex;
+  flex-direction: column;
+}
+.modal__table-line {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 4px 0;
+  border-bottom: 1px solid #F5F5F5;
+}
+.modal__table-text {
+  font: 400 16px/24px "PT Root UI", "sans-serif";
+  color: #fff;
+}
 
+.swiper-product {
+  height: 95vh;
+}
 .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-height: 100vh;
+}
+.swiper-slide img {
+  padding: 32px;
 }
 
 @media (max-width: 767px) {
