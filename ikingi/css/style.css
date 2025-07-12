@@ -328,6 +328,9 @@ body {
   display: none;
   flex-direction: column;
   gap: 16px;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: rgba(41, 41, 41, 0.3333333333);
 }
 .modal__content-active {
   display: flex;
