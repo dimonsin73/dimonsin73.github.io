@@ -61,42 +61,56 @@ window.addEventListener('wheel', function(e) {
                     hiroImg.style.bottom = '300px'
                     menu.style.top = '100%'
                     products.style.top = '100%'
+                    hiro.style.top = '0%'
+                    products.style.top = '100%'
                 }
                 if (deltaSumm > 100) {
                     hiro.style.backgroundImage = "url(images/bg_2.webp)"
                     hiroImg.style.height = '65%'
                     hiroImg.style.bottom = '250px'
                     menu.style.top = '90%'
+                    hiro.style.top = '0%'
+                    products.style.top = '100%'
                 }
                 if (deltaSumm > 200) {
                     hiro.style.backgroundImage = "url(images/bg_3.webp)"
                     hiroImg.style.height = '70%'
                     hiroImg.style.bottom = '200px'
                     menu.style.top = '80%'
+                    hiro.style.top = '0%'
+                    products.style.top = '100%'
                 }
                 if (deltaSumm > 300) {
                     hiro.style.backgroundImage = "url(images/bg_4.webp)"
                     hiroImg.style.height = '75%'
                     hiroImg.style.bottom = '150px'
                     menu.style.top = '70%'
+                    hiro.style.top = '0%'
+                    products.style.top = '100%'
                 }
                 if (deltaSumm > 400) {
                     hiro.style.backgroundImage = "url(images/bg_5.webp)"
                     hiroImg.style.height = '80%'
                     hiroImg.style.bottom = '100px'
                     menu.style.top = '60%'
+                    hiro.style.top = '0%'
+                    products.style.top = '100%'
                 }
                 if (deltaSumm > 500) {
                     hiro.style.backgroundImage = "url(images/bg_6.webp)"
                     hiroImg.style.height = '85%'
                     hiroImg.style.bottom = '50px'
                     menu.style.top = '50%'
+                    hiro.style.top = '0%'
+                    products.style.top = '100%'
                 }
                 if (deltaSumm > 600) {
                     hiro.style.backgroundImage = "url(images/bg_7.webp)"
                     hiroImg.style.height = '90%'
                     hiroImg.style.bottom = '0'
                     menu.style.top = '40%'
+                    hiro.style.top = '0%'
+                    products.style.top = '100%'
                 }
                 if (deltaSumm > 700) {
                     hiroImg.style.height = '80%'
@@ -190,7 +204,6 @@ window.addEventListener('touchmove', function(e) {
     let currentY = e.touches[0].clientY;
     let deltaX = currentX - startX;
     let deltaY = currentY - startY;
-
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
         if (deltaX > 0) {
             // свайп вправо
@@ -207,56 +220,71 @@ window.addEventListener('touchmove', function(e) {
     }
 });
 window.addEventListener('touchend', function(e) {
-    if (deltaSumm > 0) {
-        deltaSumm = 0
+    console.log(sumDelta)
+    if (sumDelta > 0) {
+        sumDelta = 0
     }
-    if (deltaSumm < -90) {
-        deltaSumm = -90
+    if (sumDelta < -90) {
+        sumDelta = -90
     }
-    if (deltaSumm >= 0) {
+    if (sumDelta <= 0) {
         hiro.style.backgroundImage = "url(images/bg_1.webp)"
         hiroImg.style.height = '60%'
         hiroImg.style.bottom = '300px'
         menu.style.top = '100%'
         products.style.top = '100%'
+        hiro.style.top = '0%'
+        products.style.top = '100%'
     }
-    if (deltaSumm > -10) {
+    if (sumDelta < -10) {
         hiro.style.backgroundImage = "url(images/bg_2.webp)"
         hiroImg.style.height = '65%'
         hiroImg.style.bottom = '250px'
         menu.style.top = '90%'
+        hiro.style.top = '0%'
+        products.style.top = '100%'
     }
-    if (deltaSumm > -20) {
+    if (sumDelta < -20) {
         hiro.style.backgroundImage = "url(images/bg_3.webp)"
         hiroImg.style.height = '70%'
         hiroImg.style.bottom = '200px'
         menu.style.top = '80%'
+        hiro.style.top = '0%'
+        products.style.top = '100%'
     }
-    if (deltaSumm > -30) {
+    if (sumDelta < -30) {
         hiro.style.backgroundImage = "url(images/bg_4.webp)"
         hiroImg.style.height = '75%'
         hiroImg.style.bottom = '150px'
         menu.style.top = '70%'
+        hiro.style.top = '0%'
+        products.style.top = '100%'
     }
-    if (deltaSumm > -40) {
+    if (sumDelta < -40) {
         hiro.style.backgroundImage = "url(images/bg_5.webp)"
         hiroImg.style.height = '80%'
         hiroImg.style.bottom = '100px'
         menu.style.top = '60%'
+        hiro.style.top = '0%'
+        products.style.top = '100%'
     }
-    if (deltaSumm > -50) {
+    if (sumDelta < -50) {
         hiro.style.backgroundImage = "url(images/bg_6.webp)"
         hiroImg.style.height = '85%'
         hiroImg.style.bottom = '50px'
         menu.style.top = '50%'
+        hiro.style.top = '0%'
+        products.style.top = '100%'
     }
-    if (deltaSumm > -60) {
+    if (sumDelta < -60) {
         hiro.style.backgroundImage = "url(images/bg_7.webp)"
         hiroImg.style.height = '90%'
         hiroImg.style.bottom = '0'
         menu.style.top = '40%'
+        hiro.style.top = '0%'
+        products.style.top = '100%'
     }
-    if (deltaSumm > -70) {
+    if (sumDelta < -70) {
         hiroImg.style.height = '80%'
         hiroImg.style.bottom = '0'
         menu.style.top = '30%'
@@ -264,13 +292,13 @@ window.addEventListener('touchend', function(e) {
         hiro.style.top = '0%'
         products.style.top = '100%'
     }
-    if (deltaSumm > -80) {
+    if (sumDelta < -80) {
         menu.style.top = '0'
         nav.classList.add('nav-active')
         hiro.style.top = '-100%'
         products.style.top = '0%'
     }
-    if (deltaSumm >= -90) {
+    if (sumDelta <= -90) {
         menu.style.top = '0'
         hiro.style.top = '-100%'
         products.style.top = '0%'

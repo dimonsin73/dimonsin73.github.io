@@ -41,7 +41,7 @@ body {
   background-image: url("../images/bg_8.webp");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   transition: top 0.3s linear;
   z-index: 1;
 }
@@ -101,12 +101,14 @@ body {
   display: flex;
   justify-content: flex-end;
   width: 0;
+  height: 0;
   margin-left: auto;
   overflow: hidden;
   transition: width 0.3s ease;
 }
 .nav-active {
   width: 440px;
+  height: 36px;
 }
 .nav__list {
   display: flex;
@@ -392,6 +394,15 @@ body {
     padding: 0;
   }
 }
+@media (max-width: 949px) {
+  .menu {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .nav {
+    justify-content: center;
+  }
+}
 @media (max-width: 767px) {
   .title {
     font-size: 32px;
@@ -414,5 +425,13 @@ body {
   }
   .modal__description {
     min-width: 100%;
+  }
+}
+@media (max-width: 549px) {
+  .menu {
+    padding: 12px;
+  }
+  .nav__list {
+    gap: 0;
   }
 }/*# sourceMappingURL=style.css.map */

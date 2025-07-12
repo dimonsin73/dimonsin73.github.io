@@ -37,7 +37,7 @@ body
         image: url('../images/bg_8.webp')
         position: center center 
         repeat: no-repeat
-        size: 100%
+        size: cover
     transition: top .3s linear
     z-index: 1
 .menu
@@ -84,11 +84,13 @@ body
     display: flex
     justify-content: flex-end
     width: 0
+    height: 0
     margin-left: auto
     overflow: hidden
     transition: width .3s ease
     &-active 
         width: 440px
+        height: 36px
     &__list 
         display: flex
         gap: 16px
@@ -320,6 +322,12 @@ body
     .swiper-slide img  
         height: 100%
         padding: 0
+@media (max-width:949px)
+    .menu 
+        flex-direction: column
+        gap: 16px
+    .nav 
+        justify-content: center
 @media (max-width: 767px)
     .title 
         font-size: 32px
@@ -338,3 +346,8 @@ body
             padding: 12px
         &__description 
             min-width: 100%
+@media (max-width:549px)
+    .menu 
+        padding: 12px
+    .nav__list
+        gap: 0
