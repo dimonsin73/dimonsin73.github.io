@@ -16,7 +16,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../images/bg_1.png");
+  background-image: url("../images/bg_1.webp");
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,7 +38,7 @@ body {
   align-items: flex-end;
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/bg_8.png");
+  background-image: url("../images/bg_8.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -127,7 +127,7 @@ body {
   min-width: 375px;
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/bg_10.png");
+  background-image: url("../images/bg_10.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeats;
@@ -214,7 +214,7 @@ body {
   left: 0;
   display: none;
   min-width: 375px;
-  background-image: url("../images/bg_9.png");
+  background-image: url("../images/bg_9.webp");
   background-color: rgba(28, 28, 29, 0.3019607843);
   background-position: center center;
   background-size: cover;

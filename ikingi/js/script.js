@@ -56,44 +56,44 @@ window.addEventListener('wheel', function(e) {
                     deltaSumm = 900
                 }
                 if (deltaSumm >= 0) {
-                    hiro.style.backgroundImage = "url(images/bg_1.png)"
+                    hiro.style.backgroundImage = "url(images/bg_1.webp)"
                     hiroImg.style.height = '60%'
                     hiroImg.style.bottom = '300px'
                     menu.style.top = '100%'
                     products.style.top = '100%'
                 }
                 if (deltaSumm > 100) {
-                    hiro.style.backgroundImage = "url(images/bg_2.png)"
+                    hiro.style.backgroundImage = "url(images/bg_2.webp)"
                     hiroImg.style.height = '65%'
                     hiroImg.style.bottom = '250px'
                     menu.style.top = '90%'
                 }
                 if (deltaSumm > 200) {
-                    hiro.style.backgroundImage = "url(images/bg_3.png)"
+                    hiro.style.backgroundImage = "url(images/bg_3.webp)"
                     hiroImg.style.height = '70%'
                     hiroImg.style.bottom = '200px'
                     menu.style.top = '80%'
                 }
                 if (deltaSumm > 300) {
-                    hiro.style.backgroundImage = "url(images/bg_4.png)"
+                    hiro.style.backgroundImage = "url(images/bg_4.webp)"
                     hiroImg.style.height = '75%'
                     hiroImg.style.bottom = '150px'
                     menu.style.top = '70%'
                 }
                 if (deltaSumm > 400) {
-                    hiro.style.backgroundImage = "url(images/bg_5.png)"
+                    hiro.style.backgroundImage = "url(images/bg_5.webp)"
                     hiroImg.style.height = '80%'
                     hiroImg.style.bottom = '100px'
                     menu.style.top = '60%'
                 }
                 if (deltaSumm > 500) {
-                    hiro.style.backgroundImage = "url(images/bg_6.png)"
+                    hiro.style.backgroundImage = "url(images/bg_6.webp)"
                     hiroImg.style.height = '85%'
                     hiroImg.style.bottom = '50px'
                     menu.style.top = '50%'
                 }
                 if (deltaSumm > 600) {
-                    hiro.style.backgroundImage = "url(images/bg_7.png)"
+                    hiro.style.backgroundImage = "url(images/bg_7.webp)"
                     hiroImg.style.height = '90%'
                     hiroImg.style.bottom = '0'
                     menu.style.top = '40%'
@@ -214,44 +214,44 @@ window.addEventListener('touchend', function(e) {
         deltaSumm = -90
     }
     if (deltaSumm >= 0) {
-        hiro.style.backgroundImage = "url(images/bg_1.png)"
+        hiro.style.backgroundImage = "url(images/bg_1.webp)"
         hiroImg.style.height = '60%'
         hiroImg.style.bottom = '300px'
         menu.style.top = '100%'
         products.style.top = '100%'
     }
     if (deltaSumm > -10) {
-        hiro.style.backgroundImage = "url(images/bg_2.png)"
+        hiro.style.backgroundImage = "url(images/bg_2.webp)"
         hiroImg.style.height = '65%'
         hiroImg.style.bottom = '250px'
         menu.style.top = '90%'
     }
     if (deltaSumm > -20) {
-        hiro.style.backgroundImage = "url(images/bg_3.png)"
+        hiro.style.backgroundImage = "url(images/bg_3.webp)"
         hiroImg.style.height = '70%'
         hiroImg.style.bottom = '200px'
         menu.style.top = '80%'
     }
     if (deltaSumm > -30) {
-        hiro.style.backgroundImage = "url(images/bg_4.png)"
+        hiro.style.backgroundImage = "url(images/bg_4.webp)"
         hiroImg.style.height = '75%'
         hiroImg.style.bottom = '150px'
         menu.style.top = '70%'
     }
     if (deltaSumm > -40) {
-        hiro.style.backgroundImage = "url(images/bg_5.png)"
+        hiro.style.backgroundImage = "url(images/bg_5.webp)"
         hiroImg.style.height = '80%'
         hiroImg.style.bottom = '100px'
         menu.style.top = '60%'
     }
     if (deltaSumm > -50) {
-        hiro.style.backgroundImage = "url(images/bg_6.png)"
+        hiro.style.backgroundImage = "url(images/bg_6.webp)"
         hiroImg.style.height = '85%'
         hiroImg.style.bottom = '50px'
         menu.style.top = '50%'
     }
     if (deltaSumm > -60) {
-        hiro.style.backgroundImage = "url(images/bg_7.png)"
+        hiro.style.backgroundImage = "url(images/bg_7.webp)"
         hiroImg.style.height = '90%'
         hiroImg.style.bottom = '0'
         menu.style.top = '40%'
