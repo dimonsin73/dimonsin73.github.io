@@ -101,7 +101,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .tabs__btn-active {
-  background-color: #feed01;
+  background-color: #c93;
   color: #000;
 }
 
@@ -128,7 +128,11 @@ body {
   color: #fff;
   text-transform: uppercase;
   white-space: nowrap;
+  transition: color 0.3s ease;
   cursor: pointer;
+}
+.nav__list-item:hover {
+  color: #c93;
 }
 
 .info {
