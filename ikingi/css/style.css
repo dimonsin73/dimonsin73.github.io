@@ -19,31 +19,27 @@ body {
   background-image: url("../images/bg_1.webp");
   background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 130%;
   transition: top 0.5s linear, background 0.5s linear;
   z-index: 10;
 }
 .hiro__img {
   position: absolute;
-  bottom: 30%;
+  bottom: -50%;
   max-width: none;
-  height: 60%;
-  transition: height 0.5s linear, bottom 0.5s linear;
+  height: 1400px;
+  transition: height 0.5s linear, bottom 0.5s linear, right 0.5s linear;
 }
 
 .products {
   position: fixed;
-  top: 0;
+  top: 100%;
   display: flex;
   align-items: flex-end;
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/bg_8.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   transition: top 0.3s linear;
-  z-index: 1;
+  z-index: 100;
 }
 
 .menu {
@@ -141,10 +137,7 @@ body {
   min-width: 375px;
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/bg_10.webp");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeats;
+  background-color: rgba(29, 29, 29, 0.75);
   overflow-y: scroll;
   z-index: 10000;
 }
@@ -228,12 +221,6 @@ body {
   left: 0;
   display: none;
   min-width: 375px;
-  background-image: url("../images/bg_9.webp");
-  background-color: rgba(28, 28, 29, 0.3019607843);
-  background-position: center center;
-  background-size: cover;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
   z-index: 10000;
 }
 .modal-active {
@@ -242,25 +229,31 @@ body {
 .modal__wrapper {
   display: none;
   justify-content: center;
-  gap: 24px;
   width: 100%;
   height: 100%;
-  padding: 24px;
 }
 .modal__wrapper-active {
   display: flex;
 }
 .modal__media {
-  width: calc(50% - 12px);
+  flex: 0 0 50%;
+  background-image: url("../images/bg_2.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   overflow: hidden;
 }
 .modal__description {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  flex: 0 0 calc(50% - 12px);
+  flex: 0 0 50%;
   min-width: 700px;
-  padding: 32px;
+  padding: 24px;
+  background-image: url("../images/bg_2.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .modal__description-top {
   display: flex;
@@ -387,7 +380,7 @@ body {
   max-height: 100vh;
 }
 .swiper-slide img {
-  padding: 32px;
+  height: 700px;
 }
 
 @media (max-width: 1499px) {
@@ -413,7 +406,6 @@ body {
     height: 100%;
   }
   .swiper-slide img {
-    height: 100%;
     padding: 0;
   }
 }
