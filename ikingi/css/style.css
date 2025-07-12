@@ -160,8 +160,8 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 32px;
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  border-radius: 12px;
+  background-color: rgba(41, 41, 41, 0.3333333333);
 }
 .info__wrapper-active {
   display: flex;
@@ -261,13 +261,21 @@ body {
   flex: 0 0 calc(50% - 12px);
   min-width: 700px;
   padding: 32px;
-  overflow-y: scroll;
-  scrollbar-width: none;
 }
-.modal__description-wrapper {
+.modal__description-top {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: rgba(41, 41, 41, 0.3333333333);
+}
+.modal__description-bottom {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background-color: rgba(41, 41, 41, 0.3333333333);
+  overflow: hidden;
 }
 .modal__title {
   font: 700 40px/40px "PT Root UI", "sans-serif";
@@ -333,8 +341,8 @@ body {
   flex-direction: column;
   gap: 16px;
   padding: 24px;
-  border-radius: 12px;
-  background-color: rgba(41, 41, 41, 0.3333333333);
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 .modal__content-active {
   display: flex;
@@ -439,14 +447,56 @@ body {
   .tabs {
     flex-direction: column;
   }
+  .tabs__btn {
+    padding: 8px;
+  }
   .info__wrapper {
     padding: 12px;
+  }
+  .info__title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .info__text {
+    font-size: 16px;
+    line-height: 20px;
   }
   .modal__wrapper {
     padding: 12px;
   }
   .modal__description {
     min-width: 100%;
+  }
+  .modal__title {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .modal__price {
+    padding: 8px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .modal__content {
+    padding: 12px;
+  }
+  .modal__title-small {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .modal__text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .modal__list-item {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .modal__list-span {
+    font-size: 16px;
+  }
+  .nav__list-item {
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 @media (max-width: 549px) {

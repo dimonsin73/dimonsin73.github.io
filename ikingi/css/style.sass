@@ -134,7 +134,8 @@ body
         width: 100%
         margin: 0 auto
         padding: 32px
-        backdrop-filter: blur(4px)
+        border-radius: 12px
+        background-color: #29292955
         &-active 
             display: flex
     &__close 
@@ -219,12 +220,19 @@ body
         flex: 0 0 calc(50% - 12px)
         min-width: 700px
         padding: 32px
-        overflow-y: scroll
-        scrollbar-width: none
-        &-wrapper
+        &-top
             display: flex
             flex-direction: column
             gap: 24px
+            padding: 12px
+            border-radius: 12px
+            background-color: #29292955
+        &-bottom 
+            display: flex
+            flex-direction: column
+            border-radius: 12px
+            background-color: #29292955
+            overflow: hidden
     &__title 
         font: 700 40px/40px 'PT Root UI', 'sans-serif'
         color: #fff
@@ -277,8 +285,8 @@ body
         flex-direction: column
         gap: 16px
         padding: 24px
-        border-radius: 12px
-        background-color: #29292955
+        overflow-y: scroll
+        scrollbar-width: none
         &-active 
             display: flex
     &__table 
@@ -356,13 +364,47 @@ body
         line-height: 20px
     .tabs 
         flex-direction: column
-    .info__wrapper 
-        padding: 12px
+        &__btn 
+            padding: 8px
+    .info
+        &__wrapper 
+            padding: 12px
+        &__title 
+            font-size: 24px
+            line-height: 24px
+        &__text 
+            font-size: 16px
+            line-height: 20px
     .modal 
         &__wrapper 
             padding: 12px
         &__description 
             min-width: 100%
+        &__title 
+            font-size: 32px
+            line-height: 32px
+        &__price 
+            padding: 8px
+            font-size: 32px
+            line-height: 32px
+        &__content 
+            padding: 12px
+        &__title 
+            &-small 
+                font-size: 20px
+                line-height: 20px
+        &__text 
+            font-size: 16px
+            line-height: 20px
+        &__list
+            &-item 
+                font-size: 16px
+                line-height: 20px
+            &-span 
+                font-size: 16px
+    .nav__list-item 
+        font-size: 14px 
+        line-height: 16px
 @media (max-width:549px)
     .menu 
         padding: 12px
