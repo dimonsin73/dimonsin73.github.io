@@ -9,11 +9,24 @@ html(lang="ru")
         link(rel="stylesheet", href="css/reset.css")
         link(rel="stylesheet", href="css/style.css")
         script(type="text/javascript" src="js/script.js" defer) 
+        link(rel="icon", href="images/logo.png")
+        link(rel="preload" href="image/bg_1.webp" as="image") 
+        link(rel="preload" href="image/bg_2.webp" as="image") 
+        link(rel="preload" href="image/bg_3.webp" as="image") 
+        link(rel="preload" href="image/bg_4.webp" as="image") 
+        link(rel="preload" href="image/bg_5.webp" as="image") 
+        link(rel="preload" href="image/bg_6.webp" as="image") 
+        link(rel="preload" href="image/bg_7.webp" as="image") 
+        link(rel="preload" href="image/bg_8.webp" as="image") 
+        link(rel="preload" href="image/bg_9.webp" as="image") 
+        link(rel="preload" href="image/bg_10.webp" as="image") 
     body 
         .hiro
             img(src="images/X7proTrike/TrikeOff1-1.png", alt="").hiro__img
         .menu
-            h1.title IKINGI
+            h1.title
+                img(src="images/logo.png", alt="logo") 
+                | IKINGI
             nav.nav 
                 ul.nav__list
                     li.nav__list-item(data-nav="about") О нас
