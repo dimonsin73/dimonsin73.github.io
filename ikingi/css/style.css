@@ -25,7 +25,7 @@ body {
 }
 .hiro__img {
   position: absolute;
-  bottom: 300px;
+  bottom: 30%;
   max-width: none;
   height: 60%;
   transition: height 0.5s linear, bottom 0.5s linear;

@@ -58,7 +58,7 @@ window.addEventListener('wheel', function(e) {
                 if (deltaSumm >= 0) {
                     hiro.style.backgroundImage = "url(images/bg_1.webp)"
                     hiroImg.style.height = '60%'
-                    hiroImg.style.bottom = '300px'
+                    hiroImg.style.bottom = '30%'
                     menu.style.top = '100%'
                     products.style.top = '100%'
                     hiro.style.top = '0%'
@@ -67,7 +67,7 @@ window.addEventListener('wheel', function(e) {
                 if (deltaSumm > 100) {
                     hiro.style.backgroundImage = "url(images/bg_2.webp)"
                     hiroImg.style.height = '65%'
-                    hiroImg.style.bottom = '250px'
+                    hiroImg.style.bottom = '25%'
                     menu.style.top = '90%'
                     hiro.style.top = '0%'
                     products.style.top = '100%'
@@ -75,7 +75,7 @@ window.addEventListener('wheel', function(e) {
                 if (deltaSumm > 200) {
                     hiro.style.backgroundImage = "url(images/bg_3.webp)"
                     hiroImg.style.height = '70%'
-                    hiroImg.style.bottom = '200px'
+                    hiroImg.style.bottom = '20%'
                     menu.style.top = '80%'
                     hiro.style.top = '0%'
                     products.style.top = '100%'
@@ -83,7 +83,7 @@ window.addEventListener('wheel', function(e) {
                 if (deltaSumm > 300) {
                     hiro.style.backgroundImage = "url(images/bg_4.webp)"
                     hiroImg.style.height = '75%'
-                    hiroImg.style.bottom = '150px'
+                    hiroImg.style.bottom = '15%'
                     menu.style.top = '70%'
                     hiro.style.top = '0%'
                     products.style.top = '100%'
@@ -91,7 +91,7 @@ window.addEventListener('wheel', function(e) {
                 if (deltaSumm > 400) {
                     hiro.style.backgroundImage = "url(images/bg_5.webp)"
                     hiroImg.style.height = '80%'
-                    hiroImg.style.bottom = '100px'
+                    hiroImg.style.bottom = '10%'
                     menu.style.top = '60%'
                     hiro.style.top = '0%'
                     products.style.top = '100%'
@@ -99,7 +99,7 @@ window.addEventListener('wheel', function(e) {
                 if (deltaSumm > 500) {
                     hiro.style.backgroundImage = "url(images/bg_6.webp)"
                     hiroImg.style.height = '85%'
-                    hiroImg.style.bottom = '50px'
+                    hiroImg.style.bottom = '5%'
                     menu.style.top = '50%'
                     hiro.style.top = '0%'
                     products.style.top = '100%'
@@ -230,7 +230,7 @@ window.addEventListener('touchend', function(e) {
     if (sumDelta <= 0) {
         hiro.style.backgroundImage = "url(images/bg_1.webp)"
         hiroImg.style.height = '60%'
-        hiroImg.style.bottom = '300px'
+        hiroImg.style.bottom = '30%'
         menu.style.top = '100%'
         products.style.top = '100%'
         hiro.style.top = '0%'
@@ -239,7 +239,7 @@ window.addEventListener('touchend', function(e) {
     if (sumDelta < -10) {
         hiro.style.backgroundImage = "url(images/bg_2.webp)"
         hiroImg.style.height = '65%'
-        hiroImg.style.bottom = '250px'
+        hiroImg.style.bottom = '25%'
         menu.style.top = '90%'
         hiro.style.top = '0%'
         products.style.top = '100%'
@@ -247,7 +247,7 @@ window.addEventListener('touchend', function(e) {
     if (sumDelta < -20) {
         hiro.style.backgroundImage = "url(images/bg_3.webp)"
         hiroImg.style.height = '70%'
-        hiroImg.style.bottom = '200px'
+        hiroImg.style.bottom = '20%'
         menu.style.top = '80%'
         hiro.style.top = '0%'
         products.style.top = '100%'
@@ -255,7 +255,7 @@ window.addEventListener('touchend', function(e) {
     if (sumDelta < -30) {
         hiro.style.backgroundImage = "url(images/bg_4.webp)"
         hiroImg.style.height = '75%'
-        hiroImg.style.bottom = '150px'
+        hiroImg.style.bottom = '15%'
         menu.style.top = '70%'
         hiro.style.top = '0%'
         products.style.top = '100%'
@@ -263,7 +263,7 @@ window.addEventListener('touchend', function(e) {
     if (sumDelta < -40) {
         hiro.style.backgroundImage = "url(images/bg_5.webp)"
         hiroImg.style.height = '80%'
-        hiroImg.style.bottom = '100px'
+        hiroImg.style.bottom = '10%'
         menu.style.top = '60%'
         hiro.style.top = '0%'
         products.style.top = '100%'
@@ -271,7 +271,7 @@ window.addEventListener('touchend', function(e) {
     if (sumDelta < -50) {
         hiro.style.backgroundImage = "url(images/bg_6.webp)"
         hiroImg.style.height = '85%'
-        hiroImg.style.bottom = '50px'
+        hiroImg.style.bottom = '5%'
         menu.style.top = '50%'
         hiro.style.top = '0%'
         products.style.top = '100%'
