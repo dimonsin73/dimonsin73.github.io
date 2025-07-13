@@ -268,6 +268,8 @@ const formAddress = document.querySelector('.form-address')
 const formBtnClose = document.querySelector('.form__btn-close')
 const formTotalText = document.querySelector('.form__total-text')
 const formQuantity = document.getElementById('form-quantity')
+const thanks = document.querySelector('.thanks')
+const thanksBtn = document.querySelector('.thanks__btn')
 for (let i = 0; i < modalBtnArray.length; i++) {
     const modalBtn = modalBtnArray[i];
     modalBtn.addEventListener('click', function(){
@@ -293,6 +295,16 @@ for (let i = 0; i < modalBtnArray.length; i++) {
                 totalPrice = priceNum*number
                 formTotalText.textContent = `${totalPrice} руб.`
             }
+        })
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            thanks.classList.add('thanks-active')
+            thanksBtn.addEventListener('click', function(){
+                thanks.classList.remove('thanks-active')
+                form.classList.remove('form-active')
+                modal.classList.remove('modal-active')
+                form.submit()
+            })
         })
         for (let i = 0; i < formRadioArray.length; i++) {
             const formRadio = formRadioArray[i];

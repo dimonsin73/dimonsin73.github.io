@@ -398,6 +398,35 @@ body
             background-color: #808080
             &:hover 
                 background-color: #999
+.thanks 
+    position: fixed
+    top: 50%
+    left: 50%
+    display: none
+    flex-direction: column
+    gap: 16px
+    align-items: center
+    justify-content: center
+    padding: 24px
+    border-radius: 24px
+    background-color: #292929
+    transform: translate(-50%, -50%)
+    z-index: 100000
+    &-active 
+        display: flex
+    &__title 
+        font: 700 26px/26px 'PT Root UI', 'sans-serif'
+        color: #fff
+    &__text 
+        font: 500 20px/26px 'PT Root UI', 'sans-serif'
+        color: #fff
+    &__btn 
+        padding: 12px 24px
+        border-radius: 12px
+        background-color: #c93
+        font: 700 20px/26px 'PT Root UI', 'sans-serif'
+        color: #fff
+
 .swiper 
     &-product 
         height: 95vh
