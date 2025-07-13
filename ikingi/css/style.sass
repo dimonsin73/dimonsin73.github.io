@@ -17,7 +17,7 @@ body
         image: url('../images/bg_1.webp')
         position: bottom center 
         repeat: no-repeat
-        size: 130%
+        size: 130% 130%
     transition: top .5s linear, background .5s linear
     z-index: 10
     &__img 
@@ -25,7 +25,7 @@ body
         bottom: -50%
         max-width: none
         height: 1400px
-        transition: height .5s linear, bottom .5s linear, right .5s linear
+        transition: height .5s linear, bottom .5s linear
 .products
     position: fixed
     top: 100%
@@ -66,6 +66,9 @@ body
     font: 700 32px/32px 'PT Root UI', 'sans-serif'
     color: #fff 
     text-transform: uppercase
+    transition: background 0.3s ease
+    &:hover 
+        background-color: #ee2a65
 .tabs 
     display: flex
     justify-content: space-between
@@ -175,7 +178,6 @@ body
         color: #fff 
         &-dayoff 
             color: #AD2950
-
 .modal 
     position: fixed
     top: 0
@@ -192,15 +194,15 @@ body
         justify-content: center
         width: 100%
         height: 100%
+        background: 
+            image: url('../images/bg_2.webp')
+            repeat: no-repeat
+            position: bottom left 
+            size: 100% 100%
         &-active 
             display: flex
     &__media
         flex: 0 0 50%
-        background: 
-            image: url('../images/bg_2.webp')
-            repeat: no-repeat
-            position: center 
-            size: cover
         overflow: hidden
     &__description
         display: flex
@@ -209,11 +211,6 @@ body
         flex: 0 0 50%
         min-width: 700px
         padding: 24px
-        background: 
-            image: url('../images/bg_2.webp')
-            repeat: no-repeat
-            position: center 
-            size: cover
         &-top
             display: flex
             flex-direction: column
@@ -306,6 +303,93 @@ body
             & svg
                 width: 50px
                 height: 50px
+.form 
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    display: none
+    min-width: 375px
+    background:
+        color: #29292999
+        filter: blur(10px)
+    z-index: 100000
+    &-active 
+        display: block
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        max-width: 500px
+        margin: 0 auto
+        padding: 32px
+        border-radius: 12px
+        background-color: #29292955
+    &__title 
+        font: 500 32px/32px 'PT Root UI', 'sans-serif'
+        color: #fff
+        text-align: center
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 8px
+    &__line
+        display: grid 
+        grid-template-columns: 1fr 1fr
+        align-items: center
+    &__label
+        display: flex
+        gap: 8px
+        align-items: center
+        font: 400 20px/24px 'PT Root UI', 'sans-serif'
+        color: #fff
+    &__input 
+        padding: 12px
+        border-radius: 12px
+        background-color: #fff
+        font: 400 18px/24px 'PT Root UI', 'sans-serif'
+        color: #000
+        &:disabled
+            background-color: #999
+    &-self-pickup 
+        display: none
+        &-active 
+            display: flex
+    &-address 
+        display: none
+        &-active 
+            display: flex
+    &__total 
+        display: grid
+        grid-template-columns: 2fr 1fr
+        &-title 
+            font: 500 32px/32px 'PT Root UI', 'sans-serif'
+            color: #fff
+        &-text 
+            font: 700 32px/32px 'PT Root UI', 'sans-serif'
+            color: #fff
+    &__footer 
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 16px
+    &__btn 
+        padding: 15px 8px
+        border-radius: 12px
+        font: 700 26px/26px 'PT Root UI', 'sans-serif'
+        color: #fff
+        text-transform: uppercase
+        transition: background 0.3s ease
+        &-order 
+            background-color: #AD2950
+            &:hover 
+                background-color: #ee2a65
+        &-close 
+            background-color: #808080
+            &:hover 
+                background-color: #999
+
+
 .swiper 
     &-product 
         height: 95vh
@@ -335,6 +419,9 @@ body
         height: 100%
     .swiper-slide img  
         padding: 0
+@media (max-width:1023px)
+    .swiper-slide-main 
+        order: -1
 @media (max-width:949px)
     .menu 
         flex-direction: column
@@ -398,6 +485,8 @@ body
     .nav__list-item 
         font-size: 14px 
         line-height: 16px
+    .form__wrapper 
+        padding: 12px
 @media (max-width:549px)
     .menu 
         padding: 12px

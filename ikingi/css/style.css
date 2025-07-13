@@ -19,7 +19,7 @@ body {
   background-image: url("../images/bg_1.webp");
   background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: 130%;
+  background-size: 130% 130%;
   transition: top 0.5s linear, background 0.5s linear;
   z-index: 10;
 }
@@ -28,7 +28,7 @@ body {
   bottom: -50%;
   max-width: none;
   height: 1400px;
-  transition: height 0.5s linear, bottom 0.5s linear, right 0.5s linear;
+  transition: height 0.5s linear, bottom 0.5s linear;
 }
 
 .products {
@@ -80,6 +80,10 @@ body {
   font: 700 32px/32px "PT Root UI", "sans-serif";
   color: #fff;
   text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background-color: #ee2a65;
 }
 
 .tabs {
@@ -231,16 +235,16 @@ body {
   justify-content: center;
   width: 100%;
   height: 100%;
+  background-image: url("../images/bg_2.webp");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 100% 100%;
 }
 .modal__wrapper-active {
   display: flex;
 }
 .modal__media {
   flex: 0 0 50%;
-  background-image: url("../images/bg_2.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   overflow: hidden;
 }
 .modal__description {
@@ -250,10 +254,6 @@ body {
   flex: 0 0 50%;
   min-width: 700px;
   padding: 24px;
-  background-image: url("../images/bg_2.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 .modal__description-top {
   display: flex;
@@ -370,6 +370,112 @@ body {
   height: 50px;
 }
 
+.form {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  min-width: 375px;
+  background-color: rgba(41, 41, 41, 0.6);
+  background-filter: blur(10px);
+  z-index: 100000;
+}
+.form-active {
+  display: block;
+}
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: 12px;
+  background-color: rgba(41, 41, 41, 0.3333333333);
+}
+.form__title {
+  font: 500 32px/32px "PT Root UI", "sans-serif";
+  color: #fff;
+  text-align: center;
+}
+.form__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form__line {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.form__label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font: 400 20px/24px "PT Root UI", "sans-serif";
+  color: #fff;
+}
+.form__input {
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #fff;
+  font: 400 18px/24px "PT Root UI", "sans-serif";
+  color: #000;
+}
+.form__input:disabled {
+  background-color: #999;
+}
+.form-self-pickup {
+}
+.form-self-pickup-active {
+  display: flex;
+}
+.form-address {
+  display: none;
+}
+.form-address-active {
+  display: flex;
+}
+.form__total {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.form__total-title {
+  font: 500 32px/32px "PT Root UI", "sans-serif";
+  color: #fff;
+}
+.form__total-text {
+  font: 700 32px/32px "PT Root UI", "sans-serif";
+  color: #fff;
+}
+.form__footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form__btn {
+  padding: 15px 8px;
+  border-radius: 12px;
+  font: 700 26px/26px "PT Root UI", "sans-serif";
+  color: #fff;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+.form__btn-order {
+  background-color: #AD2950;
+}
+.form__btn-order:hover {
+  background-color: #ee2a65;
+}
+.form__btn-close {
+  background-color: #808080;
+}
+.form__btn-close:hover {
+  background-color: #999;
+}
+
 .swiper-product {
   height: 95vh;
 }
@@ -407,6 +513,11 @@ body {
   }
   .swiper-slide img {
     padding: 0;
+  }
+}
+@media (max-width: 1023px) {
+  .swiper-slide-main {
+    order: -1;
   }
 }
 @media (max-width: 949px) {
@@ -489,6 +600,9 @@ body {
   .nav__list-item {
     font-size: 14px;
     line-height: 16px;
+  }
+  .form__wrapper {
+    padding: 12px;
   }
 }
 @media (max-width: 549px) {

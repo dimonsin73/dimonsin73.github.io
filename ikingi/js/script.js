@@ -1,3 +1,26 @@
+prices = [
+    {
+        modal: 'IKINGI X7 PRO Trike',
+        price: 4817, 
+        priceWholesale: 3270,
+    }, {
+        modal: 'IKINGI X12 PRO',
+        price: 4204, 
+        priceWholesale: 3159,
+    }, {
+        modal: 'IKINGI X12 PRO Trike',
+        price: 4709, 
+        priceWholesale: 3642,
+    }, {
+        modal: 'IKINGI M11 PRO Trike',
+        price: 5457, 
+        priceWholesale: 4092,
+    }, {
+        modal: 'IKINGI S6 PRO',
+        price: 3836, 
+        priceWholesale: 2836,
+    }
+]
 const swiper = new Swiper('.swiper-main', {
     loop: true,
     autoplay: {
@@ -40,6 +63,18 @@ const products = document.querySelector('.products')
 const modal = document.querySelector('.modal')
 const modalClose = document.querySelector('.modal__close')
 const modalWrapperArray = modal.querySelectorAll('.modal__wrapper')
+for (let i = 0; i < modalWrapperArray.length; i++) {
+    const modalWrapper = modalWrapperArray[i];
+    for (let i = 0; i < prices.length; i++) {
+        const element = prices[i];
+        if (modalWrapper.dataset.scooter === element.modal) {
+            const modalPrice = modalWrapper.querySelector('.modal__price')
+            const modalPriceWholesale = modalWrapper.querySelector('.modal__price-wholesale')
+            modalPrice.textContent = `${element.price} руб.`
+            modalPriceWholesale.textContent = `${element.priceWholesale} руб.`
+        }
+    }
+}
 let deltaSumm = 0
 window.addEventListener('wheel', function(e) {
     const withinBoundariesSW = e.composedPath().includes(swiperWrapper);
@@ -49,7 +84,9 @@ window.addEventListener('wheel', function(e) {
         if ( ! withinBoundariesM ) {
             if (! withinBoundariesI) {
                 const delta = e.deltaY;
-                deltaSumm = deltaSumm + delta
+                if (delta > 0) {
+                    deltaSumm = deltaSumm + delta
+                }
                 if (deltaSumm < 0) {
                     deltaSumm = 0
                 }
@@ -63,21 +100,20 @@ window.addEventListener('wheel', function(e) {
                     products.style.top = '100%'
                     hiro.style.backgroundSize = '130% 130%'
                 }
-                if (deltaSumm > 100 && deltaSumm < 200) {
+                if (deltaSumm > 100) {
                     hiroImg.style.height = '700px'
                     hiroImg.style.bottom = '0'
                     menu.style.top = '50%'
                     nav.classList.remove('nav-active')
                     hiro.style.backgroundSize = '100% 100%'
                     products.style.top = '100%'
-                    hiroImg.style.display = 'block'
                 }
                 if (deltaSumm > 200) {
                     hiroImg.style.height = '700px'
                     hiroImg.style.bottom = '0'
                     menu.style.top = '0'
                     nav.classList.add('nav-active')
-                    hiro.style.backgroundSize = '100%'
+                    hiro.style.backgroundSize = '100% 100%'
                     products.style.top = '0%'
                     setTimeout(displayNone, 400);
                 }
@@ -164,9 +200,6 @@ window.addEventListener('touchmove', function(e) {
         if (deltaY > 0) {
             sumDelta++
         } 
-        else {
-            sumDelta--
-        }
     }
 });
 window.addEventListener('touchend', function(e) {
@@ -197,7 +230,7 @@ window.addEventListener('touchend', function(e) {
         hiroImg.style.bottom = '0'
         menu.style.top = '0'
         nav.classList.add('nav-active')
-        hiro.style.backgroundSize = '100%'
+        hiro.style.backgroundSize = '100% 100%'
         products.style.top = '0%'
         setTimeout(displayNone, 400);
     }
@@ -225,3 +258,64 @@ for (let i = 0; i < tabsBtnArray.length; i++) {
         }
     })
 }
+const modalBtnArray = document.querySelectorAll('.modal__btn')
+const form = document.querySelector('.form')
+const formModal = document.getElementById('form-modal')
+const formRadioArray = document.querySelectorAll('.form__radio')
+const formPickup = document.getElementById('form-pickup')
+const formDelivery = document.getElementById('form-delivery')
+const formSelfPickup = document.querySelector('.form-self-pickup')
+const formAddress = document.querySelector('.form-address')
+const formBtnClose = document.querySelector('.form__btn-close')
+const formTotalText = document.querySelector('.form__total-text')
+const formQuantity = document.getElementById('form-quantity')
+for (let i = 0; i < modalBtnArray.length; i++) {
+    const modalBtn = modalBtnArray[i];
+    modalBtn.addEventListener('click', function(){
+        formModal.value = modalBtn.dataset.model
+        form.classList.add('form-active')
+        let priceNum = 0
+        for (let i = 0; i < prices.length; i++) {
+            const element = prices[i];
+            if (formModal.value === element.modal) {
+                formTotalText.textContent = `${element.price} руб.`
+                priceNum = element.price
+                priceWholesaleNum = element.priceWholesale
+            }
+        }
+        form.addEventListener('change', function(){
+            const number = formQuantity.value
+            let totalPrice = priceNum*number
+            formTotalText.textContent = `${totalPrice} руб.`
+            if (number >= '3') {
+                totalPrice = priceWholesaleNum*number
+                formTotalText.textContent = `${totalPrice} руб.`
+            } else {
+                totalPrice = priceNum*number
+                formTotalText.textContent = `${totalPrice} руб.`
+            }
+        })
+        for (let i = 0; i < formRadioArray.length; i++) {
+            const formRadio = formRadioArray[i];
+            formRadio.addEventListener('change', function(){
+                if (formPickup.checked) {
+                    formSelfPickup.classList.add('form-self-pickup-active')
+                    formAddress.classList.remove('form-address-active')
+                } 
+                if (formDelivery.checked) {
+                    formSelfPickup.classList.remove('form-self-pickup-active')
+                    formAddress.classList.add('form-address-active')
+                }
+            })
+        }
+        formBtnClose.addEventListener('click', function(){
+            form.classList.remove('form-active')
+        })
+        document.addEventListener('keydown', function(e) {
+            if( e.keyCode == 27 ){ 
+                form.classList.remove('form-active')
+            }
+        });
+    })
+}
+
