@@ -23,8 +23,8 @@ $name = trim($name);
 $tel = trim($tel);
 $mail = trim($mail);
 
-if (mail("zmiciersiniuta@gmail.com", "Заявка с сайта", "Модель:".$model.". E-mail: ".$mail ,"From: zmiciersiniuta@gmail.com \r\n"))
- {     echo "сообщение успешно отправлено";
+if (mail("zmiciersiniuta@gmail.com", "Заявка с сайта", "Модель:".$model. "Количество:".$quantity. "Имя покупателя:".$name. "Контактный телефон:".$tel. "E-mail: ".$mail ,"From: zmiciersiniuta@gmail.com \r\n"))
+{     echo "сообщение успешно отправлено";
 } else {
     echo "при отправке сообщения возникли ошибки";
 }
