@@ -31,6 +31,26 @@ body {
   transition: height 0.5s linear, bottom 0.5s linear;
 }
 
+.scale_1 {
+  transform: scale(1.1);
+}
+
+.scale_2 {
+  transform: scale(0.9);
+}
+
+.scale_3 {
+  transform: scale(1.15);
+}
+
+.scale_4 {
+  transform: scale(0.91);
+}
+
+.scale_5 {
+  transform: scale(0.91);
+}
+
 .products {
   position: fixed;
   top: 100%;

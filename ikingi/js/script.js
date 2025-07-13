@@ -197,8 +197,8 @@ window.addEventListener('touchmove', function(e) {
             // свайп влево
         }
     } else {
-        if (deltaY > 0) {
-            sumDelta++
+        if (deltaY < 0) {
+            sumDelta--
         } 
     }
 });
@@ -209,23 +209,22 @@ window.addEventListener('touchend', function(e) {
     if (sumDelta < -30) {
         sumDelta = -30
     }
-    if (deltaSumm <= 0) {
+    if (sumDelta <= 0) {
         hiroImg.style.height = '1400px'
         hiroImg.style.bottom = '-50%'
         menu.style.top = '100%'
         products.style.top = '100%'
         hiro.style.backgroundSize = '130% 130%'
     }
-    if (deltaSumm < -10 && deltaSumm > -20) {
+    if (sumDelta < -10) {
         hiroImg.style.height = '700px'
         hiroImg.style.bottom = '0'
         menu.style.top = '50%'
         nav.classList.remove('nav-active')
         hiro.style.backgroundSize = '100% 100%'
         products.style.top = '100%'
-        hiroImg.style.display = 'block'
     }
-    if (deltaSumm < -20) {
+    if (sumDelta < -20) {
         hiroImg.style.height = '700px'
         hiroImg.style.bottom = '0'
         menu.style.top = '0'
