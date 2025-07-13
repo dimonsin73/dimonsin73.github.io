@@ -428,6 +428,7 @@ body {
   background-color: #999;
 }
 .form-self-pickup {
+  display: none;
 }
 .form-self-pickup-active {
   display: flex;
