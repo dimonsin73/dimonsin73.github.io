@@ -2303,13 +2303,14 @@ select::-ms-expand
         background-color: #fff
         &-head 
             display: flex
-            align-items: center 
+            align-items: flex-start
             justify-content: space-between
         &-title 
             font: 500 24px/30px 'PT Root UI', 'sans-serif'
             color: var(--black)
         &-close 
             @include flex
+            flex: 0 0 auto
         &-content 
             display: flex
             align-items: center

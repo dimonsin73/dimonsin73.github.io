@@ -2854,7 +2854,7 @@ select::-ms-expand {
 }
 .rating__info-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 .rating__info-title {
@@ -2865,6 +2865,7 @@ select::-ms-expand {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 0 0 auto;
 }
 .rating__info-content {
   display: flex;
