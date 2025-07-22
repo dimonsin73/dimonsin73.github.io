@@ -1126,6 +1126,8 @@ select::-ms-expand
         display: flex
         justify-content: space-between
         align-items: center
+        flex-wrap: wrap
+        gap: 24px
         padding: 24px
     &__content 
         display: flex
@@ -1140,9 +1142,9 @@ select::-ms-expand
             margin-top: 10px
             font: 700 18px/23px 'PT Root UI', 'sans-serif'
             color: var(--black)
-        &-text 
-            font: 400 14px/18px 'PT Root UI', 'sans-serif'
-            color: #727C8A
+    &__text 
+        font: 400 14px/18px 'PT Root UI', 'sans-serif'
+        color: #727C8A
     &__name
         display: flex
         flex-direction: column 
@@ -1390,6 +1392,8 @@ select::-ms-expand
             border-bottom: 1px solid #E5E7EB
         &-bigitem
             grid-template-columns: 1fr 0.67fr 0.67fr 0.5fr 0.56fr 0.2fr
+            &:last-child
+                border-bottom: none
         &-zone1 
             font: 500 16px/20px 'PT Root UI', 'sans-serif'
             color: #552BC9
@@ -1507,6 +1511,8 @@ select::-ms-expand
                 margin-top: 16px
             & .label 
                 gap: 4px
+            &-bt
+                border-top: 1px solid #E5E7EB
         &__label 
             display: block
 @media (max-width: 587px)
@@ -1516,7 +1522,7 @@ select::-ms-expand
             flex-direction: column
             gap: 16px
         &__conditions-line
-            grid-template-columns: 1fr
+            grid-template-columns: pug 1fr
         &__btn .btn_primary 
             width: 100%
 @media (max-width: 459px)
@@ -1524,6 +1530,11 @@ select::-ms-expand
         margin-left: 0
     .date__input 
         padding: 14px
+.order-1 
+    order: 1
+@media (max-width: 587px)
+    .order-1 
+        order: 0
 .display-none 
     display: none
 .switch 
@@ -1775,6 +1786,8 @@ select::-ms-expand
         &__table 
             &-footer 
                 justify-content: center
+        &__sort 
+            display: none
 @media (max-width: 563px)
     .products
         &__content 
@@ -2141,6 +2154,7 @@ select::-ms-expand
         position: absolute
         top: calc( 100% + 5px)
         display: none
+        min-width: 282px
         padding: 16px
         border-radius: 16px
         box-shadow: 0px 20px 65px -5px #1212171A, 0px 10px 20px -5px #1212171A
@@ -2164,6 +2178,22 @@ select::-ms-expand
             width: 15px
             height: 15px
             margin: 2.5px
+.number 
+    position: relative
+    &__input 
+        padding: 14px 36px
+        text-align: center
+    &__btn 
+        position: absolute
+        top: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        transform: translateY(-50%)
+    &__minus 
+        left: 16px
+    &__plus 
+        right: 16px
 .rating 
     flex-direction: column
     gap: 30px
@@ -2822,6 +2852,7 @@ select::-ms-expand
             height: 50px
             border-radius: 50%
             background-color: #fff
+            z-index: 15
     &__name 
         display: flex
         flex-direction: column
@@ -3175,9 +3206,7 @@ select::-ms-expand
             background-color: #fff
     &__btns 
         gap: 24px
-    &__next 
-        flex: 0 0 calc( 50% - 12px )
-    &__next2
+    &__f50
         flex: 0 0 calc( 50% - 12px )
     &__foto2 
         display: flex
@@ -3223,9 +3252,15 @@ select::-ms-expand
     .modal
         align-items: flex-start
         overflow-y: scroll
+        &[data-modal='basic']
+            align-items: flex-start
         &__wrapper 
             margin: 0
             border-radius: 0
+        &__close 
+            top: 10px
+            right: 10px
+            transform: scale(0.8)
         &__content 
             flex-direction: column
 @media (max-width: 767px )
@@ -3271,7 +3306,7 @@ select::-ms-expand
                 & .check 
                     padding: 0
         &__footer 
-            flex-direction: column
+            flex-direction: column-reverse
             margin-top: auto
         &__order
             margin: 0
@@ -3298,9 +3333,7 @@ select::-ms-expand
         &__bg 
             &-line
                 width: 100%
-        &__next 
-            flex: 0 0 auto
-        &__next2
+        &__f50
             flex: 0 0 auto
         &__foto
             &-image 

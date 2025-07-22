@@ -20,8 +20,7 @@
     --Gray-90: #E6E8EC
     --Gray-100: #F2F3F5
     --White: #FFF
-    --Black: #000
-    --Black2: #202123
+    --Black: #202123
     --Red-error: #FF0034
     --Aside: #E7E8EA
 
@@ -91,24 +90,27 @@
 @mixin btn-small
     font: 600 16px/24px 'Inter', 'sans-serif'
     letter-spacing: -0.03em
+@mixin btn-xsmall
+    font: 600 15px/22px 'Inter', 'sans-serif'
+    letter-spacing: 0.01em
 
 .link 
     &-large 
         @include link-large
-        text-underline-offset: 2px
-        color: var(--Black2)
+        text-underline-offset: 3px
+        color: var(--Black)
         cursor: pointer
     &-medium 
         @include link-medium
         text-align: center
-        text-underline-offset: 2px
-        color: var(--Black2)
+        text-underline-offset: 3px
+        color: var(--Black)
         cursor: pointer
     &-medium2
         @include link-medium2
         text-align: center
-        text-underline-offset: 2px
-        color: var(--Black2)
+        text-underline-offset: 3px
+        color: var(--Black)
         cursor: pointer
         
 .btn 
@@ -126,16 +128,31 @@
             background-color: var(--Primary-20)
     &_secondary 
         background-color: var(--Gray-80)
-        color: var(--Black2)
-        transition: background-color 0.3s ease 
+        color: var(--Black)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
         &:hover 
             background-color: var(--Gray-70)
         &:active
             background-color: var(--Gray-60)
+    &_close
+        border: 1px solid var(--Black)
+        color: var(--Black)
+        transition: background-color 0.3s ease 
+        &:hover 
+            border: 1px solid var(--Primary-40)
+            background-color: var(--Primary-40)
+            color: var(--White)
+        &:active
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+            color: var(--White)
     &-icon 
         display: flex
         align-items: center
         justify-content: center
+    &_center 
+        margin: 0 auto
+
 @media (max-width:954px)
     .btn 
         @include btn-small
@@ -312,7 +329,7 @@
         font: 700 32px/48px 'Inter', 'sans-serif'
         letter-spacing: -0.2px
         text-align: center
-        color: var(--Black2)
+        color: var(--Black)
     &__item 
         display: flex
         flex-direction: column
@@ -373,12 +390,43 @@
 @media (max-height: 899px)
     .hiro__bg-earth
         bottom: -200px
+@media (max-height: 799px)
+    .hiro__main
+        padding: 50px 118.5px
 @media (max-height: 749px)
-    .hiro__bg-earth
-        bottom: -300px
+    .hiro
+        &__bg-earth
+            bottom: -300px
+        &__main
+            padding: 10px 118.5px
+            gap: 24px
+            &-top 
+                gap: 0
+        &__content 
+            gap: 12px
+        &__item 
+            gap: 12px
 @media (max-height: 649px)
-    .hiro__bg-earth
-        bottom: -385px
+    .hiro
+        &__bg-earth
+            bottom: -385px
+        &__content 
+            margin-top: 50px
+        &__footer 
+            bottom: 12px
+        &__sk 
+            bottom: 12px
+        &__mirax 
+            bottom: 12px
+    .logo 
+        width: 250px
+    .btn 
+        padding: 18px 24px
+        font-size: 20px
+        line-height: 24px
+@media (max-height: 499px)
+    .hiro__content 
+        margin-top: 20px
 @media (max-width: 1599px)
     .mirax 
         display: none 
@@ -397,6 +445,13 @@
         &__footer 
             left: 28px
             right: 28px
+    @media (max-height: 649px)
+    .hiro
+        &__content 
+            margin-top: 50px
+    @media (max-height: 499px)
+        .hiro__content 
+            margin-top: 20px
 @media (max-width: 1199px)
     .hiro
         &__bg 
@@ -514,6 +569,17 @@
     @media (max-height: 599px)
         .btn 
             padding: 16px
+        .hiro
+            &__content 
+                margin-top: 120px
+    @media (max-height: 549px)
+        .hiro
+            &__content 
+                margin-top: 60px
+    @media (max-height: 459px)
+        .hiro
+            &__content 
+                margin-top: 20px
 
 .bg
     background-color: var(--Gray-100)
@@ -567,9 +633,9 @@
             transition: fill 0.3s ease
         &-active
             background-color: var(--Aside)
-            color: var(--Black2)
+            color: var(--Black)
             & path  
-                fill: var(--Black2)
+                fill: var(--Black)
 
 // HEADER 
 .header 
@@ -613,65 +679,127 @@
 // TITLE 
 .title 
     @include headline-large
-    color: var(--Black2)
+    color: var(--Black)
 // TEXT 
-.text 
 // SECTION 
 .section 
-    display: flex
-    flex-direction: column
-    gap: 20px
-    max-width: 1090px
     margin: 0 auto
+    &_medium
+        max-width: 1090px
+    &_small 
+        max-width: 726px
+    &__form 
+        display: flex
+        flex-direction: column
+        gap: 20px
     &__top 
         display: flex
         justify-content: space-between
         align-items: flex-end
+        margin-bottom: 20px
         & a 
             text-decoration: underline
-    &__item 
-        padding: 20px 
-        padding-left: 50px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 32px 
         border-radius: 12px
         background-color: var(--White)
+        &-l50
+            padding: 20px
+            padding-left: 50px
         &-ai 
             background: 
                 image: url('../images/ai.png')
                 repeat: no-repeat 
                 position: center left 13px
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 16px
     &__or
         @include link-medium2
         color: var(--Gray-10)
         text-align: center
+    &__btn
+        width: 160px
+        padding: 16px 8px
+        border-radius: 8px
+        @include btn-xsmall
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__line 
+        display: grid
+        grid-template-columns: 1fr 1fr 80px
+        gap: 16px
+    &__linesmall
+        display: grid
+        grid-template-columns: 150px 150px
+        gap: 16px
+    &__footer 
+        display: flex
+        justify-content: space-between
+        padding: 0 50px
 // INPUT LABEL SELECT
 .input 
+    width: 100%
+    height: 60px
+    padding: 19.5px 12px
+    border-radius: 12px
+    background-color: var(--Gray-100)
+    @include link-large
+    color: var(--Black)
+    outline: none
+    &::placeholder 
+        font-size: 13px
+        color: var(--Gray-30)
+    &_number 
+        text-align: center
+.textarea 
     width: 100%
     height: 60px
     padding: 19.5px 10px
     border-radius: 12px
     background-color: var(--Gray-100)
     @include link-large
-    color: var(--Black2)
+    color: var(--Black)
     outline: none
     resize: none
+    scrollbar-width: thin
+    scrollbar-gutter: stable both-edges
+    scrollvar-color: #D9D9D9
     &::placeholder 
-        @include body-small
+        font-size: 13px
         color: var(--Gray-30)
     &_adjustment
-        background: 
-            image: url('../images/adjustment.png')
-            position: top 18px right 20px
-            repeat: no-repeat
+        padding-right: 36px
         transition: height 0.3s ease
         &-active 
             height: 500px
+.adjustment 
+    position: absolute
+    top: 18px 
+    right: 20px
+    display: flex
+    align-items: center
+    justify-content: center
 .label 
     position: relative
-    display: flex
-    &__btn 
+    &__title 
         position: absolute
-        top: 18px
-        right: 20px
+        top: 18px 
+        left: 20px
+        @include body-small
+        transition: top 0.3s ease
+    &-active 
+        & .input 
+            padding-top: 24px
+            padding-bottom: 8px
+        & .label__title
+            top: 8px
+        
 .select
     position: relative
     &__input 
@@ -680,70 +808,252 @@
             position: center right 20px
             repeat: no-repeat
         cursor: pointer
-    &-active 
+    &__title 
+        position: absolute
+        top: 22px
+        left: 12px
+        @include body-small
+        color: var(--Gray-30)
+        transition: top 0.3s ease
+        &-active 
+            top: 8px
+    &_up 
+        & .select__input 
+            padding: 31px 12px 8px
+    &__box 
+        display: flex
+        flex-direction: column
+        gap: 8px
+        padding-left: 14px
 .options 
     position: absolute
     display: flex
     flex-direction: column
-    gap: 12px
     width: 100%
     height: 0
     margin-top: 12px 
     border-radius: 12px
-    background-color: var(--Gray-100)
+    background-color: var(--Gray-90)
     overflow: hidden
     transition: height 0.3s ease
     z-index: 10
 .option
-    padding: 10px 
+    padding: 20px 12px 
     @include link-large
-    color: var(--Black2)
+    color: var(--Black)
     cursor: pointer
     &:hover 
-        background-color: var(--Gray-90)
+        background-color: var(--Gray-80)
 
-
-.search 
-    &__range
+.range
+    display: flex
+    align-items: center
+    column-gap: 13px
+    &__input 
+        appearance: none
+        max-width: 666px
+        width: 100%
+        height: 30px
+        border: none
+        overflow: hidden
+        cursor: pointer
+        &::-webkit-slider-thumb
+            appearance: none
+            background-color: var(--Primary-40)
+            border-radius: 50%
+            height: 28px
+            width: 28px
+            margin-top: -12px
+            box-shadow: calc(-100vmax - 28px) 0 0 100vmax var(--Primary-40)
+            clip-path: polygon(100% 0, 1px 0, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 1px 100%, 100% 100%)
+        &::-moz-range-thumb
+            appearance: none
+            background-color: var(--Primary-40)
+            border-radius: 50%
+            height: 28px
+            width: 28px
+            margin-top: -12px
+            box-shadow: calc(-100vmax - 28px) 0 0 100vmax var(--Primary-40)
+            clip-path: polygon(100% 0, 1px 0, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 1px 100%, 100% 100%)
+        &::-webkit-slider-runnable-track
+            height: 6px
+            border-radius: 3px
+            background-color: rgba(0, 0, 0, 0.20)
+    &__conclusion 
+        position: relative
+        &-text 
+            position: absolute
+            bottom: -12px
+            left: 50% 
+            @include subtitle-medium
+            color: var(--Primary-40)
+            white-space: nowrap
+            transform: translateX(-50%)
+    &__number 
+        width: 85px
+        @include headline-medium
+        color: var(--Primary-40)
+        text-align: center
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__explanation
         display: flex
         align-items: center
-        column-gap: 13px
-        &-input 
-            appearance: none
-            max-width: 666px
-            width: 100%
-            height: 30px
-            border: none
-            border-radius: 3px
-            overflow: hidden
-            cursor: pointer
-            &::-webkit-slider-thumb
-                appearance: none
-                background-color: var(--Primary-40)
-                border-radius: 50%
-                height: 28px
-                width: 28px
-                margin-top: -12px
-                box-shadow: calc(-100vmax - 28px) 0 0 100vmax var(--Primary-40)
-                clip-path: polygon(100% 0, 1px 0, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 1px 100%, 100% 100%)
-            &::-moz-range-thumb
-                appearance: none
-                background-color: var(--Primary-40)
-                border-radius: 50%
-                height: 28px
-                width: 28px
-                margin-top: -12px
-            &::-webkit-slider-runnable-track
-                height: 6px
-                border-radius: 3px
-                background: rgba(0, 0, 0, 0.20)
-        &-number 
-            width: 90px
-            padding: 8px 16px
-            border-radius: 8px
-            @include headline-small
+        gap: 4px
+.clue 
+    position: relative
+    display: flex
+    cursor: pointer
+    &__text 
+        position: absolute
+        bottom: calc( 100% )
+        left: -125px
+        display: none
+        width: 250px
+        padding: 10px
+        border-radius: 8px
+        background-color: var(--Gray-90)
+        @include subtitle-medium
+        color: var(--Gray-40)
+        z-index: 10
+        &-active 
+            display: block
+.switch 
+    position: relative
+    display: inline-block
+    flex: 0 0 auto
+    width: 51px
+    height: 31px
+    &__input 
+        display: none
+    &__slider 
+        position: absolute
+        cursor: pointer
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: rgba(0, 0, 0, 0.20)
+        -webkit-transition: .3s
+        transition: .3s
+        &:before 
+            position: absolute
+            content: ""
+            height: 27px
+            width: 27px
+            left: 2px
+            bottom: 2px
+            background-color: white
+            -webkit-transition: .3s
+            transition: .3s
+    &__input:checked + .switch__slider
+        background:
             color: var(--Primary-40)
-            text-align: center
-        &-text 
-            @include subtitle-small
-            color: var(--Gray-40)
+    &__input:checked + .switch__slider:before 
+        -webkit-transform: translateX(20px)
+        -ms-transform: translateX(20px)
+        transform: translateX(20px)
+    &__round 
+        border-radius: 25px
+    &__round:before 
+        border-radius: 50%
+
+.tax
+    &__radio 
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked ~ .tax__label .tax__check
+            border: 7px solid var(--Black)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        column-gap: 16px
+        row-gap: 4px
+    &__check 
+        grid-row: span 2
+        width: 20px
+        height: 20px
+        margin-top: 2px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__text        
+        @include subtitle-large
+        color: var(--Gray-30)
+.tag
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    gap: 14px
+    &__btn
+        padding: 8px 16px 8px 42px
+        border: 1px solid var(--Gray-70)
+        border-radius: 18px
+        background:
+            color: var(--Gray-100)
+            image: url(../images/plus.png)
+            repeat: no-repeat
+            position: left 16px center
+        @include subtitle-large
+        color: var(--Gray-20)
+        transition: all 0.3s ease
+        &:hover
+            background-color: var(--Gray-80)
+        &-active
+            background-color: var(--Gray-20)
+            background-image: url(../images/check.png)
+            color: var(--White)
+            &:hover
+                background-color: var(--Gray-20)
+.check 
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .check__label .check__check
+            background:
+                color: var(--Black)
+                image: url(../images/check.png)
+    &__label 
+        display: flex
+        justify-content: start
+        column-gap: 8px
+    &__check 
+        flex: 0 0 auto
+        width: 20px
+        height: 20px
+        margin-top: 2px
+        border: 1px solid var(--Black)
+        border-radius: 4px 
+        background:
+            repeat: no-repeat
+            position: center center
+        transition: background 0.3s ease
+    &__info 
+        display: flex
+        flex-direction: column
+        gap: 4px
+    &__title 
+        @include title-medium
+        color: var(--black)
+    &__text 
+        @include subtitle-large
+        color: var(--Gray-30)
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button 
+    -webkit-appearance: none
+    margin: 0
+input[type="number"] 
+    -moz-appearance: textfield
+input[type="number"]:hover,
+input[type="number"]:focus 
+    -moz-appearance: number-input
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button 
+    -webkit-appearance: none
+    margin: 0

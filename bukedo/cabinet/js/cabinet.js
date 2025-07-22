@@ -159,9 +159,9 @@ for (let i = 0; i < productsViewArray.length; i++) {
 }
 // Кнопка переключения
 const productsSort = document.querySelector('.products__sort')
+const productsWrapperArray = document.querySelectorAll('.products__wrapper')
 productsSort.addEventListener('click', function(){
     const productsSortData = productsSort.dataset.sort
-    const productsWrapperArray = document.querySelectorAll('.products__wrapper')
     for (let i = 0; i < productsWrapperArray.length; i++) {
         const productsWrapper = productsWrapperArray[i];
         if (productsWrapper.dataset.sort === productsSortData) {
@@ -170,7 +170,6 @@ productsSort.addEventListener('click', function(){
             productsWrapper.classList.add('products__wrapper-active')
         }
     }
-    
     switch (productsSortData) {
         case 'grid':
             productsSort.dataset.sort = 'table'
@@ -181,7 +180,6 @@ productsSort.addEventListener('click', function(){
         default:
             break;
     }
-
     const productsSortSvgArray = document.querySelectorAll('.products__sort-svg')
     for (let i = 0; i < productsSortSvgArray.length; i++) {
         const productsSortSvg = productsSortSvgArray[i];
@@ -192,6 +190,17 @@ productsSort.addEventListener('click', function(){
         }
     }
 })
+const screenWidth = window.screen.width
+if (screenWidth < '767') {
+    for (let i = 0; i < productsWrapperArray.length; i++) {
+        const productsWrapper = productsWrapperArray[i];
+        if (productsWrapper.dataset.sort === 'table') {
+            productsWrapper.classList.remove('products__wrapper-active')
+        } else {
+            productsWrapper.classList.add('products__wrapper-active')
+        }
+    }
+}
 
 const shopsInfoBtnArr = document.querySelectorAll('.shops__info-btn')
 for (let i = 0; i < shopsInfoBtnArr.length; i++) {
@@ -705,3 +714,32 @@ offerBtn.addEventListener('click', function(){
         
     }
 })
+// Работа поля ввода количества 
+const numberBtnArray = document.querySelectorAll('.number__btn')
+for (let i = 0; i < numberBtnArray.length; i++) {
+    const numberBtn = numberBtnArray[i];
+    numberBtn.addEventListener('click', function(){
+        const numberInput = numberBtn.parentElement.querySelector('.number__input')
+        let numberInputValue = Number(numberInput.value)
+        if (numberBtn.classList.contains('number__minus')) {
+            if (numberInputValue > 0) {
+                numberInput.value = numberInputValue - 1
+            } 
+            
+        }
+        if (numberBtn.classList.contains('number__plus')) {
+            numberInput.value = numberInputValue + 1
+        }
+    })
+}
+
+// Редактирование фотографий букетов 
+const modalImageEditArray = document.querySelectorAll('.modal__image-edit')
+for (let i = 0; i < modalImageEditArray.length; i++) {
+    const modalImageEdit = modalImageEditArray[i];
+    modalImageEdit.addEventListener('click', function(){
+        const modalImageImg = modalImageEdit.parentElement.querySelector('.modal__image-img')
+        modalImageImg.remove()
+        modalImageEdit.style.display = 'none'
+    })
+}

@@ -1,10 +1,10 @@
-const inputAdjustmentArray = document.querySelectorAll('.input_adjustment')
-for (let i = 0; i < inputAdjustmentArray.length; i++) {
-    const inputAdjustment = inputAdjustmentArray[i];
-    inputAdjustment.addEventListener('focus', function(){
-        inputAdjustment.classList.add('input_adjustment-active')
+const textareaAdjustmentArray = document.querySelectorAll('.textarea_adjustment')
+for (let i = 0; i < textareaAdjustmentArray.length; i++) {
+    const textareaAdjustment = textareaAdjustmentArray[i];
+    textareaAdjustment.addEventListener('focus', function(){
+        textareaAdjustment.classList.add('textarea_adjustment-active')
     }) 
-    inputAdjustment.addEventListener('focusout', function(){
-        inputAdjustment.classList.remove('input_adjustment-active')
+    textareaAdjustment.addEventListener('focusout', function(){
+        textareaAdjustment.classList.remove('textarea_adjustment-active')
     }) 
 }

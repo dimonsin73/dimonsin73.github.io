@@ -694,6 +694,8 @@ html(lang="ru")
                                         <path d="M12 18V6" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                     p Добавить дату
+                    .shops__btn
+                        button(type="button").btn.btn_primary Сохранить изменения
                 .shops__wrapper(data-shops='delivery')
                     .shops__head 
                         h2.main-title Зоны доставки
@@ -701,11 +703,11 @@ html(lang="ru")
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.1665 9.99984H15.8332M9.99984 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
-                            | Добавить зону доставки 
+                            | Добавить зону доставки
                     .shops__content
                         .shops__regions
                             .shops__region
-                                p.shops__content-text Стоимость доставки расчитывается по зонам в удаленности от вашего магазина. Вы сами создаете зоны доставки для вашего магазина и можете подробно настроить стоимость для полученного заказа.
+                                p.shops__text Стоимость доставки расчитывается по зонам в удаленности от вашего магазина. Вы сами создаете зоны доставки для вашего магазина и можете подробно настроить стоимость для полученного заказа. 
                                 .shops__table 
                                     .shops__table-head
                                         p.shops__table-htext Название
@@ -756,13 +758,14 @@ html(lang="ru")
                 .shops__wrapper(data-shops='delivery-outside')
                     .shops__head 
                         h2.main-title Доставка за город
+                        p.shops__text.order-1 Стоимость доставки расчитывается по зонам в удаленности от вашего магазина. Вы сами создаете зоны доставки для вашего магазина и можете подробно настроить стоимость для полученного заказа.
                         button(type="button").btn.btn_primary 
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.1665 9.99984H15.8332M9.99984 4.1665V15.8332" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                             | Добавить пункт
+                        
                     .shops__content 
-                        p.shops__content-text Стоимость доставки расчитывается по зонам в удаленности от вашего магазина. Вы сами создаете зоны доставки для вашего магазина и можете подробно настроить стоимость для полученного заказа.
                         .shops__table 
                             .shops__table-head.shops__table-bighead
                                 p.shops__table-htext Населенный пункт 
@@ -771,7 +774,7 @@ html(lang="ru")
                                 p.shops__table-htext Стоимость
                                 p.shops__table-htext Доставка в праздники
                                 p.shops__table-htext 
-                            .shops__table-item.shops__table-bigitem
+                            .shops__table-item.shops__table-bigitem.shops__table-bt
                                 p.shops__table-city п. Сосновка
                                 p.shops__table-text.shops__table-area г. Москва
                                 label.label.shops__table-left
@@ -966,7 +969,7 @@ html(lang="ru")
                                         <path d="M8.74935 7.09984V3.3165C8.74935 2.1415 8.21602 1.6665 6.89102 1.6665H3.52435C2.19935 1.6665 1.66602 2.1415 1.66602 3.3165V7.0915C1.66602 8.27484 2.19935 8.7415 3.52435 8.7415H6.89102C8.21602 8.74984 8.74935 8.27484 8.74935 7.09984Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M8.74935 16.475V13.1083C8.74935 11.7833 8.21602 11.25 6.89102 11.25H3.52435C2.19935 11.25 1.66602 11.7833 1.66602 13.1083V16.475C1.66602 17.8 2.19935 18.3333 3.52435 18.3333H6.89102C8.21602 18.3333 8.74935 17.8 8.74935 16.475Z" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                .products__wrapper.products__wrapper-active(data-sort='grid')
+                .products__wrapper(data-sort='grid')
                     .products__content 
                         .products__item
                             .products__image
@@ -1240,7 +1243,7 @@ html(lang="ru")
                                     <path d="M5.34297 5L4.16797 6.175L7.98464 10L4.16797 13.825L5.34297 15L10.343 10L5.34297 5Z" fill="#1C1C1D"/>
                                     <path d="M10.8332 5L9.6582 6.175L13.4749 10L9.6582 13.825L10.8332 15L15.8332 10L10.8332 5Z" fill="#1C1C1D"/>
                                 </svg>
-                .products__wrapper(data-sort='table')
+                .products__wrapper.products__wrapper-active(data-sort='table')
                     .products__table 
                         .products__table-head 
                             p.products__table-htext Фото
@@ -3666,7 +3669,12 @@ html(lang="ru")
                         </svg>
                     .modal__image 
                         .modal__image-big
-                            img(src="img/product_add.png", alt="")
+                            .modal__image-bg 
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M55.001 27.5V20C55.001 17.2386 52.7624 15 50.001 15H45.1769C43.5051 15 41.944 14.1645 41.0166 12.7735L38.9853 9.7265C38.058 8.3355 36.4968 7.5 34.8251 7.5H25.1769C23.5051 7.5 21.944 8.3355 21.0166 9.7265L18.9853 12.7735C18.058 14.1645 16.4968 15 14.8251 15H10.001C7.23955 15 5.00098 17.2386 5.00098 20V42.5C5.00098 45.2614 7.23955 47.5 10.001 47.5H30.001M40.001 45H55.001M47.501 37.5V52.5M37.501 30C37.501 34.1421 34.1431 37.5 30.001 37.5C25.8588 37.5 22.501 34.1421 22.501 30C22.501 25.8579 25.8588 22.5 30.001 22.5C34.1431 22.5 37.501 25.8579 37.501 30Z" stroke="#AFBACA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                p Добавить фото, основной вид
+                            img(src="img/product_add.png", alt="").modal__image-img
                             button(type="button").modal__image-edit
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14.6032 5.39651L12.8922 7.10758M2.20656 18.3298L5.51714 17.9441C6.49165 17.8306 7.39928 17.3914 8.09302 16.6976L17.3409 7.44975C18.6639 6.12675 18.6639 3.98175 17.3409 2.65875C16.0179 1.33575 13.8729 1.33575 12.5499 2.65875L3.30202 11.9067C2.60828 12.6004 2.16907 13.508 2.05554 14.4825L1.66984 17.7931C1.6337 18.1033 1.8964 18.366 2.20656 18.3298Z" stroke="#1C1C1D" stroke-linecap="round"/>
@@ -3676,7 +3684,7 @@ html(lang="ru")
                                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M55.001 27.5V20C55.001 17.2386 52.7624 15 50.001 15H45.1769C43.5051 15 41.944 14.1645 41.0166 12.7735L38.9853 9.7265C38.058 8.3355 36.4968 7.5 34.8251 7.5H25.1769C23.5051 7.5 21.944 8.3355 21.0166 9.7265L18.9853 12.7735C18.058 14.1645 16.4968 15 14.8251 15H10.001C7.23955 15 5.00098 17.2386 5.00098 20V42.5C5.00098 45.2614 7.23955 47.5 10.001 47.5H30.001M40.001 45H55.001M47.501 37.5V52.5M37.501 30C37.501 34.1421 34.1431 37.5 30.001 37.5C25.8588 37.5 22.501 34.1421 22.501 30C22.501 25.8579 25.8588 22.5 30.001 22.5C34.1431 22.5 37.501 25.8579 37.501 30Z" stroke="#AFBACA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                p Добавить фото, основной вид
+                                p Добавить фото, вид спереди
                             img(src="img/product_add.png", alt="").modal__image-img
                         .modal__image-small
                             .modal__image-bg 
@@ -3697,15 +3705,16 @@ html(lang="ru")
                                     <path d="M21 16L36 26L21 36V16Z" stroke="#AFBACA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                                 p Добавить видео
-                .modal__name 
+                .modal__head
+                    label(for="modal__name-name").label Название букета*
+                        input(type="text", name="" value='Звонкий голос в Москве').input#modal__name-name
                     label(for="modal__name-category").label Категория*
                         input(type="text", name="" value="Монобукет" readonly).input.select#modal__name-category
                         ul.options
                             li.option Монобукет
                             li.option Выбор 2
                             li.option Выбор 3
-                    label(for="modal__name-name").label Название букета*
-                        input(type="text", name="" value='Звонкий голос в Москве').input#modal__name-name
+                .modal__name
                     .check
                         input.check__input#checkcopy(type="checkbox", name="checkcopy")
                         label.check__label(for="checkcopy")
@@ -3729,8 +3738,55 @@ html(lang="ru")
                         .modal__grid-content 
                             .modal__grid-item 
                                 input(type="text", name="" value="Роза кения").input.modal__grid-input.modal__grid-name
-                                input(type="text", name="" value="").input.modal__grid-input
-                                input(type="number", name="" value="").input.modal__grid-input
+                                label.label(for="modal__grid-color1").colors
+                                    P.price__label Цвет 
+                                    input(type="text", name="" value="Цвета" readonly).input.price__input#modal__grid-color1.colors__input
+                                    .colors__active
+                                    .colors__dropdawn
+                                        .colors__dropdawn-head 
+                                            h3.colors__dropdawn-title Выберите цвет
+                                            button(type="button").colors__dropdawn-close
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                                </svg>
+                                        .colors__dropdawn-content 
+                                            .color
+                                                .color__item
+                                                    .color__item-color.color__item-white
+                                                .color__item
+                                                    .color__item-color.color__item-carmine
+                                                .color__item
+                                                    .color__item-color.color__item-rose
+                                                .color__item
+                                                    .color__item-color.color__item-cream
+                                                .color__item
+                                                    .color__item-color.color__item-yellow
+                                                .color__item
+                                                    .color__item-color.color__item-red
+                                                .color__item
+                                                    .color__item-color.color__item-orange
+                                                .color__item
+                                                    .color__item-color.color__item-sky
+                                                .color__item
+                                                    .color__item-color.color__item-blue
+                                                .color__item
+                                                    .color__item-color.color__item-green
+                                                .color__item
+                                                    .color__item-color.color__item-coral
+                                                .color__item
+                                                    .color__item-color.color__item-fuchsia
+                                                .color__item
+                                                    .color__item-color.color__item-lilac
+                                label.label(for="modal__grid-number1").number
+                                    input(type="number", name="modal__grid-number" value="1").input.modal__grid-input.number__input#modal__grid-number1
+                                    button(type="button").number__btn.number__minus
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg> 
+                                    button(type="button").number__btn.number__plus
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 3L9 15M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
                                 input(type="number", name="" value="").input.modal__grid-input
                                 button(type="button").modal__grid-button
                                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -3738,8 +3794,55 @@ html(lang="ru")
                                     </svg>
                             .modal__grid-item 
                                 input(type="text", name="" value="Альстромерия").input.modal__grid-input.modal__grid-name
-                                input(type="text", name="" value="").input.modal__grid-input
-                                input(type="number", name="" value="").input.modal__grid-input
+                                label.label(for="modal__grid-color2").colors
+                                    P.price__label Цвет 
+                                    input(type="text", name="" value="Цвета" readonly).input.price__input#modal__grid-color2.colors__input
+                                    .colors__active
+                                    .colors__dropdawn
+                                        .colors__dropdawn-head 
+                                            h3.colors__dropdawn-title Выберите цвет
+                                            button(type="button").colors__dropdawn-close
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                                </svg>
+                                        .colors__dropdawn-content 
+                                            .color
+                                                .color__item
+                                                    .color__item-color.color__item-white
+                                                .color__item
+                                                    .color__item-color.color__item-carmine
+                                                .color__item
+                                                    .color__item-color.color__item-rose
+                                                .color__item
+                                                    .color__item-color.color__item-cream
+                                                .color__item
+                                                    .color__item-color.color__item-yellow
+                                                .color__item
+                                                    .color__item-color.color__item-red
+                                                .color__item
+                                                    .color__item-color.color__item-orange
+                                                .color__item
+                                                    .color__item-color.color__item-sky
+                                                .color__item
+                                                    .color__item-color.color__item-blue
+                                                .color__item
+                                                    .color__item-color.color__item-green
+                                                .color__item
+                                                    .color__item-color.color__item-coral
+                                                .color__item
+                                                    .color__item-color.color__item-fuchsia
+                                                .color__item
+                                                    .color__item-color.color__item-lilac
+                                label.label(for="modal__grid-number2").number
+                                    input(type="number", name="modal__grid-number" value="1").input.modal__grid-input.number__input#modal__grid-number2
+                                    button(type="button").number__btn.number__minus
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg> 
+                                    button(type="button").number__btn.number__plus
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 3L9 15M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
                                 input(type="number", name="" value="").input.modal__grid-input
                                 button(type="button").modal__grid-button
                                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -3747,8 +3850,55 @@ html(lang="ru")
                                     </svg>
                             .modal__grid-item 
                                 input(type="text", name="" value="Эустома махровая").input.modal__grid-input.modal__grid-name
-                                input(type="text", name="" value="").input.modal__grid-input
-                                input(type="number", name="" value="").input.modal__grid-input
+                                label.label(for="modal__grid-color3").colors
+                                    P.price__label Цвет 
+                                    input(type="text", name="" value="Цвета" readonly).input.price__input#modal__grid-color3.colors__input
+                                    .colors__active
+                                    .colors__dropdawn
+                                        .colors__dropdawn-head 
+                                            h3.colors__dropdawn-title Выберите цвет
+                                            button(type="button").colors__dropdawn-close
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                                </svg>
+                                        .colors__dropdawn-content 
+                                            .color
+                                                .color__item
+                                                    .color__item-color.color__item-white
+                                                .color__item
+                                                    .color__item-color.color__item-carmine
+                                                .color__item
+                                                    .color__item-color.color__item-rose
+                                                .color__item
+                                                    .color__item-color.color__item-cream
+                                                .color__item
+                                                    .color__item-color.color__item-yellow
+                                                .color__item
+                                                    .color__item-color.color__item-red
+                                                .color__item
+                                                    .color__item-color.color__item-orange
+                                                .color__item
+                                                    .color__item-color.color__item-sky
+                                                .color__item
+                                                    .color__item-color.color__item-blue
+                                                .color__item
+                                                    .color__item-color.color__item-green
+                                                .color__item
+                                                    .color__item-color.color__item-coral
+                                                .color__item
+                                                    .color__item-color.color__item-fuchsia
+                                                .color__item
+                                                    .color__item-color.color__item-lilac
+                                label.label(for="modal__grid-number3").number
+                                    input(type="number", name="modal__grid-number" value="1").input.modal__grid-input.number__input#modal__grid-number3
+                                    button(type="button").number__btn.number__minus
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg> 
+                                    button(type="button").number__btn.number__plus
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 3L9 15M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
                                 input(type="number", name="" value="").input.modal__grid-input
                                 button(type="button").modal__grid-button 
                                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -3756,8 +3906,55 @@ html(lang="ru")
                                     </svg>
                             .modal__grid-item 
                                 input(type="text", name="" value="Роза белая").input.modal__grid-input.modal__grid-name
-                                input(type="text", name="" value="").input.modal__grid-input
-                                input(type="number", name="" value="").input.modal__grid-input
+                                label.label(for="modal__grid-color4").colors
+                                    P.price__label Цвет 
+                                    input(type="text", name="" value="Цвета" readonly).input.price__input#modal__grid-color4.colors__input
+                                    .colors__active
+                                    .colors__dropdawn
+                                        .colors__dropdawn-head 
+                                            h3.colors__dropdawn-title Выберите цвет
+                                            button(type="button").colors__dropdawn-close
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6 6L12 12M12 12L18 18M12 12L18 6M12 12L6 18" stroke="#727C8A" stroke-width="1.5" stroke-linecap="round"/>
+                                                </svg>
+                                        .colors__dropdawn-content 
+                                            .color
+                                                .color__item
+                                                    .color__item-color.color__item-white
+                                                .color__item
+                                                    .color__item-color.color__item-carmine
+                                                .color__item
+                                                    .color__item-color.color__item-rose
+                                                .color__item
+                                                    .color__item-color.color__item-cream
+                                                .color__item
+                                                    .color__item-color.color__item-yellow
+                                                .color__item
+                                                    .color__item-color.color__item-red
+                                                .color__item
+                                                    .color__item-color.color__item-orange
+                                                .color__item
+                                                    .color__item-color.color__item-sky
+                                                .color__item
+                                                    .color__item-color.color__item-blue
+                                                .color__item
+                                                    .color__item-color.color__item-green
+                                                .color__item
+                                                    .color__item-color.color__item-coral
+                                                .color__item
+                                                    .color__item-color.color__item-fuchsia
+                                                .color__item
+                                                    .color__item-color.color__item-lilac
+                                label.label(for="modal__grid-number4").number
+                                    input(type="number", name="modal__grid-number" value="1").input.modal__grid-input.number__input#modal__grid-number4
+                                    button(type="button").number__btn.number__minus
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg> 
+                                    button(type="button").number__btn.number__plus
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 3L9 15M15 9L3 9" stroke="#1C1C1D" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
                                 input(type="number", name="" value="").input.modal__grid-input
                                 button(type="button").modal__grid-button 
                                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -4321,11 +4518,11 @@ html(lang="ru")
                             button(type="button").btn.btn_green Сохранить
                 button(type="button" data-work="0").btn.btn_primary#modal__work.modal-work Принять в работу
                 .modal__btns.modal-work(data-work="1")
-                    button(type="button").btn.btn_secondary.modal__next Пропустить шаг
-                    button(type="button").btn.btn_primary.modal__next Загрузить и продолжить
+                    button(type="button").btn.btn_secondary.modal__next.modal__f50 Пропустить шаг
+                    button(type="button").btn.btn_primary.modal__next.modal__f50 Загрузить и продолжить
                 .modal__btns.modal-work(data-work="2")
-                    button(type="button").btn.btn_white.modal__next2 Забрали самовывозом
-                    button(type="button").btn.btn_primary.modal__next2 Подтвердить передачу в доставку
+                    button(type="button").btn.btn_white.modal__next2.modal__f50 Забрали самовывозом
+                    button(type="button").btn.btn_primary.modal__next2.modal__f50 Подтвердить передачу в доставку
                 button(type="button" data-work="3").btn.btn_primary.modal-work Завершить заказ
                 button(type="button").btn_refusal#modal__refusal Отказаться от заказа
         .confirm
