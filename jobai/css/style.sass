@@ -230,7 +230,6 @@
     resize: none
     scrollbar-width: thin
     scrollbar-gutter: stable both-edges
-    scrollvar-color: #D9D9D9
     &::placeholder 
         font-size: 13px
         color: var(--Gray-30)
@@ -985,7 +984,12 @@
             font: 500 12px/17px 'Inter', 'sans-serif'
             color: var(--Black)
 .section // SECTION 
+    display: none
     margin: 0 auto
+    padding-top: 10px
+    padding-bottom: 24px
+    &_active
+        display: block
     &_medium
         max-width: 1090px
     &_small 

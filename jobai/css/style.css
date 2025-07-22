@@ -206,7 +206,6 @@
   resize: none;
   scrollbar-width: thin;
   scrollbar-gutter: stable both-edges;
-  scrollvar-color: #D9D9D9;
 }
 .textarea::-moz-placeholder {
   font-size: 13px;
@@ -1136,7 +1135,13 @@
 }
 
 .section {
+  display: none;
   margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 24px;
+}
+.section_active {
+  display: block;
 }
 .section_medium {
   max-width: 1090px;

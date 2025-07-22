@@ -3621,6 +3621,12 @@ select::-ms-expand {
 .modal__grid-input {
   width: 100%;
 }
+.modal__grid-input::-moz-placeholder {
+  opacity: 0;
+}
+.modal__grid-input::placeholder {
+  opacity: 0;
+}
 .modal__grid-button {
   width: 50px;
   margin-left: auto;
@@ -4088,6 +4094,12 @@ select::-ms-expand {
   }
   .modal__grid-clean {
     display: none;
+  }
+  .modal__grid-input::-moz-placeholder {
+    opacity: 1;
+  }
+  .modal__grid-input::placeholder {
+    opacity: 1;
   }
   .modal__additionally-line {
     grid-template-columns: 1fr;

@@ -2912,6 +2912,8 @@ select::-ms-expand
             color: var(--black)
         &-input 
             width: 100%
+            &::placeholder
+                opacity: 0
         &-button 
             width: 50px
             margin-left: auto
@@ -3290,6 +3292,9 @@ select::-ms-expand
                 grid-template-columns: 1fr 1fr 1fr
             &-clean
                 display: none
+            &-input
+                &::placeholder
+                    opacity: 1
         &__additionally
             &-line
                 grid-template-columns: 1fr

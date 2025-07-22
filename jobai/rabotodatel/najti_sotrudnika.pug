@@ -12,6 +12,8 @@ html(lang="ru")
         script(src="../js/adjustment.js" defer) 
         script(src="../js/range.js" defer) 
         script(src="../js/clue.js" defer) 
+        script(src="../js/tag.js" defer) 
+        script(src="../js/najti_sotrudnika.js" defer) 
     body.bg
         aside.aside 
             .aside__logo 
@@ -101,7 +103,7 @@ html(lang="ru")
                     <path d="M15.9499 14.7516C15.4813 15.2202 15.4813 15.98 15.9499 16.4486C16.4185 16.9173 17.1783 16.9173 17.647 16.4486L21.247 12.8486C21.472 12.6236 21.5984 12.3184 21.5984 12.0001C21.5984 11.6818 21.472 11.3766 21.247 11.1516L17.647 7.55157C17.1783 7.08294 16.4185 7.08294 15.9499 7.55157C15.4813 8.0202 15.4813 8.78 15.9499 9.24862L17.5014 10.8001L8.39844 10.8001C7.7357 10.8001 7.19844 11.3374 7.19844 12.0001C7.19844 12.6628 7.7357 13.2001 8.39844 13.2001H17.5014L15.9499 14.7516Z" fill="#6A6A73"/>
                 </svg>
         main.main 
-            section.section.section_medium
+            section.section.section_active.section_medium(data-section='najti-sotrudnika')
                 .section__top 
                         h2.title Найти сотрудника
                         a().link-large Как пользоваться?
@@ -143,10 +145,10 @@ html(lang="ru")
                                 span.switch__slider.switch__round
                     button(type="submit").btn.btn_primary.btn_center Найти сотрудника
 
-            section.section.section_small
+            section.section.section_small(data-section='additional-filters')
                 .section__top 
                     h2.title Дополнительные фильтры
-                form.section__form 
+                form.section__form(data-form='additional-filters')
                     .section__wrapper
                         .select.select_up
                             input(type="text", readonly, name="specialization").select__input.input#specialization
@@ -265,6 +267,6 @@ html(lang="ru")
                                 .option Мужской
                                 .option Женский
                     .section__footer 
-                        button(type="button").section__btn.btn.btn_tertiary Закрыть
-                        button(type="submit").section__btn.btn.btn_primary Применить
+                        button(type="button").section__close.btn.btn_tertiary Закрыть
+                        button(type="submit").section__success.btn.btn_primary Применить
                         
