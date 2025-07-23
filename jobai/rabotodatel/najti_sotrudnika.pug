@@ -103,170 +103,233 @@ html(lang="ru")
                     <path d="M15.9499 14.7516C15.4813 15.2202 15.4813 15.98 15.9499 16.4486C16.4185 16.9173 17.1783 16.9173 17.647 16.4486L21.247 12.8486C21.472 12.6236 21.5984 12.3184 21.5984 12.0001C21.5984 11.6818 21.472 11.3766 21.247 11.1516L17.647 7.55157C17.1783 7.08294 16.4185 7.08294 15.9499 7.55157C15.4813 8.0202 15.4813 8.78 15.9499 9.24862L17.5014 10.8001L8.39844 10.8001C7.7357 10.8001 7.19844 11.3374 7.19844 12.0001C7.19844 12.6628 7.7357 13.2001 8.39844 13.2001H17.5014L15.9499 14.7516Z" fill="#6A6A73"/>
                 </svg>
         main.main 
-            section.section.section_active.section_medium(data-section='najti-sotrudnika')
-                .section__top 
-                        h2.title Найти сотрудника
-                        a().link-large Как пользоваться?
-                form.section__form
-                    .section__wrapper.section__wrapper-l50.section__wrapper-ai
-                        label(for="job-description").label
-                            textarea(name="job-description", placeholder="Введите название должности или описание вакансии").textarea.textarea_adjustment#job-description
-                            button(type="button").btn-icon.adjustment 
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.99844 4.8001C5.99844 4.13736 5.46118 3.6001 4.79844 3.6001C4.1357 3.6001 3.59844 4.13736 3.59844 4.8001V13.5212C2.88108 13.9361 2.39844 14.7118 2.39844 15.6001C2.39844 16.4884 2.88108 17.264 3.59844 17.679V19.2001C3.59844 19.8628 4.1357 20.4001 4.79844 20.4001C5.46118 20.4001 5.99844 19.8628 5.99844 19.2001V17.679C6.7158 17.264 7.19844 16.4884 7.19844 15.6001C7.19844 14.7118 6.7158 13.9361 5.99844 13.5212V4.8001Z" fill="#6A6A73"/>
-                                    <path d="M13.1984 4.8001C13.1984 4.13736 12.6612 3.6001 11.9984 3.6001C11.3357 3.6001 10.7984 4.13736 10.7984 4.8001V6.32117C10.0811 6.73615 9.59844 7.51176 9.59844 8.4001C9.59844 9.28844 10.0811 10.064 10.7984 10.479V19.2001C10.7984 19.8628 11.3357 20.4001 11.9984 20.4001C12.6612 20.4001 13.1984 19.8628 13.1984 19.2001V10.479C13.9158 10.064 14.3984 9.28844 14.3984 8.4001C14.3984 7.51176 13.9158 6.73615 13.1984 6.32117V4.8001Z" fill="#6A6A73"/>
-                                    <path d="M19.1984 3.6001C19.8612 3.6001 20.3984 4.13736 20.3984 4.8001V13.5212C21.1158 13.9361 21.5984 14.7118 21.5984 15.6001C21.5984 16.4884 21.1158 17.264 20.3984 17.679V19.2001C20.3984 19.8628 19.8612 20.4001 19.1984 20.4001C18.5357 20.4001 17.9984 19.8628 17.9984 19.2001V17.679C17.2811 17.264 16.7984 16.4884 16.7984 15.6001C16.7984 14.7118 17.2811 13.9361 17.9984 13.5212V4.8001C17.9984 4.13736 18.5357 3.6001 19.1984 3.6001Z" fill="#6A6A73"/>
-                                </svg>
-                    p.section__or или
-                    .section__wrapper.section__wrapper-l50
-                        .select    
-                            input(type="text", readonly, name="job-title", placeholder="Выберите свою вакансию").select__input.input#job-title
-                            .options 
-                                .option Вакансия 1
-                                .option Вакансия 2
-                                .option Вакансия 3
-                                .option Вакансия 4
-                                .option Вакансия 5
-                    .section__wrapper.section__wrapper-l50.section__wrapper-ai
-                        .range
-                            input.range__input(type="range" min="0" max="100" step="1" value="90")
-                            .range__conclusion
-                                p.range__number 95% 
-                                p.range__conclusion-text не менее
-                            .range__explanation
-                                p.range__text Процент соответствия 
-                                .clue
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+            section.section.section_active(data-section='najti-sotrudnika')
+                .container.container_medium
+                    .section__top 
+                            h2.title Найти сотрудника
+                            a().link-large Как пользоваться?
+                    form.section__form
+                        .section__wrapper.section__wrapper-l50.section__wrapper-ai
+                            label(for="job-description").label
+                                textarea(name="job-description", placeholder="Введите название должности или описание вакансии").textarea.textarea_adjustment#job-description
+                                button(type="button").btn-icon.adjustment 
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.99844 4.8001C5.99844 4.13736 5.46118 3.6001 4.79844 3.6001C4.1357 3.6001 3.59844 4.13736 3.59844 4.8001V13.5212C2.88108 13.9361 2.39844 14.7118 2.39844 15.6001C2.39844 16.4884 2.88108 17.264 3.59844 17.679V19.2001C3.59844 19.8628 4.1357 20.4001 4.79844 20.4001C5.46118 20.4001 5.99844 19.8628 5.99844 19.2001V17.679C6.7158 17.264 7.19844 16.4884 7.19844 15.6001C7.19844 14.7118 6.7158 13.9361 5.99844 13.5212V4.8001Z" fill="#6A6A73"/>
+                                        <path d="M13.1984 4.8001C13.1984 4.13736 12.6612 3.6001 11.9984 3.6001C11.3357 3.6001 10.7984 4.13736 10.7984 4.8001V6.32117C10.0811 6.73615 9.59844 7.51176 9.59844 8.4001C9.59844 9.28844 10.0811 10.064 10.7984 10.479V19.2001C10.7984 19.8628 11.3357 20.4001 11.9984 20.4001C12.6612 20.4001 13.1984 19.8628 13.1984 19.2001V10.479C13.9158 10.064 14.3984 9.28844 14.3984 8.4001C14.3984 7.51176 13.9158 6.73615 13.1984 6.32117V4.8001Z" fill="#6A6A73"/>
+                                        <path d="M19.1984 3.6001C19.8612 3.6001 20.3984 4.13736 20.3984 4.8001V13.5212C21.1158 13.9361 21.5984 14.7118 21.5984 15.6001C21.5984 16.4884 21.1158 17.264 20.3984 17.679V19.2001C20.3984 19.8628 19.8612 20.4001 19.1984 20.4001C18.5357 20.4001 17.9984 19.8628 17.9984 19.2001V17.679C17.2811 17.264 16.7984 16.4884 16.7984 15.6001C16.7984 14.7118 17.2811 13.9361 17.9984 13.5212V4.8001C17.9984 4.13736 18.5357 3.6001 19.1984 3.6001Z" fill="#6A6A73"/>
                                     </svg>
-                                    p.clue__text Тут будет подсказка. Тут будет подсказка. Тут будет подсказка. Тут будет подсказка. Тут будет подсказка.
-                            label(for="percentage-of-compliance").switch
-                                input(type="checkbox", name="percentage-of-compliance").switch__input#percentage-of-compliance
-                                span.switch__slider.switch__round
-                    button(type="submit").btn.btn_primary.btn_center Найти сотрудника
-
-            section.section.section_small(data-section='additional-filters')
-                .section__top 
-                    h2.title Дополнительные фильтры
-                form.section__form(data-form='additional-filters')
-                    .section__wrapper
-                        .select.select_up
-                            input(type="text", readonly, name="specialization").select__input.input#specialization
-                            label(for="specialization").select__title Выберите специализацию или отрасль
-                            .options 
-                                .option Строительство
-                                .option Производство
-                                .option Информационные технологии
-                                .option Менеджмент
-                        .section__item
-                            h2.section__title Оплата в месяц:
-                            .section__line 
-                                label(for='salary-from').label
-                                    h3.label__title от
-                                    input(type="text", name="salary-from").label__input.input.input_number#salary-from
-                                label(for='salary-to').label
-                                    h3.label__title до
-                                    input(type="text", name="salary-to").label__input.input.input_number#salary-to
-                                .select
-                                    input(type="text", readonly, name="currency", value="₽").select__input.input#currency
-                                    .options 
-                                        .option ₽
-                                        .option $
-                                        .option €
-                            .select__box
-                                .tax
-                                    input.tax__radio(type="radio" name="tax" id="tax1")
-                                    label.tax__label(for="tax1") 
-                                        .tax__check 
-                                        .tax__title До налогооблажения
-                                        .tax__text Доход “гросс”
-                                .tax
-                                    input.tax__radio(type="radio" name="tax" id="tax2")
-                                    label.tax__label(for="tax2") 
-                                        .tax__check
-                                        .tax__title После налогооблажения
-                                        .tax__text Чистый доход “На руки”
-                        .section__item
-                            .select.select_up
-                                input(type="text", readonly, name="region").select__input.input#region
-                                label(for="region").select__title Регион и адрес трудоустройства
+                            .section__tags
+                        p.section__or или
+                        .section__wrapper.section__wrapper-l50
+                            .select    
+                                input(type="text", readonly, name="job-title", placeholder="Выберите свою вакансию").select__input.input#job-title
                                 .options 
-                                    .option Москва
-                                    .option Санкт-Петербург 
-                                    .option Казань
-                                    .option Екатеренбург
-                                    .option Владивосток
-                            .select__box
-                                .check
-                                    input.check__input#relocation(type="checkbox", name="relocation")
-                                    label.check__label(for="relocation")
-                                        .check__check
-                                        .check__info
-                                            h3.check__title Готовность к релокации
-                                            p.check__text Кандидат должен переехать к месту трудоустройства?
-                                .check
-                                    input.check__input#business-trip(type="checkbox", name="business-trip")
-                                    label.check__label(for="business-trip")
-                                        .check__check
-                                        .check__info
-                                            h3.check__title Готовность к командировкам
-                                            p.check__text У кандидата будут частые рабочие командировки?
-                        .select.select_up
-                            input(type="text", readonly, name="citizenship").select__input.input#citizenship
-                            label(for="citizenship").select__title Гражданство
-                            .options 
-                                .option Российская Федерация
-                                .option Республика Казахстан 
-                                .option Республика Беларусь
-                                .option Республика Узбекистан
-                                .option Республика Туркменистан
-                        .select.select_up
-                            input(type="text", readonly, name="education").select__input.input#education
-                            label(for="education").select__title Образование
-                            .options 
-                                .option Высшее
-                                .option Средне-специальное
-                                .option Профессионально-техническое
-                                .option Общее среднее
-                                .option Базовое
-                        .section__item
-                            h2.section__title Тип занятости:
-                            .tag 
-                                button(type="button").tag__btn полная занятость
-                                button(type="button").tag__btn частичная занятость
-                                button(type="button").tag__btn проектная работа
-                        .section__item
-                            h2.section__title Формат работы:
-                            .tag 
-                                button(type="button").tag__btn офисная работа
-                                button(type="button").tag__btn удаленная работа
-                                button(type="button").tag__btn гибридная работа
-                                button(type="button").tag__btn вахтовый метод
-                        .section__item
-                            h2.section__title Опыт работы:
-                            .tag 
-                                button(type="button").tag__btn без опыта
-                                button(type="button").tag__btn менее 1 года
-                                button(type="button").tag__btn от 1 до 3 лет
-                                button(type="button").tag__btn от 3 до 5 лет
-                                button(type="button").tag__btn от 5 до 10 лет
-                                button(type="button").tag__btn более 10 лет
-                        .section__item
-                            h2.section__title Возраст кандидатов:
-                            .section__linesmall
-                                label(for='age-from').label
-                                    h3.label__title от
-                                    input(type="text", name="age-from").label__input.input.input_number#age-from
-                                label(for='age-to').label
-                                    h3.label__title до
-                                    input(type="text", name="age-to").label__input.input.input_number#age-to
-                        .select.select_up
-                            input(type="text", readonly, name="sex").select__input.input#sex
-                            label(for="sex").select__title Пол кандидата
-                            .options 
-                                .option Мужской
-                                .option Женский
-                    .section__footer 
-                        button(type="button").section__close.btn.btn_tertiary Закрыть
-                        button(type="submit").section__success.btn.btn_primary Применить
-                        
+                                    .option Вакансия 1
+                                    .option Вакансия 2
+                                    .option Вакансия 3
+                                    .option Вакансия 4
+                                    .option Вакансия 5
+                        .section__wrapper.section__wrapper-l50.section__wrapper-ai
+                            .range
+                                input.range__input(type="range" min="0" max="100" step="1" value="90")
+                                .range__conclusion
+                                    p.range__number 95% 
+                                    p.range__conclusion-text не менее
+                                .range__explanation
+                                    p.range__text Процент соответствия 
+                                    .clue
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                        </svg>
+                                        p.clue__text Тут будет подсказка. Тут будет подсказка. Тут будет подсказка. Тут будет подсказка. Тут будет подсказка.
+                                label(for="percentage-of-compliance").switch
+                                    input(type="checkbox", name="percentage-of-compliance").switch__input#percentage-of-compliance
+                                    span.switch__slider.switch__round
+                        button(type="submit").btn.btn_primary.btn_center Найти сотрудника
+
+            section.section(data-section='additional-filters')
+                .container.container_small
+                    .section__top 
+                        h2.title Дополнительные фильтры
+                    form.section__form(data-form='additional-filters')
+                        .section__wrapper
+                            .select.select_up
+                                input(type="text", readonly, name="specialization").select__input.input#specialization
+                                label(for="specialization").select__title Выберите специализацию или отрасль
+                                .options 
+                                    .option Строительство
+                                    .option Производство
+                                    .option Информационные технологии
+                                    .option Менеджмент
+                            .section__item
+                                h2.section__title Оплата в месяц:
+                                .section__line 
+                                    label(for='salary-from').label
+                                        h3.label__title от
+                                        input(type="text", name="salary-from").label__input.input.input_number#salary-from
+                                    label(for='salary-to').label
+                                        h3.label__title до
+                                        input(type="text", name="salary-to").label__input.input.input_number#salary-to
+                                    .select
+                                        input(type="text", readonly, name="currency", value="₽").select__input.input#currency
+                                        .options 
+                                            .option ₽
+                                            .option $
+                                            .option €
+                                .select__box
+                                    .tax
+                                        input.tax__radio(type="radio" name="tax" id="tax1" checked value='До налогооблажения')
+                                        label.tax__label(for="tax1") 
+                                            .tax__check 
+                                            .tax__title До налогооблажения
+                                            .tax__text Доход “гросс”
+                                    .tax
+                                        input.tax__radio(type="radio" name="tax" id="tax2" value='После налогооблажения')
+                                        label.tax__label(for="tax2") 
+                                            .tax__check
+                                            .tax__title После налогооблажения
+                                            .tax__text Чистый доход “На руки”
+                            .section__item
+                                .select.select_up
+                                    input(type="text", readonly, name="region").select__input.input#region
+                                    label(for="region").select__title Регион и адрес трудоустройства
+                                    .options 
+                                        .option Москва
+                                        .option Санкт-Петербург 
+                                        .option Казань
+                                        .option Екатеренбург
+                                        .option Владивосток
+                                .select__box
+                                    .check
+                                        input.check__input#relocation(type="checkbox", name="relocation" value='Готовность к релокации')
+                                        label.check__label(for="relocation")
+                                            .check__check
+                                            .check__info
+                                                h3.check__title Готовность к релокации
+                                                p.check__text Кандидат должен переехать к месту трудоустройства?
+                                    .check
+                                        input.check__input#business-trip(type="checkbox", name="business-trip" value="Готовность к командировкам")
+                                        label.check__label(for="business-trip")
+                                            .check__check
+                                            .check__info
+                                                h3.check__title Готовность к командировкам
+                                                p.check__text У кандидата будут частые рабочие командировки?
+                            .select.select_up
+                                input(type="text", readonly, name="citizenship").select__input.input#citizenship
+                                label(for="citizenship").select__title Гражданство
+                                .options 
+                                    .option Российская Федерация
+                                    .option Республика Казахстан 
+                                    .option Республика Беларусь
+                                    .option Республика Узбекистан
+                                    .option Республика Туркменистан
+                            .select.select_up
+                                input(type="text", readonly, name="education").select__input.input#education
+                                label(for="education").select__title Образование
+                                .options 
+                                    .option Высшее
+                                    .option Средне-специальное
+                                    .option Профессионально-техническое
+                                    .option Общее среднее
+                                    .option Базовое
+                            .section__item
+                                h2.section__title Тип занятости:
+                                .tags
+                                    .tag
+                                        input.tag__input#employment-full(type="checkbox", name="employment-full" value='полная занятость')
+                                        label.tag__label(for="employment-full") полная занятость
+                                    .tag
+                                        input.tag__input#employment-part(type="checkbox", name="employment-part" value='частичная занятость')
+                                        label.tag__label(for="employment-part") частичная занятость
+                                    .tag
+                                        input.tag__input#employment-project(type="checkbox", name="employment-project" value='проектная работа')
+                                        label.tag__label(for="employment-project") проектная работа
+                            .section__item
+                                h2.section__title Формат работы:
+                                .tags
+                                    .tag
+                                        input.tag__input#work-office(type="checkbox", name="work-office" value='офисная работа')
+                                        label.tag__label(for="work-office") офисная работа
+                                    .tag
+                                        input.tag__input#work-remote(type="checkbox", name="work-remote" value='удаленная работа')
+                                        label.tag__label(for="work-remote") удаленная работа
+                                    .tag
+                                        input.tag__input#work-hybrid(type="checkbox", name="work-hybrid" value='гибридная работа')
+                                        label.tag__label(for="work-hybrid") гибридная работа
+                                    .tag
+                                        input.tag__input#work-shift(type="checkbox", name="work-shift" value='вахтовый метод')
+                                        label.tag__label(for="work-shift") вахтовый метод
+                            .section__item
+                                h2.section__title Опыт работы:
+                                .tags
+                                    .tag
+                                        input.tag__input#experience-no(type="checkbox", name="experience-no" value='без опыта')
+                                        label.tag__label(for="experience-no") без опыта
+                                    .tag
+                                        input.tag__input#experience-1(type="checkbox", name="experience-1" value='менее 1 года')
+                                        label.tag__label(for="experience-1") менее 1 года
+                                    .tag
+                                        input.tag__input#experience-3(type="checkbox", name="experience-3" value='от 1 до 3 лет')
+                                        label.tag__label(for="experience-3") от 1 до 3 лет
+                                    .tag
+                                        input.tag__input#experience-5(type="checkbox", name="experience-5" value='от 3 до 5 лет')
+                                        label.tag__label(for="experience-5") от 3 до 5 лет
+                                    .tag
+                                        input.tag__input#experience-10(type="checkbox", name="experience-10" value='от 5 до 10 лет')
+                                        label.tag__label(for="experience-10") от 5 до 10 лет
+                                    .tag
+                                        input.tag__input#experience-more(type="checkbox", name="experience-more" value='более 10 лет')
+                                        label.tag__label(for="experience-more") более 10 лет
+                            .section__item
+                                h2.section__title Возраст кандидатов:
+                                .section__linesmall
+                                    label(for='age-from').label
+                                        h3.label__title от
+                                        input(type="text", name="age-from").label__input.input.input_number#age-from
+                                    label(for='age-to').label
+                                        h3.label__title до
+                                        input(type="text", name="age-to").label__input.input.input_number#age-to
+                            .select.select_up
+                                input(type="text", readonly, name="sex").select__input.input#sex
+                                label(for="sex").select__title Пол кандидата
+                                .options 
+                                    .option Мужской
+                                    .option Женский
+                        .section__footer 
+                            button(type="button").section__close.btn.btn_tertiary Закрыть
+                            button(type="submit").section__success.btn.btn_primary Применить
+                            
+            section.section.section_active(data-section='portfolios')
+                .container.container_medium
+                    .portfolio
+                        .portfolio__top 
+                            .portfolio__avatar 
+                            .portfolio__main
+                                .portfolio__col 
+                                    h2.portfolio__title Кузнецов Владимир Михайлович
+                                    p.portfolio__text Мужчина, 37 лет
+                                h2.portfolio__title 350 000 - 400 000
+                            .portfolio__info 
+                            .portfolio__center
+                                .portfolio__col 
+                                    h2.portfolio__stitle Digital маркетолог
+                                    p.portfolio__text Желаемая должность
+                                .portfolio__col
+                                    h2.portfolio__stitle ООО Яндекс
+                                    p.portfolio__text Последнее место работы
+                                .portfolio__col 
+                                    h2.portfolio__stitle 10 лет
+                                    p.portfolio__text Опыт работы
+                                .portfolio__col 
+                                    h2.portfolio__stitle Москва
+                                    p.portfolio__text Город проживания
+                                .portfolio__col 
+                                    h2.portfolio__stitle +7 (903) 743-34-42
+                                    p.portfolio__text Мобильный телефон
+                                .portfolio__col 
+                                    h2.portfolio__stitle kuznecov.vladimur@mail.ru
+                                    p.portfolio__text Электронная почта
+                            
+                        .portfolio__slider
+                        .portfolio__btns 
+                        .portfolio__description
