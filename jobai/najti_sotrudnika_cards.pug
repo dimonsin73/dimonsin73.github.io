@@ -1,0 +1,848 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Найти сотрудника 
+        link(rel="stylesheet", href="css/reset.css")
+        link(rel="stylesheet", href="css/fonts.css")
+        link(rel="stylesheet", href="css/style.css")
+        script(src="js/itc-slider.js" defer) 
+        script(src="js/najti_sotrudnika.js" defer) 
+        script(src="js/najti_sotrudnika_cards.js" defer) 
+    body.bg
+        aside.aside 
+            .aside__logo 
+                img(src="images/logo.png", alt="job ai").aside__logo-img
+            ul.aside__list.aside__list-line
+                li.aside__item
+                    a(href="").aside__link.aside__link-active
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.59842 4.80002C6.94746 4.80002 4.79843 6.94906 4.79843 9.60002C4.79843 12.251 6.94746 14.4 9.59842 14.4C12.2494 14.4 14.3984 12.251 14.3984 9.60002C14.3984 6.94906 12.2494 4.80002 9.59842 4.80002ZM2.39844 9.60002C2.39844 5.62357 5.62198 2.40002 9.59842 2.40002C13.5749 2.40002 16.7984 5.62357 16.7984 9.60002C16.7984 11.155 16.3054 12.5949 15.4673 13.7719L21.2469 19.5515C21.7155 20.0201 21.7155 20.7799 21.2469 21.2486C20.7783 21.7172 20.0185 21.7172 19.5499 21.2486L13.7702 15.4689C12.5933 16.3071 11.1534 16.8 9.59842 16.8C5.62198 16.8 2.39844 13.5765 2.39844 9.60002Z"/>
+                        </svg>
+                        | Найти сотрудника
+                li.aside__item
+                    a(href="").aside__link
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.80433 6.20594C5.67884 4.33142 8.71803 4.33142 10.5926 6.20594L11.9984 7.61182L13.4043 6.20594C15.2788 4.33142 18.318 4.33142 20.1926 6.20594C22.0671 8.08045 22.0671 11.1196 20.1926 12.9942L11.9984 21.1883L3.80433 12.9942C1.92981 11.1196 1.92981 8.08045 3.80433 6.20594Z"/>
+                        </svg>
+                        | Избранные кандидаты
+            ul.aside__list
+                li.aside__item
+                    a(href="").aside__link
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9984 2.40002C11.3357 2.40002 10.7984 2.93728 10.7984 3.60002V4.80002C10.7984 5.46277 11.3357 6.00002 11.9984 6.00002C12.6612 6.00002 13.1984 5.46277 13.1984 4.80002V3.60002C13.1984 2.93728 12.6612 2.40002 11.9984 2.40002Z"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.79844 4.80002H8.39844C8.39844 6.78825 10.0102 8.40002 11.9984 8.40002C13.9867 8.40002 15.5984 6.78825 15.5984 4.80002H19.1984C20.5239 4.80002 21.5984 5.87454 21.5984 7.20002V18C21.5984 19.3255 20.5239 20.4 19.1984 20.4H4.79844C3.47295 20.4 2.39844 19.3255 2.39844 18V7.20002C2.39844 5.87454 3.47295 4.80002 4.79844 4.80002ZM7.79844 13.2C8.79255 13.2 9.59844 12.3941 9.59844 11.4C9.59844 10.4059 8.79255 9.60002 7.79844 9.60002C6.80433 9.60002 5.99844 10.4059 5.99844 11.4C5.99844 12.3941 6.80433 13.2 7.79844 13.2ZM10.739 18C10.7784 17.8062 10.799 17.6055 10.799 17.4C10.799 15.7432 9.45588 14.4 7.79902 14.4C6.14217 14.4 4.79902 15.7432 4.79902 17.4C4.79902 17.6055 4.81968 17.8062 4.85903 18H10.739ZM14.3984 10.8C13.7357 10.8 13.1984 11.3373 13.1984 12C13.1984 12.6628 13.7357 13.2 14.3984 13.2H17.9984C18.6612 13.2 19.1984 12.6628 19.1984 12C19.1984 11.3373 18.6612 10.8 17.9984 10.8H14.3984ZM13.1984 15.6C13.1984 14.9373 13.7357 14.4 14.3984 14.4H16.7984C17.4612 14.4 17.9984 14.9373 17.9984 15.6C17.9984 16.2628 17.4612 16.8 16.7984 16.8H14.3984C13.7357 16.8 13.1984 16.2628 13.1984 15.6Z"/>
+                        </svg>
+                        | Мои вакансии
+                li.aside__item
+                    a(href="").aside__link
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.80156 4.80002C4.80156 3.47454 5.87608 2.40002 7.20156 2.40002H16.8016C18.127 2.40002 19.2016 3.47454 19.2016 4.80002V19.2C19.8643 19.2 20.4016 19.7373 20.4016 20.4C20.4016 21.0628 19.8643 21.6 19.2016 21.6H15.4016C14.8493 21.6 14.4016 21.1523 14.4016 20.6V18C14.4016 17.3373 13.8643 16.8 13.2016 16.8H10.8016C10.1388 16.8 9.60156 17.3373 9.60156 18V20.6C9.60156 21.1523 9.15385 21.6 8.60156 21.6H4.80156C4.13882 21.6 3.60156 21.0628 3.60156 20.4C3.60156 19.7373 4.13882 19.2 4.80156 19.2V4.80002ZM8.40156 6.00002H10.8016V8.40002H8.40156V6.00002ZM10.8016 10.8H8.40156V13.2H10.8016V10.8ZM13.2016 6.00002H15.6016V8.40002H13.2016V6.00002ZM15.6016 10.8H13.2016V13.2H15.6016V10.8Z"/>
+                        </svg>
+                        | Создать вакансию
+            ul.aside__list.aside__list-bottom
+                li.aside__item
+                    a(href="").aside__link
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.39844 3.5999C2.39844 2.93716 2.9357 2.3999 3.59844 2.3999H6.18189C6.76849 2.3999 7.26912 2.824 7.36556 3.40262L8.25273 8.72567C8.33934 9.24531 8.07691 9.76067 7.60572 9.99626L5.74795 10.9251C7.08751 14.2539 9.74445 16.9108 13.0732 18.2504L14.0021 16.3926C14.2377 15.9214 14.753 15.659 15.2727 15.7456L20.5957 16.6328C21.1743 16.7292 21.5984 17.2298 21.5984 17.8165V20.3999C21.5984 21.0626 21.0612 21.5999 20.3984 21.5999H17.9984C9.3828 21.5999 2.39844 14.6155 2.39844 5.9999V3.5999Z"/>
+                        </svg>
+                        | Связаться с нами
+                li.aside__item
+                    a(href="").aside__link
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.39844 7.20005C2.39844 5.87457 3.47295 4.80005 4.79844 4.80005H10.7984L13.1984 7.20005H19.1984C20.5239 7.20005 21.5984 8.27457 21.5984 9.60005V16.8C21.5984 18.1255 20.5239 19.2 19.1984 19.2H4.79844C3.47295 19.2 2.39844 18.1255 2.39844 16.8V7.20005Z"/>
+                        </svg>
+                        | Документы
+        header.header 
+            button(type="button").btn-icon.bulb
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.1984 3.60002C13.1984 2.93728 12.6612 2.40002 11.9984 2.40002C11.3357 2.40002 10.7984 2.93728 10.7984 3.60002V4.80002C10.7984 5.46277 11.3357 6.00002 11.9984 6.00002C12.6612 6.00002 13.1984 5.46277 13.1984 4.80002V3.60002Z"/>
+                    <path d="M18.7866 6.90879C19.2552 6.44016 19.2552 5.68037 18.7866 5.21174C18.318 4.74311 17.5582 4.74311 17.0896 5.21174L16.241 6.06026C15.7724 6.52889 15.7724 7.28869 16.241 7.75732C16.7097 8.22595 17.4695 8.22595 17.9381 7.75732L18.7866 6.90879Z"/>
+                    <path d="M21.5984 12C21.5984 12.6628 21.0612 13.2 20.3984 13.2H19.1984C18.5357 13.2 17.9984 12.6628 17.9984 12C17.9984 11.3373 18.5357 10.8 19.1984 10.8H20.3984C21.0612 10.8 21.5984 11.3373 21.5984 12Z"/>
+                    <path d="M6.05866 7.75734C6.52729 8.22597 7.28709 8.22597 7.75572 7.75734C8.22435 7.28871 8.22435 6.52891 7.75572 6.06029L6.90719 5.21176C6.43856 4.74313 5.67876 4.74313 5.21014 5.21176C4.74151 5.68039 4.74151 6.44018 5.21014 6.90881L6.05866 7.75734Z"/>
+                    <path d="M5.99844 12C5.99844 12.6628 5.46118 13.2 4.79844 13.2H3.59844C2.9357 13.2 2.39844 12.6628 2.39844 12C2.39844 11.3373 2.9357 10.8 3.59844 10.8H4.79844C5.46118 10.8 5.99844 11.3373 5.99844 12Z"/>
+                    <path d="M9.59844 19.2V18H14.3984V19.2C14.3984 20.5255 13.3239 21.6 11.9984 21.6C10.673 21.6 9.59844 20.5255 9.59844 19.2Z"/>
+                    <path d="M14.3995 16.8C14.417 16.3916 14.6476 16.0245 14.9706 15.7694C16.0839 14.8903 16.7984 13.5286 16.7984 12C16.7984 9.34906 14.6494 7.20002 11.9984 7.20002C9.34747 7.20002 7.19844 9.34906 7.19844 12C7.19844 13.5286 7.91297 14.8903 9.02626 15.7694C9.34933 16.0245 9.57985 16.3916 9.59737 16.8H14.3995Z"/>
+                </svg>
+            .header__access
+                p.header__text Доступ до 
+                p.header__span 01.07.2025
+            .header__line
+            button(type="button").btn-icon
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5984 12.0001C21.5984 16.6393 17.3004 20.4001 11.9984 20.4001C10.2085 20.4001 8.53293 19.9714 7.09856 19.2251L2.39844 20.4001L4.0044 16.6528C2.9898 15.3209 2.39844 13.7209 2.39844 12.0001C2.39844 7.36091 6.6965 3.6001 11.9984 3.6001C17.3004 3.6001 21.5984 7.36091 21.5984 12.0001ZM8.39844 10.8001H5.99844V13.2001H8.39844V10.8001ZM17.9984 10.8001H15.5984V13.2001H17.9984V10.8001ZM10.7984 10.8001H13.1984V13.2001H10.7984V10.8001Z" fill="#6A6A73"/>
+                </svg>
+                .notifications.btn-icon
+                    p.notifications__number 1
+            button(type="button").btn-icon
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.0016 2.3999C8.02515 2.3999 4.8016 5.62345 4.8016 9.5999V13.9028L3.95307 14.7514C3.60987 15.0946 3.5072 15.6107 3.69294 16.0591C3.87868 16.5075 4.31624 16.7999 4.8016 16.7999H19.2016C19.687 16.7999 20.1245 16.5075 20.3103 16.0591C20.496 15.6107 20.3933 15.0946 20.0501 14.7514L19.2016 13.9028V9.5999C19.2016 5.62345 15.978 2.3999 12.0016 2.3999Z" fill="#6A6A73"/>
+                    <path d="M12.0016 21.5999C10.0133 21.5999 8.40156 19.9881 8.40156 17.9999H15.6016C15.6016 19.9881 13.9898 21.5999 12.0016 21.5999Z" fill="#6A6A73"/>
+                </svg>
+                .notifications.btn-icon
+                    p.notifications__number 9
+            .header__line
+            .header__avatar 
+                p.header__avatar-text МР
+            .name 
+                p.header__text АО «МИРАКС Рекрутмент»
+                p.header__span Цвилев А.В.
+            button(type="button").btn-icon
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.2108 3.80503C10.6656 1.93153 13.3302 1.93153 13.785 3.80503C14.0788 5.01519 15.4656 5.58954 16.5292 4.94175C18.1755 3.93859 20.0597 5.82271 19.0565 7.46909C18.4088 8.53257 18.9831 9.91842 20.1932 10.2123C22.0667 10.6671 22.0666 13.3316 20.1932 13.7865C18.983 14.0803 18.4087 15.4671 19.0565 16.5306C20.0597 18.177 18.1755 20.0611 16.5292 19.058C15.4656 18.4101 14.0788 18.9845 13.785 20.1947C13.3301 22.0681 10.6656 22.0682 10.2108 20.1947C9.91696 18.9846 8.53111 18.4102 7.46763 19.058C5.82125 20.0611 3.93713 18.177 4.94029 16.5306C5.58808 15.4671 5.01373 14.0803 3.80357 13.7865C1.93006 13.3316 1.93006 10.6671 3.80357 10.2123C5.01356 9.91837 5.58795 8.53253 4.94029 7.46909C3.93713 5.82271 5.82125 3.93859 7.46763 4.94175C8.53107 5.58942 9.9169 5.01502 10.2108 3.80503ZM11.9979 8.39976C10.01 8.39999 8.39852 10.0115 8.39829 11.9994C8.39829 13.9875 10.0099 15.5997 11.9979 15.6C13.9861 15.6 15.5985 13.9876 15.5985 11.9994C15.5983 10.0113 13.986 8.39976 11.9979 8.39976Z" fill="#6A6A73"/>
+                </svg>
+            .header__line
+            button(type="button").btn-icon
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.59844 3.6001C2.9357 3.6001 2.39844 4.13736 2.39844 4.8001V19.2001C2.39844 19.8628 2.9357 20.4001 3.59844 20.4001C4.26118 20.4001 4.79844 19.8628 4.79844 19.2001V4.8001C4.79844 4.13736 4.26118 3.6001 3.59844 3.6001Z" fill="#6A6A73"/>
+                    <path d="M15.9499 14.7516C15.4813 15.2202 15.4813 15.98 15.9499 16.4486C16.4185 16.9173 17.1783 16.9173 17.647 16.4486L21.247 12.8486C21.472 12.6236 21.5984 12.3184 21.5984 12.0001C21.5984 11.6818 21.472 11.3766 21.247 11.1516L17.647 7.55157C17.1783 7.08294 16.4185 7.08294 15.9499 7.55157C15.4813 8.0202 15.4813 8.78 15.9499 9.24862L17.5014 10.8001L8.39844 10.8001C7.7357 10.8001 7.19844 11.3374 7.19844 12.0001C7.19844 12.6628 7.7357 13.2001 8.39844 13.2001H17.5014L15.9499 14.7516Z" fill="#6A6A73"/>
+                </svg>
+        main.main 
+            section.section.section_active.section_collapse(data-section='najti-sotrudnika')
+                .container.container_medium
+                    .section__top 
+                            h2.title Найти сотрудника
+                            a(href='').link-medium Как пользоваться?
+                    form.section__form
+                        .section__collapse.section__collapse-collapse
+                            .section__wrapper.section__wrapper-l50.section__wrapper-ai.section__hide
+                                label(for="job-description").label
+                                    textarea(name="job-description", placeholder="Введите название должности или описание вакансии").textarea.textarea_adjustment#job-description
+                                    button(type="button").btn-icon.adjustment 
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.99844 4.8001C5.99844 4.13736 5.46118 3.6001 4.79844 3.6001C4.1357 3.6001 3.59844 4.13736 3.59844 4.8001V13.5212C2.88108 13.9361 2.39844 14.7118 2.39844 15.6001C2.39844 16.4884 2.88108 17.264 3.59844 17.679V19.2001C3.59844 19.8628 4.1357 20.4001 4.79844 20.4001C5.46118 20.4001 5.99844 19.8628 5.99844 19.2001V17.679C6.7158 17.264 7.19844 16.4884 7.19844 15.6001C7.19844 14.7118 6.7158 13.9361 5.99844 13.5212V4.8001Z" fill="#6A6A73"/>
+                                            <path d="M13.1984 4.8001C13.1984 4.13736 12.6612 3.6001 11.9984 3.6001C11.3357 3.6001 10.7984 4.13736 10.7984 4.8001V6.32117C10.0811 6.73615 9.59844 7.51176 9.59844 8.4001C9.59844 9.28844 10.0811 10.064 10.7984 10.479V19.2001C10.7984 19.8628 11.3357 20.4001 11.9984 20.4001C12.6612 20.4001 13.1984 19.8628 13.1984 19.2001V10.479C13.9158 10.064 14.3984 9.28844 14.3984 8.4001C14.3984 7.51176 13.9158 6.73615 13.1984 6.32117V4.8001Z" fill="#6A6A73"/>
+                                            <path d="M19.1984 3.6001C19.8612 3.6001 20.3984 4.13736 20.3984 4.8001V13.5212C21.1158 13.9361 21.5984 14.7118 21.5984 15.6001C21.5984 16.4884 21.1158 17.264 20.3984 17.679V19.2001C20.3984 19.8628 19.8612 20.4001 19.1984 20.4001C18.5357 20.4001 17.9984 19.8628 17.9984 19.2001V17.679C17.2811 17.264 16.7984 16.4884 16.7984 15.6001C16.7984 14.7118 17.2811 13.9361 17.9984 13.5212V4.8001C17.9984 4.13736 18.5357 3.6001 19.1984 3.6001Z" fill="#6A6A73"/>
+                                        </svg>
+                                .section__tags
+                            p.section__or.section__hide или
+                            .section__wrapper.section__wrapper-l50.section__hide
+                                .select    
+                                    input(type="text", readonly, name="job-title", placeholder="Выберите свою вакансию").select__input.input#job-title
+                                    .options 
+                                        .option Вакансия 1
+                                        .option Вакансия 2
+                                        .option Вакансия 3
+                                        .option Вакансия 4
+                                        .option Вакансия 5
+                            .section__wrapper.section__view.section__wrapper-l50
+                                p.section__view-text Digital маркетолог
+                            button(type="button").section__burger
+                        .section__wrapper.section__wrapper-l50.section__wrapper-ai
+                            .range
+                                input.range__input(type="range" min="0" max="100" step="1" value="90")
+                                .range__conclusion
+                                    p.range__number 95% 
+                                    p.range__conclusion-text не менее
+                                .range__explanation
+                                    p.range__text Процент соответствия 
+                                    .clue
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                        </svg>
+                                        p.clue__text Тут будет подсказка. Тут будет подсказка. Тут будет подсказка. Тут будет подсказка. Тут будет подсказка.
+                                label(for="percentage-of-compliance").switch
+                                    input(type="checkbox", name="percentage-of-compliance").switch__input#percentage-of-compliance
+                                    span.switch__slider.switch__round
+                        button(type="submit").btn.btn_primary.btn_center Новый поиск
+
+            section.section(data-section='additional-filters')
+                .container.container_small
+                    .section__top 
+                        h2.title Дополнительные фильтры
+                    form.section__form(data-form='additional-filters')
+                        .section__wrapper
+                            .select.select_up
+                                input(type="text", readonly, name="specialization").select__input.input#specialization
+                                label(for="specialization").select__title Выберите специализацию или отрасль
+                                .options 
+                                    .option Строительство
+                                    .option Производство
+                                    .option Информационные технологии
+                                    .option Менеджмент
+                            .section__item
+                                h2.section__title Оплата в месяц:
+                                .section__line 
+                                    label(for='salary-from').label
+                                        h3.label__title от
+                                        input(type="text", name="salary-from").label__input.input.input_number#salary-from
+                                    label(for='salary-to').label
+                                        h3.label__title до
+                                        input(type="text", name="salary-to").label__input.input.input_number#salary-to
+                                    .select
+                                        input(type="text", readonly, name="currency", value="₽").select__input.input#currency
+                                        .options 
+                                            .option ₽
+                                            .option $
+                                            .option €
+                                .select__box
+                                    .tax
+                                        input.tax__radio(type="radio" name="tax" id="tax1" checked value='До налогооблажения')
+                                        label.tax__label(for="tax1") 
+                                            .tax__check 
+                                            .tax__title До налогооблажения
+                                            .tax__text Доход «гросс»
+                                    .tax
+                                        input.tax__radio(type="radio" name="tax" id="tax2" value='После налогооблажения')
+                                        label.tax__label(for="tax2") 
+                                            .tax__check
+                                            .tax__title После налогооблажения
+                                            .tax__text Чистый доход «на руки»
+                            .section__item
+                                .select.select_up
+                                    input(type="text", readonly, name="region").select__input.input#region
+                                    label(for="region").select__title Регион и адрес трудоустройства
+                                    .options 
+                                        .option Москва
+                                        .option Санкт-Петербург 
+                                        .option Казань
+                                        .option Екатеренбург
+                                        .option Владивосток
+                                .select__box
+                                    .check
+                                        input.check__input#relocation(type="checkbox", name="relocation" value='Готовность к релокации')
+                                        label.check__label(for="relocation")
+                                            .check__check
+                                            .check__info
+                                                h3.check__title Готовность к релокации
+                                                p.check__text Кандидат должен переехать к месту трудоустройства?
+                                    .check
+                                        input.check__input#business-trip(type="checkbox", name="business-trip" value="Готовность к командировкам")
+                                        label.check__label(for="business-trip")
+                                            .check__check
+                                            .check__info
+                                                h3.check__title Готовность к командировкам
+                                                p.check__text У кандидата будут частые рабочие командировки?
+                            .select.select_up
+                                input(type="text", readonly, name="citizenship").select__input.input#citizenship
+                                label(for="citizenship").select__title Гражданство
+                                .options 
+                                    .option Российская Федерация
+                                    .option Республика Казахстан 
+                                    .option Республика Беларусь
+                                    .option Республика Узбекистан
+                                    .option Республика Туркменистан
+                            .select.select_up
+                                input(type="text", readonly, name="education").select__input.input#education
+                                label(for="education").select__title Образование
+                                .options 
+                                    .option Высшее
+                                    .option Средне-специальное
+                                    .option Профессионально-техническое
+                                    .option Общее среднее
+                                    .option Базовое
+                            .section__item
+                                h2.section__title Тип занятости:
+                                .tags
+                                    .tag
+                                        input.tag__input#employment-full(type="checkbox", name="employment-full" value='полная занятость')
+                                        label.tag__label(for="employment-full") полная занятость
+                                    .tag
+                                        input.tag__input#employment-part(type="checkbox", name="employment-part" value='частичная занятость')
+                                        label.tag__label(for="employment-part") частичная занятость
+                                    .tag
+                                        input.tag__input#employment-project(type="checkbox", name="employment-project" value='проектная работа')
+                                        label.tag__label(for="employment-project") проектная работа
+                            .section__item
+                                h2.section__title Формат работы:
+                                .tags
+                                    .tag
+                                        input.tag__input#work-office(type="checkbox", name="work-office" value='офисная работа')
+                                        label.tag__label(for="work-office") офисная работа
+                                    .tag
+                                        input.tag__input#work-remote(type="checkbox", name="work-remote" value='удаленная работа')
+                                        label.tag__label(for="work-remote") удаленная работа
+                                    .tag
+                                        input.tag__input#work-hybrid(type="checkbox", name="work-hybrid" value='гибридная работа')
+                                        label.tag__label(for="work-hybrid") гибридная работа
+                                    .tag
+                                        input.tag__input#work-shift(type="checkbox", name="work-shift" value='вахтовый метод')
+                                        label.tag__label(for="work-shift") вахтовый метод
+                            .section__item
+                                h2.section__title Опыт работы:
+                                .tags
+                                    .tag
+                                        input.tag__input#experience-no(type="checkbox", name="experience-no" value='без опыта')
+                                        label.tag__label(for="experience-no") без опыта
+                                    .tag
+                                        input.tag__input#experience-1(type="checkbox", name="experience-1" value='менее 1 года')
+                                        label.tag__label(for="experience-1") менее 1 года
+                                    .tag
+                                        input.tag__input#experience-3(type="checkbox", name="experience-3" value='от 1 до 3 лет')
+                                        label.tag__label(for="experience-3") от 1 до 3 лет
+                                    .tag
+                                        input.tag__input#experience-5(type="checkbox", name="experience-5" value='от 3 до 5 лет')
+                                        label.tag__label(for="experience-5") от 3 до 5 лет
+                                    .tag
+                                        input.tag__input#experience-10(type="checkbox", name="experience-10" value='от 5 до 10 лет')
+                                        label.tag__label(for="experience-10") от 5 до 10 лет
+                                    .tag
+                                        input.tag__input#experience-more(type="checkbox", name="experience-more" value='более 10 лет')
+                                        label.tag__label(for="experience-more") более 10 лет
+                            .section__item
+                                h2.section__title Возраст кандидатов:
+                                .section__linesmall
+                                    label(for='age-from').label
+                                        h3.label__title от
+                                        input(type="text", name="age-from").label__input.input.input_number#age-from
+                                    label(for='age-to').label
+                                        h3.label__title до
+                                        input(type="text", name="age-to").label__input.input.input_number#age-to
+                            .select.select_up
+                                input(type="text", readonly, name="sex").select__input.input#sex
+                                label(for="sex").select__title Пол кандидата
+                                .options 
+                                    .option Мужской
+                                    .option Женский
+                        .section__footer 
+                            button(type="button").section__close.btn.btn_tertiary Закрыть
+                            button(type="submit").section__success.btn.btn_primary Применить
+                     
+            section.section.section_active(data-section='portfolios')
+                .container.container_medium
+                    .portfolios
+                        .portfolio
+                            .portfolio__top 
+                                .portfolio__avatar 
+                                    .portfolio__avatar-bg
+                                    img(src="images/kuznecov/avatars/kuznecov.png", alt="avatar" data-modalopen='avatar').portfolio__avatar-img.btn-modalopen
+                                .portfolio__main
+                                    .portfolio__col 
+                                        h2.portfolio__title Кузнецов Владимир Михайлович
+                                        p.portfolio__text Мужчина, 37 лет
+                                    h2.portfolio__title 350 000 - 400 000 ₽
+                                .portfolio__info
+                                    .portfolio__main
+                                        .portfolio__info-ai 
+                                        h2.portfolio__info-title 95%
+                                    p.portfolio__status.portfolio__status-green Рассматривает предложения
+                                    p.portfolio__info-text Обновлено 29.05.2025
+                                    p.portfolio__info-text Был 2 месяца назад
+                                .portfolio__center
+                                    .portfolio__col 
+                                        h2.portfolio__stitle Digital маркетолог
+                                        p.portfolio__text Желаемая должность
+                                    .portfolio__col
+                                        h2.portfolio__stitle ООО Яндекс
+                                        p.portfolio__text Последнее место работы
+                                    .portfolio__col 
+                                        h2.portfolio__stitle 10 лет
+                                        p.portfolio__text Опыт работы
+                                    .portfolio__col 
+                                        h2.portfolio__stitle Москва
+                                        p.portfolio__text Город проживания
+                                    .portfolio__row 
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
+                                        </svg>
+                                        .portfolio__col 
+                                            h2.portfolio__stitle +7 (903) 743-34-42
+                                            p.portfolio__text Мобильный телефон
+                                    .portfolio__row 
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.60396 4.7074L8.00156 7.9058L14.3992 4.7074C14.3755 4.29975 14.1968 3.91659 13.8998 3.63638C13.6028 3.35617 13.2099 3.20012 12.8016 3.2002H3.20156C2.79323 3.20012 2.40032 3.35617 2.1033 3.63638C1.80629 3.91659 1.62765 4.29975 1.60396 4.7074Z" fill="#6A6A73"/>
+                                            <path d="M14.4016 6.4946L8.00156 9.6946L1.60156 6.4946V11.2002C1.60156 11.6245 1.77013 12.0315 2.07019 12.3316C2.37025 12.6316 2.77722 12.8002 3.20156 12.8002H12.8016C13.2259 12.8002 13.6329 12.6316 13.9329 12.3316C14.233 12.0315 14.4016 11.6245 14.4016 11.2002V6.4946Z" fill="#6A6A73"/>
+                                        </svg>
+                                        .portfolio__col 
+                                            h2.portfolio__stitle kuznecov.vladimur@mail.ru
+                                            p.portfolio__text Электронная почта
+                            .portfolio__slider
+                                .itc-slider(data-slider="itc-slider" data-loop="false")
+                                    .itc-slider-wrapper
+                                        .itc-slider-items
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                                .itc-slider-media 
+                                                    .itc-slider-video
+                                                        img(src="images/kuznecov/video/video_1.png", alt="video").itc-slider-img
+                                                        button(type="button").itc-slider-play
+                                                        p.itc-slider-time 23:12
+                                                .itc-slider-bottom
+                                                    h2.itc-slider-title Видеособеседование  «Digital маркетолог»
+                                                        button(type="button").itc-slider-dots
+                                                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 15.5C8.82843 15.5 9.5 16.1716 9.5 17C9.5 17.8284 8.82843 18.5 8 18.5C7.17157 18.5 6.5 17.8284 6.5 17C6.5 16.1716 7.17157 15.5 8 15.5ZM8 10.5C8.82843 10.5 9.5 11.1716 9.5 12C9.5 12.8284 8.82843 13.5 8 13.5C7.17157 13.5 6.5 12.8284 6.5 12C6.5 11.1716 7.17157 10.5 8 10.5ZM8 5.5C8.82843 5.5 9.5 6.17157 9.5 7C9.5 7.82843 8.82843 8.5 8 8.5C7.17157 8.5 6.5 7.82843 6.5 7C6.5 6.17157 7.17157 5.5 8 5.5Z" fill="#898990"/>
+                                                            </svg>
+                                                    .itc-slider-info
+                                                        p.itc-slider-text 646 просмотра
+                                                        <svg width="2" height="2" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="1" cy="1" r="1" fill="#898990"/>
+                                                        </svg>
+                                                        p.itc-slider-text 12 Октября 2024
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                                .itc-slider-media 
+                                                    .itc-slider-video
+                                                        img(src="images/kuznecov/video/video_2.png", alt="video").itc-slider-img
+                                                        button(type="button").itc-slider-play
+                                                        p.itc-slider-time 23:12
+                                                .itc-slider-bottom
+                                                    h2.itc-slider-title Видеособеседование  «Digital маркетолог»
+                                                        button(type="button").itc-slider-dots
+                                                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 15.5C8.82843 15.5 9.5 16.1716 9.5 17C9.5 17.8284 8.82843 18.5 8 18.5C7.17157 18.5 6.5 17.8284 6.5 17C6.5 16.1716 7.17157 15.5 8 15.5ZM8 10.5C8.82843 10.5 9.5 11.1716 9.5 12C9.5 12.8284 8.82843 13.5 8 13.5C7.17157 13.5 6.5 12.8284 6.5 12C6.5 11.1716 7.17157 10.5 8 10.5ZM8 5.5C8.82843 5.5 9.5 6.17157 9.5 7C9.5 7.82843 8.82843 8.5 8 8.5C7.17157 8.5 6.5 7.82843 6.5 7C6.5 6.17157 7.17157 5.5 8 5.5Z" fill="#898990"/>
+                                                            </svg>
+                                                    .itc-slider-info
+                                                        p.itc-slider-text 646 просмотра
+                                                        <svg width="2" height="2" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="1" cy="1" r="1" fill="#898990"/>
+                                                        </svg>
+                                                        p.itc-slider-text 12 Октября 2024
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                                .itc-slider-media 
+                                                    .itc-slider-video
+                                                        img(src="images/kuznecov/video/video_1.png", alt="video").itc-slider-img
+                                                        button(type="button").itc-slider-play
+                                                        p.itc-slider-time 23:12
+                                                .itc-slider-bottom
+                                                    h2.itc-slider-title Видеособеседование  «Digital маркетолог»
+                                                        button(type="button").itc-slider-dots
+                                                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 15.5C8.82843 15.5 9.5 16.1716 9.5 17C9.5 17.8284 8.82843 18.5 8 18.5C7.17157 18.5 6.5 17.8284 6.5 17C6.5 16.1716 7.17157 15.5 8 15.5ZM8 10.5C8.82843 10.5 9.5 11.1716 9.5 12C9.5 12.8284 8.82843 13.5 8 13.5C7.17157 13.5 6.5 12.8284 6.5 12C6.5 11.1716 7.17157 10.5 8 10.5ZM8 5.5C8.82843 5.5 9.5 6.17157 9.5 7C9.5 7.82843 8.82843 8.5 8 8.5C7.17157 8.5 6.5 7.82843 6.5 7C6.5 6.17157 7.17157 5.5 8 5.5Z" fill="#898990"/>
+                                                            </svg>
+                                                    .itc-slider-info
+                                                        p.itc-slider-text 646 просмотра
+                                                        <svg width="2" height="2" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="1" cy="1" r="1" fill="#898990"/>
+                                                        </svg>
+                                                        p.itc-slider-text 12 Октября 2024
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                                .itc-slider-media 
+                                                    .itc-slider-video
+                                                        img(src="images/kuznecov/video/video_2.png", alt="video").itc-slider-img
+                                                        button(type="button").itc-slider-play
+                                                        p.itc-slider-time 23:12
+                                                .itc-slider-bottom
+                                                    h2.itc-slider-title Видеособеседование  «Digital маркетолог»
+                                                        button(type="button").itc-slider-dots
+                                                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 15.5C8.82843 15.5 9.5 16.1716 9.5 17C9.5 17.8284 8.82843 18.5 8 18.5C7.17157 18.5 6.5 17.8284 6.5 17C6.5 16.1716 7.17157 15.5 8 15.5ZM8 10.5C8.82843 10.5 9.5 11.1716 9.5 12C9.5 12.8284 8.82843 13.5 8 13.5C7.17157 13.5 6.5 12.8284 6.5 12C6.5 11.1716 7.17157 10.5 8 10.5ZM8 5.5C8.82843 5.5 9.5 6.17157 9.5 7C9.5 7.82843 8.82843 8.5 8 8.5C7.17157 8.5 6.5 7.82843 6.5 7C6.5 6.17157 7.17157 5.5 8 5.5Z" fill="#898990"/>
+                                                            </svg>
+                                                    .itc-slider-info
+                                                        p.itc-slider-text 646 просмотра
+                                                        <svg width="2" height="2" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="1" cy="1" r="1" fill="#898990"/>
+                                                        </svg>
+                                                        p.itc-slider-text 12 Октября 2024
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                                .itc-slider-media 
+                                                    .itc-slider-video
+                                                        img(src="images/kuznecov/video/video_1.png", alt="video").itc-slider-img
+                                                        button(type="button").itc-slider-play
+                                                        p.itc-slider-time 23:12
+                                                .itc-slider-bottom
+                                                    h2.itc-slider-title Видеособеседование  «Digital маркетолог»
+                                                        button(type="button").itc-slider-dots
+                                                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 15.5C8.82843 15.5 9.5 16.1716 9.5 17C9.5 17.8284 8.82843 18.5 8 18.5C7.17157 18.5 6.5 17.8284 6.5 17C6.5 16.1716 7.17157 15.5 8 15.5ZM8 10.5C8.82843 10.5 9.5 11.1716 9.5 12C9.5 12.8284 8.82843 13.5 8 13.5C7.17157 13.5 6.5 12.8284 6.5 12C6.5 11.1716 7.17157 10.5 8 10.5ZM8 5.5C8.82843 5.5 9.5 6.17157 9.5 7C9.5 7.82843 8.82843 8.5 8 8.5C7.17157 8.5 6.5 7.82843 6.5 7C6.5 6.17157 7.17157 5.5 8 5.5Z" fill="#898990"/>
+                                                            </svg>
+                                                    .itc-slider-info
+                                                        p.itc-slider-text 646 просмотра
+                                                        <svg width="2" height="2" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="1" cy="1" r="1" fill="#898990"/>
+                                                        </svg>
+                                                        p.itc-slider-text 12 Октября 2024
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                        .itc-slider-btn.itc-slider-btn-prev
+                                        .itc-slider-btn.itc-slider-btn-next
+                            .portfolio__btns 
+                                button(type="button" data-modalopen='resume').btn.btn_black.btn-modalopen
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 6H5C3.89543 6 3 6.89543 3 8V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V8C21 6.89543 20.1046 6 19 6H14M10 6V5C10 3.89543 10.8954 3 12 3C13.1046 3 14 3.89543 14 5V6M10 6C10 7.10457 10.8954 8 12 8C13.1046 8 14 7.10457 14 6M9 14C10.1046 14 11 13.1046 11 12C11 10.8954 10.1046 10 9 10C7.89543 10 7 10.8954 7 12C7 13.1046 7.89543 14 9 14ZM9 14C10.3062 14 11.4174 14.8348 11.8292 16M9 14C7.69378 14 6.58249 14.8348 6.17065 16M15 11H18M15 15H17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Резюме
+                                button(type="button" data-modalopen='portfolio').btn.btn_black.btn-modalopen
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 13.2554C18.2207 14.3805 15.1827 15 12 15C8.8173 15 5.7793 14.3805 3 13.2554M16 6V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V6M12 12H12.01M5 20H19C20.1046 20 21 19.1046 21 18V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V18C3 19.1046 3.89543 20 5 20Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Портфолио
+                                button(type="button" data-modalopen='comments').btn.btn_black.btn-modalopen
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 8H17M7 12H11M12 20L8 16H5C3.89543 16 3 15.1046 3 14V6C3 4.89543 3.89543 4 5 4H19C20.1046 4 21 4.89543 21 6V14C21 15.1046 20.1046 16 19 16H16L12 20Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Комментарии
+                                .press-right
+                                button(type="button").btn.btn_black.btn_black-icon.btn_like
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.31802 6.31802C2.56066 8.07538 2.56066 10.9246 4.31802 12.682L12.0001 20.364L19.682 12.682C21.4393 10.9246 21.4393 8.07538 19.682 6.31802C17.9246 4.56066 15.0754 4.56066 13.318 6.31802L12.0001 7.63609L10.682 6.31802C8.92462 4.56066 6.07538 4.56066 4.31802 6.31802Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                button(type="button").btn.btn_blue
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21 12C21 16.4183 16.9706 20 12 20C10.4607 20 9.01172 19.6565 7.74467 19.0511L3 20L4.39499 16.28C3.51156 15.0423 3 13.5743 3 12C3 7.58172 7.02944 4 12 4C16.9706 4 21 7.58172 21 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Пригласить
+                            .portfolio__description
+                                h2.portfolio__description-title Почему кандидат подходит?
+                                ul.portfolio__description-list  
+                                    li.portfolio__description-item.portfolio__description-hide
+                                        p.portfolio__description-text # Профессиональный опыт:
+                                    li.portfolio__description-item
+                                        p.portfolio__description-text Кузнецов Владимир имеет более 20 лет опыта работы в продажах с акцентом на руководящие должности. В его резюме указано, что он работал в FMCG-секторе, что подразумевает быстро оборачиваемые товары, однако в данном случае специфика отрасли отличается от заявленной в вакансии (БАДы, витамины, спортивное питание). Владимир занимал руководящие должности, управляя крупными командами до 300 человек и достигал значительных успехов в увеличении объемов продаж и оптимизации процессов. Он также занимался операционным улучшением и реализацией стратегий продаж, что соответствует требованиям по управлению и развитию отделов продаж. Однако отсутствие прямого опыта в специализированной отрасли может быть недостатком. Например, вакансия подразумевает наличие опыта именно в аналогичном производстве, чего у Владимира нет.
+                                    li.portfolio__description-item
+                                        p.portfolio__description-text Поскольку вакансия требует минимум трех лет опыта работы на высших позициях в продажах, он явно превышает этот порог. Владимир  имеет достижения, например, увеличение объёмов продаж с 900 до 1600 тонн в месяц для макаронной фабрики и разработка новых продуктовых стратегий, что свидетельствует о его способности выполнять и перевыполнять плановые задачи. В целом, его опыт хорошо соответствует общим требованиям руководства продажами, но может не полностью соответствовать специализированным требованиям индустрии биодобавок и спортивного питания.     
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Навыки:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text В резюме Владимира указаны навыки управления продажами и дистрибуцией, опыт руководства большими коллективами, навыки ведения переговоров на уровне первых лиц, а также умение развивать команды и запускать маркетинговые стратегии. Он также имеет опыт управления дебиторской задолженностью, что соответствует обязанностям, заявленным в описании вакансии.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Тем не менее, вакансия акцентирует внимание на знании систем управления базами данных, таких как Bitrix24. В резюме Владимира этого прямого совпадения нет, и навыки работы с конкретными базами данных не указаны, что может потребовать дополнительного обучения или адаптации. Лидерские, коммуникационные навыки Владимра   , а также его стратегический подход к управлению продажами совпадают с требуемыми личностными качествами, такими как нацеленность на результат и настойчивость.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Таким образом, профессиональные и технические навыки кандидата в общей массе совпадают с необходимыми, но требует уточнения по части конкретных программных систем и специфики отрасли.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Зарплатные ожидания:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text К сожалению, в резюме Владимира не указаны его конкретные зарплатные ожидания, что усложняет прямое сравнение с предлагаемой зарплатой по вакансии. Однако ввиду его многолетнего опыта и достижения в профессии, можно предположить, что его ожидания будут соответствовать предложенной вакансиями суммы (более 200,000 рублей с учетом всех бонусов).
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Исходя из мотивации и карьерных целей, Владимир ориентирован на финансовую компенсацию, что может быть согласовано с предложенной системой оплаты труда в вакансии. Поскольку основная сумма состоит из оклада и процента от KPI, определиться в ожиданиях можно с учетом его способности выполнять плановые задания более чем на 100%. Это повышает вероятность его удовлетворения текущими предложениями, но для большей уверенности потребуется непосредственное обсуждение на интервью.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Образование:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Владимир обладает двумя высшими образованиями по юриспруденции и командованию, что, хотя и не напрямую связано с продажами, тем не менее, способствует общей управленческой квалификации. Он также закончил программу повышения квалификации MBA в Институте Бизнеса и делового администрирования в 2006 году, что важно для желаемого опыта и понимания бизнес-процессов.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Полученное образование позволяет Владимиру  обладать необходимыми управленческими и аналитическими навыками, поддерживающими его карьеру на высоких позициях в продажах. Тот факт, что он прошел программу MBA, говорит о том, что он стремится к профессиональному росту и осознанному подходу к бизнесу. Характер обучения в профильных институтах предполагает его способность к обучению и адаптации в новых условиях, что соответствует желаниям работодателей к обучаемости.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Личные качества:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text В резюме Владимира   не указаны конкретные личные качества в разделе "о себе", однако выводы о его личных качествах можно сделать из описания опыта и достижений. Его способность увеличивать объемы продаж, разрабатывать и внедрять стратегические инициативы, указывают на выраженные лидерские навыки. Также он проявляет настойчивость и нацеленность на результат, достигая выполнения и перевыполнения продаж.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Кроме того, его опыт руководства большими командами требует высокой стрессоустойчивости и коммуникабельности, необходимых для решительных действий и принятия взвешенных решений в стрессовых ситуациях. Это удовлетворяет ключевым личностным требованиям вакансии, включая внимательность к деталям и коммуникативные способности.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Заключение:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Кузнецов Владимир в значительной степени соответствует требованиям вакансии на позицию руководителя отдела продаж. Его обширный опыт в управлении продажами, умение оптимизировать процессы и достижения в увеличении объемов продаж позволяют рассматривать его как перспективного кандидата. Однако необходимо учитывать, что у Владимира нет прямого опыта в указанной отрасли БАДов и спортивного питания, а также может потребоваться обучение системам управления базами данных, как Bitrix24.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Несмотря на это, его сильные лидерские качества, стрессоустойчивость и способность добиваться поставленных целей делают его привлекательным выбором для такого рода позиций. Зарплатные ожидания не обозначены, но его возможности соответствуют предлагаемым условиям. А предлагаемое обучение и карьера, вероятно, будут привлекательными для кандидата с точки зрения дальнейшего развития.
+                                button(type="button").portfolio__description-up.btn.btn_black.btn_black-icon
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 9L12 16L5 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                        .portfolio
+                            .portfolio__top 
+                                .portfolio__avatar 
+                                    .portfolio__avatar-bg
+                                .portfolio__main
+                                    .portfolio__col 
+                                        h2.portfolio__title Богданова Екатерина Тимофеевна
+                                        p.portfolio__text Женщина, 30 лет
+                                    h2.portfolio__title 150 000 - 200 000 ₽
+                                .portfolio__info
+                                    .portfolio__main
+                                        .portfolio__info-ai 
+                                        h2.portfolio__info-title 92%
+                                    p.portfolio__status.portfolio__status-red Не ищет работу
+                                    p.portfolio__info-text Обновлено 29.05.2025
+                                    p.portfolio__info-text Был 2 месяца назад
+                                .portfolio__center
+                                    .portfolio__col 
+                                        h2.portfolio__stitle Маркетолог
+                                        p.portfolio__text Желаемая должность
+                                    .portfolio__col
+                                        h2.portfolio__stitle ООО ВкусВилл
+                                        p.portfolio__text Последнее место работы
+                                    .portfolio__col 
+                                        h2.portfolio__stitle 5 лет
+                                        p.portfolio__text Опыт работы
+                                    .portfolio__col 
+                                        h2.portfolio__stitle Новосибирск
+                                        p.portfolio__text Город проживания
+                                    .portfolio__row 
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
+                                        </svg>
+                                        .portfolio__col 
+                                            h2.portfolio__stitle +7 (985) 227-90-91
+                                            p.portfolio__text Мобильный телефон
+                                    .portfolio__row 
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.60396 4.7074L8.00156 7.9058L14.3992 4.7074C14.3755 4.29975 14.1968 3.91659 13.8998 3.63638C13.6028 3.35617 13.2099 3.20012 12.8016 3.2002H3.20156C2.79323 3.20012 2.40032 3.35617 2.1033 3.63638C1.80629 3.91659 1.62765 4.29975 1.60396 4.7074Z" fill="#6A6A73"/>
+                                            <path d="M14.4016 6.4946L8.00156 9.6946L1.60156 6.4946V11.2002C1.60156 11.6245 1.77013 12.0315 2.07019 12.3316C2.37025 12.6316 2.77722 12.8002 3.20156 12.8002H12.8016C13.2259 12.8002 13.6329 12.6316 13.9329 12.3316C14.233 12.0315 14.4016 11.6245 14.4016 11.2002V6.4946Z" fill="#6A6A73"/>
+                                        </svg>
+                                        .portfolio__col 
+                                            h2.portfolio__stitle bogdanova.katya@mail.ru
+                                            p.portfolio__text Электронная почта
+                            .portfolio__slider
+                                .itc-slider(data-slider="itc-slider" data-loop="false")
+                                    .itc-slider-wrapper
+                                        .itc-slider-items
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                        .itc-slider-btn.itc-slider-btn-prev
+                                        .itc-slider-btn.itc-slider-btn-next
+                            .portfolio__btns 
+                                button(type="button" data-modalopen='resume').btn.btn_black.btn-modalopen
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 6H5C3.89543 6 3 6.89543 3 8V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V8C21 6.89543 20.1046 6 19 6H14M10 6V5C10 3.89543 10.8954 3 12 3C13.1046 3 14 3.89543 14 5V6M10 6C10 7.10457 10.8954 8 12 8C13.1046 8 14 7.10457 14 6M9 14C10.1046 14 11 13.1046 11 12C11 10.8954 10.1046 10 9 10C7.89543 10 7 10.8954 7 12C7 13.1046 7.89543 14 9 14ZM9 14C10.3062 14 11.4174 14.8348 11.8292 16M9 14C7.69378 14 6.58249 14.8348 6.17065 16M15 11H18M15 15H17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Резюме
+                                button(type="button" data-modalopen='portfolio').btn.btn_black.btn-modalopen
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 13.2554C18.2207 14.3805 15.1827 15 12 15C8.8173 15 5.7793 14.3805 3 13.2554M16 6V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V6M12 12H12.01M5 20H19C20.1046 20 21 19.1046 21 18V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V18C3 19.1046 3.89543 20 5 20Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Портфолио
+                                button(type="button" data-modalopen='comments').btn.btn_black.btn-modalopen
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 8H17M7 12H11M12 20L8 16H5C3.89543 16 3 15.1046 3 14V6C3 4.89543 3.89543 4 5 4H19C20.1046 4 21 4.89543 21 6V14C21 15.1046 20.1046 16 19 16H16L12 20Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Комментарии
+                                .press-right
+                                button(type="button").btn.btn_black.btn_black-icon.btn_like
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.31802 6.31802C2.56066 8.07538 2.56066 10.9246 4.31802 12.682L12.0001 20.364L19.682 12.682C21.4393 10.9246 21.4393 8.07538 19.682 6.31802C17.9246 4.56066 15.0754 4.56066 13.318 6.31802L12.0001 7.63609L10.682 6.31802C8.92462 4.56066 6.07538 4.56066 4.31802 6.31802Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                button(type="button").btn.btn_blue
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21 12C21 16.4183 16.9706 20 12 20C10.4607 20 9.01172 19.6565 7.74467 19.0511L3 20L4.39499 16.28C3.51156 15.0423 3 13.5743 3 12C3 7.58172 7.02944 4 12 4C16.9706 4 21 7.58172 21 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Пригласить
+                            .portfolio__description
+                                h2.portfolio__description-title Почему кандидат подходит?
+                                ul.portfolio__description-list  
+                                    li.portfolio__description-item.portfolio__description-hide
+                                        p.portfolio__description-text # Профессиональный опыт:
+                                    li.portfolio__description-item
+                                        p.portfolio__description-text Богданова Екатерина обладает более чем 5-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями
+                                button(type="button").portfolio__description-up.btn.btn_black.btn_black-icon
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 9L12 16L5 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+        .modal 
+            .modal__wrapper.modal__wrapper-avatar(data-modal='avatar')
+                .modal__top 
+                    .modal__die
+                    h2.modal__name 
+                    button(type="button").modal__close.btn-icon 
+                .modal__avatar 
+            .modal__wrapper(data-modal='resume') 
+                .modal__top 
+                    .modal__die
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 12H10C7.79086 12 6 13.7909 6 16V34C6 36.2091 7.79086 38 10 38H38C40.2091 38 42 36.2091 42 34V16C42 13.7909 40.2091 12 38 12H28M20 12V10C20 7.79086 21.7909 6 24 6C26.2091 6 28 7.79086 28 10V12M20 12C20 14.2091 21.7909 16 24 16C26.2091 16 28 14.2091 28 12M18 28C20.2091 28 22 26.2091 22 24C22 21.7909 20.2091 20 18 20C15.7909 20 14 21.7909 14 24C14 26.2091 15.7909 28 18 28ZM18 28C20.6124 28 22.8348 29.6696 23.6585 32M18 28C15.3876 28 13.165 29.6696 12.3413 32M30 22H36M30 30H34" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        p.modal__die-text Резюме
+                    h2.modal__name 
+                    button(type="button").modal__close.btn-icon 
+                .modal__content
+                    ul.modal__list 
+                        li 
+                            p.modal__text **1. Ключевые навыки и опыт**
+                        li 
+                            p.modal__text Кузнецов Владимир обладает значительным опытом работы в сфере продаж и управления ключевыми клиентами. За более чем 20 лет карьеры он приобрел навыки ведения переговоров, планирования и прогнозирования продаж, управления дебиторской задолженностью и документооборотом, а также построения партнерских отношений на уровне первых лиц компаний. Ведущий опыт работы сформировался в крупных западных корпорациях, включая «Кока-Кола ЭйчБиСи Евразия», где он развивал навыки активных продаж и управления клиентской базой. Владимир работал с национальными и локальными сетями, с рынком B2B, успешно развивая продажи и увеличивая оборот за счет расширения ассортиментной матрицы и проведения промоакций.
+                        li 
+                            p.modal__text **2. Образование**
+                        li 
+                            p.modal__text Кузнецов Владимир окончил Санкт-Петербургский государственный университет аэрокосмического приборостроения, получив степень инженера в области «Управление и информатика в технических системах» в 2003 году. Позднее, он прошел ряд тренингов, включая «Планирование работы с ключевыми клиентами и продажа предложения клиенту», «Финансы», а также «Эффективное ведение переговоров». Эти курсы способствовали углублению его профессиональных компетенций.
+                        li 
+                            p.modal__text **3. Профессиональные достижения**
+                        li 
+                            p.modal__text Владимир добился значительных результатов, включая:
+                            ul 
+                                li.modal__text - Переговоры о размещении брендированных конструкций в сети О'Кей, получив разрешение на использование палетных мест для визуализации продукции, что ранее было запрещено сетью.
+                                li.modal__text - Повышение оборота в сети Лента в два раза за шесть лет работы, что привело к высокому увеличению прибыльности.
+                                li.modal__text - Достижение показатели по планам продаж, за что был награжден поездками в Ирландию и Шотландию как лучший сотрудник команды национальных клиентов.
+                                li.modal__text - Успешное введение и продвижение новых SKU, часто перерастающее в выполнение годовых планов продаж за несколько месяцев.
+                        li 
+                            p.modal__text **4. Соответствие квалификации требованиям вакансии**
+                        li 
+                            p.modal__text Кузнецов Владимир полностью подходит для позиции менеджера по работе с ключевыми клиентами, что подтверждается его обширным опытом управления продажами и клиентами в FMCG и других секторах. Его способность к стратегическому планированию и успешное взаимодействие с сетями делают его отличным кандидатом для управления и расширения клиентской базы. Он обладает всеми необходимыми навыками и опытом для достижения и перевыполнения поставленных целей.
+                        li 
+                            p.modal__text **5. Мотивация и карьерные цели**
+                        li 
+                            p.modal__text Владимир стремится работать в стабильной компании, предлагающей возможности для профессионального роста и развития. Важно для него также отсутствие потолка в премиальной системе, что мотивирует на достижение высоких результатов. Он предпочитает компании, которые оценивают усилия сотрудников по достоинству. Карьерной целью Владимир является дальнейшее развитие в области управления продажами, а также применение накопленного опыта для достижения значимых результатов для компании. Владимир ориентирован на долгосрочную работу с сильной фокусировкой на результат и овладение новыми навыками.
+                        li 
+                            p.modal__text **1. Ключевые навыки и опыт**
+                        li 
+                            p.modal__text Кузнецов Владимир обладает значительным опытом работы в сфере продаж и управления ключевыми клиентами. За более чем 20 лет карьеры он приобрел навыки ведения переговоров, планирования и прогнозирования продаж, управления дебиторской задолженностью и документооборотом, а также построения партнерских отношений на уровне первых лиц компаний. Ведущий опыт работы сформировался в крупных западных корпорациях, включая «Кока-Кола ЭйчБиСи Евразия», где он развивал навыки активных продаж и управления клиентской базой. Владимир работал с национальными и локальными сетями, с рынком B2B, успешно развивая продажи и увеличивая оборот за счет расширения ассортиментной матрицы и проведения промоакций.
+                        li 
+                            p.modal__text **2. Образование**
+                        li 
+                            p.modal__text Кузнецов Владимир окончил Санкт-Петербургский государственный университет аэрокосмического приборостроения, получив степень инженера в области «Управление и информатика в технических системах» в 2003 году. Позднее, он прошел ряд тренингов, включая «Планирование работы с ключевыми клиентами и продажа предложения клиенту», «Финансы», а также «Эффективное ведение переговоров». Эти курсы способствовали углублению его профессиональных компетенций.
+                        li 
+                            p.modal__text **3. Профессиональные достижения**
+                        li 
+                            p.modal__text Владимир добился значительных результатов, включая:
+                            ul 
+                                li.modal__text - Переговоры о размещении брендированных конструкций в сети О'Кей, получив разрешение на использование палетных мест для визуализации продукции, что ранее было запрещено сетью.
+                                li.modal__text - Повышение оборота в сети Лента в два раза за шесть лет работы, что привело к высокому увеличению прибыльности.
+                                li.modal__text - Достижение показатели по планам продаж, за что был награжден поездками в Ирландию и Шотландию как лучший сотрудник команды национальных клиентов.
+                                li.modal__text - Успешное введение и продвижение новых SKU, часто перерастающее в выполнение годовых планов продаж за несколько месяцев.
+                        li 
+                            p.modal__text **4. Соответствие квалификации требованиям вакансии**
+                        li 
+                            p.modal__text Кузнецов Владимир полностью подходит для позиции менеджера по работе с ключевыми клиентами, что подтверждается его обширным опытом управления продажами и клиентами в FMCG и других секторах. Его способность к стратегическому планированию и успешное взаимодействие с сетями делают его отличным кандидатом для управления и расширения клиентской базы. Он обладает всеми необходимыми навыками и опытом для достижения и перевыполнения поставленных целей.
+                        li 
+                            p.modal__text **5. Мотивация и карьерные цели**
+                        li 
+                            p.modal__text Владимир стремится работать в стабильной компании, предлагающей возможности для профессионального роста и развития. Важно для него также отсутствие потолка в премиальной системе, что мотивирует на достижение высоких результатов. Он предпочитает компании, которые оценивают усилия сотрудников по достоинству. Карьерной целью Владимир является дальнейшее развитие в области управления продажами, а также применение накопленного опыта для достижения значимых результатов для компании. Владимир ориентирован на долгосрочную работу с сильной фокусировкой на результат и овладение новыми навыками.
+                .modal__footer 
+                    .press-right
+                    button(type="button").btn.btn_black.btn_black-icon
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 17H19C20.1046 17 21 16.1046 21 15V11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V15C3 16.1046 3.89543 17 5 17H7M9 21H15C16.1046 21 17 20.1046 17 19V15C17 13.8954 16.1046 13 15 13H9C7.89543 13 7 13.8954 7 15V19C7 20.1046 7.89543 21 9 21ZM17 9V5C17 3.89543 16.1046 3 15 3H9C7.89543 3 7 3.89543 7 5V9H17Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    button(type="button").btn.btn_black.btn_black-icon
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 16L4 17C4 18.6569 5.34315 20 7 20L17 20C18.6569 20 20 18.6569 20 17L20 16M16 12L12 16M12 16L8 12M12 16L12 4" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    button(type="button").btn.btn_black.btn_black-icon.btn_like
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.31802 6.31802C2.56066 8.07538 2.56066 10.9246 4.31802 12.682L12.0001 20.364L19.682 12.682C21.4393 10.9246 21.4393 8.07538 19.682 6.31802C17.9246 4.56066 15.0754 4.56066 13.318 6.31802L12.0001 7.63609L10.682 6.31802C8.92462 4.56066 6.07538 4.56066 4.31802 6.31802Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    button(type="button").btn.btn_blue
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21 12C21 16.4183 16.9706 20 12 20C10.4607 20 9.01172 19.6565 7.74467 19.0511L3 20L4.39499 16.28C3.51156 15.0423 3 13.5743 3 12C3 7.58172 7.02944 4 12 4C16.9706 4 21 7.58172 21 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        | Пригласить
+            .modal__wrapper(data-modal='portfolio')
+                .modal__top 
+                    .modal__die
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M42 26.5109C36.4414 28.7609 30.3654 30 24 30C17.6346 30 11.5586 28.7609 6 26.5109M32 12V8C32 5.79086 30.2091 4 28 4H20C17.7909 4 16 5.79086 16 8V12M24 24H24.02M10 40H38C40.2091 40 42 38.2091 42 36V16C42 13.7909 40.2091 12 38 12H10C7.79086 12 6 13.7909 6 16V36C6 38.2091 7.79086 40 10 40Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        p.modal__die-text Портфолио
+                    h2.modal__name 
+                    button(type="button").modal__close.btn-icon 
+                .modal__content
+                    .modal__grid 
+                        .modal__item 
+                            img(src="images/kuznecov/portfolio/portfolio_1.jpg", alt="Фото из портфолио").modal__item-img
+                            p.modal__item-text Диплом о профессиональной переподготовке “Национальный Технологический Университет”
+                        .modal__item 
+                            img(src="images/kuznecov/portfolio/portfolio_2.png", alt="Фото из портфолио").modal__item-img
+                            p.modal__item-text Диплом о профессионально образовании
+                        .modal__item 
+                            img(src="images/kuznecov/portfolio/portfolio_3.jpg", alt="Фото из портфолио").modal__item-img
+                            p.modal__item-text Выступление на конференции по эффективности управления г.Москва, 2023
+                        .modal__item 
+                            img(src="images/kuznecov/portfolio/portfolio_4.jpg", alt="Фото из портфолио").modal__item-img
+                            p.modal__item-text Выступление на конференции по эффективности управления г.Москва, 2023
+                        .modal__item 
+                            img(src="images/kuznecov/portfolio/portfolio_5.jpg", alt="Фото из портфолио").modal__item-img
+                            p.modal__item-text Выступление на конференции по эффективности управления г.Москва, 2023
+                        .modal__item 
+                            img(src="images/kuznecov/portfolio/portfolio_6.jpg", alt="Фото из портфолио").modal__item-img
+                            p.modal__item-text Выступление на конференции по эффективности управления г.Москва, 2023
+                .modal__footer 
+                    .press-right
+                    button(type="button").btn.btn_blue
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21 12C21 16.4183 16.9706 20 12 20C10.4607 20 9.01172 19.6565 7.74467 19.0511L3 20L4.39499 16.28C3.51156 15.0423 3 13.5743 3 12C3 7.58172 7.02944 4 12 4C16.9706 4 21 7.58172 21 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        | Пригласить
+            .modal__wrapper(data-modal='comments')
+                .modal__top 
+                    .modal__die
+                        <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5 16H34.5M14.5 24H22.5M24.5 40L16.5 32H10.5C8.29086 32 6.5 30.2091 6.5 28V12C6.5 9.79086 8.29086 8 10.5 8H38.5C40.7091 8 42.5 9.79086 42.5 12V28C42.5 30.2091 40.7091 32 38.5 32H32.5L24.5 40Z" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        p.modal__die-text Комментарии
+                    h2.modal__name 
+                    button(type="button").modal__close.btn-icon 
+                .modal__content.modal__content-vert
+                    .modal__line 
+                        button(type="button").modal__addcommvent + добавить комментарий
+                        a(href="").link-medium Как пользоваться?
+                    .modal__comments 
+                        .modal__author 
+                            .modal__author-avatar
+                                img(src="images/mezencev/avatars/mezencev.png", alt="mezencev") 
+                            .modal__author-info 
+                                p.modal__author-text Мезенцев Денис Петрович, 05.07.2025 - 18:14
+                                p.modal__author-text ООО МИРАКС Рекрутмент
+                        .modal__comment 
+                            p Кандидат не пришел на собеседование и не предупредил. Не рекомендуем с ним связываться.
+                            .modal__comment-btns
+                                button(type="button").btn-icon
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.2677 3.73223L20.798 3.2019V3.2019L20.2677 3.73223ZM6.5 21.0355V21.7855C6.69891 21.7855 6.88968 21.7065 7.03033 21.5658L6.5 21.0355ZM3 21.0355H2.25C2.25 21.4497 2.58579 21.7855 3 21.7855V21.0355ZM3 17.4644L2.46967 16.9341C2.32902 17.0747 2.25 17.2655 2.25 17.4644H3ZM16.7322 3.73223L17.2625 4.26256C17.9459 3.57915 19.054 3.57915 19.7374 4.26256L20.2677 3.73223L20.798 3.2019C19.5288 1.9327 17.4711 1.9327 16.2018 3.2019L16.7322 3.73223ZM20.2677 3.73223L19.7374 4.26256C20.4208 4.94598 20.4208 6.05402 19.7374 6.73744L20.2677 7.26777L20.798 7.7981C22.0672 6.52889 22.0672 4.47111 20.798 3.2019L20.2677 3.73223ZM20.2677 7.26777L19.7374 6.73744L5.96967 20.5051L6.5 21.0355L7.03033 21.5658L20.798 7.7981L20.2677 7.26777ZM6.5 21.0355V20.2855H3V21.0355V21.7855H6.5V21.0355ZM16.7322 3.73223L16.2018 3.2019L2.46967 16.9341L3 17.4644L3.53033 17.9947L17.2625 4.26256L16.7322 3.73223ZM3 17.4644H2.25V21.0355H3H3.75V17.4644H3ZM15.2322 5.23223L14.7018 5.76256L18.2374 9.2981L18.7677 8.76777L19.298 8.23744L15.7625 4.7019L15.2322 5.23223Z" fill="#111827"/>
+                                    </svg>
+                                button(type="button").btn-icon
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 7L18.1327 19.1425C18.0579 20.1891 17.187 21 16.1378 21H7.86224C6.81296 21 5.94208 20.1891 5.86732 19.1425L5 7M10 11V17M14 11V17M15 7V4C15 3.44772 14.5523 3 14 3H10C9.44772 3 9 3.44772 9 4V7M4 7H20" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                    .modal__comments 
+                        .modal__author 
+                            img(src="images/magomedov/avatars/magomedov.png", alt="magomedov").modal__author-avatar 
+                            .modal__author-info 
+                                p.modal__author-text Магомедов Заур Магомедов, 04.07.2025 - 17:10
+                                p.modal__author-text ООО Нутрилент
+                        .modal__comment 
+                            p Очень хамски говорит по телефону...
+                            p Хочет заработную плату выше рынка.
+                            p Не рекоменуем данного кандидата.
+                            .modal__comment-btns
+                                button(type="button").btn-icon
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.2677 3.73223L20.798 3.2019V3.2019L20.2677 3.73223ZM6.5 21.0355V21.7855C6.69891 21.7855 6.88968 21.7065 7.03033 21.5658L6.5 21.0355ZM3 21.0355H2.25C2.25 21.4497 2.58579 21.7855 3 21.7855V21.0355ZM3 17.4644L2.46967 16.9341C2.32902 17.0747 2.25 17.2655 2.25 17.4644H3ZM16.7322 3.73223L17.2625 4.26256C17.9459 3.57915 19.054 3.57915 19.7374 4.26256L20.2677 3.73223L20.798 3.2019C19.5288 1.9327 17.4711 1.9327 16.2018 3.2019L16.7322 3.73223ZM20.2677 3.73223L19.7374 4.26256C20.4208 4.94598 20.4208 6.05402 19.7374 6.73744L20.2677 7.26777L20.798 7.7981C22.0672 6.52889 22.0672 4.47111 20.798 3.2019L20.2677 3.73223ZM20.2677 7.26777L19.7374 6.73744L5.96967 20.5051L6.5 21.0355L7.03033 21.5658L20.798 7.7981L20.2677 7.26777ZM6.5 21.0355V20.2855H3V21.0355V21.7855H6.5V21.0355ZM16.7322 3.73223L16.2018 3.2019L2.46967 16.9341L3 17.4644L3.53033 17.9947L17.2625 4.26256L16.7322 3.73223ZM3 17.4644H2.25V21.0355H3H3.75V17.4644H3ZM15.2322 5.23223L14.7018 5.76256L18.2374 9.2981L18.7677 8.76777L19.298 8.23744L15.7625 4.7019L15.2322 5.23223Z" fill="#111827"/>
+                                    </svg>
+                                button(type="button").btn-icon
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 7L18.1327 19.1425C18.0579 20.1891 17.187 21 16.1378 21H7.86224C6.81296 21 5.94208 20.1891 5.86732 19.1425L5 7M10 11V17M14 11V17M15 7V4C15 3.44772 14.5523 3 14 3H10C9.44772 3 9 3.44772 9 4V7M4 7H20" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                .modal__footer 
+                    .press-right
+                    button(type="button").btn.btn_black.btn_black-icon
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 17H19C20.1046 17 21 16.1046 21 15V11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V15C3 16.1046 3.89543 17 5 17H7M9 21H15C16.1046 21 17 20.1046 17 19V15C17 13.8954 16.1046 13 15 13H9C7.89543 13 7 13.8954 7 15V19C7 20.1046 7.89543 21 9 21ZM17 9V5C17 3.89543 16.1046 3 15 3H9C7.89543 3 7 3.89543 7 5V9H17Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    button(type="button").btn.btn_black.btn_black-icon
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 16L4 17C4 18.6569 5.34315 20 7 20L17 20C18.6569 20 20 18.6569 20 17L20 16M16 12L12 16M12 16L8 12M12 16L12 4" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    button(type="button").btn.btn_black.btn_black-icon.btn_like
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.31802 6.31802C2.56066 8.07538 2.56066 10.9246 4.31802 12.682L12.0001 20.364L19.682 12.682C21.4393 10.9246 21.4393 8.07538 19.682 6.31802C17.9246 4.56066 15.0754 4.56066 13.318 6.31802L12.0001 7.63609L10.682 6.31802C8.92462 4.56066 6.07538 4.56066 4.31802 6.31802Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    button(type="button").btn.btn_blue
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21 12C21 16.4183 16.9706 20 12 20C10.4607 20 9.01172 19.6565 7.74467 19.0511L3 20L4.39499 16.28C3.51156 15.0423 3 13.5743 3 12C3 7.58172 7.02944 4 12 4C16.9706 4 21 7.58172 21 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        | Пригласить
+        .modal-slider
+            .itc-slider(data-slider="itc-slider")
+                .itc-slider-wrapper
+                    button(type="button").modal-slider__close
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 18L18 6M6 6L18 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    .modal-slider__top
+                        button(type="button").modal-slider-btn
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 16L4 17C4 18.6569 5.34315 20 7 20L17 20C18.6569 20 20 18.6569 20 17L20 16M16 12L12 16M12 16L8 12M12 16L12 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        button(type="button").modal-slider-btn
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.8284 10.1716C12.2663 8.60948 9.73367 8.60948 8.17157 10.1716L4.17157 14.1716C2.60948 15.7337 2.60948 18.2663 4.17157 19.8284C5.73367 21.3905 8.26633 21.3905 9.82843 19.8284L10.93 18.7269M10.1716 13.8284C11.7337 15.3905 14.2663 15.3905 15.8284 13.8284L19.8284 9.82843C21.3905 8.26633 21.3905 5.73367 19.8284 4.17157C18.2663 2.60948 15.7337 2.60948 14.1716 4.17157L13.072 5.27118" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        button(type="button").modal-slider-btn
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 17H19C20.1046 17 21 16.1046 21 15V11C21 9.89543 20.1046 9 19 9H5C3.89543 9 3 9.89543 3 11V15C3 16.1046 3.89543 17 5 17H7M9 21H15C16.1046 21 17 20.1046 17 19V15C17 13.8954 16.1046 13 15 13H9C7.89543 13 7 13.8954 7 15V19C7 20.1046 7.89543 21 9 21ZM17 9V5C17 3.89543 16.1046 3 15 3H9C7.89543 3 7 3.89543 7 5V9H17Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    .itc-slider-items
+                        .itc-slider-item
+                            img(src="images/kuznecov/portfolio/portfolio_1.jpg", alt="Фото из портфолио").modal-slider-img
+                            h2.modal-slider-title Диплом о профессиональной переподготовке “Национальный Технологический Университет”
+                        .itc-slider-item
+                            img(src="images/kuznecov/portfolio/portfolio_2.png", alt="Фото из портфолио").modal-slider-img
+                            h2.modal-slider-title Диплом о профессионально образовании
+                        .itc-slider-item
+                            img(src="images/kuznecov/portfolio/portfolio_3.jpg", alt="Фото из портфолио").modal-slider-img
+                            h2.modal-slider-title Выступление на конференции по эффективности управления г.Москва, 2023
+                        .itc-slider-item
+                            img(src="images/kuznecov/portfolio/portfolio_4.jpg", alt="Фото из портфолио").modal-slider-img
+                            h2.modal-slider-title Выступление на конференции по эффективности управления г.Москва, 2023
+                        .itc-slider-item
+                            img(src="images/kuznecov/portfolio/portfolio_5.jpg", alt="Фото из портфолио").modal-slider-img
+                            h2.modal-slider-title Выступление на конференции по эффективности управления г.Москва, 2023
+                        .itc-slider-item
+                            img(src="images/kuznecov/portfolio/portfolio_6.jpg", alt="Фото из портфолио").modal-slider-img
+                            h2.modal-slider-title Выступление на конференции по эффективности управления г.Москва, 2023
+                    .itc-slider-btn.itc-slider-btn-prev
+                    .itc-slider-btn.itc-slider-btn-next
+
+
+
