@@ -101,6 +101,7 @@
 
 // GENERAL
 .main 
+    position: relative
     margin-left: 250px
 .container
     margin: 0 auto
@@ -185,6 +186,24 @@
                 stroke: var(--White)
         &-icon 
             padding: 11px
+    &_white
+        padding: 11px 23px
+        border: 0.5px solid var(--White)
+        border-radius: 8px
+        box-shadow: 0px 1px 8px 0px #0000001A
+        @include title-small
+        color: var(--Black)
+        transition: background-color 0.3s ease, color 0.3s ease
+        & path 
+            stroke: var(--Gray-10)
+            transition: stroke 0.3s ease
+        &:hover 
+            background-color: var(--Black)
+            color: var(--White)
+            & path 
+                stroke: var(--White)
+        &-icon 
+            padding: 11px
     &_blue 
         padding: 11px 23px
         border: 0.5px solid var(--Primary-40)
@@ -208,6 +227,16 @@
         justify-content: center
     &_center 
         margin: 0 auto
+    &_like 
+        &-active 
+            & path
+                stroke: var(--Red)
+                fill: var(--Red)
+                transition: stroke 0.3s ease, fill 0.3s ease
+            &:hover 
+                & path
+                    stroke: var(--Red)
+                    fill: var(--Red)
 @media (max-width: 1199px)
     .btn 
         padding: 12px 24px
@@ -480,40 +509,6 @@
         @include subtitle-large
         color: var(--Gray-30)
 // GENERAL END
-// DISPOSABLE
-.bulb 
-    & path 
-        fill: var(--Icons)
-    &_yellow 
-        & path 
-            fill: var(--Yellow)
-    &_green
-        & path 
-            fill: var(--Green)
-    &_red
-        & path 
-            fill: var(--Red)
-.notifications 
-    position: absolute
-    top: -8px
-    left: 14px
-    min-width: 18px
-    padding: 0 3px
-    border: 1px solid var(--White)
-    border-radius: 9px
-    background-color: var(--Primary-50)
-    &__number 
-        @include number
-        color: var(--White)
-.adjustment 
-    position: absolute
-    top: 18px 
-    right: 20px
-    display: flex
-    align-items: center
-    justify-content: center
-// DISPOSABLE END
-
 .aside // ASIDE 
     position: fixed
     top: 0
@@ -525,6 +520,7 @@
     height: 100%
     border-right: 1px solid var(--Aside)
     background-color: var(--Gray-100)
+    z-index: 300
     &__logo
         display: flex
         align-items: center
@@ -567,11 +563,16 @@
                 fill: var(--Black)
 // ASIDE END
 .header // HEADER
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
     display: flex
     justify-content: flex-end
     align-items: center
     gap: 24px
     padding: 9px 32px
+    z-index: 200
     &__line 
         width: 1px
         height: 32px
@@ -600,6 +601,31 @@
         &-text 
             font: 500 12px/17px 'Inter', 'sans-serif'
             color: var(--Black)
+.bulb 
+    & path 
+        fill: var(--Icons)
+    &_yellow 
+        & path 
+            fill: var(--Yellow)
+    &_green
+        & path 
+            fill: var(--Green)
+    &_red
+        & path 
+            fill: var(--Red)
+.notifications 
+    position: absolute
+    top: -8px
+    left: 14px
+    min-width: 18px
+    padding: 0 3px
+    border: 1px solid var(--White)
+    border-radius: 9px
+    background-color: var(--Primary-50)
+    &__number 
+        @include number
+        color: var(--White)
+// HEADER END
 .section // SECTION 
     display: none
     padding-top: 10px
@@ -694,15 +720,21 @@
     &__view
         padding: 15px
         padding-left: 50px
-        background: 
-            image: url('../images/icons/chevron_down.png')
-            repeat: no-repeat 
-            position: center right 15px
-            size: 24px 24px
         &-text 
+            display: -webkit-box
             height: 20px
             @include text-medium
             color: var(--Black)
+            -webkit-line-clamp: 1
+            -webkit-box-orient: vertical
+            overflow: hidden
+    &_collapse 
+        position: fixed
+        top: 64px
+        left: 250px
+        right: 0
+        background-color: var(--Gray-100)
+        z-index: 100
     &__collapse
         position: relative
         display: flex
@@ -721,7 +753,15 @@
                 display: block
             & .section__burger 
                 left: 15px
-
+    &_mt 
+        margin-top: 388px
+.adjustment 
+    position: absolute
+    top: 18px 
+    right: 20px
+    display: flex
+    align-items: center
+    justify-content: center
 // SECTION END
 .tax // TAX
     &__radio 

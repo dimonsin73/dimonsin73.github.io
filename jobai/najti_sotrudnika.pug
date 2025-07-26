@@ -52,7 +52,7 @@ html(lang="ru")
                             <path d="M2.39844 7.20005C2.39844 5.87457 3.47295 4.80005 4.79844 4.80005H10.7984L13.1984 7.20005H19.1984C20.5239 7.20005 21.5984 8.27457 21.5984 9.60005V16.8C21.5984 18.1255 20.5239 19.2 19.1984 19.2H4.79844C3.47295 19.2 2.39844 18.1255 2.39844 16.8V7.20005Z"/>
                         </svg>
                         | Документы
-        header.header 
+        header.header.bg
             button(type="button").btn-icon.bulb
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.1984 3.60002C13.1984 2.93728 12.6612 2.40002 11.9984 2.40002C11.3357 2.40002 10.7984 2.93728 10.7984 3.60002V4.80002C10.7984 5.46277 11.3357 6.00002 11.9984 6.00002C12.6612 6.00002 13.1984 5.46277 13.1984 4.80002V3.60002Z"/>
@@ -119,14 +119,14 @@ html(lang="ru")
                                 input(type="text", readonly, name="job-title", placeholder="Выберите свою вакансию").select__input.input#job-title
                                 .options 
                                     .options__wrapper
-                                    .option Вакансия 1
-                                    .option Вакансия 2
-                                    .option Вакансия 3
-                                    .option Вакансия 4
-                                    .option Вакансия 5
+                                        .option Вакансия 1
+                                        .option Вакансия 2
+                                        .option Вакансия 3
+                                        .option Вакансия 4
+                                        .option Вакансия 5
                         .section__wrapper.section__wrapper-l50.section__wrapper-ai
                             .range
-                                input.range__input(type="range" min="0" max="100" step="1" value="90")
+                                input.range__input(type="range" min="0" max="100" step="1" value="90" disabled)
                                 .range__conclusion
                                     p.range__number 95% 
                                     p.range__conclusion-text не менее
