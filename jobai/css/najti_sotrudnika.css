@@ -325,23 +325,27 @@
   flex-direction: column;
   width: 100%;
   height: 0;
-  margin-top: 12px;
-  border-radius: 12px;
-  background-color: var(--Gray-90);
+  margin-top: 10px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--White);
   overflow: hidden;
   transition: height 0.3s ease;
   z-index: 10;
 }
+.options__wrapper {
+  padding: 16px;
+}
 
 .option {
-  padding: 20px 12px;
-  font: 400 14px/20px "Inter", "sans-serif";
-  letter-spacing: -0.25px;
+  padding: 14px 12px;
+  border-radius: 8px;
+  font: 500 14px/20px "Inter", "sans-serif";
   color: var(--Black);
   cursor: pointer;
 }
 .option:hover {
-  background-color: var(--Gray-80);
+  background-color: var(--Gray-100);
 }
 
 .range {

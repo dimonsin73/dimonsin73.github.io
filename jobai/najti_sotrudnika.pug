@@ -118,6 +118,7 @@ html(lang="ru")
                             .select    
                                 input(type="text", readonly, name="job-title", placeholder="Выберите свою вакансию").select__input.input#job-title
                                 .options 
+                                    .options__wrapper
                                     .option Вакансия 1
                                     .option Вакансия 2
                                     .option Вакансия 3
@@ -151,10 +152,11 @@ html(lang="ru")
                                 input(type="text", readonly, name="specialization").select__input.input#specialization
                                 label(for="specialization").select__title Выберите специализацию или отрасль
                                 .options 
-                                    .option Строительство
-                                    .option Производство
-                                    .option Информационные технологии
-                                    .option Менеджмент
+                                    .options__wrapper
+                                        .option Строительство
+                                        .option Производство
+                                        .option Информационные технологии
+                                        .option Менеджмент
                             .section__item
                                 h2.section__title Оплата в месяц:
                                 .section__line 
@@ -167,9 +169,10 @@ html(lang="ru")
                                     .select
                                         input(type="text", readonly, name="currency", value="₽").select__input.input#currency
                                         .options 
-                                            .option ₽
-                                            .option $
-                                            .option €
+                                            .options__wrapper
+                                                .option ₽
+                                                .option $
+                                                .option €
                                 .select__box
                                     .tax
                                         input.tax__radio(type="radio" name="tax" id="tax1" checked value='До налогооблажения')
@@ -188,11 +191,12 @@ html(lang="ru")
                                     input(type="text", readonly, name="region").select__input.input#region
                                     label(for="region").select__title Регион и адрес трудоустройства
                                     .options 
-                                        .option Москва
-                                        .option Санкт-Петербург 
-                                        .option Казань
-                                        .option Екатеренбург
-                                        .option Владивосток
+                                        .options__wrapper
+                                            .option Москва
+                                            .option Санкт-Петербург 
+                                            .option Казань
+                                            .option Екатеренбург
+                                            .option Владивосток
                                 .select__box
                                     .check
                                         input.check__input#relocation(type="checkbox", name="relocation" value='Готовность к релокации')
@@ -212,20 +216,22 @@ html(lang="ru")
                                 input(type="text", readonly, name="citizenship").select__input.input#citizenship
                                 label(for="citizenship").select__title Гражданство
                                 .options 
-                                    .option Российская Федерация
-                                    .option Республика Казахстан 
-                                    .option Республика Беларусь
-                                    .option Республика Узбекистан
-                                    .option Республика Туркменистан
+                                    .options__wrapper
+                                        .option Российская Федерация
+                                        .option Республика Казахстан 
+                                        .option Республика Беларусь
+                                        .option Республика Узбекистан
+                                        .option Республика Туркменистан
                             .select.select_up
                                 input(type="text", readonly, name="education").select__input.input#education
                                 label(for="education").select__title Образование
                                 .options 
-                                    .option Высшее
-                                    .option Средне-специальное
-                                    .option Профессионально-техническое
-                                    .option Общее среднее
-                                    .option Базовое
+                                    .options__wrapper
+                                        .option Высшее
+                                        .option Средне-специальное
+                                        .option Профессионально-техническое
+                                        .option Общее среднее
+                                        .option Базовое
                             .section__item
                                 h2.section__title Тип занятости:
                                 .tags
@@ -287,8 +293,9 @@ html(lang="ru")
                                 input(type="text", readonly, name="sex").select__input.input#sex
                                 label(for="sex").select__title Пол кандидата
                                 .options 
-                                    .option Мужской
-                                    .option Женский
+                                    .options__wrapper
+                                        .option Мужской
+                                        .option Женский
                         .section__footer 
                             button(type="button").section__close.btn.btn_tertiary Закрыть
                             button(type="submit").section__success.btn.btn_primary Применить
