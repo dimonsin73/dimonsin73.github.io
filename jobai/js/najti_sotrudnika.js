@@ -286,8 +286,10 @@ for (let i = 0; i < switchInputArray.length; i++) {
         const rangeInput = switchInput.parentElement.parentElement.querySelector('.range__input')
         if (switchInput.checked) {
             rangeInput.disabled = false
+            rangeInput.classList.remove('range__input-disabled')
         } else {
             rangeInput.disabled = true
+            rangeInput.classList.add('range__input-disabled')
         }
     })
 }

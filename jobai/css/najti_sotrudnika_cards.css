@@ -397,6 +397,7 @@
   height: 30px;
   border: none;
   overflow: hidden;
+  transition: opacity 0.3s ease;
   cursor: pointer;
 }
 .range__input::-webkit-slider-thumb {
@@ -425,6 +426,9 @@
   height: 6px;
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.2);
+}
+.range__input-disabled {
+  opacity: 0.5;
 }
 .range__conclusion {
   position: relative;
