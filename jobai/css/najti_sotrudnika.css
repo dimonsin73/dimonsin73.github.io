@@ -27,6 +27,7 @@
   --Green: #34C759;
   --Red: #FF3B30;
   --Red-error: #FF0034;
+  --Scrollbar: #D9D9D9;
 }
 
 .main {
@@ -292,15 +293,13 @@
 .textarea {
   width: 100%;
   height: 60px;
-  padding: 19.5px 10px;
+  padding: 20px 10px;
   border-radius: 12px;
   background-color: var(--Gray-100);
   font: 500 14px/20px "Inter", "sans-serif";
   color: var(--Black);
   outline: none;
   resize: none;
-  scrollbar-width: thin;
-  scrollbar-gutter: stable both-edges;
 }
 .textarea::-moz-placeholder {
   font: 400 13px/16px "Inter", "sans-serif";
@@ -313,11 +312,34 @@
   color: var(--Gray-30);
 }
 .textarea_adjustment {
-  padding-right: 36px;
-  transition: height 0.3s ease;
+  display: -webkit-box;
+  padding: 0px 54px 0 10px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-height: 60px;
+  overflow: hidden;
+  transition: height 0.3s ease, line-height 0.3s ease;
+}
+.textarea_adjustment::-moz-placeholder {
+  line-height: 60px;
+}
+.textarea_adjustment::placeholder {
+  line-height: 60px;
 }
 .textarea_adjustment-active {
+  display: -webkit-box;
   height: 500px;
+  padding: 20px 54px 20px 10px;
+  line-height: 20px;
+  -webkit-line-clamp: 100;
+  -webkit-box-orient: vertical;
+  overflow-y: auto;
+}
+.textarea_adjustment-active::-moz-placeholder {
+  line-height: 20px;
+}
+.textarea_adjustment-active::placeholder {
+  line-height: 20px;
 }
 
 .select {
@@ -369,6 +391,10 @@
 }
 .options__wrapper {
   padding: 16px;
+}
+.options_active {
+  height: 176px;
+  overflow-y: scroll;
 }
 
 .option {
@@ -442,6 +468,9 @@
   color: var(--Primary-40);
   white-space: nowrap;
   transform: translateX(-50%);
+}
+.range__conclusion-disabled {
+  opacity: 0.5;
 }
 .range__number {
   width: 85px;
@@ -567,6 +596,21 @@
   font: 500 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
   color: var(--Gray-30);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--Scrollbar);
+}
+
+::-webkit-scrollbar-track {
+  margin: 8px 0;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .aside {

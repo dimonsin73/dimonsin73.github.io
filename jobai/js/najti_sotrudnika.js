@@ -208,9 +208,9 @@ for (let i = 0; i < selectInputArray.length; i++) {
         const optionArray = options.querySelectorAll('.option')
         select.classList.toggle('select-active')
         if (select.classList.contains('select-active')) {
-            options.style.height = `${options.scrollHeight}px`
+            options.classList.add('options_active')
         } else {
-            options.style.height = '0px'
+            options.classList.remove('options_active')
         }
         for (let i = 0; i < optionArray.length; i++) {
             const option = optionArray[i];
@@ -219,7 +219,7 @@ for (let i = 0; i < selectInputArray.length; i++) {
                 if (select.classList.contains('select_up')) {
                     selectUp(selectInput, selectTitle)
                 }
-                options.style.height = '0px'
+            options.classList.remove('options_active')
                 select.classList.remove('select-active')
             })
         }
@@ -227,13 +227,13 @@ for (let i = 0; i < selectInputArray.length; i++) {
             const withinBoundaries = e.composedPath().includes(select);
             if ( ! withinBoundaries ) {
                 select.classList.remove('select-active')
-                options.style.height = '0px'
+                options.classList.remove('options_active')
             }
         }) //Закрытие селекта по щелчку вне меню
         document.addEventListener('keydown', function(e) {
             if( e.keyCode == 27 ){ 
                 select.classList.remove('select-active')
-                options.style.height = '0px'
+                options.classList.remove('options_active')
             }
         }) //Закрытие селекта по нажатию на ESC
     })
@@ -284,12 +284,15 @@ for (let i = 0; i < switchInputArray.length; i++) {
     const switchInput = switchInputArray[i];
     switchInput.addEventListener('change', function(){
         const rangeInput = switchInput.parentElement.parentElement.querySelector('.range__input')
+        const rangeConclusion = switchInput.parentElement.parentElement.querySelector('.range__conclusion')
         if (switchInput.checked) {
             rangeInput.disabled = false
             rangeInput.classList.remove('range__input-disabled')
+            rangeConclusion.classList.remove('range__conclusion-disabled')
         } else {
             rangeInput.disabled = true
             rangeInput.classList.add('range__input-disabled')
+            rangeConclusion.classList.add('range__conclusion-disabled')
         }
     })
 }
