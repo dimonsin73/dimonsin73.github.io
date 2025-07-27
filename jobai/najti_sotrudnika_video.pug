@@ -7,11 +7,10 @@ html(lang="ru")
         link(rel="stylesheet", href="css/reset.css")
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet", href="css/style.css")
-        script(src="js/itc-slider.js" defer) 
-        script(src="js/najti_sotrudnika.js" defer) 
-        script(src="js/najti_sotrudnika_cards.js" defer) 
+        script(src="js/aside.js" defer) 
+        script(src="js/najti_sotrudnika_video.js" defer) 
     body.bg
-        aside.aside 
+        aside.aside
             .aside__logo 
                 img(src="images/logo.png", alt="job ai").aside__logo-img
             ul.aside__list.aside__list-line
@@ -54,7 +53,16 @@ html(lang="ru")
                             <path d="M2.39844 7.20005C2.39844 5.87457 3.47295 4.80005 4.79844 4.80005H10.7984L13.1984 7.20005H19.1984C20.5239 7.20005 21.5984 8.27457 21.5984 9.60005V16.8C21.5984 18.1255 20.5239 19.2 19.1984 19.2H4.79844C3.47295 19.2 2.39844 18.1255 2.39844 16.8V7.20005Z"/>
                         </svg>
                         | Документы
-        header.header 
+        header.header.bg 
+            button(type="button").header__burger.btn-icon
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 5C17 4.44772 16.5523 4 16 4H4C3.44771 4 3 4.44772 3 5C3 5.55228 3.44771 6 4 6H16C16.5523 6 17 5.55228 17 5Z" fill="#6A6A73"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10C17 9.44772 16.5523 9 16 9H4C3.44771 9 3 9.44772 3 10C3 10.5523 3.44771 11 4 11H16C16.5523 11 17 10.5523 17 10Z" fill="#6A6A73"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 15C17 14.4477 16.5523 14 16 14H4C3.44771 14 3 14.4477 3 15C3 15.5523 3.44771 16 4 16H16C16.5523 16 17 15.5523 17 15Z" fill="#6A6A73"/>
+                </svg>
+            .header__logo
+                img(src="images/logo.png", alt="").header__logo0-img
+            .press-right
             button(type="button").btn-icon.bulb
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.1984 3.60002C13.1984 2.93728 12.6612 2.40002 11.9984 2.40002C11.3357 2.40002 10.7984 2.93728 10.7984 3.60002V4.80002C10.7984 5.46277 11.3357 6.00002 11.9984 6.00002C12.6612 6.00002 13.1984 5.46277 13.1984 4.80002V3.60002Z"/>
@@ -99,15 +107,144 @@ html(lang="ru")
                     <path d="M15.9499 14.7516C15.4813 15.2202 15.4813 15.98 15.9499 16.4486C16.4185 16.9173 17.1783 16.9173 17.647 16.4486L21.247 12.8486C21.472 12.6236 21.5984 12.3184 21.5984 12.0001C21.5984 11.6818 21.472 11.3766 21.247 11.1516L17.647 7.55157C17.1783 7.08294 16.4185 7.08294 15.9499 7.55157C15.4813 8.0202 15.4813 8.78 15.9499 9.24862L17.5014 10.8001L8.39844 10.8001C7.7357 10.8001 7.19844 11.3374 7.19844 12.0001C7.19844 12.6628 7.7357 13.2001 8.39844 13.2001H17.5014L15.9499 14.7516Z" fill="#6A6A73"/>
                 </svg>
         main.main 
-            section.section.section_active.section_collapse(data-section='najti-sotrudnika')
-                .container.container_medium
+            section.section.section_active
+                .container
                     .section__top 
                         h2.title Кузнецов Владимир Михайлович
                         a(href='').link-medium Как пользоваться?
                     .section__btns 
-                        button(type="button").btn.btn_white.btn_white-icon
-                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.5 11H14.5M8.5 15H12.7929M12.5 20H6.5C5.39543 20 4.5 19.1046 4.5 18V4C4.5 2.89543 5.39543 2 6.5 2H12.0858C12.351 2 12.6054 2.10536 12.7929 2.29289L18.2071 7.70711C18.3946 7.89464 18.5 8.149 18.5 8.41421L18.5 9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M22 18.5C22 20 20.433 21 18.5 21M18.5 21C16.567 21 15 20 15 18.5M18.5 21V23M18.5 23H16.5M18.5 23H20.5M18.5 18C17.6716 18 17 17.3284 17 16.5V13.5C17 12.6716 17.6716 12 18.5 12C19.3284 12 20 12.6716 20 13.5V16.5C20 17.3284 19.3284 18 18.5 18Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                        .section__btns-width
+                            button(type="button").btn.btn_white.btn-icon48.btn-transcription
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 11H14.5M8.5 15H12.7929M12.5 20H6.5C5.39543 20 4.5 19.1046 4.5 18V4C4.5 2.89543 5.39543 2 6.5 2H12.0858C12.351 2 12.6054 2.10536 12.7929 2.29289L18.2071 7.70711C18.3946 7.89464 18.5 8.149 18.5 8.41421L18.5 9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22 18.5C22 20 20.433 21 18.5 21M18.5 21C16.567 21 15 20 15 18.5M18.5 21V23M18.5 23H16.5M18.5 23H20.5M18.5 18C17.6716 18 17 17.3284 17 16.5V13.5C17 12.6716 17.6716 12 18.5 12C19.3284 12 20 12.6716 20 13.5V16.5C20 17.3284 19.3284 18 18.5 18Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                p.btn_white-hide Транскрибация
+                            button(type="button").btn.btn_white.btn-icon48.btn-structuring
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 8H17.5M7.5 12H11.5M21.5 10V6C21.5 4.89543 20.6046 4 19.5 4H5.5C4.39543 4 3.5 4.89543 3.5 6V14C3.5 15.1046 4.39543 16 5.5 16H8.5L12.5 20L14.5 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21.2222 14.4444C21.2222 15.7945 20.1278 16.8889 18.7778 16.8889C17.4277 16.8889 16.3333 15.7945 16.3333 14.4444C16.3333 13.0944 17.4277 12 18.7778 12C20.1278 12 21.2222 13.0944 21.2222 14.4444Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M18.7778 19C16.4152 19 14.5 20.6374 14.5 23H23.0556C23.0556 20.6374 21.1403 19 18.7778 19Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                p.btn_white-hide Структуирование
+                            button(type="button").btn.btn_white.btn-icon48.btn-subvideo
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 5L16 12L9 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                    .section__content
+                        .section__main
+                            .section__video 
+                                img(src="images/kuznecov/video/video_1.png", alt="video")
+                                .section__video-player
+                            .section__description
+                                h2.section__description-title Видеособеседование «Digital маркетолог»
+                                .section__description-info 
+                                    p.section__description-text 1 просмотр
+                                    <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="2" cy="2" r="2" fill="#898990"/>
+                                    </svg>
+                                    p.section__description-text 9 декабря 2025
+                                    button(type="button").section__dots.btn-icon48
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 19L12 18.99M12 12L12 11.99M12 5L12 4.99M12 18C12.5523 18 13 18.4477 13 19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19C11 18.4477 11.4477 18 12 18ZM12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11ZM12 4C12.5523 4 13 4.44772 13 5C13 5.55229 12.5523 6 12 6C11.4477 6 11 5.55228 11 5C11 4.44772 11.4477 4 12 4Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                            .section__or 
+                                a(href="najti_sotrudnika_cards.html").btn.btn_blue
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.24697 3.95108C9.71559 4.41971 9.71559 5.17951 9.24697 5.64814L6.49549 8.39961H13.1984C17.8376 8.39961 21.5984 12.1604 21.5984 16.7996V19.1996C21.5984 19.8624 21.0612 20.3996 20.3984 20.3996C19.7357 20.3996 19.1984 19.8624 19.1984 19.1996V16.7996C19.1984 13.4859 16.5121 10.7996 13.1984 10.7996H6.49549L9.24697 13.5511C9.71559 14.0197 9.71559 14.7795 9.24697 15.2481C8.77834 15.7168 8.01854 15.7168 7.54991 15.2481L2.74991 10.4481C2.28128 9.97951 2.28128 9.21971 2.74991 8.75108L7.54991 3.95108C8.01854 3.48245 8.77834 3.48245 9.24697 3.95108Z" fill="white"/>
+                                    </svg>
+                                    | Вернуться
+                            .subvideo.bg
+                                .subvideo__wrapper
+                                    .subvideo__content.subvideo__content-active(data-subvideo="transcription")
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Миронова Татьяна
+                                                    p.subvideo__item-time 00:03
+                                                p.subvideo__text Здравствуйте!
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Кузнецов Алексей
+                                                    p.subvideo__item-time 00:08
+                                                p.subvideo__text Здравствуйте!
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Миронова Татьяна
+                                                    p.subvideo__item-time 00:34
+                                                p.subvideo__text Полностью представьтесь
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Кузнецов Алексей
+                                                    p.subvideo__item-time 00:43
+                                                p.subvideo__text Меня зовут Кузнецов Алексей Михайлович
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Миронова Татьяна
+                                                    p.subvideo__item-time 01:12
+                                                p.subvideo__text Обозначьте непосредственно саму запись видеорезюме и вакансию, на которую она записывается, а также, при необходимости, компанию, в которой указанная вакансия открыта
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Кузнецов Алексей
+                                                    p.subvideo__item-time 01:34
+                                                p.subvideo__text Это моё видеособеседование на вакансию «Директор по строительству», которая открыта на текущий момент в компании ПАО Газпромнефть
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Миронова Татьяна
+                                                    p.subvideo__item-time 01:56
+                                                p.subvideo__text Обзначьте полную дату рождения и Ваш полный возраст
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Кузнецов Алексей
+                                                    p.subvideo__item-time 02:34
+                                                p.subvideo__text Обзначьте полную дату рождения и Ваш полный возраст
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Миронова Татьяна
+                                                    p.subvideo__item-time 03:12
+                                                p.subvideo__text Обозначьте Ваш полный трудовой стаж, желательно совпадающий с отметками в трудовой книжке
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Кузнецов Алексей
+                                                    p.subvideo__item-time 04:34
+                                                p.subvideo__text Моя трудовая деятельность начата в январе 2005 года и на сегодняшний момент мой полный трудовой стаж составляет более 15 лет.
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Миронова Татьяна
+                                                    p.subvideo__item-time 05:23
+                                                p.subvideo__text Расскажите о своем основном образовании, включая наименование учебного заведения, даты начала и окончания обучения, факультет, кафедру и полученную специальность
+                                        .subvideo__item 
+                                            .subvideo__item-avatar 
+                                            .subvideo__item-content     
+                                                .subvideo__item-top 
+                                                    p.subvideo__item-name Кузнецов Алексей
+                                                    p.subvideo__item-time 06:03
+                                                p.subvideo__text В 2000 году поступил и 2006 году успешно закончил МГТУ им. Н.Э.Баумана, факультет «Машиностроительные технологии», кафедра «Машины и технологии обработки металлов давлением» и получил специальность «Инженер-конструктор».
+                                    .subvideo__content(data-subvideo="structuring")
+                                        p.subvideo__text Добрый день, меня зовут Миронова Татьяна, я представляю компанию управляющей компанией «Империя здоровья». 
+                                        p.subvideo__text Это видео-вакансия на должность руководителя отдела продаж в нашу компанию. Наша компания занимается контрактным производством пищевых продуктов, в том числе БАДов, специализированных продуктами для питания спортсменов, комплексных пищевых добавок и функциональных продуктов. 
+                                        p.subvideo__text Мы работаем с клиентами, которые занимаются производством продажей под собственной торговой маркой нашей продукции и нашего сырья.  Адрес офиса город Санкт-Петербург, площадь Конституции 3.2, станция метро Московская, бизнес-центр Лидертауэр.  У нас следующее требование к кандидатам.  Кандидатов готовых переехать в город Санкт-Петербург из других городов мы не рассматриваем.  То есть с релокацией не рассматриваем.  Командировки, да, возможные.  Гражданство должно быть Российской Федерации.  Тип занятости полный.  График работы из офиса с девяти до шести.  Пять рабочих дней, два выходных.  Опыт работы от трех лет по кандидатам.  не важен возраст кандидата от 25 до 45 лет, но возможны другие диапазоны возрастные, если у кандидата соответствующий опыт. 
+                                        p.subvideo__text Основные требования и должностные обязанности.  Комплексное управление и развитие отделами продаж нашей компании.  Введение управленческой отчетности и сдачи ее руководства.  Строгое выполнение плана продаж отдела.  Найм и ввод в должность новых сотрудников отдела продаж Организация поиска конкурентов с аналогичной продукцией, их анализ, анализ их цен, а также торговых предложений Расчет рыночных цен и отпускных цен на основе этого анализа конкуренту Корректировка наших цен на основе себестоимости продукции и рыночной конъюнктуры Выставление счетов и контроль оплат от клиентов.  Работа с кредиторской и дебиторской задолженностью.  Дополнительно это, конечно же, активный поиск новых клиентов в сервенте бизнес-ту-бизнес и организация работ отдела.  Поддержание взаимодействия с имеющимися клиентами.  Поддержание их интереса к продукции компании и увеличение объемов продаж.  Трансляция идеологии компании в отделе продаж.  Поиск путей решения для привлечения новых клиентов, которые отказываются от работы с компанией или отказались от работы с компанией.  Возможно поиск нестандартных решений.  Вывес командировки для встреч с действующими новыми клиентами, но это при необходимости.  И, конечно же, прочие обязанности в соответствии с должностью.  
+
 
