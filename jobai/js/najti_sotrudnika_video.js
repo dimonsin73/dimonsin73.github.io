@@ -1,3 +1,34 @@
+// Работа бокового меню Aside
+const asideBtnArray = document.querySelectorAll('.aside__btn')
+for (let i = 0; i < asideBtnArray.length; i++) {
+    const asideBtn = asideBtnArray[i];
+    asideBtn.addEventListener('click', function(){
+        for (let i = 0; i < asideBtnArray.length; i++) {
+            const element = asideBtnArray[i];
+            element.classList.remove('aside__btn-active')
+        }
+        asideBtn.classList.add('aside__btn-active')
+    })
+}
+const headerBurger = document.querySelector('.header__burger')
+const aside = document.querySelector('.aside')
+headerBurger.addEventListener('click', function(){
+    aside.classList.add('aside_active')
+    document.addEventListener('click', (e) => {
+        const withinBoundaries = e.composedPath().includes(aside);
+        if ( ! withinBoundaries ) {
+            const withinBoundariesBurger = e.composedPath().includes(headerBurger);
+            if (! withinBoundariesBurger) {
+                aside.classList.remove('aside_active')
+            }
+        }
+    }) //Скрытие Aside по щелчку вне 
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            aside.classList.remove('aside_active')
+        }
+    }) //Скрытие Aside по нажатию на ESC
+})
 const btnTranscription = document.querySelector('.btn-transcription')
 const btnStructuring = document.querySelector('.btn-structuring')
 const subvideoContentArray = document.querySelectorAll('.subvideo__content')
@@ -6,8 +37,6 @@ const btnSubvideo = document.querySelector('.btn-subvideo')
 const main = document.querySelector('.main')
 const sectionMain = document.querySelector('.section__main')
 const subvideo = document.querySelector('.subvideo')
-
-
 btnSubvideo.addEventListener('click', function(){
     btnSubvideo.classList.remove('btn-subvideo-active')
     sectionBtnsWidth.classList.remove('section__btns-width-active')
@@ -20,7 +49,6 @@ btnSubvideo.addEventListener('click', function(){
     btnStructuring.classList.remove('btn_white-active')
     btnStructuring.classList.add('btn-icon48')
 })
-
 btnTranscription.addEventListener('click', function(){
     openSubVideo ()
     btnTranscription.classList.add('btn_white-active')
@@ -45,9 +73,6 @@ function openSubVideo () {
     main.classList.add('main_active')
     aside.classList.add('aside_off')
 }
-
-
-
 function openSubvideoConten(data) {
     for (let i = 0; i < subvideoContentArray.length; i++) {
         const subvideoContent = subvideoContentArray[i];
