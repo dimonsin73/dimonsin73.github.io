@@ -104,8 +104,20 @@
 .main 
     position: relative
     margin-left: 250px
+    margin-top: 64px
+    transition: margin-left 0.3s ease
+    &_active 
+        margin-left: 0
+@media (max-width: 1371px) 
+    .main 
+        margin-left: 0
 .container
     margin: 0 auto
+    &_video
+        max-width: 1240px
+        transition: max-width 0.3s ease
+        &-active 
+            max-width: 1920px
     &_medium
         max-width: 1090px
     &_small 
@@ -552,6 +564,11 @@
     border-right: 1px solid var(--Aside)
     background-color: var(--Gray-100)
     z-index: 300
+    transition: left 0.3s ease
+    &_off
+        left: -250px
+    &_active 
+        left: 0
     &__logo
         display: flex
         align-items: center
@@ -592,6 +609,11 @@
             color: var(--Black)
             & path  
                 fill: var(--Black)
+@media (max-width: 1371px)
+    .aside 
+        left: -250px
+        &_active 
+            left: 0
 // ASIDE END
 .header // HEADER
     position: fixed
@@ -599,11 +621,14 @@
     right: 0
     left: 0
     display: flex
-    justify-content: flex-end
+    justify-content: space-between
     align-items: center
     gap: 24px
     padding: 9px 32px
     z-index: 200
+    &__logo 
+        width: 78px
+        height: 30px
     &__line 
         width: 1px
         height: 32px
@@ -786,6 +811,8 @@
                 left: 15px
     &_mt 
         margin-top: 388px
+        &-collapse 
+            margin-top: 598px
 .adjustment 
     position: absolute
     top: 18px 
@@ -793,6 +820,10 @@
     display: flex
     align-items: center
     justify-content: center
+@media (max-width: 1371px)
+    .section 
+        &_collapse
+            left: 0
 // SECTION END
 .tax // TAX
     &__radio 

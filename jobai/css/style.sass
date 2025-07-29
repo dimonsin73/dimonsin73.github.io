@@ -113,6 +113,11 @@
         margin-left: 0
 .container
     margin: 0 auto
+    &_video
+        max-width: 1240px
+        transition: max-width 0.3s ease
+        &-active 
+            max-width: 1920px
     &_medium
         max-width: 1090px
     &_small 
@@ -1318,6 +1323,8 @@
         border-radius: 8px
     &_mt 
         margin-top: 388px
+        &-collapse 
+            margin-top: 598px
 .adjustment 
     position: absolute
     top: 18px 
@@ -1326,17 +1333,19 @@
     align-items: center
     justify-content: center
 .btn-subvideo 
-    & svg
-        transition: transform 0.3s ease
+    display: none
     &-active 
+        display: flex
         margin-left: auto
-        & svg
-            transform: scaleX(-1)
+@media (max-width: 1371px)
+    .section 
+        &_collapse
+            left: 0
 // SECTION END
 .subvideo 
     position: absolute
     top: 0
-    right: -632px
+    right: -100%
     bottom: 0
     flex: 0 0 auto
     width: 596px

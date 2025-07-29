@@ -57,8 +57,10 @@ const jobDescription = document.getElementById('job-description')
 const jobTitle = document.getElementById('job-title')
 const sectionViewText = document.querySelector('.section__view-text')
 const sectionCollapse = document.querySelector('.section__collapse')
+const sectionMt = document.querySelector('.section_mt')
 sectionBurger.addEventListener('click', function(){
     sectionCollapse.classList.toggle('section__collapse-collapse')
+    sectionMt.classList.toggle('section_mt-collapse')
     if (jobDescription.value != '') {
         sectionViewText.textContent = jobDescription.value
     } else {

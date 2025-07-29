@@ -37,7 +37,9 @@ const btnSubvideo = document.querySelector('.btn-subvideo')
 const main = document.querySelector('.main')
 const sectionMain = document.querySelector('.section__main')
 const subvideo = document.querySelector('.subvideo')
+const containerVideo = document.querySelector('.container_video')
 btnSubvideo.addEventListener('click', function(){
+    containerVideo.classList.remove('container_video-active')
     btnSubvideo.classList.remove('btn-subvideo-active')
     sectionBtnsWidth.classList.remove('section__btns-width-active')
     subvideo.classList.remove('subvideo_active')
@@ -66,6 +68,7 @@ btnStructuring.addEventListener('click', function(){
     openSubvideoConten('structuring')
 })
 function openSubVideo () {
+    containerVideo.classList.add('container_video-active')
     btnSubvideo.classList.add('btn-subvideo-active')
     sectionBtnsWidth.classList.add('section__btns-width-active')
     subvideo.classList.add('subvideo_active')

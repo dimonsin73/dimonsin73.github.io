@@ -54,7 +54,16 @@ html(lang="ru")
                             <path d="M2.39844 7.20005C2.39844 5.87457 3.47295 4.80005 4.79844 4.80005H10.7984L13.1984 7.20005H19.1984C20.5239 7.20005 21.5984 8.27457 21.5984 9.60005V16.8C21.5984 18.1255 20.5239 19.2 19.1984 19.2H4.79844C3.47295 19.2 2.39844 18.1255 2.39844 16.8V7.20005Z"/>
                         </svg>
                         | Документы
-        header.header.bg
+        header.header.bg 
+            button(type="button").header__burger.btn-icon
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 5C17 4.44772 16.5523 4 16 4H4C3.44771 4 3 4.44772 3 5C3 5.55228 3.44771 6 4 6H16C16.5523 6 17 5.55228 17 5Z" fill="#6A6A73"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10C17 9.44772 16.5523 9 16 9H4C3.44771 9 3 9.44772 3 10C3 10.5523 3.44771 11 4 11H16C16.5523 11 17 10.5523 17 10Z" fill="#6A6A73"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 15C17 14.4477 16.5523 14 16 14H4C3.44771 14 3 14.4477 3 15C3 15.5523 3.44771 16 4 16H16C16.5523 16 17 15.5523 17 15Z" fill="#6A6A73"/>
+                </svg>
+            .header__logo
+                img(src="images/logo.png", alt="").header__logo0-img
+            .press-right
             button(type="button").btn-icon.bulb
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.1984 3.60002C13.1984 2.93728 12.6612 2.40002 11.9984 2.40002C11.3357 2.40002 10.7984 2.93728 10.7984 3.60002V4.80002C10.7984 5.46277 11.3357 6.00002 11.9984 6.00002C12.6612 6.00002 13.1984 5.46277 13.1984 4.80002V3.60002Z"/>
@@ -302,6 +311,7 @@ html(lang="ru")
                                     .options__wrapper
                                         .option Мужской
                                         .option Женский
+                                        .option Пол не важен
                         .section__footer 
                             button(type="button").section__close.btn.btn_tertiary Закрыть
                             button(type="submit").section__success.btn.btn_primary Применить
@@ -325,7 +335,7 @@ html(lang="ru")
                                         h2.portfolio__info-title 95%
                                     p.portfolio__status.portfolio__status-green Рассматривает предложения
                                     p.portfolio__info-text Обновлено 29.05.2025
-                                    p.portfolio__info-text Был 2 месяца назад
+                                    p.portfolio__info-text Был 25 минут назад
                                 .portfolio__center
                                     .portfolio__col 
                                         h2.portfolio__stitle Digital маркетолог
@@ -498,6 +508,168 @@ html(lang="ru")
                                         p.portfolio__description-text В резюме Владимира указаны навыки управления продажами и дистрибуцией, опыт руководства большими коллективами, навыки ведения переговоров на уровне первых лиц, а также умение развивать команды и запускать маркетинговые стратегии. Он также имеет опыт управления дебиторской задолженностью, что соответствует обязанностям, заявленным в описании вакансии.
                                     li.portfolio__description-item 
                                         p.portfolio__description-text Тем не менее, вакансия акцентирует внимание на знании систем управления базами данных, таких как Bitrix24. В резюме Владимира этого прямого совпадения нет, и навыки работы с конкретными базами данных не указаны, что может потребовать дополнительного обучения или адаптации. Лидерские, коммуникационные навыки Владимра   , а также его стратегический подход к управлению продажами совпадают с требуемыми личностными качествами, такими как нацеленность на результат и настойчивость.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Таким образом, профессиональные и технические навыки кандидата в общей массе совпадают с необходимыми, но требует уточнения по части конкретных программных систем и специфики отрасли.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Зарплатные ожидания:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text К сожалению, в резюме Владимира не указаны его конкретные зарплатные ожидания, что усложняет прямое сравнение с предлагаемой зарплатой по вакансии. Однако ввиду его многолетнего опыта и достижения в профессии, можно предположить, что его ожидания будут соответствовать предложенной вакансиями суммы (более 200,000 рублей с учетом всех бонусов).
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Исходя из мотивации и карьерных целей, Владимир ориентирован на финансовую компенсацию, что может быть согласовано с предложенной системой оплаты труда в вакансии. Поскольку основная сумма состоит из оклада и процента от KPI, определиться в ожиданиях можно с учетом его способности выполнять плановые задания более чем на 100%. Это повышает вероятность его удовлетворения текущими предложениями, но для большей уверенности потребуется непосредственное обсуждение на интервью.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Образование:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Владимир обладает двумя высшими образованиями по юриспруденции и командованию, что, хотя и не напрямую связано с продажами, тем не менее, способствует общей управленческой квалификации. Он также закончил программу повышения квалификации MBA в Институте Бизнеса и делового администрирования в 2006 году, что важно для желаемого опыта и понимания бизнес-процессов.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Полученное образование позволяет Владимиру  обладать необходимыми управленческими и аналитическими навыками, поддерживающими его карьеру на высоких позициях в продажах. Тот факт, что он прошел программу MBA, говорит о том, что он стремится к профессиональному росту и осознанному подходу к бизнесу. Характер обучения в профильных институтах предполагает его способность к обучению и адаптации в новых условиях, что соответствует желаниям работодателей к обучаемости.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Личные качества:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text В резюме Владимира   не указаны конкретные личные качества в разделе "о себе", однако выводы о его личных качествах можно сделать из описания опыта и достижений. Его способность увеличивать объемы продаж, разрабатывать и внедрять стратегические инициативы, указывают на выраженные лидерские навыки. Также он проявляет настойчивость и нацеленность на результат, достигая выполнения и перевыполнения продаж.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Кроме того, его опыт руководства большими командами требует высокой стрессоустойчивости и коммуникабельности, необходимых для решительных действий и принятия взвешенных решений в стрессовых ситуациях. Это удовлетворяет ключевым личностным требованиям вакансии, включая внимательность к деталям и коммуникативные способности.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Заключение:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Кузнецов Владимир в значительной степени соответствует требованиям вакансии на позицию руководителя отдела продаж. Его обширный опыт в управлении продажами, умение оптимизировать процессы и достижения в увеличении объемов продаж позволяют рассматривать его как перспективного кандидата. Однако необходимо учитывать, что у Владимира нет прямого опыта в указанной отрасли БАДов и спортивного питания, а также может потребоваться обучение системам управления базами данных, как Bitrix24.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Несмотря на это, его сильные лидерские качества, стрессоустойчивость и способность добиваться поставленных целей делают его привлекательным выбором для такого рода позиций. Зарплатные ожидания не обозначены, но его возможности соответствуют предлагаемым условиям. А предлагаемое обучение и карьера, вероятно, будут привлекательными для кандидата с точки зрения дальнейшего развития.
+                                button(type="button").portfolio__description-up.btn.btn_black.btn_black-icon
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 9L12 16L5 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                        .portfolio
+                            .portfolio__top 
+                                .portfolio__avatar 
+                                    .portfolio__avatar-bg
+                                    img(src="images/mihajlova/avatars/mihajlova.png", alt="avatar" data-modalopen='avatar').portfolio__avatar-img.btn-modalopen
+                                .portfolio__main
+                                    .portfolio__col 
+                                        h2.portfolio__title Михайлова Татьяна Сергеевна
+                                        p.portfolio__text Женщина, 30 лет
+                                    h2.portfolio__title 200 000 - 350 000 ₽
+                                .portfolio__info
+                                    .portfolio__main
+                                        .portfolio__info-ai 
+                                        h2.portfolio__info-title 93%
+                                    p.portfolio__status.portfolio__status-red Не ищет работу
+                                    p.portfolio__info-text Обновлено 29.05.2025
+                                    p.portfolio__info-text Был 1 месяц назад
+                                .portfolio__center
+                                    .portfolio__col 
+                                        h2.portfolio__stitle SMM маркетолог
+                                        p.portfolio__text Желаемая должность
+                                    .portfolio__col
+                                        h2.portfolio__stitle ООО ВкусВилл
+                                        p.portfolio__text Последнее место работы
+                                    .portfolio__col 
+                                        h2.portfolio__stitle 8 лет
+                                        p.portfolio__text Опыт работы
+                                    .portfolio__col 
+                                        h2.portfolio__stitle Санкт-Петербург
+                                        p.portfolio__text Город проживания
+                                    .portfolio__row 
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
+                                        </svg>
+                                        .portfolio__col 
+                                            h2.portfolio__stitle +7 (985) 220-89-91
+                                            p.portfolio__text Мобильный телефон
+                                    .portfolio__row 
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.60396 4.7074L8.00156 7.9058L14.3992 4.7074C14.3755 4.29975 14.1968 3.91659 13.8998 3.63638C13.6028 3.35617 13.2099 3.20012 12.8016 3.2002H3.20156C2.79323 3.20012 2.40032 3.35617 2.1033 3.63638C1.80629 3.91659 1.62765 4.29975 1.60396 4.7074Z" fill="#6A6A73"/>
+                                            <path d="M14.4016 6.4946L8.00156 9.6946L1.60156 6.4946V11.2002C1.60156 11.6245 1.77013 12.0315 2.07019 12.3316C2.37025 12.6316 2.77722 12.8002 3.20156 12.8002H12.8016C13.2259 12.8002 13.6329 12.6316 13.9329 12.3316C14.233 12.0315 14.4016 11.6245 14.4016 11.2002V6.4946Z" fill="#6A6A73"/>
+                                        </svg>
+                                        .portfolio__col 
+                                            h2.portfolio__stitle mihailova.tathana@mail.ru
+                                            p.portfolio__text Электронная почта
+                            .portfolio__slider
+                                .itc-slider(data-slider="itc-slider" data-loop="false")
+                                    .itc-slider-wrapper
+                                        .itc-slider-items
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                                .itc-slider-media 
+                                                    .itc-slider-video
+                                                        img(src="images/mihajlova/video/video_1.png", alt="video").itc-slider-img
+                                                        a(href="najti_sotrudnika_video.html").itc-slider-play
+                                                        p.itc-slider-time 23:12
+                                                .itc-slider-bottom
+                                                    h2.itc-slider-title Видеособеседование «SMM маркетолог»
+                                                        button(type="button").itc-slider-dots
+                                                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 15.5C8.82843 15.5 9.5 16.1716 9.5 17C9.5 17.8284 8.82843 18.5 8 18.5C7.17157 18.5 6.5 17.8284 6.5 17C6.5 16.1716 7.17157 15.5 8 15.5ZM8 10.5C8.82843 10.5 9.5 11.1716 9.5 12C9.5 12.8284 8.82843 13.5 8 13.5C7.17157 13.5 6.5 12.8284 6.5 12C6.5 11.1716 7.17157 10.5 8 10.5ZM8 5.5C8.82843 5.5 9.5 6.17157 9.5 7C9.5 7.82843 8.82843 8.5 8 8.5C7.17157 8.5 6.5 7.82843 6.5 7C6.5 6.17157 7.17157 5.5 8 5.5Z" fill="#898990"/>
+                                                            </svg>
+                                                    .itc-slider-info
+                                                        p.itc-slider-text 646 просмотра
+                                                        <svg width="2" height="2" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="1" cy="1" r="1" fill="#898990"/>
+                                                        </svg>
+                                                        p.itc-slider-text 12 Октября 2024
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                                .itc-slider-media 
+                                                    .itc-slider-video
+                                                        img(src="images/mihajlova/video/video_2.png", alt="video").itc-slider-img
+                                                        a(href="najti_sotrudnika_video.html").itc-slider-play
+                                                        p.itc-slider-time 23:12
+                                                .itc-slider-bottom
+                                                    h2.itc-slider-title Видеособеседование «SMM маркетолог»
+                                                        button(type="button").itc-slider-dots
+                                                            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 15.5C8.82843 15.5 9.5 16.1716 9.5 17C9.5 17.8284 8.82843 18.5 8 18.5C7.17157 18.5 6.5 17.8284 6.5 17C6.5 16.1716 7.17157 15.5 8 15.5ZM8 10.5C8.82843 10.5 9.5 11.1716 9.5 12C9.5 12.8284 8.82843 13.5 8 13.5C7.17157 13.5 6.5 12.8284 6.5 12C6.5 11.1716 7.17157 10.5 8 10.5ZM8 5.5C8.82843 5.5 9.5 6.17157 9.5 7C9.5 7.82843 8.82843 8.5 8 8.5C7.17157 8.5 6.5 7.82843 6.5 7C6.5 6.17157 7.17157 5.5 8 5.5Z" fill="#898990"/>
+                                                            </svg>
+                                                    .itc-slider-info
+                                                        p.itc-slider-text 646 просмотра
+                                                        <svg width="2" height="2" viewBox="0 0 2 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="1" cy="1" r="1" fill="#898990"/>
+                                                        </svg>
+                                                        p.itc-slider-text 12 Октября 2024
+                                            .itc-slider-item
+                                                .itc-slider-bg
+                                        .itc-slider-btn.itc-slider-btn-prev
+                                        .itc-slider-btn.itc-slider-btn-next
+                            .portfolio__btns 
+                                button(type="button" data-modalopen='resume').btn.btn_black.btn-modalopen
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 6H5C3.89543 6 3 6.89543 3 8V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V8C21 6.89543 20.1046 6 19 6H14M10 6V5C10 3.89543 10.8954 3 12 3C13.1046 3 14 3.89543 14 5V6M10 6C10 7.10457 10.8954 8 12 8C13.1046 8 14 7.10457 14 6M9 14C10.1046 14 11 13.1046 11 12C11 10.8954 10.1046 10 9 10C7.89543 10 7 10.8954 7 12C7 13.1046 7.89543 14 9 14ZM9 14C10.3062 14 11.4174 14.8348 11.8292 16M9 14C7.69378 14 6.58249 14.8348 6.17065 16M15 11H18M15 15H17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Резюме
+                                button(type="button" data-modalopen='portfolio').btn.btn_black.btn-modalopen
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 13.2554C18.2207 14.3805 15.1827 15 12 15C8.8173 15 5.7793 14.3805 3 13.2554M16 6V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V6M12 12H12.01M5 20H19C20.1046 20 21 19.1046 21 18V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V18C3 19.1046 3.89543 20 5 20Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Портфолио
+                                button(type="button" data-modalopen='comments').btn.btn_black.btn-modalopen
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 8H17M7 12H11M12 20L8 16H5C3.89543 16 3 15.1046 3 14V6C3 4.89543 3.89543 4 5 4H19C20.1046 4 21 4.89543 21 6V14C21 15.1046 20.1046 16 19 16H16L12 20Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Комментарии
+                                .press-right
+                                button(type="button").btn.btn_black.btn_black-icon.btn_like
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.31802 6.31802C2.56066 8.07538 2.56066 10.9246 4.31802 12.682L12.0001 20.364L19.682 12.682C21.4393 10.9246 21.4393 8.07538 19.682 6.31802C17.9246 4.56066 15.0754 4.56066 13.318 6.31802L12.0001 7.63609L10.682 6.31802C8.92462 4.56066 6.07538 4.56066 4.31802 6.31802Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                button(type="button").btn.btn_blue
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21 12C21 16.4183 16.9706 20 12 20C10.4607 20 9.01172 19.6565 7.74467 19.0511L3 20L4.39499 16.28C3.51156 15.0423 3 13.5743 3 12C3 7.58172 7.02944 4 12 4C16.9706 4 21 7.58172 21 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    | Пригласить
+                            .portfolio__description
+                                h2.portfolio__description-title Почему кандидат подходит?
+                                ul.portfolio__description-list  
+                                    li.portfolio__description-item.portfolio__description-hide
+                                        p.portfolio__description-text # Профессиональный опыт:
+                                    li.portfolio__description-item
+                                        p.portfolio__description-text Михайлова Татьяна обладает более чем 10-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями.
+                                    li.portfolio__description-item
+                                        p.portfolio__description-text Поскольку вакансия требует минимум трех лет опыта работы на высших позициях в продажах, он явно превышает этот порог. Владимир  имеет достижения, например, увеличение объёмов продаж с 900 до 1600 тонн в месяц для макаронной фабрики и разработка новых продуктовых стратегий, что свидетельствует о его способности выполнять и перевыполнять плановые задачи. В целом, его опыт хорошо соответствует общим требованиям руководства продажами, но может не полностью соответствовать специализированным требованиям индустрии биодобавок и спортивного питания.     
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text # Навыки:
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text В резюме Владимира указаны навыки управления продажами и дистрибуцией, опыт руководства большими коллективами, навыки ведения переговоров на уровне первых лиц, а также умение развивать команды и запускать маркетинговые стратегии. Он также имеет опыт управления дебиторской задолженностью, что соответствует обязанностям, заявленным в описании вакансии.
+                                    li.portfolio__description-item 
+                                        p.portfolio__description-text Тем не менее, вакансия акцентирует внимание на знании систем управления базами данных, таких как Bitrix24. В резюме Владимира этого прямого совпадения нет, и навыки работы с конкретными базами данных не указаны, что может потребовать дополнительного обучения или адаптации. Лидерские, коммуникационные навыки Владимра, а также его стратегический подход к управлению продажами совпадают с требуемыми личностными качествами, такими как нацеленность на результат и настойчивость.
                                     li.portfolio__description-item 
                                         p.portfolio__description-text Таким образом, профессиональные и технические навыки кандидата в общей массе совпадают с необходимыми, но требует уточнения по части конкретных программных систем и специфики отрасли.
                                     li.portfolio__description-item 
