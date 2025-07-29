@@ -83,6 +83,9 @@
   letter-spacing: -0.03em;
   white-space: nowrap;
 }
+.btn_h48 {
+  padding: 11px 23px;
+}
 .btn_primary {
   border: 1px solid var(--Primary-40);
   background-color: var(--Primary-40);
@@ -1401,6 +1404,7 @@
 .section__g24 {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 24px;
 }
 .section__form {
@@ -1447,6 +1451,25 @@
   background-position: center left 13px;
   background-size: 24px 24px;
 }
+.section__plan {
+  display: grid;
+  grid-template-columns: 1fr 56px 56px;
+  gap: 16px;
+}
+.section__plan-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 56px;
+  background-color: var(--Gray-100);
+}
+.section__plan-icon path {
+  fill: var(--Black);
+}
+.section__plan-icon:disabled path {
+  fill: var(--Gray-60);
+}
 .section__item {
   display: flex;
   flex-direction: column;
@@ -1485,6 +1508,56 @@
   font: 400 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
   color: var(--Gray-10);
+}
+.section__imgloading {
+  display: grid;
+  grid-template-columns: 96px auto;
+  gap: 24px;
+  align-items: center;
+}
+.section__imgloading-image {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+}
+.section__imgloading-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--Aside);
+  border-radius: 16px;
+}
+.section__imgloading-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.section__imgloading-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.section__imgloading-title {
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Black);
+}
+.section__imgloading-text {
+  font: 400 13px/16px "Inter", "sans-serif";
+  letter-spacing: 0;
+  color: var(--Gray-60);
+}
+.section__imgloading-btn {
+  padding: 6px 16px;
+  border-radius: 6px;
+  background-color: var(--Gray-80);
 }
 .section__title {
   font: 600 16px/22px "Inter", "sans-serif";

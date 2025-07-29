@@ -136,6 +136,8 @@
     border-radius: 12px
     @include btn-big
     white-space: nowrap
+    &_h48 
+        padding: 11px 23px
     &_primary 
         border: 1px solid var(--Primary-40)
         background-color: var(--Primary-40)
@@ -1172,6 +1174,7 @@
     &__g24 
         display: flex
         flex-direction: column
+        align-items: flex-start
         gap: 24px
     &__form 
         display: flex
@@ -1208,6 +1211,22 @@
                 repeat: no-repeat 
                 position: center left 13px
                 size: 24px 24px
+    &__plan
+        display: grid
+        grid-template-columns: 1fr 56px 56px 
+        gap: 16px
+        &-icon 
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 8px
+            height: 56px
+            background-color: var(--Gray-100)
+            & path 
+                fill: var(--Black)
+            &:disabled
+                & path
+                    fill: var(--Gray-60)
     &__item 
         display: flex
         flex-direction: column
@@ -1239,6 +1258,46 @@
         justify-content: center
         @include body-medium
         color: var(--Gray-10)
+    &__imgloading 
+        display: grid
+        grid-template-columns: 96px auto 
+        gap: 24px
+        align-items: center
+        &-image 
+            position: relative
+            width: 96px
+            height: 96px
+            border-radius: 16px
+        &-bg
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 2px dashed var(--Aside)
+            border-radius: 16px
+        &-info 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 16px
+        &-top 
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-title 
+            @include title-medium
+            color: var(--Black)
+        &-text 
+            @include body-small
+            color: var(--Gray-60)
+        &-btn 
+            padding: 6px 16px
+            border-radius: 6px
+            background-color: var(--Gray-80)
     &__title 
         @include title-medium
         color: var(--Black)
@@ -1376,6 +1435,7 @@
     &-active 
         display: flex
         margin-left: auto
+
 @media (max-width: 1371px)
     .section 
         &_collapse

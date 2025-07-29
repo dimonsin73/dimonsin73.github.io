@@ -40,7 +40,7 @@ for (let i = 0; i < tabArray.length; i++) {
         tab.classList.add('tab_active')
     })
 }
-
+// Открытие/Закрытие селектов
 const selectInputArray = document.querySelectorAll('.select__input')
 for (let i = 0; i < selectInputArray.length; i++) {
     const selectInput = selectInputArray[i];
@@ -51,9 +51,9 @@ for (let i = 0; i < selectInputArray.length; i++) {
         const optionArray = options.querySelectorAll('.option')
         select.classList.toggle('select-active')
         if (select.classList.contains('select-active')) {
-            options.style.height = `${options.scrollHeight}px`
+            options.classList.add('options_active')
         } else {
-            options.style.height = '0px'
+            options.classList.remove('options_active')
         }
         for (let i = 0; i < optionArray.length; i++) {
             const option = optionArray[i];
@@ -62,7 +62,7 @@ for (let i = 0; i < selectInputArray.length; i++) {
                 if (select.classList.contains('select_up')) {
                     selectUp(selectInput, selectTitle)
                 }
-                options.style.height = '0px'
+            options.classList.remove('options_active')
                 select.classList.remove('select-active')
             })
         }
@@ -70,15 +70,15 @@ for (let i = 0; i < selectInputArray.length; i++) {
             const withinBoundaries = e.composedPath().includes(select);
             if ( ! withinBoundaries ) {
                 select.classList.remove('select-active')
-                options.style.height = '0px'
+                options.classList.remove('options_active')
             }
-        }) //Закрытие меню выбора языка по щелчку вне меню
+        }) //Закрытие селекта по щелчку вне меню
         document.addEventListener('keydown', function(e) {
             if( e.keyCode == 27 ){ 
                 select.classList.remove('select-active')
-                options.style.height = '0px'
+                options.classList.remove('options_active')
             }
-        }) //Закрытие меню выбора языка по нажатию на ESC
+        }) //Закрытие селекта по нажатию на ESC
     })
 }
 function selectUp(selectInput, selectTitle) {
