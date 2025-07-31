@@ -28,17 +28,41 @@ headerBurger.addEventListener('click', function(){
         }
     }) //Скрытие Aside по нажатию на ESC
 })
-
+// Работа TABS 
 const tabArray = document.querySelectorAll('.tab')
+const sectionTabArray = document.querySelectorAll('.section__tab')
+const sectionNavArray = document.querySelectorAll('.section__nav')
 for (let i = 0; i < tabArray.length; i++) {
     const tab = tabArray[i];
     tab.addEventListener('click', function(){
-        for (let i = 0; i < tabArray.length; i++) {
-            const tab = tabArray[i];
+        const dataTab = tab.dataset.tab
+        openSectionTab(dataTab)
+    })
+}
+for (let i = 0; i < sectionNavArray.length; i++) {
+    const sectionNav = sectionNavArray[i];
+    sectionNav.addEventListener('click', function(){
+        const dataTab = sectionNav.dataset.nav
+        openSectionTab(dataTab)
+    })
+}
+function openSectionTab(dataTab) {
+    for (let i = 0; i < sectionTabArray.length; i++) {
+        const sectionTab = sectionTabArray[i];
+        if (sectionTab.dataset.tab === dataTab) {
+            sectionTab.classList.add('section__tab-active')
+        } else {
+            sectionTab.classList.remove('section__tab-active')
+        }
+    }
+    for (let i = 0; i < tabArray.length; i++) {
+        const tab = tabArray[i];
+        if (tab.dataset.tab === dataTab) {
+            tab.classList.add('tab_active')
+        } else {
             tab.classList.remove('tab_active')
         }
-        tab.classList.add('tab_active')
-    })
+    }
 }
 // Открытие/Закрытие селектов
 const selectInputArray = document.querySelectorAll('.select__input')
@@ -126,3 +150,65 @@ for (let i = 0; i < labelTextareaArray.length; i++) {
         }
     })    
 }
+// Работа поля План Найма
+const hiringPlan = document.getElementById('hiring-plan')
+const labelHiringPlan = hiringPlan.parentElement
+const labelFlyingtext = document.querySelector('.label__flyingtext')
+const sectionPlanMinus = document.querySelector('.section__plan-minus')
+const sectionPlanPlus = document.querySelector('.section__plan-plus')
+sectionPlanMinus.addEventListener('click', function(){
+    let hiringPlanValue = Number(hiringPlan.value)
+    if (hiringPlanValue > 0) {
+        hiringPlanValue--
+        hiringPlan.value = hiringPlanValue
+        if (hiringPlanValue === 0) {
+            sectionPlanMinus.disabled = true
+        }
+    }
+    labelHiringPlan.classList.add('label-active')
+    const arrayOfHiringPlan = Array.from(String(hiringPlanValue))
+    flyingtext(arrayOfHiringPlan)
+})
+sectionPlanPlus.addEventListener('click', function(){
+    let hiringPlanValue = Number(hiringPlan.value)
+    hiringPlanValue++
+    hiringPlan.value = hiringPlanValue
+    labelHiringPlan.classList.add('label-active')
+    sectionPlanMinus.disabled = false
+    const arrayOfHiringPlan = Array.from(String(hiringPlanValue))
+    flyingtext(arrayOfHiringPlan, hiringPlanValue)
+})
+function flyingtext (arrayOfHiringPlan){
+    const num = arrayOfHiringPlan.length
+    const left = getComputedStyle(labelFlyingtext).left
+    let leftNum = Number(left.slice(0, -2))
+    leftNum = 14.7 + 9.3*num
+    labelFlyingtext.style.left = `${leftNum}px`
+}
+// Работа Предпросмотра 
+const sectionArray = document.querySelectorAll('.section')
+const previewArray = document.querySelectorAll('.preview')
+for (let i = 0; i < previewArray.length; i++) {
+    const preview = previewArray[i];
+    preview.addEventListener('click', function(){
+        for (let i = 0; i < sectionArray.length; i++) {
+            const section = sectionArray[i];
+            if (section.dataset.section === 'preview') {
+                section.classList.add('section_active')
+            } else {
+                section.classList.remove('section_active')
+            }
+        }
+    })
+}
+const previewBack = document.querySelector('.preview-back')
+previewBack.addEventListener('click', function(){
+    for (let i = 0; i < sectionArray.length; i++) {
+        const section = sectionArray[i];
+        if (section.dataset.section === 'sozdat_vakansiyu') {
+            section.classList.add('section_active')
+        } else {
+            section.classList.remove('section_active')
+        }
+    }
+})
