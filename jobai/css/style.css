@@ -121,10 +121,17 @@
   color: var(--Black);
   transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
+.btn_tertiary path {
+  fill: var(--Black);
+  transition: fill 0.3s ease;
+}
 .btn_tertiary:hover {
   border: 1px solid var(--Primary-40);
   background-color: var(--Primary-40);
   color: var(--White);
+}
+.btn_tertiary:hover path {
+  fill: var(--White);
 }
 .btn_tertiary:active {
   border: 1px solid var(--Primary-30);
@@ -251,6 +258,10 @@
 .btn_center {
   margin: 0 auto;
 }
+.btn_full {
+  width: 100%;
+  justify-content: flex-start;
+}
 .btn_like-active path {
   stroke: var(--Red);
   fill: var(--Red);
@@ -290,6 +301,7 @@
   color: var(--Black);
   cursor: pointer;
 }
+
 .press-right {
   margin-left: auto;
 }
@@ -335,9 +347,13 @@
   letter-spacing: -0.5px;
   color: var(--Gray-30);
   transition: top 0.3s ease, font 0.3s ease;
+  z-index: 1;
 }
 .label__title-textarea {
   top: 8px;
+}
+.label__title-icon {
+  left: 44px;
 }
 .label__textarea {
   width: 100%;
@@ -362,6 +378,9 @@
 }
 .label__textarea-big {
   height: 181px;
+}
+.label__textarea-extrabig {
+  height: 361px;
 }
 .label__text {
   font: 500 12px/16px "Inter", "sans-serif";
@@ -474,6 +493,10 @@
   flex-direction: column;
   gap: 8px;
   padding-left: 14px;
+}
+.select__box-vert {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .options {
@@ -676,7 +699,6 @@
   flex: 0 0 auto;
   width: 20px;
   height: 20px;
-  margin-top: 2px;
   border: 1px solid var(--Black);
   border-radius: 4px;
   background-repeat: no-repeat;
@@ -689,6 +711,7 @@
   gap: 4px;
 }
 .check__title {
+  margin-top: -2px;
   font: 600 16px/22px "Inter", "sans-serif";
   letter-spacing: -0.1px;
   color: var(--black);
@@ -1509,6 +1532,20 @@
   background-position: center left 13px;
   background-size: 24px 24px;
 }
+.section__experiences {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.section__experience {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.section__experience:nth-child(n+2) {
+  padding-top: 24px;
+  border-top: 1px solid var(--Gray-90);
+}
 .section__vakansi {
   position: relative;
   display: grid;
@@ -1529,7 +1566,7 @@
   grid-template-columns: 1fr 56px 56px;
   gap: 16px;
 }
-.section__plan-icon {
+.section__icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1537,16 +1574,24 @@
   height: 56px;
   background-color: var(--Gray-100);
 }
-.section__plan-icon path {
+.section__icon path {
   fill: var(--Black);
 }
-.section__plan-icon:disabled path {
+.section__icon:disabled path {
   fill: var(--Gray-60);
+}
+.section__icon-icon path {
+  fill: var(--Icons);
 }
 .section__item {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+.section__item-withbtn {
+  display: grid;
+  grid-template-columns: 1fr 56px;
+  gap: 0 24px;
 }
 .section__avatar {
   display: flex;
@@ -1557,14 +1602,69 @@
 .section__avatar-image {
   width: 160px;
   height: 160px;
-  padding: 24px;
   border: 1px solid var(--Aside);
   border-radius: 16px;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .section__avatar-site {
   font: 300 14px/16px "Inter", "sans-serif";
   color: var(--Primary-50);
   text-align: center;
+}
+.section__status {
+  margin-top: 14px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  background-color: rgba(0, 111, 216, 0.1019607843);
+  font: 500 10px/14px "Inter", "sans-serif";
+  letter-spacing: 0;
+}
+.section__status-blue {
+  color: var(--Primary-40);
+}
+.section__rezyumes {
+  grid-column: span 2;
+  padding: 0 16px;
+}
+.section__rezyume {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px 40px;
+  padding: 0 16px;
+}
+.section__rezyume-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.section__rezyume-h2 {
+  font: 500 14px/20px "Inter", "sans-serif";
+  letter-spacing: -0.25px;
+  color: var(--Black);
+}
+.section__rezyume-h3 {
+  font: 600 20px/28px "Inter", "sans-serif";
+  letter-spacing: -0.2px;
+  color: var(--Black);
+}
+.section__rezyume-h4 {
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Black);
+}
+.section__rezyume-h5 {
+  font: 500 12px/16px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-40);
+}
+.section__rezyume-text {
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Black);
 }
 .section__col {
   display: flex;
@@ -1671,6 +1771,11 @@
   letter-spacing: -0.1px;
   color: var(--Black);
 }
+.section__text {
+  font: 500 12px/16px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-40);
+}
 .section__line {
   display: grid;
   grid-template-columns: 1fr 1fr 80px;
@@ -1680,6 +1785,17 @@
   display: grid;
   grid-template-columns: 150px 150px;
   gap: 16px;
+}
+.section__linedate {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 200px 120px auto;
+  gap: 16px;
+}
+.section__line50 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 .section__footer {
   display: flex;
@@ -1856,7 +1972,6 @@
 .section_mt-collapse {
   margin-top: 598px;
 }
-
 .adjustment {
   position: absolute;
   top: 18px;
@@ -1872,6 +1987,26 @@
 .btn-subvideo-active {
   display: flex;
   margin-left: auto;
+}
+
+#datepicker {
+  background-image: url("../images/icons/calendar.png");
+  background-position: center right 12px;
+  background-repeat: no-repeat;
+}
+
+#email {
+  padding-left: 44px;
+  background-image: url("../images/icons/mail.png");
+  background-position: center left 12px;
+  background-repeat: no-repeat;
+}
+
+#tel {
+  padding-left: 44px;
+  background-image: url("../images/icons/phone.png");
+  background-position: center left 12px;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 1371px) {
@@ -2497,7 +2632,6 @@
   height: 824px;
   padding: 12px;
   overflow-y: auto;
-  scrollbar-width: thin;
 }
 .modal__content-vert {
   flex-direction: column;
@@ -2619,7 +2753,6 @@
 @media (max-height: 699px) {
   .modal {
     overflow-y: auto;
-    scrollbar-width: thin;
   }
   .modal__wrapper {
     top: 0;

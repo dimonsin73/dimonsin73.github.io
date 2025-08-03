@@ -1000,7 +1000,7 @@
   grid-template-columns: 1fr 56px 56px;
   gap: 16px;
 }
-.section__plan-icon {
+.section__icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1008,10 +1008,10 @@
   height: 56px;
   background-color: var(--Gray-100);
 }
-.section__plan-icon path {
+.section__icon path {
   fill: var(--Black);
 }
-.section__plan-icon:disabled path {
+.section__icon:disabled path {
   fill: var(--Gray-60);
 }
 .section__item {

@@ -167,10 +167,15 @@
         border: 1px solid var(--Black)
         color: var(--Black)
         transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        & path 
+            fill: var(--Black)
+            transition: fill 0.3s ease
         &:hover 
             border: 1px solid var(--Primary-40)
             background-color: var(--Primary-40)
             color: var(--White)
+            & path 
+                fill: var(--White)
         &:active
             border: 1px solid var(--Primary-30)
             background-color: var(--Primary-30)
@@ -268,6 +273,9 @@
         padding: 11px
     &_center 
         margin: 0 auto
+    &_full 
+        width: 100%
+        justify-content: flex-start
     &_like 
         &-active 
             & path
@@ -300,8 +308,6 @@
         text-underline-offset: 3px
         color: var(--Black)
         cursor: pointer
-    &-small 
-
 .press 
     &-right 
         margin-left: auto
@@ -332,8 +338,11 @@
         @include body-large
         color: var(--Gray-30)
         transition: top 0.3s ease, font 0.3s ease
+        z-index: 1
         &-textarea 
             top: 8px
+        &-icon 
+            left: 44px
     &__textarea 
         width: 100%
         height: 136px
@@ -349,6 +358,8 @@
             @include body-medium
         &-big
             height: 181px
+        &-extrabig
+            height: 361px
     &__text 
         @include subtitle-medium
         color: var(--Gray-40)
@@ -427,6 +438,9 @@
         flex-direction: column
         gap: 8px
         padding-left: 14px
+        &-vert 
+            padding-top: 10px
+            padding-bottom: 10px
 .options 
     position: absolute
     display: flex
@@ -588,7 +602,6 @@
         flex: 0 0 auto
         width: 20px
         height: 20px
-        margin-top: 2px
         border: 1px solid var(--Black)
         border-radius: 4px 
         background:
@@ -600,6 +613,7 @@
         flex-direction: column
         gap: 4px
     &__title 
+        margin-top: -2px
         @include title-medium
         color: var(--black)
     &__text 
@@ -1258,6 +1272,17 @@
                 repeat: no-repeat 
                 position: center left 13px
                 size: 24px 24px
+    &__experiences
+        display: flex
+        flex-direction: column
+        gap: 24px
+    &__experience
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &:nth-child(n + 2)
+            padding-top: 24px
+            border-top: 1px solid var(--Gray-90)
     &__vakansi 
         position: relative
         display: grid 
@@ -1275,22 +1300,29 @@
         display: grid
         grid-template-columns: 1fr 56px 56px 
         gap: 16px
-        &-icon 
-            display: flex
-            align-items: center
-            justify-content: center
-            border-radius: 8px
-            height: 56px
-            background-color: var(--Gray-100)
+    &__icon 
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 8px
+        height: 56px
+        background-color: var(--Gray-100)
+        & path 
+            fill: var(--Black)
+        &:disabled
+            & path
+                fill: var(--Gray-60)
+        &-icon
             & path 
-                fill: var(--Black)
-            &:disabled
-                & path
-                    fill: var(--Gray-60)
+                fill: var(--Icons)
     &__item 
         display: flex
         flex-direction: column
         gap: 16px
+        &-withbtn 
+            display: grid
+            grid-template-columns: 1fr 56px
+            gap: 0 24px
     &__avatar
         display: flex
         flex-direction: column
@@ -1299,13 +1331,50 @@
         &-image 
             width: 160px
             height: 160px
-            padding: 24px
             border: 1px solid var(--Aside)
             border-radius: 16px
+            overflow: hidden
+            object-fit: cover
+            object-position: center
         &-site 
             @include link-small
             color: var(--Primary-50)
             text-align: center
+    &__status 
+        margin-top: 14px
+        padding: 4px 8px
+        border-radius: 16px
+        background-color: #006FD81A
+        @include subtitle-small
+        &-blue 
+            color: var(--Primary-40)
+    &__rezyumes 
+        grid-column: span 2
+        padding: 0 16px
+    &__rezyume 
+        display: grid
+        grid-template-columns: 180px 1fr
+        gap: 24px 40px
+        padding: 0 16px
+        &-col
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-h2
+            @include subtitle-large
+            color: var(--Black)
+        &-h3
+            @include title-large
+            color: var(--Black)
+        &-h4
+            @include title-medium
+            color: var(--Black)
+        &-h5
+            @include  subtitle-medium
+            color: var(--Gray-40)
+        &-text
+            @include body-large
+            color: var(--Black)
     &__col 
         display: flex
         flex-direction: column
@@ -1388,6 +1457,9 @@
     &__title 
         @include title-medium
         color: var(--Black)
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
     &__line 
         display: grid
         grid-template-columns: 1fr 1fr 80px
@@ -1396,6 +1468,15 @@
         display: grid
         grid-template-columns: 150px 150px
         gap: 16px
+    &__linedate
+        display: grid
+        align-items: center
+        grid-template-columns: 200px 120px auto
+        gap: 16px
+    &__line50
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 24px
     &__footer 
         display: flex
         justify-content: space-between
@@ -1535,6 +1616,7 @@
         margin-top: 388px
         &-collapse 
             margin-top: 598px
+    &__clean 
 .adjustment 
     position: absolute
     top: 18px 
@@ -1547,7 +1629,23 @@
     &-active 
         display: flex
         margin-left: auto
-
+#datepicker
+    background: 
+        image: url('../images/icons/calendar.png')
+        position: center right 12px 
+        repeat: no-repeat
+#email 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/mail.png')
+        position: center left 12px 
+        repeat: no-repeat
+#tel 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/phone.png')
+        position: center left 12px 
+        repeat: no-repeat
 @media (max-width: 1371px)
     .section 
         &_collapse
@@ -2054,7 +2152,6 @@
         height: 824px
         padding: 12px
         overflow-y: auto
-        scrollbar-width: thin
         &-vert 
             flex-direction: column
             justify-content: flex-start
@@ -2151,7 +2248,6 @@
 @media (max-height: 699px)
     .modal
         overflow-y: auto
-        scrollbar-width: thin
         &__wrapper 
             top: 0
             transform: translate3d(-50%, 0, 0)
