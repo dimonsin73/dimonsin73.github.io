@@ -124,6 +124,8 @@
         max-width: 1090px
     &_small 
         max-width: 726px
+    &_extrasmall
+        max-width: 600px
 .bg
     background-color: var(--Gray-100)
 .title 
@@ -324,6 +326,9 @@
         color: var(--Gray-30)
     &_number 
         text-align: center
+    &:focus 
+        background-color: var(--White)
+        outline: 2px solid var(--Gray-40)
 .label 
     position: relative
     display: flex
@@ -370,6 +375,18 @@
         display: none
         @include body-large
         color: var(--Black)
+    &__clue 
+        position: absolute
+        top: 50%
+        right: -40px
+        transform: translateY(-50%)
+    &__top
+        position: absolute
+        left: 50%
+        top: -26px
+        @include body-medium
+        color: var(--Gray-10)
+        transform: translateX(-50%)
     &-active 
         & .label__title
             top: 8px
@@ -377,6 +394,17 @@
         & .label__textarea 
             padding: 28px 12px 8px
         & .label__flyingtext 
+            display: block
+    &_error
+        &-text 
+            position: absolute
+            bottom: -16px
+            display: none
+            font: 400 12px/16px 'Inter', 'sans-serif'
+            color: var(--Red-error)
+        & .label__input
+            outline: 2px solid var(--Red-error)
+        & .label_error-text
             display: block
 .textarea 
     width: 100%
@@ -534,18 +562,18 @@
     cursor: pointer
     &__text 
         position: absolute
-        bottom: calc( 100% )
-        left: -125px
+        bottom: calc( 100% + 4px)
+        left: -135px
         display: none
-        width: 250px
+        width: 270px
         padding: 10px
         border-radius: 8px
         background-color: var(--Gray-90)
-        @include subtitle-medium
-        color: var(--Gray-40)
+        @include subtitle-large
+        color: var(--Gray-30)
         z-index: 10
         &-active 
-            display: block
+            display: flex
 .switch 
     position: relative
     display: inline-block
@@ -619,6 +647,37 @@
     &__text 
         @include subtitle-large
         color: var(--Gray-30)
+.radio
+    &__input
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked 
+            & ~ .radio__label
+                border: 2px solid var(--Primary-40)
+            & ~ .radio__label .radio__check
+                border: 7px solid var(--Primary-40)
+            & ~ .radio__label .radio__title
+                color: var(--Primary-40)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        align-items: center
+        column-gap: 16px
+        padding: 20px 24px
+        border: 2px solid var(--Gray-60)
+        border-radius: 8px
+        transition: border 0.3s linear
+    &__check 
+        width: 20px
+        height: 20px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+        transition: border 0.3s linear
+    &__title 
+        @include title-medium
+        color: var(--Gray-20)
+        transition: color 0.3s ease
 ::-webkit-scrollbar 
     width: 5px
     background-color: #ffffff00
@@ -1305,6 +1364,7 @@
         align-items: center
         justify-content: center
         border-radius: 8px
+        width: 56px
         height: 56px
         background-color: var(--Gray-100)
         & path 
@@ -1375,6 +1435,16 @@
         &-text
             @include body-large
             color: var(--Black)
+    &__education 
+        display: none
+        flex-direction: column
+        gap: 24px
+        &-active 
+            display: flex
+    &__show 
+        display: none
+        &-active 
+            display: block
     &__col 
         display: flex
         flex-direction: column
@@ -1454,6 +1524,14 @@
             background-color: var(--Gray-80)
             @include btn-small
             color: var(--Black)
+    &__educations 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 24px
     &__title 
         @include title-medium
         color: var(--Black)
@@ -1616,7 +1694,6 @@
         margin-top: 388px
         &-collapse 
             margin-top: 598px
-    &__clean 
 .adjustment 
     position: absolute
     top: 18px 
@@ -1629,7 +1706,8 @@
     &-active 
         display: flex
         margin-left: auto
-#datepicker
+.datepicker
+    max-width: 322px
     background: 
         image: url('../images/icons/calendar.png')
         position: center right 12px 
@@ -2392,3 +2470,67 @@ input[type=number]::-webkit-outer-spin-button
     -webkit-appearance: none
     margin: 0
 // ADDITIONAL END
+
+// REGISTRACIYA 
+.registraciya 
+    display: flex
+    flex-direction: column
+    gap: 16px
+    &__form
+        display: none
+        flex-direction: column
+        gap: 32px
+        &-active
+            display: flex
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 32px
+        padding: 40px 60px
+        border-radius: 12px
+        background-color: var(--White)
+    &__col
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__title 
+        @include title-large
+        color: var(--Gray-10)
+    &__text
+        @include title-medium
+        color: var(--Gray-20)
+    &__link
+        @include title-medium
+        color: var(--Primary-40)
+    &__radios
+        display: grid 
+        grid-template-columns: 1fr 1fr
+        gap: 24px
+        &-blur 
+            opacity: 0.5
+    &__btn 
+        width: 240px
+    &__job 
+        display: none
+        &-active 
+            display: flex
+    &__employee 
+        display: none
+        &-active 
+            display: flex
+    &__block 
+        display: flex
+        flex-direction: column
+        gap: 8px
+    &__line 
+        display: flex
+        align-items: center
+        gap: 8px
+    &__footer 
+        margin-top: 18px
+        &-text 
+            @include body-large
+            color: var(--Gray-20)
+        &-link
+            @include body-large
+            color: var(--Primary-40)
