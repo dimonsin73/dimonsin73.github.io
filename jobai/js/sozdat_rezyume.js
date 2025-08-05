@@ -208,7 +208,42 @@ function textareaFun(labelTextarea) {
         }
     })
 }
-
+// Очистка полей 
+const sectionResetArray = document.querySelectorAll('.section__reset')
+for (let i = 0; i < sectionResetArray.length; i++) {
+    const sectionReset = sectionResetArray[i];
+    sectionReseteFun(sectionReset)
+}// Функция очистки полей
+function sectionReseteFun(sectionReset) {
+    sectionReset.addEventListener('click', function(){
+        const sectionExperience = sectionReset.parentElement.parentElement
+        const inputArray = sectionExperience.querySelectorAll('.input')
+        const labelArray = sectionExperience.querySelectorAll('.label')
+        const selectTitleArray = sectionExperience.querySelectorAll('.select__title')
+        const textareaArray = sectionExperience.querySelectorAll('.label__textarea')
+        const checkInputArray = sectionExperience.querySelectorAll('.check__input')
+        for (let i = 0; i < labelArray.length; i++) {
+            const label = labelArray[i];
+            label.classList.remove('label-active')
+        }
+        for (let i = 0; i < selectTitleArray.length; i++) {
+            const selectTitle = selectTitleArray[i];
+            selectTitle.classList.remove('select__title-active')
+        }
+        for (let i = 0; i < inputArray.length; i++) {
+            const input = inputArray[i];
+            input.value = ''
+        }
+        for (let i = 0; i < textareaArray.length; i++) {
+            const textarea = textareaArray[i];
+            textarea.value = ''
+        }
+        for (let i = 0; i < checkInputArray.length; i++) {
+            const checkInput = checkInputArray[i];
+            checkInput.checked = false
+        }
+    })
+}
 // Удаление
 const sectionDeleteArray = document.querySelectorAll('.section__delete')
 for (let i = 0; i < sectionDeleteArray.length; i++) {
@@ -218,17 +253,30 @@ for (let i = 0; i < sectionDeleteArray.length; i++) {
 // Функция Удаления
 function sectionDeleteFun(sectionDelete) {
     sectionDelete.addEventListener('click', function(){
+        const sectionShow = sectionDelete.parentElement.parentElement.parentElement.querySelector('.section__show')
+        if (sectionShow != null) {
+            const sectionKnowledge = sectionDelete.parentElement.parentElement.parentElement.querySelectorAll('.section__knowledge')
+            if (sectionKnowledge.length < 2) {
+                sectionShow.classList.remove('section__show-active')
+            }
+            
+        }
+        
         const sectionExperience = sectionDelete.parentElement.parentElement
         sectionExperience.remove()
+        
     })
 }
+const yearArray = ['2025', '2024', '2023', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998', '1997', '1996', '1995', '1994', '1993', '1992', '1991', '1990', '1989', '1988', '1987', '1986', '1985', '1984', '1983', '1982', '1981', '1980', '1979', '1978', '1977', '1976', '1975', '1974', '1973', '1972', '1971', '1970', '1969', '1968', '1967', '1966', '1965', '1964', '1963', '1962', '1961', '1960']
+const languageArray = ['А1 (Beginner) или начальный уровень', 'А2 (Elementary) элементарный уровень знаний', 'В1 (Pre-Intermediate) ниже-среднего', 'В2 (Intermediate) средний уровен', 'С1 (Upper-Intermediate) или выше-среднего', 'С2 (Advanced) продвинутый уровень']
+const driverLicenseArray = ['A - Мотоциклы', 'A1 - Лёгкие мотоциклы', 'B - Легковые авто и небольшие грузовые автомобили (до 3,5 тонн)', 'BE - Легковые авто с прицепом', 'B1 - Трициклы, квадроциклы и квадрициклы', 'C - Грузовые автомобили (от 3,5 тонн)', 'CE - Грузовые автомобили с прицепом', 'C1 - Средние грузовые автомобили (до 7,5 тонн)', 'C1E - Средние грузовые автомобили с прицепом', 'D - Автобусы', 'DE - Автобусы с прицепом', 'D1 - Микроавтобусы', 'D1E - Микроавтобусы c прицепом', 'M - Мопеды', 'Tb - Троллейбусы', 'Tm - Трамваи']
 // Добавить опыт работы
 const addWorkExperience = document.querySelector('.add_work-experience')
 const sectionExperiences = document.querySelector('.section__experiences')
 let addWorkExperienceId = 1
 addWorkExperience.addEventListener('click', function(){
     const sectionExperience = document.createElement('div')
-    sectionExperience.classList.add('section__experience', 'section__experience-topline')
+    sectionExperience.classList.add('section__experience')
     const sectionItem = document.createElement('div')
     sectionItem.classList.add('section__item', 'section__item-withbtn')
     const label = document.createElement('label')
@@ -243,7 +291,7 @@ addWorkExperience.addEventListener('click', function(){
     labelInput.setAttribute('type', 'text')
     labelInput.setAttribute('name', `name-employing-company_${addWorkExperienceId}`)
     const sectionDelete = document.createElement('button')
-    sectionDelete.classList.add('section__icon', 'section__icon-icon', 'section__delete')
+    sectionDelete.classList.add('section__icon', 'section__delete')
     sectionDelete.setAttribute('type', 'button')
     sectionDelete.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>'
     const sectionItem2 = document.createElement('div')
@@ -362,7 +410,7 @@ addWorkExperience.addEventListener('click', function(){
     options3.classList.add('options')
     const optionsWrapper3 = document.createElement('div')
     optionsWrapper3.classList.add('options__wrapper')
-    const yearArray = ['2025', '2024', '2023', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998', '1997', '1996', '1995', '1994', '1993', '1992', '1991', '1990', '1989', '1988', '1987', '1986', '1985', '1984', '1983', '1982', '1981', '1980', '1979', '1978', '1977', '1976', '1975', '1974', '1973', '1972', '1971', '1970', '1969', '1968', '1967', '1966', '1965', '1964', '1963', '1962', '1961', '1960']
+    
     for (let i = 0; i < yearArray.length; i++) {
         const year = yearArray[i];
         const option = document.createElement('div')
@@ -456,6 +504,14 @@ addWorkExperience.addEventListener('click', function(){
 
     const sectionItem6 = document.createElement('div')
     sectionItem6.classList.add('section__item-withbtn')
+    const sectionCol = document.createElement('div')
+    sectionCol.classList.add('section__col')
+    const menuBar = document.createElement('div')
+    menuBar.classList.add('menu-bar')
+    const menuBarImg = document.createElement('img')
+    menuBarImg.src = 'images/icons/menu-bar.png'
+    menuBarImg.setAttribute('alt', 'menu-bar')
+    menuBar.append(menuBarImg)
     const label3 = document.createElement('label')
     label3.classList.add('label')
     label3.setAttribute('for', `workplace-responsibilities_${addWorkExperienceId}`)
@@ -467,7 +523,7 @@ addWorkExperience.addEventListener('click', function(){
     textarea.id = `workplace-responsibilities_${addWorkExperienceId}`
     textarea.setAttribute('name', `workplace-responsibilities_${addWorkExperienceId}`)
     textarea.setAttribute('maxlength', '10000')
-    textarea.setAttribute('placeholder', 'Например: - Опишите свои прямые должностные обязанности; - Приведите частичное описание своих должностных инструкций; - Сколько сотрудников было в подчинении? - Какие показатели были выполнены; - Какой сегмент рынка развивали.')
+    textarea.setAttribute('placeholder', `Например: \n- Опишите свои прямые должностные обязанности; \n- Приведите частичное описание своих должностных инструкций; \n- Сколько сотрудников было в подчинении? \n- Какие показатели были выполнены; \n- Какой сегмент рынка развивали.` )
     const labelText = document.createElement('p')
     labelText.classList.add('label__text')
     labelText.textContent = 'Обязанности на рабочем месте должны содержать не более 10 000 символов с учетом пробелов'
@@ -480,6 +536,7 @@ addWorkExperience.addEventListener('click', function(){
     select4.append(selectInput4, selectLabel4, options4)
     select5.append(selectInput5, selectLabel5, options5)
     label3.append(labelTitle3, textarea, labelText)
+    sectionCol.append(menuBar, label3)
 
     sectionLinedate.append(select2, select3)
     sectionLinedate2.append(select4, select5, selectBox2)
@@ -489,7 +546,7 @@ addWorkExperience.addEventListener('click', function(){
     sectionItem3.append(select)
     sectionItem4.append(sectionTitle, sectionLinedate)
     sectionItem5.append(sectionTitle2, sectionLinedate2)
-    sectionItem6.append(label3)
+    sectionItem6.append(sectionCol)
 
     sectionExperience.append(sectionItem, sectionItem2, sectionItem3, sectionItem4, sectionItem5, sectionItem6)
     sectionExperiences.append(sectionExperience)
@@ -538,7 +595,7 @@ sectionShowBtn.addEventListener('click', function(){
     sectionShow.classList.remove('section__show-active')
     sectionEducation.classList.remove('section__education-active')
 })
-
+// Добавить дополнительное образование
 const addAdditionalEducation = document.querySelector('.add_additional_education')
 const sectionEducations = document.querySelector('.section__educations')
 let addAdditionalEducationId = 1
@@ -546,10 +603,11 @@ addAdditionalEducation.addEventListener('click', function(){
     const sectionEducationsItem = document.createElement('div')
     sectionEducationsItem.classList.add('section__educations-item')
     const select = document.createElement('div')
-    select.classList.add('select', 'select_up')
+    select.classList.add('select', 'select_up', 'section__item-withbtn')
     const selectInput = document.createElement('input')
     selectInput.classList.add('select__input', 'input')
     selectInput.id = `education_${addAdditionalEducationId}`
+    selectInput.readOnly = true
     const selectTitle = document.createElement('label')
     selectTitle.classList.add('select__title')
     selectTitle.setAttribute('for', `education_${addAdditionalEducationId}`)
@@ -569,15 +627,11 @@ addAdditionalEducation.addEventListener('click', function(){
             optionEducationFun(option)
         })
     }
-
     options.append(optionsWrapper)
-    const sectionShow = document.createElement('div')
-    sectionShow.classList.add('section__show')
-    const sectionShowBtn = document.createElement('button')
-    sectionShowBtn.classList.add('section__icon', 'section__icon-icon', 'section__show-btn')
-    sectionShowBtn.setAttribute('type', 'button')
-    sectionShowBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>'
-    sectionShow.append(sectionShowBtn)
+    const sectionDelete = document.createElement('button')
+    sectionDelete.classList.add('section__icon', 'section__delete')
+    sectionDelete.setAttribute('type', 'button')
+    sectionDelete.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>'
     const sectionEducation = document.createElement('div')
     sectionEducation.classList.add('section__education')
     const sectionItemWithbtn = document.createElement('div')
@@ -594,7 +648,43 @@ addAdditionalEducation.addEventListener('click', function(){
     labelInput.setAttribute('type', 'text')
     labelInput.setAttribute('name', `educational-institution_${addAdditionalEducationId}`)
     labelInput.id = `educational-institution_${addAdditionalEducationId}`
-    label.append(labelTitle, labelInput)
+    const inputHelp = document.createElement('div')
+    inputHelp.classList.add('input__help')
+    
+    const inputHelpItem = document.createElement('div')
+    inputHelpItem.classList.add('input__help-item')
+    const inputHelpTitle = document.createElement('h4')
+    inputHelpTitle.classList.add('input__help-title')
+    inputHelpTitle.textContent = 'МГУ'
+    const inputHelpText = document.createElement('h4')
+    inputHelpText.classList.add('input__help-text')
+    inputHelpText.textContent = 'Московский Государственный Университет им. М.В. Ломоносова'
+    inputHelpItem.append(inputHelpTitle, inputHelpText)
+
+    const inputHelpItem2 = document.createElement('div')
+    inputHelpItem2.classList.add('input__help-item')
+    const inputHelpTitle2 = document.createElement('h4')
+    inputHelpTitle2.classList.add('input__help-title')
+    inputHelpTitle2.textContent = 'МГТУ им. Н.Э. Баумана'
+    const inputHelpText2 = document.createElement('h4')
+    inputHelpText2.classList.add('input__help-text')
+    inputHelpText2.textContent = 'Московский Государственный Технический Университет им. Н.Э. Баумана'
+    inputHelpItem2.append(inputHelpTitle2, inputHelpText2)
+
+    const inputHelpItem3 = document.createElement('div')
+    inputHelpItem3.classList.add('input__help-item')
+    const inputHelpTitle3 = document.createElement('h4')
+    inputHelpTitle3.classList.add('input__help-title')
+    inputHelpTitle3.textContent = 'МГИК'
+    const inputHelpText3 = document.createElement('h4')
+    inputHelpText3.classList.add('input__help-text')
+    inputHelpText3.textContent = 'Московский Государственный Институт Культуры'
+    inputHelpItem3.append(inputHelpTitle3, inputHelpText3)
+
+
+    inputHelp.append(inputHelpItem, inputHelpItem2, inputHelpItem3)
+
+    label.append(labelTitle, labelInput, inputHelp)
     sectionItemWithbtn.append(label)
 
     const sectionItemWithbtn2 = document.createElement('div')
@@ -652,77 +742,320 @@ addAdditionalEducation.addEventListener('click', function(){
     sectionItemWithbtn5.classList.add('section__item-withbtn')
     const sectionCol = document.createElement('div')
     sectionCol.classList.add('section__col')
-    const label5 = document.createElement('label')
-    label5.classList.add('label')
-    label5.setAttribute('for', `datepicker_year-finish_${addAdditionalEducationId}`)
-    const labelTitle5 = document.createElement('h3')
-    labelTitle5.classList.add('label__title')
-    labelTitle5.textContent = 'Год окончания'
-    const labelInput5 = document.createElement('input')
-    labelInput5.classList.add('label__input', 'input', 'input_icon', 'datepicker')
-    labelInput5.setAttribute('autocomplete', 'off')
-    labelInput5.setAttribute('type', 'text')
-    labelInput5.setAttribute('name', `datepicker_year-finish_${addAdditionalEducationId}`)
-    labelInput5.id = `datepicker_year-finish_${addAdditionalEducationId}`
+    const select2 = document.createElement('div')
+    select2.classList.add('select', 'select_up', 'section__item-small')
+    select2.setAttribute('for', `education-finish-year_${addAdditionalEducationId}`)
+    const selectInput2 = document.createElement('input')
+    selectInput2.classList.add('select__input', 'input')
+    selectInput2.readOnly = true
+    selectInput2.setAttribute('type', 'text')
+    selectInput2.setAttribute('name', `education-finish-year_${addAdditionalEducationId}`)
+    selectInput2.id = `education-finish-year_${addAdditionalEducationId}`
+    const selectTitle2 = document.createElement('label')
+    selectTitle2.classList.add('select__title')
+    selectTitle2.textContent = 'Год окончания'
+    const options2 = document.createElement('div')
+    options2.classList.add('options')
+    const optionsWrapper2 = document.createElement('div')
+    optionsWrapper2.classList.add('options__wrapper')
+    for (let i = 0; i < yearArray.length; i++) {
+        const year = yearArray[i];
+        const option = document.createElement('div')
+        option.classList.add('option')
+        option.textContent = year
+        optionsWrapper2.append(option)
+    }
     const sectionText = document.createElement('p')
     sectionText.classList.add('section__text')
     sectionText.textContent = 'Если еще учитесь, укажите год предполагаемого окончания'
+    options2.append(optionsWrapper2)
 
-    label5.append(labelTitle5, labelInput5)
-    sectionCol.append(label5, sectionText)
+    select2.append(selectInput2, selectTitle2, options2)
+    sectionCol.append(select2, sectionText)
     sectionItemWithbtn5.append(sectionCol)
     
-    select.append(selectInput, selectTitle, options, sectionShow)
+    select.append(selectInput, selectTitle, options, sectionDelete)
     sectionEducation.append(sectionItemWithbtn, sectionItemWithbtn2, sectionItemWithbtn3, sectionItemWithbtn4, sectionItemWithbtn5)
-
     sectionEducationsItem.append(select, sectionEducation)
     sectionEducations.append(sectionEducationsItem)
     addAdditionalEducationId++
-    selectFun(selectInput, selectTitle)
     
+    sectionDeleteFun(sectionDelete)
+    selectFun(selectInput, selectTitle)
     inputFun(labelInput)
     inputFun(labelInput2)
     inputFun(labelInput3)
     inputFun(labelInput4)
-    let datepicker = new Datepicker(labelInput5, {
-        weekStart: 1
-    });
-    labelInput5.addEventListener('focus', function(){
-        const label = labelInput5.parentElement.parentElement
-        label.classList.add('label-active')
-    })
-    labelInput5.addEventListener('focusout', function(){
-        const label = labelInput5.parentElement.parentElement
-        setTimeout(() => {
-            if (labelInput5.value == '') {
-                label.classList.remove('label-active')
-            } else {
-                label.classList.add('label-active')
-            }
-        }, 200);
-    })
-    
+    selectFun(selectInput2, selectTitle2)
 })
 
 function optionEducationFun (option){
     const selectEducation = option.parentElement.parentElement.parentElement
-    const sectionShow = option.parentElement.parentElement.parentElement.querySelector('.section__show')
     const sectionEducation = option.parentElement.parentElement.parentElement.parentElement.querySelector('.section__education')
-    const sectionShowBtn = option.parentElement.parentElement.parentElement.querySelector('.section__show-btn')
 
     const optionEducationValue = option.textContent
     if (optionEducationValue != 'Без образования') {
         selectEducation.classList.add('section__item-withbtn')
-        sectionShow.classList.add('section__show-active')
         sectionEducation.classList.add('section__education-active')
     } else {
         selectEducation.classList.remove('section__item-withbtn')
-        sectionShow.classList.remove('section__show-active')
         sectionEducation.classList.remove('section__education-active')
     }
-
-    sectionShowBtn.addEventListener('click', function(){
-        const sectionEducationsItem = sectionShowBtn.parentElement.parentElement.parentElement
-        sectionEducationsItem.remove()
-    })
 }
+// Добавить повышение квалификации
+const addAdvancedTraining = document.querySelector('.add_advanced_training')
+let addAdvancedTrainingId = 1
+addAdvancedTraining.addEventListener('click', function(){
+    const sectionTrainingsItem = addAdvancedTraining.parentElement.querySelector('.section__knowledges-item')
+    const sectionFormTitle = sectionTrainingsItem.querySelector('.section__show')
+    sectionFormTitle.classList.add('section__show-active')
+    const sectionTraining = document.createElement('div')
+    sectionTraining.classList.add('section__knowledge')
+    
+    const sectionItem = document.createElement('div')
+    sectionItem.classList.add('section__item-withbtn')
+    const label = document.createElement('label')
+    label.classList.add('label')
+    label.setAttribute('for', `course-name_${addAdvancedTrainingId}`)
+    const labelTitle = document.createElement('h3')
+    labelTitle.classList.add('label__title')
+    labelTitle.textContent = 'Название курса'
+    const labelInput = document.createElement('input')
+    labelInput.classList.add('label__input', 'input')
+    labelInput.id = `course-name_${addAdvancedTrainingId}`
+    labelInput.setAttribute('name', `course-name_${addAdvancedTrainingId}`)
+    labelInput.setAttribute('type', 'text')
+    const sectionDelete = document.createElement('button')
+    sectionDelete.classList.add('section__icon', 'section__delete')
+    sectionDelete.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>'
+    sectionDelete.setAttribute('type', 'button')
+    label.append(labelTitle, labelInput)
+    sectionItem.append(label, sectionDelete)
+
+    const sectionItem2 = document.createElement('div')
+    sectionItem2.classList.add('section__item-withbtn')
+    const label2 = document.createElement('label')
+    label2.classList.add('label')
+    label2.setAttribute('for', `course-organization_${addAdvancedTrainingId}`)
+    const labelTitle2 = document.createElement('h3')
+    labelTitle2.classList.add('label__title')
+    labelTitle2.textContent = 'Проводившая организация'
+    const labelInput2 = document.createElement('input')
+    labelInput2.classList.add('label__input', 'input')
+    labelInput2.id = `course-organization_${addAdvancedTrainingId}`
+    labelInput2.setAttribute('name', `course-organization_${addAdvancedTrainingId}`)
+    labelInput2.setAttribute('type', 'text')
+    label2.append(labelTitle2, labelInput2)
+    sectionItem2.append(label2)
+
+    const sectionItem3 = document.createElement('div')
+    sectionItem3.classList.add('section__item-withbtn')
+    const label3 = document.createElement('label')
+    label3.classList.add('label')
+    label3.setAttribute('for', `course-specialization_${addAdvancedTrainingId}`)
+    const labelTitle3 = document.createElement('h3')
+    labelTitle3.classList.add('label__title')
+    labelTitle3.textContent = 'Специализация'
+    const labelInput3 = document.createElement('input')
+    labelInput3.classList.add('label__input', 'input')
+    labelInput3.id = `course-specialization_${addAdvancedTrainingId}`
+    labelInput3.setAttribute('name', `course-specialization_${addAdvancedTrainingId}`)
+    labelInput3.setAttribute('type', 'text')
+    label3.append(labelTitle3, labelInput3)
+    sectionItem3.append(label3)
+
+    const sectionItem4 = document.createElement('div')
+    sectionItem4.classList.add('section__item-withbtn')
+    const sectionCol = document.createElement('div')
+    sectionCol.classList.add('section__col')
+    const select = document.createElement('div')
+    select.classList.add('select', 'select_up', 'section__item-small')
+    select.setAttribute('for', `course-finish-year_${addAdditionalEducationId}`)
+    const selectInput = document.createElement('input')
+    selectInput.classList.add('select__input', 'input')
+    selectInput.readOnly = true
+    selectInput.setAttribute('type', 'text')
+    selectInput.setAttribute('name', `course-finish-year_${addAdditionalEducationId}`)
+    selectInput.id = `course-finish-year_${addAdditionalEducationId}`
+    const selectTitle = document.createElement('label')
+    selectTitle.classList.add('select__title')
+    selectTitle.textContent = 'Год окончания'
+    const options = document.createElement('div')
+    options.classList.add('options')
+    const optionsWrapper = document.createElement('div')
+    optionsWrapper.classList.add('options__wrapper')
+    for (let i = 0; i < yearArray.length; i++) {
+        const year = yearArray[i];
+        const option = document.createElement('div')
+        option.classList.add('option')
+        option.textContent = year
+        optionsWrapper.append(option)
+    }
+    const sectionText = document.createElement('p')
+    sectionText.classList.add('section__text')
+    sectionText.textContent = 'Если еще учитесь, укажите год предполагаемого окончания'
+    options.append(optionsWrapper)
+
+    select.append(selectInput, selectTitle, options)
+    sectionCol.append(select, sectionText)
+    sectionItem4.append(sectionCol)
+
+    sectionTraining.append(sectionItem, sectionItem2, sectionItem3, sectionItem4)
+    sectionTrainingsItem.append(sectionTraining)
+    addAdvancedTrainingId++
+    sectionDeleteFun(sectionDelete)
+    inputFun(labelInput)
+    inputFun(labelInput2)
+    inputFun(labelInput3)
+    selectFun(selectInput, selectTitle)
+})
+// Добавить знания языков
+const addAdvancedLanguage = document.querySelector('.add_advanced_language')
+let addAdvancedLanguageId = 1
+addAdvancedLanguage.addEventListener('click', function(){
+    const sectionLanguagesItem = addAdvancedLanguage.parentElement.querySelector('.section__knowledges-item')
+    const sectionFormTitle = sectionLanguagesItem.querySelector('.section__show')
+    sectionFormTitle.classList.add('section__show-active')
+    const sectionLanguage = document.createElement('div')
+    sectionLanguage.classList.add('section__knowledge')
+
+    const sectionItem = document.createElement('div')
+    sectionItem.classList.add('section__item-withbtn')
+    const label = document.createElement('label')
+    label.classList.add('label')
+    label.setAttribute('for', `language_${addAdvancedTrainingId}`)
+    const labelTitle = document.createElement('h3')
+    labelTitle.classList.add('label__title')
+    labelTitle.textContent = 'Язык'
+    const labelInput = document.createElement('input')
+    labelInput.classList.add('label__input', 'input')
+    labelInput.id = `language_${addAdvancedTrainingId}`
+    labelInput.setAttribute('name', `language_${addAdvancedTrainingId}`)
+    labelInput.setAttribute('type', 'text')
+    const sectionDelete = document.createElement('button')
+    sectionDelete.classList.add('section__icon', 'section__delete')
+    sectionDelete.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>'
+    sectionDelete.setAttribute('type', 'button')
+    label.append(labelTitle, labelInput)
+    sectionItem.append(label, sectionDelete)
+
+    const sectionItem2 = document.createElement('div')
+    sectionItem2.classList.add('section__item-withbtn')
+    const select = document.createElement('div')
+    select.classList.add('select', 'select_up')
+    const selectInput = document.createElement('input')
+    selectInput.classList.add('select__input', 'input')
+    selectInput.readOnly = true
+    selectInput.setAttribute('type', 'text')
+    selectInput.setAttribute('name', `language-level_${addAdditionalEducationId}`)
+    selectInput.id = `language-level_${addAdditionalEducationId}`
+    const selectTitle = document.createElement('label')
+    selectTitle.classList.add('select__title')
+    selectTitle.setAttribute('for', `language-level_${addAdditionalEducationId}`)
+    selectTitle.textContent = 'Уровень владения'
+    const options = document.createElement('div')
+    options.classList.add('options')
+    const optionsWrapper = document.createElement('div')
+    optionsWrapper.classList.add('options__wrapper')
+    for (let i = 0; i < languageArray.length; i++) {
+        const language = languageArray[i];
+        const option = document.createElement('div')
+        option.classList.add('option')
+        option.textContent = language
+        optionsWrapper.append(option)
+    }
+    options.append(optionsWrapper)
+
+    select.append(selectInput, selectTitle, options)
+    sectionItem2.append(select)
+
+    sectionLanguage.append(sectionItem, sectionItem2)
+    sectionLanguagesItem.append(sectionLanguage)
+    addAdvancedTrainingId++
+
+    sectionDeleteFun(sectionDelete)
+    inputFun(labelInput)
+    selectFun(selectInput, selectTitle)
+})
+// Добавить категорию прав
+const addDriveLicense = document.querySelector('.add_driver_license')
+let addDriveLicenseId = 1
+addDriveLicense.addEventListener('click', function(){
+    const sectionDriveLicenseItem = addDriveLicense.parentElement.querySelector('.section__knowledges-item')
+    const sectionFormTitle = sectionDriveLicenseItem.querySelector('.section__show')
+    sectionFormTitle.classList.add('section__show-active')
+    const sectionDriveLicense = document.createElement('div')
+    sectionDriveLicense.classList.add('section__knowledge')
+
+    const sectionItem = document.createElement('div')
+    sectionItem.classList.add('section__item-withbtn')
+    const select = document.createElement('div')
+    select.classList.add('select', 'select_up')
+    select.setAttribute('for', `drive-license_${addAdditionalEducationId}`)
+    const selectInput = document.createElement('input')
+    selectInput.classList.add('select__input', 'input')
+    selectInput.readOnly = true
+    selectInput.setAttribute('type', 'text')
+    selectInput.setAttribute('name', `drive-license_${addAdditionalEducationId}`)
+    selectInput.id = `drive-license_${addAdditionalEducationId}`
+    const selectTitle = document.createElement('label')
+    selectTitle.classList.add('select__title')
+    selectTitle.textContent = 'Категория прав'
+    const options = document.createElement('div')
+    options.classList.add('options')
+    const optionsWrapper = document.createElement('div')
+    optionsWrapper.classList.add('options__wrapper')
+    for (let i = 0; i < driverLicenseArray.length; i++) {
+        const driverLicense = driverLicenseArray[i];
+        const option = document.createElement('div')
+        option.classList.add('option')
+        option.textContent = driverLicense
+        optionsWrapper.append(option)
+    }
+    options.append(optionsWrapper)
+    select.append(selectInput, selectTitle, options)
+
+    const sectionDelete = document.createElement('button')
+    sectionDelete.classList.add('section__icon', 'section__delete')
+    sectionDelete.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>'
+    sectionDelete.setAttribute('type', 'button')
+
+    const sectionItem2 = document.createElement('div')
+    sectionItem2.classList.add('section__item-withbtn')
+    const select2 = document.createElement('div')
+    select2.classList.add('select', 'select_up')
+    select2.setAttribute('for', `drive-license-year_${addAdditionalEducationId}`)
+    const selectInput2 = document.createElement('input')
+    selectInput2.classList.add('select__input', 'input')
+    selectInput2.readOnly = true
+    selectInput2.setAttribute('type', 'text')
+    selectInput2.setAttribute('name', `drive-license-year_${addAdditionalEducationId}`)
+    selectInput2.id = `drive-license-year_${addAdditionalEducationId}`
+    const selectTitle2 = document.createElement('label')
+    selectTitle2.classList.add('select__title')
+    selectTitle2.textContent = 'Год получения'
+    const options2 = document.createElement('div')
+    options2.classList.add('options')
+    const optionsWrapper2 = document.createElement('div')
+    optionsWrapper2.classList.add('options__wrapper')
+    for (let i = 0; i < yearArray.length; i++) {
+        const year = yearArray[i];
+        const option = document.createElement('div')
+        option.classList.add('option')
+        option.textContent = year
+        optionsWrapper2.append(option)
+    }
+    options2.append(optionsWrapper2)
+    select2.append(selectInput2, selectTitle2, options2)
+
+
+    sectionItem.append(select, sectionDelete)
+    sectionItem2.append(select2)
+    sectionDriveLicense.append(sectionItem, sectionItem2)
+    sectionDriveLicenseItem.append(sectionDriveLicense)
+    addDriveLicenseId++
+
+    sectionDeleteFun(sectionDelete)
+    selectFun(selectInput, selectTitle)
+    selectFun(selectInput2, selectTitle2)
+})

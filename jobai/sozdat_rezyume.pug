@@ -8,7 +8,7 @@ html(lang="ru")
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet" href="css/datepicker.material.css")
         link(rel="stylesheet", href="css/style.css")
-        script(type="text/javascript" src="js/datepicker.js" defer=)  
+        script(type="text/javascript" src="js/datepicker.js" defer)  
         script(src="js/sozdat_rezyume.js" defer) 
     body.bg
         aside.aside 
@@ -143,7 +143,7 @@ html(lang="ru")
                         form.section__form
                             .section__tab.section__tab-active(data-tab='basic-information')
                                 .section__wrapper
-                                    .section__form-title О себе:
+                                    h3.section__form-title О себе:
                                     .section__item 
                                         .section__imgloading 
                                             .section__imgloading-image 
@@ -175,7 +175,7 @@ html(lang="ru")
                                                     .option Женский
                                         label(for='datepicker').label
                                             h3.label__title Дата рождения
-                                            input(type="text", name="datepicker", autocomplete="off").label__input.input.input_icon.datepicker#datepicker
+                                            input(type="text", name="datepicker", autocomplete="off").label__input.input.datepicker#datepicker
                                     .section__line50
                                         label(for='email').label
                                             h3.label__title.label__title-icon Электронная почта
@@ -183,7 +183,7 @@ html(lang="ru")
                                         label(for='tel').label
                                             h3.label__title.label__title-icon Телефон
                                             input(type="text", name="tel").label__input.input#tel
-                                    .section__form-title Желаемая должность:
+                                    h3.section__form-title Желаемая должность:
                                     label(for='job-name').label
                                         h3.label__title Название вакансии/должности
                                         input(type="text", name="job-name").label__input.input#job-name
@@ -285,7 +285,7 @@ html(lang="ru")
                                     button(type="button", data-nav='education-skills').btn.btn_h48.btn_primary.section__nav Следующее
                             .section__tab(data-tab='education-skills')
                                 .section__wrapper
-                                    .section__form-title Образование
+                                    h3.section__form-title Образование
                                     .section__educations
                                         .section__educations-item
                                             .select.select_up
@@ -299,7 +299,7 @@ html(lang="ru")
                                                         .option Высшее
                                                         .option Несколько высших
                                                 .section__show
-                                                    button(type="button").section__icon.section__icon-icon.section__show-btn
+                                                    button(type="button").section__icon.section__show-btn
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/>
                                                         </svg>
@@ -307,7 +307,17 @@ html(lang="ru")
                                                 .section__item-withbtn
                                                     label(for='educational-institution').label
                                                         h3.label__title Название учебного заведения
-                                                        input(type="text", name="educational-institution").label__input.input#educational-institution
+                                                        input(type="text", name="educational-institution").label__input.input.input_withhelp#educational-institution
+                                                        .input__help
+                                                            .input__help-item 
+                                                                h4.input__help-title МГУ
+                                                                p.input__help-text Московский Государственный Университет им. М.В. Ломоносова
+                                                            .input__help-item 
+                                                                h4.input__help-title МГТУ им. Н.Э. Баумана
+                                                                p.input__help-text Московский Государственный Технический Университет им. Н.Э. Баумана
+                                                            .input__help-item 
+                                                                h4.input__help-title МГИК
+                                                                p.input__help-text Московский Государственный Институт Культуры
                                                 .section__item-withbtn
                                                     label(for='faculty').label
                                                         h3.label__title Факультет
@@ -322,31 +332,104 @@ html(lang="ru")
                                                         input(type="text", name="speciality").label__input.input#speciality
                                                 .section__item-withbtn
                                                     .section__col
-                                                        label(for='datepicker_year-finish').label
-                                                            h3.label__title Год окончания
-                                                            input(type="text", name="datepicker_year-finish", autocomplete="off").label__input.input.input_icon.datepicker#datepicker_year-finish
+                                                        .select.select_up.section__item-small
+                                                            input(type="text", readonly, name="education-finish-year").select__input.input#education-finish-year
+                                                            label(for="education-finish-year").select__title Год окончания
+                                                            .options 
+                                                                .options__wrapper
+                                                                    .option 2025
+                                                                    .option 2024
+                                                                    .option 2023
+                                                                    .option 2022
+                                                                    .option 2021
+                                                                    .option 2020
+                                                                    .option 2019
+                                                                    .option 2018
+                                                                    .option 2017
+                                                                    .option 2016
+                                                                    .option 2015
+                                                                    .option 2014
+                                                                    .option 2013
+                                                                    .option 2012
+                                                                    .option 2011
+                                                                    .option 2010
+                                                                    .option 2009
+                                                                    .option 2008
+                                                                    .option 2007
+                                                                    .option 2006
+                                                                    .option 2005
+                                                                    .option 2004
+                                                                    .option 2003
+                                                                    .option 2002
+                                                                    .option 2001
+                                                                    .option 2000
+                                                                    .option 1999
+                                                                    .option 1998
+                                                                    .option 1997
+                                                                    .option 1996
+                                                                    .option 1995
+                                                                    .option 1994
+                                                                    .option 1993
+                                                                    .option 1992
+                                                                    .option 1991
+                                                                    .option 1990
+                                                                    .option 1989
+                                                                    .option 1988
+                                                                    .option 1987
+                                                                    .option 1986
+                                                                    .option 1985
+                                                                    .option 1984
+                                                                    .option 1983
+                                                                    .option 1982
+                                                                    .option 1981
+                                                                    .option 1980
+                                                                    .option 1979
+                                                                    .option 1978
+                                                                    .option 1977
+                                                                    .option 1976
+                                                                    .option 1975
+                                                                    .option 1974
+                                                                    .option 1973
+                                                                    .option 1972
+                                                                    .option 1971
+                                                                    .option 1970
+                                                                    .option 1969
+                                                                    .option 1968
+                                                                    .option 1967
+                                                                    .option 1966
+                                                                    .option 1965
+                                                                    .option 1964
+                                                                    .option 1963
+                                                                    .option 1962
+                                                                    .option 1961
+                                                                    .option 1960
                                                         p.section__text Если еще учитесь, укажите год предполагаемого окончания
-                                            
                                     .section__item 
                                         button(type="button").btn.btn_tertiary.btn_full.add_additional_education
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z"/>
                                             </svg>
                                             | Дополнительное образование
-                                    .section__item 
-                                        button(type="button").btn.btn_tertiary.btn_full
+                                    .section__knowledges
+                                        .section__knowledges-item
+                                            h3.section__form-title.section__show Повышение квалификации, курсы
+                                        button(type="button").btn.btn_tertiary.btn_full.add_advanced_training
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z"/>
                                             </svg>
                                             | Повышение квалификации, курсы
-                                    .section__item 
-                                        button(type="button").btn.btn_tertiary.btn_full
+                                    .section__knowledges
+                                        .section__knowledges-item
+                                            h3.section__form-title.section__show Знание языков
+                                        button(type="button").btn.btn_tertiary.btn_full.add_advanced_language 
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z"/>
                                             </svg>
                                             | Знание языков
-                                    .section__item 
-                                        button(type="button").btn.btn_tertiary.btn_full
+                                    .section__knowledges
+                                        .section__knowledges-item
+                                            h3.section__form-title.section__show Водительские права
+                                        button(type="button").btn.btn_tertiary.btn_full.add_driver_license
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z"/>
                                             </svg>
@@ -368,7 +451,7 @@ html(lang="ru")
                                                 label(for='name-employing-company').label
                                                     h3.label__title Название компании-работодателя
                                                     input(type="text", name="name-employing-company").label__input.input#name-employing-company
-                                                button(type="button").section__icon.section__icon-icon.section__delete
+                                                button(type="button").section__icon.section__reset
                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/>
                                                     </svg>
@@ -584,10 +667,13 @@ html(lang="ru")
                                                                 .check__info
                                                                     p.check__text По настоящее время
                                             .section__item-withbtn
-                                                label(for="workplace-responsibilities").label
-                                                    .label__title.label__title-textarea Обязанности на рабочем месте
-                                                    textarea(name="workplace-responsibilities", maxlength="10000", placeholder="Например: - Опишите свои прямые должностные обязанности; - Приведите частичное описание своих должностных инструкций; - Сколько сотрудников было в подчинении? - Какие показатели были выполнены; - Какой сегмент рынка развивали.").label__textarea.label__textarea-big#workplace-responsibilities
-                                                    p.label__text Обязанности на рабочем месте должны содержать не более 10 000 символов с учетом пробелов
+                                                .section__col
+                                                    .menu-bar
+                                                        img(src="images/icons/menu-bar.png", alt="menu-bar")
+                                                    label(for="workplace-responsibilities").label
+                                                        .label__title.label__title-textarea Обязанности на рабочем месте
+                                                        textarea(name="workplace-responsibilities", maxlength="10000", placeholder="Например: \n- Опишите свои прямые должностные обязанности; \n- Приведите частичное описание своих должностных инструкций; \n- Сколько сотрудников было в подчинении? \n- Какие показатели были выполнены; \n- Какой сегмент рынка развивали.").label__textarea.label__textarea-big#workplace-responsibilities
+                                                        p.label__text Обязанности на рабочем месте должны содержать не более 10 000 символов с учетом пробелов
                                     .section__item 
                                         button(type="button").btn.btn_tertiary.btn_full.add_work-experience
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -601,15 +687,19 @@ html(lang="ru")
                                     button(type="button", data-nav='about-myself').btn.btn_h48.btn_primary.section__nav Следующее
                             .section__tab(data-tab='about-myself')
                                 .section__wrapper
-                                    .section__item
+                                    .section__col
+                                        .menu-bar
+                                            img(src="images/icons/menu-bar.png", alt="menu-bar")
                                         label(for="about-myself").label
                                             .label__title.label__title-textarea О себе
-                                            textarea(name="about-myself", maxlength="5000", placeholder="Например: Опытный инженер-программист с 7-летним опытом работы в разработке программного обеспечения. Успешно реализовал более 15 проектов для крупных клиентов, включая компании из списка Fortune 500. Обладаю знаниями в C++, Java и Python на уровне Senior.").label__textarea.label__textarea-big#about-myself
+                                            textarea(name="about-myself", maxlength="5000", placeholder="Например: \nОпытный инженер-программист с 7-летним опытом работы в разработке программного обеспечения. Успешно реализовал более 15 проектов для крупных клиентов, включая компании из списка Fortune 500. Обладаю знаниями в C++, Java и Python на уровне Senior.").label__textarea.label__textarea-big#about-myself
                                             p.label__text Раздел должен содержать не более 5 000 символов с учетом пробелов
-                                    .section__item
+                                    .section__col
+                                        .menu-bar
+                                            img(src="images/icons/menu-bar.png", alt="menu-bar")
                                         label(for="cover-letter").label
                                             .label__title.label__title-textarea Сопроводительное письмо
-                                            textarea(name="cover-letter", maxlength="10000", placeholder="Например: Добрый день! Я бы хотел присоединиться к вашей сильной команде в качестве менеджера проектов. Я хочу работать именно у вас из-за международного опыта, дружной команды и динамичного роста. В вашей компании работают профессионалы со всего мира и мне бы очень хотелось перенять их знания.").label__textarea.label__textarea-extrabig#cover-letter
+                                            textarea(name="cover-letter", maxlength="10000", placeholder="Например: \nДобрый день! Я бы хотел присоединиться к вашей сильной команде в качестве менеджера проектов. \nЯ хочу работать именно у вас из-за международного опыта, дружной команды и динамичного роста. В вашей компании работают профессионалы со всего мира и мне бы очень хотелось перенять их знания.").label__textarea.label__textarea-extrabig#cover-letter
                                             p.label__text Сопроводительное письмо должно содержать не более 10 000 символов с учетом пробелов
                                 .section__tabs
                                     button(type="button", data-nav='work-experience').btn.btn_h48.btn_tertiary.section__nav Назад
@@ -708,7 +798,7 @@ html(lang="ru")
                                             .section__rezyume-col 
                                                 h3.section__rezyume-h3 Заместитель директора по строительству
                                                 h4.section__rezyume-h4 ООО «ГЛОБАЛСТРОЙТЕХ» ГК ПИК
-                                                h5.section__rezyume-h5 Москва
+                                                h5.section__rezyume-h5 Москва, удаленная работа
                                                 p.section__rezyume-text Организация СМР при строительстве жилого комплексов свыше 180 000 кв. м., а так же работа по организации взаимодействия в разрезе освоения и подтверждения выполненных работ, в т.ч. с сотрудниками банка.
                                         .section__rezyume 
                                             .section__rezyume-col
@@ -755,7 +845,7 @@ html(lang="ru")
                                                 p.section__rezyume-text C реальным опытом запуска, развития и реализации проектов, управления человеческими и материальными ресурсами предприятия; навыками стратегического планирования, координации и контроль выполнения работ; оптимизации бизнес-процессов; управления финансово-хозяйственной деятельностью предприятия в т.ч. подбора, обучения, построения команды; работы с контролирующими и исполнительными органами власти. Имею Опыт ведения переговоров на ТОП уровне.
                                                 p.section__rezyume-text Ведение переговоров и нахождение компромиссов в государственных органах власти и местного самоуправления  
                                                 p.section__rezyume-text Имею серьёзные стимулы:  <br>Профессионально расти и развиваться!
-                                                p.section__rezyume-text По характеру - максималист, лидер.
+                                                p.section__rezyume-text По характеру - максималист, лидер.
                                                 p.section__rezyume-text Готов работать сверхурочно. <br>Готов обучаться, если потребуется.
                                                 p.section__rezyume-text Опыт создания отдела продаж с (0). <br>- ПК – уверенный пользователь (Word, Excel, PowerPoint, Outlook, 1С 7.7). <br>- Проведение переговоров с высшим руководством компаний; <br>- опыт руководителем отдела продаж <br>- целеустремлённость и настойчивость в достижении цели; <br>- способность к нестандартному мышлению.
 
