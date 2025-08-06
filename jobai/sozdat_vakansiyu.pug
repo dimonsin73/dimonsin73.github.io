@@ -141,10 +141,13 @@ html(lang="ru")
                             .section__tab.section__tab-active(data-tab='job-attributes')
                                 .section__wrapper
                                     .section__form-title О вакансии:
-                                    label(for="greeting").label
-                                        .label__title.label__title-textarea Приветствие для кандидатов
-                                        textarea(name="greeting", maxlength="500", placeholder="Например: Здравствуйте, уважаемые кандидаты! В нашей компании открыта вакансия и мы планируем максимально оперативно её закрыть. Если вы заинтересованы в трудоустройстве, просим вас оставлять свои отклики.").label__textarea#greeting
-                                        p.label__text Приветствие для кандидатов должно содержать не более 500 символов с учетом пробелов
+                                    .section__col
+                                        .menu-bar
+                                            img(src="images/icons/menu-bar.png", alt="menu-bar")
+                                        label(for="greeting").label
+                                            .label__title.label__title-textarea Приветствие для кандидатов
+                                            textarea(name="greeting", maxlength="500", placeholder="Например: \nЗдравствуйте, уважаемые кандидаты! В нашей компании открыта вакансия и мы планируем максимально оперативно её закрыть. Если вы заинтересованы в трудоустройстве, просим вас оставлять свои отклики.").label__textarea#greeting
+                                            p.label__text Приветствие для кандидатов должно содержать не более 500 символов с учетом пробелов
                                     label(for='job-name').label
                                         h3.label__title Название вакансии/должности
                                         input(type="text", name="job-name").label__input.input#job-name
@@ -177,10 +180,13 @@ html(lang="ru")
                                     label(for='employer-name').label
                                         h3.label__title Наименование работодателя
                                         input(type="text", name="employer-name").label__input.input#employer-name
-                                    label(for="employer-specialization").label
-                                        .label__title.label__title-textarea Специализация работодателя
-                                        textarea(name="employer-specialization", maxlength="1000", placeholder="Например: Компания специализируется на продажах ИТ решений в области управления проектами. На сегодняшний день ключевым продуктом компании является CRM система. Система позволяет фиксировать лиды, записывать звонки.").label__textarea#employer-specialization
-                                        p.label__text Специализация работодателя должна содержать не более 1000 символов с учетом пробелов
+                                    .section__col
+                                        .menu-bar
+                                            img(src="images/icons/menu-bar.png", alt="menu-bar")
+                                        label(for="employer-specialization").label
+                                            .label__title.label__title-textarea Специализация работодателя
+                                            textarea(name="employer-specialization", maxlength="1000", placeholder="Например: \nКомпания специализируется на продажах ИТ решений в области управления проектами. На сегодняшний день ключевым продуктом компании является CRM система. Система позволяет фиксировать лиды, записывать звонки.").label__textarea#employer-specialization
+                                            p.label__text Специализация работодателя должна содержать не более 1000 символов с учетом пробелов
                                     label(for='employer-site').label
                                         h3.label__title Сайт работодателя
                                         input(type="text", name="employer-site").label__input.input#employer-site
@@ -190,10 +196,13 @@ html(lang="ru")
                                     button(type="button", data-nav='job-responsibilities').btn.btn_h48.btn_primary.section__nav Следующее
                             .section__tab(data-tab='job-responsibilities')
                                 .section__wrapper
-                                    label(for="job-responsibilities").label
-                                        .label__title.label__title-textarea Должностные обязанности
-                                        textarea(name="job-responsibilities", maxlength="5000", placeholder="Например: - Опишите прямые обязанности; - Опишите дополнительные обязанности; - Сколько сотрудников в подчинении; - Какие показатели надо выполнять; - Какой сегмент рынка развивать.").label__textarea.label__textarea-big#job-responsibilities
-                                        p.label__text Должностные обязаности должны содержать не более 5000 символов с учетом пробелов
+                                    .section__col
+                                        .menu-bar
+                                            img(src="images/icons/menu-bar.png", alt="menu-bar")
+                                        label(for="job-responsibilities").label
+                                            .label__title.label__title-textarea Должностные обязанности
+                                            textarea(name="job-responsibilities", maxlength="5000", placeholder="Например: \n- Опишите прямые обязанности; \n- Опишите дополнительные обязанности; \n- Сколько сотрудников в подчинении; \n- Какие показатели надо выполнять; \n- Какой сегмент рынка развивать.").label__textarea.label__textarea-big#job-responsibilities
+                                            p.label__text Должностные обязаности должны содержать не более 5000 символов с учетом пробелов
                                     .section__item
                                         h2.section__title Оплата в месяц:
                                         .section__line 
@@ -366,22 +375,34 @@ html(lang="ru")
                                     button(type="button", data-nav='professional-skills').btn.btn_h48.btn_primary.section__nav Следующее
                             .section__tab(data-tab='professional-skills') 
                                 .section__wrapper
-                                    label(for="additional-requirements").label
-                                        .label__title.label__title-textarea Дополнительные требования
-                                        textarea(name="additional-requirements", maxlength="5000", placeholder="Например: - Продажа «коробочного» решения и костомизированных решений; - Работа со средним чеком от 150 000 рублей; - Обработка первичных входящих заявок, квалификация заявок и продажи; - «Реанимация» существующей базы клиентов.").label__textarea.label__textarea-big#additional-requirements
-                                        p.label__text Дополнительные требования должны содержать не более 5 000 символов с учетом пробелов
-                                    label(for="professional-skills").label
-                                        .label__title.label__title-textarea Профессиональные навыки
-                                        textarea(name="professional-skills", maxlength="5000", placeholder="Например: - Работа с возражениями; - Работа с трудными клиентами; - Выявление потребностей; - Создание ценности.").label__textarea.label__textarea-big#professional-skills
-                                        p.label__text Профессиональные навыки должны содержать не более 5 000 символов с учетом пробелов
-                                    label(for="personal-qualities").label
-                                        .label__title.label__title-textarea Личные качества
-                                        textarea(name="personal-qualities", maxlength="5000", placeholder="Например: - Коммуникабельность; - Аналитический склад ума; - Многозадачность; - Ответственность.").label__textarea.label__textarea-big#personal-qualities
-                                        p.label__text Личные качества должны содержать не более 5 000 символов с учетом пробелов
-                                    label(for="job-description").label
-                                        .label__title.label__title-textarea Преимущества трудоустройства к работодателю:
-                                        textarea(name="job-description", maxlength="5000", placeholder="Например: - Оформление по ТК с первого дня работы; - Официальная заработная плата; - Дружный коллектив.").label__textarea.label__textarea-big#job-description
-                                        p.label__text Личные качества должны содержать не более 5 000 символов с учетом пробелов
+                                    .section__col
+                                        .menu-bar
+                                            img(src="images/icons/menu-bar.png", alt="menu-bar")
+                                        label(for="additional-requirements").label
+                                            .label__title.label__title-textarea Дополнительные требования
+                                            textarea(name="additional-requirements", maxlength="5000", placeholder="Например: \n- Продажа «коробочного» решения и костомизированных решений; \n- Работа со средним чеком от 150 000 рублей; \n- Обработка первичных входящих заявок, квалификация заявок и продажи; \n- «Реанимация» существующей базы клиентов.").label__textarea.label__textarea-big#additional-requirements
+                                            p.label__text Дополнительные требования должны содержать не более 5 000 символов с учетом пробелов
+                                    .section__col
+                                        .menu-bar
+                                            img(src="images/icons/menu-bar.png", alt="menu-bar")
+                                        label(for="professional-skills").label
+                                            .label__title.label__title-textarea Профессиональные навыки
+                                            textarea(name="professional-skills", maxlength="5000", placeholder="Например: \n- Работа с возражениями; \n- Работа с трудными клиентами; \n- Выявление потребностей; \n- Создание ценности.").label__textarea.label__textarea-big#professional-skills
+                                            p.label__text Профессиональные навыки должны содержать не более 5 000 символов с учетом пробелов
+                                    .section__col
+                                        .menu-bar
+                                            img(src="images/icons/menu-bar.png", alt="menu-bar")
+                                        label(for="personal-qualities").label
+                                            .label__title.label__title-textarea Личные качества
+                                            textarea(name="personal-qualities", maxlength="5000", placeholder="Например: \n- Коммуникабельность; \n- Аналитический склад ума; \n- Многозадачность; \n- Ответственность.").label__textarea.label__textarea-big#personal-qualities
+                                            p.label__text Личные качества должны содержать не более 5 000 символов с учетом пробелов
+                                    .section__col
+                                        .menu-bar
+                                            img(src="images/icons/menu-bar.png", alt="menu-bar")
+                                        label(for="job-description").label
+                                            .label__title.label__title-textarea Преимущества трудоустройства к работодателю:
+                                            textarea(name="job-description", maxlength="5000", placeholder="Например: \n- Оформление по ТК с первого дня работы; \n- Официальная заработная плата; \n- Дружный коллектив.").label__textarea.label__textarea-big#job-description
+                                            p.label__text Личные качества должны содержать не более 5 000 символов с учетом пробелов
                                 .section__tabs
                                     button(type="button", data-nav='requirements-conditions').btn.btn_h48.btn_tertiary.section__nav Назад
                                     .press-right

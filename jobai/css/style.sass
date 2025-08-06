@@ -1588,7 +1588,6 @@
         gap: 24px
         &-active 
             display: flex
-        &-item 
     &__title 
         @include title-medium
         color: var(--Black)
@@ -2243,10 +2242,10 @@
         display: none
         flex-direction: column
         gap: 16px
-        max-width: 1250px
+        max-width: 1119px
         max-height: 1000px
         height: 90vh
-        padding: 24px
+        padding: 20px
         border-radius: 32px
         background-color: var(--White)
         transform: translate3d(-50%, -50%, 0)
@@ -2295,8 +2294,7 @@
         display: flex
         justify-content: center
         align-items: flex-start
-        width: 1202px
-        height: 824px
+        width: 1079px
         padding: 12px
         overflow-y: auto
         &-vert 
@@ -2308,7 +2306,7 @@
         flex-direction: column
         gap: 20px
     &__text 
-        @include text-medium
+        @include body-large
         color: var(--Black)
     &__grid 
         display: grid
@@ -2342,6 +2340,7 @@
         justify-content: space-between
         align-items: center
         width: 100%
+        margin-bottom: 32px
     &__comments 
         display: flex
         flex-direction: column
@@ -2373,6 +2372,7 @@
         align-items: center
         padding-left: 30px
         &-avatar 
+            position: relative
             display: flex
             align-items: center
             justify-content: center
@@ -2381,17 +2381,26 @@
             border-radius: 50%
             overflow: hidden 
         &-text 
-            @include body-medium
+            @include body-large
+            line-height: 18px
             color: var(--Gray-10)
+        &-img 
+            position: absolute
+            top: 0
+            width: 180%
+            max-width: 200%
     &__footer 
         display: flex
         gap: 16px
         align-items: center
+        margin-top: auto
     &__addcommvent 
         @include body-medium
         color: var(--Gray-10)
     & .link-medium 
         text-decoration: underline
+    & .section__vakansi
+        padding: 0
 @media (max-height: 699px)
     .modal
         overflow-y: auto

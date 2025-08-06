@@ -790,15 +790,12 @@ addAdditionalEducation.addEventListener('click', function(){
 })
 
 function optionEducationFun (option){
-    const selectEducation = option.parentElement.parentElement.parentElement
     const sectionEducation = option.parentElement.parentElement.parentElement.parentElement.querySelector('.section__education')
 
     const optionEducationValue = option.textContent
     if (optionEducationValue != 'Без образования') {
-        selectEducation.classList.add('section__item-withbtn')
         sectionEducation.classList.add('section__education-active')
     } else {
-        selectEducation.classList.remove('section__item-withbtn')
         sectionEducation.classList.remove('section__education-active')
     }
 }
