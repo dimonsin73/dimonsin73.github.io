@@ -7,7 +7,7 @@ html(lang="ru")
         link(rel="stylesheet", href="css/reset.css")
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet" href="css/datepicker.material.css")
-        link(rel="stylesheet", href="css/sozdat_rezyume.css")
+        link(rel="stylesheet", href="css/style.css")
         script(type="text/javascript" src="js/datepicker.js" defer)  
         script(src="js/sozdat_rezyume.js" defer) 
     body.bg
@@ -117,8 +117,7 @@ html(lang="ru")
                             button(type="button" data-tab='basic-information').tab.tab_active
                                 .tab__icon 
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.69043 6V5C6.69043 3.34315 8.03358 2 9.69043 2H11.6904C13.3473 2 14.6904 3.34315 14.6904 5V6H16.6904C17.795 6 18.6904 6.89543 18.6904 8V11.5708C16.2001 12.4947 13.5053 12.9999 10.6905 12.9999C7.87557 12.9999 5.1808 12.4947 2.69043 11.5707V8C2.69043 6.89543 3.58586 6 4.69043 6H6.69043ZM8.69043 5C8.69043 4.44772 9.13814 4 9.69043 4H11.6904C12.2427 4 12.6904 4.44772 12.6904 5V6H8.69043V5ZM9.69043 10C9.69043 9.44772 10.1381 9 10.6904 9H10.7004C11.2527 9 11.7004 9.44772 11.7004 10C11.7004 10.5523 11.2527 11 10.7004 11H10.6904C10.1381 11 9.69043 10.5523 9.69043 10Z"/>
-                                        <path d="M2.69043 13.6923V16C2.69043 17.1046 3.58586 18 4.69043 18H16.6904C17.795 18 18.6904 17.1046 18.6904 16V13.6923C16.1776 14.5404 13.4868 14.9999 10.6905 14.9999C7.89406 14.9999 5.20322 14.5404 2.69043 13.6923Z"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM12 7C12 8.10457 11.1046 9 10 9C8.89543 9 8 8.10457 8 7C8 5.89543 8.89543 5 10 5C11.1046 5 12 5.89543 12 7ZM9.99993 11C7.98239 11 6.24394 12.195 5.45374 13.9157C6.55403 15.192 8.18265 16 9.99998 16C11.8173 16 13.4459 15.1921 14.5462 13.9158C13.756 12.195 12.0175 11 9.99993 11Z"/>
                                     </svg>
                                 p.tab__text Основная <br> информация
                             button(type="button" data-tab='education-skills').tab 
@@ -169,7 +168,7 @@ html(lang="ru")
                                         .select.select_up
                                             input(type="text", readonly, name="sex").select__input.input#sex
                                             label(for="sex").select__title Пол
-                                            .options 
+                                            .options.options_2item
                                                 .options__wrapper
                                                     .option Мужской
                                                     .option Женский
@@ -307,7 +306,7 @@ html(lang="ru")
                                                 .section__item-withbtn
                                                     label(for='educational-institution').label
                                                         h3.label__title Название учебного заведения
-                                                        input(type="text", name="educational-institution").label__input.input.input_withhelp#educational-institution
+                                                        input(type="text", name="educational-institution").label__input.input#educational-institution
                                                         .input__help
                                                             .input__help-item 
                                                                 h4.input__help-title МГУ
@@ -337,6 +336,16 @@ html(lang="ru")
                                                             label(for="education-finish-year").select__title Год окончания
                                                             .options 
                                                                 .options__wrapper
+                                                                    .option 2035
+                                                                    .option 2034
+                                                                    .option 2033
+                                                                    .option 2032
+                                                                    .option 2031
+                                                                    .option 2030
+                                                                    .option 2029
+                                                                    .option 2028
+                                                                    .option 2027
+                                                                    .option 2026
                                                                     .option 2025
                                                                     .option 2024
                                                                     .option 2023
@@ -671,9 +680,9 @@ html(lang="ru")
                                                     .menu-bar
                                                         img(src="images/icons/menu-bar.png", alt="menu-bar")
                                                     label(for="workplace-responsibilities").label
-                                                        .label__title.label__title-textarea Обязанности на рабочем месте
+                                                        .label__title.label__title-textarea Обязанности и достижение
                                                         textarea(name="workplace-responsibilities", maxlength="10000", placeholder="Например: \n- Опишите свои прямые должностные обязанности; \n- Приведите частичное описание своих должностных инструкций; \n- Сколько сотрудников было в подчинении? \n- Какие показатели были выполнены; \n- Какой сегмент рынка развивали.").label__textarea.label__textarea-big#workplace-responsibilities
-                                                        p.label__text Обязанности на рабочем месте должны содержать не более 10 000 символов с учетом пробелов
+                                                        p.label__text Обязанности и достижение должны содержать не более 10 000 символов с учетом пробелов
                                     .section__item 
                                         button(type="button").btn.btn_tertiary.btn_full.add_work-experience
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -693,7 +702,7 @@ html(lang="ru")
                                         label(for="about-myself").label
                                             .label__title.label__title-textarea О себе
                                             textarea(name="about-myself", maxlength="5000", placeholder="Например: \nОпытный инженер-программист с 7-летним опытом работы в разработке программного обеспечения. Успешно реализовал более 15 проектов для крупных клиентов, включая компании из списка Fortune 500. Обладаю знаниями в C++, Java и Python на уровне Senior.").label__textarea.label__textarea-big#about-myself
-                                            p.label__text Раздел должен содержать не более 5 000 символов с учетом пробелов
+                                            p.label__text О себе должен содержать не более 5 000 символов с учетом пробелов
                                     .section__col
                                         .menu-bar
                                             img(src="images/icons/menu-bar.png", alt="menu-bar")
@@ -706,6 +715,7 @@ html(lang="ru")
                                     .press-right
                                     button(type="button").btn.btn_h48.btn_secondary.preview Предпросмотр
                                     button(type="submit").btn.btn_h48.btn_primary Опубликовать
+                    .section__pb
             section.section(data-section='preview')
                 .container.container_medium 
                     .section__g24
@@ -732,7 +742,7 @@ html(lang="ru")
                                 .section__head
                                     .section__head-top 
                                         .section__col 
-                                            h2.section__head-title Кузнецов Владимио Михайлович
+                                            h2.section__head-title Кузнецов Владимир Михайлович
                                             p.section__head-text Мужчина
                                         .section__col  
                                             h2.section__head-title 350 000 - 400 000 ₽

@@ -1213,6 +1213,9 @@
   -o-object-position: center;
      object-position: center;
 }
+.section__avatar-logo {
+  padding: 20px;
+}
 .section__avatar-site {
   font: 300 14px/16px "Inter", "sans-serif";
   color: var(--Primary-50);

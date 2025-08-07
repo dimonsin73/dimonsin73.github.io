@@ -176,7 +176,7 @@ sectionPlanPlus.addEventListener('click', function(){
     labelHiringPlan.classList.add('label-active')
     sectionPlanMinus.disabled = false
     const arrayOfHiringPlan = Array.from(String(hiringPlanValue))
-    flyingtext(arrayOfHiringPlan, hiringPlanValue)
+    flyingtext(arrayOfHiringPlan)
 })
 function flyingtext (arrayOfHiringPlan){
     const num = arrayOfHiringPlan.length
@@ -185,6 +185,11 @@ function flyingtext (arrayOfHiringPlan){
     leftNum = 14.7 + 9.3*num
     labelFlyingtext.style.left = `${leftNum}px`
 }
+hiringPlan.addEventListener('input', function(){
+    const num = hiringPlan.value.length
+    let leftNum = 14.7 + 9.3*num
+    labelFlyingtext.style.left = `${leftNum}px`
+})
 // Работа Предпросмотра 
 const sectionArray = document.querySelectorAll('.section')
 const previewArray = document.querySelectorAll('.preview')

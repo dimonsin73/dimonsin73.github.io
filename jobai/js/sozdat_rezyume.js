@@ -181,11 +181,45 @@ function inputFun(labelInput) {
     labelInput.addEventListener('focus', function(){
         const label = labelInput.parentElement
         label.classList.add('label-active')
+        const inputHelp = labelInput.parentElement.querySelector('.input__help')
+        if (inputHelp != null) {
+            inputHelp.classList.add('input__help-active')
+            const inputHelpItemArray = inputHelp.querySelectorAll('.input__help-item')
+            for (let i = 0; i < inputHelpItemArray.length; i++) {
+                const inputHelpItem = inputHelpItemArray[i];
+                inputHelpItem.addEventListener('click', function(){
+                    const inputHelpText = inputHelpItem.querySelector('.input__help-text').textContent
+                    labelInput.value = inputHelpText
+                    inputHelp.classList.remove('input__help-active')
+                })
+            }
+        }
     })
     labelInput.addEventListener('focusout', function(){
         if (labelInput.value === '') {
             const label = labelInput.parentElement
             label.classList.remove('label-active')
+        }
+        const inputHelp = labelInput.parentElement.querySelector('.input__help')
+        if (inputHelp != null) {
+            setTimeout(() => {
+                inputHelp.classList.remove('input__help-active')
+            }, 200);
+        }
+    })
+    labelInput.addEventListener('input', function(){
+        const inputHelp = labelInput.parentElement.querySelector('.input__help')
+        if (inputHelp != null) {
+            inputHelp.classList.add('input__help-active')
+            const inputHelpItemArray = inputHelp.querySelectorAll('.input__help-item')
+            for (let i = 0; i < inputHelpItemArray.length; i++) {
+                const inputHelpItem = inputHelpItemArray[i];
+                inputHelpItem.addEventListener('click', function(){
+                    const inputHelpText = inputHelpItem.querySelector('.input__help-text').textContent
+                    labelInput.value = inputHelpText
+                    inputHelp.classList.remove('input__help-active')
+                })
+            }
         }
     })
 }
@@ -267,7 +301,8 @@ function sectionDeleteFun(sectionDelete) {
         
     })
 }
-const yearArray = ['2025', '2024', '2023', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998', '1997', '1996', '1995', '1994', '1993', '1992', '1991', '1990', '1989', '1988', '1987', '1986', '1985', '1984', '1983', '1982', '1981', '1980', '1979', '1978', '1977', '1976', '1975', '1974', '1973', '1972', '1971', '1970', '1969', '1968', '1967', '1966', '1965', '1964', '1963', '1962', '1961', '1960']
+const yearArray = ['2035', '2024', '2033', '2032', '2031', '2030', '2029', '2028', '2027', '2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998', '1997', '1996', '1995', '1994', '1993', '1992', '1991', '1990', '1989', '1988', '1987', '1986', '1985', '1984', '1983', '1982', '1981', '1980', '1979', '1978', '1977', '1976', '1975', '1974', '1973', '1972', '1971', '1970', '1969', '1968', '1967', '1966', '1965', '1964', '1963', '1962', '1961', '1960']
+const yearFactArray = [ '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998', '1997', '1996', '1995', '1994', '1993', '1992', '1991', '1990', '1989', '1988', '1987', '1986', '1985', '1984', '1983', '1982', '1981', '1980', '1979', '1978', '1977', '1976', '1975', '1974', '1973', '1972', '1971', '1970', '1969', '1968', '1967', '1966', '1965', '1964', '1963', '1962', '1961', '1960']
 const languageArray = ['А1 (Beginner) или начальный уровень', 'А2 (Elementary) элементарный уровень знаний', 'В1 (Pre-Intermediate) ниже-среднего', 'В2 (Intermediate) средний уровен', 'С1 (Upper-Intermediate) или выше-среднего', 'С2 (Advanced) продвинутый уровень']
 const driverLicenseArray = ['A - Мотоциклы', 'A1 - Лёгкие мотоциклы', 'B - Легковые авто и небольшие грузовые автомобили (до 3,5 тонн)', 'BE - Легковые авто с прицепом', 'B1 - Трициклы, квадроциклы и квадрициклы', 'C - Грузовые автомобили (от 3,5 тонн)', 'CE - Грузовые автомобили с прицепом', 'C1 - Средние грузовые автомобили (до 7,5 тонн)', 'C1E - Средние грузовые автомобили с прицепом', 'D - Автобусы', 'DE - Автобусы с прицепом', 'D1 - Микроавтобусы', 'D1E - Микроавтобусы c прицепом', 'M - Мопеды', 'Tb - Троллейбусы', 'Tm - Трамваи']
 // Добавить опыт работы
@@ -517,7 +552,7 @@ addWorkExperience.addEventListener('click', function(){
     label3.setAttribute('for', `workplace-responsibilities_${addWorkExperienceId}`)
     const labelTitle3 = document.createElement('div')
     labelTitle3.classList.add('label__title', 'label__title-textarea')
-    labelTitle3.textContent = 'Обязанности на рабочем месте'
+    labelTitle3.textContent = 'Обязанности и достижение'
     const textarea = document.createElement('textarea')
     textarea.classList.add('label__textarea', 'label__textarea-big')
     textarea.id = `workplace-responsibilities_${addWorkExperienceId}`
@@ -526,7 +561,7 @@ addWorkExperience.addEventListener('click', function(){
     textarea.setAttribute('placeholder', `Например: \n- Опишите свои прямые должностные обязанности; \n- Приведите частичное описание своих должностных инструкций; \n- Сколько сотрудников было в подчинении? \n- Какие показатели были выполнены; \n- Какой сегмент рынка развивали.` )
     const labelText = document.createElement('p')
     labelText.classList.add('label__text')
-    labelText.textContent = 'Обязанности на рабочем месте должны содержать не более 10 000 символов с учетом пробелов'
+    labelText.textContent = 'Обязанности и достижение должны содержать не более 10 000 символов с учетом пробелов'
 
     label.append(labelTitle, labelInput)
     label2.append(labelTitle2, labelInput2)
@@ -577,8 +612,8 @@ for (let i = 0; i < optionEducationArr.length; i++) {
             sectionShow.classList.add('section__show-active')
             sectionEducation.classList.add('section__education-active')
         } else {
-            selectEducation.classList.remove('section__item-withbtn')
-            sectionShow.classList.remove('section__show-active')
+            selectEducation.classList.add('section__item-withbtn')
+            sectionShow.classList.add('section__show-active')
             sectionEducation.classList.remove('section__education-active')
         }
     })
@@ -1035,8 +1070,8 @@ addDriveLicense.addEventListener('click', function(){
     options2.classList.add('options')
     const optionsWrapper2 = document.createElement('div')
     optionsWrapper2.classList.add('options__wrapper')
-    for (let i = 0; i < yearArray.length; i++) {
-        const year = yearArray[i];
+    for (let i = 0; i < yearFactArray.length; i++) {
+        const year = yearFactArray[i];
         const option = document.createElement('div')
         option.classList.add('option')
         option.textContent = year
@@ -1056,3 +1091,4 @@ addDriveLicense.addEventListener('click', function(){
     selectFun(selectInput, selectTitle)
     selectFun(selectInput2, selectTitle2)
 })
+

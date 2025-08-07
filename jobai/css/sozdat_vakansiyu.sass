@@ -124,6 +124,8 @@
         max-width: 1090px
     &_small 
         max-width: 726px
+    &_extrasmall
+        max-width: 600px
 .bg
     background-color: var(--Gray-100)
 .title 
@@ -167,10 +169,15 @@
         border: 1px solid var(--Black)
         color: var(--Black)
         transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        & path 
+            fill: var(--Black)
+            transition: fill 0.3s ease
         &:hover 
             border: 1px solid var(--Primary-40)
             background-color: var(--Primary-40)
             color: var(--White)
+            & path 
+                fill: var(--White)
         &:active
             border: 1px solid var(--Primary-30)
             background-color: var(--Primary-30)
@@ -268,6 +275,9 @@
         padding: 11px
     &_center 
         margin: 0 auto
+    &_full 
+        width: 100%
+        justify-content: flex-start
     &_like 
         &-active 
             & path
@@ -300,8 +310,6 @@
         text-underline-offset: 3px
         color: var(--Black)
         cursor: pointer
-    &-small 
-
 .press 
     &-right 
         margin-left: auto
@@ -313,11 +321,44 @@
     @include body-large
     color: var(--Black)
     outline: none
+    transition: background-color 0.3s ease
+    &__help 
+        position: absolute
+        left: 0
+        right: 0
+        top: calc(100% + 8px)
+        display: flex
+        flex-direction: column
+        height: 0
+        box-shadow: 0px 2px 16px 0px #00000033
+        background-color: var(--White)
+        overflow: hidden
+        transition: height 0.3s ease
+        z-index: 20
+        &-active 
+            height: 198px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 2px
+            padding: 14px
+            &:hover 
+                background-color: var(--Gray-100)                 
+        &-title 
+            @include subtitle-large
+            color: var(--Black)
+        &-text 
+            @include body-small
+            color: var(--Gray-20)
     &::placeholder 
         @include body-small
         color: var(--Gray-30)
     &_number 
         text-align: center
+    &:focus 
+        background-color: var(--White)
+        outline: 2px solid var(--Gray-40)
+    
 .label 
     position: relative
     display: flex
@@ -332,8 +373,11 @@
         @include body-large
         color: var(--Gray-30)
         transition: top 0.3s ease, font 0.3s ease
+        z-index: 1
         &-textarea 
             top: 8px
+        &-icon 
+            left: 44px
     &__textarea 
         width: 100%
         height: 136px
@@ -349,6 +393,8 @@
             @include body-medium
         &-big
             height: 181px
+        &-extrabig
+            height: 361px
     &__text 
         @include subtitle-medium
         color: var(--Gray-40)
@@ -359,6 +405,18 @@
         display: none
         @include body-large
         color: var(--Black)
+    &__clue 
+        position: absolute
+        top: 50%
+        right: -40px
+        transform: translateY(-50%)
+    &__top
+        position: absolute
+        left: 50%
+        top: -26px
+        @include body-medium
+        color: var(--Gray-10)
+        transform: translateX(-50%)
     &-active 
         & .label__title
             top: 8px
@@ -366,6 +424,17 @@
         & .label__textarea 
             padding: 28px 12px 8px
         & .label__flyingtext 
+            display: block
+    &_error
+        &-text 
+            position: absolute
+            bottom: -16px
+            display: none
+            font: 400 12px/16px 'Inter', 'sans-serif'
+            color: var(--Red-error)
+        & .label__input
+            outline: 2px solid var(--Red-error)
+        & .label_error-text
             display: block
 .textarea 
     width: 100%
@@ -427,6 +496,9 @@
         flex-direction: column
         gap: 8px
         padding-left: 14px
+        &-vert 
+            padding-top: 10px
+            padding-bottom: 10px
 .options 
     position: absolute
     display: flex
@@ -445,6 +517,9 @@
     &_active 
         height: 176px
         overflow-y: scroll
+        &.options_2item 
+            height: 128px
+
 .option 
     padding: 14px 12px 
     border-radius: 8px
@@ -520,18 +595,18 @@
     cursor: pointer
     &__text 
         position: absolute
-        bottom: calc( 100% )
-        left: -125px
+        bottom: calc( 100% + 4px)
+        left: -135px
         display: none
-        width: 250px
+        width: 270px
         padding: 10px
         border-radius: 8px
         background-color: var(--Gray-90)
-        @include subtitle-medium
-        color: var(--Gray-40)
+        @include subtitle-large
+        color: var(--Gray-30)
         z-index: 10
         &-active 
-            display: block
+            display: flex
 .switch 
     position: relative
     display: inline-block
@@ -588,7 +663,6 @@
         flex: 0 0 auto
         width: 20px
         height: 20px
-        margin-top: 2px
         border: 1px solid var(--Black)
         border-radius: 4px 
         background:
@@ -600,11 +674,138 @@
         flex-direction: column
         gap: 4px
     &__title 
+        margin-top: -2px
         @include title-medium
         color: var(--black)
     &__text 
         @include subtitle-large
         color: var(--Gray-30)
+.radio
+    &__input
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked 
+            & ~ .radio__label
+                border: 2px solid var(--Primary-40)
+            & ~ .radio__label .radio__check
+                border: 7px solid var(--Primary-40)
+            & ~ .radio__label .radio__title
+                color: var(--Primary-40)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        align-items: center
+        column-gap: 16px
+        padding: 20px 24px
+        border: 2px solid var(--Gray-60)
+        border-radius: 8px
+        transition: border 0.3s linear
+    &__check 
+        width: 20px
+        height: 20px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+        transition: border 0.3s linear
+    &__title 
+        @include title-medium
+        color: var(--Gray-20)
+        transition: color 0.3s ease
+.tax 
+    &__radio 
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked ~ .tax__label .tax__check
+            border: 7px solid var(--Black)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        column-gap: 16px
+        row-gap: 4px
+    &__check 
+        grid-row: span 2
+        width: 20px
+        height: 20px
+        margin-top: 2px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__text        
+        @include subtitle-large
+        color: var(--Gray-30)
+.tabs 
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    align-items: stretch
+    gap: 24px
+.tab 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 12px
+    padding: 12px
+    border-radius: 12px
+    box-shadow: 0px 1px 8px 0px #0000001A
+    background-color: var(--White)
+    transition: box-shadow 0.3s ease
+    &__icon 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 40px
+        height: 40px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        & path 
+            fill: var(--Icons)
+            transition: fill 0.3s ease
+    &__text 
+        @include title-small
+        color: var(--Gray-20)
+        text-align: left
+        transition: color 0.3s ease
+    &_active 
+        box-shadow: 0px 2px 16px 0px #00000033
+        & .tab__icon 
+            & path 
+                fill: var(--Primary-40)
+        & .tab__text 
+            color: var(--Primary-40)
+.tags // TAGS
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    gap: 14px
+.tag 
+    display: flex
+    &__label
+        padding: 7px 16px 7px 42px
+        border: 1px solid var(--Gray-70)
+        border-radius: 18px
+        background:
+            color: var(--Gray-100)
+            image: url(../images/icons/plus.png)
+            repeat: no-repeat
+            position: left 16px center
+        @include subtitle-large
+        color: var(--Gray-20)
+        transition: all 0.3s ease
+        &:hover
+            background-color: var(--Gray-80)
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .tag__label
+            background:
+                color: var(--Gray-20)
+                image: url(../images/icons/check.png)
+            color: var(--White)
+            &:hover
+                background-color: var(--Gray-20)
 ::-webkit-scrollbar 
     width: 5px
     background-color: #ffffff00
@@ -614,9 +815,24 @@
 ::-webkit-scrollbar-track 
     margin: 8px 0
     background-color: #ffffff00
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button 
+    -webkit-appearance: none
+    margin: 0
+input[type="number"] 
+    -moz-appearance: textfield
+input[type="number"]:hover,
+input[type="number"]:focus 
+    -moz-appearance: number-input
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button 
+    -webkit-appearance: none
+    margin: 0
 #currency 
     padding: 16px 12px
 // GENERAL END
+
 .aside // ASIDE 
     position: fixed
     top: 0
@@ -826,6 +1042,31 @@
                 repeat: no-repeat 
                 position: center left 13px
                 size: 24px 24px
+    &__experiences
+        display: flex
+        flex-direction: column
+        gap: 24px
+    &__experience
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &:nth-child(n + 2)
+            padding-top: 24px
+            border-top: 1px solid var(--Gray-90)
+    &__knowledges
+        &-item
+            display: flex
+            flex-direction: column
+            gap: 24px
+    &__knowledge
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &:nth-child(n + 3)
+            padding-top: 24px
+            border-top: 1px solid var(--Gray-90)
+        &:last-child
+            margin-bottom: 24px
     &__vakansi 
         position: relative
         display: grid 
@@ -848,6 +1089,7 @@
         align-items: center
         justify-content: center
         border-radius: 8px
+        width: 56px
         height: 56px
         background-color: var(--Gray-100)
         & path 
@@ -855,10 +1097,19 @@
         &:disabled
             & path
                 fill: var(--Gray-60)
+        &-icon
+            & path 
+                fill: var(--Icons)
     &__item 
         display: flex
         flex-direction: column
         gap: 16px
+        &-withbtn 
+            display: grid
+            grid-template-columns: 1fr 56px
+            gap: 0 24px
+        &-small 
+            width: 322px
     &__avatar
         display: flex
         flex-direction: column
@@ -867,13 +1118,62 @@
         &-image 
             width: 160px
             height: 160px
-            padding: 24px
             border: 1px solid var(--Aside)
             border-radius: 16px
+            overflow: hidden
+            object-fit: cover
+            object-position: center
+        &-logo 
+            padding: 20px
         &-site 
             @include link-small
             color: var(--Primary-50)
             text-align: center
+    &__status 
+        margin-top: 14px
+        padding: 4px 8px
+        border-radius: 16px
+        background-color: #006FD81A
+        @include subtitle-small
+        &-blue 
+            color: var(--Primary-40)
+    &__rezyumes 
+        grid-column: span 2
+        padding: 0 16px
+    &__rezyume 
+        display: grid
+        grid-template-columns: 180px 1fr
+        gap: 24px 40px
+        padding: 0 16px
+        &-col
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-h2
+            @include subtitle-large
+            color: var(--Black)
+        &-h3
+            @include title-large
+            color: var(--Black)
+        &-h4
+            @include title-medium
+            color: var(--Black)
+        &-h5
+            @include  subtitle-medium
+            color: var(--Gray-40)
+        &-text
+            @include body-large
+            color: var(--Black)
+    &__show 
+        display: none
+        &-active 
+            display: block
+        &-btn 
+            & path
+                transition: fill 0.3s ease
+            &:hover 
+                & path 
+                    fill: var(--Red-error)
     &__col 
         display: flex
         flex-direction: column
@@ -953,9 +1253,29 @@
             background-color: var(--Gray-80)
             @include btn-small
             color: var(--Black)
+    &__educations 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 24px
+            &:nth-child(n + 2)
+                padding-top: 24px
+                border-top: 1px solid var(--Gray-90)
+    &__education 
+        display: none
+        flex-direction: column
+        gap: 24px
+        &-active 
+            display: flex
     &__title 
         @include title-medium
         color: var(--Black)
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
     &__line 
         display: grid
         grid-template-columns: 1fr 1fr 80px
@@ -964,6 +1284,15 @@
         display: grid
         grid-template-columns: 150px 150px
         gap: 16px
+    &__linedate
+        display: grid
+        align-items: center
+        grid-template-columns: 200px 120px auto
+        gap: 16px
+    &__line50
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 24px
     &__footer 
         display: flex
         justify-content: space-between
@@ -1099,10 +1428,24 @@
         right: 0
         border: 0.5px solid var(--Black)
         border-radius: 8px
+    &__delete 
+        & path 
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                fill: var(--Red)
+    &__reset
+        & path 
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                fill: var(--Red)
     &_mt 
         margin-top: 388px
         &-collapse 
             margin-top: 598px
+    &__pb
+        padding-bottom: 82px
 .adjustment 
     position: absolute
     top: 18px 
@@ -1115,121 +1458,26 @@
     &-active 
         display: flex
         margin-left: auto
-
+.datepicker
+    max-width: 322px
+    background: 
+        image: url('../images/icons/calendar.png')
+        position: center right 12px 
+        repeat: no-repeat
+#email 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/mail.png')
+        position: center left 12px 
+        repeat: no-repeat
+#tel 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/phone.png')
+        position: center left 12px 
+        repeat: no-repeat
 @media (max-width: 1371px)
     .section 
         &_collapse
             left: 0
 // SECTION END
-
-.tax // TAX
-    &__radio 
-        position: absolute
-        width: 0
-        opacity: 0
-        &:checked ~ .tax__label .tax__check
-            border: 7px solid var(--Black)
-    &__label 
-        display: grid
-        grid-template-columns: 20px auto
-        column-gap: 16px
-        row-gap: 4px
-    &__check 
-        grid-row: span 2
-        width: 20px
-        height: 20px
-        margin-top: 2px
-        border: 1.5px solid var(--Gray-40)
-        border-radius: 50%
-    &__title 
-        @include title-medium
-        color: var(--Black)
-    &__text        
-        @include subtitle-large
-        color: var(--Gray-30)
-// TAX END
-.tabs // TABS 
-    display: grid
-    grid-template-columns: repeat(4, 1fr)
-    align-items: stretch
-    gap: 24px
-.tab 
-    display: flex
-    flex-direction: column
-    align-items: flex-start
-    gap: 12px
-    padding: 12px
-    border-radius: 12px
-    box-shadow: 0px 2px 16px 0px #00000033
-    background-color: var(--White)
-    &__icon 
-        display: flex
-        align-items: center
-        justify-content: center
-        width: 40px
-        height: 40px
-        border-radius: 12px
-        background-color: var(--Gray-100)
-        & path 
-            fill: var(--Icons)
-            transition: fill 0.3s ease
-    &__text 
-        @include title-small
-        color: var(--Gray-20)
-        text-align: left
-        transition: color 0.3s ease
-    &_active 
-        & .tab__icon 
-            & path 
-                fill: var(--Primary-40)
-        & .tab__text 
-            color: var(--Primary-40)
-.tags // TAGS
-    display: flex
-    justify-content: flex-start
-    flex-wrap: wrap
-    gap: 14px
-.tag 
-    display: flex
-    &__label
-        padding: 7px 16px 7px 42px
-        border: 1px solid var(--Gray-70)
-        border-radius: 18px
-        background:
-            color: var(--Gray-100)
-            image: url(../images/icons/plus.png)
-            repeat: no-repeat
-            position: left 16px center
-        @include subtitle-large
-        color: var(--Gray-20)
-        transition: all 0.3s ease
-        &:hover
-            background-color: var(--Gray-80)
-    &__input 
-        display: none
-        width: 0
-        opacity: 0
-        &:checked ~ .tag__label
-            background:
-                color: var(--Gray-20)
-                image: url(../images/icons/check.png)
-            color: var(--White)
-            &:hover
-                background-color: var(--Gray-20)
-// TAGS END
-
-// ADDITIONAL
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button 
-    -webkit-appearance: none
-    margin: 0
-input[type="number"] 
-    -moz-appearance: textfield
-input[type="number"]:hover,
-input[type="number"]:focus 
-    -moz-appearance: number-input
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button 
-    -webkit-appearance: none
-    margin: 0
-// ADDITIONAL END
