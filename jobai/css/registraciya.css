@@ -693,22 +693,26 @@
   display: flex;
   cursor: pointer;
 }
-.clue__text {
+.clue__wrapper {
   position: absolute;
   bottom: calc(100% + 4px);
   left: -135px;
   display: none;
+  flex-direction: column;
+  gap: 4px;
   width: 270px;
   padding: 10px;
   border-radius: 8px;
   background-color: var(--Gray-90);
+  z-index: 10;
+}
+.clue__wrapper-active {
+  display: flex;
+}
+.clue__text {
   font: 500 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
   color: var(--Gray-30);
-  z-index: 10;
-}
-.clue__text-active {
-  display: flex;
 }
 
 .switch {

@@ -593,20 +593,23 @@
     position: relative
     display: flex
     cursor: pointer
-    &__text 
+    &__wrapper 
         position: absolute
         bottom: calc( 100% + 4px)
         left: -135px
         display: none
+        flex-direction: column
+        gap: 4px
         width: 270px
         padding: 10px
         border-radius: 8px
         background-color: var(--Gray-90)
-        @include subtitle-large
-        color: var(--Gray-30)
         z-index: 10
         &-active 
             display: flex
+    &__text 
+        @include subtitle-large
+        color: var(--Gray-30)
 .switch 
     position: relative
     display: inline-block
