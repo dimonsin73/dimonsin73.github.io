@@ -1,14 +1,3 @@
-const registeredUsers = [
-    {
-        id: 1,
-        tel: '+79992222222',
-        mail: '',
-    }, {
-        id: 2,
-        tel: '',
-        mail: 'admin@gmail.com',
-    }
-]
 // Поднятия заголовка для импута 
 const labelInputArray = document.querySelectorAll('.label__input')
 for (let i = 0; i < labelInputArray.length; i++) {
@@ -22,18 +11,6 @@ for (let i = 0; i < labelInputArray.length; i++) {
             const label = labelInput.parentElement
             label.classList.remove('label-active')
         }
-    })
-}
-// Работа подсказок 
-const clueArray = document.querySelectorAll('.clue')
-for (let i = 0; i < clueArray.length; i++) {
-    const clue = clueArray[i];
-    const clueWrapper = clue.querySelector('.clue__wrapper')
-    clue.addEventListener('mouseover', function(){
-        clueWrapper.classList.add('clue__wrapper-active')
-    })
-    clue.addEventListener('mouseout', function(){
-        clueWrapper.classList.remove('clue__wrapper-active')
     })
 }
 // Переключение кнопок 
@@ -114,54 +91,39 @@ document.querySelectorAll('input[type="radio"][name="registraciya"]').forEach((b
         }
     });
 });
-// Регистрация 
+// Авторизация 
 const registraciyaTitle = document.querySelector('.registraciya__title')
-const registraciyaFormArray = document.querySelectorAll('.registraciya__form')
 const registraciyaRadios = document.querySelector('.registraciya__radios')
+const registraciyaFormArray = document.querySelectorAll('.registraciya__form')
+const avtorizaciyaCode = document.getElementById('avtorizaciya__code')
+const avtorizaciyaPassword = document.getElementById('avtorizaciya__password')
 const timerArray = document.querySelectorAll('.timer')
 const email = document.getElementById('email')
 const tel = document.getElementById('tel')
-for (let i = 0; i < registraciyaFormArray.length; i++) {
-    const registraciyaForm = registraciyaFormArray[i];
-    registraciyaForm.addEventListener('submit', function(e){
-        e.preventDefault()
-        if (email.value === '' ) {
-            if (tel.value === '') {
-                const emailLabel = email.parentElement
-                emailLabel.classList.add('label_error')
-                const telLabel = tel.parentElement
-                telLabel.classList.add('label_error')
-            } else {
-                for (let i = 0; i < registeredUsers.length; i++) {
-                    const registeredUser = registeredUsers[i];
-                    if (tel.value === registeredUser.tel) {
-                        inauthorization()
-                    } 
-                }
-                const dataRegistraciya = 'sms'
-                registraciyaNext (dataRegistraciya)
-                
-            }
+avtorizaciyaCode.addEventListener('click', function(){
+    if (email.value === '' ) {
+        if (tel.value === '') {
+            const emailLabel = email.parentElement
+            emailLabel.classList.add('label_error')
+            const telLabel = tel.parentElement
+            telLabel.classList.add('label_error')
         } else {
-            for (let i = 0; i < registeredUsers.length; i++) {
-                const registeredUser = registeredUsers[i];
-                if (email.value === registeredUser.mail) {
-                    inauthorization()
-                } 
-            }
-            const dataRegistraciya = 'mail'
-            registraciyaNext (dataRegistraciya)
+            const dataAvtorizaciya = 'sms'
+            avtorizaciyaNext (dataAvtorizaciya)
         }
-    })
-}
-function registraciyaNext (dataRegistraciya) {
+    } else {
+        const dataAvtorizaciya = 'mail'
+        avtorizaciyaNext (dataAvtorizaciya)
+    }
+})
+function avtorizaciyaNext (dataAvtorizaciya) {
     searchJob.disabled = true
     searchEmployee.disabled = true
     registraciyaTitle.classList.add('registraciya__title-blur')
     registraciyaRadios.classList.add('registraciya__radios-blur')
     for (let i = 0; i < registraciyaFormArray.length; i++) {
         const registraciyaForm = registraciyaFormArray[i];
-        if (registraciyaForm.dataset.registraciya === dataRegistraciya) {
+        if (registraciyaForm.dataset.avtorizaciya === dataAvtorizaciya) {
             registraciyaForm.classList.add('registraciya__form-active')
             const timer = registraciyaForm.querySelector('.timer')
             registraciyaTimer(timer)
@@ -170,14 +132,35 @@ function registraciyaNext (dataRegistraciya) {
         }
     }
 }
-function inauthorization() {
-    if (searchJob.checked) {
-        window.location.href = 'k_goauthorization.html'
+avtorizaciyaPassword.addEventListener('click', function(){
+    if (email.value === '' ) {
+        if (tel.value === '') {
+            const emailLabel = email.parentElement
+            emailLabel.classList.add('label_error')
+            const telLabel = tel.parentElement
+            telLabel.classList.add('label_error')
+        } else {
+            const dataAvtorizaciya = 'sms-password'
+            avtorizaciyaNextPassword (dataAvtorizaciya)
+        }
+    } else {
+        const dataAvtorizaciya = 'mail-password'
+        avtorizaciyaNextPassword (dataAvtorizaciya)
     }
-    if (searchEmployee.checked) {
-        window.location.href = 'r_goauthorization.html'
+})
+function avtorizaciyaNextPassword (dataAvtorizaciya) {
+    searchJob.disabled = true
+    searchEmployee.disabled = true
+    registraciyaTitle.classList.add('registraciya__title-blur')
+    registraciyaRadios.classList.add('registraciya__radios-blur')
+    for (let i = 0; i < registraciyaFormArray.length; i++) {
+        const registraciyaForm = registraciyaFormArray[i];
+        if (registraciyaForm.dataset.avtorizaciya === dataAvtorizaciya) {
+            registraciyaForm.classList.add('registraciya__form-active')
+        } else {
+            registraciyaForm.classList.remove('registraciya__form-active')
+        }
     }
-    
 }
 email.addEventListener('input', function(){
     const emailLabel = email.parentElement

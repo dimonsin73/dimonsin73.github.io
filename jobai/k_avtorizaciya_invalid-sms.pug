@@ -1,0 +1,70 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Авторизация
+        link(rel="stylesheet", href="css/reset.css")
+        link(rel="stylesheet", href="css/fonts.css")
+        link(rel="stylesheet", href="css/registraciya.css")
+        script(src="js/timer.js" defer) 
+    body.bg
+        aside.aside 
+            .aside__logo 
+                img(src="images/logo.png", alt="job ai").aside__logo-img
+            ul.aside__list.aside__list-bottom
+                li.aside__item
+                    a(href="contacts.html").aside__link
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.39844 3.5999C2.39844 2.93716 2.9357 2.3999 3.59844 2.3999H6.18189C6.76849 2.3999 7.26912 2.824 7.36556 3.40262L8.25273 8.72567C8.33934 9.24531 8.07691 9.76067 7.60572 9.99626L5.74795 10.9251C7.08751 14.2539 9.74445 16.9108 13.0732 18.2504L14.0021 16.3926C14.2377 15.9214 14.753 15.659 15.2727 15.7456L20.5957 16.6328C21.1743 16.7292 21.5984 17.2298 21.5984 17.8165V20.3999C21.5984 21.0626 21.0612 21.5999 20.3984 21.5999H17.9984C9.3828 21.5999 2.39844 14.6155 2.39844 5.9999V3.5999Z"/>
+                        </svg>
+                        | Связаться с нами
+                li.aside__item
+                    a(href="documents.html").aside__link
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.39844 7.20005C2.39844 5.87457 3.47295 4.80005 4.79844 4.80005H10.7984L13.1984 7.20005H19.1984C20.5239 7.20005 21.5984 8.27457 21.5984 9.60005V16.8C21.5984 18.1255 20.5239 19.2 19.1984 19.2H4.79844C3.47295 19.2 2.39844 18.1255 2.39844 16.8V7.20005Z"/>
+                        </svg>
+                        | Документы
+        main.main
+            section.section.section_active
+                .container.container_extrasmall
+                    .registraciya
+                        h2.title Авторизация
+                        .registraciya__content
+                            .registraciya__col
+                                h3.registraciya__title.registraciya__title-blur Я хочу найти
+                                .registraciya__radios.registraciya__radios-blur
+                                    .radio
+                                        input.radio__input#search-job(type="radio" name="registraciya" checked value='Работу' disabled)
+                                        label.radio__label(for="search-job") 
+                                            .radio__check
+                                            .radio__title Работу
+                                    .radio
+                                        input.radio__input#search-employee(type="radio" name="registraciya" value='Сотрудников' disabled)
+                                        label.radio__label(for="search-employee") 
+                                            .radio__check
+                                            .radio__title Сотрудников
+                            form.registraciya__form.registraciya__form-active(data-avtorizaciya='sms')
+                                .registraciya__item
+                                    label(for='sms-code').label.label-active.label_error
+                                        h3.label__title Введите код из смс
+                                        input(type="text", name="sms-code", value='67890').label__input.input#sms-code
+                                        p.label_error-text Неверный код
+                                    .registraciya__block
+                                        .registraciya__line
+                                            p.registraciya__subtext Отправили на   
+                                            p.registraciya__subtext +7 (985) 220-89-91
+                                        .registraciya__line
+                                            p.registraciya__subtext Получить новый код можно через 
+                                            .timer 
+                                                .timer__minutes.registraciya__subtext 01
+                                                .timer__separatop.registraciya__subtext :
+                                                .timer__seconds.registraciya__subtext 00
+                                    .registraciya__col
+                                        button(type="submit").btn.btn_primary.btn_240 Войти
+                                        p.registraciya__text
+                                            | У вас нет учётной записи? 
+                                            a(href='').registraciya__link Зарегистрироваться
+                        a(href="landing.html").btn.btn_h48.btn_tertiary Назад
+
+        

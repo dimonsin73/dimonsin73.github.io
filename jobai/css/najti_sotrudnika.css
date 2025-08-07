@@ -855,6 +855,7 @@
   margin-top: 2px;
   border: 1.5px solid var(--Gray-40);
   border-radius: 50%;
+  transition: border 0.3s linear;
 }
 .tax__title {
   font: 600 16px/22px "Inter", "sans-serif";
@@ -1436,7 +1437,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .section__tags-item {
   padding: 8px 16px;
-  border: 1px solid #E7E8EA;
+  border: 1px solid var(--Aside);
   border-radius: 18px;
   font: 500 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;

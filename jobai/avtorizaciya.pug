@@ -3,11 +3,11 @@ html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Регистрация
+        title Авторизация
         link(rel="stylesheet", href="css/reset.css")
         link(rel="stylesheet", href="css/fonts.css")
-        link(rel="stylesheet", href="css/style.css")
-        script(src="js/registraciya.js" defer) 
+        link(rel="stylesheet", href="css/registraciya.css")
+        script(src="js/avtorizaciya.js" defer) 
     body.bg
         aside.aside 
             .aside__logo 
@@ -37,7 +37,7 @@ html(lang="ru")
             section.section.section_active
                 .container.container_extrasmall
                     .registraciya
-                        h2.title Регистрация
+                        h2.title Авторизация
                         .registraciya__content
                             .registraciya__col
                                 h3.registraciya__title Я хочу найти
@@ -52,40 +52,7 @@ html(lang="ru")
                                         label.radio__label(for="search-employee") 
                                             .radio__check
                                             .radio__title Сотрудников
-                            form.registraciya__form.registraciya__form-active(data-registraciya='basic')
-                                label(for='name-company').label.registraciya__employee
-                                    h3.label__title Название компании
-                                    input(type="text", name="name-company").label__input.input#name-company
-                                    .label__clue 
-                                        .clue
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
-                                            </svg>
-                                            .clue__wrapper
-                                                p.clue__text Поле необязательное 
-                                                p.clue__text Вы можете добавить «Название компании» в личном кабинете после регистрации
-                                label(for='name').label
-                                    h3.label__title Имя
-                                    input(type="text", name="name").label__input.input#name
-                                    .label__clue
-                                        .clue
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
-                                            </svg>
-                                            .clue__wrapper
-                                                p.clue__text Поле необязательное 
-                                                p.clue__text Вы можете добавить «Имя» в личном кабинете после регистрации
-                                label(for='surname').label
-                                    h3.label__title Фамилия
-                                    input(type="text", name="surname").label__input.input#surname
-                                    .label__clue
-                                        .clue
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
-                                            </svg>
-                                            .clue__wrapper
-                                                p.clue__text Поле необязательное 
-                                                p.clue__text Вы можете добавить «Фамилию» в личном кабинете после регистрации
+                            form.registraciya__form.registraciya__form-active(data-avtorizaciya='basic')
                                 .registraciya__btns.registraciya__job.registraciya__job-active
                                     button(type="button" data-registraciya='mail').registraciya__btn
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,13 +72,16 @@ html(lang="ru")
                                 label(for='tel' data-registraciya='tel').label.registraciya__show.registraciya__show-active
                                     h3.label__title.label__title-icon Введите телефон
                                     input(type="text", name="tel").label__input.input#tel
-                                    p.label_error-text Обязательное поле 
-                                .registraciya__col
-                                    button(type="submit").btn.btn_primary.btn_240#registraciya__next Дальше
+                                    p.label_error-text Обязательное поле
+                                .registraciya__col 
+                                    .registraciya__row
+                                        button(type="button").btn.btn_primary.btn_240#avtorizaciya__code Вход с кодом
+                                        p.registraciya__or или
+                                        button(type="button").btn.btn_secondary.btn_240#avtorizaciya__password Вход с паролем
                                     p.registraciya__text
-                                        | У вас есть учётная запись? 
-                                        a(href='').registraciya__link Войти
-                            form.registraciya__form(data-registraciya='sms')
+                                        | У вас нет учётной записи? 
+                                        a(href='').registraciya__link Зарегистрироваться
+                            form.registraciya__form(data-avtorizaciya='sms')
                                 .registraciya__item
                                     label(for='sms-code').label
                                         h3.label__title Введите код из смс
@@ -127,20 +97,23 @@ html(lang="ru")
                                                 .timer__separatop.registraciya__subtext :
                                                 .timer__seconds.registraciya__subtext 00
                                     .registraciya__col
-                                        button(type="submit").btn.btn_primary.btn_240s Зарегистрироваться
+                                        button(type="submit").btn.btn_primary.btn_240 Войти
                                         p.registraciya__text
-                                            | У вас есть учётная запись? 
-                                            a(href='').registraciya__link Войти
-                                .registraciya__footer 
-                                    p.registraciya__footer-text Регистрируясь,
-                                    p.registraciya__footer-text 
-                                        | вы даёте согласие на обработку 
-                                        a(href="").registraciya__footer-link персональных данных 
-                                    p.registraciya__footer-text 
-                                        | и принимаете 
-                                        a(href="").registraciya__footer-link условия предоставления услуг 
-                            form.registraciya__form(data-registraciya='mail')
-                                .registraciya__item
+                                            | У вас нет учётной записи? 
+                                            a(href='').registraciya__link Зарегистрироваться
+                            form.registraciya__form(data-avtorizaciya='sms-password')
+                                .registraciya__col
+                                    label(for='sms-password').label
+                                        h3.label__title Введите пароль
+                                        input(type="password", name="sms-password").label__input.input#sms-password
+                                    .registraciya__block
+                                        .registraciya__line
+                                            p.registraciya__subtext Учётная запись на 
+                                            p.registraciya__subtext +7 (985) 220-89-91
+                                    .registraciya__col
+                                        button(type="submit").btn.btn_primary.btn_240 Войти
+                            form.registraciya__form(data-avtorizaciya='mail')
+                                .registraciya__col
                                     label(for='mail-code').label
                                         h3.label__title Введите код из электронного письма
                                         input(type="text", name="mail-code").label__input.input#mail-code
@@ -155,18 +128,21 @@ html(lang="ru")
                                                 .timer__separatop.registraciya__subtext :
                                                 .timer__seconds.registraciya__subtext 00 
                                     .registraciya__col
-                                        button(type="submit").btn.btn_primary.btn_240 Зарегистрироваться
+                                        button(type="submit").btn.btn_primary.btn_240 Войти
                                         p.registraciya__text
-                                            | У вас есть учётная запись? 
-                                            a(href='').registraciya__link Войти
-                                .registraciya__footer 
-                                    p.registraciya__footer-text Регистрируясь,
-                                    p.registraciya__footer-text 
-                                        | вы даёте согласие на обработку 
-                                        a(href="").registraciya__footer-link персональных данных 
-                                    p.registraciya__footer-text 
-                                        | и принимаете 
-                                        a(href="").registraciya__footer-link условия предоставления услуг 
+                                            | У вас нет учётной записи? 
+                                            a(href='').registraciya__link Зарегистрироваться
+                            form.registraciya__form(data-avtorizaciya='mail-password')
+                                .registraciya__col
+                                    label(for='mail-password').label
+                                        h3.label__title Введите пароль
+                                        input(type="password", name="mail-password").label__input.input#mail-password
+                                    .registraciya__block
+                                        .registraciya__line
+                                            p.registraciya__subtext Учётная запись на 
+                                            p.registraciya__subtext dobrolubova.valentina@gmail.com
+                                    .registraciya__col
+                                        button(type="submit").btn.btn_primary.btn_240 Войти
                         a(href="landing.html").btn.btn_h48.btn_tertiary Назад
 
         
