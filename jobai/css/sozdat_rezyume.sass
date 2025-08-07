@@ -334,7 +334,9 @@
         background-color: var(--White)
         overflow: hidden
         transition: height 0.3s ease
-        z-index: 10
+        z-index: 20
+        &-active 
+            height: 198px
         &-item 
             display: flex
             flex-direction: column
@@ -356,9 +358,6 @@
     &:focus 
         background-color: var(--White)
         outline: 2px solid var(--Gray-40)
-        & ~ .input__help 
-            height: 198px
-
     
 .label 
     position: relative
@@ -518,6 +517,9 @@
     &_active 
         height: 176px
         overflow-y: scroll
+        &.options_2item 
+            height: 128px
+
 .option 
     padding: 14px 12px 
     border-radius: 8px
@@ -709,6 +711,101 @@
         @include title-medium
         color: var(--Gray-20)
         transition: color 0.3s ease
+.tax 
+    &__radio 
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked ~ .tax__label .tax__check
+            border: 7px solid var(--Black)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        column-gap: 16px
+        row-gap: 4px
+    &__check 
+        grid-row: span 2
+        width: 20px
+        height: 20px
+        margin-top: 2px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__text        
+        @include subtitle-large
+        color: var(--Gray-30)
+.tabs 
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    align-items: stretch
+    gap: 24px
+.tab 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 12px
+    padding: 12px
+    border-radius: 12px
+    box-shadow: 0px 1px 8px 0px #0000001A
+    background-color: var(--White)
+    transition: box-shadow 0.3s ease
+    &__icon 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 40px
+        height: 40px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        & path 
+            fill: var(--Icons)
+            transition: fill 0.3s ease
+    &__text 
+        @include title-small
+        color: var(--Gray-20)
+        text-align: left
+        transition: color 0.3s ease
+    &_active 
+        box-shadow: 0px 2px 16px 0px #00000033
+        & .tab__icon 
+            & path 
+                fill: var(--Primary-40)
+        & .tab__text 
+            color: var(--Primary-40)
+.tags // TAGS
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    gap: 14px
+.tag 
+    display: flex
+    &__label
+        padding: 7px 16px 7px 42px
+        border: 1px solid var(--Gray-70)
+        border-radius: 18px
+        background:
+            color: var(--Gray-100)
+            image: url(../images/icons/plus.png)
+            repeat: no-repeat
+            position: left 16px center
+        @include subtitle-large
+        color: var(--Gray-20)
+        transition: all 0.3s ease
+        &:hover
+            background-color: var(--Gray-80)
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .tag__label
+            background:
+                color: var(--Gray-20)
+                image: url(../images/icons/check.png)
+            color: var(--White)
+            &:hover
+                background-color: var(--Gray-20)
 ::-webkit-scrollbar 
     width: 5px
     background-color: #ffffff00
@@ -718,10 +815,23 @@
 ::-webkit-scrollbar-track 
     margin: 8px 0
     background-color: #ffffff00
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button 
+    -webkit-appearance: none
+    margin: 0
+input[type="number"] 
+    -moz-appearance: textfield
+input[type="number"]:hover,
+input[type="number"]:focus 
+    -moz-appearance: number-input
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button 
+    -webkit-appearance: none
+    margin: 0
 #currency 
     padding: 16px 12px
 // GENERAL END
-
 .aside // ASIDE 
     position: fixed
     top: 0
@@ -1333,6 +1443,8 @@
         margin-top: 388px
         &-collapse 
             margin-top: 598px
+    &__pb
+        padding-bottom: 82px
 .adjustment 
     position: absolute
     top: 18px 
@@ -1367,115 +1479,4 @@
     .section 
         &_collapse
             left: 0
-
-.tax // TAX
-    &__radio 
-        position: absolute
-        width: 0
-        opacity: 0
-        &:checked ~ .tax__label .tax__check
-            border: 7px solid var(--Black)
-    &__label 
-        display: grid
-        grid-template-columns: 20px auto
-        column-gap: 16px
-        row-gap: 4px
-    &__check 
-        grid-row: span 2
-        width: 20px
-        height: 20px
-        margin-top: 2px
-        border: 1.5px solid var(--Gray-40)
-        border-radius: 50%
-    &__title 
-        @include title-medium
-        color: var(--Black)
-    &__text        
-        @include subtitle-large
-        color: var(--Gray-30)
-// TAX END
-.tabs // TABS 
-    display: grid
-    grid-template-columns: repeat(4, 1fr)
-    align-items: stretch
-    gap: 24px
-.tab 
-    display: flex
-    flex-direction: column
-    align-items: flex-start
-    gap: 12px
-    padding: 12px
-    border-radius: 12px
-    box-shadow: 0px 2px 16px 0px #00000033
-    background-color: var(--White)
-    &__icon 
-        display: flex
-        align-items: center
-        justify-content: center
-        width: 40px
-        height: 40px
-        border-radius: 12px
-        background-color: var(--Gray-100)
-        & path 
-            fill: var(--Icons)
-            transition: fill 0.3s ease
-    &__text 
-        @include title-small
-        color: var(--Gray-20)
-        text-align: left
-        transition: color 0.3s ease
-    &_active 
-        & .tab__icon 
-            & path 
-                fill: var(--Primary-40)
-        & .tab__text 
-            color: var(--Primary-40)
-.tags // TAGS
-    display: flex
-    justify-content: flex-start
-    flex-wrap: wrap
-    gap: 14px
-.tag 
-    display: flex
-    &__label
-        padding: 7px 16px 7px 42px
-        border: 1px solid var(--Gray-70)
-        border-radius: 18px
-        background:
-            color: var(--Gray-100)
-            image: url(../images/icons/plus.png)
-            repeat: no-repeat
-            position: left 16px center
-        @include subtitle-large
-        color: var(--Gray-20)
-        transition: all 0.3s ease
-        &:hover
-            background-color: var(--Gray-80)
-    &__input 
-        display: none
-        width: 0
-        opacity: 0
-        &:checked ~ .tag__label
-            background:
-                color: var(--Gray-20)
-                image: url(../images/icons/check.png)
-            color: var(--White)
-            &:hover
-                background-color: var(--Gray-20)
-// TAGS END
-
-// ADDITIONAL
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button 
-    -webkit-appearance: none
-    margin: 0
-input[type="number"] 
-    -moz-appearance: textfield
-input[type="number"]:hover,
-input[type="number"]:focus 
-    -moz-appearance: number-input
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button 
-    -webkit-appearance: none
-    margin: 0
-// ADDITIONAL END
+// SECTION END
