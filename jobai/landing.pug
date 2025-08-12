@@ -20,6 +20,7 @@ html(lang="ru")
                 .hiro__content 
                     .logo 
                         img(src="images/logo.png", alt="logo")
+                        p.logo__r R
                     .hiro__main 
                         .hiro__main-top
                             h1.hiro__title Джобборд для подбора сотрудников и поиска работы
@@ -27,50 +28,86 @@ html(lang="ru")
                         .hiro__main-bottom 
                             .hiro__item 
                                 button(type="button").hiro__btn.btn.btn_primary Найти сотрудника
-                                a(href="").link-medium Как пользоваться?
                             .hiro__item 
                                 button(type="button").hiro__btn.btn.btn_secondary Найти работу
-                                a(href="").link-medium Как пользоваться?
+                    .avtoriz  
+                        a(href="").avtoriz__text Войти
+                        .avtoriz__or или
+                        a(href="").avtoriz__text Зарегистрироваться
                 .mirax
                     img(src="images/mirax.png", alt="mirax")
-                .language
-                    .language__view
-                    .language__dropdawn
-                        .language__dropdawn-option.language__dropdawn-option1
-                        .language__dropdawn-option.language__dropdawn-option2
+                .set
+                    a(href="").login Войти
+                    a(href="").register Зарегистрироваться 
+                    .language
+                        .language__view
+                        .language__dropdawn
+                            .language__dropdawn-option.language__dropdawn-option1
+                            .language__dropdawn-option.language__dropdawn-option2
                 .hiro__footer
                     .hiro__nav
                         nav.nav 
                             ul.nav__list
                                 li.nav__item
-                                    a(hraf="").nav__link Контакты
+                                    a(hraf="").nav__link Связаться с&nbsp;нами
                                 li.nav__item
                                     a(hraf="").nav__link О&nbsp;компании
                                 li.nav__item
-                                    a(hraf="").nav__link Требования&nbsp;к&nbsp;ПО
+                                    a(hraf="").nav__link Тарифы
                                 li.nav__item
-                                    a(hraf="").nav__link Правовые документы
+                                    a(hraf="").nav__link Новости
                                 li.nav__item
                                     a(hraf="").nav__link Условия предоставления&nbsp;услуг
                                 li.nav__item
                                     a(hraf="").nav__link Политика&nbsp;обработки персональных&nbsp;данных
                         .hiro__arrow 
-                    .hiro__sk 
                 .arrow
-        .menu 
+                .livebtn.livebtn_left
+                    .livebtn__wrapper
+                        .livebtn__top
+                            .livebtn__icon 
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M26 12C26 15.3137 23.3137 18 20 18C16.6863 18 14 15.3137 14 12C14 8.68629 16.6863 6 20 6C23.3137 6 26 8.68629 26 12Z" fill="white"/>
+                                    <path d="M36 16C36 18.2091 34.2091 20 32 20C29.7908 20 28 18.2091 28 16C28 13.7909 29.7908 12 32 12C34.2091 12 36 13.7909 36 16Z" fill="white"/>
+                                    <path d="M28 30C28 25.5817 24.4183 22 20 22C15.5817 22 12 25.5817 12 30V36H28V30Z" fill="white"/>
+                                    <path d="M12 16C12 18.2091 10.2091 20 8 20C5.79086 20 4 18.2091 4 16C4 13.7909 5.79086 12 8 12C10.2091 12 12 13.7909 12 16Z" fill="white"/>
+                                    <path d="M32 36V30C32 27.8917 31.4563 25.9104 30.5015 24.1886C30.9804 24.0655 31.4826 24 32 24C35.3137 24 38 26.6863 38 30V36H32Z" fill="white"/>
+                                    <path d="M9.49852 24.1886C8.54369 25.9104 8 27.8917 8 30V36H2V30C2 26.6863 4.68629 24 8 24C8.51741 24 9.01953 24.0655 9.49852 24.1886Z" fill="white"/>
+                                </svg>
+                            h3.livebtn__title Заказать запись кандидатов
+                        .livebtn__info 
+                            p.livebtn__text Вы можете оставить заявку на запись видеособеседований по конкретным должностям или специальностям
+                            a(href="" tabindex='-1').livebtn__btn Заказать
+                            a(href="" tabindex='-1').livebtn__link Как это работает?
+                .livebtn.livebtn_right
+                    .livebtn__wrapper
+                        .livebtn__top
+                            .livebtn__icon 
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 12C4 9.79086 5.79086 8 8 8H20C22.2091 8 24 9.79086 24 12V28C24 30.2091 22.2091 32 20 32H8C5.79086 32 4 30.2091 4 28V12Z" fill="white"/>
+                                    <path d="M29.1056 14.2111C28.428 14.5499 28 15.2425 28 16V24C28 24.7575 28.428 25.4501 29.1056 25.7889L33.1056 27.7889C33.7255 28.0988 34.4618 28.0657 35.0515 27.7013C35.6411 27.3369 36 26.6932 36 26V14C36 13.3068 35.6411 12.6631 35.0515 12.2987C34.4618 11.9343 33.7255 11.9012 33.1056 12.2111L29.1056 14.2111Z" fill="white"/>
+                                </svg>
+                            h3.livebtn__title Записаться на бесплатное собеседование
+                        .livebtn__info 
+                            p.livebtn__text Вы можете записаться на бесплатное видеособеседование. С вами свяжутся и назначат удобную дату и время
+                            a(href="" tabindex='-1').livebtn__btn Записаться
+                            a(href="" tabindex='-1').livebtn__link Как это работает?
+                
+        .menu       
             nav.nav 
                 ul.nav__list
                     li.nav__item
-                        a(hraf="").nav__link Контакты
+                        a(hraf="").nav__link Связаться с нами
                     li.nav__item
                         a(hraf="").nav__link О&nbsp;компании
                     li.nav__item
-                        a(hraf="").nav__link Требования&nbsp;к&nbsp;ПО
+                        a(hraf="").nav__link Тарифы
                     li.nav__item
-                        a(hraf="").nav__link Правовые документы
+                        a(hraf="").nav__link Новости
                     li.nav__item
                         a(hraf="").nav__link Условия предоставления&nbsp;услуг
                     li.nav__item
                         a(hraf="").nav__link Политика&nbsp;обработки персональных&nbsp;данных
+            img(src="images/mirax.png", alt="mirax").menu__mirax
                 
                 

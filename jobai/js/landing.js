@@ -38,3 +38,13 @@ arrow.addEventListener('click', function(){
     arrow.classList.toggle('arrow-active')
     menu.classList.toggle('menu-active')
 })
+const livebtnArray = document.querySelectorAll('.livebtn')
+for (let i = 0; i < livebtnArray.length; i++) {
+    const livebtn = livebtnArray[i];
+    livebtn.addEventListener('mouseenter', function(){
+        livebtn.classList.add('livebtn_active')
+    })
+    livebtn.addEventListener('mouseleave', function(){
+        livebtn.classList.remove('livebtn_active')
+    })
+}

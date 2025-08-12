@@ -26,7 +26,11 @@
     --Yellow: #FFCC00
     --Green: #34C759
     --Red: #FF3B30
+    --Red-active: #b90126
+    --Red-hover: #da002c
     --Red-error: #FF0034
+    --Rose: #F29792
+    --Scrollbar: #D9D9D9
 
 @mixin headline-large
     font: 700 40px/48px 'Inter', 'sans-serif'
@@ -85,6 +89,8 @@
     font: 500 20px/28px 'Inter', 'sans-serif'
 @mixin link-medium 
     font: 500 14px/21px 'Inter', 'sans-serif'
+@mixin link-small
+    font: 300 14px/16px 'Inter', 'sans-serif'
 @mixin btn-big 
     font: 600 16px/24px 'Inter', 'sans-serif'
     letter-spacing: -0.03em
@@ -94,6 +100,9 @@
 @mixin btn-small
     font: 600 13px/20px 'Inter', 'sans-serif'
     letter-spacing: 0.03em
+@mixin number-large
+    font: 700 18px/24px 'Inter', 'sans-serif'
+    letter-spacing: 0.02em
 @mixin number
     font: 700 11px/16px 'Inter', 'sans-serif'
     letter-spacing: 0.01em
@@ -101,16 +110,38 @@
 
 // GENERAL
 .main 
+    position: relative
     margin-left: 250px
+    margin-top: 64px
+    transition: margin-left 0.3s ease
+    &_active 
+        margin-left: 0
+@media (max-width: 1371px) 
+    .main 
+        margin-left: 0
 .container
     margin: 0 auto
+    &_video
+        max-width: 1240px
+        transition: max-width 0.3s ease
+        &-active 
+            max-width: 1920px
     &_medium
         max-width: 1090px
     &_small 
         max-width: 726px
+    &_extrasmall
+        max-width: 600px
 .bg
     background-color: var(--Gray-100)
+.bb
+    border-bottom: 0.5px solid var(--Gray-80)
+.br
+    border-right: 1px solid var(--Gray-80)
 .title 
+    display: flex
+    align-items: center
+    gap: 4px
     @include headline-large
     color: var(--Black)
 .btn 
@@ -118,10 +149,16 @@
     align-items: center
     justify-content: center
     gap: 8px
+    width: max-content
     padding: 15px 23px
     border-radius: 12px
     @include btn-big
     white-space: nowrap
+    &_h48 
+        padding: 11px 23px
+    &_240
+        max-width: 240px
+        width: 100%
     &_primary 
         border: 1px solid var(--Primary-40)
         background-color: var(--Primary-40)
@@ -148,10 +185,15 @@
         border: 1px solid var(--Black)
         color: var(--Black)
         transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        & path 
+            fill: var(--Black)
+            transition: fill 0.3s ease
         &:hover 
             border: 1px solid var(--Primary-40)
             background-color: var(--Primary-40)
             color: var(--White)
+            & path 
+                fill: var(--White)
         &:active
             border: 1px solid var(--Primary-30)
             background-color: var(--Primary-30)
@@ -183,8 +225,41 @@
             color: var(--White)
             & path 
                 stroke: var(--White)
-        &-icon 
-            padding: 11px
+    &_white
+        padding: 11px 23px
+        border: 0.5px solid var(--White)
+        border-radius: 8px
+        box-shadow: 0px 1px 8px 0px #0000001A
+        background-color: var(--White)
+        @include title-small
+        color: var(--Gray-10)
+        transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease
+        & path 
+            stroke: var(--Gray-10)
+            transition: stroke 0.3s ease
+        &-hide
+            display: none
+        &:hover 
+            border: 0.5px solid var(--Gray-100)
+            background-color: var(--Gray-100)
+            color: var(--Black)
+            & path 
+                stroke: var(--Black)
+        &-active
+            border: 0.5px solid var(--Black)
+            box-shadow: 0px 2px 16px 0px #00000033
+            background-color: var(--Black)
+            color: var(--White)
+            & path 
+                stroke: var(--White)
+            &:hover 
+                border: 0.5px solid var(--Gray-10)
+                background-color: var(--Gray-10)
+                color: var(--White)
+                & path 
+                    stroke: var(--White)
+            & .btn_white-hide
+                display: block
     &_blue 
         padding: 11px 23px
         border: 0.5px solid var(--Primary-40)
@@ -201,13 +276,49 @@
         &:active 
             border: 0.5px solid var(--Primary-20)
             background-color: var(--Primary-20)
+    &_red   
+        border: 0.5px solid var(--Red-error)
+        border-radius: 8px
+        background-color: var(--Red-error)
+        color: var(--White)
+        transition: background-color 0.3s ease, border 0.3s ease
+        & path 
+            stroke: var(--White)
+        &:hover 
+            border: 0.5px solid var(--Red-hover)
+            background-color: var(--Red-hover)
+        &:active 
+            border: 0.5px solid var(--Red-active)
+            background-color: var(--Red-active)
+
     &-icon 
         position: relative
         display: flex
         align-items: center
         justify-content: center
+        flex: 0 0 auto
+    &-icon48
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 0 0 auto
+        padding: 11px
     &_center 
         margin: 0 auto
+    &_full 
+        width: 100%
+        justify-content: flex-start
+    &_like 
+        &-active 
+            & path
+                stroke: var(--Red)
+                fill: var(--Red)
+                transition: stroke 0.3s ease, fill 0.3s ease
+            &:hover 
+                & path
+                    stroke: var(--Red)
+                    fill: var(--Red)
 @media (max-width: 1199px)
     .btn 
         padding: 12px 24px
@@ -230,19 +341,614 @@
         text-underline-offset: 3px
         color: var(--Black)
         cursor: pointer
+.press 
+    &-right 
+        margin-left: auto
+.input 
+    width: 100%
+    padding: 18px 12px
+    border-radius: 12px
+    background-color: var(--Gray-100)
+    @include body-large
+    color: var(--Black)
+    outline: none
+    transition: background-color 0.3s ease
+    &__help 
+        position: absolute
+        left: 0
+        right: 0
+        top: calc(100% + 8px)
+        display: flex
+        flex-direction: column
+        height: 0
+        box-shadow: 0px 2px 16px 0px #00000033
+        background-color: var(--White)
+        overflow: hidden
+        transition: height 0.3s ease
+        z-index: 20
+        &-active 
+            height: 198px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 2px
+            padding: 14px
+            &:hover 
+                background-color: var(--Gray-100)                 
+        &-title 
+            @include subtitle-large
+            color: var(--Black)
+        &-text 
+            @include body-small
+            color: var(--Gray-20)
+    &::placeholder 
+        @include body-small
+        color: var(--Gray-30)
+    &_number 
+        text-align: center
+    &:focus 
+        background-color: var(--White)
+        outline: 2px solid var(--Gray-40)
+    &_search 
+        width: 432px
+        padding: 16px 12px 16px 48px
+        background: 
+            image: url('../images/icons/search.png')
+            position: center left 12px
+            repeat: no-repeat
+        &::placeholder
+            @include body-large
+            color: var(--Gray-40)
+.label 
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 4px
+    &__input 
+        padding: 24px 12px 8px
+    &__title 
+        position: absolute
+        top: 16px
+        left: 12px
+        @include body-large
+        color: var(--Gray-30)
+        transition: top 0.3s ease, font 0.3s ease
+        z-index: 1
+        &-textarea 
+            top: 8px
+        &-icon 
+            left: 44px
+    &__textarea 
+        width: 100%
+        height: 136px
+        padding: 44px 12px 8px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        @include body-large
+        color: var(--Black)
+        outline: none
+        resize: none
+        transition: padding 0.3s ease
+        &::placeholder 
+            @include body-medium
+        &-big
+            height: 181px
+        &-extrabig
+            height: 361px
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__flyingtext 
+        position: absolute
+        top: 24px 
+        left: 24px
+        display: none
+        @include body-large
+        color: var(--Black)
+    &__clue 
+        position: absolute
+        top: 50%
+        right: -36px
+        transform: translateY(-50%)
+    &-active 
+        & .label__title
+            top: 8px
+            @include body-small
+        & .label__textarea 
+            padding: 28px 12px 8px
+        & .label__flyingtext 
+            display: block
+    &_error
+        &-text 
+            position: absolute
+            bottom: -16px
+            display: none
+            font: 400 12px/16px 'Inter', 'sans-serif'
+            color: var(--Red-error)
+        & .label__input
+            color: var(--Red-error)
+            outline: 2px solid var(--Red-error)
+        & .label_error-text
+            display: block
+.textarea 
+    width: 100%
+    height: 60px
+    padding: 20px 12px
+    border-radius: 12px
+    background-color: var(--Gray-100)
+    @include text-medium
+    color: var(--Black)
+    outline: none
+    resize: none
+    &::placeholder 
+        @include body-small
+        color: var(--Gray-30)
+    &_adjustment
+        display: -webkit-box
+        padding: 0px 54px 0 12px
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+        line-height: 60px
+        overflow: hidden
+        transition: height 0.3s ease, line-height 0.3s ease
+        &::placeholder 
+            line-height: 60px
+        &-active 
+            display: -webkit-box
+            height: 500px
+            padding: 20px 54px 20px 10px
+            line-height: 20px
+            -webkit-line-clamp: 23
+            -webkit-box-orient: vertical
+            overflow: hidden
+            &::placeholder
+                line-height: 20px
+.select 
+    position: relative
+    &__input 
+        background: 
+            image: url('../images/icons/chevron_down.png')
+            position: center right 20px
+            repeat: no-repeat
+        cursor: pointer
+    &__title 
+        position: absolute
+        top: 16px
+        left: 12px
+        @include body-large
+        color: var(--Gray-30)
+        transition: top 0.3s ease, font 0.3s ease
+        &-active 
+            top: 8px
+            @include body-small
+    &_up 
+        & .select__input 
+            padding: 24px 12px 8px
+            @include body-large
+    &__box 
+        display: flex
+        flex-direction: column
+        gap: 8px
+        padding-left: 14px
+        &-vert 
+            padding-top: 10px
+            padding-bottom: 10px
+.options 
+    position: absolute
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 0
+    margin-top: 10px 
+    border-radius: 16px
+    box-shadow: 0px 2px 16px 0px #00000033
+    background-color: var(--White)
+    overflow: hidden
+    transition: height 0.3s ease
+    z-index: 10
+    &__wrapper 
+        padding: 16px
+    &_active 
+        height: 176px
+        overflow-y: scroll
+        &.options_2item 
+            height: 128px
+
+.option 
+    padding: 14px 12px 
+    border-radius: 8px
+    @include text-medium
+    color: var(--Black)
+    cursor: pointer
+    &:hover 
+        background-color: var(--Gray-100)
+.range 
+    display: flex
+    align-items: center
+    column-gap: 13px
+    &__input 
+        appearance: none
+        max-width: 666px
+        width: 100%
+        height: 30px
+        border: none
+        overflow: hidden
+        transition: opacity 0.3s ease
+        cursor: pointer
+        &::-webkit-slider-thumb
+            appearance: none
+            background-color: var(--Primary-40)
+            border-radius: 50%
+            height: 28px
+            width: 28px
+            margin-top: -12px
+            box-shadow: calc(-100vmax - 28px) 0 0 100vmax var(--Primary-40)
+            clip-path: polygon(100% 0, 1px 0, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 1px 100%, 100% 100%)
+        &::-moz-range-thumb
+            appearance: none
+            background-color: var(--Primary-40)
+            border-radius: 50%
+            height: 28px
+            width: 28px
+            margin-top: -12px
+            box-shadow: calc(-100vmax - 28px) 0 0 100vmax var(--Primary-40)
+            clip-path: polygon(100% 0, 1px 0, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 1px 100%, 100% 100%)
+        &::-webkit-slider-runnable-track
+            height: 6px
+            border-radius: 3px
+            background-color: rgba(0, 0, 0, 0.20)
+        &-disabled 
+            opacity: 0.5
+    &__conclusion 
+        position: relative
+        &-text 
+            position: absolute
+            bottom: -12px
+            left: 50% 
+            @include subtitle-medium
+            color: var(--Primary-40)
+            white-space: nowrap
+            transform: translateX(-50%)
+        &-disabled 
+            opacity: 0.5
+    &__number 
+        width: 85px
+        @include headline-medium
+        color: var(--Primary-40)
+        text-align: center
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__explanation
+        display: flex
+        align-items: center
+        gap: 4px
+.clue 
+    position: relative
+    display: flex
+    cursor: pointer
+    &__wrapper 
+        position: absolute
+        bottom: calc( 100% + 4px)
+        left: -135px
+        display: none
+        flex-direction: column
+        gap: 4px
+        width: 270px
+        padding: 10px
+        border-radius: 8px
+        background-color: var(--Gray-90)
+        z-index: 10
+        &-active 
+            display: flex
+    &__text 
+        @include subtitle-large
+        color: var(--Gray-30)
+.switch 
+    position: relative
+    display: inline-block
+    flex: 0 0 auto
+    width: 51px
+    height: 31px
+    &__input 
+        display: none
+    &__slider 
+        position: absolute
+        cursor: pointer
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: rgba(0, 0, 0, 0.20)
+        -webkit-transition: .3s
+        transition: .3s
+        &:before 
+            position: absolute
+            content: ""
+            height: 27px
+            width: 27px
+            left: 2px
+            bottom: 2px
+            background-color: white
+            -webkit-transition: .3s
+            transition: .3s
+    &__input:checked + .switch__slider
+        background:
+            color: var(--Primary-40)
+    &__input:checked + .switch__slider:before 
+        -webkit-transform: translateX(20px)
+        -ms-transform: translateX(20px)
+        transform: translateX(20px)
+    &__round 
+        border-radius: 25px
+    &__round:before 
+        border-radius: 50%
+.check 
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .check__label .check__check
+            background:
+                color: var(--Black)
+                image: url(../images/icons/check.png)
+    &__label 
+        display: flex
+        justify-content: start
+        column-gap: 8px
+    &__check 
+        flex: 0 0 auto
+        width: 20px
+        height: 20px
+        border: 1px solid var(--Black)
+        border-radius: 4px 
+        background:
+            repeat: no-repeat
+            position: center center
+        transition: background 0.3s ease
+    &__info 
+        display: flex
+        flex-direction: column
+        gap: 4px
+    &__title 
+        margin-top: -2px
+        @include title-medium
+        color: var(--black)
+    &__text 
+        @include subtitle-large
+        color: var(--Gray-30)
+.radio
+    &__input
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked 
+            & ~ .radio__label
+                border: 2px solid var(--Primary-40)
+            & ~ .radio__label .radio__check
+                border: 7px solid var(--Primary-40)
+            & ~ .radio__label .radio__title
+                color: var(--Primary-40)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        align-items: center
+        column-gap: 16px
+        padding: 20px 24px
+        border: 2px solid var(--Gray-60)
+        border-radius: 8px
+        transition: border 0.3s linear
+    &__check 
+        width: 20px
+        height: 20px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+        transition: border 0.3s linear
+    &__title 
+        @include title-medium
+        color: var(--Gray-20)
+        transition: color 0.3s ease
+.tax 
+    &__radio 
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked ~ .tax__label .tax__check
+            border: 7px solid var(--Black)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        column-gap: 16px
+        row-gap: 4px
+    &__check 
+        grid-row: span 2
+        width: 20px
+        height: 20px
+        margin-top: 2px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+        transition: border 0.3s linear
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__subtitle 
+        @include body-large
+        color: var(--Gray-20)
+    &__text        
+        @include subtitle-large
+        color: var(--Gray-30)
+.tabs 
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    align-items: stretch
+    gap: 24px
+.tab 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 12px
+    padding: 12px
+    border-radius: 12px
+    box-shadow: 0px 1px 8px 0px #0000001A
+    background-color: var(--White)
+    transition: box-shadow 0.3s ease
+    &__icon 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 40px
+        height: 40px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        & path 
+            fill: var(--Icons)
+            transition: fill 0.3s ease
+    &__text 
+        @include title-small
+        color: var(--Gray-20)
+        text-align: left
+        transition: color 0.3s ease
+    &_active 
+        box-shadow: 0px 2px 16px 0px #00000033
+        & .tab__icon 
+            & path 
+                fill: var(--Primary-40)
+        & .tab__text 
+            color: var(--Primary-40)
+.tags // TAGS
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    gap: 14px
+.tag 
+    display: flex
+    &__label
+        padding: 7px 16px 7px 42px
+        border: 1px solid var(--Gray-70)
+        border-radius: 18px
+        background:
+            color: var(--Gray-100)
+            image: url(../images/icons/plus.png)
+            repeat: no-repeat
+            position: left 16px center
+        @include subtitle-large
+        color: var(--Gray-20)
+        transition: all 0.3s ease
+        &:hover
+            background-color: var(--Gray-80)
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .tag__label
+            background:
+                color: var(--Gray-20)
+                image: url(../images/icons/check.png)
+            color: var(--White)
+            &:hover
+                background-color: var(--Gray-20)
+::-webkit-scrollbar 
+    width: 5px
+    height: 5px
+    background-color: #ffffff00
+::-webkit-scrollbar-thumb 
+    border-radius: 5px
+    background-color: var(--Scrollbar)
+::-webkit-scrollbar-track 
+    margin: 8px 0
+    background-color: #ffffff00
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button 
+    -webkit-appearance: none
+    margin: 0
+input[type="number"] 
+    -moz-appearance: textfield
+input[type="number"]:hover,
+input[type="number"]:focus 
+    -moz-appearance: number-input
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button 
+    -webkit-appearance: none
+    margin: 0
+#currency 
+    padding: 16px 12px
 // GENERAL END
 // COMING-SOON AND LANDING
 .coming-soon 
     position: absolute
-    top: 28px
-    left: 28px
+    top: 180px
+    left: 250px
     z-index: 25
-.language 
+.mirax 
     position: absolute
-    top: 28px
-    right: 28px
+    top: 20px
+    left: 20px
+    display: flex
+    align-items: center
+    width: 190px
+    height: 58px
+.nav 
+    width: 100%
+    height: 100%
+    padding: 0 12px
+    border-radius: 10px
+    background-color: rgba(255, 255, 255, 0.5)
+
+    overflow: hidden
+    &__list 
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 20px
+        height: 100%
+    &__item 
+        display: flex
+        align-items: center
+        justify-content: center
+        max-width: 290px
+        height: 100%
+    &__link 
+        @include link-large
+        text-align: center
+        color: #1E1E1E
+        cursor: pointer
+.logo 
+    position: relative
+    &__r 
+        position: absolute
+        top: -8px
+        right: -32px
+        width: 31px
+        height: 31px
+        border: 2px solid var(--Black)
+        border-radius: 50%
+        font: 700 26px/28px 'Inter', 'sans-serif'
+        letter-spacing: 0.2px
+        color: var(--Black)
+        text-align: center
+.set 
+    position: absolute
+    top: 20px
+    right: 20px
+    display: flex
+    gap: 10px
+    align-items: center
+    z-index: 20
+.login
+    padding: 6px 3px
+    @include btn-small
+    color: var(--Primary-40)
+.register 
+    padding: 6px 16px
+    border-radius: 6px 
+    background-color: var(--Primary-40)
+    @include btn-small
+    color: var(--White)
+.language 
     width: 53px
     height: 32px
+    border: 1px solid var(--Scrollbar)
     z-index: 20
     &__view 
         width: 100%
@@ -272,36 +978,72 @@
         &-option2
             background: 
                 image: url('../images/language/uk.png')
-.mirax 
+.livebtn 
     position: absolute
-    bottom: 28px
-    left: 28px
-    display: flex
-    align-items: center
-    width: 190px
-    height: 58px
-.nav 
-    height: 100%
-    padding: 0 12px
-    border-radius: 10px
-    background-color: #FFFFFF4D
-    overflow: hidden
-    &__list 
+    bottom: 20px
+    z-index: 30
+    &_left 
+        left: 20px
+    &_right 
+        right: 20px
+    &__wrapper 
         display: flex
+        flex-direction: column
+        align-items: flex-start
+        width: 220px
+        height: 70px
+        padding: 0 10px
+        border-radius: 8px
+        background-color:#1287FB
+        overflow: hidden
+        transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, border 0.3s ease
+    &__top 
+        display: grid
+        grid-template-columns: 60px auto
         align-items: center
-        gap: 20px
+        flex: 0 0 auto
+        width: 100%
         height: 100%
-    &__item 
+        transition: height 0.3s ease
+    &__info 
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 6px
+        margin-left: 60px
+    &__icon 
         display: flex
         align-items: center
         justify-content: center
-        max-width: 290px
-        height: 100%
-    &__link 
-        @include link-large
+    &__title
+        font: 400 16px/20px 'Inter', 'sans-serif'
+        color: var(--White)
         text-align: center
-        color: #1E1E1E
-        cursor: pointer
+    &__text 
+        font: 300 14px/20px 'Inter', 'sans-serif'
+        color: var(--White)
+        text-align: left
+    &__btn 
+        padding: 7px 26px
+        border: 2px solid var(--White)
+        border-radius: 6px
+        @include title-medium
+        color: var(--White)
+    &__link 
+        @include text-medium
+        color: var(--Black)
+        text-decoration: underline !important
+        text-underline-offset: 3px
+    &_active 
+        z-index: 40
+        & .livebtn__wrapper 
+            width: 350px
+            height: 200px
+            border-radius: 8px
+            transform: translateY(-80px)
+        & .livebtn__top 
+            height: 60px
 .hiro 
     display: flex
     justify-content: center
@@ -357,17 +1099,15 @@
             transform: translateX(-50%)
         &-white 
             position: absolute
-            top: 50%
+            bottom: 0
             left: 50%
             width: 780px
             height: 780px
             border-radius: 50%
             background-color: var(--White)
-            filter: blur(150px)
-            transform: translate(-50%, -50%)
+            filter: blur(100px)
+            transform: translateX(-50%)
             z-index: 11
-            -webkit-transform: translate3d(-50%, -50%, 0)
-            -moz-transform: translate3d(-50%, -50%, 0)
     &__content 
         display: flex
         flex-direction: column
@@ -419,19 +1159,20 @@
         line-height: 36px
     &__footer 
         position: absolute
-        bottom: 28px
-        left: 242px
-        right: 28px 
+        bottom: 27px
+        left: 255px
+        right: 255px 
         display: flex
-        justify-content: space-between
+        justify-content: flex-start
         gap: 24px
         height: 58px
         overflow: hidden
-        z-index: 20
+        z-index: 45
     &__nav 
         display: flex
         align-items: center
         gap: 14px
+        width: 100%
         height: 100%
         transform: translate( calc(-100% + 12px) )
         transition: transform 0.3s ease
@@ -450,18 +1191,11 @@
             size: contain
         cursor: pointer
         transition: transform 0.3s ease
-    &__sk 
-        flex: 0 0 auto
-        width: 150px
-        height: 58px
-        background: 
-            image: url('../images/sk.png')
-            repeat: no-repeat
-            position: center center
-            size: contain
 .menu 
     display: none
 .arrow
+    display: none
+.avtoriz 
     display: none
 @media (max-height: 999px)
     .hiro__bg-earth
@@ -491,14 +1225,10 @@
             bottom: -385px
         &__content 
             margin-top: 50px
-        &__footer 
-            bottom: 12px
-        &__sk 
-            bottom: 12px
-        &__mirax 
-            bottom: 12px
     .logo 
         width: 250px
+        &__r 
+            transform: scale(0.8)
     .btn 
         padding: 18px 24px
         font-size: 20px
@@ -507,8 +1237,6 @@
     .hiro__content 
         margin-top: 20px
 @media (max-width: 1599px)
-    .mirax 
-        display: none 
     .hiro
         &__bg 
             &-left 
@@ -517,25 +1245,31 @@
             &-right 
                 top: -100px
                 right: -300px
-        &__content 
-            margin-top: 100px
-        &__sk 
-            display: none
-        &__footer 
-            left: 28px
-            right: 28px
-    @media (max-height: 649px)
-    .hiro
-        &__content 
-            margin-top: 50px
     @media (max-height: 499px)
         .hiro__content 
             margin-top: 20px
-@media (max-width: 1199px)
+@media ( max-width: 1499px)
+    .livebtn
+        &__wrapper
+            width: 60px
+            height: 60px
+            padding: 0
+            border-radius: 50%
     .hiro
-        &__bg 
-        &__content 
-            margin-top: 50px
+        &__footer
+            bottom: 21px
+            left: 100px
+            right: 100px
+    .coming-soon 
+        top: 120px
+        left: 60px
+@media (max-width: 1199px)
+    .mirax
+        display: none
+    .coming-soon 
+        top: 60px
+        left: 60px
+    .hiro
         &__main 
             padding: 10px 100px
         &__footer 
@@ -549,17 +1283,19 @@
         display: flex 
         flex-direction: column
         gap: 12px
-        padding: 60px 15px 15px
-        background-color: var(--White)
+        padding: 80px 15px 15px
+        background-color: #ffffffdd
         z-index: 30
         transform: translateY(100%)
         transition: transform 0.3s ease
         &-active 
             transform: translateY(0)
+        &__mirax 
+            width: 200px
+            margin: 0 auto
     .arrow 
         position: absolute
         top: calc(100% - 40px)
-        left: 28px
         display: block
         width: 50px
         height: 12px
@@ -579,6 +1315,8 @@
         &__list 
             flex-direction: column
             align-items: flex-start
+            height: auto
+            gap: 36px
         &__item 
             max-width: 100%
     @media (min-height: 1000px)
@@ -594,6 +1332,8 @@
             &-earth 
                 bottom: 0
                 height: 95%
+            &-white 
+                height: 100%
         &__main 
             padding: 0 50px
             &-top 
@@ -618,9 +1358,43 @@
             transform: scaleY(-1) translateX(-50%)
     .nav__link 
         text-align: left
+    .login 
+        display: none
+    .register 
+        display: none
+    .avtoriz
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 10px
+        &__text 
+            @include btn-small
+            color: var(--Primary-40)
+            text-decoration: none !important
+            letter-spacing: -0.1px
+        &__or 
+            font: 400 10px/16px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            color: var(--Gray-20)
     .logo 
         width: 125px
+        &__r 
+            right: -12px
+            width: 14px
+            height: 14px
+            padding-left: 1px
+            font-size: 12px
+            line-height: 12px
+            border: 1px solid var(--Black)
+    .livebtn
+        &_active 
+            & .livebtn__wrapper 
+                width: 350px
+                height: 200px
+                border-radius: 8px
+                transform: translateY(0)
     .coming-soon 
+        top: 10px
         left: 50%
         transform: translateX(-50%)
     @media (max-height: 759px)
