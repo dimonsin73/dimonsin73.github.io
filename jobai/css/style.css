@@ -80,6 +80,11 @@
   border-right: 1px solid var(--Gray-80);
 }
 
+.bhead {
+  border-top: 1px solid var(--Gray-80);
+  border-left: 1px solid var(--Gray-80);
+}
+
 .title {
   display: flex;
   align-items: center;
@@ -1093,6 +1098,27 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.datepicker {
+  max-width: 322px;
+  background-image: url("../images/icons/calendar.png");
+  background-position: center right 12px;
+  background-repeat: no-repeat;
+}
+
+#email {
+  padding-left: 44px;
+  background-image: url("../images/icons/mail.png");
+  background-position: center left 12px;
+  background-repeat: no-repeat;
+}
+
+#tel {
+  padding-left: 44px;
+  background-image: url("../images/icons/phone.png");
+  background-position: center left 12px;
+  background-repeat: no-repeat;
 }
 
 #currency {
@@ -2613,27 +2639,6 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: auto;
 }
 
-.datepicker {
-  max-width: 322px;
-  background-image: url("../images/icons/calendar.png");
-  background-position: center right 12px;
-  background-repeat: no-repeat;
-}
-
-#email {
-  padding-left: 44px;
-  background-image: url("../images/icons/mail.png");
-  background-position: center left 12px;
-  background-repeat: no-repeat;
-}
-
-#tel {
-  padding-left: 44px;
-  background-image: url("../images/icons/phone.png");
-  background-position: center left 12px;
-  background-repeat: no-repeat;
-}
-
 @media (max-width: 1371px) {
   .section_collapse {
     left: 0;
@@ -3668,8 +3673,6 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 185px;
-  padding: 0 16px;
   font: 400 16px/24px "Inter", "sans-serif";
   color: var(--Primary-50);
   text-align: center;
@@ -3677,7 +3680,7 @@ input[type=number]::-webkit-outer-spin-button {
 .panel__btns {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 .panel__inputs {
   display: flex;
@@ -3711,12 +3714,12 @@ input[type=number]::-webkit-outer-spin-button {
 .panel__head {
   display: grid;
   grid-template-columns: 135px 300px 260px 140px 210px 180px 150px 220px 220px 240px 165px 120px 90px 120px;
-  padding: 8px 10px 10px;
 }
 .panel__head-item {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 50px;
 }
 .panel__head-item svg {
   flex: 0 0 auto;
@@ -3787,7 +3790,8 @@ input[type=number]::-webkit-outer-spin-button {
   width: 150px;
 }
 .panel__duos {
-  display: flex;
+  display: grid;
+  grid-template-columns: 825px auto;
   gap: 24px;
 }
 .panel__duo {
@@ -3823,7 +3827,6 @@ input[type=number]::-webkit-outer-spin-button {
 .users {
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
 }
 
 .user {
@@ -4215,9 +4218,9 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 1600px;
+  max-width: 1850px;
   width: 100%;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 12px;
   background-color: var(--White);
   overflow-x: auto;
@@ -4258,31 +4261,30 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .payment__tables {
   display: grid;
-  grid-template-columns: 1440px 370px;
-  height: 550px;
-  overflow-y: scroll;
+  grid-template-columns: 1440px 350px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  overflow-x: scroll;
 }
 .payment__table {
   display: flex;
   flex-direction: column;
-  width: 1440px;
+  padding-right: 20px;
 }
 .payment__table2 {
   width: 1980px;
 }
 .payment__head {
   display: grid;
-  grid-template-columns: 140px 100px 100px 160px 160px 100px 180px 200px 80px 100px 100px;
-  height: 50px;
-  padding: 7px 10px;
+  grid-template-columns: 130px 110px 100px 160px 160px 100px 160px 200px 80px 100px 120px;
 }
 .payment__head-item {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2px;
-  height: 36px;
+  gap: 4px;
+  height: 50px;
 }
 .payment__head-text {
   font: 600 16px/22px "Inter", "sans-serif";
@@ -4293,7 +4295,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .payment__head-subtext {
   position: absolute;
-  bottom: -8px;
+  bottom: -2px;
   font: 500 12px/16px "Inter", "sans-serif";
   letter-spacing: -0.1px;
   color: var(--Gray-40);
@@ -4319,18 +4321,17 @@ input[type=number]::-webkit-outer-spin-button {
 .payment__payments {
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
 }
 .payment__payment {
   display: grid;
-  grid-template-columns: 140px 100px 100px 160px 160px 100px 180px 200px 80px 100px 100px;
+  grid-template-columns: 130px 110px 100px 160px 160px 100px 160px 200px 80px 100px 120px;
   height: 50px;
-  padding: 8.5px 0;
 }
 .payment__payment-item {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50px;
 }
 .payment__payment-text {
   font: 300 14px/16px "Inter", "sans-serif";
@@ -4344,22 +4345,21 @@ input[type=number]::-webkit-outer-spin-button {
 .payment__lefthead {
   display: grid;
   grid-template-columns: 120px 110px 120px;
-  padding: 7px 10px;
+  height: 50px;
 }
 .payment__leftpayments {
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
 }
 .payment__leftpayment {
   display: grid;
   grid-template-columns: 120px 110px 120px;
   height: 50px;
-  padding: 8.5px 0;
 }
 .payment__footer {
   display: grid;
-  grid-template-columns: 180px 140px 100px 100px 160px 100px 200px 100px 100px;
+  grid-template-columns: 130px 110px 100px 160px 160px 100px 180px 200px 80px 100px 100px;
+  height: 50px;
 }
 .payment__footer-item {
   display: flex;
@@ -4382,6 +4382,7 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   gap: 4px;
   grid-column: span 2;
+  justify-content: flex-end;
 }
 .payment__footer-totaltext {
   font: 400 16px/24px "Inter", "sans-serif";

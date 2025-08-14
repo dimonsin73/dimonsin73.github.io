@@ -138,6 +138,10 @@
     border-bottom: 0.5px solid var(--Gray-80)
 .br
     border-right: 1px solid var(--Gray-80)
+.bhead 
+    border-top: 1px solid var(--Gray-80)
+    border-left: 1px solid var(--Gray-80)
+
 .title 
     display: flex
     align-items: center
@@ -906,6 +910,24 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button 
     -webkit-appearance: none
     margin: 0
+.datepicker
+    max-width: 322px
+    background: 
+        image: url('../images/icons/calendar.png')
+        position: center right 12px 
+        repeat: no-repeat
+#email 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/mail.png')
+        position: center left 12px 
+        repeat: no-repeat
+#tel 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/phone.png')
+        position: center left 12px 
+        repeat: no-repeat
 #currency 
     padding: 16px 12px
 // GENERAL END
@@ -2119,24 +2141,7 @@ input[type=number]::-webkit-outer-spin-button
     &-active 
         display: flex
         margin-left: auto
-.datepicker
-    max-width: 322px
-    background: 
-        image: url('../images/icons/calendar.png')
-        position: center right 12px 
-        repeat: no-repeat
-#email 
-    padding-left: 44px
-    background: 
-        image: url('../images/icons/mail.png')
-        position: center left 12px 
-        repeat: no-repeat
-#tel 
-    padding-left: 44px
-    background: 
-        image: url('../images/icons/phone.png')
-        position: center left 12px 
-        repeat: no-repeat
+
 @media (max-width: 1371px)
     .section 
         &_collapse
@@ -2968,15 +2973,13 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         align-items: center
         justify-content: center
-        width: 185px
-        padding: 0 16px
         font: 400 16px/24px 'Inter', 'sans-serif'
         color: var(--Primary-50)
         text-align: center
     &__btns 
         display: flex
         align-items: center
-        gap: 4px
+        gap: 8px
     &__inputs 
         display: flex
         align-items: center
@@ -3001,11 +3004,11 @@ input[type=number]::-webkit-outer-spin-button
     &__head 
         display: grid
         grid-template-columns: 135px 300px 260px 140px 210px 180px 150px 220px 220px 240px 165px 120px 90px 120px
-        padding: 8px 10px 10px
         &-item 
             display: flex
             align-items: center
             justify-content: center
+            height: 50px
             & svg 
                 flex: 0 0 auto
         &-text
@@ -3057,7 +3060,8 @@ input[type=number]::-webkit-outer-spin-button
         &-calendar 
             width: 150px
     &__duos 
-        display: flex
+        display: grid 
+        grid-template-columns: 825px auto
         gap: 24px
     &__duo 
         display: flex
@@ -3085,7 +3089,6 @@ input[type=number]::-webkit-outer-spin-button
 .users 
     display: flex
     flex-direction: column
-    padding: 0 10px
 .user
     display: grid
     grid-template-columns: 135px 300px 260px 140px 210px 180px 150px 220px 220px 240px 165px 120px 90px 120px
@@ -3394,9 +3397,9 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         flex-direction: column
         gap: 20px
-        max-width: 1600px
+        max-width: 1850px
         width: 100%
-        padding: 20px
+        padding: 10px 20px
         border-radius: 12px
         background-color: var(--White)
         overflow-x: auto
@@ -3428,27 +3431,25 @@ input[type=number]::-webkit-outer-spin-button
             padding: 10px 8px
     &__tables 
         display: grid
-        grid-template-columns: 1440px 370px
-        height: 550px
-        overflow-y: scroll
+        grid-template-columns: 1440px 350px
+        column-gap: 20px
+        overflow-x: scroll
     &__table 
         display: flex
         flex-direction: column
-        width: 1440px
+        padding-right: 20px
     &__table2
         width: 1980px
     &__head 
         display: grid
-        grid-template-columns: 140px 100px 100px 160px 160px 100px 180px 200px 80px 100px 100px
-        height: 50px
-        padding: 7px 10px
+        grid-template-columns: 130px 110px 100px 160px 160px 100px 160px 200px 80px 100px 120px
         &-item 
             position: relative
             display: flex
             justify-content: center
             align-items: center
-            gap: 2px
-            height: 36px
+            gap: 4px
+            height: 50px
         &-text 
             @include title-medium
             line-height: 18px
@@ -3456,7 +3457,7 @@ input[type=number]::-webkit-outer-spin-button
             text-align: center
         &-subtext
             position: absolute
-            bottom: -8px
+            bottom: -2px
             @include subtitle-medium
             color: var(--Gray-40)
             text-align: center
@@ -3476,16 +3477,15 @@ input[type=number]::-webkit-outer-spin-button
     &__payments 
         display: flex
         flex-direction: column
-        padding: 0 10px
     &__payment
         display: grid
-        grid-template-columns: 140px 100px 100px 160px 160px 100px 180px 200px 80px 100px 100px
+        grid-template-columns: 130px 110px 100px 160px 160px 100px 160px 200px 80px 100px 120px
         height: 50px
-        padding: 8.5px 0
         &-item 
             display: flex
             justify-content: center
             align-items: center
+            height: 50px
         &-text 
             @include link-small
             color: var(--Black)
@@ -3496,19 +3496,18 @@ input[type=number]::-webkit-outer-spin-button
     &__lefthead
         display: grid
         grid-template-columns: 120px 110px 120px 
-        padding: 7px 10px
+        height: 50px
     &__leftpayments 
         display: flex
         flex-direction: column
-        padding: 0 10px
     &__leftpayment
         display: grid
         grid-template-columns: 120px 110px 120px 
         height: 50px
-        padding: 8.5px 0
     &__footer 
         display: grid
-        grid-template-columns: 180px 140px 100px 100px 160px 100px 200px 100px 100px
+        grid-template-columns: 130px 110px 100px 160px 160px 100px 180px 200px 80px 100px 100px
+        height: 50px
         &-item 
             display: flex
             align-items: center
@@ -3526,6 +3525,7 @@ input[type=number]::-webkit-outer-spin-button
             align-items: center
             gap: 4px
             grid-column: span 2
+            justify-content: flex-end
         &-totaltext
             @include body-large
             color: var(--Gray-30)

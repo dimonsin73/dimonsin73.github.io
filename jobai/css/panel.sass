@@ -906,6 +906,24 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button 
     -webkit-appearance: none
     margin: 0
+.datepicker
+    max-width: 322px
+    background: 
+        image: url('../images/icons/calendar.png')
+        position: center right 12px 
+        repeat: no-repeat
+#email 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/mail.png')
+        position: center left 12px 
+        repeat: no-repeat
+#tel 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/phone.png')
+        position: center left 12px 
+        repeat: no-repeat
 #currency 
     padding: 16px 12px
 // GENERAL END
@@ -1504,8 +1522,7 @@ input[type=number]::-webkit-outer-spin-button
     &__tables 
         display: grid
         grid-template-columns: 1440px 370px
-        height: 550px
-        overflow-y: scroll
+        overflow-x: scroll
     &__table 
         display: flex
         flex-direction: column
