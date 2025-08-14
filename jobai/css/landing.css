@@ -1246,7 +1246,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 8px;
   background-color: #1287FB;
   overflow: hidden;
-  transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, border 0.3s ease, padding 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, border-radius 0.3s ease, padding 0.3s ease;
 }
 .livebtn__top {
   display: grid;

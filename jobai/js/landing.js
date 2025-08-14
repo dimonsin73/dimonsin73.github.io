@@ -41,9 +41,8 @@ arrow.addEventListener('click', function(){
 const livebtnArray = document.querySelectorAll('.livebtn')
 for (let i = 0; i < livebtnArray.length; i++) {
     const livebtn = livebtnArray[i];
-    if (window.screen.width > '954') {
+    if (window.innerWidth < '954') {
         livebtn.addEventListener('click', function(){
-            console.log('1')
             livebtn.classList.add('livebtn_active')
         })
         document.addEventListener('click', (e) => {
@@ -51,10 +50,6 @@ for (let i = 0; i < livebtnArray.length; i++) {
             if ( ! withinBoundaries ) {
                 livebtn.classList.remove('livebtn_active')
             }
-        })
-        
-        livebtn.addEventListener('mouseleave', function(){
-            livebtn.classList.remove('livebtn_active')
         })
     } else {
         livebtn.addEventListener('mouseenter', function(){
