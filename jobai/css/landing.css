@@ -719,7 +719,7 @@
   letter-spacing: -0.1px;
   color: var(--Primary-40);
   white-space: nowrap;
-  transform: translateX(-50%);
+  transform: translate3d(-50%, 0, 0);
 }
 .range__conclusion-disabled {
   opacity: 0.5;
@@ -1337,7 +1337,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 50%;
   background-color: var(--Primary-50);
   filter: blur(250px);
-  transform: translateX(-50%);
+  transform: translate3d(-50%, 0, 0);
 }
 .hiro__bg-left {
   position: absolute;
@@ -1368,7 +1368,7 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: flex-end;
   max-width: none;
   z-index: 10;
-  transform: translateX(-50%);
+  transform: translate3d(-50%, 0, 0);
 }
 .hiro__bg-white {
   position: absolute;
@@ -1379,7 +1379,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 50%;
   background-color: var(--White);
   filter: blur(100px);
-  transform: translateX(-50%);
+  transform: translate3d(-50%, 0, 0);
   z-index: 11;
 }
 .hiro__content {
@@ -1695,10 +1695,10 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .arrow {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   .arrow-active {
-    transform: scaleY(-1) translateX(-50%);
+    transform: scaleY(-1) translate3d(-50%, 0, 0);
   }
   .nav__link {
     text-align: left;
@@ -1748,7 +1748,7 @@ input[type=number]::-webkit-outer-spin-button {
   .coming-soon {
     top: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 @media (max-width: 954px) and (max-height: 759px) {

@@ -615,7 +615,7 @@
             @include subtitle-medium
             color: var(--Primary-40)
             white-space: nowrap
-            transform: translateX(-50%)
+            transform: translate3d(-50%, 0, 0)
         &-disabled 
             opacity: 0.5
     &__number 
@@ -1105,7 +1105,7 @@ input[type=number]::-webkit-outer-spin-button
             border-radius: 50%
             background-color: var(--Primary-50)
             filter: blur(250px)
-            transform: translateX(-50%)
+            transform: translate3d(-50%, 0, 0)
         &-left 
             position: absolute
             top: 0
@@ -1135,7 +1135,7 @@ input[type=number]::-webkit-outer-spin-button
             align-items: flex-end
             max-width: none
             z-index: 10 
-            transform: translateX(-50%)
+            transform: translate3d(-50%, 0, 0)
         &-white 
             position: absolute
             bottom: 0
@@ -1145,7 +1145,7 @@ input[type=number]::-webkit-outer-spin-button
             border-radius: 50%
             background-color: var(--White)
             filter: blur(100px)
-            transform: translateX(-50%)
+            transform: translate3d(-50%, 0, 0)
             z-index: 11
     &__content 
         display: flex
@@ -1397,9 +1397,9 @@ input[type=number]::-webkit-outer-spin-button
             line-height: 24px
     .arrow
         left: 50%
-        transform: translateX(-50%)
+        transform: translate3d(-50%, 0, 0)
         &-active 
-            transform: scaleY(-1) translateX(-50%)
+            transform: scaleY(-1) translate3d(-50%, 0, 0)
     .nav__link 
         text-align: left
     .login 
@@ -1440,7 +1440,7 @@ input[type=number]::-webkit-outer-spin-button
     .coming-soon 
         top: 10px
         left: 50%
-        transform: translateX(-50%)
+        transform: translate3d(-50%, 0, 0)
     @media (max-height: 759px)
         .hiro
             &__item 
