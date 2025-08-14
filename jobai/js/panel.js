@@ -54,6 +54,56 @@ for (let i = 0; i < showbyBtnArray.length; i++) {
         showbyBtn.classList.add('showby__btn-active')
     })
 }
+// Открытие/Закрытие селектов
+const selectInputArray = document.querySelectorAll('.select__input')
+for (let i = 0; i < selectInputArray.length; i++) {
+    const selectInput = selectInputArray[i];
+    const selectTitle = selectInput.parentElement.querySelector('.select__title')
+    selectFun(selectInput, selectTitle)
+}
+function selectUp(selectInput, selectTitle) {
+    if (selectInput.value != '') {
+        selectTitle.classList.add('select__title-active')
+    }
+}
+// Функция открытие/Закрытие селектов
+function selectFun(selectInput, selectTitle) {
+    selectInput.addEventListener('click', function(){
+        const select = selectInput.parentElement
+        const options = selectInput.parentElement.querySelector('.options')
+        const optionArray = options.querySelectorAll('.option')
+        select.classList.toggle('select-active')
+        if (select.classList.contains('select-active')) {
+            options.classList.add('options_active')
+        } else {
+            options.classList.remove('options_active')
+        }
+        for (let i = 0; i < optionArray.length; i++) {
+            const option = optionArray[i];
+            option.addEventListener('click', function(){
+                selectInput.value = option.textContent
+                if (select.classList.contains('select_up')) {
+                    selectUp(selectInput, selectTitle)
+                }
+            options.classList.remove('options_active')
+                select.classList.remove('select-active')
+            })
+        }
+        document.addEventListener('click', (e) => {
+            const withinBoundaries = e.composedPath().includes(select);
+            if ( ! withinBoundaries ) {
+                select.classList.remove('select-active')
+                options.classList.remove('options_active')
+            }
+        }) //Закрытие селекта по щелчку вне меню
+        document.addEventListener('keydown', function(e) {
+            if( e.keyCode == 27 ){ 
+                select.classList.remove('select-active')
+                options.classList.remove('options_active')
+            }
+        }) //Закрытие селекта по нажатию на ESC
+    })
+}
 // Поднятия заголовка для импута 
 const labelInputArray = document.querySelectorAll('.label__input')
 for (let i = 0; i < labelInputArray.length; i++) {
@@ -440,3 +490,48 @@ for (let i = 0; i < docDeleteReconciliationActArray.length; i++) {
     })
 }
 
+const edit = document.querySelector('.edit')
+const editFormArray = edit.querySelectorAll('.edit__form')
+const editCloseArray = document.querySelectorAll('.edit__close')
+const btnEditFullnameArray = document.querySelectorAll('.btn-edit-fullname')
+const btnEditCompanyArray = document.querySelectorAll('.btn-edit-company')
+for (let i = 0; i < btnEditFullnameArray.length; i++) {
+    const btnEditFullname = btnEditFullnameArray[i];
+    btnEditFullname.addEventListener('click', function(){
+        edit.classList.add('edit_active')
+        for (let i = 0; i < editFormArray.length; i++) {
+            const editForm = editFormArray[i];
+            if (editForm.dataset.edit === 'fullname') {
+                editForm.classList.add('edit__form-active')
+                
+            } else (
+                editForm.classList.remove('edit__form-active')
+            )
+        }
+    })
+}
+for (let i = 0; i < btnEditCompanyArray.length; i++) {
+    const btnEditCompany = btnEditCompanyArray[i];
+    btnEditCompany.addEventListener('click', function(){
+        edit.classList.add('edit_active')
+        for (let i = 0; i < editFormArray.length; i++) {
+            const editForm = editFormArray[i];
+            if (editForm.dataset.edit === 'company') {
+                editForm.classList.add('edit__form-active')
+            } else (
+                editForm.classList.remove('edit__form-active')
+            )
+        }
+    })
+}
+for (let i = 0; i < editCloseArray.length; i++) {
+    const editClose = editCloseArray[i];
+    editClose.addEventListener('click', function(){
+        for (let i = 0; i < editFormArray.length; i++) {
+            const editForm = editFormArray[i];
+            editForm.classList.remove('edit__form-active')
+        }
+        
+        edit.classList.remove('edit_active')
+    })
+}

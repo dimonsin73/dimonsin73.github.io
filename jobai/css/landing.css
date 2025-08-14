@@ -510,6 +510,11 @@
 .label-active .label__flyingtext {
   display: block;
 }
+.label_search {
+  position: relative;
+  width: 432px;
+  z-index: 30;
+}
 .label_error-text {
   position: absolute;
   bottom: -16px;
@@ -651,6 +656,9 @@
 .option:hover {
   background-color: var(--Gray-100);
 }
+.option_disabled {
+  opacity: 0.7;
+}
 
 .range {
   display: flex;
@@ -737,6 +745,7 @@
 .clue {
   position: relative;
   display: flex;
+  flex: 0 0 auto;
   cursor: pointer;
 }
 .clue__wrapper {
@@ -750,7 +759,11 @@
   padding: 10px;
   border-radius: 8px;
   background-color: var(--Gray-90);
-  z-index: 10;
+  z-index: 40;
+}
+.clue__wrapper-bottom {
+  top: calc(100% + 4px);
+  bottom: auto;
 }
 .clue__wrapper-active {
   display: flex;
@@ -845,6 +858,17 @@
   letter-spacing: -0.25px;
   color: var(--Gray-30);
 }
+.check__textpanel {
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Gray-20);
+}
+.check__span {
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  color: var(--Gray-20);
+}
 
 .radio__input {
   position: absolute;
@@ -931,6 +955,9 @@
   align-items: stretch;
   gap: 24px;
 }
+.tabs_small {
+  grid-template-columns: repeat(2, 1fr);
+}
 
 .tab {
   display: flex;
@@ -942,6 +969,10 @@
   box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1019607843);
   background-color: var(--White);
   transition: box-shadow 0.3s ease;
+}
+.tab__icons {
+  display: flex;
+  align-items: center;
 }
 .tab__icon {
   display: flex;
@@ -956,6 +987,17 @@
   fill: var(--Icons);
   transition: fill 0.3s ease;
 }
+.tab__ai {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+.tab__ai path {
+  fill: var(--Icons);
+  transition: fill 0.3s ease;
+}
 .tab__text {
   font: 600 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.1px;
@@ -967,6 +1009,9 @@
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.2);
 }
 .tab_active .tab__icon path {
+  fill: var(--Primary-40);
+}
+.tab_active .tab__ai path {
   fill: var(--Primary-40);
 }
 .tab_active .tab__text {
@@ -1096,7 +1141,7 @@ input[type=number]::-webkit-outer-spin-button {
 .nav__link {
   font: 500 20px/28px "Inter", "sans-serif";
   text-align: center;
-  color: #1E1E1E;
+  color: var(--Black);
   cursor: pointer;
 }
 
@@ -1105,8 +1150,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .logo__r {
   position: absolute;
-  top: -8px;
-  right: -32px;
+  top: 0;
+  right: -36px;
   width: 31px;
   height: 31px;
   border: 2px solid var(--Black);
@@ -1201,7 +1246,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 8px;
   background-color: #1287FB;
   overflow: hidden;
-  transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, border 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, border 0.3s ease, padding 0.3s ease;
 }
 .livebtn__top {
   display: grid;
@@ -1217,8 +1262,7 @@ input[type=number]::-webkit-outer-spin-button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;
-  margin-left: 60px;
+  gap: 10px;
 }
 .livebtn__icon {
   display: flex;
@@ -1226,11 +1270,14 @@ input[type=number]::-webkit-outer-spin-button {
   justify-content: center;
 }
 .livebtn__title {
+  padding: 0 10px;
   font: 400 16px/20px "Inter", "sans-serif";
   color: var(--White);
   text-align: center;
+  transition: padding 0.3s ease;
 }
 .livebtn__text {
+  padding-left: 60px;
   font: 300 14px/20px "Inter", "sans-serif";
   color: var(--White);
   text-align: left;
@@ -1255,11 +1302,15 @@ input[type=number]::-webkit-outer-spin-button {
 .livebtn_active .livebtn__wrapper {
   width: 350px;
   height: 200px;
+  padding: 0 0;
   border-radius: 8px;
   transform: translateY(-80px);
 }
 .livebtn_active .livebtn__top {
-  height: 60px;
+  height: 50px;
+}
+.livebtn_active .livebtn__title {
+  margin-left: -50px;
 }
 
 .hiro {
@@ -1551,8 +1602,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 80px 15px 15px;
-    background-color: rgba(255, 255, 255, 0.8666666667);
+    background-color: #fff;
     z-index: 30;
     transform: translateY(100%);
     transition: transform 0.3s ease;
@@ -1561,8 +1611,10 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translateY(0);
   }
   .menu__mirax {
+    position: relative;
     width: 200px;
-    margin: 0 auto;
+    margin: 0 auto 16px;
+    z-index: 100;
   }
   .arrow {
     position: absolute;
@@ -1583,13 +1635,15 @@ input[type=number]::-webkit-outer-spin-button {
     transform: scaleY(-1);
   }
   .nav {
-    padding: 0 12px;
+    padding: 80px 15px 15px;
   }
   .nav__list {
+    position: relative;
     flex-direction: column;
     align-items: flex-start;
     height: auto;
     gap: 36px;
+    z-index: 100;
   }
   .nav__item {
     max-width: 100%;
@@ -1613,6 +1667,8 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .hiro__bg-white {
     height: 100%;
+    border-radius: 0;
+    filter: blur(200px);
   }
   .hiro__main {
     padding: 0 50px;
@@ -1675,7 +1731,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 125px;
   }
   .logo__r {
-    right: -12px;
+    right: -18px;
     width: 14px;
     height: 14px;
     padding-left: 1px;

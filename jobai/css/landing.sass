@@ -458,6 +458,11 @@
             padding: 28px 12px 8px
         & .label__flyingtext 
             display: block
+    &_search 
+        position: relative
+        width: 432px
+        z-index: 30
+
     &_error
         &-text 
             position: absolute
@@ -562,6 +567,8 @@
     cursor: pointer
     &:hover 
         background-color: var(--Gray-100)
+    &_disabled 
+        opacity: 0.7
 .range 
     display: flex
     align-items: center
@@ -626,6 +633,7 @@
 .clue 
     position: relative
     display: flex
+    flex: 0 0 auto
     cursor: pointer
     &__wrapper 
         position: absolute
@@ -638,7 +646,10 @@
         padding: 10px
         border-radius: 8px
         background-color: var(--Gray-90)
-        z-index: 10
+        z-index: 40
+        &-bottom 
+            top: calc( 100% + 4px )
+            bottom: auto
         &-active 
             display: flex
     &__text 
@@ -717,6 +728,13 @@
     &__text 
         @include subtitle-large
         color: var(--Gray-30)
+    &__textpanel 
+        @include body-large
+        color: var(--Gray-20)
+    &__span 
+        @include body-large
+        font-weight: 600
+        color: var(--Gray-20)
 .radio
     &__input
         position: absolute
@@ -782,6 +800,8 @@
     grid-template-columns: repeat(4, 1fr)
     align-items: stretch
     gap: 24px
+    &_small
+        grid-template-columns: repeat(2, 1fr)
 .tab 
     display: flex
     flex-direction: column
@@ -792,6 +812,9 @@
     box-shadow: 0px 1px 8px 0px #0000001A
     background-color: var(--White)
     transition: box-shadow 0.3s ease
+    &__icons 
+        display: flex
+        align-items: center
     &__icon 
         display: flex
         align-items: center
@@ -803,6 +826,15 @@
         & path 
             fill: var(--Icons)
             transition: fill 0.3s ease
+    &__ai
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 40px
+        height: 40px
+        & path 
+            fill: var(--Icons)
+            transition: fill 0.3s ease
     &__text 
         @include title-small
         color: var(--Gray-20)
@@ -811,6 +843,9 @@
     &_active 
         box-shadow: 0px 2px 16px 0px #00000033
         & .tab__icon 
+            & path 
+                fill: var(--Primary-40)
+        & .tab__ai
             & path 
                 fill: var(--Primary-40)
         & .tab__text 
@@ -894,7 +929,6 @@ input[type=number]::-webkit-outer-spin-button
     padding: 0 12px
     border-radius: 10px
     background-color: rgba(255, 255, 255, 0.5)
-
     overflow: hidden
     &__list 
         display: flex
@@ -911,14 +945,14 @@ input[type=number]::-webkit-outer-spin-button
     &__link 
         @include link-large
         text-align: center
-        color: #1E1E1E
+        color: var(--Black)
         cursor: pointer
 .logo 
     position: relative
     &__r 
         position: absolute
-        top: -8px
-        right: -32px
+        top: 0
+        right: -36px
         width: 31px
         height: 31px
         border: 2px solid var(--Black)
@@ -996,7 +1030,7 @@ input[type=number]::-webkit-outer-spin-button
         border-radius: 8px
         background-color:#1287FB
         overflow: hidden
-        transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, border 0.3s ease
+        transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, border 0.3s ease, padding 0.3s ease
     &__top 
         display: grid
         grid-template-columns: 60px auto
@@ -1010,17 +1044,19 @@ input[type=number]::-webkit-outer-spin-button
         flex-direction: column
         justify-content: center
         align-items: center
-        gap: 6px
-        margin-left: 60px
+        gap: 10px
     &__icon 
         display: flex
         align-items: center
         justify-content: center
     &__title
+        padding: 0 10px
         font: 400 16px/20px 'Inter', 'sans-serif'
         color: var(--White)
         text-align: center
+        transition: padding 0.3s ease
     &__text 
+        padding-left: 60px
         font: 300 14px/20px 'Inter', 'sans-serif'
         color: var(--White)
         text-align: left
@@ -1040,10 +1076,13 @@ input[type=number]::-webkit-outer-spin-button
         & .livebtn__wrapper 
             width: 350px
             height: 200px
+            padding: 0 0
             border-radius: 8px
             transform: translateY(-80px)
         & .livebtn__top 
-            height: 60px
+            height: 50px
+        & .livebtn__title 
+            margin-left: -50px
 .hiro 
     display: flex
     justify-content: center
@@ -1283,16 +1322,17 @@ input[type=number]::-webkit-outer-spin-button
         display: flex 
         flex-direction: column
         gap: 12px
-        padding: 80px 15px 15px
-        background-color: #ffffffdd
+        background-color: #fff
         z-index: 30
         transform: translateY(100%)
         transition: transform 0.3s ease
         &-active 
             transform: translateY(0)
         &__mirax 
+            position: relative
             width: 200px
-            margin: 0 auto
+            margin: 0 auto 16px
+            z-index: 100
     .arrow 
         position: absolute
         top: calc(100% - 40px)
@@ -1311,12 +1351,14 @@ input[type=number]::-webkit-outer-spin-button
             top: 28px
             transform: scaleY(-1)
     .nav 
-        padding: 0 12px
+        padding: 80px 15px 15px 
         &__list 
+            position: relative
             flex-direction: column
             align-items: flex-start
             height: auto
             gap: 36px
+            z-index: 100
         &__item 
             max-width: 100%
     @media (min-height: 1000px)
@@ -1334,6 +1376,8 @@ input[type=number]::-webkit-outer-spin-button
                 height: 95%
             &-white 
                 height: 100%
+                border-radius: 0
+                filter: blur(200px)
         &__main 
             padding: 0 50px
             &-top 
@@ -1379,7 +1423,7 @@ input[type=number]::-webkit-outer-spin-button
     .logo 
         width: 125px
         &__r 
-            right: -12px
+            right: -18px
             width: 14px
             height: 14px
             padding-left: 1px

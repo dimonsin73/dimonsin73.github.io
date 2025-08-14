@@ -55,26 +55,47 @@ html(lang="ru")
                                 li.panel__tab(data-panel='fields') Заполнение полей
                                 li.panel__tab(data-panel='payment') Оплаты + бух. документы
                         .panel__container.panel__container-active(data-panel='user-list')
-                            ul.panel__list
-                                .panel__line 
-                                    p.panel__text Всего пользователей:
-                                    p.panel__number 100
-                                li.panel__list-item
+                            .panel__block.bg
+                                ul.panel__list
                                     .panel__line 
-                                        p.panel__text в т.ч. Кандидатов:
-                                        p.panel__subnumber 50
-                                li.panel__list-item
-                                    .panel__line 
-                                        p.panel__text в т.ч. Работодателей:
-                                        p.panel__subnumber 40
-                                li.panel__list-item
-                                    .panel__line 
-                                        p.panel__text в т.ч. другие:
-                                        p.panel__subnumber 10
-                            .panel__line
+                                        p.panel__text Всего пользователей:
+                                        p.panel__number 100
+                                    li.panel__list-item
+                                        .panel__line 
+                                            p.panel__text в т.ч. Кандидатов:
+                                            p.panel__subnumber 50
+                                    li.panel__list-item
+                                        .panel__line 
+                                            p.panel__text в т.ч. Работодателей:
+                                            p.panel__subnumber 40
+                                    li.panel__list-item
+                                        .panel__line 
+                                            p.panel__text в т.ч. другие:
+                                            p.panel__subnumber 10
+                            .panel__btns
                                 button(type="button").btn.btn_h48.btn_primary#add-user Добавить пользователя  
                                 a(href="").panel__link Служебная регистрация  
-                            input(type="search", name="", placeholder='Найти пользователя (поиск по любой колонке)').input.input_search
+                            .panel__inputs
+                                label.label.label_search(for="panel-search")
+                                    input(type="search", name="panel-search", placeholder='Найти пользователя (поиск по любой колонке)').input.input_search#panel-search
+                                    .label__clue 
+                                        .clue
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                            </svg>
+                                            .clue__wrapper
+                                                p.clue__text При поиске по номеру телефону формат ввода телефона должен быть следующим:
+                                                p.clue__text +7 ХХХ ХХХ ХХ ХХ
+                                .select.select_up
+                                    input(type="text", readonly, name="panel-role").select__input.input#panel-role
+                                    label(for="panel-role").select__title Выбрать роль
+                                    .options 
+                                        .options__wrapper
+                                            .option Кандидат
+                                            .option Работодатель 
+                                            .option Администратор
+                                            .option HR
+                                            .option Руководитель HR
                             .panel__table 
                                 .panel__head 
                                     .panel__head-item 
@@ -89,30 +110,29 @@ html(lang="ru")
                                         </svg>
                                     .panel__head-item 
                                         p.panel__head-text Название компании
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289L13.7071 6.29289C14.0976 6.68342 14.0976 7.31658 13.7071 7.70711C13.3166 8.09763 12.6834 8.09763 12.2929 7.70711L10 5.41421L7.70711 7.70711C7.31658 8.09763 6.68342 8.09763 6.29289 7.70711C5.90237 7.31658 5.90237 6.68342 6.29289 6.29289L9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3ZM6.29289 12.2929C6.68342 11.9024 7.31658 11.9024 7.70711 12.2929L10 14.5858L12.2929 12.2929C12.6834 11.9024 13.3166 11.9024 13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071L10.7071 16.7071C10.3166 17.0976 9.68342 17.0976 9.29289 16.7071L6.29289 13.7071C5.90237 13.3166 5.90237 12.6834 6.29289 12.2929Z" fill="#6A6A73"/>
-                                        </svg>
+                                    .panel__head-item 
+                                        p.panel__head-text ИНН компании
                                     .panel__head-item 
                                         p.panel__head-text Электронная почта
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289L13.7071 6.29289C14.0976 6.68342 14.0976 7.31658 13.7071 7.70711C13.3166 8.09763 12.6834 8.09763 12.2929 7.70711L10 5.41421L7.70711 7.70711C7.31658 8.09763 6.68342 8.09763 6.29289 7.70711C5.90237 7.31658 5.90237 6.68342 6.29289 6.29289L9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3ZM6.29289 12.2929C6.68342 11.9024 7.31658 11.9024 7.70711 12.2929L10 14.5858L12.2929 12.2929C12.6834 11.9024 13.3166 11.9024 13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071L10.7071 16.7071C10.3166 17.0976 9.68342 17.0976 9.29289 16.7071L6.29289 13.7071C5.90237 13.3166 5.90237 12.6834 6.29289 12.2929Z" fill="#6A6A73"/>
-                                        </svg>
                                     .panel__head-item 
                                         p.panel__head-text Телефон
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289L13.7071 6.29289C14.0976 6.68342 14.0976 7.31658 13.7071 7.70711C13.3166 8.09763 12.6834 8.09763 12.2929 7.70711L10 5.41421L7.70711 7.70711C7.31658 8.09763 6.68342 8.09763 6.29289 7.70711C5.90237 7.31658 5.90237 6.68342 6.29289 6.29289L9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3ZM6.29289 12.2929C6.68342 11.9024 7.31658 11.9024 7.70711 12.2929L10 14.5858L12.2929 12.2929C12.6834 11.9024 13.3166 11.9024 13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071L10.7071 16.7071C10.3166 17.0976 9.68342 17.0976 9.29289 16.7071L6.29289 13.7071C5.90237 13.3166 5.90237 12.6834 6.29289 12.2929Z" fill="#6A6A73"/>
-                                        </svg>
                                     .panel__head-item 
                                         p.panel__head-text Роль
+                                    .panel__head-item 
+                                        p.panel__head-text Дата и время <br>регистрации
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289L13.7071 6.29289C14.0976 6.68342 14.0976 7.31658 13.7071 7.70711C13.3166 8.09763 12.6834 8.09763 12.2929 7.70711L10 5.41421L7.70711 7.70711C7.31658 8.09763 6.68342 8.09763 6.29289 7.70711C5.90237 7.31658 5.90237 6.68342 6.29289 6.29289L9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3ZM6.29289 12.2929C6.68342 11.9024 7.31658 11.9024 7.70711 12.2929L10 14.5858L12.2929 12.2929C12.6834 11.9024 13.3166 11.9024 13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071L10.7071 16.7071C10.3166 17.0976 9.68342 17.0976 9.29289 16.7071L6.29289 13.7071C5.90237 13.3166 5.90237 12.6834 6.29289 12.2929Z" fill="#6A6A73"/>
                                         </svg>
                                     .panel__head-item 
-                                        p.panel__head-text Дата и время <br>регистрации
-                                    .panel__head-item 
                                         p.panel__head-text Дата и время <br>последней авторизации
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289L13.7071 6.29289C14.0976 6.68342 14.0976 7.31658 13.7071 7.70711C13.3166 8.09763 12.6834 8.09763 12.2929 7.70711L10 5.41421L7.70711 7.70711C7.31658 8.09763 6.68342 8.09763 6.29289 7.70711C5.90237 7.31658 5.90237 6.68342 6.29289 6.29289L9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3ZM6.29289 12.2929C6.68342 11.9024 7.31658 11.9024 7.70711 12.2929L10 14.5858L12.2929 12.2929C12.6834 11.9024 13.3166 11.9024 13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071L10.7071 16.7071C10.3166 17.0976 9.68342 17.0976 9.29289 16.7071L6.29289 13.7071C5.90237 13.3166 5.90237 12.6834 6.29289 12.2929Z" fill="#6A6A73"/>
+                                        </svg>
                                     .panel__head-item 
                                         p.panel__head-text Период отсутствия <br>пользователя
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289L13.7071 6.29289C14.0976 6.68342 14.0976 7.31658 13.7071 7.70711C13.3166 8.09763 12.6834 8.09763 12.2929 7.70711L10 5.41421L7.70711 7.70711C7.31658 8.09763 6.68342 8.09763 6.29289 7.70711C5.90237 7.31658 5.90237 6.68342 6.29289 6.29289L9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3ZM6.29289 12.2929C6.68342 11.9024 7.31658 11.9024 7.70711 12.2929L10 14.5858L12.2929 12.2929C12.6834 11.9024 13.3166 11.9024 13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071L10.7071 16.7071C10.3166 17.0976 9.68342 17.0976 9.29289 16.7071L6.29289 13.7071C5.90237 13.3166 5.90237 12.6834 6.29289 12.2929Z" fill="#6A6A73"/>
+                                        </svg>
                                     .panel__head-item 
                                         p.panel__head-text Текущий пароль
                                     .panel__head-item 
@@ -124,22 +144,28 @@ html(lang="ru")
                                 .users 
                                     .user.bg 
                                         .user__item 
-                                            p.user__item-text 4fkr9f9kfwfwe83ds
+                                            p.user__item-text 0000000001
                                             button(type="button").btn-icon
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
                                             p.user__item-text Цвилев Александр Викторович
-                                            button(type="button").btn-icon
+                                            button(type="button").btn-icon.btn-edit-fullname
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
                                             p.user__item-text ООО «Май нью джоб Девелопер»
-                                            button(type="button").btn-icon
+                                            button(type="button").btn-icon.btn-edit-company
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                        .user__item 
+                                            p.user__item-text 9731076178
+                                            button(type="button").btn-icon
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
                                             p.user__item-text a.v.tsilev@job-ai.ru
@@ -148,7 +174,7 @@ html(lang="ru")
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
-                                            p.user__item-text +7 (916) 329-66-99
+                                            p.user__item-text +7 916 329-66-99
                                             button(type="button").btn-icon
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
@@ -201,23 +227,20 @@ html(lang="ru")
                                                 </svg>
                                     .user
                                         .user__item 
-                                            p.user__item-text 2fkr9f9kf583ds
+                                            p.user__item-text 0000000002
                                             button(type="button").btn-icon
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
                                             p.user__item-text Мезенцев Денис Петрович
-                                            button(type="button").btn-icon
+                                            button(type="button").btn-icon.btn-edit-fullname
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
                                             p.user__item-text 
-                                            button(type="button").btn-icon
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
+                                        .user__item 
                                         .user__item 
                                             p.user__item-text d.p.mezentsev@job-ai.ru
                                             button(type="button").btn-icon
@@ -225,7 +248,7 @@ html(lang="ru")
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
-                                            p.user__item-text +7 (985) 220-89-91
+                                            p.user__item-text +7 985 220-89-91
                                             button(type="button").btn-icon
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
@@ -278,22 +301,28 @@ html(lang="ru")
                                                 </svg>
                                     .user.bg 
                                         .user__item 
-                                            p.user__item-text 5fkr9f9kf52342dsf
+                                            p.user__item-text 0000000003
                                             button(type="button").btn-icon
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
                                             p.user__item-text Жукова Светлана Федоровна
-                                            button(type="button").btn-icon
+                                            button(type="button").btn-icon.btn-edit-name
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
                                             p.user__item-text ООО «МИРАКС Рекрутмент»
-                                            button(type="button").btn-icon
+                                            button(type="button").btn-icon.btn-edit-company
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                        .user__item 
+                                            p.user__item-text 9731091472
+                                            button(type="button").btn-icon
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
                                             p.user__item-text s.f.zhukova@mnj.ru
@@ -302,7 +331,7 @@ html(lang="ru")
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
-                                            p.user__item-text +7 (916) 329-66-99
+                                            p.user__item-text +7 916 329-66-99
                                             button(type="button").btn-icon
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
@@ -355,23 +384,20 @@ html(lang="ru")
                                                 </svg>
                                     .user
                                         .user__item 
-                                            p.user__item-text 6fkr9f9kkf583ds
+                                            p.user__item-text 0000000004
                                             button(type="button").btn-icon
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
                                             p.user__item-text Стрельцова Елена Александровна
-                                            button(type="button").btn-icon
+                                            button(type="button").btn-icon.btn-edit-fullname
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
-                                            p.user__item-text ООО «Май нью джоб Девелопер»
-                                            button(type="button").btn-icon
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
+                                            p.user__item-text 
+                                        .user__item 
                                         .user__item 
                                             p.user__item-text e.a.strelcova@job-ai.ru
                                             button(type="button").btn-icon
@@ -379,7 +405,7 @@ html(lang="ru")
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         .user__item 
-                                            p.user__item-text +7 (961) 323-26-96
+                                            p.user__item-text +7 961 323-26-96
                                             button(type="button").btn-icon
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
@@ -436,6 +462,7 @@ html(lang="ru")
                                         .user__item 
                                         .user__item 
                                         .user__item 
+                                        .user__item 
                                         .user__item.user__item-center
                                             p.user__item-text.user__item-role Руководитель HR
                                         .user__item.user__item-center
@@ -467,6 +494,7 @@ html(lang="ru")
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z"/>
                                                 </svg>
                                     .user
+                                        .user__item 
                                         .user__item 
                                         .user__item 
                                         .user__item 
@@ -508,6 +536,7 @@ html(lang="ru")
                                         .user__item 
                                         .user__item 
                                         .user__item 
+                                        .user__item 
                                         .user__item.user__item-center
                                             p.user__item-text.user__item-role Разработчик
                                         .user__item.user__item-center
@@ -539,6 +568,7 @@ html(lang="ru")
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z"/>
                                                 </svg>
                                     .user
+                                        .user__item 
                                         .user__item 
                                         .user__item 
                                         .user__item 
@@ -580,6 +610,7 @@ html(lang="ru")
                                         .user__item 
                                         .user__item 
                                         .user__item 
+                                        .user__item 
                                         .user__item.user__item-center
                                             p.user__item-text.user__item-role Инвестор
                                         .user__item.user__item-center
@@ -611,6 +642,7 @@ html(lang="ru")
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z"/>
                                                 </svg>
                                     .user
+                                        .user__item 
                                         .user__item 
                                         .user__item 
                                         .user__item 
@@ -667,69 +699,150 @@ html(lang="ru")
                                         </svg>
                                 .clean
                         .panel__container(data-panel='payment')
-                            .panel__period
-                                h3.panel__period-title показать за
-                                ul.panel__period-list 
-                                    li.panel__period-item.panel__period-item-active текущий день
-                                    li.panel__period-item текущую неделю
-                                    li.panel__period-item текущий месяц
-                                    li.panel__period-item текущий квартал
-                                    li.panel__period-item текущий год
-                            .panel__period
-                                .panel__or или
-                                h3.panel__period-title показать за период
-                                .panel__period-calendar
-                                    label(for="period-start").label
-                                        h3.label__title Начало
-                                        input(type="text", name="period-start", autocomplete="off").input.label__input.datepicker#period-start
-                                .panel__period-calendar
-                                    label(for="period-finish").label
-                                        h3.label__title Окончание
-                                        input(type="text", name="period-finish", autocomplete="off").input.label__input.datepicker#period-finish
-                            .panel__radios 
-                                .tax
-                                    input.tax__radio(type="radio" name="show" id="show-all" checked value='показать все')
-                                    label.tax__label(for="show-all") 
-                                        .tax__check 
-                                        .tax__subtitle показать все
-                                .tax
-                                    input.tax__radio(type="radio" name="show" id="show-unfilled" value='показать незаполненые')
-                                    label.tax__label(for="show-unfilled") 
-                                        .tax__check 
-                                        .tax__subtitle показать незаполненые
-                                .tax
-                                    input.tax__radio(type="radio" name="show" id="show-filled" value='показать заполненные')
-                                    label.tax__label(for="show-filled") 
-                                        .tax__check 
-                                        .tax__subtitle показать заполненные
-                            input(type="search", name="", placeholder='Найти пользователя (поиск по любой колонке)').input.input_search
+                            .panel__duos 
+                                .panel__duo.br
+                                    .panel__period
+                                        h3.panel__period-title показать за
+                                        ul.panel__period-list 
+                                            li.panel__period-item.panel__period-item-active текущий день
+                                            li.panel__period-item текущую неделю
+                                            li.panel__period-item текущий месяц
+                                            li.panel__period-item текущий квартал
+                                            li.panel__period-item текущий год
+                                    .panel__period
+                                        .panel__or или
+                                        h3.panel__period-title показать за период
+                                        .panel__period-calendar
+                                            label(for="period-start").label
+                                                h3.label__title Начало
+                                                input(type="text", name="period-start", autocomplete="off").input.label__input.datepicker#period-start
+                                        .panel__period-calendar
+                                            label(for="period-finish").label
+                                                h3.label__title Окончание
+                                                input(type="text", name="period-finish", autocomplete="off").input.label__input.datepicker#period-finish
+                                    .panel__inputs
+                                        label.label.label_search(for="panel-search-doc")
+                                            input(type="search", name="panel-search-doc", placeholder='Найти пользователя (поиск по любой колонке)').input.input_search#panel-search-doc
+                                            .label__clue 
+                                                .clue
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                                    </svg>
+                                                    .clue__wrapper
+                                                        p.clue__text При поиске по номеру телефону формат ввода телефона должен быть следующим:
+                                                        p.clue__text +7 ХХХ ХХХ ХХ ХХ
+                                .panel__duo
+                                    .panel__check
+                                        .check
+                                            input.check__input#invoices-no(type="checkbox", name="invoices-no" value='показать без счет-фактур')
+                                            label.check__label(for="invoices-no")
+                                                .check__check
+                                                .check__info
+                                                    p.check__textpanel 
+                                                        | показать 
+                                                        span.check__span без 
+                                                        | счет-фактур
+                                        .check
+                                            input.check__input#act-no(type="checkbox", name="act-no" value='показать без актов')
+                                            label.check__label(for="act-no")
+                                                .check__check
+                                                .check__info
+                                                    p.check__textpanel 
+                                                        | показать 
+                                                        span.check__span без 
+                                                        | актов
+                                        .check
+                                            input.check__input#reconciliation-act-no(type="checkbox", name="reconciliation-act-no" value='показать без актов-сверки')
+                                            label.check__label(for="reconciliation-act-no")
+                                                .check__check
+                                                .check__info
+                                                    p.check__textpanel 
+                                                        | показать 
+                                                        span.check__span без 
+                                                        | актов-сверки
+                                        .check
+                                            input.check__input#receipt-with(type="checkbox", name="receipt-with" value='показать с квитанциями')
+                                            label.check__label(for="receipt-with")
+                                                .check__check
+                                                .check__info
+                                                    p.check__textpanel показать с квитанциями (Экв.)
+                                        .check
+                                            input.check__input#payments-show(type="checkbox", name="payments-show" value='показать оплаты через расчётные счета')
+                                            label.check__label(for="payments-show")
+                                                .check__check
+                                                .check__info
+                                                    p.check__textpanel 
+                                                        | показать оплаты 
+                                                        span.check__span через расчётные счета 
+                                                        | (Рс-Рс)
+                                        .check
+                                            input.check__input#access-ended(type="checkbox", name="access-ended" value='показать - доступы окончились')
+                                            label.check__label(for="access-ended")
+                                                .check__check
+                                                .check__info
+                                                    p.check__textpanel 
+                                                        | показать - доступы 
+                                                        span.check__span окончились
+                                    .select.select_up.panel__select
+                                        input(type="text", readonly, name="panel-role-doc").select__input.input#panel-role-doc
+                                        label(for="panel-role-doc").select__title Выбрать роль
+                                        .options 
+                                            .options__wrapper
+                                                .option Кандидат
+                                                .option Работодатель 
+                                                .option Администратор
+                                                .option HR
+                                                .option Руководитель HR
                             .payment__tables
                                 .payment__table 
                                     .payment__head
-                                        .payment__head-item 
-                                            p.payment__head-text Дата и время <br>оплаты
                                         .payment__head-item 
                                             p.payment__head-text ID <br>транзакции
                                         .payment__head-item 
                                             p.payment__head-text Сумма, руб.
                                         .payment__head-item 
                                             p.payment__head-text НДС, руб.
+                                            p.payment__head-subtext в том числе
                                         .payment__head-item 
                                             p.payment__head-text Тариф
                                         .payment__head-item 
+                                            p.payment__head-text Дата и время <br>оплаты
+                                        .payment__head-item 
                                             p.payment__head-text Период
                                         .payment__head-item 
-                                            p.payment__head-text Способ оплаты
+                                            p.payment__head-text Дата и время <br>окончания доступа
+                                        .payment__head-item 
+                                            p.payment__head-text Зачисление оплаты на
+                                        .payment__head-item 
+                                            p.payment__head-text Тип
+                                            .clue
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM8.00001 5C7.63113 5 7.3076 5.19922 7.13318 5.50073C6.85664 5.97879 6.24491 6.14215 5.76685 5.86561C5.28879 5.58906 5.12543 4.97733 5.40197 4.49927C5.91918 3.60518 6.88833 3 8.00001 3C9.65687 3 11 4.34315 11 6C11 7.30622 10.1652 8.41746 9.00001 8.82929V9C9.00001 9.55228 8.5523 10 8.00001 10C7.44773 10 7.00001 9.55228 7.00001 9V8C7.00001 7.44772 7.44773 7 8.00001 7C8.5523 7 9.00001 6.55228 9.00001 6C9.00001 5.44772 8.5523 5 8.00001 5ZM8 13C8.55228 13 9 12.5523 9 12C9 11.4477 8.55228 11 8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13Z" fill="#A0A1A9"/>
+                                                </svg>
+                                                .clue__wrapper.clue__wrapper-bottom
+                                                    p.clue__text «Экв.» - оплата с использованием эквайринга через платежный шлюз
+                                                    p.clue__text «Рс-Рс» - оплата с расчётного счёта на расчётный счёт без эквайринга 
                                         .payment__head-item 
                                             p.payment__head-text Банк
+                                            .clue
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM8.00001 5C7.63113 5 7.3076 5.19922 7.13318 5.50073C6.85664 5.97879 6.24491 6.14215 5.76685 5.86561C5.28879 5.58906 5.12543 4.97733 5.40197 4.49927C5.91918 3.60518 6.88833 3 8.00001 3C9.65687 3 11 4.34315 11 6C11 7.30622 10.1652 8.41746 9.00001 8.82929V9C9.00001 9.55228 8.5523 10 8.00001 10C7.44773 10 7.00001 9.55228 7.00001 9V8C7.00001 7.44772 7.44773 7 8.00001 7C8.5523 7 9.00001 6.55228 9.00001 6C9.00001 5.44772 8.5523 5 8.00001 5ZM8 13C8.55228 13 9 12.5523 9 12C9 11.4477 8.55228 11 8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13Z" fill="#A0A1A9"/>
+                                                </svg>
+                                                .clue__wrapper.clue__wrapper-bottom
+                                                    p.clue__text Краткое наименования банка, на расчётный счёт которого был зачислен платеж (наш банк)
                                         .payment__head-item 
                                             p.payment__head-text Квитанция
+                                            .clue
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM8.00001 5C7.63113 5 7.3076 5.19922 7.13318 5.50073C6.85664 5.97879 6.24491 6.14215 5.76685 5.86561C5.28879 5.58906 5.12543 4.97733 5.40197 4.49927C5.91918 3.60518 6.88833 3 8.00001 3C9.65687 3 11 4.34315 11 6C11 7.30622 10.1652 8.41746 9.00001 8.82929V9C9.00001 9.55228 8.5523 10 8.00001 10C7.44773 10 7.00001 9.55228 7.00001 9V8C7.00001 7.44772 7.44773 7 8.00001 7C8.5523 7 9.00001 6.55228 9.00001 6C9.00001 5.44772 8.5523 5 8.00001 5ZM8 13C8.55228 13 9 12.5523 9 12C9 11.4477 8.55228 11 8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13Z" fill="#A0A1A9"/>
+                                                </svg>
+                                                .clue__wrapper.clue__wrapper-bottom
+                                                    p.clue__text Ссылка на квитанцию/чек если платеж был произведен через эквайринг и платежный шлюз
+                                                    p.clue__text При оплате по схеме «Рс-Рс» квитанции/чеки не подгружаются
                                     .payment__payments
-                                        .payment__payment.bg 
+                                        .payment__payment.bg
                                             .payment__payment-item
-                                                p.payment__payment-text 08.08.2025, 19:35
-                                            .payment__payment-item
-                                                p.payment__payment-text 4fkr9f9kf5fkjkj59
+                                                p.payment__payment-text 00000000001
                                             .payment__payment-item
                                                 p.payment__payment-text 49 990,00
                                             .payment__payment-item
@@ -737,9 +850,15 @@ html(lang="ru")
                                             .payment__payment-item
                                                 p.payment__payment-text Доступ к базе данных кандидатов
                                             .payment__payment-item
+                                                p.payment__payment-text 08.08.2025, 19:35
+                                            .payment__payment-item
                                                 p.payment__payment-text 1 месяц
                                             .payment__payment-item
+                                                p.payment__payment-text 08.09.2025, 19:35
+                                            .payment__payment-item
                                                 p.payment__payment-text Платежная карта ****3124
+                                            .payment__payment-item
+                                                p.payment__payment-text Экв.
                                             .payment__payment-item
                                                 p.payment__payment-text ТБанк
                                             .payment__payment-item
@@ -749,9 +868,7 @@ html(lang="ru")
                                                     </svg>
                                         .payment__payment
                                             .payment__payment-item
-                                                p.payment__payment-text 09.08.2025, 20:35
-                                            .payment__payment-item
-                                                p.payment__payment-text 5fkr9f9kf5fkjkj59
+                                                p.payment__payment-text 00000000002
                                             .payment__payment-item
                                                 p.payment__payment-text 134 973,00
                                             .payment__payment-item
@@ -759,9 +876,15 @@ html(lang="ru")
                                             .payment__payment-item
                                                 p.payment__payment-text Доступ к базе данных кандидатов
                                             .payment__payment-item
+                                                p.payment__payment-text 09.08.2025, 20:35
+                                            .payment__payment-item
                                                 p.payment__payment-text 3 месяца
                                             .payment__payment-item
+                                                p.payment__payment-text 09.11.2025, 20:35
+                                            .payment__payment-item
                                                 p.payment__payment-text Расчётный счёт  ****1485
+                                            .payment__payment-item
+                                                p.payment__payment-text Рс-Рс
                                             .payment__payment-item
                                                 p.payment__payment-text ТБанк
                                             .payment__payment-item
@@ -771,9 +894,7 @@ html(lang="ru")
                                                     </svg>
                                         .payment__payment.bg
                                             .payment__payment-item
-                                                p.payment__payment-text 10.08.2025, 20:35
-                                            .payment__payment-item
-                                                p.payment__payment-text 6fkr9f9kf5fkjkj59
+                                                p.payment__payment-text 00000000003
                                             .payment__payment-item
                                                 p.payment__payment-text 239 952,00
                                             .payment__payment-item
@@ -781,17 +902,21 @@ html(lang="ru")
                                             .payment__payment-item
                                                 p.payment__payment-text Доступ к базе данных кандидатов
                                             .payment__payment-item
+                                                p.payment__payment-text 10.08.2025, 20:35
+                                            .payment__payment-item
                                                 p.payment__payment-text 6 месяцев
                                             .payment__payment-item
+                                                p.payment__payment-text 10.02.2026, 20:35
+                                            .payment__payment-item
                                                 p.payment__payment-text Расчётный счёт  ****7832
+                                            .payment__payment-item
+                                                p.payment__payment-text Рс-Рс
                                             .payment__payment-item
                                                 p.payment__payment-text Альфа-банк
                                             .payment__payment-item
                                         .payment__payment
                                             .payment__payment-item
-                                                p.payment__payment-text 11.08.2025, 20:35
-                                            .payment__payment-item
-                                                p.payment__payment-text 7fkr9f9kf5fkjkj59
+                                                p.payment__payment-text 00000000004
                                             .payment__payment-item
                                                 p.payment__payment-text 419 916,00
                                             .payment__payment-item
@@ -799,9 +924,15 @@ html(lang="ru")
                                             .payment__payment-item
                                                 p.payment__payment-text Доступ к базе данных кандидатов
                                             .payment__payment-item
+                                                p.payment__payment-text 11.08.2025, 20:35
+                                            .payment__payment-item
                                                 p.payment__payment-text 12 месяцев
                                             .payment__payment-item
+                                                p.payment__payment-text 11.08.2026, 20:35
+                                            .payment__payment-item
                                                 p.payment__payment-text Расчётный счёт  ****9841
+                                            .payment__payment-item
+                                                p.payment__payment-text Рс-Рс
                                             .payment__payment-item
                                                 p.payment__payment-text Сбербанк
                                             .payment__payment-item
@@ -853,20 +984,20 @@ html(lang="ru")
                                     .users 
                                         .user.user2.bg 
                                             .user__item 
-                                                p.user__item-text 4fkr9f9kfwfwe83ds
+                                                p.user__item-text 0000000001
                                                 button(type="button").btn-icon
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
                                                 p.user__item-text Цвилев Александр Викторович
-                                                button(type="button").btn-icon
+                                                button(type="button").btn-icon.btn-edit-fullname
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
                                                 p.user__item-text ООО «Май нью джоб Девелопер»
-                                                button(type="button").btn-icon
+                                                button(type="button").btn-icon.btn-edit-company
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
@@ -874,7 +1005,7 @@ html(lang="ru")
                                                 p.user__item-text 9731076178
                                                 button(type="button").btn-icon
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
                                                 p.user__item-text a.v.tsilev@job-ai.ru
@@ -883,7 +1014,7 @@ html(lang="ru")
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
-                                                p.user__item-text +7 (916) 329-66-99
+                                                p.user__item-text +7 916 329-66-99
                                                 button(type="button").btn-icon
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
@@ -928,25 +1059,19 @@ html(lang="ru")
                                                         </svg>
                                         .user.user2
                                             .user__item 
-                                                p.user__item-text 2fkr9f9kf583ds
+                                                p.user__item-text 0000000002
                                                 button(type="button").btn-icon
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
                                                 p.user__item-text Мезенцев Денис Петрович
-                                                button(type="button").btn-icon
+                                                button(type="button").btn-icon.btn-edit-fullname
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
-                                                p.user__item-text ООО «Май нью джоб Девелопер»
-                                                button(type="button").btn-icon
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
                                             .user__item 
-                                                p.user__item-text 9731076178
                                             .user__item 
                                                 p.user__item-text d.p.mezentsev@job-ai.ru
                                                 button(type="button").btn-icon
@@ -954,7 +1079,7 @@ html(lang="ru")
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
-                                                p.user__item-text +7 (985) 220-89-91
+                                                p.user__item-text +7 985 220-89-91
                                                 button(type="button").btn-icon
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1044,25 +1169,29 @@ html(lang="ru")
                                                         </svg>
                                         .user.user2.bg 
                                             .user__item 
-                                                p.user__item-text 5fkr9f9kf52342dsf
+                                                p.user__item-text 0000000003
                                                 button(type="button").btn-icon
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
                                                 p.user__item-text Жукова Светлана Федоровна
-                                                button(type="button").btn-icon
+                                                button(type="button").btn-icon.btn-edit-fullname
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
                                                 p.user__item-text ООО «МИРАКС Рекрутмент»
-                                                button(type="button").btn-icon
+                                                button(type="button").btn-icon.btn-edit-company
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
                                                 p.user__item-text 9731091472
+                                                button(type="button").btn-icon
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
                                             .user__item 
                                                 p.user__item-text s.f.zhukova@mnj.ru
                                                 button(type="button").btn-icon
@@ -1070,7 +1199,7 @@ html(lang="ru")
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
-                                                p.user__item-text +7 (916) 329-66-99
+                                                p.user__item-text +7 916 329-66-99
                                                 button(type="button").btn-icon
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1133,25 +1262,20 @@ html(lang="ru")
                                                         </svg>
                                         .user.user2
                                             .user__item 
-                                                p.user__item-text 6fkr9f9kkf583ds
+                                                p.user__item-text 0000000004
                                                 button(type="button").btn-icon
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
                                                 p.user__item-text Стрельцова Елена Александровна
-                                                button(type="button").btn-icon
+                                                button(type="button").btn-icon.btn-edit-fullname
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
-                                                p.user__item-text ООО «Май нью джоб Девелопер»
-                                                button(type="button").btn-icon
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
+                                                p.user__item-text 
                                             .user__item 
-                                                p.user__item-text 9731076178
                                             .user__item 
                                                 p.user__item-text e.a.strelcova@job-ai.ru
                                                 button(type="button").btn-icon
@@ -1159,7 +1283,7 @@ html(lang="ru")
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                             .user__item 
-                                                p.user__item-text +7 (961) 323-26-96
+                                                p.user__item-text +7 961 323-26-96
                                                 button(type="button").btn-icon
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1549,6 +1673,12 @@ html(lang="ru")
                 .panel__footer
                     button(type="submit").btn.btn_primary.panel__btn Добавить 
                     button(type="button").btn.btn_tertiary.panel__btn.newuser__close Отмена 
+                .check
+                    input.check__input#remote-work(type="checkbox", name="remote-work" value='Готовность к релокации')
+                    label.check__label(for="remote-work")
+                        .check__check
+                        .check__info
+                            p.check__textpanel выслать данные учётной записи на электронную почту
                 .newuser__footer 
                     p.newuser__footer-text Регистрируя пользователя,
                     p.newuser__footer-text 
@@ -1590,13 +1720,13 @@ html(lang="ru")
                                 p.user__item-text Цвилев Александр Викторович
                                 button(type="button").btn-icon
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                             .user__item 
                                 p.user__item-text ООО «Май нью джоб Девелопер»
                                 button(type="button").btn-icon
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 5H6C4.89543 5 4 5.89543 4 7V18C4 19.1046 4.89543 20 6 20H17C18.1046 20 19 19.1046 19 18V13M17.5858 3.58579C18.3668 2.80474 19.6332 2.80474 20.4142 3.58579C21.1953 4.36683 21.1953 5.63316 20.4142 6.41421L11.8284 15H9L9 12.1716L17.5858 3.58579Z" stroke="#111827" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                             .user__item 
                                 p.user__item-text a.v.tsilev@job-ai.ru
@@ -1628,29 +1758,52 @@ html(lang="ru")
                     .payment__table.br
                         .payment__head
                             .payment__head-item 
-                                p.payment__head-text Дата и время <br>оплаты
-                            .payment__head-item 
                                 p.payment__head-text ID <br>транзакции
                             .payment__head-item 
                                 p.payment__head-text Сумма, руб.
                             .payment__head-item 
                                 p.payment__head-text НДС, руб.
+                                p.payment__head-subtext в том числе
                             .payment__head-item 
                                 p.payment__head-text Тариф
                             .payment__head-item 
+                                p.payment__head-text Дата и время <br>оплаты
+                            .payment__head-item 
                                 p.payment__head-text Период
                             .payment__head-item 
-                                p.payment__head-text Способ оплаты
+                                p.payment__head-text Дата и время <br>окончания доступа
+                            .payment__head-item 
+                                p.payment__head-text Зачисление оплаты на
+                            .payment__head-item 
+                                p.payment__head-text Тип
+                                .clue
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM8.00001 5C7.63113 5 7.3076 5.19922 7.13318 5.50073C6.85664 5.97879 6.24491 6.14215 5.76685 5.86561C5.28879 5.58906 5.12543 4.97733 5.40197 4.49927C5.91918 3.60518 6.88833 3 8.00001 3C9.65687 3 11 4.34315 11 6C11 7.30622 10.1652 8.41746 9.00001 8.82929V9C9.00001 9.55228 8.5523 10 8.00001 10C7.44773 10 7.00001 9.55228 7.00001 9V8C7.00001 7.44772 7.44773 7 8.00001 7C8.5523 7 9.00001 6.55228 9.00001 6C9.00001 5.44772 8.5523 5 8.00001 5ZM8 13C8.55228 13 9 12.5523 9 12C9 11.4477 8.55228 11 8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13Z" fill="#A0A1A9"/>
+                                    </svg>
+                                    .clue__wrapper.clue__wrapper-bottom
+                                        p.clue__text «Экв.» - оплата с использованием эквайринга через платежный шлюз
+                                        p.clue__text «Рс-Рс» - оплата с расчётного счёта на расчётный счёт без эквайринга 
                             .payment__head-item 
                                 p.payment__head-text Банк
+                                .clue
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM8.00001 5C7.63113 5 7.3076 5.19922 7.13318 5.50073C6.85664 5.97879 6.24491 6.14215 5.76685 5.86561C5.28879 5.58906 5.12543 4.97733 5.40197 4.49927C5.91918 3.60518 6.88833 3 8.00001 3C9.65687 3 11 4.34315 11 6C11 7.30622 10.1652 8.41746 9.00001 8.82929V9C9.00001 9.55228 8.5523 10 8.00001 10C7.44773 10 7.00001 9.55228 7.00001 9V8C7.00001 7.44772 7.44773 7 8.00001 7C8.5523 7 9.00001 6.55228 9.00001 6C9.00001 5.44772 8.5523 5 8.00001 5ZM8 13C8.55228 13 9 12.5523 9 12C9 11.4477 8.55228 11 8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13Z" fill="#A0A1A9"/>
+                                    </svg>
+                                    .clue__wrapper.clue__wrapper-bottom
+                                        p.clue__text Краткое наименования банка, на расчётный счёт которого был зачислен платеж (наш банк)
                             .payment__head-item 
                                 p.payment__head-text Квитанция
+                                .clue
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM8.00001 5C7.63113 5 7.3076 5.19922 7.13318 5.50073C6.85664 5.97879 6.24491 6.14215 5.76685 5.86561C5.28879 5.58906 5.12543 4.97733 5.40197 4.49927C5.91918 3.60518 6.88833 3 8.00001 3C9.65687 3 11 4.34315 11 6C11 7.30622 10.1652 8.41746 9.00001 8.82929V9C9.00001 9.55228 8.5523 10 8.00001 10C7.44773 10 7.00001 9.55228 7.00001 9V8C7.00001 7.44772 7.44773 7 8.00001 7C8.5523 7 9.00001 6.55228 9.00001 6C9.00001 5.44772 8.5523 5 8.00001 5ZM8 13C8.55228 13 9 12.5523 9 12C9 11.4477 8.55228 11 8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13Z" fill="#A0A1A9"/>
+                                    </svg>
+                                    .clue__wrapper.clue__wrapper-bottom
+                                        p.clue__text Ссылка на квитанцию/чек если платеж был произведен через эквайринг и платежный шлюз
+                                        p.clue__text При оплате по схеме «Рс-Рс» квитанции/чеки не подгружаются
                         .payment__payments
                             .payment__payment.bb
                                 .payment__payment-item
-                                    p.payment__payment-text 08.08.2025, 19:35
-                                .payment__payment-item
-                                    p.payment__payment-text 4fkr9f9kf5fkjkj59
+                                    p.payment__payment-text 00000000001
                                 .payment__payment-item
                                     p.payment__payment-text 49 990,00
                                 .payment__payment-item
@@ -1658,9 +1811,15 @@ html(lang="ru")
                                 .payment__payment-item
                                     p.payment__payment-text Доступ к базе данных кандидатов
                                 .payment__payment-item
+                                    p.payment__payment-text 08.08.2025, 19:35
+                                .payment__payment-item
                                     p.payment__payment-text 1 месяц
                                 .payment__payment-item
+                                    p.payment__payment-text 08.09.2025, 19:35
+                                .payment__payment-item
                                     p.payment__payment-text Платежная карта ****3124
+                                .payment__payment-item
+                                    p.payment__payment-text Экв.
                                 .payment__payment-item
                                     p.payment__payment-text ТБанк
                                 .payment__payment-item
@@ -1670,9 +1829,7 @@ html(lang="ru")
                                         </svg>
                             .payment__payment.bb
                                 .payment__payment-item
-                                    p.payment__payment-text 09.08.2025, 20:35
-                                .payment__payment-item
-                                    p.payment__payment-text 5fkr9f9kf5fkjkj59
+                                    p.payment__payment-text 00000000002
                                 .payment__payment-item
                                     p.payment__payment-text 134 973,00
                                 .payment__payment-item
@@ -1680,9 +1837,15 @@ html(lang="ru")
                                 .payment__payment-item
                                     p.payment__payment-text Доступ к базе данных кандидатов
                                 .payment__payment-item
+                                    p.payment__payment-text 09.08.2025, 20:35
+                                .payment__payment-item
                                     p.payment__payment-text 3 месяца
                                 .payment__payment-item
+                                    p.payment__payment-text 09.11.2025, 20:35
+                                .payment__payment-item
                                     p.payment__payment-text Расчётный счёт  ****1485
+                                .payment__payment-item
+                                    p.payment__payment-text Рс-Рс
                                 .payment__payment-item
                                     p.payment__payment-text ТБанк
                                 .payment__payment-item
@@ -1692,9 +1855,7 @@ html(lang="ru")
                                         </svg>
                             .payment__payment.bb
                                 .payment__payment-item
-                                    p.payment__payment-text 10.08.2025, 20:35
-                                .payment__payment-item
-                                    p.payment__payment-text 6fkr9f9kf5fkjkj59
+                                    p.payment__payment-text 00000000003
                                 .payment__payment-item
                                     p.payment__payment-text 239 952,00
                                 .payment__payment-item
@@ -1702,17 +1863,21 @@ html(lang="ru")
                                 .payment__payment-item
                                     p.payment__payment-text Доступ к базе данных кандидатов
                                 .payment__payment-item
+                                    p.payment__payment-text 10.08.2025, 20:35
+                                .payment__payment-item
                                     p.payment__payment-text 6 месяцев
                                 .payment__payment-item
+                                    p.payment__payment-text 10.02.2026, 20:35
+                                .payment__payment-item
                                     p.payment__payment-text Расчётный счёт  ****7832
+                                .payment__payment-item
+                                    p.payment__payment-text Рс-Рс
                                 .payment__payment-item
                                     p.payment__payment-text Альфа-банк
                                 .payment__payment-item
                             .payment__payment.bb
                                 .payment__payment-item
-                                    p.payment__payment-text 11.08.2025, 20:35
-                                .payment__payment-item
-                                    p.payment__payment-text 7fkr9f9kf5fkjkj59
+                                    p.payment__payment-text 00000000004
                                 .payment__payment-item
                                     p.payment__payment-text 419 916,00
                                 .payment__payment-item
@@ -1720,9 +1885,15 @@ html(lang="ru")
                                 .payment__payment-item
                                     p.payment__payment-text Доступ к базе данных кандидатов
                                 .payment__payment-item
+                                    p.payment__payment-text 11.08.2025, 20:35
+                                .payment__payment-item
                                     p.payment__payment-text 12 месяцев
                                 .payment__payment-item
+                                    p.payment__payment-text 11.08.2026, 20:35
+                                .payment__payment-item
                                     p.payment__payment-text Расчётный счёт  ****9841
+                                .payment__payment-item
+                                    p.payment__payment-text Рс-Рс
                                 .payment__payment-item
                                     p.payment__payment-text Сбербанк
                                 .payment__payment-item
@@ -1837,16 +2008,39 @@ html(lang="ru")
                     .payment__footer-item
                         p.payment__footer-text Итого, руб.
                     .payment__footer-item
-                        p.payment__footer-number 844 831,00
+                        p.payment__footer-number.bg 844 831,00
                     .payment__footer-item
-                        p.payment__footer-number 140 807,17
+                        p.payment__footer-number.bg 140 807,17
                     .payment__footer-item
                     .payment__footer-item
                     .payment__footer-item
                     .payment__footer-item.payment__footer-total
                         p.payment__footer-totaltext Всего оплат:
                         p.payment__footer-payments 4
-
+        .edit
+            form.edit__form(data-edit='fullname')
+                .edit__content
+                    h3.edit__title Внесите изменения в ФИО
+                    label.edit__label(for='edit-surname') Фамилия
+                        input#edit-surmane(type="text", name="edit-surname", value ="Мезенцев", placeholder="Фамилия").input.edit__input
+                    label.edit__label(for='edit-name') Имя
+                        input#edit-name(type="text", name="edit-name", value ="Денис", placeholder="Имя").input.edit__input
+                    label.edit__label(for='edit-lastname') Отчество
+                        input#edit-lastname(type="text", name="edit-lastname", value ="Петрович", placeholder="Отчество").input.edit__input
+                .edit__footer 
+                    button(type="submit").edit__footer-btn.btn.btn_primary Сохранить 
+                    button(type="button").edit__footer-btn.btn.btn_tertiary.edit__close Отмена
+            .edit__form(data-edit='company')
+                h3.edit__title Внесите изменения в название компании
+                label.edit__label(for='edit-company') Название компании
+                    input#edit-company(type="text", name="edit-company", value ="ООО «Май нью джоб Девелопмент Компани»", placeholder="Название компании").input.edit__input
+                    button(type="button").btn-icon.edit__copy 
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                .edit__footer 
+                    button(type="submit").edit__footer-btn.btn.btn_primary Сохранить 
+                    button(type="button").edit__footer-btn.btn.btn_tertiary.edit__close Отмена
 
                             
 
