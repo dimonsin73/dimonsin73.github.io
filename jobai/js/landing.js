@@ -41,10 +41,30 @@ arrow.addEventListener('click', function(){
 const livebtnArray = document.querySelectorAll('.livebtn')
 for (let i = 0; i < livebtnArray.length; i++) {
     const livebtn = livebtnArray[i];
-    livebtn.addEventListener('mouseenter', function(){
-        livebtn.classList.add('livebtn_active')
-    })
-    livebtn.addEventListener('mouseleave', function(){
-        livebtn.classList.remove('livebtn_active')
-    })
+    if (window.screen.width > '954') {
+        livebtn.addEventListener('click', function(){
+            console.log('1')
+            livebtn.classList.add('livebtn_active')
+        })
+        document.addEventListener('click', (e) => {
+            const withinBoundaries = e.composedPath().includes(livebtn);
+            if ( ! withinBoundaries ) {
+                livebtn.classList.remove('livebtn_active')
+            }
+        })
+        
+        livebtn.addEventListener('mouseleave', function(){
+            livebtn.classList.remove('livebtn_active')
+        })
+    } else {
+        livebtn.addEventListener('mouseenter', function(){
+            livebtn.classList.add('livebtn_active')
+        })
+        livebtn.addEventListener('mouseleave', function(){
+            livebtn.classList.remove('livebtn_active')
+        })
+    }
+    
 }
+
+
