@@ -170,7 +170,6 @@ for (let i = 0; i < additionalRecruitersOptionArray.length; i++) {
     })
 }
 
-
 function sectionAccessInputNum (){
     const rangeDays =  document.getElementById('range-days')
     const rangeDaysValue = rangeDays.value
@@ -183,13 +182,11 @@ function sectionAccessInputNum (){
         rangeDays.disabled = true
         rangeDays.classList.add('range__input-disabled')
         sectionAccessInput.value = 360
-        paymentForPeriod.value = 360
         totalPrice(sectionAccessInput.value)
     } else {
         rangeDays.disabled = false
         rangeDays.classList.remove('range__input-disabled')
         sectionAccessInput.value = Number(rangeDaysValue) + Number(rangeMonthsValue)*30
-        paymentForPeriod.value = sectionAccessInput.value
         totalPrice(sectionAccessInput.value)
     }
 }
@@ -214,11 +211,9 @@ function totalPrice(days){
     tariffsDayPrice.value = (priceDay * sale * risePrice).toFixed(2)
     tariffsPrice.value = (days * priceDay * sale * risePrice).toFixed(2)
     tariffsTotalPrice.value = tariffsPrice.value
-    paymentTotalPrice.value = tariffsPrice.value
     
     tariffsVat.value = ( (tariffsPrice.value * 20/100) / (1 + 20/100) ).toFixed(2)
     tariffsTotalVat.value = ( (tariffsTotalPrice.value * 20/100) / (1 + 20/100) ).toFixed(2)
-    paymentTotalVat.value = tariffsTotalVat.value
 }
 
 const tariffsCurrency = document.getElementById('tariffs-currency')
@@ -245,80 +240,3 @@ for (let i = 0; i < tariffsCurrencyTotalArray.length; i++) {
         }
     })
 }
-
-const withVat = document.getElementById('with-vat')
-withVat.addEventListener('change', function(){
-    const label = paymentTotalVat.parentElement
-    if (withVat.checked) {
-        label.style.display = 'flex'
-    } else {
-        label.style.display = 'none'
-    }
-    
-})
-const sectionRadioInputArray = document.querySelectorAll('.section__radio-input')
-const invoice = document.getElementById('invoice')
-const payBtn = document.getElementById('pay-btn')
-const sectionTariffs4 = document.querySelector('.section__tariffs4')
-for (let i = 0; i < sectionRadioInputArray.length; i++) {
-    const sectionRadioInput = sectionRadioInputArray[i];
-    sectionRadioInput.addEventListener('change', function(){
-        if (invoice.checked) {
-            sectionTariffs4.style.opacity = '1'
-            payBtn.style.display = 'none'
-        } else {
-            sectionTariffs4.style.opacity = '0'
-            payBtn.style.display = 'flex'
-        }
-    })
-}
-const enterMail = document.getElementById('enter-mail')
-const enterMailLabel = document.querySelector('.enter-mail')
-const sendEmail = document.getElementById('send-email')
-const invoiceSend = document.querySelector('.invoice-send')
-const personalAccount = document.getElementById('personal-account')
-enterMail.addEventListener('input', function(){
-    if (enterMail.value.length > 0) {
-        sendEmail.style.display = 'block'
-    } else {
-        sendEmail.style.display = 'none'
-    }
-})
-sendEmail.addEventListener('click', function(){
-    enterMailLabel.style.display = 'none'
-    invoiceSend.style.display = 'flex'
-    personalAccount.style.display = 'flex'
-})
-
-const sectionWrapperArray = document.querySelectorAll('.section__wrapper')
-for (let i = 0; i < sectionWrapperArray.length; i++) {
-    const sectionWrapper = sectionWrapperArray[i];
-    if (sectionWrapper.dataset.tariffs === '1') {
-        sectionWrapper.style.display = 'flex'
-    } else {
-        sectionWrapper.style.display = 'none'
-    }
-}
-const sectionFormStart = document.querySelector('.section__form-start')
-sectionFormStart.addEventListener('submit', function(e){
-    e.preventDefault()
-    for (let i = 0; i < sectionWrapperArray.length; i++) {
-        const sectionWrapper = sectionWrapperArray[i];
-        if (sectionWrapper.dataset.tariffs === '2') {
-            sectionWrapper.style.display = 'flex'
-        } else {
-            sectionWrapper.style.display = 'none'
-        }
-    }
-})
-const sectionBack = document.getElementById('section-back')
-sectionBack.addEventListener('click', function(){
-    for (let i = 0; i < sectionWrapperArray.length; i++) {
-        const sectionWrapper = sectionWrapperArray[i];
-        if (sectionWrapper.dataset.tariffs === '1') {
-            sectionWrapper.style.display = 'flex'
-        } else {
-            sectionWrapper.style.display = 'none'
-        }
-    }
-})

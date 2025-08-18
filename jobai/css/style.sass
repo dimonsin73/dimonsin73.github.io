@@ -141,7 +141,6 @@
 .bhead 
     border-top: 1px solid var(--Gray-80)
     border-left: 1px solid var(--Gray-80)
-
 .title 
     display: flex
     align-items: center
@@ -185,6 +184,10 @@
         &:active
             border: 1px solid var(--Gray-60)
             background-color: var(--Gray-60)
+        &:disabled 
+            border: 1px solid var(--Gray-100)
+            background-color: var(--Gray-100)
+            color: var(--Gray-50)
     &_tertiary
         border: 1px solid var(--Black)
         color: var(--Black)
@@ -348,9 +351,11 @@
 .press 
     &-right 
         margin-left: auto
+    &-left
+        margin-right: auto
 .input 
     width: 100%
-    padding: 18px 12px
+    padding: 16px 12px
     border-radius: 12px
     background-color: var(--Gray-100)
     @include body-large
@@ -390,6 +395,8 @@
         color: var(--Gray-30)
     &_number 
         text-align: center
+    &_textcenter
+        text-align: center
     &:focus 
         background-color: var(--White)
         outline: 2px solid var(--Gray-40)
@@ -403,6 +410,8 @@
         &::placeholder
             @include body-large
             color: var(--Gray-40)
+    &_grey
+        color: var(--Gray-30)
 .label 
     position: relative
     display: flex
@@ -454,6 +463,8 @@
         top: 50%
         right: -36px
         transform: translateY(-50%)
+    &__clue2
+        right: -28px
     &-active 
         & .label__title
             top: 8px
@@ -466,7 +477,33 @@
         position: relative
         width: 432px
         z-index: 30
-
+    &__top
+        position: absolute
+        bottom: 100%
+        display: flex
+        width: 100%
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__bottom 
+        position: absolute
+        top: 100%
+        display: flex
+        justify-content: center
+        width: 100%
+        @include subtitle-medium
+        color: var(--Gray-40)
+        &-small 
+            @include subtitle-small
+            white-space: nowrap
+        &-left 
+            justify-content: flex-start
+    &__currency 
+        position: absolute
+        top: 50%
+        right: 15px
+        @include title-medium
+        color: var(--Black)
+        transform: translate3d(0, -50%, 0)
     &_error
         &-text 
             position: absolute
@@ -517,7 +554,7 @@
     &__input 
         background: 
             image: url('../images/icons/chevron_down.png')
-            position: center right 20px
+            position: center right 12px
             repeat: no-repeat
         cursor: pointer
     &__title 
@@ -542,6 +579,9 @@
         &-vert 
             padding-top: 10px
             padding-bottom: 10px
+    &_currency 
+        & .select__input
+            @include title-medium
 .options 
     position: absolute
     display: flex
@@ -562,7 +602,9 @@
         overflow-y: scroll
         &.options_2item 
             height: 128px
-
+    &_currency 
+        @include title-medium
+        
 .option 
     padding: 14px 12px 
     border-radius: 8px
@@ -574,6 +616,7 @@
     &_disabled 
         opacity: 0.7
 .range 
+    position: relative
     display: flex
     align-items: center
     column-gap: 13px
@@ -634,6 +677,28 @@
         display: flex
         align-items: center
         gap: 4px
+    &__meaning
+        position: absolute
+        left: 50%
+        top: -6px
+        width: 16px
+        @include number
+        font-size: 12px
+        color: var(--Primary-40)
+        text-align: center
+        transform: translate3d(-50%, 0 ,0)
+    &__start 
+        position: absolute
+        left: -12px
+        bottom: -6px
+        @include title-small
+        color: var(--Black)
+    &__finish
+        position: absolute
+        right: -12px
+        bottom: -6px
+        @include title-small
+        color: var(--Black)
 .clue 
     position: relative
     display: flex
@@ -642,11 +707,11 @@
     &__wrapper 
         position: absolute
         bottom: calc( 100% + 4px)
-        left: -135px
+        left: -150px
         display: none
         flex-direction: column
         gap: 4px
-        width: 270px
+        width: 300px
         padding: 10px
         border-radius: 8px
         background-color: var(--Gray-90)
@@ -659,6 +724,11 @@
     &__text 
         @include subtitle-large
         color: var(--Gray-30)
+    &__list 
+        margin-left: 8px
+        padding-left: 16px
+        &-item 
+            list-style: disc
 .switch 
     position: relative
     display: inline-block
@@ -739,6 +809,21 @@
         @include body-large
         font-weight: 600
         color: var(--Gray-20)
+    &__clue 
+        display: flex
+        align-items: center
+        justify-content: center
+    &_circle 
+        display: grid
+        grid-template-columns: auto 80px
+        & .check__label 
+            align-items: center
+        & .check__check 
+            margin: 0 16px
+            border-radius: 50%
+        & .check__title
+            @include subtitle-large
+
 .radio
     &__input
         position: absolute
@@ -844,6 +929,8 @@
         color: var(--Gray-20)
         text-align: left
         transition: color 0.3s ease
+    &:disabled
+        opacity: 0.5
     &_active 
         box-shadow: 0px 2px 16px 0px #00000033
         & .tab__icon 
@@ -1713,6 +1800,8 @@ input[type=number]::-webkit-outer-spin-button
                 repeat: no-repeat 
                 position: center left 13px
                 size: 24px 24px
+        &-p24 
+            padding: 24px
     &__experiences
         display: flex
         flex-direction: column
@@ -1849,6 +1938,12 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         flex-direction: column
         gap: 2px
+        &-title
+            @include subtitle-large
+            color: var(--Black) 
+        &-text 
+            @include subtitle-large
+            color: var(--Gray-30) 
     &__tags 
         display: flex
         flex-wrap: wrap
@@ -1968,6 +2063,9 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         justify-content: space-between
         padding: 0 50px
+    &__footer2
+        display: flex
+        justify-content: space-between
     &__burger 
         position: absolute
         top: 50%
@@ -2117,18 +2215,139 @@ input[type=number]::-webkit-outer-spin-button
             margin-top: 598px
     &__pb
         padding-bottom: 82px
+    &__ranges 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        margin-bottom: 24px
+        padding: 0  40px 0 12px
+        &-title 
+            @include subtitle-medium
+            color: var(--Gray-40)
+            & span 
+                font-weight: 700
+        & .range 
+            &__input 
+                max-width: 500px
+                width: 100%
+                height: 38px
+                &::-webkit-slider-thumb
+                    height: 15px
+                    width: 15px
+                    margin-top: -6px
+                    box-shadow: calc(-100vmax - 15px) 0 0 100vmax var(--Primary-40)
+                    clip-path: polygon(100% 0, 1px 0, 0 6px, -100vmax 6px, -100vmax 10px, 0 10px, 1px 100%, 100% 100%)
+                &::-moz-range-thumb
+                    height: 15px
+                    width: 15px
+                    margin-top: -6px
+                    box-shadow: calc(-100vmax - 15px) 0 0 100vmax var(--Primary-40)
+                    clip-path: polygon(100% 0, 1px 0, 0 6px, -100vmax 6px, -100vmax 10px, 0 10px, 1px 100%, 100% 100%)
+                &::-webkit-slider-runnable-track
+                    height: 4px
+                    border-radius: 2px
+    &__access
+        display: flex
+        flex-direction: column 
+        gap: 2px
+        &-input 
+            @include body-large
+            color: var(--Gray-30)
     &__tariffs 
         display: grid
-        grid-template-columns: 410px 160px 60px
+        grid-template-columns: auto 110px
+        align-items: center
         gap: 16px
+        border-bottom: 1px solid var(--Gray-80)
+        &-text 
+            @include subtitle-large
+            color: var(--Gray-30)
     &__tariffs1
         display: grid
-        grid-template-columns: 290px 80px 164px 80px
+        grid-template-columns: auto 200px 80px 200px
         gap: 16px
+    &__tariffs2 
+        display: grid
+        grid-template-columns: 100px auto 80px 80px
+        align-items: center
+        gap: 16px
+        padding-bottom: 20px
+        border-bottom: 1px solid var(--Gray-80)
+    &__tariffs3 
+        padding-bottom: 12px
+        border-bottom: 1px solid var(--Gray-80)
+        & .label
+            width: 460px
+        &-text 
+            padding-top: 12px
+            @include title-medium
+            color: var(--Gray-20)
+        &-link 
+            color: var(--Primary-40)
+    &__tariffs4
+        padding-left: 120px
+        display: flex
+        align-items: center
+        gap: 16px
+        opacity: 0
+    &__h30 
+        height: 30px
     &__clue
         display: flex
         align-items: center
         justify-content: center
+    &__radio 
+        &-input 
+            display: none
+            &:checked 
+                & ~ .section__radio-label .section__radio-check
+                    border: 7px solid var(--Black)
+        &-label 
+            display: grid
+            align-items: center 
+            grid-template-columns: 20px 60px auto
+            gap: 20px
+            align-items: center
+            gap: 20px
+        &-check 
+            width: 20px
+            height: 20px
+            border: 1.5px solid var(--Gray-40)
+            border-radius: 50%
+            transition: border 0.3s linear
+        &-title 
+            @include subtitle-extralarge
+            color: var(--Black)
+        &-text 
+            @include subtitle-large
+            color: var(--Gray-30)
+            & span 
+                font-weight: 700
+#tariffs-sale 
+    width: 126px
+#tariffs-total-price
+    font-weight: 600
+#enter-mail 
+    width: 100%
+.enter-mail 
+    width: 100%
+#send-email  
+    position: absolute
+    top: 50%
+    right: 15px
+    display: none
+    transform: translate3d(0, -50%, 0)
+.invoice-send
+    display: none
+    gap: 10px
+    align-items: center
+    justify-content: center
+    &__text 
+        @include body-large
+        color: var(--Gray-20)
+        text-align: center
+#personal-account 
+    display: none
 .adjustment 
     position: absolute
     top: 18px 

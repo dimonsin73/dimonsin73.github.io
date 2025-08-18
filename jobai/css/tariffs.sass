@@ -141,7 +141,6 @@
 .bhead 
     border-top: 1px solid var(--Gray-80)
     border-left: 1px solid var(--Gray-80)
-
 .title 
     display: flex
     align-items: center
@@ -185,6 +184,10 @@
         &:active
             border: 1px solid var(--Gray-60)
             background-color: var(--Gray-60)
+        &:disabled 
+            border: 1px solid var(--Gray-100)
+            background-color: var(--Gray-100)
+            color: var(--Gray-50)
     &_tertiary
         border: 1px solid var(--Black)
         color: var(--Black)
@@ -348,9 +351,11 @@
 .press 
     &-right 
         margin-left: auto
+    &-left
+        margin-right: auto
 .input 
     width: 100%
-    padding: 18px 12px
+    padding: 16px 12px
     border-radius: 12px
     background-color: var(--Gray-100)
     @include body-large
@@ -405,6 +410,8 @@
         &::placeholder
             @include body-large
             color: var(--Gray-40)
+    &_grey
+        color: var(--Gray-30)
 .label 
     position: relative
     display: flex
@@ -456,6 +463,8 @@
         top: 50%
         right: -36px
         transform: translateY(-50%)
+    &__clue2
+        right: -28px
     &-active 
         & .label__title
             top: 8px
@@ -468,7 +477,33 @@
         position: relative
         width: 432px
         z-index: 30
-
+    &__top
+        position: absolute
+        bottom: 100%
+        display: flex
+        width: 100%
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__bottom 
+        position: absolute
+        top: 100%
+        display: flex
+        justify-content: center
+        width: 100%
+        @include subtitle-medium
+        color: var(--Gray-40)
+        &-small 
+            @include subtitle-small
+            white-space: nowrap
+        &-left 
+            justify-content: flex-start
+    &__currency 
+        position: absolute
+        top: 50%
+        right: 15px
+        @include title-medium
+        color: var(--Black)
+        transform: translate3d(0, -50%, 0)
     &_error
         &-text 
             position: absolute
@@ -519,7 +554,7 @@
     &__input 
         background: 
             image: url('../images/icons/chevron_down.png')
-            position: center right 20px
+            position: center right 12px
             repeat: no-repeat
         cursor: pointer
     &__title 
@@ -544,6 +579,9 @@
         &-vert 
             padding-top: 10px
             padding-bottom: 10px
+    &_currency 
+        & .select__input
+            @include title-medium
 .options 
     position: absolute
     display: flex
@@ -564,7 +602,9 @@
         overflow-y: scroll
         &.options_2item 
             height: 128px
-
+    &_currency 
+        @include title-medium
+        
 .option 
     padding: 14px 12px 
     border-radius: 8px
@@ -576,6 +616,7 @@
     &_disabled 
         opacity: 0.7
 .range 
+    position: relative
     display: flex
     align-items: center
     column-gap: 13px
@@ -636,6 +677,28 @@
         display: flex
         align-items: center
         gap: 4px
+    &__meaning
+        position: absolute
+        left: 50%
+        top: -6px
+        width: 16px
+        @include number
+        font-size: 12px
+        color: var(--Primary-40)
+        text-align: center
+        transform: translate3d(-50%, 0 ,0)
+    &__start 
+        position: absolute
+        left: -12px
+        bottom: -6px
+        @include title-small
+        color: var(--Black)
+    &__finish
+        position: absolute
+        right: -12px
+        bottom: -6px
+        @include title-small
+        color: var(--Black)
 .clue 
     position: relative
     display: flex
@@ -644,11 +707,11 @@
     &__wrapper 
         position: absolute
         bottom: calc( 100% + 4px)
-        left: -135px
+        left: -150px
         display: none
         flex-direction: column
         gap: 4px
-        width: 270px
+        width: 300px
         padding: 10px
         border-radius: 8px
         background-color: var(--Gray-90)
@@ -661,6 +724,11 @@
     &__text 
         @include subtitle-large
         color: var(--Gray-30)
+    &__list 
+        margin-left: 8px
+        padding-left: 16px
+        &-item 
+            list-style: disc
 .switch 
     position: relative
     display: inline-block
@@ -741,6 +809,21 @@
         @include body-large
         font-weight: 600
         color: var(--Gray-20)
+    &__clue 
+        display: flex
+        align-items: center
+        justify-content: center
+    &_circle 
+        display: grid
+        grid-template-columns: auto 80px
+        & .check__label 
+            align-items: center
+        & .check__check 
+            margin: 0 16px
+            border-radius: 50%
+        & .check__title
+            @include subtitle-large
+
 .radio
     &__input
         position: absolute
@@ -846,6 +929,8 @@
         color: var(--Gray-20)
         text-align: left
         transition: color 0.3s ease
+    &:disabled
+        opacity: 0.5
     &_active 
         box-shadow: 0px 2px 16px 0px #00000033
         & .tab__icon 
@@ -997,696 +1082,715 @@ input[type=number]::-webkit-outer-spin-button
         &_active 
             left: 0
 // ASIDE END
-
-// PANEL 
-.panel 
-    padding: 0 20px 20px 
-    &__wrapper 
-        display: flex
-        flex-direction: column
-        gap: 20px
-    &__top 
-        display: flex
-        flex-direction: column
-    &__tabs 
-        display: flex
-        align-items: center
-        justify-content: flex-start
-        gap: 40px
-        width: max-content
-        border-bottom: 1px solid var(--Gray-60)
-    &__tab 
-        padding: 14px 0
-        border-bottom: 3px solid var(--Gray-100)
-        @include title-medium
-        color: var(--Gray-30)
-        transition: color 0.3s ease, border 0.3s ease
-        cursor: pointer
-        &-active
-            color: var(--Black)
-            border-bottom: 3px solid var(--Primary-50)
-    &__radios 
-        display: flex
-        align-items: center
-        gap: 20px
-        & .tax__label 
-            align-items: center
-            gap: 10px
-        & .tax__check 
-            grid-row: span 1
-            margin-top: 0
-    &__container 
-        display: none
-        flex-direction: column
-        justify-content: flex-start
-        gap: 20px
-        padding: 16px
-        border-radius: 12px
-        background-color: var(--White)
-        &-active 
-            display: flex
+.header // HEADER
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 24px
+    padding: 9px 32px
+    z-index: 200
+    &__logo 
+        width: 78px
+        height: 30px
     &__line 
-        display: grid
-        grid-template-columns: auto 35px
-        align-items: center
-        gap: 10px
-    &__block
-        width: 270px
-        padding: 6px 16px
-        border-radius: 4px
-    &__list 
+        width: 1px
+        height: 32px
+        background-color: var(--Gray-90)
+    &__access 
         display: flex
         flex-direction: column
-        gap: 4px
-        &-item 
-            margin-left: 32px
-            list-style: disc
-            &::marker 
-                color: var(--Gray-30)
-    &__link 
+        align-items: center
+        padding: 1px 17px
+        border: 1px solid var(--Gray-80)
+        border-radius: 8px
+    &__text 
+        @include text-medium
+        color: var(--Black)
+    &__span 
+        font: 500 12px/17px 'Inter', 'sans-serif'
+        color: var(--Gray-40)
+    &__avatar 
         display: flex
         align-items: center
         justify-content: center
-        font: 400 16px/24px 'Inter', 'sans-serif'
-        color: var(--Primary-50)
-        text-align: center
-    &__btns 
-        display: flex
-        align-items: center
-        gap: 8px
-    &__inputs 
-        display: flex
-        align-items: center
-        gap: 95px
-    &__text 
-        @include body-large
-        color: var(--Gray-30)
-    &__number
-        @include number-large
-        color: var(--Black)
-        text-align: center
-    &__subnumber
-        @include subtitle-extralarge
-        color: var(--Black)
-        text-align: center
-    &__table 
+        width: 46px
+        height: 46px
+        border-radius: 13px
+        background: var(--Gray-80)
+        &-text 
+            font: 500 12px/17px 'Inter', 'sans-serif'
+            color: var(--Black)
+.bulb 
+    & path 
+        fill: var(--Icons)
+    &_yellow 
+        & path 
+            fill: var(--Yellow)
+    &_green
+        & path 
+            fill: var(--Green)
+    &_red
+        & path 
+            fill: var(--Red)
+.notifications 
+    position: absolute
+    top: -8px
+    left: 14px
+    min-width: 18px
+    padding: 0 3px
+    border: 1px solid var(--White)
+    border-radius: 9px
+    background-color: var(--Primary-50)
+    &__number 
+        @include number
+        color: var(--White)
+// HEADER END
+.section // SECTION 
+    display: none
+    padding: 10px 32px 24px
+    overflow: hidden
+    &_active
+        display: block
+    &__g24 
         display: flex
         flex-direction: column
-        max-width: 3000px
-        width: 100%
-        overflow-x: scroll
-    &__head 
-        display: grid
-        grid-template-columns: 135px 300px 260px 140px 210px 180px 150px 220px 220px 240px 165px 120px 90px 120px
-        &-item 
-            display: flex
-            align-items: center
-            justify-content: center
-            height: 50px
-            & svg 
-                flex: 0 0 auto
-        &-text
-            @include title-medium
-            line-height: 16px
-            color: var(--Gray-30)
-            text-align: center
-    &__footer 
-        display: flex
-        justify-content: space-between
-        align-items: center
-    &__btn
-        width: 200px
-    &__payment 
-        display: flex
-        align-items: center
-        gap: 6px
-        &-total 
-            @include body-large
-            color: var(--Gray-30)
-        &-payments 
-            @include number-large
-            color: var(--Black)
-    &__period 
-        position: relative
-        display: flex
-        align-items: center
-        gap: 10px
-        &-title 
-            @include body-large
-            color: var(--Gray-20)
-        &-list 
-            display: flex
-            align-items: center
-            gap: 10px
-            height: 56px
-            padding: 8px
-            border-radius: 8px
-            background-color: var(--Gray-100)
-        &-item 
-            padding: 8px
-            border-radius: 8px
-            @include body-large
-            color: var(--Gray-30)
-            transition: background-color 0.3s ease
-            cursor: pointer
-            &-active 
-                background-color: var(--White)
-        &-calendar 
-            width: 150px
-    &__duos 
-        display: grid 
-        grid-template-columns: 825px auto
         gap: 24px
-    &__duo 
+    &__form 
         display: flex
         flex-direction: column
         gap: 20px
-        padding-right: 24px
-    &__select 
-        width: 256px
-        margin-top: auto
-    &__check 
-        display: grid
-        grid-auto-flow: column
-        gap: 16px 48px
-        grid-template-rows: 1fr 1fr 1fr
-    &__or 
-        position: absolute
-        top: -18px
-        left: 24px
-        font: 400 12px/16px 'Inter', 'sans-serif'
-        color: var(--Gray-20)
-    & .check__label 
+        width: 100%
+        &-title 
+            @include title-large
+            color: var(--Black)
+        &-subtitle
+            @include title-medium
+            color: var(--Black)
+    &__tabs 
+        display: flex
+        gap: 16px
+    &__tab 
+        display: none
+        flex-direction: column
+        gap: 24px
+        align-items: stretch
+        &-active 
+            display: flex
+    &__top 
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        margin-bottom: 20px
+        & a 
+            text-decoration: underline
+    &__head 
+        display: flex
+        flex-direction: column
+        &-top
+            display: flex
+            justify-content: space-between
+            padding: 10px 16px
+        &-bottom 
+            display: grid
+            grid-template-rows: 1fr 1fr
+            grid-template-columns: 1fr 1fr 1fr 1fr
+            grid-auto-flow: column
+            row-gap: 10px
+            padding: 10px 16px
+        &-title 
+            @include headline-small
+            color: var(--Black)
+        &-subtitle 
+            @include title-small
+            color: var(--Black)
+        &-text 
+            @include subtitle-small
+            color: var(--Gray-40)
+    &__wrapper 
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 32px 
+        border-radius: 12px
+        background-color: var(--White)
+        &-l50
+            gap: 0
+            padding: 20px
+            padding-left: 50px
+        &-ai 
+            background: 
+                image: url('../images/icons/ai.png')
+                repeat: no-repeat 
+                position: center left 13px
+                size: 24px 24px
+        &-p24 
+            padding: 24px
+    &__experiences
+        display: flex
+        flex-direction: column
+        gap: 24px
+    &__experience
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &:nth-child(n + 2)
+            padding-top: 24px
+            border-top: 1px solid var(--Gray-90)
+    &__knowledges
+        &-item
+            display: flex
+            flex-direction: column
+            gap: 24px
+    &__knowledge
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &:nth-child(n + 3)
+            padding-top: 24px
+            border-top: 1px solid var(--Gray-90)
+        &:last-child
+            margin-bottom: 24px
+    &__vakansi 
+        position: relative
+        display: grid 
+        grid-template-columns: 160px 1fr
+        gap: 24px
+        padding: 20px 
+        border-radius: 12px
+        background-color: var(--White)
+    &__flexend
+        display: flex
+        justify-content: flex-end
         align-items: center
-    ::-webkit-scrollbar-thumb 
-        background-color: #0894F3
-.users 
-    display: flex
-    flex-direction: column
-.user
-    display: grid
-    grid-template-columns: 135px 300px 260px 140px 210px 180px 150px 220px 220px 240px 165px 120px 90px 120px
-    width: max-content
-    height: 50px
-    padding: 10px 0
-    &__item 
+        gap: 16px
+    &__plan
+        display: grid
+        grid-template-columns: 1fr 56px 56px 
+        gap: 16px
+    &__icon 
         display: flex
         align-items: center
-        justify-content: space-between
-        padding: 0 8px
-        border-right: 1px solid var(--Gray-60)
-        &:last-child
-            border-right: none
-        &-center 
-            justify-content: center
-        &-password
-            display: flex
-            align-items: center
-            justify-content: space-between
-            gap: 10px   
-            width: 100%
-            padding: 2px 2px 2px 6px
-            border: 1px solid var(--Gray-60)
-            border-radius: 6px
-            background-color: var(--White)
-        &-text 
-            padding: 4px 0
-            @include link-small
-            color: var(--Black)
-            text-overflow: ellipsis
-            white-space: nowrap
+        justify-content: center
+        border-radius: 8px
+        width: 56px
+        height: 56px
+        background-color: var(--Gray-100)
+        & path 
+            fill: var(--Black)
+        &:disabled
+            & path
+                fill: var(--Gray-60)
+        &-icon
+            & path 
+                fill: var(--Icons)
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        &-withbtn 
+            display: grid
+            grid-template-columns: 1fr 56px
+            gap: 0 24px
+        &-small 
+            width: 322px
+    &__avatar
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 8px
+        &-image 
+            width: 160px
+            height: 160px
+            border: 1px solid var(--Gray-90)
+            border-radius: 16px
             overflow: hidden
-        &-role
-            margin-top: -10px
-            margin-bottom: -10px
+            object-fit: cover
+            object-position: center
+        &-logo 
+            padding: 20px
+        &-site 
+            @include link-small
+            color: var(--Primary-50)
             text-align: center
-            white-space: normal
-        &-payment
-            & path 
-                fill: var(--Gray-30)
-                transition: fill 0.3s ease
-            &:hover 
-                & path 
-                    fill: var(--Primary-50)
-        &-delete 
-            & path 
-                fill: var(--Gray-30)
+    &__status 
+        margin-top: 14px
+        padding: 4px 8px
+        border-radius: 16px
+        background-color: #006FD81A
+        @include subtitle-small
+        &-blue 
+            color: var(--Primary-40)
+    &__rezyumes 
+        grid-column: span 2
+        padding: 0 16px
+    &__rezyume 
+        display: grid
+        grid-template-columns: 180px 1fr
+        gap: 24px 40px
+        padding: 0 16px
+        &-col
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-h2
+            @include subtitle-large
+            color: var(--Black)
+        &-h3
+            @include title-large
+            color: var(--Black)
+        &-h4
+            @include title-medium
+            color: var(--Black)
+        &-h5
+            @include  subtitle-medium
+            color: var(--Gray-40)
+        &-text
+            @include body-large
+            color: var(--Black)
+    &__show 
+        display: none
+        &-active 
+            display: block
+        &-btn 
+            & path
                 transition: fill 0.3s ease
             &:hover 
                 & path 
                     fill: var(--Red-error)
-    &__block 
-        display: none
-        align-items: center
-        justify-content: space-between
-        width: 100%
-        height: 40px
-        margin-top: -5px
-        margin-bottom: -5px
-        padding: 5px 10px
-        border-radius: 4px
-        transition: background-color 0.3s ease
-        &-active
-            display: flex
-        &-blue 
-            background-color: var(--Primary-90)
-        &-red
-            background-color: var(--Rose)
-        &-btn 
-            width: 40px
-            height: 30px
-            border-radius: 4px
-            transition: background-color 0.3s ease
-            &-active
-                background-color: var(--White)
-    &__status 
-        &-item 
-            display: none
-            &-active 
-                display: flex
-.user2
-    grid-template-columns: 135px 300px 260px 150px 210px 180px 130px 150px 150px 150px 150px
-.showby 
-    display: flex
-    align-items: center
-    gap: 16px
-    @include body-large
-    color: var(--Gray-30)
-    &__btn 
-        transition: font 0.3s ease, color 0.3s ease 
-        &-active 
-            font-weight: 600
-            color: var(--Primary-50)
-.pages 
-    display: flex
-    align-items: center
-    gap: 12px
-    &__btn 
-        width: 30px
-        height: 30px
-        border: 1px solid var(--Icons)
-        border-radius: 4px
-        
-        font: 300 16px/24px 'Inter', 'sans-serif'
-        letter-spacing: 0.02em
-        color: var(--Icons)
-.confirm
-    position: fixed
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    display: none
-    background: #000000B2
-    box-shadow: 0px 4px 4px 0px #00000040
-    z-index: 1000
-    &_active 
-        display: flex
-    &__wrapper 
-        position: absolute
-        top: 50%
-        left: 50%
-        display: none
-        flex-direction: column
-        gap: 20px
-        max-width: 600px
-        width: 100%
-        padding: 38px 55px
-        border-radius: 32px
-        background-color: var(--White)
-        transform: translate3d(-50%, -50%, 0)
-        &-active 
-            display: flex 
-    &__list 
-        display: flex
-        flex-direction: column
-        gap: 20px
-        &-item 
-            margin-left: 24px
-            list-style: disc
-        &-wrapper 
-    &__btns 
-        display: flex
-        align-items: center
-        justify-content: space-between
-    &__btn 
-        width: 200px
-    &__text 
-        display: inline
-        @include body-large
-        color: var(--Black)
-    &__span 
-        font-weight: 600
-.edit 
-    position: fixed
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    display: none
-    background: #000000B2
-    box-shadow: 0px 4px 4px 0px #00000040
-    z-index: 1000
-    &_active 
-        display: flex
-    &__form
-        position: absolute
-        top: 50%
-        left: 50%
-        display: none
-        flex-direction: column
-        gap: 32px
-        max-width: 600px
-        width: 100%
-        padding: 24px 64px
-        border-radius: 12px
-        background-color: var(--White)
-        transform: translate3d(-50%, -50%, 0)
-        &-active
-            display: flex
-    &__content 
-        display: flex
-        flex-direction: column 
-        gap: 20px
-        padding: 0 36px
-    &__title 
-        @include body-large
-        color: var(--Black)
-    &__label 
-        position: relative
-        @include title-medium
-        color: var(--Black)
-    &__input 
-        @include body-large
-        color: var(--Gray-30)
-        &::placeholder
-            @include body-large
-            color: var(--Gray-30)
-    &__copy 
-        position: absolute
-        bottom: 6px
-        right: -32px
-        transform: translateY(-50%)
-    &__footer 
-        display: flex
-        justify-content: space-between
-        align-items: center
-        &-btn 
-            width: 200px
-.newuser
-    position: fixed
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    display: none
-    background: #000000B2
-    box-shadow: 0px 4px 4px 0px #00000040
-    z-index: 1000
-    &_active 
-        display: flex
-    &__form
-        position: absolute
-        top: 50%
-        left: 50%
-        display: flex
-        flex-direction: column
-        gap: 32px
-        max-width: 600px
-        width: 100%
-        padding: 38px 55px
-        border-radius: 32px
-        background-color: var(--White)
-        transform: translate3d(-50%, -50%, 0)
     &__col 
         display: flex
         flex-direction: column
-        gap: 16px
-    &__title 
-        @include title-large
-        color: var(--Gray-10)
-        transition: opacity 0.3s ease
-    &__radios 
-        display: grid
-        align-items: center
-        grid-template-columns: 1fr 1fr
-        gap: 24px
-    &__footer 
+        gap: 2px
+        &-title
+            @include subtitle-large
+            color: var(--Black) 
         &-text 
-            @include body-large
-            color: var(--Gray-20)
-        &-link
-            @include body-large
-            color: var(--Primary-40)
-    &__btns 
+            @include subtitle-large
+            color: var(--Gray-30) 
+    &__tags 
         display: flex
-        align-items: center
-        gap: 8px
-        padding: 8px
-        border-radius: 8px
-        background-color: var(--Gray-100)
-    &__btn
-        display: flex
-        align-items: center
-        gap: 10px
-        width: 100%
-        padding: 8px 4px
-        border-radius: 8px
-        @include body-large
-        color: var(--Gray-30)
-        transition: background-color 0.3s ease
-        &-active
-            background-color: var(--White)
-    &__job 
-        display: none
-        &-active 
-            display: flex
-    &__employee 
-        display: none
-        &-active 
-            display: flex
-    &__show
-        display: none
-        &-active 
-            display: flex
-    & .check__label 
-        align-items: center
-        
-.payment
-    position: fixed
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    display: none
-    background: #000000B2
-    box-shadow: 0px 4px 4px 0px #00000040
-    z-index: 1000
-    &_active 
-        display: flex
-    &__wrapper
-        position: absolute
-        top: 50%
-        left: 50%
-        display: flex
-        flex-direction: column
-        gap: 20px
-        max-width: 1850px
-        width: 100%
-        padding: 10px 20px
-        border-radius: 12px
-        background-color: var(--White)
-        overflow-x: auto
-        transform: translate3d(-50%, -50%, 0)
-    &__top 
-        display: flex
-        align-items: center
-        justify-content: space-between
+        flex-wrap: wrap
+        column-gap: 16px
         &-item 
+            padding: 8px 16px
+            border: 1px solid var(--Gray-90)
+            border-radius: 18px
+            @include subtitle-large
+            color: var(--Gray-20)
+    &__tag 
+        display: flex
+        align-items: center
+        gap: 4px
+        margin-top: 20px
+        padding: 4px 8px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        &-text 
+            @include subtitle-medium
+            color: var(--Black)
+        &-btn
+            width: 12px
+            height: 12px
+            background: 
+                image: url('../images/icons/close.png')
+                position: center center 
+                repeat: no-repeat
+    &__or
+        display: flex
+        justify-content: center
+        @include body-medium
+        color: var(--Gray-10)
+    &__imgloading 
+        display: grid
+        grid-template-columns: 96px auto 
+        gap: 24px
+        align-items: center
+        &-image 
+            position: relative
+            width: 96px
+            height: 96px
+            border-radius: 16px
+        &-bg
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
             display: flex
             align-items: center
+            justify-content: center
+            border: 2px dashed var(--Gray-90)
+            border-radius: 16px
+        &-info 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 16px
+        &-top 
+            display: flex
+            flex-direction: column
             gap: 8px
         &-title 
             @include title-medium
-            color: var(--Gray-30)
-        &-line
-            display: flex
-            align-items: center
-    &__user 
-        display: flex
-        flex-direction: column
-        &-head
-            display: grid
-            grid-template-columns: 300px 260px 210px 180px 150px
-            padding: 10px 8px
-        &-content 
-            display: grid
-            grid-template-columns: 300px 260px 210px 180px 150px
-            padding: 10px 8px
-    &__tables 
-        display: grid
-        grid-template-columns: 1440px 350px
-        column-gap: 20px
-        overflow-x: scroll
-    &__table 
-        display: flex
-        flex-direction: column
-        padding-right: 20px
-    &__table2
-        width: 1980px
-    &__head 
-        display: grid
-        grid-template-columns: 130px 110px 100px 160px 160px 100px 160px 200px 80px 100px 120px
-        &-item 
-            position: relative
-            display: flex
-            justify-content: center
-            align-items: center
-            gap: 4px
-            height: 50px
-        &-text 
-            @include title-medium
-            line-height: 18px
-            color: var(--Gray-30)
-            text-align: center
-        &-subtext
-            position: absolute
-            bottom: -2px
-            @include subtitle-medium
-            color: var(--Gray-40)
-            text-align: center
-    &__head2
-        grid-template-columns: 135px 300px 260px 150px 210px 180px 130px 150px 150px 150px 150px
-        &-item 
-            display: flex
-            justify-content: center
-            align-items: center
-            gap: 2px
-            height: 36px
-        &-text 
-            @include title-medium
-            line-height: 18px
-            color: var(--Gray-30)
-            text-align: center
-    &__payments 
-        display: flex
-        flex-direction: column
-    &__payment
-        display: grid
-        grid-template-columns: 130px 110px 100px 160px 160px 100px 160px 200px 80px 100px 120px
-        height: 50px
-        &-item 
-            display: flex
-            justify-content: center
-            align-items: center
-            height: 50px
-        &-text 
-            @include link-small
             color: var(--Black)
-            text-align: center
-    &__left 
+        &-text 
+            @include body-small
+            color: var(--Gray-60)
+        &-btn 
+            padding: 5px 16px
+            border-radius: 6px
+            background-color: var(--Gray-80)
+            @include btn-small
+            color: var(--Black)
+    &__educations 
         display: flex
         flex-direction: column
-    &__lefthead
-        display: grid
-        grid-template-columns: 120px 110px 120px 
-        height: 50px
-    &__leftpayments 
-        display: flex
-        flex-direction: column
-    &__leftpayment
-        display: grid
-        grid-template-columns: 120px 110px 120px 
-        height: 50px
-    &__footer 
-        display: grid
-        grid-template-columns: 130px 110px 100px 160px 160px 100px 180px 200px 80px 100px 100px
-        height: 50px
+        gap: 24px
         &-item 
             display: flex
-            align-items: center
-            justify-content: center
-        &-text 
-            @include title-medium
-            color: var(--Gray-30)
-        &-number
-            padding: 2px 8px
-            border-radius: 4px
-            @include text-medium
-            color: var(--Black)
-        &-total 
-            display: flex
-            align-items: center
-            gap: 4px
-            grid-column: span 2
-            justify-content: flex-end
-        &-totaltext
-            @include body-large
-            color: var(--Gray-30)
-        &-payments 
-            @include number-large
-            color: var(--Black)
-    &__btn
-        & path 
-            fill: var(--Icons)
-            transition: fill 0.3s ease
-        &:hover 
-            & path 
-                fill: var(--Primary-50)
-    &__docs 
-        display: flex
-        justify-content: center
-        width: 100%
-        &-link 
-            display: flex
-            align-items: center
-            gap: 4px
-            @include body-large
-            
-            color: var(--Primary-50)
-            
-    ::-webkit-scrollbar-thumb 
-        background-color: #0894F3
-
-.vat 
-    display: grid
-    grid-template-columns: 300px 260px
-    &__item
-        display: flex
-        align-items: center
-        justify-content: center
-        gap: 8px
-    &__text 
-        @include link-small
-        color: var(--Black)
-    &__input
-        width: 50px
-        height: 30px
-        padding: 4px
-        border: 2px solid var(--Gray-80)
-        border-radius: 4px
-        @include link-small
-        color: var(--Black)
-        text-align: center
-.doc 
-    position: relative
-    &__delete 
-        position: absolute
-        top: -11px
-        left: -30px
-        width: 30px
-        height: 22px
+            flex-direction: column
+            gap: 24px
+            &:nth-child(n + 2)
+                padding-top: 24px
+                border-top: 1px solid var(--Gray-90)
+    &__education 
         display: none
-        align-items: center
-        justify-content: center
-        border-radius: 4px
-        background-color: var(--White)
-        & path 
-            fill: var(--Icons)
-            transition: fill 0.3s ease
+        flex-direction: column
+        gap: 24px
         &-active 
             display: flex
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__line 
+        display: grid
+        grid-template-columns: 1fr 1fr 80px
+        gap: 16px
+    &__linesmall
+        display: grid
+        grid-template-columns: 150px 150px
+        gap: 16px
+    &__linedate
+        display: grid
+        align-items: center
+        grid-template-columns: 200px 120px auto
+        gap: 16px
+    &__line50
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 24px
+    &__footer 
+        display: flex
+        justify-content: space-between
+        padding: 0 50px
+    &__footer2
+        display: flex
+        justify-content: space-between
+    &__burger 
+        position: absolute
+        top: 50%
+        width: 20px
+        height: 20px
+        background: 
+            image: url('../images/icons/menu.png')
+            position: center center 
+            repeat: no-repeat
+        transform: translateY(-50%)
+    &__view
+        padding: 15px
+        padding-left: 50px
+        &-text 
+            display: -webkit-box
+            height: 20px
+            @include text-medium
+            color: var(--Black)
+            -webkit-line-clamp: 1
+            -webkit-box-orient: vertical
+            overflow: hidden
+    &_collapse 
+        position: fixed
+        top: 64px
+        left: 250px
+        right: 0
+        background-color: var(--Gray-100)
+        z-index: 100
+    &__collapse
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 20px
+        & .section__hide 
+            display: flex
+        & .section__view
+            display: none
+        & .section__burger 
+            left: -44px
+        &-collapse
+            & .section__hide 
+                display: none
+            & .section__view
+                display: block
+            & .section__burger 
+                left: 15px
+    &__content 
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__main 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        transition: margin 0.3s ease
+        &-active 
+            margin-right: 620px
+    &__btns 
+        display: flex
+        justify-content: flex-end 
+        margin-bottom: 16px
+        &-width
+            display: flex
+            justify-content: flex-end 
+            gap: 16px
+            width: 176px
+            transition: width 0.3s ease
+            &-active 
+                width: 596px
+    &__video 
+        position: relative
+        border-radius: 16px
+        overflow: hidden
+        &-player 
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            height: 60px
+            background: 
+                image: url('../images/player.png')
+                repeat: no-repeat 
+                position: contain
+                size: 100% 100%
+        &-video 
+            width: 100%
+            height: 696px
+    &__part 
+        display: flex
+        flex-direction: column
+        gap: 12px
+        &-upline 
+            padding-top: 12px
+            border-top: 1px solid #D9D9D9
+        &-title 
+            display: flex
+            align-items: center
+            gap: 5px
+            @include title-medium
+            color: var(--Gray-20)
+        &-text 
+            @include body-large
+            color: var(--Black)
+    &__list 
+        padding-left: 44px
+        &-item 
+            @include body-large
+            color: var(--Black)
+            list-style: disc
+    &__description 
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 12px
+        &-title 
+            @include headline-medium
+            color: var(--Black)
+        &-info 
+            display: flex
+            gap: 6px
+            align-items: center
+        &-text
+            @include subtitle-large
+            color: var(--Gray-40)
+    &__dots 
+        position: absolute
+        top: -6px
+        right: 0
+        border: 0.5px solid var(--Black)
+        border-radius: 8px
+    &__delete 
+        & path 
+            transition: fill 0.3s ease
         &:hover 
             & path 
-                fill: var(--Red-error)
-// PANEL END
+                fill: var(--Red)
+    &__reset
+        & path 
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                fill: var(--Red)
+    &_mt 
+        margin-top: 388px
+        &-collapse 
+            margin-top: 598px
+    &__pb
+        padding-bottom: 82px
+    &__ranges 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        margin-bottom: 24px
+        padding: 0  40px 0 12px
+        &-title 
+            @include subtitle-medium
+            color: var(--Gray-40)
+            & span 
+                font-weight: 700
+        & .range 
+            &__input 
+                max-width: 500px
+                width: 100%
+                height: 38px
+                &::-webkit-slider-thumb
+                    height: 15px
+                    width: 15px
+                    margin-top: -6px
+                    box-shadow: calc(-100vmax - 15px) 0 0 100vmax var(--Primary-40)
+                    clip-path: polygon(100% 0, 1px 0, 0 6px, -100vmax 6px, -100vmax 10px, 0 10px, 1px 100%, 100% 100%)
+                &::-moz-range-thumb
+                    height: 15px
+                    width: 15px
+                    margin-top: -6px
+                    box-shadow: calc(-100vmax - 15px) 0 0 100vmax var(--Primary-40)
+                    clip-path: polygon(100% 0, 1px 0, 0 6px, -100vmax 6px, -100vmax 10px, 0 10px, 1px 100%, 100% 100%)
+                &::-webkit-slider-runnable-track
+                    height: 4px
+                    border-radius: 2px
+    &__access
+        display: flex
+        flex-direction: column 
+        gap: 2px
+        &-input 
+            @include body-large
+            color: var(--Gray-30)
+    &__tariffs 
+        display: grid
+        grid-template-columns: auto 110px
+        align-items: center
+        gap: 16px
+        border-bottom: 1px solid var(--Gray-80)
+        &-text 
+            @include subtitle-large
+            color: var(--Gray-30)
+    &__tariffs1
+        display: grid
+        grid-template-columns: auto 200px 80px 200px
+        gap: 16px
+    &__tariffs2 
+        display: grid
+        grid-template-columns: 100px auto 80px 80px
+        align-items: center
+        gap: 16px
+        padding-bottom: 20px
+        border-bottom: 1px solid var(--Gray-80)
+    &__tariffs3 
+        padding-bottom: 12px
+        border-bottom: 1px solid var(--Gray-80)
+        & .label
+            width: 460px
+        &-text 
+            padding-top: 12px
+            @include title-medium
+            color: var(--Gray-20)
+        &-link 
+            color: var(--Primary-40)
+    &__tariffs4
+        padding-left: 120px
+        display: flex
+        align-items: center
+        gap: 16px
+        opacity: 0
+    &__h30 
+        height: 30px
+    &__clue
+        display: flex
+        align-items: center
+        justify-content: center
+    &__radio 
+        &-input 
+            display: none
+            &:checked 
+                & ~ .section__radio-label .section__radio-check
+                    border: 7px solid var(--Black)
+        &-label 
+            display: grid
+            align-items: center 
+            grid-template-columns: 20px 60px auto
+            gap: 20px
+            align-items: center
+            gap: 20px
+        &-check 
+            width: 20px
+            height: 20px
+            border: 1.5px solid var(--Gray-40)
+            border-radius: 50%
+            transition: border 0.3s linear
+        &-title 
+            @include subtitle-extralarge
+            color: var(--Black)
+        &-text 
+            @include subtitle-large
+            color: var(--Gray-30)
+            & span 
+                font-weight: 700
+#tariffs-sale 
+    width: 126px
+#tariffs-total-price
+    font-weight: 600
+#enter-mail 
+    width: 100%
+.enter-mail 
+    width: 100%
+#send-email  
+    position: absolute
+    top: 50%
+    right: 15px
+    display: none
+    transform: translate3d(0, -50%, 0)
+.invoice-send
+    display: none
+    gap: 10px
+    align-items: center
+    justify-content: center
+    &__text 
+        @include body-large
+        color: var(--Gray-20)
+        text-align: center
+#personal-account 
+    display: none
+.adjustment 
+    position: absolute
+    top: 18px 
+    right: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+.btn-subvideo 
+    display: none
+    &-active 
+        display: flex
+        margin-left: auto
+
+@media (max-width: 1371px)
+    .section 
+        &_collapse
+            left: 0
+// SECTION END
