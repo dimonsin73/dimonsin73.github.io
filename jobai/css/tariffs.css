@@ -145,7 +145,7 @@
 .btn_secondary:disabled {
   border: 1px solid var(--Gray-100);
   background-color: var(--Gray-100);
-  color: var(--Gray-50);
+  color: var(--Gray-70);
 }
 .btn_tertiary {
   border: 1px solid var(--Black);
@@ -955,6 +955,11 @@
   letter-spacing: -0.1px;
   color: var(--black);
 }
+.check__title-span {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: var(--Gray-90);
+}
 .check__text {
   font: 500 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
@@ -975,6 +980,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.check__link {
+  color: var(--Primary-50);
 }
 .check_circle {
   display: grid;
@@ -1695,6 +1703,12 @@ input[type=number]::-webkit-outer-spin-button {
   letter-spacing: -0.25px;
   color: var(--Gray-30);
 }
+.section__col2 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: -8px;
+}
 .section__tags {
   display: flex;
   flex-wrap: wrap;
@@ -1814,6 +1828,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .section__title {
   font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Black);
+}
+.section__title-h2 {
+  font: 700 30px/36px "Inter", "sans-serif";
   letter-spacing: -0.1px;
   color: var(--Black);
 }
@@ -2085,6 +2104,13 @@ input[type=number]::-webkit-outer-spin-button {
   letter-spacing: -0.5px;
   color: var(--Gray-30);
 }
+.section__access-center {
+  align-items: center;
+}
+.section__access-period {
+  width: 110px;
+  margin-left: 60px;
+}
 .section__tariffs {
   display: grid;
   grid-template-columns: auto 110px;
@@ -2133,6 +2159,11 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 16px;
   opacity: 0;
 }
+.section__tariffs5 {
+  display: grid;
+  grid-template-columns: auto 200px 200px;
+  gap: 10px;
+}
 .section__h30 {
   height: 30px;
 }
@@ -2140,6 +2171,18 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.section__receipt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 55px;
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Gray-20);
+}
+.section__receipt-link {
+  color: var(--Primary-50);
 }
 .section__radio-input {
   display: none;
@@ -2175,9 +2218,16 @@ input[type=number]::-webkit-outer-spin-button {
 .section__radio-text span {
   font-weight: 700;
 }
+.section__radio svg {
+  margin: 0 auto;
+}
 
 #tariffs-sale {
   width: 126px;
+}
+
+#payment-for-period {
+  width: 110px;
 }
 
 #tariffs-total-price {
@@ -2199,12 +2249,32 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
   transform: translate3d(0, -50%, 0);
 }
+#send-email:hover #send-clue {
+  display: block;
+}
+
+#send-clue {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: -150px;
+  width: 300px;
+  right: 0;
+  display: none;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--Gray-90);
+  font: 500 14px/20px "Inter", "sans-serif";
+  letter-spacing: -0.25px;
+  color: var(--Gray-30);
+  z-index: 40;
+}
 
 .invoice-send {
   display: none;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .invoice-send__text {
   font: 400 16px/24px "Inter", "sans-serif";

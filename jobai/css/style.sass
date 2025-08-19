@@ -187,7 +187,7 @@
         &:disabled 
             border: 1px solid var(--Gray-100)
             background-color: var(--Gray-100)
-            color: var(--Gray-50)
+            color: var(--Gray-70)
     &_tertiary
         border: 1px solid var(--Black)
         color: var(--Black)
@@ -799,6 +799,10 @@
         margin-top: -2px
         @include title-medium
         color: var(--black)
+        &-span 
+            padding: 4px
+            border-radius: 4px
+            background-color: var(--Gray-90)
     &__text 
         @include subtitle-large
         color: var(--Gray-30)
@@ -813,6 +817,8 @@
         display: flex
         align-items: center
         justify-content: center
+    &__link
+        color: var(--Primary-50)
     &_circle 
         display: grid
         grid-template-columns: auto 80px
@@ -1944,6 +1950,11 @@ input[type=number]::-webkit-outer-spin-button
         &-text 
             @include subtitle-large
             color: var(--Gray-30) 
+    &__col2
+        display: flex
+        flex-direction: column
+        gap: 12px
+        margin-top: -8px
     &__tags 
         display: flex
         flex-wrap: wrap
@@ -2039,6 +2050,9 @@ input[type=number]::-webkit-outer-spin-button
     &__title 
         @include title-medium
         color: var(--Black)
+        &-h2 
+            @include headline-medium
+            color: var(--Black)
     &__text 
         @include subtitle-medium
         color: var(--Gray-40)
@@ -2253,6 +2267,11 @@ input[type=number]::-webkit-outer-spin-button
         &-input 
             @include body-large
             color: var(--Gray-30)
+        &-center 
+            align-items: center
+        &-period 
+            width: 110px
+            margin-left: 60px
     &__tariffs 
         display: grid
         grid-template-columns: auto 110px
@@ -2296,6 +2315,15 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         align-items: center
         justify-content: center
+    &__receipt
+        display: flex
+        align-items: center
+        gap: 8px
+        padding-left: 55px
+        @include body-large
+        color: var(--Gray-20)
+        &-link 
+            color: var(--Primary-50)
     &__radio 
         &-input 
             display: none
@@ -2323,8 +2351,12 @@ input[type=number]::-webkit-outer-spin-button
             color: var(--Gray-30)
             & span 
                 font-weight: 700
-#tariffs-sale 
+        & svg 
+            margin: 0 auto
+#tariffs-sale
     width: 126px
+#payment-for-period 
+    width: 110px
 #tariffs-total-price
     font-weight: 600
 #enter-mail 
@@ -2337,11 +2369,24 @@ input[type=number]::-webkit-outer-spin-button
     right: 15px
     display: none
     transform: translate3d(0, -50%, 0)
+#send-clue 
+    position: absolute 
+    bottom: calc( 100% + 4px)
+    left: -150px
+    display: flex
+    width: 300px
+    padding: 10px
+    border-radius: 8px
+    background-color: var(--Gray-90)
+    @include subtitle-large
+    color: var(--Gray-30)
+    z-index: 40
 .invoice-send
     display: none
-    gap: 10px
+    gap: 20px
     align-items: center
     justify-content: center
+    width: 100%
     &__text 
         @include body-large
         color: var(--Gray-20)

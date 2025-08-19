@@ -245,6 +245,18 @@ for (let i = 0; i < tariffsCurrencyTotalArray.length; i++) {
         }
     })
 }
+const paymentCurrencyTotal = document.getElementById('payment-currency-total')
+const paymentCurrencyTotalArray = paymentCurrencyTotal.parentElement.querySelectorAll('.option')
+const labelPaymentCurrencyTotalArray = paymentCurrencyTotal.parentElement.parentElement.querySelectorAll('.label__currency')
+for (let i = 0; i < paymentCurrencyTotalArray.length; i++) {
+    const paymentCurrencyTotal = paymentCurrencyTotalArray[i];
+    paymentCurrencyTotal.addEventListener('click', function(){
+        for (let i = 0; i < labelPaymentCurrencyTotalArray.length; i++) {
+            const labelPaymentCurrencyTotal = labelPaymentCurrencyTotalArray[i];
+            labelPaymentCurrencyTotal.textContent = paymentCurrencyTotal.textContent
+        }
+    })
+}
 
 const withVat = document.getElementById('with-vat')
 withVat.addEventListener('change', function(){
@@ -266,9 +278,12 @@ for (let i = 0; i < sectionRadioInputArray.length; i++) {
         if (invoice.checked) {
             sectionTariffs4.style.opacity = '1'
             payBtn.style.display = 'none'
+            invoiceSend.style.display = 'none'
+            enterMailLabel.style.display = 'flex'
         } else {
             sectionTariffs4.style.opacity = '0'
             payBtn.style.display = 'flex'
+            personalAccount.style.display = 'none'
         }
     })
 }
