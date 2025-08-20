@@ -13,6 +13,10 @@ for (let i = 0; i < panelTabArray.length; i++) {
             const panelContainer = panelContainerArray[i];
             if (panelContainer.dataset.panel === dataPanel) {
                 panelContainer.classList.add('panel__container-active')
+                for (let i = 0; i < panelTariffBlockArray.length; i++) {
+                    const panelTariffBlock = panelTariffBlockArray[i];
+                    autoGrow(panelTariffBlock)
+                }
             } else {
                 panelContainer.classList.remove('panel__container-active')
             }
@@ -542,7 +546,7 @@ for (let i = 0; i < panelTariffBlockArray.length; i++) {
     autoGrow(panelTariffBlock)
     panelTariffBlock.addEventListener('input', function() {
         autoGrow(this);
-})
+    })
 }
 function autoGrow(el) {
   el.style.height = el.scrollHeight + 'px';
