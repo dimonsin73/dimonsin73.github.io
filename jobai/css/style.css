@@ -3987,6 +3987,11 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--Black);
   border-bottom: 3px solid var(--Primary-50);
 }
+.panel__title {
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-30);
+}
 .panel__radios {
   display: flex;
   align-items: center;

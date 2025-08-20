@@ -701,6 +701,141 @@ html(lang="ru")
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29289 15.7071C3.90237 15.3166 3.90237 14.6834 4.29289 14.2929L8.58579 10L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L10.7071 9.29289C11.0976 9.68342 11.0976 10.3166 10.7071 10.7071L5.70711 15.7071C5.31658 16.0976 4.68342 16.0976 4.29289 15.7071Z" fill="#6A6A73"/>
                                         </svg>
                                 .clean
+                        .panel__container(data-panel='tariffs')
+                            h2.panel__title Доступ к базе данных кандидатов
+                            .panel__tariffs
+                                .panel__tariff.br
+                                    .panel__tariff-item
+                                        h3.panel__tariff-title Начальные условия
+                                        .panel__tariff-line
+                                            p.panel__tariff-text Начальная стоимость 1-го календарного дня
+                                            input(type='number', value='1666.00').input.panel__tariff-input
+                                            p.panel__tariff-text руб.
+                                        .panel__tariff-line
+                                            p.panel__tariff-text Среднее количество дней в месяце
+                                            input(type='number', value='30').input.panel__tariff-input
+                                            p.panel__tariff-text дней
+                                        .panel__tariff-line
+                                            p.panel__tariff-text *Начальная стоимость месяца
+                                            input(type='number', value='49980.00').input.panel__tariff-input
+                                            p.panel__tariff-text руб.
+                                            p.panel__tariff-text *справочная информация
+                                    .panel__tariff-item
+                                        h3.panel__tariff-title Скидки за период доступа
+                                        .panel__tariff-line2
+                                            p.panel__tariff-text от 
+                                            input(type='number', value='1').input.panel__tariff-input
+                                            p.panel__tariff-text до 
+                                            input(type='number', value='30').input.panel__tariff-input
+                                            p.panel__tariff-text дней
+                                            p.panel__tariff-text Скидка
+                                            input(type='number', value='0').input.panel__tariff-input
+                                            p.panel__tariff-text %
+                                            p.panel__tariff-text Без скидок
+                                        .panel__tariff-line2
+                                            p.panel__tariff-text от 
+                                            input(type='number', value='31').input.panel__tariff-input
+                                            p.panel__tariff-text до 
+                                            input(type='number', value='90').input.panel__tariff-input
+                                            p.panel__tariff-text дней
+                                            p.panel__tariff-text Скидка
+                                            input(type='number', value='5').input.panel__tariff-input
+                                            p.panel__tariff-text %
+                                            p.panel__tariff-text Скидка 5%
+                                        .panel__tariff-line2
+                                            p.panel__tariff-text от 
+                                            input(type='number', value='91').input.panel__tariff-input
+                                            p.panel__tariff-text до 
+                                            input(type='number', value='180').input.panel__tariff-input
+                                            p.panel__tariff-text дней
+                                            p.panel__tariff-text Скидка
+                                            input(type='number', value='10').input.panel__tariff-input
+                                            p.panel__tariff-text %
+                                            p.panel__tariff-text Скидка 10%
+                                        .panel__tariff-line2
+                                            p.panel__tariff-text от 
+                                            input(type='number', value='181').input.panel__tariff-input
+                                            p.panel__tariff-text до 
+                                            input(type='number', value='360').input.panel__tariff-input
+                                            p.panel__tariff-text дней
+                                            p.panel__tariff-text Скидка
+                                            input(type='number', value='20').input.panel__tariff-input
+                                            p.panel__tariff-text %
+                                            p.panel__tariff-text Скидка 20%
+                                    .panel__tariff-item
+                                        h3.panel__tariff-title 
+                                            | Дополнителные рекрутеры и удорожание
+                                            .clue
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                                </svg>
+                                                .clue__wrapper
+                                                    p.clue__text При регистрации (роль «Работодатель») создается 1 родительская учётная запись. По умолчанию под данной учётной записью (под одной компанией) могут работать 1+2 рекрутера.
+                                                    p.clue__text Если пользователь желает добавить больше 2 рекрутеров, то производится доплата в соответствии с фомой ниже.
+                                        .panel__tariff-line3
+                                            p.panel__tariff-text + 
+                                            input(type='number', value='2').input.panel__tariff-input
+                                            p.panel__tariff-text рекрутера 
+                                            p.panel__tariff-text Удорожание
+                                            input(type='number', value='0').input.panel__tariff-input
+                                            p.panel__tariff-text %
+                                            p.panel__tariff-text 0%
+                                        .panel__tariff-line3
+                                            p.panel__tariff-text + 
+                                            input(type='number', value='9').input.panel__tariff-input
+                                            p.panel__tariff-text рекрутера 
+                                            p.panel__tariff-text Удорожание
+                                            input(type='number', value='5').input.panel__tariff-input
+                                            p.panel__tariff-text %
+                                            p.panel__tariff-text + 5%
+                                        .panel__tariff-line3
+                                            p.panel__tariff-text + 
+                                            input(type='number', value='19').input.panel__tariff-input
+                                            p.panel__tariff-text рекрутера 
+                                            p.panel__tariff-text Удорожание
+                                            input(type='number', value='10').input.panel__tariff-input
+                                            p.panel__tariff-text %
+                                            p.panel__tariff-text + 10%
+                                        .panel__tariff-line3
+                                            p.panel__tariff-text + 
+                                            input(type='number', value='29').input.panel__tariff-input
+                                            p.panel__tariff-text рекрутера 
+                                            p.panel__tariff-text Удорожание
+                                            input(type='number', value='15').input.panel__tariff-input
+                                            p.panel__tariff-text %
+                                            p.panel__tariff-text + 15%
+                                    .panel__tariff-item
+                                        h3.panel__tariff-title НДС
+                                        .panel__tariff-line4
+                                            p.panel__tariff-text Ставка НДС
+                                            input(type='number', value='20').input.panel__tariff-input
+                                            p.panel__tariff-text %
+                                .panel__tariff
+                                    h3.panel__tariff-title 
+                                        | Описание под
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                        </svg>
+                                    .panel__tariff-blocks
+                                        textarea.panel__tariff-block(name='clue-sale')
+                                            | Приобретая доступ на максимальный период, вы получаете максимальные скидки:
+                                            | &#8226; до 1 месяца - без скидок
+                                            | &#8226; от 1 до 3 месяцев - скидка 5%
+                                            | &#8226; от 3 до 6 месяцев - скидка 10%
+                                            | &#8226; от 6 месяцев до 1 года - скидка 20%
+                                        textarea.panel__tariff-block.panel__tariff-block-big(name='clue-recruit')
+                                            | При регистрации и авторизации в роле «Работодатель» создается родительская учётная запись под конкретной компанией
+                                            | По умолчанию и бесплатно можно пригласить под данную компанию 2х сотрудников (роль «Рекрутер»), которые, например, будут заниматься поиском и наймом сотрудников
+                                            | Если нужно предоставить доступ более чем 2м сотрудникам, то есть возможность на этапе приобретения периода доступа или после (через Личный кабинет) приобрести указанную расширенную возможность приглашения
+                                            | При этом сами приглашаемые сотрудники (роль «Ректрутер») за доступ не платят, но могут работать только через конкретную компанию
+                                            | Максимальное количество приглашаемых сотрудников под одной компанией -  не более 30 человек
+                                        textarea.panel__tariff-block(name='clue-database')
+                                            | Поиск кандидатов производится по всей базе данных кандидатов в РФ, за исключением применения фильтров по городам/регионам 
+                                            | Соответственно, доплачивать за доступ в регионы РФ не нужно
+                                        textarea.panel__tariff-block(name='clue-limit')
+                                            | При поиске кандидатов контакты предоставляются бесплатно
+                                            | Также в период доступа нет ограничения по количеству данных контактов
+                            button(type="button").btn.btn_h48.btn_primary.btn_center Сохранить
                         .panel__container(data-panel='payment')
                             .panel__duos 
                                 .panel__duo.br

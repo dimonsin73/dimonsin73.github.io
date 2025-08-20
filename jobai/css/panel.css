@@ -1241,6 +1241,11 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--Black);
   border-bottom: 3px solid var(--Primary-50);
 }
+.panel__title {
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-30);
+}
 .panel__radios {
   display: flex;
   align-items: center;
@@ -1436,6 +1441,99 @@ input[type=number]::-webkit-outer-spin-button {
   left: 24px;
   font: 400 12px/16px "Inter", "sans-serif";
   color: var(--Gray-20);
+}
+.panel__tariffs {
+  display: flex;
+  gap: 24px;
+}
+.panel__tariff {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  padding-left: 10px;
+  flex: 0 0 calc(50% - 12px);
+}
+.panel__tariff-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--Gray-80);
+}
+.panel__tariff-item:last-child {
+  border-bottom: none;
+}
+.panel__tariff-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font: 600 14px/20px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Black);
+}
+.panel__tariff-text {
+  font: 300 14px/16px "Inter", "sans-serif";
+  color: var(--Black);
+}
+.panel__tariff-line {
+  display: grid;
+  grid-template-columns: 330px 100px 120px auto;
+  align-items: center;
+  gap: 5px;
+}
+.panel__tariff-line2 {
+  display: grid;
+  grid-template-columns: 20px 50px 20px 50px 110px 55px 100px 20px auto;
+  align-items: center;
+  gap: 5px;
+}
+.panel__tariff-line3 {
+  display: grid;
+  grid-template-columns: 20px 50px 150px 95px 100px 20px auto;
+  align-items: center;
+  gap: 5px;
+}
+.panel__tariff-line4 {
+  display: grid;
+  grid-template-columns: 90px 50px auto;
+  align-items: center;
+  gap: 5px;
+}
+.panel__tariff-blocks {
+  display: grid;
+  row-gap: 40px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  justify-content: space-between;
+  grid-template-columns: 280px 280px;
+  padding-left: 32px;
+}
+.panel__tariff-block {
+  padding: 10px 8px;
+  border-radius: 10px;
+  background-color: #F7F7F7;
+  font: 600 14px/20px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-30);
+  text-indent: 0px;
+  resize: none;
+  overflow-y: visible;
+}
+.panel__tariff-block-big {
+  grid-row: span 3;
+}
+.panel__tariff-input {
+  height: 30px;
+  padding: 4px;
+  border: 2px solid var(--Gray-80);
+  border-radius: 4px;
+  font: 300 14px/16px "Inter", "sans-serif";
+  color: var(--Black);
+  text-align: center;
+}
+.panel__tariff-input:focus {
+  outline: none;
 }
 .panel .check__label {
   align-items: center;

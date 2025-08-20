@@ -535,3 +535,15 @@ for (let i = 0; i < editCloseArray.length; i++) {
         edit.classList.remove('edit_active')
     })
 }
+
+const panelTariffBlockArray = document.querySelectorAll('.panel__tariff-block')
+for (let i = 0; i < panelTariffBlockArray.length; i++) {
+    const panelTariffBlock = panelTariffBlockArray[i];
+    autoGrow(panelTariffBlock)
+    panelTariffBlock.addEventListener('input', function() {
+        autoGrow(this);
+})
+}
+function autoGrow(el) {
+  el.style.height = el.scrollHeight + 'px';
+}
