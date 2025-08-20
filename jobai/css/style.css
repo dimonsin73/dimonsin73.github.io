@@ -2409,11 +2409,15 @@ input[type=number]::-webkit-outer-spin-button {
   letter-spacing: -0.25px;
   color: var(--Gray-30);
 }
-.section__col2 {
+.section__col1 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: -8px;
+}
+.section__col2 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .section__tags {
   display: flex;

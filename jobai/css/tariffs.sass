@@ -480,7 +480,6 @@
     &__top
         position: absolute
         bottom: 100%
-        display: flex
         width: 100%
         @include subtitle-medium
         color: var(--Gray-40)
@@ -1377,12 +1376,15 @@ input[type=number]::-webkit-outer-spin-button
             color: var(--Black) 
         &-text 
             @include subtitle-large
-            color: var(--Gray-30) 
+            color: var(--Gray-30)
+    &__col1
+        display: flex
+        flex-direction: column
+        gap: 12px 
     &__col2
         display: flex
         flex-direction: column
-        gap: 12px
-        margin-top: -8px
+        gap: 16px 
     &__tags 
         display: flex
         flex-wrap: wrap

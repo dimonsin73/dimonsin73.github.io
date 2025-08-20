@@ -7,6 +7,7 @@ html(lang="ru")
         link(rel="stylesheet", href="css/reset.css")
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet", href="css/tariffs.css")
+        script(src="js/tariffs_uspekh.js" defer) 
     body.bg
         aside.aside 
             .aside__logo 
@@ -69,14 +70,13 @@ html(lang="ru")
                                 p.tab__text Публикация вакансий
                         .section__wrapper.section__wrapper-p24
                             form.section__form.section__form-start
-                                .section__col2
+                                .section__col1
                                     h2.section__title-h2 Оплата прошла успешно
-                                    h2.section__title Учётная запись
+                                    .section__col1
+                                        h3.section__title Учётная запись
                                         label(for='email').label.label-active.section__tariffs3-label
                                             h3.label__title.label__title-icon Электронная почта
                                             input(type="email", name="email", value='d.p.mezentsev@gmail.com').label__input.input#email
-                                        
-                                    
                                 .section__tariffs5
                                     .section__access.section__access-period
                                         h3.section__ranges-title 
@@ -96,37 +96,65 @@ html(lang="ru")
                                             span окончания 
                                             |  доступа
                                         input(type="text", value='17.08.2026, 10:18', name='access-finish').input.input_number.input_grey 
-                                
-                                h2.section__title Включено в стоимость
-                                .check.check_circle
-                                    input.check__input#access-all(type="checkbox", checked, name="access-all" value='Доступ к базе по всей Российской Федерации')
-                                    label.check__label(for="access-all")
-                                        .check__check
-                                        .check__info
-                                            h3.check__title Доступ к базе по всей Российской Федерации
-                                            p.check__text Больше не нужно отдельно оплачивать доступ для каждого региона РФ
-                                .check.check_circle
-                                    input.check__input#no-restrictions(type="checkbox", checked, name="no-restrictions" value='Нет ограничений по количеству контактов')
-                                    label.check__label(for="no-restrictions")
-                                        .check__check
-                                        .check__info
-                                            h3.check__title Нет ограничений по количеству контактов
-                                            p.check__text Все контакты кандидатов бесплатые и без ограничений по количеству
-                                .check.check_circle
-                                    input.check__input#no-restrictions(type="checkbox", checked, name="no-restrictions" value='Нет ограничений по количеству контактов')
-                                    label.check__label(for="no-restrictions")
-                                        .check__check
-                                        .check__info
-                                            h3.check__title 
-                                                | Включено 
-                                                span.check__title-span +19 
-                                                |  дополнительных рекрутера для работы под вашей компанией
-                                            p.check__text 
-                                                | Вы можете 
-                                                a(href="").check__link пригласить 
-                                                | рекрутеров сейчас или позже в Личном кабинете
-                                .section__tariffs 
-                                .section__col2
+                                .section__col1
+                                    h2.section__title Включено в стоимость
+                                    .section__col2
+                                        .check.check_circle
+                                            input.check__input#access-all(type="checkbox", checked, name="access-all" value='Доступ к базе по всей Российской Федерации')
+                                            label.check__label(for="access-all")
+                                                .check__check
+                                                .check__info
+                                                    h3.check__title Доступ к базе по всей Российской Федерации
+                                                    p.check__text Больше не нужно отдельно оплачивать доступ для каждого региона РФ
+                                            .check__clue
+                                                .clue
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                                    </svg>
+                                                    .clue__wrapper
+                                                        p.clue__text Поиск кандидатов производится по всей базе данных кандидатов в РФ, за исключением применения фильтров по городам/регионам 
+                                                        p.clue__text Соответственно, доплачивать за доступ в регионы РФ не нужно
+                                        .check.check_circle
+                                            input.check__input#no-restrictions(type="checkbox", checked, name="no-restrictions" value='Нет ограничений по количеству контактов')
+                                            label.check__label(for="no-restrictions")
+                                                .check__check
+                                                .check__info
+                                                    h3.check__title Нет ограничений по количеству контактов
+                                                    p.check__text Все контакты кандидатов бесплатые и без ограничений по количеству
+                                            .check__clue
+                                                .clue
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                                    </svg>
+                                                    .clue__wrapper
+                                                        p.clue__text При поиске кандидатов контакты предоставляются бесплатно
+                                                        p.clue__text Также в период доступа нет ограничения по количеству данных контактов
+                                        .check.check_circle
+                                            input.check__input#no-restrictions(type="checkbox", checked, name="no-restrictions" value='Нет ограничений по количеству контактов')
+                                            label.check__label(for="no-restrictions")
+                                                .check__check
+                                                .check__info
+                                                    h3.check__title 
+                                                        | Включено 
+                                                        span.check__title-span +19 
+                                                        |  дополнительных рекрутера для работы под вашей компанией
+                                                    p.check__text 
+                                                        | Вы можете 
+                                                        a(href="").check__link пригласить 
+                                                        | рекрутеров сейчас или позже в Личном кабинете
+                                            .check__clue
+                                                .clue
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                                    </svg>
+                                                    .clue__wrapper
+                                                        p.clue__text При регистрации и авторизации в роле «Работодатель» создается родительская учётная запись под конкретной компанией
+                                                        p.clue__text По умолчанию и бесплатно можно пригласить под данную компанию 2х сотрудников (роль «Рекрутер»), которые, например, будут заниматься поиском и наймом сотрудников
+                                                        p.clue__text Если нужно предоставить доступ более чем 2м сотрудникам, то есть возможность на этапе приобретения периода доступа или после (через Личный кабинет) приобрести указанную расширенную возможность приглашения
+                                                        p.clue__text При этом сами приглашаемые сотрудники (роль «Ректрутер») за доступ не платят, но могут работать только через конкретную компанию
+                                                        p.clue__text Максимальное количество приглашаемых сотрудников под одной компанией -  не более 30 человек
+                                    .section__tariffs3
+                                .section__col1
                                     p.section__receipt 
                                         | Квитанцию/чек отправили на d.p.mezentsev@gmail.com
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">

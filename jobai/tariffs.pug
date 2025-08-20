@@ -70,138 +70,145 @@ html(lang="ru")
                                 p.tab__text Публикация вакансий
                         .section__wrapper.section__wrapper-p24(data-tariffs='1')
                             form.section__form.section__form-start
-                                h2.section__title Период доступа
-                                .section__tariffs
-                                    .section__ranges
-                                        h3.section__ranges-title 
-                                            | Выберите количество 
-                                            span дней 
-                                            | доступа 
-                                        .range.section__range
-                                            input.range__input(type="range" min="0" max="30" step="1" value="1")#range-days
-                                            p.range__meaning 1
-                                            p.range__start 0
-                                            p.range__finish 30
-                                        h3.section__ranges-title 
-                                            | Выберите количество 
-                                            span месяцев  
-                                            | доступа 
-                                        .range.section__range
-                                            input.range__input(type="range" min="0" max="12" step="1" value="0")#range-months
-                                            p.range__meaning 0
-                                            p.range__start 0
-                                            p.range__finish 12
-                                    .section__access
-                                        h3.section__ranges-title 
-                                            | Доступ на  
-                                            span период 
-                                        input(type="number", value='1', name='access-for-period').input.input_number.section__access-input#access-for-period
-                                        h3.section__ranges-title календарных дней
-                                h2.section__title Стоимость доступа
-                                .section__tariffs1
-                                    label(for='tariffs-sale').label.press-left
-                                        input(type="text", readonly, name="tariffs-sale", value='Без скидок').input.input_grey.input_textcenter#tariffs-sale
-                                        p.label__bottom.label__bottom-small считается автоматически
-                                        .label__clue.label__clue2
-                                            .clue
-                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
-                                                </svg>
-                                                .clue__wrapper
-                                                    p.clue__text Приобретая доступ на максимальный период, вы получаете максимальные скидки:
-                                                    ul.clue__list
-                                                        li.clue__list-item.clue__text до 1 месяца - без скидок
-                                                        li.clue__list-item.clue__text от 1 до 3 месяцев - скидка 5%
-                                                        li.clue__list-item.clue__text от 3 до 6 месяцев - скидка 10%
-                                                        li.clue__list-item.clue__text от 6 месяцев до 1 года - скидка 20%
-                                    input(type="text", readonly, name="tariffs-price", value='1 666.00').input.input_grey.input_textcenter#tariffs-price
-                                    .select.select_currency
-                                        input(type="text", readonly, name="tariffs-currency", value="₽").select__input.input#tariffs-currency
-                                        .options
-                                            .options__wrapper
-                                                .option ₽
-                                                .option $
-                                                .option €
-                                    label(for='tariffs-vat').label
-                                        input(type="text", readonly, name="tariffs-vat", value="277.67").input.input_grey.input_textcenter#tariffs-vat
-                                        p.label__bottom в том числе НДС 20%
-                                        p.label__currency ₽
-                                h2.section__title Включено в стоимость
-                                .check.check_circle
-                                    input.check__input#access-all(type="checkbox", checked, name="access-all" value='Доступ к базе по всей Российской Федерации')
-                                    label.check__label(for="access-all")
-                                        .check__check
-                                        .check__info
-                                            h3.check__title Доступ к базе по всей Российской Федерации
-                                            p.check__text Больше не нужно отдельно оплачивать доступ для каждого региона РФ
-                                    .check__clue
-                                        .clue
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
-                                            </svg>
-                                            .clue__wrapper
-                                                p.clue__text Поиск кандидатов производится по всей базе данных кандидатов в РФ, за исключением применения фильтров по городам/регионам 
-                                                p.clue__text Соответственно, доплачивать за доступ в регионы РФ не нужно
-                                .check.check_circle
-                                    input.check__input#no-restrictions(type="checkbox", checked, name="no-restrictions" value='Нет ограничений по количеству контактов')
-                                    label.check__label(for="no-restrictions")
-                                        .check__check
-                                        .check__info
-                                            h3.check__title Нет ограничений по количеству контактов
-                                            p.check__text Все контакты кандидатов бесплатые и без ограничений по количеству
-                                    .check__clue
-                                        .clue
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
-                                            </svg>
-                                            .clue__wrapper
-                                                p.clue__text При поиске кандидатов контакты предоставляются бесплатно
-                                                p.clue__text Также в период доступа нет ограничения по количеству данных контактов
-                                h2.section__title Добавить в стоимость
-                                .section__tariffs2
-                                    .select
-                                        input(type="text", readonly, name="additional-recruiters", value="+ 2").select__input.input.input_grey#additional-recruiters
-                                        .options 
-                                            .options__wrapper
-                                                p.option(data-recruiters='1') + 2
-                                                p.option(data-recruiters='2') + 9
-                                                p.option(data-recruiters='3') + 19
-                                                p.option(data-recruiters='4') + 29
-                                    .section__col 
-                                        h3.section__col-title дополнительных рекрутеров под одной компанией
-                                        p.section__col-text По умолчанию бесплатно включены + 2 рекрутера
-                                    label(for='percentage-of-cost').label
-                                        input(type="text", readonly, name="percentage-of-cost", value='0%').input.input_textcenter.input_grey#percentage-of-cost
-                                        p.label__bottom.label__bottom-small считается автоматически
-                                    .section__clue 
-                                        .clue
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
-                                            </svg>
-                                            .clue__wrapper
-                                                p.clue__text При регистрации и авторизации в роле «Работодатель» создается родительская учётная запись под конкретной компанией
-                                                p.clue__text По умолчанию и бесплатно можно пригласить под данную компанию 2х сотрудников (роль «Рекрутер»), которые, например, будут заниматься поиском и наймом сотрудников
-                                                p.clue__text Если нужно предоставить доступ более чем 2м сотрудникам, то есть возможность на этапе приобретения периода доступа или после (через Личный кабинет) приобрести указанную расширенную возможность приглашения
-                                                p.clue__text При этом сами приглашаемые сотрудники (роль «Ректрутер») за доступ не платят, но могут работать только через конкретную компанию
-                                                p.clue__text Максимальное количество приглашаемых сотрудников под одной компанией -  не более 30 человек
-                                h2.section__title Общая стоимость доступа
-                                .section__tariffs1
-                                    label(for='tariffs-day-price').label
-                                        input(type="text", readonly, name="tariffs-day-price", value='1 666,00').input.input_textcenter.input_grey#tariffs-day-price
-                                        p.label__bottom Стоимость календарного дня с НДС 20%
-                                        p.label__currency ₽
-                                    input(type="text", readonly, name="tariffs-total-price", value="1 666,00").input.input_textcenter#tariffs-total-price
-                                    .select.select_currency
-                                        input(type="text", readonly, name="tariffs-currency-total", value="₽").select__input.input#tariffs-currency-total
-                                        .options 
-                                            .options__wrapper
-                                                .option ₽
-                                                .option $
-                                                .option €
-                                    label(for='tariffs-total-vat').label
-                                        input(type="text", readonly, name="tariffs-total-vat", value="277,67").input.input_textcenter.input_grey#tariffs-total-vat
-                                        p.label__bottom в том числе НДС 20%
-                                        p.label__currency ₽
+                                .section__col1
+                                    h2.section__title Период доступа
+                                    .section__tariffs
+                                        .section__ranges
+                                            h3.section__ranges-title 
+                                                | Выберите количество 
+                                                span дней 
+                                                | доступа 
+                                            .range.section__range
+                                                input.range__input(type="range" min="0" max="30" step="1" value="1")#range-days
+                                                p.range__meaning 1
+                                                p.range__start 0
+                                                p.range__finish 30
+                                            h3.section__ranges-title 
+                                                | Выберите количество 
+                                                span месяцев  
+                                                | доступа 
+                                            .range.section__range
+                                                input.range__input(type="range" min="0" max="12" step="1" value="0")#range-months
+                                                p.range__meaning 0
+                                                p.range__start 0
+                                                p.range__finish 12
+                                        .section__access
+                                            h3.section__ranges-title 
+                                                | Доступ на 
+                                                span период 
+                                            input(type="number", value='1', name='access-for-period').input.input_number.section__access-input#access-for-period
+                                            h3.section__ranges-title календарных дней
+                                .section__col
+                                    h2.section__title Стоимость доступа
+                                    .section__tariffs1
+                                        label(for='tariffs-sale').label.press-left
+                                            input(type="text", readonly, name="tariffs-sale", value='Без скидок').input.input_grey.input_textcenter#tariffs-sale
+                                            p.label__bottom.label__bottom-small считается автоматически
+                                            .label__clue.label__clue2
+                                                .clue
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                                    </svg>
+                                                    .clue__wrapper
+                                                        p.clue__text Приобретая доступ на максимальный период, вы получаете максимальные скидки:
+                                                        ul.clue__list
+                                                            li.clue__list-item.clue__text до 1 месяца - без скидок
+                                                            li.clue__list-item.clue__text от 1 до 3 месяцев - скидка 5%
+                                                            li.clue__list-item.clue__text от 3 до 6 месяцев - скидка 10%
+                                                            li.clue__list-item.clue__text от 6 месяцев до 1 года - скидка 20%
+                                        input(type="text", readonly, name="tariffs-price", value='1 666.00').input.input_grey.input_textcenter#tariffs-price
+                                        .select.select_currency
+                                            input(type="text", readonly, name="tariffs-currency", value="₽").select__input.input#tariffs-currency
+                                            .options
+                                                .options__wrapper
+                                                    .option ₽
+                                                    .option $
+                                                    .option €
+                                        label(for='tariffs-vat').label
+                                            input(type="text", readonly, name="tariffs-vat", value="277.67").input.input_grey.input_textcenter#tariffs-vat
+                                            p.label__bottom в том числе НДС 20%
+                                            p.label__currency ₽
+                                .section__clean
+                                .section__col1
+                                    h2.section__title Включено в стоимость
+                                    .section__col2
+                                        .check.check_circle
+                                            input.check__input#access-all(type="checkbox", checked, disabled, name="access-all" value='Доступ к базе по всей Российской Федерации')
+                                            label.check__label(for="access-all")
+                                                .check__check
+                                                .check__info
+                                                    h3.check__title Доступ к базе по всей Российской Федерации
+                                                    p.check__text Больше не нужно отдельно оплачивать доступ для каждого региона РФ
+                                            .check__clue
+                                                .clue
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                                    </svg>
+                                                    .clue__wrapper
+                                                        p.clue__text Поиск кандидатов производится по всей базе данных кандидатов в РФ, за исключением применения фильтров по городам/регионам 
+                                                        p.clue__text Соответственно, доплачивать за доступ в регионы РФ не нужно
+                                        .check.check_circle
+                                            input.check__input#no-restrictions(type="checkbox", checked, disabled, name="no-restrictions" value='Нет ограничений по количеству контактов')
+                                            label.check__label(for="no-restrictions")
+                                                .check__check
+                                                .check__info
+                                                    h3.check__title Нет ограничений по количеству контактов
+                                                    p.check__text Все контакты кандидатов бесплатые и без ограничений по количеству
+                                            .check__clue
+                                                .clue
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                                    </svg>
+                                                    .clue__wrapper
+                                                        p.clue__text При поиске кандидатов контакты предоставляются бесплатно
+                                                        p.clue__text Также в период доступа нет ограничения по количеству данных контактов
+                                    .section__col
+                                        h2.section__title Добавить в стоимость
+                                        .section__tariffs2
+                                            .select
+                                                input(type="text", readonly, name="additional-recruiters", value="+ 2").select__input.input.input_grey#additional-recruiters
+                                                .options 
+                                                    .options__wrapper
+                                                        p.option(data-recruiters='1') + 2
+                                                        p.option(data-recruiters='2') + 9
+                                                        p.option(data-recruiters='3') + 19
+                                                        p.option(data-recruiters='4') + 29
+                                            .section__col 
+                                                h3.section__col-title дополнительных рекрутеров под одной компанией
+                                                p.section__col-text По умолчанию бесплатно включены + 2 рекрутера
+                                            label(for='percentage-of-cost').label
+                                                input(type="text", readonly, name="percentage-of-cost", value='0%').input.input_textcenter.input_grey#percentage-of-cost
+                                                p.label__bottom.label__bottom-small считается автоматически
+                                            .section__clue 
+                                                .clue
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                                    </svg>
+                                                    .clue__wrapper
+                                                        p.clue__text При регистрации и авторизации в роле «Работодатель» создается родительская учётная запись под конкретной компанией
+                                                        p.clue__text По умолчанию и бесплатно можно пригласить под данную компанию 2х сотрудников (роль «Рекрутер»), которые, например, будут заниматься поиском и наймом сотрудников
+                                                        p.clue__text Если нужно предоставить доступ более чем 2м сотрудникам, то есть возможность на этапе приобретения периода доступа или после (через Личный кабинет) приобрести указанную расширенную возможность приглашения
+                                                        p.clue__text При этом сами приглашаемые сотрудники (роль «Ректрутер») за доступ не платят, но могут работать только через конкретную компанию
+                                                        p.clue__text Максимальное количество приглашаемых сотрудников под одной компанией -  не более 30 человек
+                                .section__col1
+                                    h2.section__title Общая стоимость доступа
+                                    .section__tariffs1
+                                        label(for='tariffs-day-price').label
+                                            input(type="text", readonly, name="tariffs-day-price", value='1 666,00').input.input_textcenter.input_grey#tariffs-day-price
+                                            p.label__bottom Стоимость календарного дня с НДС 20%
+                                            p.label__currency ₽
+                                        input(type="text", readonly, name="tariffs-total-price", value="1 666,00").input.input_textcenter#tariffs-total-price
+                                        .select.select_currency
+                                            input(type="text", readonly, name="tariffs-currency-total", value="₽").select__input.input#tariffs-currency-total
+                                            .options 
+                                                .options__wrapper
+                                                    .option ₽
+                                                    .option $
+                                                    .option €
+                                        label(for='tariffs-total-vat').label
+                                            input(type="text", readonly, name="tariffs-total-vat", value="277,67").input.input_textcenter.input_grey#tariffs-total-vat
+                                            p.label__bottom в том числе НДС 20%
+                                            p.label__currency ₽
                                 .section__h30
                                 button(type="submit").btn.btn_h48.btn_primary.btn_center Подключить
                         .section__wrapper.section__wrapper-p24(data-tariffs='2')
@@ -217,9 +224,9 @@ html(lang="ru")
                                 .section__tariffs1
                                     label(for='payment-for-period').label
                                         input(type="number", value='1', name='payment-for-period').input.input_number.section__access-input#payment-for-period
-                                        p.label__top
-                                            | Доступ на  
-                                            span период 
+                                        p.label__top.section__ranges-title
+                                            | Доступ на 
+                                            span период
                                         p.label__bottom.label__bottom-left календарных дней
                                     input(type="text", readonly, name="payment-total-price", value="1 666,00").input.input_textcenter#payment-total-price
                                     .select.select_currency
@@ -234,8 +241,7 @@ html(lang="ru")
                                         p.label__bottom в том числе НДС 20%
                                         p.label__currency ₽
                                 .section__clean
-                                .section__clean
-                                .section__col2
+                                .section__col1
                                     h2.section__title Учётная запись
                                     .section__tariffs3
                                         label(for='email').label.label-active.section__tariffs3-label
@@ -244,9 +250,9 @@ html(lang="ru")
                                         p.section__tariffs3-text 
                                             | Хотите авторизоваться под другой учётной записью? 
                                             a(href='').section__tariffs3-link Перезайти
-                                .section__col2
-                                    h2.section__title Выберите способ оплаты
-                                    p.section__tariffs-text Денежные средства поступят в течение текущего рабочего дня или на следующий. <br> При оплате банковской картой или через СБП денежные средтсва поступят сразу.
+                                    .section__col1
+                                        h2.section__title Выберите способ оплаты
+                                        p.section__tariffs-text Денежные средства поступят в течение текущего рабочего дня или на следующий. <br> При оплате банковской картой или через СБП денежные средтсва поступят сразу.
                                 .section__radio
                                     input.section__radio-input(type="radio" name="payment-method" value='Оплата банковской картой')#credit-card
                                     label.section__radio-label(for="credit-card") 
@@ -359,6 +365,6 @@ html(lang="ru")
 
                                 .section__clean
                                 .section__footer2
-                                    button(type="button")#section-back.btn.btn_h48.btn_tertiary Понятно
+                                    button(type="button")#section-back.btn.btn_h48.btn_tertiary Назад
                                     button(type="button")#pay-btn.btn.btn_h48.btn_primary Оплатить
                                     button(type="button")#personal-account.btn.btn_h48.btn_primary в Личный кабинет

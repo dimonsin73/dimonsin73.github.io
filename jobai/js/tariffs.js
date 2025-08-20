@@ -79,6 +79,7 @@ for (let i = 0; i < clueArray.length; i++) {
 const tabArray = document.querySelectorAll('.tab')
 const sectionTabArray = document.querySelectorAll('.section__tab')
 const sectionNavArray = document.querySelectorAll('.section__nav')
+const title = document.querySelector('.title')
 for (let i = 0; i < tabArray.length; i++) {
     const tab = tabArray[i];
     tab.addEventListener('click', function(){
@@ -310,6 +311,7 @@ for (let i = 0; i < sectionWrapperArray.length; i++) {
     const sectionWrapper = sectionWrapperArray[i];
     if (sectionWrapper.dataset.tariffs === '1') {
         sectionWrapper.style.display = 'flex'
+        title.textContent = 'Тарифы'
     } else {
         sectionWrapper.style.display = 'none'
     }
@@ -321,6 +323,7 @@ sectionFormStart.addEventListener('submit', function(e){
         const sectionWrapper = sectionWrapperArray[i];
         if (sectionWrapper.dataset.tariffs === '2') {
             sectionWrapper.style.display = 'flex'
+            title.textContent = 'Выбор способа оплаты'
         } else {
             sectionWrapper.style.display = 'none'
         }
