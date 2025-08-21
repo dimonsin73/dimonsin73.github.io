@@ -25,6 +25,8 @@
     --Icons: #6A6A73
     --Yellow: #FFCC00
     --Green: #34C759
+    --Success: #369869
+    --Orange: #F80
     --Red: #FF3B30
     --Red-active: #b90126
     --Red-hover: #da002c
@@ -504,6 +506,30 @@
         @include title-medium
         color: var(--Black)
         transform: translate3d(0, -50%, 0)
+    &__line 
+        display: flex
+        gap: 12px
+        padding: 8px 0
+        &-item 
+            flex: 0 0 calc(25% - 8px)
+            height: 8px
+            border-radius: 4px
+            background-color: var(--Gray-80)
+            transition: background-color 0.3s ease
+        &-error 
+            background-color: var(--Red-error)
+        &-orange 
+            background-color: var(--Orange)
+        &-success
+            background-color: var(--Success)
+    &-active 
+        & .label__title
+            top: 8px
+            @include body-small
+        & .label__textarea 
+            padding: 28px 12px 8px
+        & .label__flyingtext 
+            display: block
     &_error
         &-text 
             position: absolute
@@ -516,6 +542,12 @@
             outline: 2px solid var(--Red-error)
         & .label_error-text
             display: block
+        & #password
+            background: 
+                image: url('../images/icons/password_error.png')
+        & #password-repeat
+            background: 
+                image: url('../images/icons/password_error.png')
 .textarea 
     width: 100%
     height: 60px
@@ -1019,6 +1051,18 @@ input[type=number]::-webkit-outer-spin-button
     padding-left: 44px
     background: 
         image: url('../images/icons/phone.png')
+        position: center left 12px 
+        repeat: no-repeat
+#password
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/password.png')
+        position: center left 12px 
+        repeat: no-repeat
+#password-repeat
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/password.png')
         position: center left 12px 
         repeat: no-repeat
 #currency 
@@ -3070,6 +3114,9 @@ input[type=number]::-webkit-outer-spin-button
         gap: 32px
         &-active
             display: flex
+        & li 
+            margin-left: 24px
+            list-style: disc
     &__content 
         display: flex
         flex-direction: column
@@ -3105,6 +3152,8 @@ input[type=number]::-webkit-outer-spin-button
     &__subtext
         @include body-large
         color: var(--Gray-20)
+        & span 
+            font-weight: 600
     &__textinfo
         @include body-large
         color: var(--Black)
@@ -3352,6 +3401,81 @@ input[type=number]::-webkit-outer-spin-button
         left: 24px
         font: 400 12px/16px 'Inter', 'sans-serif'
         color: var(--Gray-20)
+    &__tariffs 
+        display: flex
+        gap: 24px
+    &__tariff 
+        display: flex
+        flex-direction: column
+        gap: 12px
+        padding: 20px
+        padding-left: 10px
+        flex: 0 0 calc( 50% - 12px )
+        &-item
+            display: flex
+            flex-direction: column
+            gap: 16px
+            padding-bottom: 24px
+            border-bottom: 1px solid var(--Gray-80)
+            &:last-child
+                border-bottom: none
+        &-title 
+            display: flex
+            align-items: center
+            gap: 6px
+            @include title-small
+            color: var(--Black)
+        &-text 
+            @include link-small
+            color: var(--Black)
+        &-line 
+            display: grid
+            grid-template-columns: 330px 100px 120px auto
+            align-items: center 
+            gap: 5px
+        &-line2
+            display: grid
+            grid-template-columns: 20px 50px 20px 50px 110px 55px 100px 20px auto
+            align-items: center 
+            gap: 5px
+        &-line3
+            display: grid
+            grid-template-columns: 20px 50px 150px 95px 100px 20px auto
+            align-items: center 
+            gap: 5px
+        &-line4
+            display: grid
+            grid-template-columns: 90px 50px auto
+            align-items: center 
+            gap: 5px
+        &-blocks 
+            display: grid
+            row-gap: 40px
+            column-gap: 16px
+            justify-content: space-between
+            grid-template-columns: 280px 280px
+            padding-left: 32px
+        &-block
+            padding: 10px 8px 
+            border-radius: 10px
+            background-color: #F7F7F7
+            @include title-small
+            color: var(--Gray-30)
+            text-indent: 0px
+            resize: none
+            overflow-y: visible
+            &-big 
+                grid-row: span 3
+        &-input 
+            height: 30px
+            padding: 4px
+            border: 2px solid var(--Gray-80)
+            border-radius: 4px 
+            @include link-small
+            color: var(--Black)
+            text-align: center 
+            &:focus 
+                outline: none
     & .check__label 
         align-items: center
     ::-webkit-scrollbar-thumb 

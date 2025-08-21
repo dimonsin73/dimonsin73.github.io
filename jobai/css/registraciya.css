@@ -25,6 +25,8 @@
   --Icons: #6A6A73;
   --Yellow: #FFCC00;
   --Green: #34C759;
+  --Success: #369869;
+  --Orange: #F80;
   --Red: #FF3B30;
   --Red-error: #FF0034;
   --Scrollbar: #D9D9D9;
@@ -453,6 +455,27 @@
   right: -40px;
   transform: translateY(-50%);
 }
+.label__line {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+}
+.label__line-item {
+  flex: 0 0 calc(25% - 8px);
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--Gray-80);
+  transition: background-color 0.3s ease;
+}
+.label__line-error {
+  background-color: var(--Red-error);
+}
+.label__line-orange {
+  background-color: var(--Orange);
+}
+.label__line-success {
+  background-color: var(--Success);
+}
 .label-active .label__title {
   top: 8px;
   font: 400 13px/16px "Inter", "sans-serif";
@@ -477,6 +500,12 @@
 }
 .label_error .label_error-text {
   display: block;
+}
+.label_error #password {
+  background-image: url("../images/icons/password_error.png");
+}
+.label_error #password-repeat {
+  background-image: url("../images/icons/password_error.png");
 }
 
 .textarea {
@@ -1104,6 +1133,20 @@ input[type=number]::-webkit-outer-spin-button {
   background-repeat: no-repeat;
 }
 
+#password {
+  padding-left: 44px;
+  background-image: url("../images/icons/password.png");
+  background-position: center left 12px;
+  background-repeat: no-repeat;
+}
+
+#password-repeat {
+  padding-left: 44px;
+  background-image: url("../images/icons/password.png");
+  background-position: center left 12px;
+  background-repeat: no-repeat;
+}
+
 .registraciya {
   display: flex;
   flex-direction: column;
@@ -1116,6 +1159,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .registraciya__form-active {
   display: flex;
+}
+.registraciya__form li {
+  margin-left: 24px;
+  list-style: disc;
 }
 .registraciya__content {
   display: flex;
@@ -1164,6 +1211,9 @@ input[type=number]::-webkit-outer-spin-button {
   font: 400 16px/24px "Inter", "sans-serif";
   letter-spacing: -0.5px;
   color: var(--Gray-20);
+}
+.registraciya__subtext span {
+  font-weight: 600;
 }
 .registraciya__textinfo {
   font: 400 16px/24px "Inter", "sans-serif";
