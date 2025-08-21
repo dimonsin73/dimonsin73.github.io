@@ -355,6 +355,8 @@
         margin-left: auto
     &-left
         margin-right: auto
+    &-bottom
+        margin-top: auto
 .input 
     width: 100%
     padding: 16px 12px
@@ -3411,6 +3413,11 @@ input[type=number]::-webkit-outer-spin-button
         padding: 20px
         padding-left: 10px
         flex: 0 0 calc( 50% - 12px )
+        &-top 
+            display: grid
+            grid-template-columns: 460px auto
+            align-items: flex-end
+            gap: 5px
         &-item
             display: flex
             flex-direction: column
@@ -3427,6 +3434,9 @@ input[type=number]::-webkit-outer-spin-button
             color: var(--Black)
         &-text 
             @include link-small
+            color: var(--Black)
+        &-subtext
+            font: 300 10px/16px 'Inter', 'sans-serif'
             color: var(--Black)
         &-line 
             display: grid
@@ -3448,13 +3458,17 @@ input[type=number]::-webkit-outer-spin-button
             grid-template-columns: 90px 50px auto
             align-items: center 
             gap: 5px
+        &-line5
+            display: grid
+            grid-template-columns: 90px 50px 35px
+            align-items: center 
+            justify-items: center
+            gap: 5px
         &-blocks 
             display: grid
             row-gap: 40px
-            column-gap: 16px
-            justify-content: space-between
+            column-gap: 30px
             grid-template-columns: 280px 280px
-            padding-left: 32px
         &-block
             padding: 10px 8px 
             border-radius: 10px
@@ -3476,6 +3490,11 @@ input[type=number]::-webkit-outer-spin-button
             text-align: center 
             &:focus 
                 outline: none
+    &__landing 
+        display: flex
+        flex-direction: column
+        gap: 50px
+        height: 100%
     & .check__label 
         align-items: center
     ::-webkit-scrollbar-thumb 

@@ -348,6 +348,10 @@
 .press 
     &-right 
         margin-left: auto
+    &-left
+        margin-right: auto
+    &-bottom
+        margin-top: auto
 .input 
     width: 100%
     padding: 18px 12px
@@ -741,6 +745,26 @@
         @include body-large
         font-weight: 600
         color: var(--Gray-20)
+    &__clue 
+        display: flex
+        align-items: center
+        justify-content: center
+    &__image 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 280px
+        &-r 
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 31px
+            height: 31px
+            border: 2px solid var(--Black)
+            border-radius: 50%
+            font: 700 26px/28px 'Inter', 'sans-serif'
+            letter-spacing: 0.2px
+            color: var(--Black)
 .radio
     &__input
         position: absolute
@@ -1043,6 +1067,7 @@ input[type=number]::-webkit-outer-spin-button
         flex-direction: column
         justify-content: flex-start
         gap: 20px
+        height: 100%
         padding: 16px
         border-radius: 12px
         background-color: var(--White)
@@ -1189,6 +1214,11 @@ input[type=number]::-webkit-outer-spin-button
         padding: 20px
         padding-left: 10px
         flex: 0 0 calc( 50% - 12px )
+        &-top 
+            display: grid
+            grid-template-columns: 460px auto
+            align-items: flex-end
+            gap: 5px
         &-item
             display: flex
             flex-direction: column
@@ -1205,6 +1235,9 @@ input[type=number]::-webkit-outer-spin-button
             color: var(--Black)
         &-text 
             @include link-small
+            color: var(--Black)
+        &-subtext
+            font: 300 10px/16px 'Inter', 'sans-serif'
             color: var(--Black)
         &-line 
             display: grid
@@ -1226,13 +1259,17 @@ input[type=number]::-webkit-outer-spin-button
             grid-template-columns: 90px 50px auto
             align-items: center 
             gap: 5px
+        &-line5
+            display: grid
+            grid-template-columns: 90px 50px 35px
+            align-items: center 
+            justify-items: center
+            gap: 5px
         &-blocks 
             display: grid
             row-gap: 40px
-            column-gap: 16px
-            justify-content: space-between
+            column-gap: 30px
             grid-template-columns: 280px 280px
-            padding-left: 32px
         &-block
             padding: 10px 8px 
             border-radius: 10px
@@ -1254,6 +1291,11 @@ input[type=number]::-webkit-outer-spin-button
             text-align: center 
             &:focus 
                 outline: none
+    &__landing 
+        display: flex
+        flex-direction: column
+        gap: 50px
+        padding-bottom: 100px
     & .check__label 
         align-items: center
     ::-webkit-scrollbar-thumb 
@@ -1364,7 +1406,6 @@ input[type=number]::-webkit-outer-spin-button
         height: 30px
         border: 1px solid var(--Icons)
         border-radius: 4px
-        
         font: 300 16px/24px 'Inter', 'sans-serif'
         letter-spacing: 0.02em
         color: var(--Icons)

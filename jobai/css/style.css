@@ -359,6 +359,9 @@
 .press-left {
   margin-right: auto;
 }
+.press-bottom {
+  margin-top: auto;
+}
 
 .input {
   width: 100%;
@@ -4261,6 +4264,12 @@ input[type=number]::-webkit-outer-spin-button {
   padding-left: 10px;
   flex: 0 0 calc(50% - 12px);
 }
+.panel__tariff-top {
+  display: grid;
+  grid-template-columns: 460px auto;
+  align-items: flex-end;
+  gap: 5px;
+}
 .panel__tariff-item {
   display: flex;
   flex-direction: column;
@@ -4281,6 +4290,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .panel__tariff-text {
   font: 300 14px/16px "Inter", "sans-serif";
+  color: var(--Black);
+}
+.panel__tariff-subtext {
+  font: 300 10px/16px "Inter", "sans-serif";
   color: var(--Black);
 }
 .panel__tariff-line {
@@ -4307,14 +4320,19 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   gap: 5px;
 }
+.panel__tariff-line5 {
+  display: grid;
+  grid-template-columns: 90px 50px 35px;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+}
 .panel__tariff-blocks {
   display: grid;
   row-gap: 40px;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
-  justify-content: space-between;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
   grid-template-columns: 280px 280px;
-  padding-left: 32px;
 }
 .panel__tariff-block {
   padding: 10px 8px;
@@ -4341,6 +4359,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .panel__tariff-input:focus {
   outline: none;
+}
+.panel__landing {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 100%;
 }
 .panel .check__label {
   align-items: center;
