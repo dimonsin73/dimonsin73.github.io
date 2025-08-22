@@ -1,3 +1,14 @@
+const panelTariffBlockArray = document.querySelectorAll('.panel__tariff-block')
+for (let i = 0; i < panelTariffBlockArray.length; i++) {
+    const panelTariffBlock = panelTariffBlockArray[i];
+    autoGrow(panelTariffBlock)
+    panelTariffBlock.addEventListener('input', function() {
+        autoGrow(this);
+    })
+}
+function autoGrow(el) {
+  el.style.height = el.scrollHeight + 'px';
+}
 const panelTabArray = document.querySelectorAll('.panel__tab')
 const panelContainerArray = document.querySelectorAll('.panel__container')
 for (let i = 0; i < panelTabArray.length; i++) {
@@ -17,13 +28,21 @@ for (let i = 0; i < panelTabArray.length; i++) {
                     const panelTariffBlock = panelTariffBlockArray[i];
                     autoGrow(panelTariffBlock)
                 }
+                if (panelContainer.dataset.panel === 'payment') {
+                    // Каледнарь 
+                    let datepicker = new Datepicker('#period-start', {
+                        weekStart: 1
+                    });
+                    let datepicker1 = new Datepicker('#period-finish', {
+                        weekStart: 1
+                    });
+                }
             } else {
                 panelContainer.classList.remove('panel__container-active')
             }
         }
     })
 }
-
 
 const paymentDocsLink = document.querySelector('.payment__docs-link')
 paymentDocsLink.addEventListener('click', function(){
@@ -365,13 +384,7 @@ for (let i = 0; i < actArray.length; i++) {
         window.open('images/docs/act.png')
     })
 }
-// Каледнарь 
-let datepicker = new Datepicker('#period-start', {
-    weekStart: 1
-});
-let datepicker1 = new Datepicker('#period-finish', {
-    weekStart: 1
-});
+
 
 
 const datepickerInputArray = document.querySelectorAll('.datepicker')
@@ -540,14 +553,4 @@ for (let i = 0; i < editCloseArray.length; i++) {
     })
 }
 
-const panelTariffBlockArray = document.querySelectorAll('.panel__tariff-block')
-for (let i = 0; i < panelTariffBlockArray.length; i++) {
-    const panelTariffBlock = panelTariffBlockArray[i];
-    autoGrow(panelTariffBlock)
-    panelTariffBlock.addEventListener('input', function() {
-        autoGrow(this);
-    })
-}
-function autoGrow(el) {
-  el.style.height = el.scrollHeight + 'px';
-}
+

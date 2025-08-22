@@ -296,16 +296,8 @@
                 & path
                     stroke: var(--Red)
                     fill: var(--Red)
-@media (max-width: 1199px)
-    .btn 
-        padding: 12px 24px
-        border-radius: 8px
-        @include btn-medium
-@media (max-width:954px)
-    .btn 
-        padding: 5px 16px
-        border-radius: 6px
-        @include btn-small
+
+
 .link 
     &-large 
         @include link-large
@@ -620,11 +612,11 @@
     &__wrapper 
         position: absolute
         bottom: calc( 100% + 4px)
-        left: -135px
+        left: -150px
         display: none
         flex-direction: column
         gap: 4px
-        width: 270px
+        width: 300px
         padding: 10px
         border-radius: 8px
         background-color: var(--Gray-90)
@@ -924,7 +916,51 @@ input[type=number]::-webkit-outer-spin-button
         &_active 
             left: 0
 // ASIDE END
-
+// HEADER 
+.header // HEADER
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 24px
+    height: 64px
+    padding: 9px 32px
+    z-index: 200
+    &__logo 
+        width: 78px
+        height: 30px
+    &__line 
+        width: 1px
+        height: 32px
+        background-color: var(--Gray-90)
+    &__access 
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 1px 17px
+        border: 1px solid var(--Gray-80)
+        border-radius: 8px
+    &__text 
+        @include text-medium
+        color: var(--Black)
+    &__span 
+        font: 500 12px/17px 'Inter', 'sans-serif'
+        color: var(--Gray-40)
+    &__avatar 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 46px
+        height: 46px
+        border-radius: 13px
+        background: var(--Gray-80)
+        &-text 
+            font: 500 12px/17px 'Inter', 'sans-serif'
+            color: var(--Black)
+// HEADER END
 .section // SECTION 
     display: none
     padding: 10px 32px 24px
@@ -1027,6 +1063,7 @@ input[type=number]::-webkit-outer-spin-button
         gap: 8px
     &__line 
         display: flex
+        flex-wrap: wrap
         align-items: center
         gap: 8px
     &__footer 
@@ -1056,7 +1093,6 @@ input[type=number]::-webkit-outer-spin-button
         transition: background-color 0.3s ease
         &-active
             background-color: var(--White)
-    
     &__job 
         display: none
         &-active 
@@ -1071,4 +1107,38 @@ input[type=number]::-webkit-outer-spin-button
             display: flex
 .timer 
     display: flex
-    align-items: center 
+    align-items: center
+@media (max-width: 767px) 
+    .registraciya
+        &__content
+            padding: 20px
+        &__radios
+            grid-template-columns: 1fr
+    .label__clue
+        right: -20px
+    .clue__wrapper
+        left: -280px
+@media (max-width: 499px) 
+    .section 
+        padding-left: 12px
+        padding-right: 12px
+    .registraciya
+        & .title
+            margin: 0 auto
+            text-align: center
+            font-size: 32px
+        &__content
+            padding: 24px
+        &__radios
+            grid-template-columns: 1fr
+        &__btns 
+            flex-direction: column
+        &__line 
+            justify-content: center
+        &__row 
+            flex-direction: column
+        &__smallcenter
+            align-items: center
+            margin: 0 auto
+            text-align: center
+            

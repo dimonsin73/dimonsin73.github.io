@@ -7,6 +7,7 @@ html(lang="ru")
         link(rel="stylesheet", href="css/reset.css")
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet", href="css/registraciya.css")
+        script(src="js/aside.js" defer) 
         script(src="js/timer.js" defer) 
     body.bg
         aside.aside 
@@ -33,6 +34,16 @@ html(lang="ru")
                             <path d="M2.39844 7.20005C2.39844 5.87457 3.47295 4.80005 4.79844 4.80005H10.7984L13.1984 7.20005H19.1984C20.5239 7.20005 21.5984 8.27457 21.5984 9.60005V16.8C21.5984 18.1255 20.5239 19.2 19.1984 19.2H4.79844C3.47295 19.2 2.39844 18.1255 2.39844 16.8V7.20005Z"/>
                         </svg>
                         | Документы
+        header.header.bg 
+            button(type="button").header__burger.btn-icon
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 5C17 4.44772 16.5523 4 16 4H4C3.44771 4 3 4.44772 3 5C3 5.55228 3.44771 6 4 6H16C16.5523 6 17 5.55228 17 5Z" fill="#6A6A73"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10C17 9.44772 16.5523 9 16 9H4C3.44771 9 3 9.44772 3 10C3 10.5523 3.44771 11 4 11H16C16.5523 11 17 10.5523 17 10Z" fill="#6A6A73"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 15C17 14.4477 16.5523 14 16 14H4C3.44771 14 3 14.4477 3 15C3 15.5523 3.44771 16 4 16H16C16.5523 16 17 15.5523 17 15Z" fill="#6A6A73"/>
+                </svg>
+            .header__logo
+                img(src="images/logo.png", alt="").header__logo0-img
+            .press-right
         main.main
             section.section.section_active
                 .container.container_extrasmall
@@ -68,12 +79,12 @@ html(lang="ru")
                                                 .timer__minutes.registraciya__subtext 01
                                                 .timer__separatop.registraciya__subtext :
                                                 .timer__seconds.registraciya__subtext 00
-                                    .registraciya__col
+                                    .registraciya__col.registraciya__smallcenter
                                         button(type="submit").btn.btn_primary.btn_240s Зарегистрироваться
                                         p.registraciya__text
                                             | У вас есть учётная запись? 
                                             a(href='').registraciya__link Войти
-                                .registraciya__footer 
+                                .registraciya__footer.registraciya__smallcenter
                                     p.registraciya__footer-text Регистрируясь,
                                     p.registraciya__footer-text 
                                         | вы даёте согласие на обработку 
@@ -81,6 +92,6 @@ html(lang="ru")
                                     p.registraciya__footer-text 
                                         | и принимаете 
                                         a(href="").registraciya__footer-link условия предоставления услуг 
-                        a(href="registraciya.html").btn.btn_h48.btn_tertiary Назад
+                        a(href="registraciya.html").btn.btn_h48.btn_tertiary.registraciya__smallcenter Назад
 
         
