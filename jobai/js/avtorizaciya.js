@@ -234,3 +234,17 @@ function registraciyaTimer(timer) {
         }
     }, 1000)
 }
+// Открытие/скрытие пароля
+const labelEyeArray = document.querySelectorAll('.label__eye')
+for (let i = 0; i < labelEyeArray.length; i++) {
+    const labelEye = labelEyeArray[i];
+    labelEye.addEventListener('click', function(){
+        labelEye.classList.toggle('label__eye-active')
+        const password = labelEye.parentElement.querySelector('.input')
+        if (labelEye.classList.contains('label__eye-active')) {
+            password.setAttribute('type', 'text')
+        } else {
+            password.setAttribute('type', 'password')
+        }
+    })
+}

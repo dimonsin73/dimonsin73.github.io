@@ -52,21 +52,24 @@ html(lang="ru")
                                         li.registraciya__subtext от 8 символов
                                     label(for='password').label
                                         h3.label__title.label__title-icon Пароль
-                                        input(type="password", name="password"  autocomplete="on").label__input.input#password
+                                        input(type="password", name="password", maxlength='15', autocomplete="on").label__input.input#password
                                         .label__line
                                             .label__line-item
                                             .label__line-item
                                             .label__line-item
                                             .label__line-item
+                                        p.label__text Не более 15 символов
+                                        button(type="button").label__eye.btn-icon
                                     label(for='password-repeat').label
                                         h3.label__title.label__title-icon Пароль
-                                        input(type="password", name="password"  autocomplete="on").label__input.input#password-repeat
+                                        input(type="password", name="password", maxlength='15',  autocomplete="on").label__input.input#password-repeat
                                         .label__line
                                             .label__line-item
                                             .label__line-item
                                             .label__line-item
                                             .label__line-item
                                         p.label_error-text Пароли не совпадают
+                                        button(type="button").label__eye.btn-icon
                                 button(type="submit").btn.btn_primary.btn_240.registraciya__smallcenter Сбросить пароль
                         a(href="landing.html").btn.btn_h48.btn_tertiary.registraciya__smallcenter Назад
 

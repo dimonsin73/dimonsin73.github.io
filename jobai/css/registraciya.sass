@@ -398,6 +398,23 @@
     &__text 
         @include subtitle-medium
         color: var(--Gray-40)
+    &__subtext
+        @include body-small
+        color: var(--Gray-30)
+    &__eye 
+        position: absolute
+        right: 7px
+        top: 14px
+        width: 30px
+        height: 30px
+        background: 
+            image: url('../images/icons/eye_slash.png')
+            position: center center
+        transition: background 0.3s ease
+        &-active 
+            background: 
+                image: url('../images/icons/eye_visible.png')
+
     &__flyingtext 
         position: absolute
         top: 24px 

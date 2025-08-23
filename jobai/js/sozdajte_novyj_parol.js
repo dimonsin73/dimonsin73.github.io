@@ -51,14 +51,19 @@ const passwordSecond = document.getElementById('password-repeat')
 const passwordLabel = password.parentElement
 const passwordSecondLabel = passwordSecond.parentElement
 
-password.addEventListener('input', function(){
-    passwordLabel.classList.remove('label_error')
-})
+
 // Проверка надёжности пароля
 password.addEventListener('input', function(){
     const labelLine = password.nextSibling
     const labelLineItemArr = labelLine.children
-    attributLineAddColor(labelLineItemArr)
+    attributLineAddColor(password, labelLineItemArr)
+    passwordComparison()
+})
+passwordSecond.addEventListener('input', function(){
+    const labelLine = passwordSecond.nextSibling
+    const labelLineItemArr = labelLine.children
+    attributLineAddColor(passwordSecond, labelLineItemArr)
+    passwordComparison()
 })
 // Ф-ия очистки цветов
 function attributLineRemoveColor(element) {
@@ -67,8 +72,8 @@ function attributLineRemoveColor(element) {
     element.classList.remove('label__line-error')
 }
 // Ф-ция окрашивания 
-function attributLineAddColor(labelLineItemArr) {
-    if (password.value.length <= 16) {
+function attributLineAddColor(password, labelLineItemArr) {
+    if (password.value.length < 16) {
         for (let i = 0; i < labelLineItemArr.length; i++) {
             const element = labelLineItemArr[i];
             attributLineRemoveColor(element)
@@ -78,7 +83,7 @@ function attributLineAddColor(labelLineItemArr) {
             element.classList.add('label__line-success')
         }
     }
-    if (password.value.length < 12) {
+    if (password.value.length < 14) {
         for (let i = 0; i < labelLineItemArr.length; i++) {
             const element = labelLineItemArr[i];
             attributLineRemoveColor(element)
@@ -88,7 +93,7 @@ function attributLineAddColor(labelLineItemArr) {
             element.classList.add('label__line-success')
         }
     }
-    if (password.value.length < 8) {
+    if (password.value.length < 12) {
         for (let i = 0; i < labelLineItemArr.length; i++) {
             const element = labelLineItemArr[i];
             attributLineRemoveColor(element)
@@ -98,7 +103,7 @@ function attributLineAddColor(labelLineItemArr) {
             element.classList.add('label__line-orange')
         }
     }
-    if (password.value.length < 4) {
+    if (password.value.length < 8) {
         for (let i = 0; i < labelLineItemArr.length; i++) {
             const element = labelLineItemArr[i];
             attributLineRemoveColor(element)
@@ -115,43 +120,40 @@ function attributLineAddColor(labelLineItemArr) {
         }
     }
 }
-// Проверка совпадения паролей 
-password.addEventListener('input', function(){
-    passwordComparison()
-})
-passwordSecond.addEventListener('input', function(){
-    passwordComparison()
-})
-
 // Ф-ция проверки совпадения паролей
 function passwordComparison() {
-    const labelLine = passwordSecond.nextSibling
-    const labelLineItemArr = labelLine.children
-    const labelError = labelLine.nextSibling
-    if (passwordSecond.value != password.value) {
-        passwordLabel.classList.add('label_error')
-        passwordSecondLabel.classList.add('label_error')
-        for (let i = 0; i < labelLineItemArr.length; i++) {
-            const element = labelLineItemArr[i];
-            attributLineRemoveColor(element)
-        }
-        for (let i = 0; i < 2; i++) {
-            const element = labelLineItemArr[i];
-            element.classList.add('label_error')
-        }
-        labelError.style.opacity = '1'
+    
+    if (passwordSecond.value.length === 0) {
+        passwordSecondLabel.classList.remove('label_error')
     } else {
-        passwordLabel.classList.remove('label_error')
-        passwordSecondLabel.classList.remove('label_error')
-        attributLineAddColor(labelLineItemArr)
-    }
-    if (passwordSecond.value.length == 0) {
-        passwordLabel.classList.remove('label_error')
-        passwordSecondLabel.classList.remove('label_error')
-        for (let i = 0; i < labelLineItemArr.length; i++) {
-            const element = labelLineItemArr[i];
-            attributLineRemoveColor(element)
+        if (passwordSecond.value != password.value) {
+            passwordSecondLabel.classList.add('label_error')
+            const labelLine = passwordSecond.nextSibling
+            const labelLineItemArr = labelLine.children
+            for (let i = 0; i < labelLineItemArr.length; i++) {
+                const element = labelLineItemArr[i];
+                attributLineRemoveColor(element)
+            }
+            for (let i = 0; i < 2; i++) {
+                const element = labelLineItemArr[i];
+                element.classList.add('label__line-error')
+            }
+        } else {
+            passwordSecondLabel.classList.remove('label_error')
         }
-        labelError.style.opacity = '0'
     }
+}
+// Открытие/скрытие пароля
+const labelEyeArray = document.querySelectorAll('.label__eye')
+for (let i = 0; i < labelEyeArray.length; i++) {
+    const labelEye = labelEyeArray[i];
+    labelEye.addEventListener('click', function(){
+        labelEye.classList.toggle('label__eye-active')
+        const password = labelEye.parentElement.querySelector('.input')
+        if (labelEye.classList.contains('label__eye-active')) {
+            password.setAttribute('type', 'text')
+        } else {
+            password.setAttribute('type', 'password')
+        }
+    })
 }
