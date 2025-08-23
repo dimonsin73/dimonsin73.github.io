@@ -3509,8 +3509,103 @@ input[type=number]::-webkit-outer-spin-button
     &__landing 
         display: flex
         flex-direction: column
-        gap: 50px
-        height: 100%
+        gap: 46px
+        &-top
+            display: grid
+            grid-template-columns: 434px auto
+            gap: 32px
+        &-content
+            display: grid
+            grid-template-columns: 434px auto
+            gap: 32px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 24px
+            padding-bottom: 100px
+        &-menu 
+            display: flex
+            flex-direction: column
+            gap: 24px
+        &-list 
+            display: flex
+            flex-direction: column
+            gap: 10px
+        &-li 
+            display: grid
+            grid-template-columns: 460px 72px 460px
+            align-items: center
+            gap: 10px
+        &-btns 
+            display: flex
+            align-items: center
+            gap: 6px
+            justify-content: flex-end
+        &-url 
+            display: none
+            gap: 8px
+            align-items: center
+            margin-left: 16px
+            & p 
+                @include title-medium
+                color: var(--Gray-30)
+            &-active 
+                display: flex
+        &-urlinput
+            height: 56px
+            padding: 5px 12px
+            border: 1px solid var(--Gray-60)
+            border-radius: 6px
+            @include link-large
+            font-weight: 300
+            color: var(--Black)
+        &-confirm 
+            display: none
+            &-active 
+                display: flex
+        &-close
+            & path
+                transition: fill 0.3s ease
+            &:hover 
+                & path 
+                    fill: var(--Red-error)
+        &-success
+            & path
+                transition: fill 0.3s ease
+            &:hover 
+                & path 
+                    fill: var(--Primary-40)
+        &-edit 
+            &-hide 
+                display: none
+            & path
+                transition: fill 0.3s ease
+            &:hover 
+                & path 
+                    fill: var(--Primary-40)
+        &-delete
+            & path
+                transition: fill 0.3s ease
+            &:hover 
+                & path 
+                    fill: var(--Red-error)
+        &-input 
+            height: 56px
+            padding: 5px 12px
+            border: 1px solid var(--White)
+            border-radius: 6px
+            @include link-large
+            color: var(--Black)
+            &-active 
+                border: 1px solid var(--Gray-60)
+                font-weight: 300
+        &-add 
+            display: flex
+            align-items: centers
+            gap: 6px
+            margin-left: 12px
+            @include body-large
+            color: var(--Primary-40)
     & .check__label 
         align-items: center
     ::-webkit-scrollbar-thumb 

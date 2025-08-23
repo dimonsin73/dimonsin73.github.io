@@ -554,3 +554,108 @@ for (let i = 0; i < editCloseArray.length; i++) {
 }
 
 
+// Редактирование меню лендинга 
+const panelLandingEditArray = document.querySelectorAll('.panel__landing-edit')
+const panelLandingDeleteArray = document.querySelectorAll('.panel__landing-delete')
+for (let i = 0; i < panelLandingEditArray.length; i++) {
+    const panelLandingEdit = panelLandingEditArray[i];
+    panelLandingEdit.addEventListener('click', function () {
+        funEdit(panelLandingEdit)
+    })
+}
+function funEdit(panelLandingEdit) {
+    panelLandingEdit.classList.add('panel__landing-edit-hide')
+    const input = panelLandingEdit.parentElement.parentElement.querySelector('.panel__landing-input')
+    const panelLandingUrl = panelLandingEdit.parentElement.parentElement.querySelector('.panel__landing-url')
+    const panelLandingConfirmArray = panelLandingEdit.parentElement.querySelectorAll('.panel__landing-confirm')
+    const panelLandingClose = panelLandingEdit.parentElement.querySelector('.panel__landing-close')
+    const panelLandingSuccess = panelLandingEdit.parentElement.querySelector('.panel__landing-success')
+    input.classList.add('panel__landing-input-active')
+    input.readOnly = false
+    panelLandingUrl.classList.add('panel__landing-url-active')
+    for (let i = 0; i < panelLandingConfirmArray.length; i++) {
+        const panelLandingConfirm = panelLandingConfirmArray[i];
+        panelLandingConfirm.classList.add('panel__landing-confirm-active')
+    }
+    const inputValueStart = input.value
+    const inputUrl = panelLandingUrl.querySelector('.panel__landing-urlinput')
+    const inputUrlValueStart = inputUrl.value
+    panelLandingClose.addEventListener('click', function(){
+        input.value = inputValueStart
+        inputUrl.value = inputUrlValueStart
+        panelLandingEditFun(panelLandingEdit, input, panelLandingUrl, panelLandingConfirmArray)
+    })
+    panelLandingSuccess.addEventListener('click', function(){
+        panelLandingEditFun(panelLandingEdit, input, panelLandingUrl, panelLandingConfirmArray)
+    })
+}
+function panelLandingEditFun(panelLandingEdit, input, panelLandingUrl, panelLandingConfirmArray) {
+    panelLandingEdit.classList.remove('panel__landing-edit-hide')
+    input.classList.remove('panel__landing-input-active')
+    panelLandingUrl.classList.remove('panel__landing-url-active')
+    input.readOnly = true
+    for (let i = 0; i < panelLandingConfirmArray.length; i++) {
+        const panelLandingConfirm = panelLandingConfirmArray[i];
+        panelLandingConfirm.classList.remove('panel__landing-confirm-active')
+    }
+}
+for (let i = 0; i < panelLandingDeleteArray.length; i++) {
+    const panelLandingDelete = panelLandingDeleteArray[i];
+    panelLandingDeleteFun(panelLandingDelete)
+}
+function panelLandingDeleteFun(panelLandingDelete) {
+    panelLandingDelete.addEventListener('click', function(){
+        const li = panelLandingDelete.parentElement.parentElement
+        li.remove()
+    })
+}
+// Добавление пункта меню лендинга 
+const panelLandingAdd = document.querySelector('.panel__landing-add')
+const panelLandingList = document.querySelector('.panel__landing-list')
+panelLandingAdd.addEventListener('click', function(){
+    const panelLandingLi = document.createElement('li')
+    panelLandingLi.classList.add('panel__landing-li')
+    const panelLandingInput = document.createElement('input')
+    panelLandingInput.classList.add('panel__landing-input', 'panel__landing-input-active')
+    panelLandingInput.setAttribute('type', 'text')
+    const panelLandingBtns = document.createElement('div')
+    panelLandingBtns.classList.add('panel__landing-btns')
+    const panelLandingClose = document.createElement('button')
+    panelLandingClose.classList.add('btn-icon', 'panel__landing-close', 'panel__landing-confirm', 'panel__landing-confirm-active')
+    panelLandingClose.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z" fill="#6A6A73"/></svg>'
+    const panelLandingSuccess = document.createElement('button')
+    panelLandingSuccess.classList.add('btn-icon', 'panel__landing-success', 'panel__landing-confirm', 'panel__landing-confirm-active')
+    panelLandingSuccess.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z" fill="#6A6A73"/></svg>'
+    const panelLandingEdit = document.createElement('button')
+    panelLandingEdit.classList.add('btn-icon', 'panel__landing-edit', 'panel__landing-edit-hide')
+    panelLandingEdit.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z" fill="#6A6A73"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z" fill="#6A6A73"/></svg>'
+    const panelLandingDelete = document.createElement('button')
+    panelLandingDelete.classList.add('btn-icon', 'panel__landing-delete')
+    panelLandingDelete.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>'
+    const panelLandingUrl = document.createElement('div')
+    panelLandingUrl.classList.add('panel__landing-url', 'panel__landing-url-active')
+    const panelLandingP = document.createElement('p')
+    panelLandingP.textContent = 'URL'
+    const panelLandingUrlinput = document.createElement('input')
+    panelLandingUrlinput.classList.add('panel__landing-urlinput')
+    panelLandingUrlinput.setAttribute('type', 'text')
+    panelLandingBtns.append(panelLandingClose, panelLandingSuccess, panelLandingEdit, panelLandingDelete)
+    panelLandingUrl.append(panelLandingP, panelLandingUrlinput)
+    panelLandingLi.append(panelLandingInput, panelLandingBtns, panelLandingUrl)
+    panelLandingList.append(panelLandingLi)
+
+    const panelLandingConfirmArray = panelLandingBtns.querySelectorAll('.panel__landing-confirm')
+    panelLandingDeleteFun(panelLandingDelete)
+
+    panelLandingClose.addEventListener('click', function(){
+        panelLandingInput.value = ''
+        panelLandingEditFun(panelLandingEdit, panelLandingInput, panelLandingConfirmArray)
+    })
+    panelLandingSuccess.addEventListener('click', function(){
+        panelLandingEditFun(panelLandingEdit, panelLandingInput, panelLandingUrl, panelLandingConfirmArray)
+    })
+    panelLandingEdit.addEventListener('click', function () {
+        funEdit(panelLandingEdit)
+    })
+    
+})
