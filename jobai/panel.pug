@@ -1954,15 +1954,113 @@ html(lang="ru")
                                         h3.panel__acquiring-title ООО «МИРАКС Рекрутмент»
                                         .panel__acquiring-logo 
                                             img(src="images/sk.png", alt="logo")
-                                            
+                                        .panel__acquiring-radio
+                                            input(type="radio", name="acquiring", checked)#acquiring_1.panel__acquiring-input
+                                            label(for='acquiring_1').panel__acquiring-label
+                                                .panel__acquiring-info 
+                                                    p.panel__acquiring-text ИНН 9731091472
+                                                    p.panel__acquiring-text КПП 773101001   
+                                                    p.panel__acquiring-text ОГРН 1227700221726
+                                                .panel__acquiring-radiocheck
+                                                    p.panel__acquiring-subtext выбрать юр. лицо
+                                                    .panel__acquiring-button
+                                        .select
+                                            input(type="text", readonly, name="bank_1", value='БИК 044525593').select__input.input.panel__acquiring-select#bank_1
+
+                                            .bank
+                                            .options 
+                                                .options__wrapper
+                                                    .option.panel__acquiring-alfabank БИК 044525593
+                                                    .option.panel__acquiring-tbank БИК 044525974 
+                                                    .option.panel__acquiring-sberbank БИК 044525225
+                                        label.label(for="bank_iban_1")
+                                            input(type="text", name="bank_iban_1", disabled, value='').input#bank_iban_1.panel__acquiring-iban
+                                            p.panel__acquiring-change(data-change='alfabank') 40702810401020001683
+                                            p.panel__acquiring-change(data-change='tbank') 40702810210001663847
+                                            p.panel__acquiring-change(data-change='sberbank') 40702810738000160510
+                                            button(type="button").label__edit.btn-icon
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z" fill="#6A6A73"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z" fill="#6A6A73"/>
+                                                </svg>
+                                            button(type="button").label__ok.btn-icon
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z" fill="#6A6A73"/>
+                                                </svg>
                                     .panel__acquiring-item.br
                                         h3.panel__acquiring-title ООО «Май нью джоб Девелопмент Компани»
                                         .panel__acquiring-logo 
                                             img(src="images/sk.png", alt="logo")
+                                        .panel__acquiring-radio
+                                            input(type="radio", name="acquiring")#acquiring_2.panel__acquiring-input
+                                            label(for='acquiring_2').panel__acquiring-label
+                                                .panel__acquiring-info 
+                                                    p.panel__acquiring-text ИНН 9731091472
+                                                    p.panel__acquiring-text КПП 773101001   
+                                                    p.panel__acquiring-text ОГРН 1227700221726
+                                                .panel__acquiring-radiocheck
+                                                    p.panel__acquiring-subtext выбрать юр. лицо
+                                                    .panel__acquiring-button
+                                        .select
+                                            input(type="text", readonly, name="bank_1", value='БИК 044525225').select__input.input.panel__acquiring-select#bank_1
+                                            .bank
+                                            .options 
+                                                .options__wrapper
+                                                    .option.panel__acquiring-alfabank БИК 044525593
+                                                    .option.panel__acquiring-tbank БИК 044525974 
+                                                    .option.panel__acquiring-sberbank БИК 044525225
+                                        label.label(for="bank_iban_2")
+                                            input(type="text", name="bank_iban_2", disabled, value='').input#bank_iban_2.panel__acquiring-iban
+                                            p.panel__acquiring-change(data-change='alfabank') 40702810501020000474
+                                            p.panel__acquiring-change(data-change='tbank') 40702810610001060134
+                                            p.panel__acquiring-change(data-change='sberbank') 40702810638000054768
+                                            button(type="button").label__edit.btn-icon
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z" fill="#6A6A73"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z" fill="#6A6A73"/>
+                                                </svg>
+                                            button(type="button").label__ok.btn-icon
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z" fill="#6A6A73"/>
+                                                </svg>
                                     .panel__acquiring-item 
                                         h3.panel__acquiring-title АО «УК Май нью джоб»
                                         .panel__acquiring-logo 
+                                        .panel__acquiring-radio
+                                            input(type="radio", name="acquiring")#acquiring_3.panel__acquiring-input
+                                            label(for='acquiring_3').panel__acquiring-label
+                                                .panel__acquiring-info 
+                                                    p.panel__acquiring-text ИНН 9731091472
+                                                    p.panel__acquiring-text КПП 773101001   
+                                                    p.panel__acquiring-text ОГРН 1227700221726
+                                                .panel__acquiring-radiocheck
+                                                    p.panel__acquiring-subtext выбрать юр. лицо
+                                                    .panel__acquiring-button
+                                        .select
+                                            input(type="text", readonly, name="bank_1", value='БИК 044525974').select__input.input.panel__acquiring-select#bank_1
+                                            .bank
+                                            .options.options_2item
+                                                .options__wrapper
+                                                    .option.panel__acquiring-alfabank БИК 044525593
+                                                    .option.panel__acquiring-tbank БИК 044525974 
+                                        label.label(for="bank_iban_3")
+                                            input(type="text", name="bank_iban_3", disabled, value='').input#bank_iban_3.panel__acquiring-iban
+                                            p.panel__acquiring-change(data-change='alfabank') 40702810601020002068
+                                            p.panel__acquiring-change(data-change='tbank') 40702810110001663196
+                                            button(type="button").label__edit.btn-icon
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z" fill="#6A6A73"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z" fill="#6A6A73"/>
+                                                </svg>
+                                            button(type="button").label__ok.btn-icon
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z" fill="#6A6A73"/>
+                                                </svg>
                                 .panel__acquiring-footer 
+                                    a(href="").panel__acquiring-link 
+                                        img(src="images/icons/pdf-file.png", alt="")
+                                        p Инструкция по смене юридического лица и расчтённого счёта, pdf
+                                    button(type="button").panel__acquiring-addinstruction + заменить Инструкцию
                                 button(type="submit").btn.btn_primary.btn_center Сохранить
         .confirm
             .confirm__wrapper(data-confirm='delete')

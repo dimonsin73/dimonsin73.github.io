@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --Primary-10: #003B73;
   --Primary-20: #004C95;
@@ -512,6 +513,25 @@
   top: 50%;
   right: -36px;
   transform: translateY(-50%);
+}
+.label__edit {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translate3d(0, -50%, 0);
+}
+.label__edit:hover path {
+  fill: var(--Primary-40);
+}
+.label__ok {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: none;
+  transform: translate3d(0, -50%, 0);
+}
+.label__ok:hover path {
+  fill: var(--Primary-40);
 }
 .label-active .label__title {
   top: 8px;
@@ -1869,27 +1889,192 @@ input[type=number]::-webkit-outer-spin-button {
 .panel__acquiring-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 32px;
+  gap: 16px;
 }
 .panel__acquiring-item {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding-right: 32px;
+  padding: 10px 32px 10px 16px;
 }
 .panel__acquiring-title {
   font: 600 18px/22px "Inter", "sans-serif";
   letter-spacing: 0.02em;
   color: var(--Black);
+  white-space: nowrap;
+}
+.panel__acquiring-logo {
+  height: 30px;
 }
 .panel__acquiring-logo img {
   height: 30px;
+}
+.panel__acquiring-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+.panel__acquiring-button {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--Black);
+  border-radius: 50%;
+  transition: border 0.3s linear;
+}
+.panel__acquiring-input {
+  display: none;
+}
+.panel__acquiring-input:checked ~ .panel__acquiring-label {
+  background-color: var(--Gray-100);
+}
+.panel__acquiring-input:checked ~ .panel__acquiring-label .panel__acquiring-button {
+  border: 7px solid var(--Black);
+}
+.panel__acquiring-select {
+  padding-left: 180px;
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Gray-30);
+}
+.panel__acquiring-change {
+  display: none;
+}
+.panel__acquiring-alfabank {
+  font: 500 14px/20px "Inter", "sans-serif";
+  color: var(--Gray-30);
+}
+.panel__acquiring-alfabank::before {
+  content: "Альфа-Банк";
+  padding-right: 16px;
+  font: 500 14px/20px "Inter", "sans-serif";
+  font-weight: 600;
+  color: var(--Gray-30);
+}
+.panel__acquiring-tbank {
+  font: 500 14px/20px "Inter", "sans-serif";
+  color: var(--Gray-30);
+}
+.panel__acquiring-tbank::before {
+  content: "ТБанк";
+  padding-right: 16px;
+  font: 500 14px/20px "Inter", "sans-serif";
+  font-weight: 600;
+  color: var(--Gray-30);
+}
+.panel__acquiring-sberbank {
+  font: 500 14px/20px "Inter", "sans-serif";
+  color: var(--Gray-30);
+}
+.panel__acquiring-sberbank::before {
+  content: "Сбербанк";
+  padding-right: 16px;
+  font: 500 14px/20px "Inter", "sans-serif";
+  font-weight: 600;
+  color: var(--Gray-30);
+}
+.panel__acquiring-iban {
+  padding-left: 48px;
+  border: 1px solid var(--Gray-100);
+  background-repeat: no-repeat;
+  background-position: center left 16px;
+}
+.panel__acquiring-iban-active {
+  border: 1px solid var(--Gray-60);
+  background-color: var(--White);
+}
+.panel__acquiring-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.panel__acquiring-radiocheck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 50px;
+}
+.panel__acquiring-text {
+  font: 300 14px/16px "Inter", "sans-serif";
+  color: var(--Black);
+}
+.panel__acquiring-subtext {
+  font: 300 10px/16px "Inter", "sans-serif";
+  color: var(--Black);
+  text-align: center;
+}
+.panel__acquiring-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding-left: 16px;
+}
+.panel__acquiring-link {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  max-width: 390px;
+  font: 300 16px/20px "Inter", "sans-serif";
+  color: var(--Black);
+}
+.panel__acquiring-addinstruction {
+  margin-left: 60px;
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Primary-40);
 }
 .panel .check__label {
   align-items: center;
 }
 .panel ::-webkit-scrollbar-thumb {
   background-color: #0894F3;
+}
+
+.bank {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  width: 150px;
+  background-position: center left;
+  background-repeat: no-repeat;
+  transform: translate3d(0, -50%, 0);
+}
+
+.alfabank {
+  background-image: url(../images/icons/alfabank.png);
+}
+.alfabank:before {
+  content: "Альфа-Банк";
+  padding-left: 32px;
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-30);
+}
+
+.tbank {
+  background-image: url(../images/icons/tbank.png);
+}
+.tbank:before {
+  content: "ТБанк";
+  padding-left: 32px;
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-30);
+}
+
+.sberbank {
+  background-image: url(../images/icons/sberbank.png);
+}
+.sberbank:before {
+  content: "Сбербанк";
+  padding-left: 32px;
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Gray-30);
 }
 
 .users {

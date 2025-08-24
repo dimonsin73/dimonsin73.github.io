@@ -462,6 +462,23 @@
         top: 50%
         right: -36px
         transform: translateY(-50%)
+    &__edit
+        position: absolute
+        top: 50%
+        right: 16px
+        transform: translate3d(0, -50%, 0)
+        &:hover 
+            & path 
+                fill: var(--Primary-40)
+    &__ok 
+        position: absolute
+        top: 50%
+        right: 16px
+        display: none
+        transform: translate3d(0, -50%, 0)
+        &:hover 
+            & path 
+                fill: var(--Primary-40)
     &-active 
         & .label__title
             top: 8px
@@ -474,7 +491,6 @@
         position: relative
         width: 432px
         z-index: 30
-
     &_error
         &-text 
             position: absolute
@@ -1531,23 +1547,155 @@ input[type=number]::-webkit-outer-spin-button
         &-wrapper 
             display: grid
             grid-template-columns: 1fr 1fr 1fr
-            gap: 32px
+            gap: 16px
         &-item
             display: flex
             flex-direction: column
             gap: 12px
-            padding-right: 32px
+            padding: 10px 32px 10px 16px
         &-title 
             @include title-xmedium
             letter-spacing: 0.02em
             color: var(--Black)
+            white-space: nowrap
         &-logo 
+            height: 30px
             & img
                 height: 30px
+        &-label
+            display: flex
+            justify-content: space-between
+            padding: 10px 12px
+            border-radius: 8px
+            transition: background 0.3s ease
+        &-button 
+            width: 20px
+            height: 20px
+            border: 2px solid var(--Black)
+            border-radius: 50%
+            transition: border 0.3s linear
+        &-input 
+            display: none
+            &:checked
+                & ~ .panel__acquiring-label
+                    background-color: var(--Gray-100)
+                & ~ .panel__acquiring-label .panel__acquiring-button
+                    border: 7px solid var(--Black)
+        &-select 
+            padding-left: 180px
+            @include body-large
+            color: var(--Gray-30)
+        &-change 
+            display: none
+        &-alfabank 
+            @include text-medium
+            color: var(--Gray-30)
+            &::before
+                content: 'Альфа-Банк'
+                padding-right: 16px
+                @include text-medium
+                font-weight: 600
+                color: var(--Gray-30)
+        &-tbank 
+            @include text-medium
+            color: var(--Gray-30)
+            &::before
+                content: 'ТБанк'
+                padding-right: 16px
+                @include text-medium
+                font-weight: 600
+                color: var(--Gray-30)
+        &-sberbank 
+            @include text-medium
+            color: var(--Gray-30)
+            &::before
+                content: 'Сбербанк'
+                padding-right: 16px
+                @include text-medium
+                font-weight: 600
+                color: var(--Gray-30)
+        &-iban 
+            padding-left: 48px
+            border: 1px solid var(--Gray-100)
+            background: 
+                repeat: no-repeat 
+                position: center left 16px
+            &-active 
+                border: 1px solid var(--Gray-60)
+                background-color: var(--White)
+                
+        &-info 
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-radiocheck
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: flex-start
+            gap: 8px
+            width: 50px
+        &-text 
+            @include link-small
+            color: var(--Black)
+        &-subtext 
+            font: 300 10px/16px 'Inter', 'sans-serif'
+            color: var(--Black)
+            text-align: center
+        &-footer 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 24px
+            padding-left: 16px
+        &-link 
+            display: flex
+            gap: 20px 
+            align-items: center
+            max-width: 390px
+            font: 300 16px/20px 'Inter', 'sans-serif'
+            color: var(--Black)
+        &-addinstruction
+            margin-left: 60px
+            @include body-large
+            color: var(--Primary-40)
     & .check__label 
         align-items: center
     ::-webkit-scrollbar-thumb 
         background-color: #0894F3
+.bank 
+    position: absolute
+    top: 50%
+    left: 16px
+    width: 150px
+    background: 
+        position: center left   
+        repeat: no-repeat
+    transform: translate3d(0, -50%, 0)
+.alfabank
+    background: 
+        image: url(../images/icons/alfabank.png)
+    &:before 
+        content: 'Альфа-Банк'
+        padding-left: 32px
+        @include title-medium
+        color: var(--Gray-30)
+.tbank
+    background: 
+        image: url(../images/icons/tbank.png)
+    &:before 
+        content: 'ТБанк'
+        padding-left: 32px
+        @include title-medium
+        color: var(--Gray-30)
+.sberbank
+    background: 
+        image: url(../images/icons/sberbank.png)
+    &:before 
+        content: 'Сбербанк'
+        padding-left: 32px
+        @include title-medium
+        color: var(--Gray-30)
 .users 
     display: flex
     flex-direction: column

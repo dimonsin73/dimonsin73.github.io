@@ -860,3 +860,83 @@ panelDocumentAdd.addEventListener('click', function(){
         textareaValueStart = panelDocumentTextarea.value
     })
 })
+
+const panelAcquiringSelectArray = document.querySelectorAll('.panel__acquiring-select')
+for (let i = 0; i < panelAcquiringSelectArray.length; i++) {
+    const panelAcquiringSelect = panelAcquiringSelectArray[i];
+    const bank = panelAcquiringSelect.nextSibling
+    const labeInput = panelAcquiringSelect.parentElement.parentElement.querySelector('.panel__acquiring-iban')
+    changeBankFun(panelAcquiringSelect, bank, labeInput)
+    const optionArray = panelAcquiringSelect.parentElement.querySelectorAll('.option')
+    for (let i = 0; i < optionArray.length; i++) {
+        const option = optionArray[i];
+        option.addEventListener('click', function () {
+            const optionValue = option.textContent
+            changeBank(optionValue, bank, labeInput)
+        })
+    }
+}
+function changeBankFun(panelAcquiringSelect, bank, labeInput) {
+    const inputValue = panelAcquiringSelect.value
+    changeBank(inputValue, bank, labeInput)
+}
+function changeBank(inputValue, bank, labeInput) {
+    const panelAcquiringChangeArray = labeInput.parentElement.querySelectorAll('.panel__acquiring-change')
+    switch (inputValue.trim()) {
+        case 'БИК 044525593':
+            bank.classList = ''
+            bank.classList.add('bank', 'alfabank')
+            for (let i = 0; i < panelAcquiringChangeArray.length; i++) {
+                const panelAcquiringChange = panelAcquiringChangeArray[i];
+                if (panelAcquiringChange.dataset.change === 'alfabank') {
+                    labeInput.value = panelAcquiringChange.textContent
+                    labeInput.style.backgroundImage = 'url(images/icons/alfabank.png)'
+                }
+            }
+            break;
+        case 'БИК 044525974':
+            bank.classList = ''
+            bank.classList.add('bank', 'tbank')
+            for (let i = 0; i < panelAcquiringChangeArray.length; i++) {
+                const panelAcquiringChange = panelAcquiringChangeArray[i];
+                if (panelAcquiringChange.dataset.change === 'tbank') {
+                    labeInput.value = panelAcquiringChange.textContent
+                    labeInput.style.backgroundImage = 'url(images/icons/tbank.png)'
+                }
+            }
+            break;
+        case 'БИК 044525225':
+            bank.classList = ''
+            bank.classList.add('bank', 'sberbank')
+            for (let i = 0; i < panelAcquiringChangeArray.length; i++) {
+                const panelAcquiringChange = panelAcquiringChangeArray[i];
+                if (panelAcquiringChange.dataset.change === 'sberbank') {
+                    labeInput.value = panelAcquiringChange.textContent
+                    labeInput.style.backgroundImage = 'url(images/icons/sberbank.png)'
+                }
+            }
+            break;
+        default:
+            break;
+    }
+}
+const labelEditArray = document.querySelectorAll('.label__edit')
+for (let i = 0; i < labelEditArray.length; i++) {
+    const labelEdit = labelEditArray[i];
+    labelEdit.addEventListener('click', function(){
+        const labelInput = labelEdit.parentElement.querySelector('.panel__acquiring-iban')
+        const labelOk = labelEdit.parentElement.querySelector('.label__ok')
+        labelEdit.style.display = 'none'
+        labelOk.style.display = 'flex'
+        labelInput.classList.add('panel__acquiring-iban-active')
+        labelInput.disabled = false
+        labelInput.focus()
+        labelOk.addEventListener('click', function(){
+            labelEdit.style.display = 'flex'
+            labelOk.style.display = 'none'
+            labelInput.classList.remove('panel__acquiring-iban-active')
+            labelInput.disabled = true
+        })
+    })
+
+}
