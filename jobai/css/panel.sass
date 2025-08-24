@@ -1522,6 +1522,19 @@ input[type=number]::-webkit-outer-spin-button
         &-cancell 
             display: none
             width: 200px
+    &__acquiring 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &-wrapper 
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+            gap: 32px
+        &-item
+            display: flex
+            flex-direction: column
+            gap: 24px
+            padding-right: 32px
     & .check__label 
         align-items: center
     ::-webkit-scrollbar-thumb 

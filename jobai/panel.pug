@@ -883,7 +883,7 @@ html(lang="ru")
                                         .panel__document-content
                                             .panel__document-image
                                                 img(src="images/icons/menu-bar.png", alt="").panel__document-img
-                                            textarea(name='personal_data_processing_policy').panel__document-textarea 
+                                            textarea(name='personal_data_processing_policy', disabled).panel__document-textarea 
                                                 | Политика обработка персоналальных данных
                                                 |
                                                 | 1.&nbsp;Общее положение
@@ -941,7 +941,7 @@ html(lang="ru")
                                         .panel__document-content
                                             .panel__document-image
                                                 img(src="images/icons/menu-bar.png", alt="").panel__document-img
-                                            textarea.panel__document-textarea(name='terms_of_service')
+                                            textarea.panel__document-textarea(name='terms_of_service', disabled)
                                                 | Условия предоставления услуг
                                                 |
                                                 | 1.&nbsp;Общее положение
@@ -1003,7 +1003,7 @@ html(lang="ru")
                                         .panel__document-content
                                             .panel__document-image
                                                 img(src="images/icons/menu-bar.png", alt="").panel__document-img
-                                            textarea.panel__document-textarea(name='agreement_on_the_processing_of_personal_data')
+                                            textarea.panel__document-textarea(name='agreement_on_the_processing_of_personal_data', disabled)
                                                 | Соглашение на обработку персональных данных
                                                 | 
                                                 | ООО «Май нью джоб Девелопмент Компани» (далее – «Оператор») в рамках выполнения своей основной деятельности осуществляет обработку Персональных данных Пользователей на сайте&nbsp;www.job-ai.ru(далее – «Сайт»).
@@ -1215,6 +1215,7 @@ html(lang="ru")
                                             p добавить пункт
                                 .panel__clean
                             button(type="submit").btn.btn_primary.btn_center Сохранить 
+                        .panel__container(data-panel='fields')
                         .panel__container(data-panel='payment')
                             .panel__duos 
                                 .panel__duo.br
@@ -1945,6 +1946,19 @@ html(lang="ru")
                                 .panel__payment
                                     p.panel__payment-total Всего оплат:
                                     p.panel__payment-payments 4
+                        .panel__container(data-panel='acquiring')
+                            .panel__acquiring
+                                h2.panel__title Интернет-эквайринг
+                                .panel__acquiring-wrapper 
+                                    .panel__acquiring-item.br
+                                        h3.panel__acquiring-title ООО «МИРАКС Рекрутмент»
+
+                                    .panel__acquiring-item.br
+                                        h3.panel__acquiring-title ООО «Май нью джоб Девелопмент Компани»
+                                    .panel__acquiring-item 
+                                        h3.panel__acquiring-title АО «УК Май нью джоб»
+                                .panel__acquiring-footer 
+                                button(type="submit").btn.btn_primary.btn_center Сохранить
         .confirm
             .confirm__wrapper(data-confirm='delete')
                 p.confirm__text 

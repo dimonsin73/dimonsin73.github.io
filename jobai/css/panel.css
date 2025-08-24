@@ -1861,6 +1861,22 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
   width: 200px;
 }
+.panel__acquiring {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.panel__acquiring-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+.panel__acquiring-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-right: 32px;
+}
 .panel .check__label {
   align-items: center;
 }

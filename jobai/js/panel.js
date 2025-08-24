@@ -712,16 +712,31 @@ function panelLandingDeleteFun(panelDocumentDelete) {
     })
 }
 
-const panelDocumentTextareaArray = document.querySelectorAll('.panel__document-textarea')
-for (let i = 0; i < panelDocumentTextareaArray.length; i++) {
-    const panelDocumentTextarea = panelDocumentTextareaArray[i];
-    panelDocumentTextarea.addEventListener('input', function(){
-        const edittext = panelDocumentTextarea.parentElement.parentElement.querySelector('.panel__document-edittext')
-        const save = panelDocumentTextarea.parentElement.parentElement.querySelector('.panel__document-save')
-        const cancell = panelDocumentTextarea.parentElement.parentElement.querySelector('.panel__document-cancell')
-        edittext.style.display = 'none'
+const panelDocumentEdittextArray = document.querySelectorAll('.panel__document-edittext')
+for (let i = 0; i < panelDocumentEdittextArray.length; i++) {
+    const panelDocumentEdittext = panelDocumentEdittextArray[i];
+    panelDocumentEdittext.addEventListener('click', function(){
+        const textarea = panelDocumentEdittext.parentElement.parentElement.parentElement.querySelector('.panel__document-textarea')
+        const save = panelDocumentEdittext.parentElement.querySelector('.panel__document-save')
+        const cancell = panelDocumentEdittext.parentElement.querySelector('.panel__document-cancell')
+        textarea.disabled = false
+        panelDocumentEdittext.style.display = 'none'
         save.style.display = 'flex'
         cancell.style.display = 'flex'
+        const textareaValueStart = textarea.value
+        save.addEventListener('click', function(){
+            textarea.disabled = true
+            panelDocumentEdittext.style.display = 'flex'
+            save.style.display = 'none'
+            cancell.style.display = 'none'
+        })
+        cancell.addEventListener('click', function(){
+            textarea.value = textareaValueStart
+            textarea.disabled = true
+            panelDocumentEdittext.style.display = 'flex'
+            save.style.display = 'none'
+            cancell.style.display = 'none'
+        })
     })
 }
 for (let i = 0; i < panelDocumentTexteditArray.length; i++) {
@@ -780,6 +795,10 @@ panelDocumentAdd.addEventListener('click', function(){
     panelDocumentTextarea.setAttribute('name', `document_${panelDocumentAddID}`)
     const panelDocumentFooter = document.createElement('div')
     panelDocumentFooter.classList.add('panel__document-footer')
+    const panelDocumentLeft = document.createElement('div')
+    panelDocumentLeft.classList.add('panel__document-left')
+    const panelDocumentAttached = document.createElement('div')
+    panelDocumentAttached.classList.add('panel__document-attached')
     const panelDocumentAttach = document.createElement('button')
     panelDocumentAttach.setAttribute('type', 'button')
     panelDocumentAttach.classList.add('panel__document-attach')
@@ -802,8 +821,9 @@ panelDocumentAdd.addEventListener('click', function(){
     panelDocumentBtns.append(panelDocumentClose, panelDocumentSuccess, panelDocumentEdit, panelDocumentTextedit, panelDocumentDelete)
     panelDocumentTop.append(panelDocumentInput, panelDocumentBtns)
     panelDocumentImage.append(panelDocumentImg)
+    panelDocumentLeft.append(panelDocumentAttached, panelDocumentAttach)
     panelDocumentButtons.append(panelDocumentEdittext, panelDocumentSave, panelDocumentCancell)
-    panelDocumentFooter.append(panelDocumentAttach, panelDocumentButtons)
+    panelDocumentFooter.append(panelDocumentLeft, panelDocumentButtons)
     panelDocumentContent.append(panelDocumentImage, panelDocumentTextarea, panelDocumentFooter)
 
     panelDocument.append(panelDocumentTop, panelDocumentContent)
@@ -812,11 +832,31 @@ panelDocumentAdd.addEventListener('click', function(){
     funEditDoc(panelDocumentEdit)
     panelDocumentTextedit.addEventListener('click', function(){
         panelContentFun(panelDocumentContent)
-    })
-    panelDocumentTextarea.addEventListener('input', function(){
         panelDocumentEdittext.style.display = 'none'
         panelDocumentSave.style.display = 'flex'
         panelDocumentCancell.style.display = 'flex'
     })
     panelLandingDeleteFun(panelDocumentDelete)
+
+    let textareaValueStart = panelDocumentTextarea.value
+    panelDocumentSave.addEventListener('click', function(){
+        panelDocumentTextarea.disabled = true
+        panelDocumentEdittext.style.display = 'flex'
+        panelDocumentSave.style.display = 'none'
+        panelDocumentCancell.style.display = 'none'
+    })
+    panelDocumentCancell.addEventListener('click', function(){
+        panelDocumentTextarea.value = textareaValueStart
+        panelDocumentTextarea.disabled = true
+        panelDocumentEdittext.style.display = 'flex'
+        panelDocumentSave.style.display = 'none'
+        panelDocumentCancell.style.display = 'none'
+    })
+    panelDocumentEdittext.addEventListener('click', function(){
+        panelDocumentTextarea.disabled = false
+        panelDocumentEdittext.style.display = 'none'
+        panelDocumentSave.style.display = 'flex'
+        panelDocumentCancell.style.display = 'flex'
+        textareaValueStart = panelDocumentTextarea.value
+    })
 })
