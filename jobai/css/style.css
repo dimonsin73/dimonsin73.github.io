@@ -3001,6 +3001,39 @@ input[type=number]::-webkit-outer-spin-button {
 .section__radio svg {
   margin: 0 auto;
 }
+.section__document {
+  gap: 44px;
+}
+.section__document-content {
+  height: 550px;
+  padding-right: 16px;
+  overflow-y: scroll;
+}
+.section__document-clean {
+  height: 16px;
+}
+.section__document-title {
+  font: 600 18px/22px "Inter", "sans-serif";
+  color: var(--Black);
+}
+.section__document-subtitle {
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Black);
+}
+.section__document-text {
+  font: 400 16px/24px "Inter", "sans-serif";
+  letter-spacing: -0.5px;
+  color: var(--Black);
+}
+.section__document-btns {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 #tariffs-sale {
   width: 126px;
@@ -4667,12 +4700,21 @@ input[type=number]::-webkit-outer-spin-button {
 .panel__acquiring-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
 }
 .panel__acquiring-item {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
   padding-right: 32px;
+}
+.panel__acquiring-title {
+  font: 600 18px/22px "Inter", "sans-serif";
+  letter-spacing: 0.02em;
+  color: var(--Black);
+}
+.panel__acquiring-logo img {
+  height: 30px;
 }
 .panel .check__label {
   align-items: center;

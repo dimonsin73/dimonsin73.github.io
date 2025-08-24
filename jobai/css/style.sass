@@ -46,6 +46,8 @@
 @mixin title-large
     font: 600 20px/28px 'Inter', 'sans-serif'
     letter-spacing: -0.2px
+@mixin title-xmedium
+    font: 600 18px/22px 'Inter', 'sans-serif'
 @mixin title-medium
     font: 600 16px/22px 'Inter', 'sans-serif'
     letter-spacing: -0.1px
@@ -299,7 +301,6 @@
         &:active 
             border: 0.5px solid var(--Red-active)
             background-color: var(--Red-active)
-
     &-icon 
         position: relative
         display: flex
@@ -2418,6 +2419,30 @@ input[type=number]::-webkit-outer-spin-button
                 font-weight: 700
         & svg 
             margin: 0 auto
+    &__document
+        gap: 44px
+        &-content
+            height: 550px
+            padding-right: 16px
+            overflow-y: scroll
+        &-clean 
+            height: 16px
+        &-title 
+            @include title-xmedium
+            color: var(--Black)
+        &-subtitle
+            @include title-medium
+            color: var(--Black)
+        &-text 
+            @include body-large
+            color: var(--Black)
+        &-btns 
+            position: absolute
+            top: 32px
+            right: 32px
+            display: flex
+            align-items: center
+            gap: 10px
 #tariffs-sale
     width: 126px
 #payment-for-period 
@@ -3744,11 +3769,19 @@ input[type=number]::-webkit-outer-spin-button
         &-wrapper 
             display: grid
             grid-template-columns: 1fr 1fr 1fr
+            gap: 32px
         &-item
             display: flex
             flex-direction: column
-            gap: 24px
+            gap: 12px
             padding-right: 32px
+        &-title 
+            @include title-xmedium
+            letter-spacing: 0.02em
+            color: var(--Black)
+        &-logo 
+            & img
+                height: 30px
     & .check__label 
         align-items: center
     ::-webkit-scrollbar-thumb 

@@ -44,6 +44,8 @@
 @mixin title-large
     font: 600 20px/28px 'Inter', 'sans-serif'
     letter-spacing: -0.2px
+@mixin title-xmedium
+    font: 600 18px/22px 'Inter', 'sans-serif'
 @mixin title-medium
     font: 600 16px/22px 'Inter', 'sans-serif'
     letter-spacing: -0.1px
@@ -1533,8 +1535,15 @@ input[type=number]::-webkit-outer-spin-button
         &-item
             display: flex
             flex-direction: column
-            gap: 24px
+            gap: 12px
             padding-right: 32px
+        &-title 
+            @include title-xmedium
+            letter-spacing: 0.02em
+            color: var(--Black)
+        &-logo 
+            & img
+                height: 30px
     & .check__label 
         align-items: center
     ::-webkit-scrollbar-thumb 

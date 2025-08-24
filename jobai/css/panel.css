@@ -1874,8 +1874,16 @@ input[type=number]::-webkit-outer-spin-button {
 .panel__acquiring-item {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
   padding-right: 32px;
+}
+.panel__acquiring-title {
+  font: 600 18px/22px "Inter", "sans-serif";
+  letter-spacing: 0.02em;
+  color: var(--Black);
+}
+.panel__acquiring-logo img {
+  height: 30px;
 }
 .panel .check__label {
   align-items: center;
