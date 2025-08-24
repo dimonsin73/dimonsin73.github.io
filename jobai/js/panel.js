@@ -621,15 +621,19 @@ panelLandingAdd.addEventListener('click', function(){
     const panelLandingBtns = document.createElement('div')
     panelLandingBtns.classList.add('panel__landing-btns')
     const panelLandingClose = document.createElement('button')
+    panelLandingClose.setAttribute('type', 'button')
     panelLandingClose.classList.add('btn-icon', 'panel__landing-close', 'panel__landing-confirm', 'panel__landing-confirm-active')
     panelLandingClose.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z" fill="#6A6A73"/></svg>'
     const panelLandingSuccess = document.createElement('button')
+    panelLandingSuccess.setAttribute('type', 'button')
     panelLandingSuccess.classList.add('btn-icon', 'panel__landing-success', 'panel__landing-confirm', 'panel__landing-confirm-active')
     panelLandingSuccess.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z" fill="#6A6A73"/></svg>'
     const panelLandingEdit = document.createElement('button')
+    panelLandingEdit.setAttribute('type', 'button')
     panelLandingEdit.classList.add('btn-icon', 'panel__landing-edit', 'panel__landing-edit-hide')
     panelLandingEdit.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z" fill="#6A6A73"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z" fill="#6A6A73"/></svg>'
     const panelLandingDelete = document.createElement('button')
+    panelLandingDelete.setAttribute('type', 'button')
     panelLandingDelete.classList.add('btn-icon', 'panel__landing-delete')
     panelLandingDelete.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>'
     const panelLandingUrl = document.createElement('div')
@@ -643,10 +647,8 @@ panelLandingAdd.addEventListener('click', function(){
     panelLandingUrl.append(panelLandingP, panelLandingUrlinput)
     panelLandingLi.append(panelLandingInput, panelLandingBtns, panelLandingUrl)
     panelLandingList.append(panelLandingLi)
-
     const panelLandingConfirmArray = panelLandingBtns.querySelectorAll('.panel__landing-confirm')
     panelLandingDeleteFun(panelLandingDelete)
-
     panelLandingClose.addEventListener('click', function(){
         panelLandingInput.value = ''
         panelLandingEditFun(panelLandingEdit, panelLandingInput, panelLandingConfirmArray)
@@ -657,5 +659,164 @@ panelLandingAdd.addEventListener('click', function(){
     panelLandingEdit.addEventListener('click', function () {
         funEdit(panelLandingEdit)
     })
-    
+})
+
+// Редактирование документов 
+const panelDocumentEditArray = document.querySelectorAll('.panel__document-edit')
+const panelDocumentTexteditArray = document.querySelectorAll('.panel__document-textedit')
+const panelDocumentDeleteArray = document.querySelectorAll('.panel__document-delete')
+for (let i = 0; i < panelDocumentEditArray.length; i++) {
+    const panelDocumentEdit = panelDocumentEditArray[i];
+    panelDocumentEdit.addEventListener('click', function () {
+        funEditDoc(panelDocumentEdit)
+    })
+}
+function funEditDoc(panelDocumentEdit) {
+    panelDocumentEdit.classList.add('panel__document-edit-hide')
+    const input = panelDocumentEdit.parentElement.parentElement.querySelector('.panel__document-input')
+    const panelDocumentConfirmArray = panelDocumentEdit.parentElement.querySelectorAll('.panel__document-confirm')
+    const panelDocumentClose = panelDocumentEdit.parentElement.querySelector('.panel__document-close')
+    const panelDocumentSuccess = panelDocumentEdit.parentElement.querySelector('.panel__document-success')
+    input.classList.add('panel__document-input-active')
+    input.readOnly = false
+    for (let i = 0; i < panelDocumentConfirmArray.length; i++) {
+        const panelDocumentConfirm = panelDocumentConfirmArray[i];
+        panelDocumentConfirm.classList.add('panel__document-confirm-active')
+    }
+    const inputValueStart = input.value
+    panelDocumentClose.addEventListener('click', function(){
+        input.value = inputValueStart
+        panelDocumentEditFun(panelDocumentEdit, input, panelDocumentConfirmArray)
+    })
+    panelDocumentSuccess.addEventListener('click', function(){
+        panelDocumentEditFun(panelDocumentEdit, input, panelDocumentConfirmArray)
+    })
+}
+function panelDocumentEditFun(panelDocumentEdit, input, panelDocumentConfirmArray) {
+    panelDocumentEdit.classList.remove('panel__document-edit-hide')
+    input.classList.remove('panel__document-input-active')
+    input.readOnly = true
+    for (let i = 0; i < panelDocumentConfirmArray.length; i++) {
+        const panelDocumentConfirm = panelDocumentConfirmArray[i];
+        panelDocumentConfirm.classList.remove('panel__document-confirm-active')
+    }
+}
+for (let i = 0; i < panelDocumentDeleteArray.length; i++) {
+    const panelDocumentDelete = panelDocumentDeleteArray[i];
+    panelLandingDeleteFun(panelDocumentDelete)
+}
+function panelLandingDeleteFun(panelDocumentDelete) {
+    panelDocumentDelete.addEventListener('click', function(){
+        const document = panelDocumentDelete.parentElement.parentElement
+        document.remove()
+    })
+}
+
+const panelDocumentTextareaArray = document.querySelectorAll('.panel__document-textarea')
+for (let i = 0; i < panelDocumentTextareaArray.length; i++) {
+    const panelDocumentTextarea = panelDocumentTextareaArray[i];
+    panelDocumentTextarea.addEventListener('input', function(){
+        const edittext = panelDocumentTextarea.parentElement.parentElement.querySelector('.panel__document-edittext')
+        const save = panelDocumentTextarea.parentElement.parentElement.querySelector('.panel__document-save')
+        const cancell = panelDocumentTextarea.parentElement.parentElement.querySelector('.panel__document-cancell')
+        edittext.style.display = 'none'
+        save.style.display = 'flex'
+        cancell.style.display = 'flex'
+    })
+}
+for (let i = 0; i < panelDocumentTexteditArray.length; i++) {
+    const panelDocumentTextedit = panelDocumentTexteditArray[i];
+    panelDocumentTextedit.addEventListener('click', function(){
+        const panelContent = panelDocumentTextedit.parentElement.parentElement.parentElement.querySelector('.panel__document-content')
+        panelContentFun(panelContent)
+    })
+}
+function panelContentFun(panelContent) {
+    panelContent.classList.toggle('panel__document-content-active')
+}
+// Добавление документа 
+let panelDocumentAddID = 0
+const panelDocumentAdd = document.querySelector('.panel__document-add')
+const panelDocumentsWrapper = document.querySelector('.panel__documents-wrapper')
+panelDocumentAdd.addEventListener('click', function(){
+    const panelDocument = document.createElement('div')
+    panelDocument.classList.add('panel__document')
+    const panelDocumentTop = document.createElement('div') 
+    panelDocumentTop.classList.add('panel__document-top')
+    const panelDocumentContent = document.createElement('div')
+    panelDocumentContent.classList.add('panel__document-content')
+    const panelDocumentInput = document.createElement('input')
+    panelDocumentInput.classList.add('panel__document-input', 'panel__document-input-active')
+    panelDocumentInput.setAttribute('type', 'text')
+    const panelDocumentBtns = document.createElement('div')
+    panelDocumentBtns.classList.add('panel__document-btns')
+    const panelDocumentClose = document.createElement('button')
+    panelDocumentClose.setAttribute('type', 'button')
+    panelDocumentClose.classList.add('btn-icon', 'panel__document-close', 'panel__document-confirm')
+    panelDocumentClose.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z" fill="#6A6A73"/></svg>'
+    const panelDocumentSuccess = document.createElement('button')
+    panelDocumentSuccess.setAttribute('type', 'button')
+    panelDocumentSuccess.classList.add('btn-icon', 'panel__document-success', 'panel__document-confirm')
+    panelDocumentSuccess.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z" fill="#6A6A73"/></svg>'
+    const panelDocumentEdit = document.createElement('button')
+    panelDocumentEdit.setAttribute('type', 'button')
+    panelDocumentEdit.classList.add('btn-icon', 'panel__document-edit')
+    panelDocumentEdit.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z" fill="#6A6A73"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z" fill="#6A6A73"/></svg>'
+    const panelDocumentTextedit = document.createElement('button')
+    panelDocumentTextedit.setAttribute('type', 'button')
+    panelDocumentTextedit.classList.add('btn-icon', 'panel__document-textedit')
+    panelDocumentTextedit.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM11 6C11 6.55228 10.5523 7 10 7C9.44772 7 9 6.55228 9 6C9 5.44772 9.44772 5 10 5C10.5523 5 11 5.44772 11 6ZM9 9C8.44772 9 8 9.44772 8 10C8 10.5523 8.44772 11 9 11V14C9 14.5523 9.44772 15 10 15H11C11.5523 15 12 14.5523 12 14C12 13.4477 11.5523 13 11 13V10C11 9.44772 10.5523 9 10 9H9Z" fill="#6A6A73"/></svg>'
+    const panelDocumentDelete = document.createElement('button')
+    panelDocumentDelete.setAttribute('type', 'button')
+    panelDocumentDelete.classList.add('btn-icon', 'panel__document-delete')
+    panelDocumentDelete.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>'
+    const panelDocumentImage = document.createElement('div') 
+    panelDocumentImage.classList.add('panel__document-image')
+    const panelDocumentImg = document.createElement('img')
+    panelDocumentImg.classList.add('panel__document-img')
+    panelDocumentImg.setAttribute('src', 'images/icons/menu-bar.png')
+    const panelDocumentTextarea = document.createElement('textarea')
+    panelDocumentTextarea.classList.add('panel__document-textarea')
+    panelDocumentTextarea.setAttribute('name', `document_${panelDocumentAddID}`)
+    const panelDocumentFooter = document.createElement('div')
+    panelDocumentFooter.classList.add('panel__document-footer')
+    const panelDocumentAttach = document.createElement('button')
+    panelDocumentAttach.setAttribute('type', 'button')
+    panelDocumentAttach.classList.add('panel__document-attach')
+    panelDocumentAttach.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 4C6.34315 4 5 5.34315 5 7V11C5 13.7614 7.23858 16 10 16C12.7614 16 15 13.7614 15 11V7C15 6.44772 15.4477 6 16 6C16.5523 6 17 6.44772 17 7V11C17 14.866 13.866 18 10 18C6.13401 18 3 14.866 3 11V7C3 4.23858 5.23858 2 8 2C10.7614 2 13 4.23858 13 7V11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11V7C7 6.44772 7.44772 6 8 6C8.55228 6 9 6.44772 9 7V11C9 11.5523 9.44772 12 10 12C10.5523 12 11 11.5523 11 11V7C11 5.34315 9.65685 4 8 4Z" fill="#6A6A73"/></svg> Прикрепить документ'
+    const panelDocumentButtons = document.createElement('div')
+    panelDocumentButtons.classList.add('panel__document-buttons')
+    const panelDocumentEdittext = document.createElement('button')
+    panelDocumentEdittext.setAttribute('type', 'button')
+    panelDocumentEdittext.classList.add('btn', 'btn_primary', 'panel__document-edittext')
+    panelDocumentEdittext.textContent = 'Редактировать'
+    const panelDocumentSave = document.createElement('button')
+    panelDocumentSave.setAttribute('type', 'button')
+    panelDocumentSave.classList.add('btn', 'btn_primary', 'panel__document-save')
+    panelDocumentSave.textContent = 'Сохранить'
+    const panelDocumentCancell = document.createElement('button')
+    panelDocumentCancell.setAttribute('type', 'button')
+    panelDocumentCancell.classList.add('btn', 'btn_tertiary', 'panel__document-cancell')
+    panelDocumentCancell.textContent = 'Отмена'
+
+    panelDocumentBtns.append(panelDocumentClose, panelDocumentSuccess, panelDocumentEdit, panelDocumentTextedit, panelDocumentDelete)
+    panelDocumentTop.append(panelDocumentInput, panelDocumentBtns)
+    panelDocumentImage.append(panelDocumentImg)
+    panelDocumentButtons.append(panelDocumentEdittext, panelDocumentSave, panelDocumentCancell)
+    panelDocumentFooter.append(panelDocumentAttach, panelDocumentButtons)
+    panelDocumentContent.append(panelDocumentImage, panelDocumentTextarea, panelDocumentFooter)
+
+    panelDocument.append(panelDocumentTop, panelDocumentContent)
+    panelDocumentsWrapper.append(panelDocument)
+    panelDocumentAddID++
+    funEditDoc(panelDocumentEdit)
+    panelDocumentTextedit.addEventListener('click', function(){
+        panelContentFun(panelDocumentContent)
+    })
+    panelDocumentTextarea.addEventListener('input', function(){
+        panelDocumentEdittext.style.display = 'none'
+        panelDocumentSave.style.display = 'flex'
+        panelDocumentCancell.style.display = 'flex'
+    })
+    panelLandingDeleteFun(panelDocumentDelete)
 })
