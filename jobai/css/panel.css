@@ -2668,7 +2668,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 1850px;
+  max-width: 1735px;
   width: 100%;
   padding: 10px 20px;
   border-radius: 12px;
@@ -2715,7 +2715,7 @@ input[type=number]::-webkit-outer-spin-button {
   overflow-x: scroll;
 }
 .payment__tables-payment {
-  grid-template-columns: 1440px 350px;
+  grid-template-columns: 1425px 270px;
 }
 .payment__tables::-webkit-scrollbar {
   width: 10px;
@@ -2729,8 +2729,8 @@ input[type=number]::-webkit-outer-spin-button {
   display: grid;
   grid-template-columns: auto auto;
 }
-.payment__table-payment {
-  padding-right: 20px;
+.payment__table-payment .payment__payment {
+  background-color: inherit !important;
 }
 .payment__table2 {
   width: 1980px;
@@ -2877,7 +2877,12 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 30px;
+  margin: 10px 0;
+  border-right: 1px solid var(--Gray-80);
+}
+.payment__payment-item:last-child {
+  border-right: none;
 }
 .payment__payment-text {
   font: 300 14px/16px "Inter", "sans-serif";
@@ -2896,11 +2901,10 @@ input[type=number]::-webkit-outer-spin-button {
 .payment__left {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
 }
 .payment__lefthead {
   display: grid;
-  grid-template-columns: 120px 110px 120px;
+  grid-template-columns: 100px 80px 90px;
   height: 50px;
 }
 .payment__leftpayments {
@@ -2909,7 +2913,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .payment__leftpayment {
   display: grid;
-  grid-template-columns: 120px 110px 120px;
+  grid-template-columns: 100px 80px 90px;
   height: 50px;
 }
 .payment__footer {
@@ -2959,7 +2963,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .payment__docs {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
 }
 .payment__docs-link {

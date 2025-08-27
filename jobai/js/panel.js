@@ -64,7 +64,7 @@ const paymentDocsLink = document.querySelector('.payment__docs-link')
 paymentDocsLink.addEventListener('click', function(){
     for (let i = 0; i < panelTabArray.length; i++) {
         const panelTab = panelTabArray[i];
-        if (panelTab.dataset.panel === 'payment') {
+        if (panelTab.dataset.panel === 'accounting') {
            panelTab.classList.add('panel__tab-active') 
         } else {
             panelTab.classList.remove('panel__tab-active') 
@@ -72,7 +72,7 @@ paymentDocsLink.addEventListener('click', function(){
     }
     for (let i = 0; i < panelContainerArray.length; i++) {
         const panelContainer = panelContainerArray[i];
-        if (panelContainer.dataset.panel === 'payment') {
+        if (panelContainer.dataset.panel === 'accounting') {
             panelContainer.classList.add('panel__container-active')
         } else {
             panelContainer.classList.remove('panel__container-active')
