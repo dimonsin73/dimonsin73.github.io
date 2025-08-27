@@ -376,6 +376,9 @@
   outline: none;
   transition: background-color 0.3s ease;
 }
+.input_h56 {
+  padding: 16px 12px;
+}
 .input__help {
   position: absolute;
   left: 0;
@@ -433,7 +436,6 @@
   outline: 2px solid var(--Gray-40);
 }
 .input_search {
-  width: 432px;
   padding: 16px 12px 16px 48px;
   background-image: url("../images/icons/search.png");
   background-position: center left 12px;
@@ -542,6 +544,9 @@
   right: -36px;
   transform: translateY(-50%);
 }
+.label__clue2 {
+  right: -28px;
+}
 .label__edit {
   position: absolute;
   top: 50%;
@@ -574,7 +579,6 @@
 }
 .label_search {
   position: relative;
-  width: 432px;
   z-index: 9;
 }
 .label_error-text {
@@ -840,6 +844,9 @@
   font: 500 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
   color: var(--Gray-30);
+}
+.clue__text-center {
+  text-align: center;
 }
 .clue__list {
   margin-left: 8px;
@@ -1458,8 +1465,8 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 10px;
 }
 .panel__block {
-  width: 270px;
-  padding: 6px 16px;
+  width: 256px;
+  padding: 12px 16px;
   border-radius: 4px;
 }
 .panel__list {
@@ -1468,7 +1475,7 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 4px;
 }
 .panel__list-item {
-  margin-left: 32px;
+  margin-left: 18px;
   list-style: disc;
 }
 .panel__list-item::marker {
@@ -1484,8 +1491,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .panel__btns {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
 }
 .panel__inputs {
   display: flex;
@@ -1504,8 +1512,8 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 .panel__subnumber {
-  font: 500 16px/24px "Inter", "sans-serif";
-  letter-spacing: -0.5px;
+  font: 700 14px/20px "Inter", "sans-serif";
+  letter-spacing: 0.02em;
   color: var(--Black);
   text-align: center;
 }
@@ -1518,7 +1526,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .panel__head {
   display: grid;
-  grid-template-columns: 135px 300px 260px 140px 210px 180px 150px 220px 220px 240px 165px 120px 90px 120px;
+  grid-template-columns: 130px 180px 130px 260px 130px 300px 160px 220px 220px 240px 165px 120px 90px 120px;
 }
 .panel__head-item {
   display: flex;
@@ -1606,7 +1614,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .panel__duos {
   display: grid;
-  grid-template-columns: 500px 300px auto;
+  grid-template-columns: 500px 256px auto;
   gap: 24px;
 }
 .panel__duo {
@@ -2201,6 +2209,14 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #0894F3;
 }
 
+#add-user {
+  width: 230px;
+}
+
+#service-registration {
+  width: 230px;
+}
+
 .bank {
   position: absolute;
   top: 50%;
@@ -2251,7 +2267,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .user {
   display: grid;
-  grid-template-columns: 135px 300px 260px 140px 210px 180px 150px 220px 220px 240px 165px 120px 90px 120px;
+  grid-template-columns: 130px 180px 130px 260px 130px 300px 160px 220px 220px 240px 165px 120px 90px 120px;
   width: -moz-max-content;
   width: max-content;
   height: 50px;

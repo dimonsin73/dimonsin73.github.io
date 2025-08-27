@@ -107,6 +107,9 @@
 @mixin number-large
     font: 700 18px/24px 'Inter', 'sans-serif'
     letter-spacing: 0.02em
+@mixin number-medium
+    font: 700 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: 0.02em
 @mixin number
     font: 700 11px/16px 'Inter', 'sans-serif'
     letter-spacing: 0.01em
@@ -406,7 +409,6 @@
         background-color: var(--White)
         outline: 2px solid var(--Gray-40)
     &_search 
-        width: 432px
         padding: 16px 12px 16px 48px
         background: 
             image: url('../images/icons/search.png')
@@ -508,7 +510,6 @@
             display: block
     &_search 
         position: relative
-        width: 432px
         z-index: 9
     &__top
         position: absolute
@@ -804,6 +805,8 @@
     &__text 
         @include subtitle-large
         color: var(--Gray-30)
+        &-center 
+            text-align: center
     &__list 
         margin-left: 8px
         padding-left: 16px
@@ -3354,15 +3357,15 @@ input[type=number]::-webkit-outer-spin-button
         align-items: center
         gap: 10px
     &__block
-        width: 270px
-        padding: 6px 16px
+        width: 256px
+        padding: 12px 16px
         border-radius: 4px
     &__list 
         display: flex
         flex-direction: column
         gap: 4px
         &-item 
-            margin-left: 32px
+            margin-left: 18px
             list-style: disc
             &::marker 
                 color: var(--Gray-30)
@@ -3375,8 +3378,9 @@ input[type=number]::-webkit-outer-spin-button
         text-align: center
     &__btns 
         display: flex
-        align-items: center
-        gap: 8px
+        flex-direction: column
+        align-items: flex-start
+        gap: 24px
     &__inputs 
         display: flex
         align-items: center
@@ -3389,7 +3393,7 @@ input[type=number]::-webkit-outer-spin-button
         color: var(--Black)
         text-align: center
     &__subnumber
-        @include subtitle-extralarge
+        @include number-medium
         color: var(--Black)
         text-align: center
     &__table 
@@ -3466,7 +3470,7 @@ input[type=number]::-webkit-outer-spin-button
             transform: translateY(-50%)
     &__duos 
         display: grid 
-        grid-template-columns: 500px 300px auto
+        grid-template-columns: 500px 256px auto
         gap: 24px
     &__duo 
         display: flex
@@ -3948,6 +3952,10 @@ input[type=number]::-webkit-outer-spin-button
         align-items: center
     ::-webkit-scrollbar-thumb 
         background-color: #0894F3
+#add-user
+    width: 230px
+#service-registration
+    width: 230px
 .bank 
     position: absolute
     top: 50%
@@ -3986,7 +3994,7 @@ input[type=number]::-webkit-outer-spin-button
     flex-direction: column
 .user
     display: grid
-    grid-template-columns: 135px 300px 260px 140px 210px 180px 150px 220px 220px 240px 165px 120px 90px 120px
+    grid-template-columns: 130px 180px 130px 260px 130px 300px 160px 220px 220px 240px 165px 120px 90px 120px
     width: max-content
     height: 50px
     padding: 10px 0

@@ -968,7 +968,6 @@ for (let i = 0; i < invoiceSentArray.length; i++) {
         }
     })
 }
-
 const invoicePaidArray = document.querySelectorAll('.invoice-paid')
 for (let i = 0; i < invoicePaidArray.length; i++) {
     const invoicePaid = invoicePaidArray[i];
@@ -981,21 +980,36 @@ for (let i = 0; i < invoicePaidArray.length; i++) {
         }
     })
 }
-
 const docDeleteInvoiceCheckArray = document.querySelectorAll('.doc__delete-invoice_check')
 for (let i = 0; i < docDeleteInvoiceCheckArray.length; i++) {
     const docDeleteInvoiceCheck = docDeleteInvoiceCheckArray[i];
     docDeleteInvoiceCheck.addEventListener('click', function(){
         const doc = docDeleteInvoiceCheck.parentElement
+        doc.remove()
+    })
+}
+const docDeleteInvoiceRequestArray = document.querySelectorAll('.doc__delete-invoice_request')
+for (let i = 0; i < docDeleteInvoiceRequestArray.length; i++) {
+    const docDeleteInvoiceRequest = docDeleteInvoiceRequestArray[i];
+    docDeleteInvoiceRequest.addEventListener('click', function(){
+        const doc = docDeleteInvoiceRequest.parentElement
+        doc.remove()
+    })
+}
+const paymentRequestDeleteArray = document.querySelectorAll('.payment__request-delete')
+for (let i = 0; i < paymentRequestDeleteArray.length; i++) {
+    const paymentRequestDelete = paymentRequestDeleteArray[i];
+    paymentRequestDelete.addEventListener('click', function(){
+        const request = paymentRequestDelete.parentElement.parentElement
         confirm.classList.add('confirm_active')
         for (let i = 0; i < confirmWrapperArray.length; i++) {
             const confirmWrapper = confirmWrapperArray[i];
-            if (confirmWrapper.dataset.confirm === 'delete-invoice_check') {
+            if (confirmWrapper.dataset.confirm === 'delete-invoice_request') {
                 confirmWrapper.classList.add('confirm__wrapper-active')
                 const confirmOk = confirmWrapper.querySelector('.confirm__ok')
                 const confirmClose = confirmWrapper.querySelector('.confirm__close')
                 confirmOk.addEventListener('click', function(){
-                    doc.remove()
+                    request.remove()
                     confirmWrapper.classList.remove('confirm__wrapper-active')
                     confirm.classList.remove('confirm_active')
                 })
@@ -1007,20 +1021,20 @@ for (let i = 0; i < docDeleteInvoiceCheckArray.length; i++) {
         }
     })
 }
-const paymentItemDeleteArray = document.querySelectorAll('.payment__item-delete')
-for (let i = 0; i < paymentItemDeleteArray.length; i++) {
-    const paymentItemDelete = paymentItemDeleteArray[i];
-    paymentItemDelete.addEventListener('click', function(){
-        const payment = paymentItemDelete.parentElement.parentElement
+const paymentInvoiceDeleteArray = document.querySelectorAll('.payment__invoice-delete')
+for (let i = 0; i < paymentInvoiceDeleteArray.length; i++) {
+    const paymentInvoiceDelete = paymentInvoiceDeleteArray[i];
+    paymentInvoiceDelete.addEventListener('click', function(){
+        const invoice = paymentInvoiceDelete.parentElement.parentElement
         confirm.classList.add('confirm_active')
         for (let i = 0; i < confirmWrapperArray.length; i++) {
             const confirmWrapper = confirmWrapperArray[i];
-            if (confirmWrapper.dataset.confirm === 'delete-request') {
+            if (confirmWrapper.dataset.confirm === 'delete-invoice_check') {
                 confirmWrapper.classList.add('confirm__wrapper-active')
                 const confirmOk = confirmWrapper.querySelector('.confirm__ok')
                 const confirmClose = confirmWrapper.querySelector('.confirm__close')
                 confirmOk.addEventListener('click', function(){
-                    payment.remove()
+                    invoice.remove()
                     confirmWrapper.classList.remove('confirm__wrapper-active')
                     confirm.classList.remove('confirm_active')
                 })
