@@ -416,6 +416,7 @@
             @include body-large
             color: var(--Gray-40)
     &_search2
+        display: none
         padding: 16px 12px 16px 48px
         background: 
             image: url('../images/icons/search.png')
@@ -424,6 +425,8 @@
         &::placeholder
             @include body-large
             color: var(--Gray-40)
+        &-active 
+            display: flex
     &_grey
         color: var(--Gray-30)
 .label 
@@ -808,6 +811,10 @@
             list-style-type: disc
             &::marker 
                 color: var(--Gray-30)
+    &__accounting
+        display: none
+        &-active 
+            display: block
 .switch 
     position: relative
     display: inline-block
@@ -4351,7 +4358,7 @@ input[type=number]::-webkit-outer-spin-button
             display: flex
             justify-content: center
             align-items: center
-            gap: 4px
+            gap: 8px
             height: 50px
             & svg 
                 flex: 0 0 auto
@@ -4428,11 +4435,17 @@ input[type=number]::-webkit-outer-spin-button
                 & path 
                     fill: var(--Red-error)
         &-withicon 
-            justify-content: space-between
+            position: relative
+            padding-right: 32px
             & .payment__item-text 
                     text-overflow: ellipsis
                     white-space: nowrap
                     overflow: hidden
+            & button 
+                position: absolute
+                right: 8px
+                top: 50%
+                transform: translate3d(0, -50%, 0)
     &__payments 
         display: flex
         flex-direction: column

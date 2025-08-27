@@ -1037,6 +1037,8 @@ for (let i = 0; i < paymentItemDeleteArray.length; i++) {
 const accountingChange = document.getElementById('accounting-change')
 const accountingArray = document.querySelectorAll('.accounting')
 const panelNewrequestArray = document.querySelectorAll('.panel__newrequest')
+const inputSearch2Array = document.querySelectorAll('.input_search2')
+const clueAccountingArray = document.querySelectorAll('.clue__accounting')
 const panelDuoPaid = document.querySelector('.panel__duo-paid')
 accountingChange.addEventListener('click', function(){
     const optionArray = accountingChange.parentElement.querySelectorAll('.option')
@@ -1064,6 +1066,22 @@ accountingChange.addEventListener('click', function(){
                 panelDuoPaid.style.display = 'flex'
             } else {
                 panelDuoPaid.style.display = 'none'
+            }
+            for (let i = 0; i < inputSearch2Array.length; i++) {
+                const inputSearch2 = inputSearch2Array[i];
+                if (inputSearch2.dataset.accounting === dataOption) {
+                    inputSearch2.classList.add('input_search2-active')
+                } else {
+                    inputSearch2.classList.remove('input_search2-active')
+                }
+            }
+            for (let i = 0; i < clueAccountingArray.length; i++) {
+                const clueAccounting = clueAccountingArray[i];
+                if (clueAccounting.dataset.accounting === dataOption) {
+                    clueAccounting.classList.add('clue__accounting-active')
+                } else {
+                    clueAccounting.classList.remove('clue__accounting-active')
+                }
             }
         })
     }

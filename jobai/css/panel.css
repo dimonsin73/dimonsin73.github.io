@@ -450,6 +450,7 @@
   color: var(--Gray-40);
 }
 .input_search2 {
+  display: none;
   padding: 16px 12px 16px 48px;
   background-image: url("../images/icons/search.png");
   background-position: center left 12px;
@@ -464,6 +465,9 @@
   font: 400 16px/24px "Inter", "sans-serif";
   letter-spacing: -0.5px;
   color: var(--Gray-40);
+}
+.input_search2-active {
+  display: flex;
 }
 
 .label {
@@ -846,6 +850,12 @@
 }
 .clue__list-item::marker {
   color: var(--Gray-30);
+}
+.clue__accounting {
+  display: none;
+}
+.clue__accounting-active {
+  display: block;
 }
 
 .switch {
@@ -2718,7 +2728,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   height: 50px;
 }
 .payment__head-item svg {
@@ -2820,12 +2830,19 @@ input[type=number]::-webkit-outer-spin-button {
   fill: var(--Red-error);
 }
 .payment__item-withicon {
-  justify-content: space-between;
+  position: relative;
+  padding-right: 32px;
 }
 .payment__item-withicon .payment__item-text {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+.payment__item-withicon button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
 }
 .payment__payments {
   display: flex;

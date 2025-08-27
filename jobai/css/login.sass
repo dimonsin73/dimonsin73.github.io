@@ -5,7 +5,35 @@ body
     height: 100vh
     margin: 0
     background-color: #e0e5ec
-    font-family: Arial, sans-serif
+    font-family: Inter, sans-serif
+.container 
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 40px
+.logo 
+    padding: 40px
+    border-radius: 20px
+    box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
+    &__wrapper
+        position: relative
+    &__img
+        width: 280px
+    &__r 
+        position: absolute
+        top: 0
+        right: -36px
+        width: 31px
+        height: 31px
+        margin: 0
+        padding: 0
+        border: 2px solid #202123
+        border-radius: 50%
+        box-sizing: border-box
+        font: 700 26px/28px 'Inter', 'sans-serif'
+        letter-spacing: 0.2px
+        color: #202123
+        text-align: center
 .form 
     display: flex
     flex-direction: column
@@ -44,3 +72,4 @@ body
         transition: all 0.3s ease
         &:active 
             box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
+

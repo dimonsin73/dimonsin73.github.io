@@ -7,9 +7,14 @@ html(lang="ru")
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet", href="css/login.css")
     body    
-        form.form.neumorphic
-            h1.title Login
-            input(type="text", placeholder="Username", name='username', autocomplete='off').neumorphic.neumorphic-input
-            input(type="password", placeholder="Password", name='password').neumorphic.neumorphic-input
-            button.neumorphic.neumorphic-button Sing In
+        .container
+            .logo 
+                .logo__wrapper
+                    img(src="images/logo.png", alt="").logo__img
+                    p.logo__r R
+            form.form.neumorphic
+                h1.title Авторизоваться
+                input(type="text", placeholder="Логин", name='username', autocomplete='off').neumorphic.neumorphic-input
+                input(type="password", placeholder="Пароль", name='password').neumorphic.neumorphic-input
+                button.neumorphic.neumorphic-button Войти
         
