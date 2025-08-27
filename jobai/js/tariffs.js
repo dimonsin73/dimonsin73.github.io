@@ -1,3 +1,22 @@
+const headerBurger = document.querySelector('.header__burger')
+const aside = document.querySelector('.aside')
+headerBurger.addEventListener('click', function(){
+    aside.classList.add('aside_active')
+    document.addEventListener('click', (e) => {
+        const withinBoundaries = e.composedPath().includes(aside);
+        if ( ! withinBoundaries ) {
+            const withinBoundariesBurger = e.composedPath().includes(headerBurger);
+            if (! withinBoundariesBurger) {
+                aside.classList.remove('aside_active')
+            }
+        }
+    }) //Скрытие Aside по щелчку вне 
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            aside.classList.remove('aside_active')
+        }
+    }) //Скрытие Aside по нажатию на ESC
+})
 // Открытие/Закрытие селектов
 const selectInputArray = document.querySelectorAll('.select__input')
 for (let i = 0; i < selectInputArray.length; i++) {
@@ -293,8 +312,6 @@ const enterMailLabel = document.querySelector('.enter-mail')
 const sendEmail = document.getElementById('send-email')
 const invoiceSend = document.querySelector('.invoice-send')
 const personalAccount = document.getElementById('personal-account')
-const confirm = document.querySelector('.confirm')
-const confirmWrapperArray = confirm.querySelectorAll('.confirm__wrapper')
 enterMail.addEventListener('input', function(){
     if (enterMail.value.length > 0) {
         sendEmail.style.display = 'block'
@@ -303,42 +320,9 @@ enterMail.addEventListener('input', function(){
     }
 })
 sendEmail.addEventListener('click', function(){
-    confirm.classList.add('confirm_active')
-    for (let i = 0; i < confirmWrapperArray.length; i++) {
-        const confirmWrapper = confirmWrapperArray[i];
-        if (confirmWrapper.dataset.confirm === 'success') {
-            confirmWrapper.classList.add('confirm__wrapper-active')
-            const confirmOk = confirmWrapper.querySelector('.confirm__ok')
-            const confirmClose = confirmWrapper.querySelector('.confirm__close')
-            confirmOk.addEventListener('click', function(){
-                for (let i = 0; i < confirmWrapperArray.length; i++) {
-                    const confirmWrapper = confirmWrapperArray[i];
-                    if (confirmWrapper.dataset.confirm === 'notification') {
-                        confirmWrapper.classList.add('confirm__wrapper-active')
-                        const confirmClose2 = confirmWrapper.querySelector('.confirm__close')
-                        confirmClose2.addEventListener('click', function(){
-                            enterMailLabel.style.display = 'none'
-                            invoiceSend.style.display = 'flex'
-                            personalAccount.style.display = 'flex'
-                            confirm.classList.remove('confirm_active')
-                            confirmWrapper.classList.remove('confirm__wrapper-active')
-                        })
-                    } else {
-                        confirmWrapper.classList.remove('confirm__wrapper-active')
-                    }
-                }
-            })
-            confirmClose.addEventListener('click', function(){
-                confirm.classList.remove('confirm_active')
-                confirmWrapper.classList.remove('confirm__wrapper-active')
-            })
-        } else {
-            confirmWrapper.classList.remove('confirm__wrapper-active')
-        }
-    }
-    
-    
-    
+    enterMailLabel.style.display = 'none'
+    invoiceSend.style.display = 'flex'
+    personalAccount.style.display = 'flex'
 })
 
 const sectionWrapperArray = document.querySelectorAll('.section__wrapper')

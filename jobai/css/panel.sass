@@ -139,6 +139,10 @@
     border-bottom: 0.5px solid var(--Gray-80)
 .br
     border-right: 1px solid var(--Gray-80)
+.bt
+    border-top: 1px solid var(--Gray-80)
+.br5
+    border-right: 5px solid var(--Gray-80)
 .bhead 
     border-top: 1px solid var(--Gray-80)
     border-left: 1px solid var(--Gray-80)
@@ -409,6 +413,15 @@
         &::placeholder
             @include body-large
             color: var(--Gray-40)
+    &_search2
+        padding: 16px 12px 16px 48px
+        background: 
+            image: url('../images/icons/search.png')
+            position: center left 12px
+            repeat: no-repeat
+        &::placeholder
+            @include body-large
+            color: var(--Gray-40)
 .label 
     position: relative
     display: flex
@@ -488,7 +501,7 @@
     &_search 
         position: relative
         width: 432px
-        z-index: 30
+        z-index: 9
     &_error
         &-text 
             position: absolute
@@ -564,6 +577,11 @@
         &-vert 
             padding-top: 10px
             padding-bottom: 10px
+    &__clue 
+        position: absolute
+        top: 50%
+        right: -32px
+        transform: translateY(-50%)
 .options 
     position: absolute
     display: flex
@@ -681,6 +699,13 @@
     &__text 
         @include subtitle-large
         color: var(--Gray-30)
+    &__list 
+        margin-left: 8px
+        padding-left: 16px
+        &-item 
+            list-style-type: disc
+            &::marker 
+                color: var(--Gray-30)
 .switch 
     position: relative
     display: inline-block
@@ -1037,7 +1062,73 @@ input[type=number]::-webkit-outer-spin-button
         &_active 
             left: 0
 // ASIDE END
-
+.header // HEADER
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 24px
+    padding: 9px 32px
+    z-index: 200
+    &__logo 
+        width: 78px
+        height: 30px
+    &__line 
+        width: 1px
+        height: 32px
+        background-color: var(--Gray-90)
+    &__access 
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 1px 17px
+        border: 1px solid var(--Gray-80)
+        border-radius: 8px
+    &__text 
+        @include text-medium
+        color: var(--Black)
+    &__span 
+        font: 500 12px/17px 'Inter', 'sans-serif'
+        color: var(--Gray-40)
+    &__avatar 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 46px
+        height: 46px
+        border-radius: 13px
+        background: var(--Gray-80)
+        &-text 
+            font: 500 12px/17px 'Inter', 'sans-serif'
+            color: var(--Black)
+.bulb 
+    & path 
+        fill: var(--Icons)
+    &_yellow 
+        & path 
+            fill: var(--Yellow)
+    &_green
+        & path 
+            fill: var(--Green)
+    &_red
+        & path 
+            fill: var(--Red)
+.notifications 
+    position: absolute
+    top: -8px
+    left: 14px
+    min-width: 18px
+    padding: 0 3px
+    border: 1px solid var(--White)
+    border-radius: 9px
+    background-color: var(--Primary-50)
+    &__number 
+        @include number
+        color: var(--White)
+// HEADER END
 // PANEL 
 .panel 
     padding: 0 20px 20px 
@@ -1172,7 +1263,8 @@ input[type=number]::-webkit-outer-spin-button
             color: var(--Black)
     &__period 
         position: relative
-        display: flex
+        display: grid
+        grid-template-columns: 150px 1fr 1fr
         align-items: center
         gap: 10px
         &-title 
@@ -1195,17 +1287,26 @@ input[type=number]::-webkit-outer-spin-button
             cursor: pointer
             &-active 
                 background-color: var(--White)
+        &-span2 
+            grid-column: span 2
         &-calendar 
             width: 150px
+        &-clue 
+            position: absolute
+            top: -10px
+            right: -32px
+            transform: translateY(-50%)
     &__duos 
         display: grid 
-        grid-template-columns: 825px auto
+        grid-template-columns: 500px 300px auto
         gap: 24px
     &__duo 
         display: flex
         flex-direction: column
         gap: 20px
         padding-right: 24px
+        &-paid 
+            display: none
     &__select 
         width: 256px
         margin-top: auto
@@ -1656,6 +1757,25 @@ input[type=number]::-webkit-outer-spin-button
             margin-left: 60px
             @include body-large
             color: var(--Primary-40)
+    &__newrequest 
+        display: none
+        align-items: center
+        gap: 10px
+        padding: 20px 0
+        &-active 
+            display: flex
+        &-die 
+            width: 35px
+            padding: 2px 4px
+            border-radius: 6px
+            background-color: var(--Primary-50)
+            font: 600 12px/16px 'inter', 'sans-serif'
+            color: var(--White)
+            text-align: center
+        &-text 
+            @include body-large
+            line-height: 20px
+            color: var(--Gray-20)
     & .check__label 
         align-items: center
     ::-webkit-scrollbar-thumb 
@@ -1702,6 +1822,8 @@ input[type=number]::-webkit-outer-spin-button
     width: max-content
     height: 50px
     padding: 10px 0
+    &:nth-child(odd)
+        background-color: var(--Gray-100)
     &__item 
         display: flex
         align-items: center
@@ -1983,7 +2105,14 @@ input[type=number]::-webkit-outer-spin-button
             display: flex
     & .check__label 
         align-items: center
-        
+.accounting    
+    display: none
+    flex-direction: column
+    justify-content: flex-start
+    gap: 20px
+    height: 100%
+    &_active 
+        display: flex
 .payment
     position: fixed
     top: 0
@@ -2037,13 +2166,21 @@ input[type=number]::-webkit-outer-spin-button
             padding: 10px 8px
     &__tables 
         display: grid
-        grid-template-columns: 1440px 350px
-        column-gap: 20px
+        grid-template-columns: auto auto auto
         overflow-x: scroll
+        &-payment
+            grid-template-columns: 1440px 350px
+        &::-webkit-scrollbar 
+            width: 10px
+            height: 10px
     &__table 
         display: flex
         flex-direction: column
-        padding-right: 20px
+        &-paid 
+            display: grid
+            grid-template-columns: auto auto
+        &-payment 
+            padding-right: 20px
     &__table2
         width: 1980px
     &__head 
@@ -2056,6 +2193,8 @@ input[type=number]::-webkit-outer-spin-button
             align-items: center
             gap: 4px
             height: 50px
+            & svg 
+                flex: 0 0 auto
         &-text 
             @include title-medium
             line-height: 18px
@@ -2063,10 +2202,22 @@ input[type=number]::-webkit-outer-spin-button
             text-align: center
         &-subtext
             position: absolute
-            bottom: -2px
+            bottom: 0px
             @include subtitle-medium
             color: var(--Gray-40)
             text-align: center
+        &-expect 
+            grid-template-columns: 70px 150px 160px 140px 140px 140px 
+        &-expect2
+            grid-template-columns: 130px 180px 145px 260px 140px 250px 
+        &-expect3
+            grid-template-columns: 185px 130px 130px 200px 150px
+        &-paid 
+            grid-template-columns: 70px 240px 150px 150px 200px 160px 130px 130px 130px 210px 100px 135px
+        &-paid2
+            grid-template-columns: 100px 180px 145px 260px 140px 250px
+        &-paid3
+            grid-template-columns: 185px 150px 150px 150px 160px
     &__head2
         grid-template-columns: 135px 300px 260px 150px 210px 180px 130px 150px 150px 150px 150px
         &-item 
@@ -2080,13 +2231,58 @@ input[type=number]::-webkit-outer-spin-button
             line-height: 18px
             color: var(--Gray-30)
             text-align: center
+    &__content 
+        display: flex
+        flex-direction: column
+    &__row 
+        display: grid
+        align-items: center
+        height: 50px
+        &:nth-child(odd)
+            background-color: var(--Gray-100)
+        &-expect 
+            grid-template-columns: 70px 150px 160px 140px 140px 140px 
+        &-expect2
+            grid-template-columns: 130px 180px 145px 260px 140px 250px 
+        &-expect3
+            grid-template-columns: 185px 130px 130px 200px 150px
+    &__item
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 32px
+        padding: 0 8px
+        border-right: 1px solid var(--Gray-80)
+        &:last-child
+            border-right: none
+        &-text 
+            padding: 4px 0
+            font: 300 14px / 16px "Inter", "sans-serif"
+            color: var(--Black)
+            text-align: center
+        &-delete 
+            & path 
+                fill: var(--Gray-30)
+                transition: fill 0.3s ease
+            &:hover 
+                & path 
+                    fill: var(--Red-error)
+        &-withicon 
+            justify-content: space-between
+            & .payment__item-text 
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                    overflow: hidden
     &__payments 
         display: flex
         flex-direction: column
     &__payment
         display: grid
         grid-template-columns: 130px 110px 100px 160px 160px 100px 160px 200px 80px 100px 120px
+        align-items: center
         height: 50px
+        &:nth-child(odd)
+            background-color: var(--Gray-100)
         &-item 
             display: flex
             justify-content: center
@@ -2096,9 +2292,16 @@ input[type=number]::-webkit-outer-spin-button
             @include link-small
             color: var(--Black)
             text-align: center
+        &-paid
+            grid-template-columns: 70px 240px 150px 150px 200px 160px 130px 130px 130px 210px 100px 135px
+        &-paid2
+            grid-template-columns: 100px 180px 145px 260px 140px 250px
+        &-paid3
+            grid-template-columns: 185px 150px 150px 150px 160px
     &__left 
         display: flex
         flex-direction: column
+        margin-left: 20px
     &__lefthead
         display: grid
         grid-template-columns: 120px 110px 120px 
@@ -2154,12 +2357,22 @@ input[type=number]::-webkit-outer-spin-button
             align-items: center
             gap: 4px
             @include body-large
-            
             color: var(--Primary-50)
-            
     ::-webkit-scrollbar-thumb 
         background-color: #0894F3
-
+#accounting-change 
+    border: 1px solid var(--Black)
+    &:focus
+        outline: 1px solid var(--Black)
+.awaiting-payment 
+    display: none
+    padding: 5.5px 12px
+    border-radius: 6px
+    background-color: var(--Primary-40)
+    font: 600 13px/20px 'Inter', 'sans-serif'
+    color: var(--White)
+    &-active 
+        display: block
 .vat 
     display: grid
     grid-template-columns: 300px 260px

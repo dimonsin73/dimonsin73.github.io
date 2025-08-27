@@ -1,3 +1,22 @@
+const headerBurger = document.querySelector('.header__burger')
+const aside = document.querySelector('.aside')
+headerBurger.addEventListener('click', function(){
+    aside.classList.add('aside_active')
+    document.addEventListener('click', (e) => {
+        const withinBoundaries = e.composedPath().includes(aside);
+        if ( ! withinBoundaries ) {
+            const withinBoundariesBurger = e.composedPath().includes(headerBurger);
+            if (! withinBoundariesBurger) {
+                aside.classList.remove('aside_active')
+            }
+        }
+    }) //Скрытие Aside по щелчку вне 
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            aside.classList.remove('aside_active')
+        }
+    }) //Скрытие Aside по нажатию на ESC
+})
 const panelTariffBlockArray = document.querySelectorAll('.panel__tariff-block')
 for (let i = 0; i < panelTariffBlockArray.length; i++) {
     const panelTariffBlock = panelTariffBlockArray[i];
@@ -28,22 +47,19 @@ for (let i = 0; i < panelTabArray.length; i++) {
                     const panelTariffBlock = panelTariffBlockArray[i];
                     autoGrow(panelTariffBlock)
                 }
-                if (panelContainer.dataset.panel === 'payment') {
-                    // Каледнарь 
-                    let datepicker = new Datepicker('#period-start', {
-                        weekStart: 1
-                    });
-                    let datepicker1 = new Datepicker('#period-finish', {
-                        weekStart: 1
-                    });
-                }
             } else {
                 panelContainer.classList.remove('panel__container-active')
             }
         }
     })
 }
-
+// Каледнарь 
+let datepicker = new Datepicker('#period-start', {
+    weekStart: 1
+});
+let datepicker1 = new Datepicker('#period-finish', {
+    weekStart: 1
+});
 const paymentDocsLink = document.querySelector('.payment__docs-link')
 paymentDocsLink.addEventListener('click', function(){
     for (let i = 0; i < panelTabArray.length; i++) {
@@ -940,3 +956,115 @@ for (let i = 0; i < labelEditArray.length; i++) {
     })
 
 }
+const invoiceSentArray = document.querySelectorAll('.invoice-sent')
+for (let i = 0; i < invoiceSentArray.length; i++) {
+    const invoiceSent = invoiceSentArray[i];
+    invoiceSent.addEventListener('change', function(){
+        const awaitingPayment = invoiceSent.parentElement.parentElement.parentElement.querySelector('.awaiting-payment')
+        if (invoiceSent.checked) {
+            awaitingPayment.classList.add('awaiting-payment-active')
+        } else {
+            awaitingPayment.classList.remove('awaiting-payment-active')
+        }
+    })
+}
+
+const invoicePaidArray = document.querySelectorAll('.invoice-paid')
+for (let i = 0; i < invoicePaidArray.length; i++) {
+    const invoicePaid = invoicePaidArray[i];
+    invoicePaid.addEventListener('change', function(){
+        const awaitingPayment = invoicePaid.parentElement.parentElement.parentElement.querySelector('.awaiting-payment')
+        if (invoicePaid.checked) {
+            awaitingPayment.classList.add('awaiting-payment-active')
+        } else {
+            awaitingPayment.classList.remove('awaiting-payment-active')
+        }
+    })
+}
+
+const docDeleteInvoiceCheckArray = document.querySelectorAll('.doc__delete-invoice_check')
+for (let i = 0; i < docDeleteInvoiceCheckArray.length; i++) {
+    const docDeleteInvoiceCheck = docDeleteInvoiceCheckArray[i];
+    docDeleteInvoiceCheck.addEventListener('click', function(){
+        const doc = docDeleteInvoiceCheck.parentElement
+        confirm.classList.add('confirm_active')
+        for (let i = 0; i < confirmWrapperArray.length; i++) {
+            const confirmWrapper = confirmWrapperArray[i];
+            if (confirmWrapper.dataset.confirm === 'delete-invoice_check') {
+                confirmWrapper.classList.add('confirm__wrapper-active')
+                const confirmOk = confirmWrapper.querySelector('.confirm__ok')
+                const confirmClose = confirmWrapper.querySelector('.confirm__close')
+                confirmOk.addEventListener('click', function(){
+                    doc.remove()
+                    confirmWrapper.classList.remove('confirm__wrapper-active')
+                    confirm.classList.remove('confirm_active')
+                })
+                confirmClose.addEventListener('click', function(){
+                    confirmWrapper.classList.remove('confirm__wrapper-active')
+                    confirm.classList.remove('confirm_active')
+                })
+            }
+        }
+    })
+}
+const paymentItemDeleteArray = document.querySelectorAll('.payment__item-delete')
+for (let i = 0; i < paymentItemDeleteArray.length; i++) {
+    const paymentItemDelete = paymentItemDeleteArray[i];
+    paymentItemDelete.addEventListener('click', function(){
+        const payment = paymentItemDelete.parentElement.parentElement
+        confirm.classList.add('confirm_active')
+        for (let i = 0; i < confirmWrapperArray.length; i++) {
+            const confirmWrapper = confirmWrapperArray[i];
+            if (confirmWrapper.dataset.confirm === 'delete-request') {
+                confirmWrapper.classList.add('confirm__wrapper-active')
+                const confirmOk = confirmWrapper.querySelector('.confirm__ok')
+                const confirmClose = confirmWrapper.querySelector('.confirm__close')
+                confirmOk.addEventListener('click', function(){
+                    payment.remove()
+                    confirmWrapper.classList.remove('confirm__wrapper-active')
+                    confirm.classList.remove('confirm_active')
+                })
+                confirmClose.addEventListener('click', function(){
+                    confirmWrapper.classList.remove('confirm__wrapper-active')
+                    confirm.classList.remove('confirm_active')
+                })
+            }
+        }
+    })
+}
+
+
+const accountingChange = document.getElementById('accounting-change')
+const accountingArray = document.querySelectorAll('.accounting')
+const panelNewrequestArray = document.querySelectorAll('.panel__newrequest')
+const panelDuoPaid = document.querySelector('.panel__duo-paid')
+accountingChange.addEventListener('click', function(){
+    const optionArray = accountingChange.parentElement.querySelectorAll('.option')
+    for (let i = 0; i < optionArray.length; i++) {
+        const option = optionArray[i];
+        option.addEventListener('click', function(){
+            const dataOption = option.dataset.accounting
+            for (let i = 0; i < accountingArray.length; i++) {
+                const accounting = accountingArray[i];
+                if (accounting.dataset.accounting === dataOption) {
+                    accounting.classList.add('accounting_active')
+                } else {
+                    accounting.classList.remove('accounting_active')
+                }
+            }
+            for (let i = 0; i < panelNewrequestArray.length; i++) {
+                const panelNewrequest = panelNewrequestArray[i];
+                if (panelNewrequest.dataset.accounting === dataOption) {
+                    panelNewrequest.classList.add('panel__newrequest-active')
+                } else {
+                    panelNewrequest.classList.remove('panel__newrequest-active')
+                }
+            }
+            if (dataOption === 'paid') {
+                panelDuoPaid.style.display = 'flex'
+            } else {
+                panelDuoPaid.style.display = 'none'
+            }
+        })
+    }
+})
