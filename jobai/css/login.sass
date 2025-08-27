@@ -1,0 +1,46 @@
+body 
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vh
+    margin: 0
+    background-color: #e0e5ec
+    font-family: Arial, sans-serif
+.form 
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 25px
+    width: 300px
+    padding: 30px
+    text-align: center
+.title 
+    margin: 0
+    color: #6d7582
+.neumorphic
+    border-radius: 20px
+    background-color: #e0e5ec
+    box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
+    &-inset
+        border-radius: 20px
+        background-color: #e0e5ec
+        box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
+    &-input 
+        width: 80%
+        padding: 15px
+        border: none 
+        outline: none
+        font-size: 16px
+        color: #6d7582
+        &::placeholder 
+            color: #a3b1c6
+    &-button 
+        padding: 15px 30px 
+        font-size: 16px
+        color: #6d7582
+        border: none
+        cursor: pointer
+        transition: all 0.3s ease
+        &:active 
+            box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
