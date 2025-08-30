@@ -1524,6 +1524,10 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
   overflow-x: scroll;
 }
+.panel__table::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
 .panel__head {
   display: grid;
   grid-template-columns: 130px 180px 130px 260px 130px 300px 160px 220px 220px 240px 165px 120px 90px 120px;
@@ -2288,6 +2292,22 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .user__item-center {
   justify-content: center;
+}
+.user__item-withicon {
+  position: relative;
+  justify-content: center;
+  padding-right: 32px;
+}
+.user__item-withicon .payment__item-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.user__item-withicon button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
 }
 .user__item-password {
   display: flex;

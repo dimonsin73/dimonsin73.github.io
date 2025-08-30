@@ -1245,6 +1245,9 @@ input[type=number]::-webkit-outer-spin-button
         max-width: 3000px
         width: 100%
         overflow-x: scroll
+        &::-webkit-scrollbar 
+            width: 10px
+            height: 10px
     &__head 
         display: grid
         grid-template-columns: 130px 180px 130px 260px 130px 300px 160px 220px 220px 240px 165px 120px 90px 120px
@@ -1853,6 +1856,19 @@ input[type=number]::-webkit-outer-spin-button
             border-right: none
         &-center 
             justify-content: center
+        &-withicon
+            position: relative
+            justify-content: center
+            padding-right: 32px
+            & .payment__item-text 
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                    overflow: hidden
+            & button 
+                position: absolute
+                right: 8px
+                top: 50%
+                transform: translate3d(0, -50%, 0)
         &-password
             display: flex
             align-items: center
@@ -1977,7 +1993,6 @@ input[type=number]::-webkit-outer-spin-button
         &-item 
             margin-left: 24px
             list-style: disc
-        &-wrapper 
     &__btns 
         display: flex
         align-items: center

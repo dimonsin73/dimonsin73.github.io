@@ -60,6 +60,12 @@ let datepicker = new Datepicker('#period-start', {
 let datepicker1 = new Datepicker('#period-finish', {
     weekStart: 1
 });
+let datepickerDoc = new Datepicker('#period-start-doc', {
+    weekStart: 1
+});
+let datepickerDoc1 = new Datepicker('#period-finish-doc', {
+    weekStart: 1
+});
 const paymentDocsLink = document.querySelector('.payment__docs-link')
 paymentDocsLink.addEventListener('click', function(){
     for (let i = 0; i < panelTabArray.length; i++) {
