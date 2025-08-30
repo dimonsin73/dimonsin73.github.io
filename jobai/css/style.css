@@ -1353,6 +1353,13 @@ input[type=number]::-webkit-outer-spin-button {
   background-repeat: no-repeat;
 }
 
+#service-mail {
+  padding-left: 44px;
+  background-image: url("../images/icons/mail.png");
+  background-position: center left 12px;
+  background-repeat: no-repeat;
+}
+
 #tel {
   padding-left: 44px;
   background-image: url("../images/icons/phone.png");

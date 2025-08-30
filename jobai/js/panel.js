@@ -374,6 +374,48 @@ addUser.addEventListener('click', function(){
 newuserClose.addEventListener('click', function(){
     newuser.classList.remove('newuser_active')
 })
+const service = document.querySelector('.service')
+const addService = document.getElementById('add-service')
+const serviceForm = document.querySelector('.service__form')
+const serviceName = document.getElementById('service-name')
+const serviceSurname = document.getElementById('service-surname')
+const serviceMail = document.getElementById('service-mail')
+const serviceClose = document.querySelector('.service__close')
+addService.addEventListener('click', function(){
+    service.classList.add('service_active')
+})
+serviceClose.addEventListener('click', function(){
+    service.classList.remove('service_active')
+})
+serviceForm.addEventListener('submit', function(e){
+    e.preventDefault()
+    if (serviceName.value === '') {
+        const label = serviceName.parentElement
+        label.classList.add('label_error')
+    }
+    if (serviceSurname.value === '') {
+        const label = serviceSurname.parentElement
+        label.classList.add('label_error')
+    }
+    if (serviceMail.value === '') {
+        const label = serviceMail.parentElement
+        label.classList.add('label_error')
+    }
+})
+serviceName.addEventListener('input', function(){
+    const label = serviceName.parentElement
+    label.classList.remove('label_error')
+})
+serviceSurname.addEventListener('input', function(){
+    const label = serviceSurname.parentElement
+    label.classList.remove('label_error')
+})
+serviceMail.addEventListener('input', function(){
+    const label = serviceMail.parentElement
+    label.classList.remove('label_error')
+})
+
+
 
 const docs = document.querySelector('.docs')
 const docsImg = document.querySelector('.docs__img')
@@ -570,7 +612,6 @@ for (let i = 0; i < editCloseArray.length; i++) {
             const editForm = editFormArray[i];
             editForm.classList.remove('edit__form-active')
         }
-        
         edit.classList.remove('edit_active')
     })
 }
@@ -631,6 +672,14 @@ function panelLandingDeleteFun(panelLandingDelete) {
         li.remove()
     })
 }
+const panelLandingBtnArray = document.querySelectorAll('.panel__landing-btn')
+for (let i = 0; i < panelLandingBtnArray.length; i++) {
+    const panelLandingBtn = panelLandingBtnArray[i];
+    panelLandingBtn.addEventListener('click', function(){
+        const textCopy = panelLandingBtn.parentElement.querySelector('.panel__landing-urlinput').value
+        navigator.clipboard.writeText(textCopy)
+    })
+}
 // Добавление пункта меню лендинга 
 const panelLandingAdd = document.querySelector('.panel__landing-add')
 const panelLandingList = document.querySelector('.panel__landing-list')
@@ -665,8 +714,12 @@ panelLandingAdd.addEventListener('click', function(){
     const panelLandingUrlinput = document.createElement('input')
     panelLandingUrlinput.classList.add('panel__landing-urlinput')
     panelLandingUrlinput.setAttribute('type', 'text')
+    const panelLandingBtn = document.createElement('button')
+    panelLandingBtn.setAttribute('type', 'button')
+    panelLandingBtn.classList.add('panel__landing-btn', 'btn-icon')
+    panelLandingBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/></svg>'
     panelLandingBtns.append(panelLandingClose, panelLandingSuccess, panelLandingEdit, panelLandingDelete)
-    panelLandingUrl.append(panelLandingP, panelLandingUrlinput)
+    panelLandingUrl.append(panelLandingP, panelLandingUrlinput, panelLandingBtn)
     panelLandingLi.append(panelLandingInput, panelLandingBtns, panelLandingUrl)
     panelLandingList.append(panelLandingLi)
     const panelLandingConfirmArray = panelLandingBtns.querySelectorAll('.panel__landing-confirm')
@@ -680,6 +733,10 @@ panelLandingAdd.addEventListener('click', function(){
     })
     panelLandingEdit.addEventListener('click', function () {
         funEdit(panelLandingEdit)
+    })
+    panelLandingBtn.addEventListener('click', function(){
+        const textCopy = panelLandingBtn.parentElement.querySelector('.panel__landing-urlinput').value
+        navigator.clipboard.writeText(textCopy)
     })
 })
 
@@ -696,27 +753,33 @@ for (let i = 0; i < panelDocumentEditArray.length; i++) {
 function funEditDoc(panelDocumentEdit) {
     panelDocumentEdit.classList.add('panel__document-edit-hide')
     const input = panelDocumentEdit.parentElement.parentElement.querySelector('.panel__document-input')
+    const panelDocumentUrl = panelDocumentEdit.parentElement.parentElement.querySelector('.panel__document-url')
     const panelDocumentConfirmArray = panelDocumentEdit.parentElement.querySelectorAll('.panel__document-confirm')
     const panelDocumentClose = panelDocumentEdit.parentElement.querySelector('.panel__document-close')
     const panelDocumentSuccess = panelDocumentEdit.parentElement.querySelector('.panel__document-success')
     input.classList.add('panel__document-input-active')
     input.readOnly = false
+    panelDocumentUrl.classList.add('panel__document-url-active')
     for (let i = 0; i < panelDocumentConfirmArray.length; i++) {
         const panelDocumentConfirm = panelDocumentConfirmArray[i];
         panelDocumentConfirm.classList.add('panel__document-confirm-active')
     }
     const inputValueStart = input.value
+    const inputUrl = panelDocumentUrl.querySelector('.panel__document-urlinput')
+    const inputUrlValueStart = inputUrl.value
     panelDocumentClose.addEventListener('click', function(){
         input.value = inputValueStart
-        panelDocumentEditFun(panelDocumentEdit, input, panelDocumentConfirmArray)
+        inputUrl.value = inputUrlValueStart
+        panelDocumentEditFun(panelDocumentEdit, input, panelDocumentUrl, panelDocumentConfirmArray)
     })
     panelDocumentSuccess.addEventListener('click', function(){
-        panelDocumentEditFun(panelDocumentEdit, input, panelDocumentConfirmArray)
+        panelDocumentEditFun(panelDocumentEdit, input, panelDocumentUrl, panelDocumentConfirmArray)
     })
 }
-function panelDocumentEditFun(panelDocumentEdit, input, panelDocumentConfirmArray) {
+function panelDocumentEditFun(panelDocumentEdit, input, panelDocumentUrl, panelDocumentConfirmArray) {
     panelDocumentEdit.classList.remove('panel__document-edit-hide')
     input.classList.remove('panel__document-input-active')
+    panelDocumentUrl.classList.remove('panel__document-url-active')
     input.readOnly = true
     for (let i = 0; i < panelDocumentConfirmArray.length; i++) {
         const panelDocumentConfirm = panelDocumentConfirmArray[i];
@@ -733,7 +796,14 @@ function panelLandingDeleteFun(panelDocumentDelete) {
         document.remove()
     })
 }
-
+const panelDocumentBtnArray = document.querySelectorAll('.panel__document-btn')
+for (let i = 0; i < panelDocumentBtnArray.length; i++) {
+    const panelDocumentBtn = panelDocumentBtnArray[i];
+    panelDocumentBtn.addEventListener('click', function(){
+        const textCopy = panelDocumentBtn.parentElement.querySelector('.panel__document-urlinput').value
+        navigator.clipboard.writeText(textCopy)
+    })
+}
 const panelDocumentEdittextArray = document.querySelectorAll('.panel__document-edittext')
 for (let i = 0; i < panelDocumentEdittextArray.length; i++) {
     const panelDocumentEdittext = panelDocumentEdittextArray[i];
@@ -839,9 +909,20 @@ panelDocumentAdd.addEventListener('click', function(){
     panelDocumentCancell.setAttribute('type', 'button')
     panelDocumentCancell.classList.add('btn', 'btn_tertiary', 'panel__document-cancell')
     panelDocumentCancell.textContent = 'Отмена'
-
+    const panelDocumentgUrl = document.createElement('div')
+    panelDocumentgUrl.classList.add('panel__document-url', 'panel__document-url-active')
+    const panelDocumentP = document.createElement('p')
+    panelDocumentP.textContent = 'URL'
+    const panelDocumentUrlinput = document.createElement('input')
+    panelDocumentUrlinput.classList.add('panel__document-urlinput')
+    panelDocumentUrlinput.setAttribute('type', 'text')
+    const panelDocumentBtn = document.createElement('button')
+    panelDocumentBtn.setAttribute('type', 'button')
+    panelDocumentBtn.classList.add('panel__document-btn', 'btn-icon')
+    panelDocumentBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16H6C4.89543 16 4 15.1046 4 14V6C4 4.89543 4.89543 4 6 4H14C15.1046 4 16 4.89543 16 6V8M10 20H18C19.1046 20 20 19.1046 20 18V10C20 8.89543 19.1046 8 18 8H10C8.89543 8 8 8.89543 8 10V18C8 19.1046 8.89543 20 10 20Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    panelDocumentgUrl.append(panelDocumentP, panelDocumentUrlinput, panelDocumentBtn)
     panelDocumentBtns.append(panelDocumentClose, panelDocumentSuccess, panelDocumentEdit, panelDocumentTextedit, panelDocumentDelete)
-    panelDocumentTop.append(panelDocumentInput, panelDocumentBtns)
+    panelDocumentTop.append(panelDocumentInput, panelDocumentBtns, panelDocumentgUrl)
     panelDocumentImage.append(panelDocumentImg)
     panelDocumentLeft.append(panelDocumentAttached, panelDocumentAttach)
     panelDocumentButtons.append(panelDocumentEdittext, panelDocumentSave, panelDocumentCancell)
@@ -880,6 +961,10 @@ panelDocumentAdd.addEventListener('click', function(){
         panelDocumentSave.style.display = 'flex'
         panelDocumentCancell.style.display = 'flex'
         textareaValueStart = panelDocumentTextarea.value
+    })
+    panelDocumentBtn.addEventListener('click', function(){
+        const textCopy = panelDocumentBtn.parentElement.querySelector('.panel__document-urlinput').value
+        navigator.clipboard.writeText(textCopy)
     })
 })
 
@@ -960,7 +1045,25 @@ for (let i = 0; i < labelEditArray.length; i++) {
             labelInput.disabled = true
         })
     })
-
+}
+const labelEditTitleArray = document.querySelectorAll('.label__edit-title')
+for (let i = 0; i < labelEditTitleArray.length; i++) {
+    const labelEditTitle = labelEditTitleArray[i];
+    labelEditTitle.addEventListener('click', function(){
+        const labelInput = labelEditTitle.parentElement.querySelector('.panel__acquiring-title')
+        const labelOk = labelEditTitle.parentElement.querySelector('.label__ok-title')
+        labelEditTitle.style.display = 'none'
+        labelOk.style.display = 'flex'
+        labelInput.classList.add('panel__acquiring-title-active')
+        labelInput.disabled = false
+        labelInput.focus()
+        labelOk.addEventListener('click', function(){
+            labelEditTitle.style.display = 'flex'
+            labelOk.style.display = 'none'
+            labelInput.classList.remove('panel__acquiring-title-active')
+            labelInput.disabled = true
+        })
+    })
 }
 const invoiceSentArray = document.querySelectorAll('.invoice-sent')
 for (let i = 0; i < invoiceSentArray.length; i++) {
@@ -1106,3 +1209,20 @@ accountingChange.addEventListener('click', function(){
         })
     }
 })
+
+const btnCopyArray = document.querySelectorAll('.btn-copy')
+for (let i = 0; i < btnCopyArray.length; i++) {
+    const btnCopy = btnCopyArray[i];
+    btnCopy.addEventListener('click', function(){
+        const textCopy = btnCopy.parentElement.querySelector('.user__item-text').textContent
+        navigator.clipboard.writeText(textCopy)
+    })
+}
+const btnCopy2Array = document.querySelectorAll('.btn-copy2')
+for (let i = 0; i < btnCopy2Array.length; i++) {
+    const btnCopy = btnCopy2Array[i];
+    btnCopy.addEventListener('click', function(){
+        const textCopy = btnCopy.parentElement.querySelector('.payment__item-text').textContent
+        navigator.clipboard.writeText(textCopy)
+    })
+}
