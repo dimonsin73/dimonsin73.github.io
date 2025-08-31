@@ -1798,6 +1798,8 @@ input[type=number]::-webkit-outer-spin-button
     &__span 
         font: 500 12px/17px 'Inter', 'sans-serif'
         color: var(--Gray-40)
+        &-red 
+            color: var(--Red-error)
     &__avatar 
         display: flex
         align-items: center
@@ -1809,6 +1811,22 @@ input[type=number]::-webkit-outer-spin-button
         &-text 
             font: 500 12px/17px 'Inter', 'sans-serif'
             color: var(--Black)
+    &__click 
+        position: absolute
+        top: 0
+        left: 260px
+        width: 500px
+        height: 64px
+        cursor: pointer
+.header-2
+    display: none
+.header-3
+    display: none
+.header-4
+    display: none
+.header-5
+    display: none
+
 .bulb 
     & path 
         fill: var(--Icons)
@@ -1825,12 +1843,12 @@ input[type=number]::-webkit-outer-spin-button
     position: absolute
     top: -8px
     left: 14px
-    min-width: 18px
-    padding: 0 3px
     border: 1px solid var(--White)
     border-radius: 9px
     background-color: var(--Primary-50)
     &__number 
+        min-width: 18px
+        padding: 0 3px
         @include number
         color: var(--White)
 // HEADER END
@@ -4609,3 +4627,45 @@ input[type=number]::-webkit-outer-spin-button
             & path 
                 fill: var(--Red-error)
 // PANEL END
+// KABINET 
+.kabinet 
+    padding: 0 20px 20px 
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 20px
+    &__top 
+        display: flex
+        flex-direction: column
+    &__tabs 
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        gap: 40px
+        width: max-content
+        border-bottom: 1px solid var(--Gray-60)
+    &__tab 
+        padding: 14px 0
+        border-bottom: 3px solid var(--Gray-100)
+        @include title-medium
+        color: var(--Gray-30)
+        transition: color 0.3s ease, border 0.3s ease
+        cursor: pointer
+        &-active
+            color: var(--Black)
+            border-bottom: 3px solid var(--Primary-50)
+    &__title 
+        @include title-medium
+        color: var(--Gray-30)
+    &__container 
+        display: none
+        flex-direction: column
+        justify-content: flex-start
+        gap: 20px
+        height: 100%
+        padding: 16px
+        border-radius: 12px
+        background-color: var(--White)
+        &-active 
+            display: flex
+// KABINET END
