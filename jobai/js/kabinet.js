@@ -109,3 +109,15 @@ kabinetLogoImg.addEventListener('click', function(){
         logotip.classList.remove('logotip_active')
     })
 })
+const kabinetDeleteImg = document.querySelector('.kabinet__delete-img')
+kabinetDeleteImg.addEventListener('click', function(){
+    const bigImg = kabinetDeleteImg.parentElement.querySelector('.kabinet__logo-img')
+    const miniImg = kabinetDeleteImg.parentElement.parentElement.querySelector('.kabinet__logo-miniimg')
+    bigImg.remove()
+    miniImg.remove()
+})
+const kabinetDeleteTextarea = document.querySelector('.kabinet__delete-textarea')
+kabinetDeleteTextarea.addEventListener('click', function(){
+    const textarea = kabinetDeleteTextarea.parentElement.querySelector('.kabinet__textarea')
+    textarea.value = ''
+})
