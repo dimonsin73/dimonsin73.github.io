@@ -2131,10 +2131,18 @@ input[type=number]::-webkit-outer-spin-button {
   border: 1px solid #B4B5BE;
 }
 .panel__acquiring-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 30px;
 }
 .panel__acquiring-logo img {
   height: 30px;
+}
+.panel__acquiring-date {
+  font: 600 16px/22px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Black);
 }
 .panel__acquiring-label {
   display: flex;
@@ -2652,7 +2660,7 @@ input[type=number]::-webkit-outer-spin-button {
   max-width: 600px;
   width: 100%;
   padding: 38px 55px;
-  border-radius: 32px;
+  border-radius: 12px;
   background-color: var(--White);
   transform: translate3d(-50%, -50%, 0);
 }
@@ -2752,7 +2760,7 @@ input[type=number]::-webkit-outer-spin-button {
   max-width: 600px;
   width: 100%;
   padding: 38px 55px;
-  border-radius: 32px;
+  border-radius: 12px;
   background-color: var(--White);
   transform: translate3d(-50%, -50%, 0);
 }

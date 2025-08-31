@@ -1736,9 +1736,15 @@ input[type=number]::-webkit-outer-spin-button
             &-active 
                 border: 1px solid #B4B5BE
         &-logo 
+            display: flex
+            justify-content: space-between
+            align-items: center
             height: 30px
             & img
                 height: 30px
+        &-date 
+            @include title-medium
+            color: var(--Black)
         &-label
             display: flex
             justify-content: space-between
@@ -2143,7 +2149,7 @@ input[type=number]::-webkit-outer-spin-button
         max-width: 600px
         width: 100%
         padding: 38px 55px
-        border-radius: 32px
+        border-radius: 12px
         background-color: var(--White)
         transform: translate3d(-50%, -50%, 0)
     &__col 
@@ -2221,7 +2227,7 @@ input[type=number]::-webkit-outer-spin-button
         max-width: 600px
         width: 100%
         padding: 38px 55px
-        border-radius: 32px
+        border-radius: 12px
         background-color: var(--White)
         transform: translate3d(-50%, -50%, 0)
     &__title 
