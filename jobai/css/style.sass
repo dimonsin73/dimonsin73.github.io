@@ -581,6 +581,11 @@
         &:hover 
             & path 
                 fill: var(--Primary-40)
+    &__link 
+        position: absolute
+        bottom: -24px
+        @include body-large
+        color: var(--Primary-50)
     &-active 
         & .label__title
             top: 8px
@@ -4795,6 +4800,9 @@ input[type=number]::-webkit-outer-spin-button
             width: 400px
         &-300
             width: 300px
+        &-white 
+            border: 1px solid var(--Gray-60)
+            background-color: var(--White) 
     &__col 
         display: flex
         flex-direction: column
@@ -4812,6 +4820,14 @@ input[type=number]::-webkit-outer-spin-button
         color: var(--Black)
         & span 
             font-weight: 600
+    &__g64
+        display: flex
+        flex-direction: column
+        gap: 64px
+    &__g32
+        display: flex
+        flex-direction: column
+        gap: 32px
     &__g16 
         display: flex
         flex-direction: column
@@ -4820,6 +4836,8 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         flex-direction: column
         gap: 8px
+    &__p32 
+        padding: 0 32px
     &__space60 
         height: 60px
     &__copy 
