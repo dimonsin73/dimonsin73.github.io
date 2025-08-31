@@ -2551,6 +2551,11 @@ input[type=number]::-webkit-outer-spin-button {
   flex-direction: column;
   gap: 16px;
 }
+.section__col3 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 .section__tags {
   display: flex;
   flex-wrap: wrap;
