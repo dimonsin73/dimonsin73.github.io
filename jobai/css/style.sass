@@ -473,6 +473,16 @@
     &__subtext
         @include body-small
         color: var(--Gray-30)
+    &__redtext 
+        position: absolute
+        bottom: -16px
+        right: 0
+        @include body-small
+        font-size: 12px
+        color: var(--Red-error)
+        text-align: right
+        &-b0 
+            bottom: 0
     &__eye 
         position: absolute
         right: 7px
@@ -1494,6 +1504,9 @@ input[type=number]::-webkit-outer-spin-button
         padding: 18px 24px
         font-size: 20px
         line-height: 24px
+        &_h48 
+            padding: 11px 23px
+            font-size: 16px
 @media (max-height: 499px)
     .hiro__content 
         margin-top: 20px
@@ -1826,7 +1839,6 @@ input[type=number]::-webkit-outer-spin-button
     display: none
 .header-5
     display: none
-
 .bulb 
     & path 
         fill: var(--Icons)
@@ -4668,4 +4680,193 @@ input[type=number]::-webkit-outer-spin-button
         background-color: var(--White)
         &-active 
             display: flex
+        &-title 
+            @include title-medium
+            color: var(--Gray-30)
+    &__grid 
+        display: grid
+        grid-template-columns: 560px 1fr
+        gap: 40px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 32px
+            margin: 0 32px
+        &-item2 
+            display: grid
+            align-content: space-between
+            grid-template-columns: 1fr 1fr
+        &-block 
+            display: flex
+            flex-direction: column
+            gap: 12px
+        &-block2 
+            grid-column: span 2
+            display: flex
+            flex-direction: column
+            gap: 12px
+        &-textarea 
+            position: relative
+            width: 736px
+            padding-left: 32px
+    &__logo 
+        display: flex
+        justify-content: space-between
+        gap: 44px
+        padding: 0 32px
+        &-big 
+            position: relative
+        &-img
+            display: flex
+            align-items: center
+            justify-content: center
+            flex: 0 0 auto
+            width: 220px
+            height: 220px
+            padding: 32px
+            border-radius: 4px
+            border: 1px solid var(--Aside)
+            overflow: hidden
+            cursor: pointer
+        &-mini
+            display: flex
+            align-items: center
+            justify-content: center
+            flex: 0 0 auto
+            width: 46px
+            height: 46px
+            margin: 0 auto 12px
+            border-radius: 13px
+            border: 1px solid var(--Aside)
+            overflow: hidden
+        &-info 
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+            gap: 12px
+    &__label 
+        display: flex
+        align-items: center
+        gap: 16px
+        padding: 0 32px
+        &-input 
+            width: 100%
+            padding-right: 40px
+        &-btns 
+            display: none
+            align-items: center
+        &-400
+            width: 400px
+        &-300
+            width: 300px
+    &__col 
+        display: flex
+        flex-direction: column
+        gap: 2px
+        &-title
+            padding: 0 32px
+            @include subtitle-medium
+            color: var(--Gray-40)
+    &__textarea 
+        height: 150px
+    &__pl32
+        padding-left: 32px
+    &__text 
+        @include link-small
+        color: var(--Black)
+        & span 
+            font-weight: 600
+    &__g16 
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__g8
+        display: flex
+        flex-direction: column
+        gap: 8px
+    &__space60 
+        height: 60px
+    &__copy 
+        position: absolute
+        top: 16px
+        right: 16px
+    &__ok 
+        & path 
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                fill: var(--Primary-40)
+    &__close 
+        & path 
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                fill: var(--Red-error)
+    &__delete 
+        position: absolute
+        top: 0
+        right: -24px
+        & path 
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                fill: var(--Red-error)
+.logotip 
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    display: none
+    align-items: center
+    justify-content: center
+    background-color: #000000B2
+    z-index: 1000
+    &_active 
+        display: flex
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: 20px
+        width: 900px
+        height: 650px
+        padding: 32px
+        border-radius: 12px
+        box-shadow: 0px 4px 4px 0px #00000040
+        background-color: var(--White)
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__text 
+        width: 450px
+        font: 300 14px/20px 'Inter', 'sans-serif'
+        color: var(--Black)
+        text-align: center
+        & span 
+            font-weight: 600
+    &__image 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 630px
+        height: 350px
+        border: 1px solid var(--Aside)
+        background: 
+            image: url(../images/bg.png)
+        &-region 
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 370px
+            height: 350px
+            border: 24px solid #4D4D4D
+            background-color: var(--White)
+        &-img 
+            width: 150px
+    &__footer 
+        display: flex
+        align-items: center
+        gap: 100px
 // KABINET END

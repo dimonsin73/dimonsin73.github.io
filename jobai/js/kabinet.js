@@ -27,13 +27,13 @@ for (let i = 0; i < kabinetTabArray.length; i++) {
             kt.classList.remove('kabinet__tab-active')
         }
         kabinetTab.classList.add('kabinet__tab-active')
-        const dataKabinet = kabinetTab.dataset.panel
+        const dataKabinet = kabinetTab.dataset.kabinet
         for (let i = 0; i < kabinetContainerArray.length; i++) {
             const kabinetContainer = kabinetContainerArray[i];
-            if (kabinetContainer.dataset.panel === dataKabinet) {
+            if (kabinetContainer.dataset.kabinet === dataKabinet) {
                 kabinetContainer.classList.add('kabinet__container-active')
             } else {
-                panelContainer.classList.remove('kabinet__container-active')
+                kabinetContainer.classList.remove('kabinet__container-active')
             }
         }
     })
@@ -54,3 +54,58 @@ for (let i = 0; i < headerClickArray.length; i++) {
         }
     })
 }
+
+const kabinetCopyArray = document.querySelectorAll('.kabinet__copy')
+for (let i = 0; i < kabinetCopyArray.length; i++) {
+    const kabinetCopy = kabinetCopyArray[i];
+    kabinetCopy.addEventListener('click', function(){
+        const textCopy = kabinetCopy.parentElement.querySelector('.kabinet__label-input').value
+        navigator.clipboard.writeText(textCopy)
+    })
+}
+const kabinetEditArray = document.querySelectorAll('.kabinet__edit')
+for (let i = 0; i < kabinetEditArray.length; i++) {
+    const kabinetEdit = kabinetEditArray[i];
+    kabinetEdit.addEventListener('click', function(){
+        const input = kabinetEdit.parentElement.querySelector('.kabinet__label-input')
+        const btns = kabinetEdit.parentElement.querySelector('.kabinet__label-btns')
+        const kabinetOk = btns.querySelector('.kabinet__ok')
+        const kabinetClose = btns.querySelector('.kabinet__close')
+        const kabinetCopy = kabinetEdit.parentElement.querySelector('.kabinet__copy')
+        const inputValueStart = input.value
+        input.disabled = false
+        input.focus()
+        btns.style.display = 'flex'
+        kabinetEdit.style.display = 'none'
+        if (kabinetCopy != null) {
+            kabinetCopy.style.display = 'none'
+        }
+        kabinetOk.addEventListener('click', function(){
+            input.disabled = true
+            btns.style.display = 'none'
+            kabinetEdit.style.display = 'flex'
+            if (kabinetCopy != null) {
+                kabinetCopy.style.display = 'flex'
+            }
+        })
+        kabinetClose.addEventListener('click', function(){
+            input.value = inputValueStart
+            input.disabled = true
+            btns.style.display = 'none'
+            kabinetEdit.style.display = 'flex'
+            if (kabinetCopy != null) {
+                kabinetCopy.style.display = 'flex'
+            }
+        })
+    })
+}
+
+const kabinetLogoImg = document.querySelector('.kabinet__logo-img')
+const logotip = document.querySelector('.logotip')
+kabinetLogoImg.addEventListener('click', function(){
+    logotip.classList.add('logotip_active')
+    const logotipClose = logotip.querySelector('.logotip__close')
+    logotipClose.addEventListener('click', function(){
+        logotip.classList.remove('logotip_active')
+    })
+})
