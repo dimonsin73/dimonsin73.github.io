@@ -549,6 +549,7 @@ for (let i = 0; i < kabinetStatusArray.length; i++) {
 
 
 const form = document.querySelector('.edit__form')
+const editSavePassword = document.querySelector('.edit__save-password')
 // Поля ввода
 const password = document.getElementById('password')
 const passwordSecond = document.getElementById('password-repeat')
@@ -562,6 +563,11 @@ password.addEventListener('input', function(){
     const labelLineItemArr = labelLine.children
     attributLineAddColor(password, labelLineItemArr)
     passwordComparison()
+    if (password.value != '') {
+        editSavePassword.classList.add('edit__save-password-active')
+    } else {
+        editSavePassword.classList.remove('edit__save-password-active')
+    }
 })
 passwordSecond.addEventListener('input', function(){
     const labelLine = passwordSecond.nextSibling
@@ -690,3 +696,16 @@ for (let i = 0; i < editCloseArray.length; i++) {
         }
     })
 }
+const invitationBtn = document.querySelector('.invitation-btn')
+const invitation = document.querySelector('.invitation')
+const invitationClose = document.querySelector('.invitation__close')
+invitationBtn.addEventListener('click', function(){
+    invitation.classList.add('invitation_active')
+})
+invitationClose.addEventListener('click', function(){
+    invitation.classList.remove('invitation_active')
+})
+const invitationFooterBtn = document.querySelector('.invitation__footer-btn')
+invitationFooterBtn.addEventListener('click', function(){
+    window.location = 'registration-invitation.html'
+})

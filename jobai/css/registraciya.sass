@@ -358,7 +358,6 @@
     &:focus 
         background-color: var(--White)
         outline: 2px solid var(--Gray-40)
-    
 .label 
     position: relative
     display: flex
@@ -401,6 +400,16 @@
     &__subtext
         @include body-small
         color: var(--Gray-30)
+    &__redtext 
+        position: absolute
+        bottom: -16px
+        right: 0
+        @include body-small
+        font-size: 12px
+        color: var(--Red-error)
+        text-align: right
+        &-b0 
+            bottom: 0
     &__eye 
         position: absolute
         right: 7px
@@ -414,7 +423,6 @@
         &-active 
             background: 
                 image: url('../images/icons/eye_visible.png')
-
     &__flyingtext 
         position: absolute
         top: 24px 
@@ -425,8 +433,48 @@
     &__clue 
         position: absolute
         top: 50%
-        right: -40px
+        right: -36px
         transform: translateY(-50%)
+    &__clue2
+        right: -28px
+    &-active 
+        & .label__title
+            top: 8px
+            @include body-small
+        & .label__textarea 
+            padding: 28px 12px 8px
+        & .label__flyingtext 
+            display: block
+    &_search 
+        position: relative
+        z-index: 9
+    &__top
+        position: absolute
+        bottom: 100%
+        display: flex
+        width: 100%
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__bottom 
+        position: absolute
+        top: 100%
+        display: flex
+        justify-content: center
+        width: 100%
+        @include subtitle-medium
+        color: var(--Gray-40)
+        &-small 
+            @include subtitle-small
+            white-space: nowrap
+        &-left 
+            justify-content: flex-start
+    &__currency 
+        position: absolute
+        top: 50%
+        right: 15px
+        @include title-medium
+        color: var(--Black)
+        transform: translate3d(0, -50%, 0)
     &__line 
         display: flex
         gap: 12px
@@ -443,6 +491,28 @@
             background-color: var(--Orange)
         &-success
             background-color: var(--Success)
+    &__edit
+        position: absolute
+        top: 50%
+        right: 16px
+        transform: translate3d(0, -50%, 0)
+        &:hover 
+            & path 
+                fill: var(--Primary-40)
+    &__ok 
+        position: absolute
+        top: 50%
+        right: 16px
+        display: none
+        transform: translate3d(0, -50%, 0)
+        &:hover 
+            & path 
+                fill: var(--Primary-40)
+    &__link 
+        position: absolute
+        bottom: -24px
+        @include body-large
+        color: var(--Primary-50)
     &-active 
         & .label__title
             top: 8px
@@ -469,6 +539,8 @@
         & #password-repeat
             background: 
                 image: url('../images/icons/password_error.png')
+    &_blur
+        opacity: 0.5
 .textarea 
     width: 100%
     height: 60px
@@ -1013,6 +1085,8 @@ input[type=number]::-webkit-outer-spin-button
     display: flex
     flex-direction: column
     gap: 16px
+    &-invitation
+        gap: 20px
     &__form
         display: none
         flex-direction: column
@@ -1022,6 +1096,12 @@ input[type=number]::-webkit-outer-spin-button
         & li 
             margin-left: 24px
             list-style: disc
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 10px
+        &-space 
+            height: 36px
     &__content 
         display: flex
         flex-direction: column
@@ -1029,6 +1109,9 @@ input[type=number]::-webkit-outer-spin-button
         padding: 40px 60px
         border-radius: 12px
         background-color: var(--White)
+        &-invitation 
+            padding-top: 35px
+            padding-bottom: 35px
     &__item 
         display: flex
         flex-direction: column
@@ -1080,7 +1163,6 @@ input[type=number]::-webkit-outer-spin-button
         gap: 8px
     &__line 
         display: flex
-        flex-wrap: wrap
         align-items: center
         gap: 8px
     &__footer 
@@ -1122,9 +1204,11 @@ input[type=number]::-webkit-outer-spin-button
         display: none
         &-active 
             display: flex
+    &__in
 .timer 
     display: flex
     align-items: center
+
 @media (max-width: 767px) 
     .registraciya
         &__content
