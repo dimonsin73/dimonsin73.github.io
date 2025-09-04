@@ -1,0 +1,40 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title SingIn
+        link(rel="stylesheet", href="css/fonts.css")
+        link(rel="stylesheet", href="css/login.css")
+    body    
+        .container
+            .login
+                .logo 
+                    p.logo__job JOB 
+                    p.logo__job.logo__job-white AI 
+                form.form.neumorphic
+                    h1.title Зарегистрироваться
+                    input(type="text", placeholder="Электронная почта", name='email').neumorphic.neumorphic-input
+                    input(type="text", placeholder="Телефон", name='phone').neumorphic.neumorphic-input
+                    .form__footer 
+                        button.neumorphic.neumorphic-button Дальше
+                        button.neumorphic.neumorphic-button Отмена
+                .role 
+                    button.neumorphic.neumorphic-button Найти сотрудника
+                    button.neumorphic.neumorphic-button Найти работу
+            button(type="button").neumorphic.neumorphic-button.btn-bottom.btn-bottom-left
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9C3 7.34315 4.34315 6 6 6H15C16.6569 6 18 7.34315 18 9V21C18 22.6569 16.6569 24 15 24H6C4.34315 24 3 22.6569 3 21V9Z" fill="#6A6A73"/>
+                    <path d="M21.8292 10.6584C21.321 10.9124 21 11.4318 21 12V18C21 18.5682 21.321 19.0876 21.8292 19.3416L24.8292 20.8416C25.2942 21.0741 25.8464 21.0493 26.2886 20.776C26.7308 20.5027 27 20.0199 27 19.5V10.5C27 9.98014 26.7308 9.49734 26.2886 9.22403C25.8464 8.95072 25.2942 8.92587 24.8292 9.15836L21.8292 10.6584Z" fill="#6A6A73"/>
+                </svg>
+            button(type="button").neumorphic.neumorphic-button.btn-bottom.btn-bottom-right
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.5 9C19.5 11.4853 17.4853 13.5 15 13.5C12.5147 13.5 10.5 11.4853 10.5 9C10.5 6.51472 12.5147 4.5 15 4.5C17.4853 4.5 19.5 6.51472 19.5 9Z" fill="#6A6A73"/>
+                    <path d="M27 12C27 13.6569 25.6568 15 24 15C22.3431 15 21 13.6569 21 12C21 10.3431 22.3431 9 24 9C25.6568 9 27 10.3431 27 12Z" fill="#6A6A73"/>
+                    <path d="M21 22.5C21 19.1863 18.3137 16.5 15 16.5C11.6863 16.5 8.99999 19.1863 8.99999 22.5V27H21V22.5Z" fill="#6A6A73"/>
+                    <path d="M8.99999 12C8.99999 13.6569 7.65685 15 6 15C4.34314 15 3 13.6569 3 12C3 10.3431 4.34314 9 6 9C7.65685 9 8.99999 10.3431 8.99999 12Z" fill="#6A6A73"/>
+                    <path d="M24 27V22.5C24 20.9188 23.5922 19.4328 22.8761 18.1415C23.2353 18.0491 23.6119 18 24 18C26.4853 18 28.5 20.0147 28.5 22.5V27H24Z" fill="#6A6A73"/>
+                    <path d="M7.12389 18.1415C6.40777 19.4328 6 20.9188 6 22.5V27H1.5V22.5C1.5 20.0147 3.51472 18 6 18C6.38806 18 6.76465 18.0491 7.12389 18.1415Z" fill="#6A6A73"/>
+                </svg>
+
+        

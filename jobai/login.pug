@@ -3,21 +3,22 @@ html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Login
+        title LogIn
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet", href="css/login.css")
     body    
         .container
-            .logo 
-                .logo__wrapper
-                    img(src="images/logo.png", alt="").logo__img
-                    p.logo__r R
-            form.form.neumorphic
-                h1.title Авторизоваться
-                input(type="text", placeholder="Логин", name='username', autocomplete='off').neumorphic.neumorphic-input
-                input(type="password", placeholder="Пароль", name='password').neumorphic.neumorphic-input
-                button.neumorphic.neumorphic-button Войти
-            .text 
-                p.text__logo JOB 
-                p.text__logo.text__logo-white AI 
+            .login
+                .logo 
+                    p.logo__job JOB 
+                    p.logo__job.logo__job-white AI 
+                form.form.neumorphic
+                    h1.title Авторизоваться
+                    input(type="text", placeholder="Логин", name='username').neumorphic.neumorphic-input
+                    input(type="password", placeholder="Пароль", name='password').neumorphic.neumorphic-input
+                    .form__footer.form__footer-center
+                        button.neumorphic.neumorphic-button Войти
+                .role 
+                    button.neumorphic.neumorphic-button Найти сотрудника
+                    button.neumorphic.neumorphic-button Найти работу
         
