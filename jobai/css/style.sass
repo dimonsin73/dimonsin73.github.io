@@ -816,6 +816,9 @@
         border-radius: 8px
         background-color: var(--Gray-90)
         z-index: 40
+        &-small 
+            width: max-content
+            max-width: 300px
         &-bottom 
             top: calc( 100% + 4px )
             bottom: auto
@@ -1123,6 +1126,12 @@ input[type=number]::-webkit-outer-spin-button
         image: url('../images/icons/mail.png')
         position: center left 12px 
         repeat: no-repeat
+.email 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/mail.png')
+        position: center left 12px 
+        repeat: no-repeat
 #service-mail 
     padding-left: 44px
     background: 
@@ -1130,6 +1139,12 @@ input[type=number]::-webkit-outer-spin-button
         position: center left 12px 
         repeat: no-repeat
 #tel 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/phone.png')
+        position: center left 12px 
+        repeat: no-repeat
+.tel 
     padding-left: 44px
     background: 
         image: url('../images/icons/phone.png')
@@ -4223,6 +4238,9 @@ input[type=number]::-webkit-outer-spin-button
         border-radius: 12px
         background-color: var(--White)
         transform: translate3d(-50%, -50%, 0)
+        &-p35 
+            padding-top: 35px
+            padding-bottom: 35px
         &-active
             display: flex
     &__content 
@@ -4233,6 +4251,8 @@ input[type=number]::-webkit-outer-spin-button
     &__title 
         @include body-large
         color: var(--Black)
+        &-gray 
+            color: var(--Gray-20)
     &__label 
         position: relative
         @include title-medium
@@ -4254,6 +4274,12 @@ input[type=number]::-webkit-outer-spin-button
         align-items: center
         &-btn 
             width: 200px
+    &__list 
+        padding-left: 20px
+        &-item
+            list-style: disc
+            &::marker
+                color: var(--Gray-20)
 .newuser
     position: fixed
     top: 0
@@ -4666,6 +4692,9 @@ input[type=number]::-webkit-outer-spin-button
         width: max-content
         border-bottom: 1px solid var(--Gray-60)
     &__tab 
+        display: flex
+        align-items: center
+        gap: 4px
         padding: 14px 0
         border-bottom: 3px solid var(--Gray-100)
         @include title-medium
@@ -4708,8 +4737,7 @@ input[type=number]::-webkit-outer-spin-button
             margin: 0 32px
         &-item2 
             display: grid
-            align-content: space-between
-            grid-template-columns: 1fr 1fr
+            grid-template-columns: 400px 500px
         &-block 
             display: flex
             flex-direction: column
@@ -4800,6 +4828,8 @@ input[type=number]::-webkit-outer-spin-button
             flex-direction: column
             justify-content: flex-end
             gap: 12px
+        &-minilog 
+            width: 160px
     &__label 
         display: flex
         align-items: center

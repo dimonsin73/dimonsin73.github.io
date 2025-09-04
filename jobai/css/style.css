@@ -983,6 +983,11 @@
   background-color: var(--Gray-90);
   z-index: 40;
 }
+.clue__wrapper-small {
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 300px;
+}
 .clue__wrapper-bottom {
   top: calc(100% + 4px);
   bottom: auto;
@@ -1381,6 +1386,13 @@ input[type=number]::-webkit-outer-spin-button {
   background-repeat: no-repeat;
 }
 
+.email {
+  padding-left: 44px;
+  background-image: url("../images/icons/mail.png");
+  background-position: center left 12px;
+  background-repeat: no-repeat;
+}
+
 #service-mail {
   padding-left: 44px;
   background-image: url("../images/icons/mail.png");
@@ -1389,6 +1401,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #tel {
+  padding-left: 44px;
+  background-image: url("../images/icons/phone.png");
+  background-position: center left 12px;
+  background-repeat: no-repeat;
+}
+
+.tel {
   padding-left: 44px;
   background-image: url("../images/icons/phone.png");
   background-position: center left 12px;
@@ -5285,6 +5304,10 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: var(--White);
   transform: translate3d(-50%, -50%, 0);
 }
+.edit__form-p35 {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
 .edit__form-active {
   display: flex;
 }
@@ -5298,6 +5321,9 @@ input[type=number]::-webkit-outer-spin-button {
   font: 400 16px/24px "Inter", "sans-serif";
   letter-spacing: -0.5px;
   color: var(--Black);
+}
+.edit__title-gray {
+  color: var(--Gray-20);
 }
 .edit__label {
   position: relative;
@@ -5333,6 +5359,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .edit__footer-btn {
   width: 200px;
+}
+.edit__list {
+  padding-left: 20px;
+}
+.edit__list-item {
+  list-style: disc;
+}
+.edit__list-item::marker {
+  color: var(--Gray-20);
 }
 
 .newuser {
@@ -5865,6 +5900,9 @@ input[type=number]::-webkit-outer-spin-button {
   border-bottom: 1px solid var(--Gray-60);
 }
 .kabinet__tab {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   padding: 14px 0;
   border-bottom: 3px solid var(--Gray-100);
   font: 600 16px/22px "Inter", "sans-serif";
@@ -5919,8 +5957,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .kabinet__grid-item2 {
   display: grid;
-  align-content: space-between;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 400px 500px;
 }
 .kabinet__grid-block {
   display: flex;
@@ -6025,6 +6062,9 @@ input[type=number]::-webkit-outer-spin-button {
   flex-direction: column;
   justify-content: flex-end;
   gap: 12px;
+}
+.kabinet__logo-minilog {
+  width: 160px;
 }
 .kabinet__label {
   display: flex;
