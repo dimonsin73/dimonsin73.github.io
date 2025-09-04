@@ -475,7 +475,7 @@
 .input_search2-active {
   display: flex;
 }
-.input_grey {
+.input_gray {
   color: var(--Gray-30);
 }
 
@@ -5335,9 +5335,6 @@ input[type=number]::-webkit-outer-spin-button {
   font: 400 16px/24px "Inter", "sans-serif";
   letter-spacing: -0.5px;
   color: var(--Gray-20);
-}
-.invitation__input {
-  color: var(--Gray-30);
 }
 .invitation__footer {
   display: flex;

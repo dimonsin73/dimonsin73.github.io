@@ -142,27 +142,29 @@ const kabinetTableDeleteArray = document.querySelectorAll('.kabinet__table-delet
 for (let i = 0; i < kabinetTableDeleteArray.length; i++) {
     const kabinetTableDelete = kabinetTableDeleteArray[i];
     kabinetTableDelete.addEventListener('click', function(){
-        let itemTable = kabinetTableDelete.parentElement.parentElement.parentElement
-        confirm.classList.add('confirm_active')
-        for (let i = 0; i < confirmWrapperArray.length; i++) {
-            const confirmWrapper = confirmWrapperArray[i];
-            if (confirmWrapper.dataset.confirm === 'delete-invoice_request') {
-                confirmWrapper.classList.add('confirm__wrapper-active')
-                const confirmOk = confirmWrapper.querySelector('.confirm__ok')
-                const confirmClose = confirmWrapper.querySelector('.confirm__close')
-                confirmClose.addEventListener('click', function(){
-                    confirmWrapper.classList.remove('confirm__wrapper-active')
-                    confirm.classList.remove('confirm_active')
-                    itemTable = ''
-                })
-                confirmOk.addEventListener('click', function(){
-                    if (itemTable != '') {
-                        itemTable.remove()
-                    }
-                    confirmWrapper.classList.remove('confirm__wrapper-active')
-                    confirm.classList.remove('confirm_active')
-                })
-                
+        if (kabinetTableDelete.dataset.delete === 'request') {
+            let itemTable = kabinetTableDelete.parentElement.parentElement.parentElement
+            confirm.classList.add('confirm_active')
+            for (let i = 0; i < confirmWrapperArray.length; i++) {
+                const confirmWrapper = confirmWrapperArray[i];
+                if (confirmWrapper.dataset.confirm === 'delete-invoice_request') {
+                    confirmWrapper.classList.add('confirm__wrapper-active')
+                    const confirmOk = confirmWrapper.querySelector('.confirm__ok')
+                    const confirmClose = confirmWrapper.querySelector('.confirm__close')
+                    confirmClose.addEventListener('click', function(){
+                        confirmWrapper.classList.remove('confirm__wrapper-active')
+                        confirm.classList.remove('confirm_active')
+                        itemTable = ''
+                    })
+                    confirmOk.addEventListener('click', function(){
+                        if (itemTable != '') {
+                            itemTable.remove()
+                        }
+                        confirmWrapper.classList.remove('confirm__wrapper-active')
+                        confirm.classList.remove('confirm_active')
+                    })
+                    
+                }
             }
         }
     })
