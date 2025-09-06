@@ -180,9 +180,6 @@ for (let i = 0; i < kabinetTableCopyArray.length; i++) {
 }
 
 
-
-
-
 // Открытие/Закрытие селектов
 const selectInputArray = document.querySelectorAll('.select__input')
 for (let i = 0; i < selectInputArray.length; i++) {

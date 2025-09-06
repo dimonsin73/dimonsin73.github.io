@@ -1,54 +1,59 @@
-*
-    box-sizing: border-box
+html 
+    scroll-behavior: smooth
 body 
     position: relative
-    max-width: 600px
-    min-width: 390px
-    min-height: 100vh
-    margin: 0 auto
-    padding-bottom: 100px
     background-color: #e0e5ec
 .container
     display: flex
+    flex-direction: column
     align-items: center
     justify-content: center
-    width: 100%
-    height: 100%
-    font-family: Inter, sans-serif
+    max-width: 600px
+    min-width: 390px
+    margin: 0 auto
+    font: 400 16px/20px Inter, sans-serif
 .login 
     display: flex
     flex-direction: column
-    gap: 50px
-    padding: 15px
+    gap: 20px
+    min-height: 100vh
+    padding: 20px
 .logo 
     display: flex
     align-items: center
     justify-content: center
     gap: 10px
-    padding: 16px
-    border-radius: 20px
-    box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
+    padding: 5px
     &__job 
         margin: 0
         font: 700 60px/60px 'Inter', 'sans-serif'
         letter-spacing: -0.2px
-        text-shadow: 6px 6px 5px #A3B1C6, -5px -5px 4px #FFFFFF
+        text-shadow: 5px 5px 5px #A3B1C6, -5px -5px 5px #FFFFFF
         &-white 
             padding: 20px
             border-radius: 24px
-            box-shadow: 3px 3px 5px #1E1E1E, -3px -3px 5px #FFFFFF
+            box-shadow: 5px 5px 5px #A3B1C6, -5px -5px 5px #FFF
             background-color: #0095FF
             color: #fff
-            text-shadow: 3px 3px 5px #1E1E1E
-
-.form 
+            text-shadow: 4px 4px 5px #1E1E1E
+.role 
     display: flex
     flex-direction: column
     justify-content: center
+    gap: 20px
+    padding: 25px
+    border-radius: 20px
+    box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
+.form 
+    display: none
+    flex-direction: column
+    justify-content: center
     align-items: center
-    gap: 28px
-    padding: 32px 30px
+    gap: 20px
+    padding: 25px
     text-align: center
+    &_active 
+        display: flex
     &__footer 
         display: flex
         justify-content: space-between
@@ -56,20 +61,51 @@ body
         width: 100%
         &-center 
             justify-content: center
-
+        &-btn 
+            width: 140px
+    &__block 
+        display: flex
+        flex-direction: column  
+        align-items: flex-start
+        width: 100%
+    &__text 
+        font: 400 16px/26px 'Inter', 'sans-serif'
+        color: #5A6A82
+        &-center 
+            margin: 0 auto
+            text-align: center
+    &__timer 
+        display: flex
+        gap: 4px
+        font: 600 16px/26px 'Inter', 'sans-serif'
+        color: #5A6A82
+    &__link 
+        margin: 0 auto
+        font: 600 16px/26px 'Inter', 'sans-serif'
+        color: #006FD8
+.radio 
+    display: contents
+    &__label
+        padding: 18px 30px 
+        font-weight: 500
+        color: #5A6A82
+        border: none
+        border-radius: 20px
+        box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
+        background-color: #e0e5ec
+        text-align: center
+        cursor: pointer
+        transition: all 0.3s ease
+    &__input 
+        display: none
+        &:checked ~ .radio__label
+            box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
 .title 
-    margin: 0
     color: #707C84
     font: 700 24px/28px 'Inter', 'sans-serif'
-.role 
+.timer 
     display: flex
-    flex-direction: column
-    justify-content: center
-    gap: 28px
-    padding: 50px 30px
-    border-radius: 20px
-    box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
-
+    align-items: center
 .neumorphic
     border-radius: 20px
     background-color: #e0e5ec
@@ -84,29 +120,84 @@ body
         border: none 
         outline: none
         font-size: 16px
-        color: #6d7582
+        color: #5A6A82
         &::placeholder 
             color: #a3b1c6
     &-button 
-        padding: 15px 30px 
-        font-size: 16px
-        color: #6d7582
+        padding: 18px 
+        font-weight: 500
+        color: #5A6A82
         border: none
         cursor: pointer
         transition: all 0.3s ease
         &:active 
             box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
-.btn-bottom 
-    position: absolute
-    bottom: 25px
+.footer 
     display: flex
     align-items: center
-    justify-content: center
-    width: 60px
-    height: 60px
-    padding: 0
-    border-radius: 50%
-    &-left 
-        left: 25px
-    &-right
-        right: 25px
+    justify-content: space-between
+    margin-top: auto
+    &__btn
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 60px
+        height: 60px
+        padding: 0
+        border-radius: 50%
+.menu
+    display: flex
+    flex-direction: column
+    gap: 20px
+    padding: 20px
+    &__link 
+        width: 300px
+    &__block 
+        display: flex
+        align-items: center
+        gap: 20px
+        padding-left: 20px
+    &__rights 
+        display: flex
+        flex-direction: column
+        &-text 
+            font: 400 14px/20px 'Inter', 'sans-serif'
+            color: #5A6A82
+.mirax 
+    margin: 44px auto
+
+.language 
+    width: 53px
+    height: 32px
+    border: 1px solid var(--Scrollbar)
+    z-index: 20
+    &__view 
+        width: 100%
+        height: 100%
+        background: 
+            image: url('../images/language/ru.png')
+            size: contain 
+            repeat: no-repeat
+        cursor: pointer
+    &__dropdawn 
+        height: 0
+        margin-top: 8px
+        overflow: hidden
+        transition: height 0.3s ease
+        &-active 
+            height: 64px
+        &-option
+            width: 53px
+            height: 32px
+            background: 
+                size: contain 
+                repeat: no-repeat
+            cursor: pointer
+        &-option1 
+            background: 
+                image: url('../images/language/ru.png')
+        &-option2
+            background: 
+                image: url('../images/language/uk.png')
+.arrow-login
+    display: none
