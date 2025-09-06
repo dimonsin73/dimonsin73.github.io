@@ -127,7 +127,7 @@ body {
   display: none;
 }
 .radio__input:checked ~ .radio__label {
-  box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff;
+  box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff;
 }
 
 .title {
@@ -173,7 +173,7 @@ body {
   transition: all 0.3s ease;
 }
 .neumorphic-button:active {
-  box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff;
+  box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff;
 }
 
 .footer {
@@ -259,4 +259,4 @@ body {
 
 .arrow-login {
   display: none;
-}/*# sourceMappingURL=login.css.map */
+}/*# sourceMappingURL=login2.css.map */
