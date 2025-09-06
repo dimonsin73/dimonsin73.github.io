@@ -1,13 +1,14 @@
 html 
     scroll-behavior: smooth
 body 
+    min-width: 390px
     background-color: #e0e5ec
 .hiro
+    position: relative
     display: flex
     flex-direction: column
     width: 100%
     height: 100vh
-    padding: 30px
 .container
     display: flex
     flex-direction: column
@@ -19,11 +20,8 @@ body
 .login 
     display: flex
     flex-direction: column
-    gap: 20px
-    padding: 30px
-@media (max-width: 949px)
-    .login 
-        padding: 20px
+    gap: 40px
+    padding: 48px 30px
 .logo 
     display: flex
     align-items: center
@@ -42,14 +40,25 @@ body
             background-color: #0095FF
             color: #fff
             text-shadow: 4px 4px 5px #1E1E1E
-.role 
+.video 
+    display: flex
+    align-items: center
+    gap: 6px
+    margin: 0 auto
+    &__text 
+        font: 600 16px/26px 'Inter', 'sans-serif'
+        color: #5A6A82
+.block 
     display: flex
     flex-direction: column
     justify-content: center
     gap: 20px
+    width: 350px
     padding: 25px
     border-radius: 20px
     box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
+.reg 
+    text-align: center
 .form 
     display: none
     flex-direction: column
@@ -105,7 +114,7 @@ body
     &__input 
         display: none
         &:checked ~ .radio__label
-            box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
+            box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
 .title 
     color: #707C84
     font: 700 24px/28px 'Inter', 'sans-serif'
@@ -141,41 +150,104 @@ body
 .footer 
     display: flex
     align-items: center
-    justify-content: space-between
+    justify-content: center
+    gap: 40px
+    height: 60px
+    margin-left: 130px
+    margin-right: 130px
     margin-top: auto
-    &__btn
-        display: flex
-        align-items: center
-        justify-content: center
-        width: 60px
-        height: 60px
-        padding: 0
-        border-radius: 50%
-.menu
+    margin-bottom: 30px
+.nav
+    position: relative
     display: flex
-    flex-direction: column
+    justify-content: space-between
     gap: 20px
-    padding: 20px
-    &__link 
-        width: 300px
-    &__block 
-        display: flex
-        align-items: center
-        gap: 20px
-        padding-left: 20px
-    &__rights 
+    width: 100%
+    z-index: 10
+    &__link
+        font: 600 16px/26px "Inter", "sans-serif"
+        color: #5A6A82
+.arrow-menu
+    display: none
+.arrow-login
+    display: none
+.popup 
+    position: absolute
+    display: flex
+    bottom: 30px
+    &_left 
+        left: 30px
+    &_right
+        right: 30px
+    &:hover
+        & .popup__wrapper
+            width: 350px
+            height: 300px
+            padding: 15px
+            border-radius: 20px
+            transform: translate3d(0, -80px, 0)
+        & .popup__icon 
+            position: absolute
+            top: 0
+            left: 0
+    &__wrapper
         display: flex
         flex-direction: column
+        align-items: center
+        width: 60px
+        height: 60px
+        border-radius: 30px
+        overflow: hidden
+        transition: bottom 0.3s ease, width 0.3s ease, height 0.3s ease, border-radius 0.3s ease
+    &__top 
+        display: flex
+        justify-content: center
+        width: 100%
+        margin-bottom: auto
+        padding: 2px 0
+        padding-left: 30px
+        font: 600 16px/26px 'Inter', 'sans-serif'
+        color: #5A6A82
+    &__icon 
+        flex: 0 0 auto
+        width: 60px
+        height: 60px
+        padding: 15px
+    &__info 
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 18px
+        padding: 0 26px 
         &-text 
-            font: 400 14px/20px 'Inter', 'sans-serif'
+            font: 400 16px/24px 'Inter', 'sans-serif'
             color: #5A6A82
+    &__btn
+        width: 140px
+        font: 500 16px/20px "inter", 'sans-serif'
+    &__link 
+        font: 600 16px/22px 'Inter', 'sans-serif'
+        color: #006FD8
 .mirax 
-    margin: 44px auto
-
+    position: absolute
+    top: 30px
+    left: 30px
+    display: flex
+    flex-direction: column
+    gap: 16px
+.rights 
+    display: flex
+    flex-direction: column
+    &__text 
+        font: 400 14px/20px 'Inter', 'sans-serif'
+        color: #5A6A82
 .language 
+    position: absolute
+    top: 30px
+    right: 30px
     width: 53px
     height: 32px
-    border: 1px solid var(--Scrollbar)
+    border: 1px solid #D9D9D9
     z-index: 20
     &__view 
         width: 100%
@@ -205,5 +277,75 @@ body
         &-option2
             background: 
                 image: url('../images/language/uk.png')
-.arrow-login
+.menu
     display: none
+@media (max-width:1199px)
+    .nav 
+        display: none
+    .arrow-menu
+        display: flex
+    .mirax 
+        display: none
+    .language
+        display: none
+    .menu 
+        display: flex
+        flex-direction: column
+        &__block 
+            display: flex
+            align-items: center
+            gap: 20px
+            padding-left: 20px
+        &__rights 
+            display: flex
+            flex-direction: column
+            &-text 
+                font: 400 14px/20px 'Inter', 'sans-serif'
+                color: #5A6A82
+        &__language
+            width: 53px
+            height: 32px
+            border: 1px solid var(--Scrollbar)
+            z-index: 20
+            &__view 
+                width: 100%
+                height: 100%
+                background: 
+                    image: url('../images/language/ru.png')
+                    size: contain 
+                    repeat: no-repeat
+                cursor: pointer
+            &__dropdawn 
+                height: 0
+                margin-top: 8px
+                overflow: hidden
+                transition: height 0.3s ease
+                &-active 
+                    height: 64px
+                &-option
+                    width: 53px
+                    height: 32px
+                    background: 
+                        size: contain 
+                        repeat: no-repeat
+                    cursor: pointer
+                &-option1 
+                    background: 
+                        image: url('../images/language/ru.png')
+                &-option2
+                    background: 
+                        image: url('../images/language/uk.png')
+        &__mirax 
+            margin: 44px auto
+@media (max-width:767px)
+    .login 
+        padding: 25px 20px
+        gap: 20px
+    .footer 
+        margin-bottom: 20px
+    .popup 
+        bottom: 20px
+        &_left
+            left: 20px
+        &_right
+            right: 20px
