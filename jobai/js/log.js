@@ -49,7 +49,7 @@ menuLanguageView.addEventListener('click', function(){
     }) //Закрытие меню выбора языка по щелчку вне меню
     document.addEventListener('keydown', function(e) {
         if( e.keyCode == 27 ){ 
-            lmenuLanguageDropdawn.classList.remove('language__dropdawn-active')
+            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
         }
     }) //Закрытие меню выбора языка по нажатию на ESC
 })
@@ -67,3 +67,28 @@ window.addEventListener('scroll', function () {
         aarrowLogiin.style.display = 'none'
     }
 })
+
+const popupArray = document.querySelectorAll('.popup')
+for (let i = 0; i < popupArray.length; i++) {
+    const popup = popupArray[i];
+    const popupWrapper = popup.querySelector('.popup__wrapper')
+    if (window.innerWidth < '767') {
+        popup.addEventListener('click', function(){
+            popup.classList.add('popup_active')
+        })
+        document.addEventListener('click', (e) => {
+            const withinBoundaries = e.composedPath().includes(popupWrapper);
+            if ( ! withinBoundaries ) {
+                popup.classList.remove('popup_active')
+            }
+        })
+    } else {
+        popup.addEventListener('mouseenter', function(){
+            popup.classList.add('popup_active')
+        })
+        popup.addEventListener('mouseleave', function(){
+            popup.classList.remove('popup_active')
+        })
+    }
+    
+}

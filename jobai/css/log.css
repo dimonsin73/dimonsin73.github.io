@@ -242,14 +242,14 @@ body {
 .popup_right {
   right: 30px;
 }
-.popup:hover .popup__wrapper {
+.popup_active .popup__wrapper {
   width: 350px;
   height: 300px;
   padding: 15px;
   border-radius: 20px;
   transform: translate3d(0, -80px, 0);
 }
-.popup:hover .popup__icon {
+.popup_active .popup__icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -449,5 +449,25 @@ body {
   }
   .popup_right {
     right: 20px;
+  }
+  .popup_active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+    background: rgba(0, 0, 0, 0.6980392157);
+    z-index: 100;
+  }
+  .popup_active .popup__wrapper {
+    width: 350px;
+    height: 300px;
+    padding: 15px;
+    border-radius: 20px;
+    transform: translate3d(0, 0, 0);
   }
 }/*# sourceMappingURL=log.css.map */
