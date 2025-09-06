@@ -4777,6 +4777,8 @@ input[type=number]::-webkit-outer-spin-button
         background-color: var(--White)
         &-active 
             display: flex
+        &-max 
+            max-width: max-content
         &-tariffs 
             max-width: 726px
             margin: 0 auto
@@ -4812,8 +4814,7 @@ input[type=number]::-webkit-outer-spin-button
             padding-left: 32px
     &__logo 
         display: flex
-        justify-content: space-between
-        gap: 44px
+        gap: 40px
         padding-left: 32px
         &-big 
             position: relative
@@ -4885,10 +4886,20 @@ input[type=number]::-webkit-outer-spin-button
         &-info 
             display: flex
             flex-direction: column
-            justify-content: flex-end
             gap: 12px
+            margin-top: 25px
         &-minilog 
+            display: flex
+            flex-direction: column
+            gap: 12px
             width: 160px
+        &-minifot
+            display: flex
+            flex-direction: column
+            gap: 12px
+            width: 188px
+            margin-bottom: 8px
+            text-align: center
     &__label 
         display: flex
         align-items: center
@@ -4973,10 +4984,21 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         align-items: flex-start
         gap: 30px
+        &-clue
+            display: grid
+            grid-template-columns: auto 20px
+            gap: 16px
     &__table 
         display: flex
         flex-direction: column
         width: max-content
+        height: 550px
+        overflow-y: auto
+        &::-webkit-scrollbar 
+            width: 10px
+            height: 10px
+        &::-webkit-scrollbar-thumb 
+            background-color: #0894F3
         &-edit
             position: absolute
             top: 50%
@@ -5121,7 +5143,8 @@ input[type=number]::-webkit-outer-spin-button
             @include body-large
             color: var(--Gray-30)
         &-number
-            @include number-large
+            padding: 3px 0 1px
+            @include number-medium
             color: var(--Black)
     &__block 
         display: none
@@ -5157,19 +5180,15 @@ input[type=number]::-webkit-outer-spin-button
             display: none
             &-active 
                 display: flex
-    &__invitations
+    &__plashka
         width: max-content
-        padding: 14px 20px
+        padding: 8px 0 8px 20px
         border-radius: 4px
         &-line 
             display: grid
-            grid-template-columns: 300px 30px
+            grid-template-columns: 1fr 30px
             align-items: center
             gap: 4px 10px 
-        &-clue
-            display: grid
-            grid-template-columns: auto 20px
-            gap: 16px
         &-list 
             margin-left: 20px
         &-li
@@ -5199,29 +5218,8 @@ input[type=number]::-webkit-outer-spin-button
             justify-content: center
             @include number-medium
             color: var(--Black)
-    &__recruiters 
-        display: grid
-        grid-template-columns: 300px 30px
-        align-items: center
-        gap: 15px 10px 
-        width: max-content
-        padding: 14px 20px
-        border-radius: 4px
-        &-text 
-            @include body-large
-            color: var(--Gray-30)
-        &-number 
-            display: flex
-            justify-content: center
-            @include number-large
-            color: var(--Black)
-        &-number2
-            display: flex
-            justify-content: center
-            @include number-medium
-            color: var(--Black)
     &__p40 
-        gap: 36px
+        gap: 40px
         padding: 40px
 .send-invitation-again
     padding: 5.5px 30px

@@ -6008,6 +6008,10 @@ input[type=number]::-webkit-outer-spin-button {
 .kabinet__container-active {
   display: flex;
 }
+.kabinet__container-max {
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
 .kabinet__container-tariffs {
   max-width: 726px;
   margin: 0 auto;
@@ -6052,8 +6056,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .kabinet__logo {
   display: flex;
-  justify-content: space-between;
-  gap: 44px;
+  gap: 40px;
   padding-left: 32px;
 }
 .kabinet__logo-big {
@@ -6135,11 +6138,22 @@ input[type=number]::-webkit-outer-spin-button {
 .kabinet__logo-info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   gap: 12px;
+  margin-top: 25px;
 }
 .kabinet__logo-minilog {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   width: 160px;
+}
+.kabinet__logo-minifot {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 188px;
+  margin-bottom: 8px;
+  text-align: center;
 }
 .kabinet__label {
   display: flex;
@@ -6248,11 +6262,25 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: flex-start;
   gap: 30px;
 }
+.kabinet__line-clue {
+  display: grid;
+  grid-template-columns: auto 20px;
+  gap: 16px;
+}
 .kabinet__table {
   display: flex;
   flex-direction: column;
   width: -moz-max-content;
   width: max-content;
+  height: 550px;
+  overflow-y: auto;
+}
+.kabinet__table::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.kabinet__table::-webkit-scrollbar-thumb {
+  background-color: #0894F3;
 }
 .kabinet__table-edit {
   position: absolute;
@@ -6434,7 +6462,8 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--Gray-30);
 }
 .kabinet__footeritem-number {
-  font: 700 18px/24px "Inter", "sans-serif";
+  padding: 3px 0 1px;
+  font: 700 14px/20px "Inter", "sans-serif";
   letter-spacing: 0.02em;
   color: var(--Black);
 }
@@ -6481,34 +6510,29 @@ input[type=number]::-webkit-outer-spin-button {
 .kabinet__status-item-active {
   display: flex;
 }
-.kabinet__invitations {
+.kabinet__plashka {
   width: -moz-max-content;
   width: max-content;
-  padding: 14px 20px;
+  padding: 8px 0 8px 20px;
   border-radius: 4px;
 }
-.kabinet__invitations-line {
+.kabinet__plashka-line {
   display: grid;
-  grid-template-columns: 300px 30px;
+  grid-template-columns: 1fr 30px;
   align-items: center;
   gap: 4px 10px;
 }
-.kabinet__invitations-clue {
-  display: grid;
-  grid-template-columns: auto 20px;
-  gap: 16px;
-}
-.kabinet__invitations-list {
+.kabinet__plashka-list {
   margin-left: 20px;
 }
-.kabinet__invitations-li {
+.kabinet__plashka-li {
   position: relative;
   display: grid;
   grid-template-columns: 280px 30px;
   align-items: center;
   gap: 4px 10px;
 }
-.kabinet__invitations-li:before {
+.kabinet__plashka-li:before {
   content: "";
   position: absolute;
   left: -12px;
@@ -6517,48 +6541,19 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 50%;
   background-color: var(--Gray-30);
 }
-.kabinet__invitations-text {
+.kabinet__plashka-text {
   font: 400 16px/24px "Inter", "sans-serif";
   letter-spacing: -0.5px;
   color: var(--Gray-30);
 }
-.kabinet__invitations-number {
+.kabinet__plashka-number {
   display: flex;
   justify-content: center;
   font: 700 18px/24px "Inter", "sans-serif";
   letter-spacing: 0.02em;
   color: var(--Black);
 }
-.kabinet__invitations-number2 {
-  display: flex;
-  justify-content: center;
-  font: 700 14px/20px "Inter", "sans-serif";
-  letter-spacing: 0.02em;
-  color: var(--Black);
-}
-.kabinet__recruiters {
-  display: grid;
-  grid-template-columns: 300px 30px;
-  align-items: center;
-  gap: 15px 10px;
-  width: -moz-max-content;
-  width: max-content;
-  padding: 14px 20px;
-  border-radius: 4px;
-}
-.kabinet__recruiters-text {
-  font: 400 16px/24px "Inter", "sans-serif";
-  letter-spacing: -0.5px;
-  color: var(--Gray-30);
-}
-.kabinet__recruiters-number {
-  display: flex;
-  justify-content: center;
-  font: 700 18px/24px "Inter", "sans-serif";
-  letter-spacing: 0.02em;
-  color: var(--Black);
-}
-.kabinet__recruiters-number2 {
+.kabinet__plashka-number2 {
   display: flex;
   justify-content: center;
   font: 700 14px/20px "Inter", "sans-serif";
@@ -6566,7 +6561,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--Black);
 }
 .kabinet__p40 {
-  gap: 36px;
+  gap: 40px;
   padding: 40px;
 }
 

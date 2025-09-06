@@ -130,6 +130,7 @@ for (let i = 0; i < clueArray.length; i++) {
 }
 
 const form = document.querySelector('.edit__form')
+const editSavePassword = document.querySelector('.edit__save-password')
 // Поля ввода
 const password = document.getElementById('password')
 const passwordSecond = document.getElementById('password-repeat')
@@ -143,6 +144,11 @@ password.addEventListener('input', function(){
     const labelLineItemArr = labelLine.children
     attributLineAddColor(password, labelLineItemArr)
     passwordComparison()
+    if (password.value != '') {
+        editSavePassword.classList.add('edit__save-password-active')
+    } else {
+        editSavePassword.classList.remove('edit__save-password-active')
+    }
 })
 passwordSecond.addEventListener('input', function(){
     const labelLine = passwordSecond.nextSibling
