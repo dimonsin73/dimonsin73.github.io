@@ -540,6 +540,11 @@ body {
     font: 400 14px/20px "Inter", "sans-serif";
     color: #5A6A82;
   }
+  .menu__link {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: left;
+  }
   .menu__language {
     width: 53px;
     height: 32px;
