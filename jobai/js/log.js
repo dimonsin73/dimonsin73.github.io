@@ -94,15 +94,13 @@ const login = document.getElementById('login')
 let lastScrollTop = 0
 
 window.addEventListener('scroll', function () {
-    let st = window.pageYOffset
-    console.log(lastScrollTop)
-    console.log(st)
+    let st = window.scrollY
     if (st > lastScrollTop) {
-        menu.scrollIntoView()
+        menu.scrollIntoView(true)
         arrowMenu.style.display = 'none'
         aarrowLogiin.style.display = 'block'
     } else {
-        login.scrollIntoView()
+        login.scrollIntoView(true)
         arrowMenu.style.display = 'block'
         aarrowLogiin.style.display = 'none'
     }
