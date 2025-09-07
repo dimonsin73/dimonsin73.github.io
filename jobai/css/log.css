@@ -28,7 +28,7 @@ body {
 .login {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
   padding: 48px 30px;
 }
 
@@ -37,10 +37,14 @@ body {
 }
 
 .logo {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
   padding: 5px;
 }
 .logo__job {
@@ -57,12 +61,29 @@ body {
   color: #fff;
   text-shadow: 4px 4px 5px #1E1E1E;
 }
+.logo__r {
+  position: absolute;
+  top: 5px;
+  right: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+}
+.logo__r-text {
+  padding-left: 1px;
+  font: 700 16px/16px "Inter", "sans-serif";
+  color: #000;
+}
 
 .video {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 10px;
   width: 120px;
   height: 50px;
   margin: 0 auto;
@@ -71,6 +92,19 @@ body {
   font: 700 16px/26px "Inter", "sans-serif";
   color: #000;
   text-shadow: 5px 5px 5px #A3B1C6, -5px -5px 5px #FFFFFF;
+}
+.video__icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  padding-left: 4px;
+  padding-top: 4px;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #A3B1C6, -5px -5px 5px #FFFFFF;
+  background-color: #0095FF;
 }
 
 .block {
