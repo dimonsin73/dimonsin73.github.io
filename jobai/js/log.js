@@ -54,20 +54,6 @@ menuLanguageView.addEventListener('click', function(){
     }) //Закрытие меню выбора языка по нажатию на ESC
 })
 
-
-const arrowMenu = document.querySelector('.arrow-menu')
-const aarrowLogiin = document.querySelector('.arrow-login')
-window.addEventListener('scroll', function () {
-    let windowHeight = window.scrollY
-    if (windowHeight > '400') {
-        arrowMenu.style.display = 'none'
-        aarrowLogiin.style.display = 'block'
-    } else {
-        arrowMenu.style.display = 'block'
-        aarrowLogiin.style.display = 'none'
-    }
-})
-
 const popupArray = document.querySelectorAll('.popup')
 for (let i = 0; i < popupArray.length; i++) {
     const popup = popupArray[i];
@@ -92,3 +78,33 @@ for (let i = 0; i < popupArray.length; i++) {
     }
     
 }
+const neumorphicButtonArray = document.querySelectorAll('.neumorphic-button')
+for (let i = 0; i < neumorphicButtonArray.length; i++) {
+    const neumorphicButton = neumorphicButtonArray[i];
+    neumorphicButton.addEventListener('click', function(){
+        neumorphicButton.classList.toggle('neumorphic-button-active')
+    })    
+}
+
+
+const arrowMenu = document.querySelector('.arrow-menu')
+const aarrowLogiin = document.querySelector('.arrow-login')
+const menu = document.getElementById('menu')
+const login = document.getElementById('login')
+let lastScrollTop = 0
+
+window.addEventListener('scroll', function () {
+    let st = window.pageYOffset
+    console.log(lastScrollTop)
+    console.log(st)
+    if (st > lastScrollTop) {
+        menu.scrollIntoView()
+        arrowMenu.style.display = 'none'
+        aarrowLogiin.style.display = 'block'
+    } else {
+        login.scrollIntoView()
+        arrowMenu.style.display = 'block'
+        aarrowLogiin.style.display = 'none'
+    }
+    lastScrollTop = st
+})
