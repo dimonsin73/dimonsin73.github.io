@@ -45,11 +45,16 @@ body
 .video 
     display: flex
     align-items: center
+    justify-content: center
     gap: 6px
+    width: 120px
+    height: 50px
     margin: 0 auto
     &__text 
-        font: 600 16px/26px 'Inter', 'sans-serif'
-        color: #5A6A82
+        font: 700 16px/26px 'Inter', 'sans-serif'
+        color: #000
+        text-shadow: 5px 5px 5px #A3B1C6, -5px -5px 5px #FFFFFF
+
 .block 
     display: flex
     flex-direction: column
@@ -60,7 +65,7 @@ body
     border-radius: 20px
     box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
     &__title 
-        font: 500 16px/22px "Inter", 'sans-serif'
+        font: 600 16px/22px "Inter", 'sans-serif'
         color: #5A6A82
         text-align: center
 .reg 
@@ -150,10 +155,8 @@ body
         color: #5A6A82
         &::placeholder 
             color: #a3b1c6
+    &-input3
         &:focus 
-            outline: 1px solid #A3B1C6
-            background-color: #fff
-        &-focus
             outline: 1px solid #A3B1C6
             background-color: #fff
     &-input2 
@@ -168,6 +171,8 @@ body
             box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
         &-active 
             box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
+            &.neumorphic-button3
+                box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
     &-button1
         font-weight: 500
     &-button2
@@ -176,8 +181,7 @@ body
         font-weight: 600
         &:active 
             box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
-        & .neumorphic-button-active 
-            box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
+            
 .footer 
     display: flex
     align-items: center
@@ -435,7 +439,7 @@ body
         text-align: center
         transition: font 0.4s ease
         &-left
-            font-weight: 500
+            font-weight: 600
     &__slider 
         position: absolute
         width: 300px
@@ -460,5 +464,5 @@ body
     &__input:checked ~ .switch__points .switch__point-left
         font-weight: 400
     &__input:checked ~ .switch__points .switch__point-right
-        font-weight: 500
+        font-weight: 600
     

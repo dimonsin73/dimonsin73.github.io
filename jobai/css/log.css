@@ -61,12 +61,16 @@ body {
 .video {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
+  width: 120px;
+  height: 50px;
   margin: 0 auto;
 }
 .video__text {
-  font: 600 16px/26px "Inter", "sans-serif";
-  color: #5A6A82;
+  font: 700 16px/26px "Inter", "sans-serif";
+  color: #000;
+  text-shadow: 5px 5px 5px #A3B1C6, -5px -5px 5px #FFFFFF;
 }
 
 .block {
@@ -80,7 +84,7 @@ body {
   box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff;
 }
 .block__title {
-  font: 500 16px/22px "Inter", "sans-serif";
+  font: 600 16px/22px "Inter", "sans-serif";
   color: #5A6A82;
   text-align: center;
 }
@@ -204,11 +208,7 @@ body {
 .neumorphic-input::placeholder {
   color: #a3b1c6;
 }
-.neumorphic-input:focus {
-  outline: 1px solid #A3B1C6;
-  background-color: #fff;
-}
-.neumorphic-input-focus {
+.neumorphic-input3:focus {
   outline: 1px solid #A3B1C6;
   background-color: #fff;
 }
@@ -228,6 +228,9 @@ body {
 .neumorphic-button-active {
   box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff;
 }
+.neumorphic-button-active.neumorphic-button3 {
+  box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff;
+}
 .neumorphic-button1 {
   font-weight: 500;
 }
@@ -238,9 +241,6 @@ body {
   font-weight: 600;
 }
 .neumorphic-button3:active {
-  box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff;
-}
-.neumorphic-button3 .neumorphic-button-active {
   box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff;
 }
 
@@ -562,7 +562,7 @@ body {
   transition: font 0.4s ease;
 }
 .switch__point-left {
-  font-weight: 500;
+  font-weight: 600;
 }
 .switch__slider {
   position: absolute;
@@ -593,5 +593,5 @@ body {
   font-weight: 400;
 }
 .switch__input:checked ~ .switch__points .switch__point-right {
-  font-weight: 500;
+  font-weight: 600;
 }/*# sourceMappingURL=log.css.map */
