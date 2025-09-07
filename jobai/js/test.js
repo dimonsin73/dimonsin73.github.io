@@ -22,3 +22,11 @@ for (let i = 0; i < popupArray.length; i++) {
     }
     
 }
+
+const neumorphicButtonArray = document.querySelectorAll('.neumorphic-button')
+for (let i = 0; i < neumorphicButtonArray.length; i++) {
+    const neumorphicButton = neumorphicButtonArray[i];
+    neumorphicButton.addEventListener('click', function(){
+        neumorphicButton.classList.toggle('neumorphic-button-active')
+    })    
+}
