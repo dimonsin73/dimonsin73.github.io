@@ -93,6 +93,48 @@ const menu = document.getElementById('menu')
 const login = document.getElementById('login')
 let lastScrollTop = 0
 
+window.addEventListener('wheel', function (e) {
+    const delta = e.deltaY;
+    if (delta > 0) {
+        menu.scrollIntoView(true)
+        arrowMenu.style.display = 'none'
+        aarrowLogiin.style.display = 'block'
+    } else {
+        login.scrollIntoView(true)
+        arrowMenu.style.display = 'block'
+        aarrowLogiin.style.display = 'none'
+    }
+})
+
+let startX, startY;
+window.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+});
+window.addEventListener('touchmove', function(e) {
+    let currentX = e.touches[0].clientX;
+    let currentY = e.touches[0].clientY;
+    let deltaX = currentX - startX;
+    let deltaY = currentY - startY;
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 0) {
+            // свайп вправо
+        } else {
+            // свайп влево
+        }
+    } else {
+        if (deltaY < 0) {
+            menu.scrollIntoView(true)
+            arrowMenu.style.display = 'none'
+            aarrowLogiin.style.display = 'block'
+        } else {
+            login.scrollIntoView(true)
+            arrowMenu.style.display = 'block'
+            aarrowLogiin.style.display = 'none'
+        }
+    }
+});
+/*
 window.addEventListener('scroll', function () {
     let st = window.scrollY
     if (st > lastScrollTop) {
@@ -106,3 +148,4 @@ window.addEventListener('scroll', function () {
     }
     lastScrollTop = st
 })
+*/
