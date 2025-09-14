@@ -126,10 +126,20 @@ for (let i = 0; i < portfolioPositionArray.length; i++) {
         if (windowScreen > 899) {
             yOffset = portfolioHeight - 391;
         } else {
-            yOffset = portfolioHeight - 382;
+            yOffset = portfolioHeight - 376;
         }
         const y = portfolio.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y })
+    })
+}
+const portfolioBtnArray = document.querySelectorAll('.portfolio__view')
+for (let i = 0; i < portfolioBtnArray.length; i++) {
+    const portfolioBtn = portfolioBtnArray[i];
+    portfolioBtn.addEventListener('click', function(){
+        const portfolio = portfolioBtn.parentElement
+        const portfolioHeight = portfolio.scrollHeight
+        const x = window.pageYOffset - portfolioHeight + portfolio.getBoundingClientRect().top
+        window.scrollTo({ top: x })
     })
 }
 sectionToleftBtn.addEventListener('click', function(){

@@ -299,7 +299,7 @@ html
         width: 100%
         justify-content: flex-start
     &:disabled 
-        opacity: 0.7
+        opacity: 0.5
     &_like 
         &-active 
             & path
@@ -310,7 +310,6 @@ html
                 & path
                     stroke: var(--Red)
                     fill: var(--Red)
-
 .link 
     display: flex
     align-items: center
@@ -563,7 +562,7 @@ html
 .range 
     display: flex
     align-items: center
-    column-gap: 13px
+    column-gap: 12px
     &__input 
         appearance: none
         max-width: 666px
@@ -1748,7 +1747,7 @@ input[type=number]::-webkit-outer-spin-button
         flex-direction: column
         align-items: center
         gap: 3px
-        padding-left: 50px
+        padding-left: 100px
         padding-right: 5px
         &-text 
             display: flex
@@ -1805,39 +1804,12 @@ input[type=number]::-webkit-outer-spin-button
             background: 
                 image: url('../images/icons/success.png')
             opacity: 1
-    &__description 
-        position: relative
-        display: flex
-        flex-direction: column
-        gap: 12px
-        padding: 0 68px 0 0
-        &-up 
-            position: absolute
-            bottom: 0
-            right: 0
-            & svg
-                transition: transform 0.3s ease
-        &-title 
-            @include title-medium
-            color: var(--Black)
-        &-list 
-            display: flex
-            flex-direction: column
-            gap: 20px
-            height: 40px
-            overflow: hidden
-            transition: height 0.3s ease
-        &-active 
-            & .portfolio__description-hide
-                display: inline
-            & .portfolio__description-up svg
-                transform: scale(1, -1)
-        &-hide 
-            display: none
-        &-text 
-            display: inline
-            @include text-medium
-            color: var(--Black)
+    &__view 
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        height: 16px
             text-overflow: ellipsis
     .portfolio__slider 
         grid-row: span 2
@@ -2294,6 +2266,8 @@ input[type=number]::-webkit-outer-spin-button
 @media (max-width: 1200px)
     .btn_150 
         flex: 0 0 48px
+    .header 
+        padding: 9px 16px
     .section
         &_collapse 
             grid-template-columns: 800px 48px
@@ -2317,97 +2291,89 @@ input[type=number]::-webkit-outer-spin-button
             gap: 2px
 @media (max-width: 899px)
     .title
-        font-size: 32px
+        font-size: 26px
+        line-height: 28px
     .btn
         &_150 
             width: 48px
-            margin: 0 auto
-            order: 1
-        &_like 
-            order: 1
     .range
-        display: grid 
-        grid-template-columns: auto 85px
-        row-gap: 10px
+        gap: 10px
         &__explanation
-            margin: 0 auto
+            flex: 0 0 auto
+        &__text
+            display: none
     .header
         gap: 12px
-        padding: 9px 16px
         &__logo 
             display: none
         &__name 
             display: none
         &__access
             display: none
-    .switch 
-        height: 20px
-        margin: 0 auto
-        &__slider:before
-            width: 16px
-            height: 16px
-        &__input:checked + .switch__slider:before 
-            transform: translateX(32px)
     .section
         &__wrapper 
             &-h50 
-                height: max-content
+                padding-right: 10px
         &_mt 
-            margin-top: 370px
+            margin-top: 360px
         &__top 
             flex-direction: column
             align-items: flex-start
+            gap: 16px
             margin-bottom: 12px
-        &__form 
-            gap: 12px
+            & .link 
+                margin-left: auto
         &_collapse 
-            grid-template-columns: 366px
-            padding-left: 12px
-            padding-right: 12px
+            grid-template-columns: 370px
+            padding-left: 10px
+            padding-right: 10px
             padding-top: 0
         &_toleft 
-            grid-template-columns: 366px
-            padding-left: 12px
-            padding-right: 12px
+            grid-template-columns: 370px
+            padding-left: 10px
+            padding-right: 10px
             &-btn 
                 position: fixed
                 bottom: 20px
                 right: 16px
                 background-color: var(--White)
-        &_collapse 
-            padding-bottom: 24px
     .portfolio
         &__content 
-            grid-template-columns: 342px
-            padding: 12px
+            grid-template-columns: 160px 180px
+            gap: 12px 10px
+            padding: 10px
         &__top 
             grid-column: span 1
             flex-direction: column
             align-items: flex-start
             gap: 6px
+            margin-top: 48px
         &__info 
             grid-row: span 1
             width: 160px
             margin: 0 auto
             gap: 6px
-        &__contact 
-            grid-column: span 1
-        &__fits
+        &__center 
             grid-column: span 2
-            margin: 0 auto
-        &__invite
-            grid-column: span 4
-            width: 100%
+            &-line 
+                display: grid
+                grid-template-columns: 2fr 1fr
+        &__contact 
+            gap: 12px
         &__loader 
             margin: 0 auto
+        &__invite 
+            width: 160px
+            margin-left: auto
         &__btns 
-            display: grid
-            grid-template-columns: 1fr 1fr 1fr 1fr
-            padding: 12px
+            flex-wrap: wrap
+            gap: 20px 10px
+            padding: 10px 15px 20px
             &-bl 
                 display: none
         .portfolio__slider 
-            margin-right: -12px
+            grid-column: span 2
+            margin-right: -9px
             order: 1
 .logo 
     position: relative
