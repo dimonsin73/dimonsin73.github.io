@@ -119,11 +119,19 @@ const sectionToleftBtn = document.querySelector('.section_toleft-btn')
 for (let i = 0; i < portfolioPositionArray.length; i++) {
     const portfolioPosition = portfolioPositionArray[i];
     portfolioPosition.addEventListener('click', function(){
-        const portfolioBtns = portfolioPosition.parentElement.querySelector('.portfolio__btns')
-        portfolioBtns.scrollIntoView()
+        const windowScreen = screen.width
+        const portfolio = portfolioPosition.parentElement
+        const portfolioHeight = portfolio.scrollHeight
+        let yOffset
+        if (windowScreen > 899) {
+            yOffset = portfolioHeight - 391;
+        } else {
+            yOffset = portfolioHeight - 382;
+        }
+        const y = portfolio.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y })
     })
 }
 sectionToleftBtn.addEventListener('click', function(){
-    console.log(window.scrollY)
     window.scrollTo(0, 0)
 })

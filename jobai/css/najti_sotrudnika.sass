@@ -298,6 +298,8 @@ html
     &_full 
         width: 100%
         justify-content: flex-start
+    &:disabled 
+        opacity: 0.7
     &_like 
         &-active 
             & path
@@ -919,7 +921,7 @@ input[type=number]::-webkit-outer-spin-button
             color: var(--Black)
             & path  
                 fill: var(--Black)
-@media (max-width: 1409px)
+@media (max-width: 1429px)
     .aside 
         left: -250px
         &_active 
@@ -1007,9 +1009,9 @@ input[type=number]::-webkit-outer-spin-button
         align-items: end
         justify-content: center
         gap: 16px
-        padding-top: 25px
-        padding-left: 0
-        padding-right: 0
+        padding-top: 41px
+        padding-left: 10px
+        padding-right: 10px
         &-btn 
             position: sticky
             right: 0
@@ -1365,6 +1367,14 @@ input[type=number]::-webkit-outer-spin-button
         top: 64px
         left: 250px
         right: 0
+        display: grid
+        align-items: end
+        justify-content: center
+        gap: 16px
+        grid-template-columns: 1090px 48px
+        padding-top: 25px
+        padding-left: 0
+        padding-right: 0
         padding-bottom: 30px
         border-bottom: 1px solid var(--Aside)
         background-color: var(--Gray-100)
@@ -1518,7 +1528,7 @@ input[type=number]::-webkit-outer-spin-button
         image: url('../images/icons/phone.png')
         position: center left 12px 
         repeat: no-repeat
-@media (max-width: 1409px)
+@media (max-width: 1429px)
     .section 
         &_collapse
             left: 0
@@ -1719,7 +1729,6 @@ input[type=number]::-webkit-outer-spin-button
         gap: 20px
         padding: 15.5px 20px
         border-top: 1px solid var(--Gray-80)
-        scroll-margin-block-start: 375px
         &-bl 
             width: 1px
             height: 48px
@@ -2286,6 +2295,8 @@ input[type=number]::-webkit-outer-spin-button
     .btn_150 
         flex: 0 0 48px
     .section
+        &_collapse 
+            grid-template-columns: 800px 48px
         &_toleft 
             grid-template-columns: 800px 48px
     .portfolio
@@ -2321,6 +2332,10 @@ input[type=number]::-webkit-outer-spin-button
         &__explanation
             margin: 0 auto
     .header
+        gap: 12px
+        padding: 9px 16px
+        &__logo 
+            display: none
         &__name 
             display: none
         &__access
@@ -2338,17 +2353,22 @@ input[type=number]::-webkit-outer-spin-button
             &-h50 
                 height: max-content
         &_mt 
-            margin-top: 390px
+            margin-top: 370px
         &__top 
             flex-direction: column
             align-items: flex-start
             margin-bottom: 12px
         &__form 
             gap: 12px
+        &_collapse 
+            grid-template-columns: 366px
+            padding-left: 12px
+            padding-right: 12px
+            padding-top: 0
         &_toleft 
-            grid-template-columns: 390px
-            padding-left: 16px
-            padding-right: 16px
+            grid-template-columns: 366px
+            padding-left: 12px
+            padding-right: 12px
             &-btn 
                 position: fixed
                 bottom: 20px
@@ -2358,7 +2378,7 @@ input[type=number]::-webkit-outer-spin-button
             padding-bottom: 24px
     .portfolio
         &__content 
-            grid-template-columns: 366px
+            grid-template-columns: 342px
             padding: 12px
         &__top 
             grid-column: span 1
@@ -2384,11 +2404,10 @@ input[type=number]::-webkit-outer-spin-button
             display: grid
             grid-template-columns: 1fr 1fr 1fr 1fr
             padding: 12px
-            scroll-margin-block-start: 390px
             &-bl 
                 display: none
         .portfolio__slider 
-            margin-right: -11px
+            margin-right: -12px
             order: 1
 .logo 
     position: relative
