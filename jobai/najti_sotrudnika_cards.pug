@@ -129,7 +129,7 @@ html(lang="ru")
                     .section__top 
                             h2.title Найти сотрудника
                             a(href='').link.link-xsmall 
-                                | Как пользоваться?
+                                p.link__show Как пользоваться?
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M4 3C2.89543 3 2 3.89543 2 5V15C2 16.1046 2.89543 17 4 17H16C17.1046 17 18 16.1046 18 15V5C18 3.89543 17.1046 3 16 3H4ZM7 5L13 5V9H7V5ZM15 13V15H16V13H15ZM13 11H7V15H13V11ZM15 11H16V9H15V11ZM16 7V5H15V7H16ZM5 5V7H4V5H5ZM5 9H4V11H5V9ZM4 13H5V15H4V13Z" fill="#6A6A73"/>
                                 </svg>
@@ -170,7 +170,8 @@ html(lang="ru")
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
                                         </svg>
-                                        p.clue__text Общая шкала соответствия позволяет найти сотрудников по единой интегральной характеристике без детализации параметров поиска
+                                        .clue__wrapper
+                                            p.clue__text Общая шкала соответствия позволяет найти сотрудников по единой интегральной характеристике без детализации параметров поиска
                                 label(for="percentage-of-compliance").switch
                                     input(type="checkbox", name="percentage-of-compliance").switch__input#percentage-of-compliance
                                     span.switch__slider.switch__round
@@ -343,10 +344,10 @@ html(lang="ru")
                     .portfolios
                         .portfolio
                             button(type="button").portfolio__position 
-                                p.portfolio__position-text 1
                                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M17 3.1499C17 3.7298 16.5523 4.1999 16 4.1999L4 4.1999C3.44772 4.1999 3 3.7298 3 3.1499C3 2.57 3.44772 2.0999 4 2.0999L16 2.0999C16.5523 2.0999 17 2.57001 17 3.1499ZM13.7071 11.2424C13.3166 11.6524 12.6834 11.6524 12.2929 11.2424L11 9.88483L11 17.8499C11 18.4298 10.5523 18.8999 10 18.8999C9.44772 18.8999 9 18.4298 9 17.8499L9 9.88483L7.70711 11.2424C7.31658 11.6524 6.68342 11.6524 6.29289 11.2424C5.90237 10.8323 5.90237 10.1675 6.29289 9.75744L9.29289 6.60744C9.48043 6.41053 9.73479 6.2999 10 6.2999C10.2652 6.2999 10.5196 6.41053 10.7071 6.60744L13.7071 9.75744C14.0976 10.1675 14.0976 10.8323 13.7071 11.2424Z" fill="#6A6A73"/>
                                 </svg>
+                                p.portfolio__position-text 1
                             .portfolio__view
                             .portfolio__content
                                 .portfolio__info
@@ -356,26 +357,12 @@ html(lang="ru")
                                         .portfolio__avatar-bg
                                         img(src="images/kuznecov/avatars/kuznecov.png", alt="avatar" data-modalopen='avatar').portfolio__avatar-img.btn-modalopen
                                 .portfolio__top 
-                                    .portfolio__col 
+                                    .portfolio__col.portfolio__main-mr
                                         h2.portfolio__title Кузнецов Владимир Михайлович
                                         p.portfolio__text Мужчина, 37 лет
                                     .portfolio__col 
                                         h2.portfolio__title 350&nbsp;000 - 400&nbsp;000&nbsp;₽
                                         p.portfolio__text Ожидаемый доход в месяц
-                                .portfolio__center
-                                    .portfolio__col 
-                                        h2.portfolio__stitle Digital маркетолог по коммуникациям с блогерами
-                                        p.portfolio__text Желаемая должность
-                                    .portfolio__col
-                                        h2.portfolio__stitle ООО «Май нью джоб Рекрутмент Компани»
-                                        p.portfolio__text Последнее место работы
-                                    .portfolio__center-line
-                                        .portfolio__col 
-                                            h2.portfolio__stitle Москва
-                                            p.portfolio__text Город проживания
-                                        .portfolio__col 
-                                            h2.portfolio__stitle 10 лет
-                                            p.portfolio__text Опыт работы
                                 .portfolio__slider
                                     .itc-slider(data-slider="itc-slider" data-loop="false")
                                         .itc-slider-wrapper
@@ -479,30 +466,53 @@ html(lang="ru")
                                                     .itc-slider-bg
                                             .itc-slider-btn.itc-slider-btn-prev
                                             .itc-slider-btn.itc-slider-btn-next
-                                .portfolio__contact 
-                                    .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
-                                        </svg>
+                                .portfolio__center
+                                    .portfolio__col 
+                                        h2.portfolio__stitle Digital маркетолог по коммуникациям с блогерами
+                                        p.portfolio__text Желаемая должность
+                                    .portfolio__col
+                                        h2.portfolio__stitle ООО «Май нью джоб Девелопмент<br> Компани»
+                                        p.portfolio__text Последнее место работы
+                                    .portfolio__center-line
                                         .portfolio__col 
-                                            h2.portfolio__stitle +7 (903) 743-34-42
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Мобильный телефон
-                                    .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60396 4.7074L8.00156 7.9058L14.3992 4.7074C14.3755 4.29975 14.1968 3.91659 13.8998 3.63638C13.6028 3.35617 13.2099 3.20012 12.8016 3.2002H3.20156C2.79323 3.20012 2.40032 3.35617 2.1033 3.63638C1.80629 3.91659 1.62765 4.29975 1.60396 4.7074Z" fill="#6A6A73"/>
-                                            <path d="M14.4016 6.4946L8.00156 9.6946L1.60156 6.4946V11.2002C1.60156 11.6245 1.77013 12.0315 2.07019 12.3316C2.37025 12.6316 2.77722 12.8002 3.20156 12.8002H12.8016C13.2259 12.8002 13.6329 12.6316 13.9329 12.3316C14.233 12.0315 14.4016 11.6245 14.4016 11.2002V6.4946Z" fill="#6A6A73"/>
-                                        </svg>
+                                            h2.portfolio__stitle Москва
+                                            p.portfolio__text Город проживания
                                         .portfolio__col 
-                                            h2.portfolio__stitle kuznecov.vladimur@mail.ru
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Электронная почта
+                                            h2.portfolio__stitle 10 лет
+                                            p.portfolio__text Опыт работы
+                                .portfolio__contact
+                                    .portfolio__col 
+                                        h2.portfolio__stitle +7 (903) 743-34-42
+                                            button(type="button").portfolio__stitle-copy
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                        h2.portfolio__stitle +7 (985) 220-89-91
+                                            button(type="button").portfolio__stitle-copy
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                        p.portfolio__text Телефон
+                                    .portfolio__row 
+                                        a(href="tel:+79037433442").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
+                                            </svg>
+                                        a(href="https://t.me/+79037433442" target="_blank").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M14.7011 1.41966L0.525853 6.91424C-0.0445783 7.1701 -0.237518 7.68254 0.387955 7.96062L4.02455 9.12227L12.8173 3.66009C13.2974 3.31718 13.7889 3.40862 13.3659 3.78583L5.81416 10.6588L5.57693 13.5674C5.79666 14.0165 6.19898 14.0186 6.4556 13.7954L8.54492 11.8082L12.1232 14.5016C12.9543 14.9962 13.4065 14.677 13.5853 13.7705L15.9323 2.5996C16.176 1.48379 15.7605 0.992165 14.7011 1.41966Z" fill="#5C5C5C"/>
+                                            </svg>
+                                        a(href="https://wa.me/79037433442" target="_blank").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_6470_150662)">
+                                                    <path d="M16 7.79396C16 12.0985 12.4837 15.5879 8.14542 15.5879C6.76818 15.5879 5.47431 15.2359 4.34862 14.6181L0 16L1.41778 11.8183C0.702578 10.6439 0.290667 9.26649 0.290667 7.79396C0.290667 3.48942 3.80729 0 8.14542 0C12.4841 0 16 3.48942 16 7.79396ZM8.14542 1.24124C4.50382 1.24124 1.54169 4.1808 1.54169 7.79396C1.54169 9.22773 2.00907 10.5556 2.79964 11.6357L1.97458 14.0693L4.51236 13.2628C5.55502 13.9474 6.80409 14.3467 8.1456 14.3467C11.7867 14.3467 14.7493 11.4075 14.7493 7.79431C14.7493 4.18116 11.7868 1.24124 8.14542 1.24124ZM12.1118 9.58898C12.0633 9.50951 11.9351 9.46151 11.7428 9.36604C11.55 9.27058 10.6032 8.80818 10.4272 8.74471C10.2507 8.68107 10.122 8.64907 9.99378 8.84018C9.8656 9.03147 9.49653 9.46151 9.384 9.58898C9.27164 9.7168 9.15947 9.7328 8.96676 9.63716C8.7744 9.54169 8.15413 9.33973 7.41867 8.68907C6.8464 8.18276 6.45991 7.55769 6.34756 7.36622C6.23538 7.17511 6.33582 7.07182 6.432 6.97671C6.51876 6.89102 6.62471 6.7536 6.72089 6.64213C6.81742 6.53049 6.84942 6.45102 6.91324 6.32338C6.97778 6.19591 6.9456 6.08444 6.89724 5.98862C6.84924 5.89316 6.46382 4.95307 6.30347 4.57049C6.14311 4.18827 5.98293 4.25191 5.8704 4.25191C5.75822 4.25191 5.62969 4.23591 5.50133 4.23591C5.37298 4.23591 5.16427 4.28373 4.98773 4.47484C4.81138 4.66613 4.31413 5.12836 4.31413 6.06827C4.31413 7.00836 5.00373 7.91662 5.10027 8.04391C5.19644 8.1712 6.43182 10.163 8.38916 10.928C10.3467 11.6926 10.3467 11.4375 10.6997 11.4055C11.0524 11.3737 11.8386 10.9435 11.9996 10.4976C12.1596 10.051 12.1596 9.66862 12.1118 9.58898Z" fill="#5C5C5C"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_6470_150662">
+                                                        <rect width="16" height="16" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
                             .portfolio__btns 
                                 .portfolio__ai 95%
                                 button(type="button").btn.btn_black.portfolio__fits.portfolio__fits-ai
@@ -561,10 +571,10 @@ html(lang="ru")
                                     | Пригласить
                         .portfolio
                             button(type="button").portfolio__position 
-                                p.portfolio__position-text 2
                                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M17 3.1499C17 3.7298 16.5523 4.1999 16 4.1999L4 4.1999C3.44772 4.1999 3 3.7298 3 3.1499C3 2.57 3.44772 2.0999 4 2.0999L16 2.0999C16.5523 2.0999 17 2.57001 17 3.1499ZM13.7071 11.2424C13.3166 11.6524 12.6834 11.6524 12.2929 11.2424L11 9.88483L11 17.8499C11 18.4298 10.5523 18.8999 10 18.8999C9.44772 18.8999 9 18.4298 9 17.8499L9 9.88483L7.70711 11.2424C7.31658 11.6524 6.68342 11.6524 6.29289 11.2424C5.90237 10.8323 5.90237 10.1675 6.29289 9.75744L9.29289 6.60744C9.48043 6.41053 9.73479 6.2999 10 6.2999C10.2652 6.2999 10.5196 6.41053 10.7071 6.60744L13.7071 9.75744C14.0976 10.1675 14.0976 10.8323 13.7071 11.2424Z" fill="#6A6A73"/>
                                 </svg>
+                                p.portfolio__position-text 2
                             .portfolio__view
                             .portfolio__content
                                 .portfolio__info
@@ -574,26 +584,12 @@ html(lang="ru")
                                         .portfolio__avatar-bg
                                         img(src="images/mihajlova/avatars/mihajlova.png", alt="avatar" data-modalopen='avatar').portfolio__avatar-img.btn-modalopen
                                 .portfolio__top
-                                    .portfolio__col 
+                                    .portfolio__col.portfolio__main-mr
                                         h2.portfolio__title Михайлова Татьяна Сергеевна
                                         p.portfolio__text Женщина, 30 лет
                                     .portfolio__col 
                                         h2.portfolio__title 200&nbsp;000 - 350&nbsp;000&nbsp;₽
                                         p.portfolio__text Ожидаемый доход в месяц
-                                .portfolio__center
-                                    .portfolio__col 
-                                        h2.portfolio__stitle SMM маркетолог по коммуникациям с блогерами
-                                        p.portfolio__text Желаемая должность
-                                    .portfolio__col
-                                        h2.portfolio__stitle ООО «Май нью джоб Рекрутмент Компани»
-                                        p.portfolio__text Последнее место работы
-                                    .portfolio__center-line
-                                        .portfolio__col 
-                                            h2.portfolio__stitle Санкт-Петербург
-                                            p.portfolio__text Город проживания
-                                        .portfolio__col 
-                                            h2.portfolio__stitle 8 лет
-                                            p.portfolio__text Опыт работы
                                 .portfolio__slider
                                     .itc-slider(data-slider="itc-slider" data-loop="false")
                                         .itc-slider-wrapper
@@ -640,30 +636,49 @@ html(lang="ru")
                                                     .itc-slider-bg
                                             .itc-slider-btn.itc-slider-btn-prev
                                             .itc-slider-btn.itc-slider-btn-next
-                                .portfolio__contact
-                                    .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
-                                        </svg>
+                                .portfolio__center
+                                    .portfolio__col 
+                                        h2.portfolio__stitle SMM маркетолог по коммуникациям с блогерами
+                                        p.portfolio__text Желаемая должность
+                                    .portfolio__col
+                                        h2.portfolio__stitle ООО «Май нью джоб Рекрутмент<br> Компани»
+                                        p.portfolio__text Последнее место работы
+                                    .portfolio__center-line
                                         .portfolio__col 
-                                            h2.portfolio__stitle +7 (985) 220-89-91
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Мобильный телефон
-                                    .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60396 4.7074L8.00156 7.9058L14.3992 4.7074C14.3755 4.29975 14.1968 3.91659 13.8998 3.63638C13.6028 3.35617 13.2099 3.20012 12.8016 3.2002H3.20156C2.79323 3.20012 2.40032 3.35617 2.1033 3.63638C1.80629 3.91659 1.62765 4.29975 1.60396 4.7074Z" fill="#6A6A73"/>
-                                            <path d="M14.4016 6.4946L8.00156 9.6946L1.60156 6.4946V11.2002C1.60156 11.6245 1.77013 12.0315 2.07019 12.3316C2.37025 12.6316 2.77722 12.8002 3.20156 12.8002H12.8016C13.2259 12.8002 13.6329 12.6316 13.9329 12.3316C14.233 12.0315 14.4016 11.6245 14.4016 11.2002V6.4946Z" fill="#6A6A73"/>
-                                        </svg>
+                                            h2.portfolio__stitle Санкт-Петербург
+                                            p.portfolio__text Город проживания
                                         .portfolio__col 
-                                            h2.portfolio__stitle mihailova.tathana@mail.ru
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Электронная почта
+                                            h2.portfolio__stitle 8 лет
+                                            p.portfolio__text Опыт работы
+                                .portfolio__contact 
+                                    .portfolio__col 
+                                        h2.portfolio__stitle
+                                        h2.portfolio__stitle +7 (985) 220-89-91
+                                            button(type="button").portfolio__stitle-copy
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                        p.portfolio__text Телефон
+                                    .portfolio__row 
+                                        a(href="tel:+79852208991").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
+                                            </svg>
+                                        a(href="https://t.me/+79852208991" target="_blank").portfolio__row-link 
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M14.7011 1.41966L0.525853 6.91424C-0.0445783 7.1701 -0.237518 7.68254 0.387955 7.96062L4.02455 9.12227L12.8173 3.66009C13.2974 3.31718 13.7889 3.40862 13.3659 3.78583L5.81416 10.6588L5.57693 13.5674C5.79666 14.0165 6.19898 14.0186 6.4556 13.7954L8.54492 11.8082L12.1232 14.5016C12.9543 14.9962 13.4065 14.677 13.5853 13.7705L15.9323 2.5996C16.176 1.48379 15.7605 0.992165 14.7011 1.41966Z" fill="#5C5C5C"/>
+                                            </svg>
+                                        a(href="https://wa.me/79852208991" target="_blank").portfolio__row-link 
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_6470_150662)">
+                                                    <path d="M16 7.79396C16 12.0985 12.4837 15.5879 8.14542 15.5879C6.76818 15.5879 5.47431 15.2359 4.34862 14.6181L0 16L1.41778 11.8183C0.702578 10.6439 0.290667 9.26649 0.290667 7.79396C0.290667 3.48942 3.80729 0 8.14542 0C12.4841 0 16 3.48942 16 7.79396ZM8.14542 1.24124C4.50382 1.24124 1.54169 4.1808 1.54169 7.79396C1.54169 9.22773 2.00907 10.5556 2.79964 11.6357L1.97458 14.0693L4.51236 13.2628C5.55502 13.9474 6.80409 14.3467 8.1456 14.3467C11.7867 14.3467 14.7493 11.4075 14.7493 7.79431C14.7493 4.18116 11.7868 1.24124 8.14542 1.24124ZM12.1118 9.58898C12.0633 9.50951 11.9351 9.46151 11.7428 9.36604C11.55 9.27058 10.6032 8.80818 10.4272 8.74471C10.2507 8.68107 10.122 8.64907 9.99378 8.84018C9.8656 9.03147 9.49653 9.46151 9.384 9.58898C9.27164 9.7168 9.15947 9.7328 8.96676 9.63716C8.7744 9.54169 8.15413 9.33973 7.41867 8.68907C6.8464 8.18276 6.45991 7.55769 6.34756 7.36622C6.23538 7.17511 6.33582 7.07182 6.432 6.97671C6.51876 6.89102 6.62471 6.7536 6.72089 6.64213C6.81742 6.53049 6.84942 6.45102 6.91324 6.32338C6.97778 6.19591 6.9456 6.08444 6.89724 5.98862C6.84924 5.89316 6.46382 4.95307 6.30347 4.57049C6.14311 4.18827 5.98293 4.25191 5.8704 4.25191C5.75822 4.25191 5.62969 4.23591 5.50133 4.23591C5.37298 4.23591 5.16427 4.28373 4.98773 4.47484C4.81138 4.66613 4.31413 5.12836 4.31413 6.06827C4.31413 7.00836 5.00373 7.91662 5.10027 8.04391C5.19644 8.1712 6.43182 10.163 8.38916 10.928C10.3467 11.6926 10.3467 11.4375 10.6997 11.4055C11.0524 11.3737 11.8386 10.9435 11.9996 10.4976C12.1596 10.051 12.1596 9.66862 12.1118 9.58898Z" fill="#5C5C5C"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_6470_150662">
+                                                        <rect width="16" height="16" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
                             .portfolio__btns 
                                 .portfolio__ai 90%
                                 button(type="button" data-modalopen='resume').btn.btn_black.portfolio__fits.portfolio__fits-ai
@@ -722,10 +737,10 @@ html(lang="ru")
                                     | Пригласить
                         .portfolio
                             button(type="button").portfolio__position 
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 3.1499C17 3.7298 16.5523 4.1999 16 4.1999L4 4.1999C3.44772 4.1999 3 3.7298 3 3.1499C3 2.57 3.44772 2.0999 4 2.0999L16 2.0999C16.5523 2.0999 17 2.57001 17 3.1499ZM13.7071 11.2424C13.3166 11.6524 12.6834 11.6524 12.2929 11.2424L11 9.88483L11 17.8499C11 18.4298 10.5523 18.8999 10 18.8999C9.44772 18.8999 9 18.4298 9 17.8499L9 9.88483L7.70711 11.2424C7.31658 11.6524 6.68342 11.6524 6.29289 11.2424C5.90237 10.8323 5.90237 10.1675 6.29289 9.75744L9.29289 6.60744C9.48043 6.41053 9.73479 6.2999 10 6.2999C10.2652 6.2999 10.5196 6.41053 10.7071 6.60744L13.7071 9.75744C14.0976 10.1675 14.0976 10.8323 13.7071 11.2424Z" fill="#6A6A73"/>
+                                </svg>
                                 p.portfolio__position-text 3
-                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 3.1499C17 3.7298 16.5523 4.1999 16 4.1999L4 4.1999C3.44772 4.1999 3 3.7298 3 3.1499C3 2.57 3.44772 2.0999 4 2.0999L16 2.0999C16.5523 2.0999 17 2.57001 17 3.1499ZM13.7071 11.2424C13.3166 11.6524 12.6834 11.6524 12.2929 11.2424L11 9.88483L11 17.8499C11 18.4298 10.5523 18.8999 10 18.8999C9.44772 18.8999 9 18.4298 9 17.8499L9 9.88483L7.70711 11.2424C7.31658 11.6524 6.68342 11.6524 6.29289 11.2424C5.90237 10.8323 5.90237 10.1675 6.29289 9.75744L9.29289 6.60744C9.48043 6.41053 9.73479 6.2999 10 6.2999C10.2652 6.2999 10.5196 6.41053 10.7071 6.60744L13.7071 9.75744C14.0976 10.1675 14.0976 10.8323 13.7071 11.2424Z" fill="#6A6A73"/>
-                                </svg>
                             .portfolio__view
                             .portfolio__content
                                 .portfolio__info
@@ -734,18 +749,30 @@ html(lang="ru")
                                     .portfolio__avatar 
                                         .portfolio__avatar-bg
                                 .portfolio__top
-                                    .portfolio__col 
+                                    .portfolio__col.portfolio__main-mr
                                         h2.portfolio__title Богданова Екатерина Тимофеевна
                                         p.portfolio__text Женщина, 30 лет
                                     .portfolio__col 
                                         h2.portfolio__title 150&nbsp;000 - 200&nbsp;000&nbsp;₽
                                         p.portfolio__text Ожидаемый доход в месяц
+                                .portfolio__slider
+                                    .itc-slider(data-slider="itc-slider" data-loop="false")
+                                        .itc-slider-wrapper
+                                            .itc-slider-items
+                                                .itc-slider-item
+                                                    .itc-slider-bg
+                                                    .itc-slider-bottom
+                                                .itc-slider-item
+                                                    .itc-slider-bg
+                                                    .itc-slider-bottom
+                                            .itc-slider-btn.itc-slider-btn-prev
+                                            .itc-slider-btn.itc-slider-btn-next
                                 .portfolio__center
                                     .portfolio__col 
                                         h2.portfolio__stitle SMM маркетолог по коммуникациям с блогерами
                                         p.portfolio__text Желаемая должность
                                     .portfolio__col
-                                        h2.portfolio__stitle ООО «Май нью джоб Рекрутмент Компани»
+                                        h2.portfolio__stitle ООО «Май нью джоб Рекрутмент<br> Компани»
                                         p.portfolio__text Последнее место работы
                                     .portfolio__center-line
                                         .portfolio__col 
@@ -754,40 +781,35 @@ html(lang="ru")
                                         .portfolio__col 
                                             h2.portfolio__stitle 6 лет
                                             p.portfolio__text Опыт работы
-                                .portfolio__slider
-                                    .itc-slider(data-slider="itc-slider" data-loop="false")
-                                        .itc-slider-wrapper
-                                            .itc-slider-items
-                                                .itc-slider-item
-                                                    .itc-slider-bg
-                                                .itc-slider-item
-                                                    .itc-slider-bg
-                                            .itc-slider-btn.itc-slider-btn-prev
-                                            .itc-slider-btn.itc-slider-btn-next
-                                .portfolio__contact
+                                .portfolio__contact 
+                                    .portfolio__col 
+                                        h2.portfolio__stitle
+                                        h2.portfolio__stitle +7 (987) 115-01-02
+                                            button(type="button").portfolio__stitle-copy
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                        p.portfolio__text Телефон
                                     .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
-                                        </svg>
-                                        .portfolio__col 
-                                            h2.portfolio__stitle +7 (985) 227-90-91
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Мобильный телефон
-                                    .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60396 4.7074L8.00156 7.9058L14.3992 4.7074C14.3755 4.29975 14.1968 3.91659 13.8998 3.63638C13.6028 3.35617 13.2099 3.20012 12.8016 3.2002H3.20156C2.79323 3.20012 2.40032 3.35617 2.1033 3.63638C1.80629 3.91659 1.62765 4.29975 1.60396 4.7074Z" fill="#6A6A73"/>
-                                            <path d="M14.4016 6.4946L8.00156 9.6946L1.60156 6.4946V11.2002C1.60156 11.6245 1.77013 12.0315 2.07019 12.3316C2.37025 12.6316 2.77722 12.8002 3.20156 12.8002H12.8016C13.2259 12.8002 13.6329 12.6316 13.9329 12.3316C14.233 12.0315 14.4016 11.6245 14.4016 11.2002V6.4946Z" fill="#6A6A73"/>
-                                        </svg>
-                                        .portfolio__col 
-                                            h2.portfolio__stitle bogdanova.katya@mail.ru
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Электронная почта
+                                        a(href="tel:+79871150102").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
+                                            </svg>
+                                        a(href="https://t.me/+79871150102" target="_blank").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M14.7011 1.41966L0.525853 6.91424C-0.0445783 7.1701 -0.237518 7.68254 0.387955 7.96062L4.02455 9.12227L12.8173 3.66009C13.2974 3.31718 13.7889 3.40862 13.3659 3.78583L5.81416 10.6588L5.57693 13.5674C5.79666 14.0165 6.19898 14.0186 6.4556 13.7954L8.54492 11.8082L12.1232 14.5016C12.9543 14.9962 13.4065 14.677 13.5853 13.7705L15.9323 2.5996C16.176 1.48379 15.7605 0.992165 14.7011 1.41966Z" fill="#5C5C5C"/>
+                                            </svg>
+                                        a(href="https://wa.me/79871150102" target="_blank").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_6470_150662)">
+                                                    <path d="M16 7.79396C16 12.0985 12.4837 15.5879 8.14542 15.5879C6.76818 15.5879 5.47431 15.2359 4.34862 14.6181L0 16L1.41778 11.8183C0.702578 10.6439 0.290667 9.26649 0.290667 7.79396C0.290667 3.48942 3.80729 0 8.14542 0C12.4841 0 16 3.48942 16 7.79396ZM8.14542 1.24124C4.50382 1.24124 1.54169 4.1808 1.54169 7.79396C1.54169 9.22773 2.00907 10.5556 2.79964 11.6357L1.97458 14.0693L4.51236 13.2628C5.55502 13.9474 6.80409 14.3467 8.1456 14.3467C11.7867 14.3467 14.7493 11.4075 14.7493 7.79431C14.7493 4.18116 11.7868 1.24124 8.14542 1.24124ZM12.1118 9.58898C12.0633 9.50951 11.9351 9.46151 11.7428 9.36604C11.55 9.27058 10.6032 8.80818 10.4272 8.74471C10.2507 8.68107 10.122 8.64907 9.99378 8.84018C9.8656 9.03147 9.49653 9.46151 9.384 9.58898C9.27164 9.7168 9.15947 9.7328 8.96676 9.63716C8.7744 9.54169 8.15413 9.33973 7.41867 8.68907C6.8464 8.18276 6.45991 7.55769 6.34756 7.36622C6.23538 7.17511 6.33582 7.07182 6.432 6.97671C6.51876 6.89102 6.62471 6.7536 6.72089 6.64213C6.81742 6.53049 6.84942 6.45102 6.91324 6.32338C6.97778 6.19591 6.9456 6.08444 6.89724 5.98862C6.84924 5.89316 6.46382 4.95307 6.30347 4.57049C6.14311 4.18827 5.98293 4.25191 5.8704 4.25191C5.75822 4.25191 5.62969 4.23591 5.50133 4.23591C5.37298 4.23591 5.16427 4.28373 4.98773 4.47484C4.81138 4.66613 4.31413 5.12836 4.31413 6.06827C4.31413 7.00836 5.00373 7.91662 5.10027 8.04391C5.19644 8.1712 6.43182 10.163 8.38916 10.928C10.3467 11.6926 10.3467 11.4375 10.6997 11.4055C11.0524 11.3737 11.8386 10.9435 11.9996 10.4976C12.1596 10.051 12.1596 9.66862 12.1118 9.58898Z" fill="#5C5C5C"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_6470_150662">
+                                                        <rect width="16" height="16" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
                             .portfolio__btns 
                                 .portfolio__ai 85%
                                 button(type="button" data-modalopen='resume').btn.btn_black.portfolio__fits.portfolio__fits-ai
@@ -846,10 +868,10 @@ html(lang="ru")
                                     | Пригласить
                         .portfolio
                             button(type="button").portfolio__position 
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 3.1499C17 3.7298 16.5523 4.1999 16 4.1999L4 4.1999C3.44772 4.1999 3 3.7298 3 3.1499C3 2.57 3.44772 2.0999 4 2.0999L16 2.0999C16.5523 2.0999 17 2.57001 17 3.1499ZM13.7071 11.2424C13.3166 11.6524 12.6834 11.6524 12.2929 11.2424L11 9.88483L11 17.8499C11 18.4298 10.5523 18.8999 10 18.8999C9.44772 18.8999 9 18.4298 9 17.8499L9 9.88483L7.70711 11.2424C7.31658 11.6524 6.68342 11.6524 6.29289 11.2424C5.90237 10.8323 5.90237 10.1675 6.29289 9.75744L9.29289 6.60744C9.48043 6.41053 9.73479 6.2999 10 6.2999C10.2652 6.2999 10.5196 6.41053 10.7071 6.60744L13.7071 9.75744C14.0976 10.1675 14.0976 10.8323 13.7071 11.2424Z" fill="#6A6A73"/>
+                                </svg>
                                 p.portfolio__position-text 4
-                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 3.1499C17 3.7298 16.5523 4.1999 16 4.1999L4 4.1999C3.44772 4.1999 3 3.7298 3 3.1499C3 2.57 3.44772 2.0999 4 2.0999L16 2.0999C16.5523 2.0999 17 2.57001 17 3.1499ZM13.7071 11.2424C13.3166 11.6524 12.6834 11.6524 12.2929 11.2424L11 9.88483L11 17.8499C11 18.4298 10.5523 18.8999 10 18.8999C9.44772 18.8999 9 18.4298 9 17.8499L9 9.88483L7.70711 11.2424C7.31658 11.6524 6.68342 11.6524 6.29289 11.2424C5.90237 10.8323 5.90237 10.1675 6.29289 9.75744L9.29289 6.60744C9.48043 6.41053 9.73479 6.2999 10 6.2999C10.2652 6.2999 10.5196 6.41053 10.7071 6.60744L13.7071 9.75744C14.0976 10.1675 14.0976 10.8323 13.7071 11.2424Z" fill="#6A6A73"/>
-                                </svg>
                             .portfolio__view
                             .portfolio__content
                                 .portfolio__info
@@ -857,19 +879,32 @@ html(lang="ru")
                                     p.portfolio__info-text была 07.09.2025, 11:45
                                     .portfolio__avatar 
                                         .portfolio__avatar-bg
+                                    
                                 .portfolio__top
-                                    .portfolio__col 
+                                    .portfolio__col.portfolio__main-mr
                                         h2.portfolio__title Богданова Екатерина Тимофеевна
                                         p.portfolio__text Женщина, 30 лет
                                     .portfolio__col 
                                         h2.portfolio__title 150&nbsp;000 - 200&nbsp;000&nbsp;₽
                                         p.portfolio__text Ожидаемый доход в месяц
+                                .portfolio__slider
+                                    .itc-slider(data-slider="itc-slider" data-loop="false")
+                                        .itc-slider-wrapper
+                                            .itc-slider-items
+                                                .itc-slider-item
+                                                    .itc-slider-bg
+                                                    .itc-slider-bottom
+                                                .itc-slider-item
+                                                    .itc-slider-bg
+                                                    .itc-slider-bottom
+                                            .itc-slider-btn.itc-slider-btn-prev
+                                            .itc-slider-btn.itc-slider-btn-next
                                 .portfolio__center
                                     .portfolio__col 
                                         h2.portfolio__stitle SMM маркетолог по коммуникациям с блогерами
                                         p.portfolio__text Желаемая должность
                                     .portfolio__col
-                                        h2.portfolio__stitle ООО «Май нью джоб Рекрутмент Компани»
+                                        h2.portfolio__stitle ООО «Май нью джоб Рекрутмент<br> Компани»
                                         p.portfolio__text Последнее место работы
                                     .portfolio__center-line
                                         .portfolio__col 
@@ -878,40 +913,35 @@ html(lang="ru")
                                         .portfolio__col 
                                             h2.portfolio__stitle 6 лет
                                             p.portfolio__text Опыт работы
-                                .portfolio__slider
-                                    .itc-slider(data-slider="itc-slider" data-loop="false")
-                                        .itc-slider-wrapper
-                                            .itc-slider-items
-                                                .itc-slider-item
-                                                    .itc-slider-bg
-                                                .itc-slider-item
-                                                    .itc-slider-bg
-                                            .itc-slider-btn.itc-slider-btn-prev
-                                            .itc-slider-btn.itc-slider-btn-next
-                                .portfolio__contact
+                                .portfolio__contact 
+                                    .portfolio__col 
+                                        h2.portfolio__stitle
+                                        h2.portfolio__stitle +7 (987) 115-01-02
+                                            button(type="button").portfolio__stitle-copy
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                        p.portfolio__text Телефон
                                     .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
-                                        </svg>
-                                        .portfolio__col 
-                                            h2.portfolio__stitle +7 (985) 227-90-91
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Мобильный телефон
-                                    .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60396 4.7074L8.00156 7.9058L14.3992 4.7074C14.3755 4.29975 14.1968 3.91659 13.8998 3.63638C13.6028 3.35617 13.2099 3.20012 12.8016 3.2002H3.20156C2.79323 3.20012 2.40032 3.35617 2.1033 3.63638C1.80629 3.91659 1.62765 4.29975 1.60396 4.7074Z" fill="#6A6A73"/>
-                                            <path d="M14.4016 6.4946L8.00156 9.6946L1.60156 6.4946V11.2002C1.60156 11.6245 1.77013 12.0315 2.07019 12.3316C2.37025 12.6316 2.77722 12.8002 3.20156 12.8002H12.8016C13.2259 12.8002 13.6329 12.6316 13.9329 12.3316C14.233 12.0315 14.4016 11.6245 14.4016 11.2002V6.4946Z" fill="#6A6A73"/>
-                                        </svg>
-                                        .portfolio__col 
-                                            h2.portfolio__stitle bogdanova.katya@mail.ru
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Электронная почта
+                                        a(href="tel:+79871150102").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
+                                            </svg>
+                                        a(href="https://t.me/+79871150102" target="_blank").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M14.7011 1.41966L0.525853 6.91424C-0.0445783 7.1701 -0.237518 7.68254 0.387955 7.96062L4.02455 9.12227L12.8173 3.66009C13.2974 3.31718 13.7889 3.40862 13.3659 3.78583L5.81416 10.6588L5.57693 13.5674C5.79666 14.0165 6.19898 14.0186 6.4556 13.7954L8.54492 11.8082L12.1232 14.5016C12.9543 14.9962 13.4065 14.677 13.5853 13.7705L15.9323 2.5996C16.176 1.48379 15.7605 0.992165 14.7011 1.41966Z" fill="#5C5C5C"/>
+                                            </svg>
+                                        a(href="https://wa.me/79871150102" target="_blank").portfolio__row-link
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_6470_150662)">
+                                                    <path d="M16 7.79396C16 12.0985 12.4837 15.5879 8.14542 15.5879C6.76818 15.5879 5.47431 15.2359 4.34862 14.6181L0 16L1.41778 11.8183C0.702578 10.6439 0.290667 9.26649 0.290667 7.79396C0.290667 3.48942 3.80729 0 8.14542 0C12.4841 0 16 3.48942 16 7.79396ZM8.14542 1.24124C4.50382 1.24124 1.54169 4.1808 1.54169 7.79396C1.54169 9.22773 2.00907 10.5556 2.79964 11.6357L1.97458 14.0693L4.51236 13.2628C5.55502 13.9474 6.80409 14.3467 8.1456 14.3467C11.7867 14.3467 14.7493 11.4075 14.7493 7.79431C14.7493 4.18116 11.7868 1.24124 8.14542 1.24124ZM12.1118 9.58898C12.0633 9.50951 11.9351 9.46151 11.7428 9.36604C11.55 9.27058 10.6032 8.80818 10.4272 8.74471C10.2507 8.68107 10.122 8.64907 9.99378 8.84018C9.8656 9.03147 9.49653 9.46151 9.384 9.58898C9.27164 9.7168 9.15947 9.7328 8.96676 9.63716C8.7744 9.54169 8.15413 9.33973 7.41867 8.68907C6.8464 8.18276 6.45991 7.55769 6.34756 7.36622C6.23538 7.17511 6.33582 7.07182 6.432 6.97671C6.51876 6.89102 6.62471 6.7536 6.72089 6.64213C6.81742 6.53049 6.84942 6.45102 6.91324 6.32338C6.97778 6.19591 6.9456 6.08444 6.89724 5.98862C6.84924 5.89316 6.46382 4.95307 6.30347 4.57049C6.14311 4.18827 5.98293 4.25191 5.8704 4.25191C5.75822 4.25191 5.62969 4.23591 5.50133 4.23591C5.37298 4.23591 5.16427 4.28373 4.98773 4.47484C4.81138 4.66613 4.31413 5.12836 4.31413 6.06827C4.31413 7.00836 5.00373 7.91662 5.10027 8.04391C5.19644 8.1712 6.43182 10.163 8.38916 10.928C10.3467 11.6926 10.3467 11.4375 10.6997 11.4055C11.0524 11.3737 11.8386 10.9435 11.9996 10.4976C12.1596 10.051 12.1596 9.66862 12.1118 9.58898Z" fill="#5C5C5C"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_6470_150662">
+                                                        <rect width="16" height="16" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
                             .portfolio__btns 
                                 .portfolio__ai 85%
                                 button(type="button" data-modalopen='resume').btn.btn_black.portfolio__fits.portfolio__fits-ai
@@ -970,10 +1000,10 @@ html(lang="ru")
                                     | Пригласить
                         .portfolio
                             button(type="button").portfolio__position 
-                                p.portfolio__position-text 5
                                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M17 3.1499C17 3.7298 16.5523 4.1999 16 4.1999L4 4.1999C3.44772 4.1999 3 3.7298 3 3.1499C3 2.57 3.44772 2.0999 4 2.0999L16 2.0999C16.5523 2.0999 17 2.57001 17 3.1499ZM13.7071 11.2424C13.3166 11.6524 12.6834 11.6524 12.2929 11.2424L11 9.88483L11 17.8499C11 18.4298 10.5523 18.8999 10 18.8999C9.44772 18.8999 9 18.4298 9 17.8499L9 9.88483L7.70711 11.2424C7.31658 11.6524 6.68342 11.6524 6.29289 11.2424C5.90237 10.8323 5.90237 10.1675 6.29289 9.75744L9.29289 6.60744C9.48043 6.41053 9.73479 6.2999 10 6.2999C10.2652 6.2999 10.5196 6.41053 10.7071 6.60744L13.7071 9.75744C14.0976 10.1675 14.0976 10.8323 13.7071 11.2424Z" fill="#6A6A73"/>
                                 </svg>
+                                p.portfolio__position-text 5
                             .portfolio__view
                             .portfolio__content
                                 .portfolio__info
@@ -982,18 +1012,30 @@ html(lang="ru")
                                     .portfolio__avatar 
                                         .portfolio__avatar-bg
                                 .portfolio__top
-                                    .portfolio__col 
+                                    .portfolio__col.portfolio__main-mr
                                         h2.portfolio__title Богданова Екатерина Тимофеевна
                                         p.portfolio__text Женщина, 30 лет
                                     .portfolio__col 
                                         h2.portfolio__title 150&nbsp;000 - 200&nbsp;000&nbsp;₽
                                         p.portfolio__text Ожидаемый доход в месяц
+                                .portfolio__slider
+                                    .itc-slider(data-slider="itc-slider" data-loop="false")
+                                        .itc-slider-wrapper
+                                            .itc-slider-items
+                                                .itc-slider-item
+                                                    .itc-slider-bg
+                                                    .itc-slider-bottom
+                                                .itc-slider-item
+                                                    .itc-slider-bg
+                                                    .itc-slider-bottom
+                                            .itc-slider-btn.itc-slider-btn-prev
+                                            .itc-slider-btn.itc-slider-btn-next
                                 .portfolio__center
                                     .portfolio__col 
                                         h2.portfolio__stitle SMM маркетолог по коммуникациям с блогерами
                                         p.portfolio__text Желаемая должность
                                     .portfolio__col
-                                        h2.portfolio__stitle ООО «Май нью джоб Рекрутмент Компани»
+                                        h2.portfolio__stitle ООО «Май нью джоб Рекрутмент<br> Компани»
                                         p.portfolio__text Последнее место работы
                                     .portfolio__center-line
                                         .portfolio__col 
@@ -1002,40 +1044,35 @@ html(lang="ru")
                                         .portfolio__col 
                                             h2.portfolio__stitle 6 лет
                                             p.portfolio__text Опыт работы
-                                .portfolio__slider
-                                    .itc-slider(data-slider="itc-slider" data-loop="false")
-                                        .itc-slider-wrapper
-                                            .itc-slider-items
-                                                .itc-slider-item
-                                                    .itc-slider-bg
-                                                .itc-slider-item
-                                                    .itc-slider-bg
-                                            .itc-slider-btn.itc-slider-btn-prev
-                                            .itc-slider-btn.itc-slider-btn-next
-                                .portfolio__contact
+                                .portfolio__contact 
+                                    .portfolio__col 
+                                        h2.portfolio__stitle
+                                        h2.portfolio__stitle +7 (987) 115-01-02
+                                            button(type="button").portfolio__stitle-copy
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                        p.portfolio__text Телефон
                                     .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
-                                        </svg>
-                                        .portfolio__col 
-                                            h2.portfolio__stitle +7 (985) 227-90-91
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Мобильный телефон
-                                    .portfolio__row 
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.60396 4.7074L8.00156 7.9058L14.3992 4.7074C14.3755 4.29975 14.1968 3.91659 13.8998 3.63638C13.6028 3.35617 13.2099 3.20012 12.8016 3.2002H3.20156C2.79323 3.20012 2.40032 3.35617 2.1033 3.63638C1.80629 3.91659 1.62765 4.29975 1.60396 4.7074Z" fill="#6A6A73"/>
-                                            <path d="M14.4016 6.4946L8.00156 9.6946L1.60156 6.4946V11.2002C1.60156 11.6245 1.77013 12.0315 2.07019 12.3316C2.37025 12.6316 2.77722 12.8002 3.20156 12.8002H12.8016C13.2259 12.8002 13.6329 12.6316 13.9329 12.3316C14.233 12.0315 14.4016 11.6245 14.4016 11.2002V6.4946Z" fill="#6A6A73"/>
-                                        </svg>
-                                        .portfolio__col 
-                                            h2.portfolio__stitle bogdanova.katya@mail.ru
-                                                button(type="button").portfolio__stitle-copy
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 13H3C1.89543 13 1 12.1046 1 11V3C1 1.89543 1.89543 1 3 1H11C12.1046 1 13 1.89543 13 3V5M7 17H15C16.1046 17 17 16.1046 17 15V7C17 5.89543 16.1046 5 15 5H7C5.89543 5 5 5.89543 5 7V15C5 16.1046 5.89543 17 7 17Z" stroke="#202123" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                            p.portfolio__text Электронная почта
+                                        a(href="tel:+79871150102") 
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
+                                            </svg>
+                                        a(href="https://t.me/+79871150102" target="_blank") 
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M14.7011 1.41966L0.525853 6.91424C-0.0445783 7.1701 -0.237518 7.68254 0.387955 7.96062L4.02455 9.12227L12.8173 3.66009C13.2974 3.31718 13.7889 3.40862 13.3659 3.78583L5.81416 10.6588L5.57693 13.5674C5.79666 14.0165 6.19898 14.0186 6.4556 13.7954L8.54492 11.8082L12.1232 14.5016C12.9543 14.9962 13.4065 14.677 13.5853 13.7705L15.9323 2.5996C16.176 1.48379 15.7605 0.992165 14.7011 1.41966Z" fill="#5C5C5C"/>
+                                            </svg>
+                                        a(href="https://wa.me/79871150102" target="_blank") 
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_6470_150662)">
+                                                    <path d="M16 7.79396C16 12.0985 12.4837 15.5879 8.14542 15.5879C6.76818 15.5879 5.47431 15.2359 4.34862 14.6181L0 16L1.41778 11.8183C0.702578 10.6439 0.290667 9.26649 0.290667 7.79396C0.290667 3.48942 3.80729 0 8.14542 0C12.4841 0 16 3.48942 16 7.79396ZM8.14542 1.24124C4.50382 1.24124 1.54169 4.1808 1.54169 7.79396C1.54169 9.22773 2.00907 10.5556 2.79964 11.6357L1.97458 14.0693L4.51236 13.2628C5.55502 13.9474 6.80409 14.3467 8.1456 14.3467C11.7867 14.3467 14.7493 11.4075 14.7493 7.79431C14.7493 4.18116 11.7868 1.24124 8.14542 1.24124ZM12.1118 9.58898C12.0633 9.50951 11.9351 9.46151 11.7428 9.36604C11.55 9.27058 10.6032 8.80818 10.4272 8.74471C10.2507 8.68107 10.122 8.64907 9.99378 8.84018C9.8656 9.03147 9.49653 9.46151 9.384 9.58898C9.27164 9.7168 9.15947 9.7328 8.96676 9.63716C8.7744 9.54169 8.15413 9.33973 7.41867 8.68907C6.8464 8.18276 6.45991 7.55769 6.34756 7.36622C6.23538 7.17511 6.33582 7.07182 6.432 6.97671C6.51876 6.89102 6.62471 6.7536 6.72089 6.64213C6.81742 6.53049 6.84942 6.45102 6.91324 6.32338C6.97778 6.19591 6.9456 6.08444 6.89724 5.98862C6.84924 5.89316 6.46382 4.95307 6.30347 4.57049C6.14311 4.18827 5.98293 4.25191 5.8704 4.25191C5.75822 4.25191 5.62969 4.23591 5.50133 4.23591C5.37298 4.23591 5.16427 4.28373 4.98773 4.47484C4.81138 4.66613 4.31413 5.12836 4.31413 6.06827C4.31413 7.00836 5.00373 7.91662 5.10027 8.04391C5.19644 8.1712 6.43182 10.163 8.38916 10.928C10.3467 11.6926 10.3467 11.4375 10.6997 11.4055C11.0524 11.3737 11.8386 10.9435 11.9996 10.4976C12.1596 10.051 12.1596 9.66862 12.1118 9.58898Z" fill="#5C5C5C"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_6470_150662">
+                                                        <rect width="16" height="16" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
                             .portfolio__btns 
                                 .portfolio__ai 85%
                                 button(type="button" data-modalopen='resume').btn.btn_black.portfolio__fits.portfolio__fits-ai
@@ -1103,6 +1140,7 @@ html(lang="ru")
                     h2.modal__name 
                     button(type="button").modal__close.btn-icon 
                 .modal__avatar 
+                    img(src="", alt="avatar").modal__avatar-img
             .modal__wrapper(data-modal='resume') 
                 .modal__top 
                     .modal__die

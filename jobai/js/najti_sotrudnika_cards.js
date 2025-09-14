@@ -6,7 +6,7 @@ for (let i = 0; i < btnModalopenArray.length; i++) {
         const dataModalopen = btnModalOpen.dataset.modalopen
         modal.classList.add('modal_active')
         const modalWrapperArray = modal.querySelectorAll('.modal__wrapper')
-        const name = btnModalOpen.parentElement.parentElement.querySelector('.portfolio__title').textContent
+        const name = btnModalOpen.parentElement.parentElement.parentElement.querySelector('.portfolio__title').textContent
         for (let i = 0; i < modalWrapperArray.length; i++) {
             const modalWrapper = modalWrapperArray[i];
             if (modalWrapper.dataset.modal === dataModalopen) {
@@ -16,15 +16,10 @@ for (let i = 0; i < btnModalopenArray.length; i++) {
                 modalName.textContent = name
                 switch (modalWrapper.dataset.modal) {
                     case 'avatar':
-                        const modalAvatar = modal.querySelector('.modal__avatar')
                         const imgSrc = btnModalOpen.getAttribute('src')
-                        const modalAvatarImg = document.createElement('img')
-                        modalAvatarImg.classList.add('modal__avatar-img')
+                        const modalAvatarImg = modal.querySelector('.modal__avatar-img')
                         modalAvatarImg.setAttribute('src', imgSrc)
-                        modalAvatarImg.setAttribute('alt', 'avatar')
-                        modalAvatar.append(modalAvatarImg)
                         break;
-                    case 'resume':
                     default:
                         break;
                 }
@@ -124,9 +119,9 @@ for (let i = 0; i < portfolioPositionArray.length; i++) {
         const portfolioHeight = portfolio.scrollHeight
         let yOffset
         if (windowScreen > 899) {
-            yOffset = portfolioHeight - 391;
+            yOffset = portfolioHeight - 360;
         } else {
-            yOffset = portfolioHeight - 376;
+            yOffset = portfolioHeight - 320;
         }
         const y = portfolio.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y })
