@@ -88,3 +88,42 @@ for (let i = 0; i < btnLikeArray.length; i++) {
         btnLike.classList.toggle('btn_like-active')
     })
 }
+const portfolioStitleCopyArray = document.querySelectorAll('.portfolio__stitle-copy')
+for (let i = 0; i < portfolioStitleCopyArray.length; i++) {
+    const portfolioStitleCopy = portfolioStitleCopyArray[i];
+    portfolioStitleCopy.addEventListener('click', function(){
+        const textCopy = portfolioStitleCopy.parentElement.textContent
+        navigator.clipboard.writeText(textCopy)
+    })
+}
+const portfolioFitsAiArray = document.querySelectorAll('.portfolio__fits-ai')
+for (let i = 0; i < portfolioFitsAiArray.length; i++) {
+    const portfolioFitsAi = portfolioFitsAiArray[i];
+    portfolioFitsAi.addEventListener('click', function(){
+        const loader = portfolioFitsAi.parentElement.querySelector('.portfolio__loader')
+        const portfolioSuccess = portfolioFitsAi.parentElement.querySelector('.portfolio__fits-success')
+        portfolioFitsAi.classList.add('portfolio__fits-disabled')
+        loader.classList.add('portfolio__loader-loading')
+
+        function success() {
+            portfolioFitsAi.style.display = 'none'
+            loader.classList.remove('portfolio__loader-loading')
+            loader.classList.add('portfolio__loader-success')
+            portfolioSuccess.style.display = 'flex'
+        }
+        setTimeout(success, 5000)
+    })
+}
+const portfolioPositionArray = document.querySelectorAll('.portfolio__position')
+const sectionToleftBtn = document.querySelector('.section_toleft-btn')
+for (let i = 0; i < portfolioPositionArray.length; i++) {
+    const portfolioPosition = portfolioPositionArray[i];
+    portfolioPosition.addEventListener('click', function(){
+        const portfolioBtns = portfolioPosition.parentElement.querySelector('.portfolio__btns')
+        portfolioBtns.scrollIntoView()
+    })
+}
+sectionToleftBtn.addEventListener('click', function(){
+    console.log(window.scrollY)
+    window.scrollTo(0, 0)
+})

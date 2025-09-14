@@ -272,13 +272,13 @@ html(lang="ru")
                                         h2.section__title Тип занятости:
                                         .tags
                                             .tag
-                                                input.tag__input#employment-full(type="checkbox", name="employment-full" value='полная занятость')
+                                                input.tag__input#employment-full(type="radio", name="employment" value='полная занятость')
                                                 label.tag__label(for="employment-full") полная занятость
                                             .tag
-                                                input.tag__input#employment-part(type="checkbox", name="employment-part" value='частичная занятость')
+                                                input.tag__input#employment-part(type="radio", name="employment" value='частичная занятость')
                                                 label.tag__label(for="employment-part") частичная занятость
                                             .tag
-                                                input.tag__input#employment-project(type="checkbox", name="employment-project" value='проектная работа')
+                                                input.tag__input#employment-project(type="radio", name="employment" value='проектная работа')
                                                 label.tag__label(for="employment-project") проектная работа
                                     .section__item
                                         h2.section__title Формат работы:
@@ -299,22 +299,22 @@ html(lang="ru")
                                         h2.section__title Опыт работы:
                                         .tags
                                             .tag
-                                                input.tag__input#experience-no(type="checkbox", name="experience-no" value='без опыта')
+                                                input.tag__input#experience-no(type="radio", name="experience" value='без опыта')
                                                 label.tag__label(for="experience-no") без опыта
                                             .tag
-                                                input.tag__input#experience-1(type="checkbox", name="experience-1" value='менее 1 года')
+                                                input.tag__input#experience-1(type="radio", name="experience" value='менее 1 года')
                                                 label.tag__label(for="experience-1") менее 1 года
                                             .tag
-                                                input.tag__input#experience-3(type="checkbox", name="experience-3" value='от 1 до 3 лет')
+                                                input.tag__input#experience-3(type="radio", name="experience" value='от 1 до 3 лет')
                                                 label.tag__label(for="experience-3") от 1 до 3 лет
                                             .tag
-                                                input.tag__input#experience-5(type="checkbox", name="experience-5" value='от 3 до 5 лет')
+                                                input.tag__input#experience-5(type="radio", name="experience" value='от 3 до 5 лет')
                                                 label.tag__label(for="experience-5") от 3 до 5 лет
                                             .tag
-                                                input.tag__input#experience-10(type="checkbox", name="experience-10" value='от 5 до 10 лет')
+                                                input.tag__input#experience-10(type="radio", name="experience" value='от 5 до 10 лет')
                                                 label.tag__label(for="experience-10") от 5 до 10 лет
                                             .tag
-                                                input.tag__input#experience-more(type="checkbox", name="experience-more" value='более 10 лет')
+                                                input.tag__input#experience-more(type="radio", name="experience" value='более 10 лет')
                                                 label.tag__label(for="experience-more") более 10 лет
                                     .section__item
                                         h2.section__title Возраст кандидатов:
@@ -330,6 +330,7 @@ html(lang="ru")
                                         label(for="citizenship").select__title Гражданство
                                         .options 
                                             .options__wrapper
+                                                .option Не важно
                                                 .option Российская Федерация
                                                 .option Республика Казахстан 
                                                 .option Республика Беларусь
@@ -348,25 +349,26 @@ html(lang="ru")
                                         label(for="education").select__title Образование
                                         .options 
                                             .options__wrapper
+                                                .option Не важно
                                                 .option Высшее
-                                                .option Средне-специальное
+                                                .option Среднее
+                                                .option Среднее специальное
                                                 .option Профессионально-техническое
-                                                .option Общее среднее
-                                                .option Базовое
+                                                .option Другое
                                     .section__item
                                         h2.section__title Испытательный период:
                                         .tags
                                             .tag
-                                                input.tag__input#trial-no(type="checkbox", name="trial-no" value='без периода')
+                                                input.tag__input#trial-no(type="radio", name="trial" value='без периода')
                                                 label.tag__label(for="trial-no") без периода
                                             .tag
-                                                input.tag__input#trial-1(type="checkbox", name="trial-1" value='до 1 месяца')
+                                                input.tag__input#trial-1(type="radio", name="trial" value='до 1 месяца')
                                                 label.tag__label(for="trial-1") до 1 месяца
                                             .tag
-                                                input.tag__input#trial-3(type="checkbox", name="trial-3" value='до 3 месяцев')
+                                                input.tag__input#trial-3(type="radio", name="trial" value='до 3 месяцев')
                                                 label.tag__label(for="trial-3") до 3 месяцев
                                             .tag
-                                                input.tag__input#trial-more(type="checkbox", name="trial-more" value='более 3 месяцев')
+                                                input.tag__input#trial-more(type="radio", name="trial" value='более 3 месяцев')
                                                 label.tag__label(for="trial-more") более 3 месяцев 
                                 .section__tabs
                                     button(type="button", data-nav='job-responsibilities').btn.btn_h48.btn_tertiary.section__nav Назад

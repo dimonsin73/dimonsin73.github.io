@@ -607,7 +607,7 @@ for (let i = 0; i < optionEducationArr.length; i++) {
     const optionEducation = optionEducationArr[i];
     optionEducation.addEventListener('click', function(){
         const optionEducationValue = optionEducation.textContent
-        if (optionEducationValue != 'Без образования') {
+        if (optionEducationValue != 'Не важно') {
             selectEducation.classList.add('section__item-withbtn')
             sectionShow.classList.add('section__show-active')
             sectionEducation.classList.add('section__education-active')
