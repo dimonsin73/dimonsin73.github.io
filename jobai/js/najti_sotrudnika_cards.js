@@ -127,6 +127,7 @@ for (let i = 0; i < portfolioPositionArray.length; i++) {
         window.scrollTo({ top: y })
     })
 }
+/*
 const portfolioBtnArray = document.querySelectorAll('.portfolio__view')
 for (let i = 0; i < portfolioBtnArray.length; i++) {
     const portfolioBtn = portfolioBtnArray[i];
@@ -140,3 +141,4 @@ for (let i = 0; i < portfolioBtnArray.length; i++) {
 sectionToleftBtn.addEventListener('click', function(){
     window.scrollTo(0, 0)
 })
+    */
