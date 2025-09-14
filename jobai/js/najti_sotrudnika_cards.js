@@ -6,7 +6,7 @@ for (let i = 0; i < btnModalopenArray.length; i++) {
         const dataModalopen = btnModalOpen.dataset.modalopen
         modal.classList.add('modal_active')
         const modalWrapperArray = modal.querySelectorAll('.modal__wrapper')
-        const name = btnModalOpen.parentElement.parentElement.parentElement.querySelector('.portfolio__title').textContent
+        const name = btnModalOpen.parentElement.parentElement.querySelector('.portfolio__title').textContent
         for (let i = 0; i < modalWrapperArray.length; i++) {
             const modalWrapper = modalWrapperArray[i];
             if (modalWrapper.dataset.modal === dataModalopen) {
@@ -16,15 +16,26 @@ for (let i = 0; i < btnModalopenArray.length; i++) {
                 modalName.textContent = name
                 switch (modalWrapper.dataset.modal) {
                     case 'avatar':
-                        const imgSrc = btnModalOpen.getAttribute('src')
-                        const modalAvatarImg = modal.querySelector('.modal__avatar-img')
-                        modalAvatarImg.setAttribute('src', imgSrc)
+                        const img = btnModalOpen.querySelector('.portfolio__avatar-img')
+                        if (img != null) {
+                            const imgSrc = img.getAttribute('src')
+                            const modalAvatar = modal.querySelector('.modal__avatar')
+                            const modalAvatarImg = document.createElement('img')
+                            modalAvatarImg.classList.add('modal__avatar-img')
+                            modalAvatarImg.setAttribute('src', imgSrc)
+                            modalAvatar.append(modalAvatarImg)
+                        }
                         break;
                     default:
                         break;
                 }
                 modalClose.addEventListener('click', function(){
                     modal.classList.remove('modal_active')
+                    const modalAvatarImg = modal.querySelector('.modal__avatar-img')
+                    if (modalAvatarImg != null) {
+                        modalAvatarImg.remove()
+                    }
+                    
                 })
             } else {
                 modalWrapper.classList.remove('modal__wrapper-active')

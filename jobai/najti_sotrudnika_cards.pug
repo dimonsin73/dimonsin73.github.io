@@ -353,9 +353,9 @@ html(lang="ru")
                                 .portfolio__info
                                     p.portfolio__status.portfolio__status-green Рассматривает предложения
                                     p.portfolio__info-text был 12.09.2025, 13:45
-                                    .portfolio__avatar 
+                                    .portfolio__avatar.btn-modalopen(data-modalopen='avatar')
                                         .portfolio__avatar-bg
-                                        img(src="images/kuznecov/avatars/kuznecov.png", alt="avatar" data-modalopen='avatar').portfolio__avatar-img.btn-modalopen
+                                        img(src="images/kuznecov/avatars/kuznecov.png", alt="avatar").portfolio__avatar-img
                                 .portfolio__top 
                                     .portfolio__col.portfolio__main-mr
                                         h2.portfolio__title Кузнецов Владимир Михайлович
@@ -580,9 +580,9 @@ html(lang="ru")
                                 .portfolio__info
                                     p.portfolio__status.portfolio__status-red Не ищет работу
                                     p.portfolio__info-text была 10.09.2025, 11:45
-                                    .portfolio__avatar 
+                                    .portfolio__avatar.btn-modalopen(data-modalopen='avatar')
                                         .portfolio__avatar-bg
-                                        img(src="images/mihajlova/avatars/mihajlova.png", alt="avatar" data-modalopen='avatar').portfolio__avatar-img.btn-modalopen
+                                        img(src="images/mihajlova/avatars/mihajlova.png", alt="avatar").portfolio__avatar-img
                                 .portfolio__top
                                     .portfolio__col.portfolio__main-mr
                                         h2.portfolio__title Михайлова Татьяна Сергеевна
@@ -746,7 +746,7 @@ html(lang="ru")
                                 .portfolio__info
                                     p.portfolio__status.portfolio__status-blue Активно ищет работу
                                     p.portfolio__info-text была 07.09.2025, 11:45
-                                    .portfolio__avatar 
+                                    .portfolio__avatar.btn-modalopen.btn-modalopen(data-modalopen='avatar')
                                         .portfolio__avatar-bg
                                 .portfolio__top
                                     .portfolio__col.portfolio__main-mr
@@ -877,9 +877,8 @@ html(lang="ru")
                                 .portfolio__info
                                     p.portfolio__status.portfolio__status-blue Активно ищет работу
                                     p.portfolio__info-text была 07.09.2025, 11:45
-                                    .portfolio__avatar 
+                                    .portfolio__avatar.btn-modalopen(data-modalopen='avatar')
                                         .portfolio__avatar-bg
-                                    
                                 .portfolio__top
                                     .portfolio__col.portfolio__main-mr
                                         h2.portfolio__title Богданова Екатерина Тимофеевна
@@ -1009,7 +1008,7 @@ html(lang="ru")
                                 .portfolio__info
                                     p.portfolio__status.portfolio__status-blue Активно ищет работу
                                     p.portfolio__info-text была 07.09.2025, 11:45
-                                    .portfolio__avatar 
+                                    .portfolio__avatar.btn-modalopen(data-modalopen='avatar') 
                                         .portfolio__avatar-bg
                                 .portfolio__top
                                     .portfolio__col.portfolio__main-mr
@@ -1140,7 +1139,7 @@ html(lang="ru")
                     h2.modal__name 
                     button(type="button").modal__close.btn-icon 
                 .modal__avatar 
-                    img(src="", alt="avatar").modal__avatar-img
+                    .modal__avatar-bg 
             .modal__wrapper(data-modal='resume') 
                 .modal__top 
                     .modal__die
