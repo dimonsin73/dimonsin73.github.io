@@ -126,13 +126,13 @@ for (let i = 0; i < portfolioPositionArray.length; i++) {
     const portfolioPosition = portfolioPositionArray[i];
     portfolioPosition.addEventListener('click', function(){
         const windowScreen = screen.width
-        const portfolio = portfolioPosition.parentElement
+        const portfolio = portfolioPosition.parentElement.parentElement
         const portfolioHeight = portfolio.scrollHeight
         let yOffset
         if (windowScreen > 899) {
             yOffset = portfolioHeight - 360;
         } else {
-            yOffset = portfolioHeight - 320;
+            yOffset = portfolioHeight - 291;
         }
         const y = portfolio.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y })
@@ -141,16 +141,3 @@ for (let i = 0; i < portfolioPositionArray.length; i++) {
 sectionToleftBtn.addEventListener('click', function(){
     window.scrollTo(0, 0)
 })
-/*
-const portfolioBtnArray = document.querySelectorAll('.portfolio__view')
-for (let i = 0; i < portfolioBtnArray.length; i++) {
-    const portfolioBtn = portfolioBtnArray[i];
-    portfolioBtn.addEventListener('click', function(){
-        const portfolio = portfolioBtn.parentElement
-        const portfolioHeight = portfolio.scrollHeight
-        const x = window.pageYOffset - portfolioHeight + portfolio.getBoundingClientRect().top
-        window.scrollTo({ top: x })
-    })
-}
-
-    */

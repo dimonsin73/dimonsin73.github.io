@@ -1,0 +1,2552 @@
+:root
+    --Primary-10: #003B73
+    --Primary-20: #004C95
+    --Primary-30: #005EB8
+    --Primary-40: #006FD8 
+    --Primary-50: #0095FF
+    --Primary-60: #199FFF
+    --Primary-70: #3FAFFF
+    --Primary-80: #66BFFF
+    --Primary-90: #8FD0FF
+    --Primary-100: #B8E1FF
+    --Gray-10: #3F3F45
+    --Gray-20: #53535A
+    --Gray-30: #65656F
+    --Gray-40: #898990
+    --Gray-50: #A0A1A9
+    --Gray-60: #B4B5BE
+    --Gray-70: #C7C9CF
+    --Gray-80: #DBDDE1
+    --Gray-90: #E6E8EC
+    --Gray-100: #F2F3F5
+    --White: #FFF
+    --Black: #202123
+    --Aside: #E7E8EA
+    --Icons: #6A6A73
+    --Yellow: #FFCC00
+    --Green: #34C759
+    --Red: #FF3B30
+    --Red-error: #FF0034
+    --Scrollbar: #D9D9D9
+
+@mixin headline-large
+    font: 700 40px/48px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin headline-medium
+    font: 700 30px/36px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin headline-small
+    font: 700 22px/30px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin title-large
+    font: 600 20px/28px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin title-medium
+    font: 600 16px/22px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin title-small
+    font: 600 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-extralarge
+    font: 500 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin subtitle-large
+    font: 500 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin subtitle-medium
+    font: 500 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-small
+    font: 500 10px/14px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin body-large
+    font: 400 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin body-medium
+    font: 400 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin body-small
+    font: 400 13px/16px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin label-large
+    font: 600 13px/18px 'Inter', 'sans-serif'
+    letter-spacing: +0.1em
+    text-transform: uppercase
+@mixin label-medium
+    font: 600 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: +0.1em
+    text-transform: uppercase
+@mixin label-small
+    font: 600 11px/16px 'Inter', 'sans-serif'
+    letter-spacing: +0.12em
+    text-transform: uppercase
+@mixin text-medium 
+    font: 500 14px/20px 'Inter', 'sans-serif'    
+@mixin link-large 
+    font: 500 20px/28px 'Inter', 'sans-serif'
+@mixin link-medium 
+    font: 500 14px/21px 'Inter', 'sans-serif'
+@mixin link-xsmall 
+    font: 500 12px/18px 'Inter', 'sans-serif'
+@mixin link-small
+    font: 300 14px/16px 'Inter', 'sans-serif'
+@mixin btn-big 
+    font: 600 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.03em
+@mixin btn-medium 
+    font: 600 15px/22px 'Inter', 'sans-serif'
+    letter-spacing: 0.01em
+@mixin btn-small
+    font: 600 13px/20px 'Inter', 'sans-serif'
+    letter-spacing: 0.03em
+@mixin number
+    font: 700 11px/16px 'Inter', 'sans-serif'
+    letter-spacing: 0.01em
+
+// GENERAL
+html 
+    scroll-behavior: smooth
+.main 
+    position: relative
+    margin-left: 250px
+    margin-top: 64px
+    transition: margin-left 0.3s ease
+    &_active 
+        margin-left: 0
+@media (max-width: 1409px) 
+    .main 
+        margin-left: 0
+.container
+    width: 100%
+    margin: 0 auto
+    &_video
+        max-width: 1240px
+        transition: max-width 0.3s ease
+        &-active 
+            max-width: 1920px
+    &_medium
+        max-width: 1090px
+    &_small 
+        max-width: 726px
+    &_extrasmall
+        max-width: 600px
+.bg
+    background-color: var(--Gray-100)
+.title 
+    @include headline-large
+    color: var(--Black)
+.btn 
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 6px
+    width: max-content
+    padding: 15px 23px
+    border-radius: 12px
+    @include btn-big
+    font-size: 15px
+    white-space: nowrap
+    &_h48 
+        padding: 11px 23px
+    &_150
+        max-width: 150px
+        width: 100%
+    &_160
+        max-width: 160px
+        width: 100%
+    &_240
+        max-width: 240px
+        width: 100%
+    &_primary 
+        border: 1px solid var(--Primary-40)
+        background-color: var(--Primary-40)
+        color: var(--White)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        &:hover 
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30) 
+        &:active
+            border: 1px solid var(--Primary-20)
+            background-color: var(--Primary-20)
+    &_secondary 
+        border: 1px solid var(--Gray-80)
+        background-color: var(--Gray-80)
+        color: var(--Black)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        &:hover 
+            border: 1px solid var(--Gray-70)
+            background-color: var(--Gray-70)
+        &:active
+            border: 1px solid var(--Gray-60)
+            background-color: var(--Gray-60)
+    &_tertiary
+        border: 1px solid var(--Black)
+        color: var(--Black)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        & path 
+            fill: var(--Black)
+            transition: fill 0.3s ease
+        &:hover 
+            border: 1px solid var(--Primary-40)
+            background-color: var(--Primary-40)
+            color: var(--White)
+            & path 
+                fill: var(--White)
+        &:active
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+            color: var(--White)
+    &_quaternary 
+        border: 1px solid var(--Primary-40)
+        color: var(--Primary-40)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        &:hover 
+            border: 1px solid var(--Primary-40)
+            background-color: var(--Primary-40)
+            color: var(--White)
+        &:active
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+            color: var(--White)
+    &_black 
+        padding: 11px
+        border: 0.5px solid var(--Black)
+        border-radius: 8px
+        @include title-small
+        color: var(--Black)
+        transition: background-color 0.3s ease, color 0.3s ease
+        & path 
+            stroke: var(--Black)
+            transition: stroke 0.3s ease
+        &:hover 
+            background-color: var(--Black)
+            color: var(--White)
+            & path 
+                stroke: var(--White)
+    &_white
+        padding: 11px 23px
+        border: 0.5px solid var(--White)
+        border-radius: 8px
+        box-shadow: 0px 1px 8px 0px #0000001A
+        background-color: var(--White)
+        @include title-small
+        color: var(--Gray-10)
+        transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease
+        & path 
+            stroke: var(--Gray-10)
+            transition: stroke 0.3s ease
+        &-hide
+            display: none
+        &:hover 
+            border: 0.5px solid var(--Gray-100)
+            background-color: var(--Gray-100)
+            color: var(--Black)
+            & path 
+                stroke: var(--Black)
+        &-active
+            border: 0.5px solid var(--Black)
+            box-shadow: 0px 2px 16px 0px #00000033
+            background-color: var(--Black)
+            color: var(--White)
+            & path 
+                stroke: var(--White)
+            &:hover 
+                border: 0.5px solid var(--Gray-10)
+                background-color: var(--Gray-10)
+                color: var(--White)
+                & path 
+                    stroke: var(--White)
+            & .btn_white-hide
+                display: block
+    &_blue 
+        padding: 11px 23px
+        border: 0.5px solid var(--Primary-40)
+        border-radius: 8px
+        background-color: var(--Primary-40)
+        @include title-small
+        color: var(--White)
+        transition: background-color 0.3s ease, border 0.3s ease
+        & path 
+            stroke: var(--White)
+        &:hover 
+            border: 0.5px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+        &:active 
+            border: 0.5px solid var(--Primary-20)
+            background-color: var(--Primary-20)
+    &-icon 
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 0 0 auto
+    &-icon48
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 0 0 auto
+        padding: 11px
+    &-icon48
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 0 0 auto
+        padding: 11px
+    &_center 
+        margin: 0 auto
+    &_full 
+        width: 100%
+        justify-content: flex-start
+    &:disabled 
+        opacity: 0.3
+    &_like 
+        &-active 
+            & path
+                stroke: var(--Red)
+                fill: var(--Red)
+                transition: stroke 0.3s ease, fill 0.3s ease
+            &:hover 
+                & path
+                    stroke: var(--Red)
+                    fill: var(--Red)
+.link 
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 6px
+    &-large 
+        @include link-large
+        text-underline-offset: 3px
+        color: var(--Black)
+        cursor: pointer
+    &-medium 
+        @include link-medium
+        text-align: center
+        text-underline-offset: 3px
+        color: var(--Black)
+        cursor: pointer
+    &-xsmall
+        @include link-xsmall
+        text-align: center
+        color: var(--Gray-30)
+        cursor: pointer
+.total-found
+    position: absolute
+    bottom: 4px
+    display: flex
+    align-items: center
+    gap: 4px
+    &-text 
+        font: 400 11px/14px "inter", "sans-serif"
+        color: var(--Gray-30)
+    &-number 
+        @include number
+        color: var(--Gray-30)
+.press 
+    &-right 
+        margin-left: auto
+.input 
+    width: 100%
+    padding: 18px 12px
+    border-radius: 12px
+    background-color: var(--Gray-100)
+    @include body-large
+    color: var(--Black)
+    outline: none
+    transition: background-color 0.3s ease
+    &__help 
+        position: absolute
+        left: 0
+        right: 0
+        top: calc(100% + 8px)
+        display: flex
+        flex-direction: column
+        height: 0
+        box-shadow: 0px 2px 16px 0px #00000033
+        background-color: var(--White)
+        overflow: hidden
+        transition: height 0.3s ease
+        z-index: 10
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 2px
+            padding: 14px
+            &:hover 
+                background-color: var(--Gray-100)                 
+        &-title 
+            @include subtitle-large
+            color: var(--Black)
+        &-text 
+            @include body-small
+            color: var(--Gray-20)
+    &::placeholder 
+        @include body-small
+        color: var(--Gray-30)
+    &_number 
+        text-align: center
+    &:focus 
+        background-color: var(--White)
+        outline: 2px solid var(--Gray-40)
+        & ~ .input__help 
+            height: 198px
+
+    
+.label 
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 4px
+    &__input 
+        padding: 24px 12px 8px
+    &__title 
+        position: absolute
+        top: 16px
+        left: 12px
+        @include body-large
+        color: var(--Gray-30)
+        transition: top 0.3s ease, font 0.3s ease
+        z-index: 1
+        &-textarea 
+            top: 8px
+        &-icon 
+            left: 44px
+    &__textarea 
+        width: 100%
+        height: 136px
+        padding: 44px 12px 8px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        @include body-large
+        color: var(--Black)
+        outline: none
+        resize: none
+        transition: padding 0.3s ease
+        &::placeholder 
+            @include body-medium
+        &-big
+            height: 181px
+        &-extrabig
+            height: 361px
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__flyingtext 
+        position: absolute
+        top: 24px 
+        left: 24px
+        display: none
+        @include body-large
+        color: var(--Black)
+    &__clue 
+        position: absolute
+        top: 50%
+        right: -40px
+        transform: translateY(-50%)
+    &__top
+        position: absolute
+        left: 50%
+        top: -26px
+        @include body-medium
+        color: var(--Gray-10)
+        transform: translateX(-50%)
+    &-active 
+        & .label__title
+            top: 8px
+            @include body-small
+        & .label__textarea 
+            padding: 28px 12px 8px
+        & .label__flyingtext 
+            display: block
+    &_error
+        &-text 
+            position: absolute
+            bottom: -16px
+            display: none
+            font: 400 12px/16px 'Inter', 'sans-serif'
+            color: var(--Red-error)
+        & .label__input
+            outline: 2px solid var(--Red-error)
+        & .label_error-text
+            display: block
+.textarea 
+    width: 100%
+    height: 60px
+    padding: 20px 12px
+    border-radius: 12px
+    background-color: var(--Gray-100)
+    @include text-medium
+    color: var(--Black)
+    outline: none
+    resize: none
+    &::placeholder 
+        @include body-small
+        color: var(--Gray-30)
+    &_adjustment
+        display: -webkit-box
+        padding: 0px 54px 0 12px
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+        line-height: 60px
+        overflow: hidden
+        transition: height 0.3s ease, line-height 0.3s ease
+        &::placeholder 
+            line-height: 60px
+        &-active 
+            display: -webkit-box
+            height: 500px
+            padding: 20px 54px 20px 10px
+            line-height: 20px
+            -webkit-line-clamp: 23
+            -webkit-box-orient: vertical
+            overflow: hidden
+            &::placeholder
+                line-height: 20px
+.select 
+    position: relative
+    &__input 
+        background: 
+            image: url('../images/icons/chevron_down.png')
+            position: center right 20px
+            repeat: no-repeat
+        cursor: pointer
+    &__title 
+        position: absolute
+        top: 16px
+        left: 12px
+        @include body-large
+        color: var(--Gray-30)
+        transition: top 0.3s ease, font 0.3s ease
+        &-active 
+            top: 8px
+            @include body-small
+    &_up 
+        & .select__input 
+            padding: 24px 12px 8px
+            @include body-large
+    &__box 
+        display: flex
+        flex-direction: column
+        gap: 8px
+        padding-left: 14px
+        &-vert 
+            padding-top: 10px
+            padding-bottom: 10px
+.options 
+    position: absolute
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 0
+    margin-top: 10px 
+    border-radius: 16px
+    box-shadow: 0px 2px 16px 0px #00000033
+    background-color: var(--White)
+    overflow: hidden
+    transition: height 0.3s ease
+    z-index: 10
+    &__wrapper 
+        padding: 16px
+    &_active 
+        height: 176px
+        overflow-y: scroll
+.option 
+    padding: 14px 12px 
+    border-radius: 8px
+    @include text-medium
+    color: var(--Black)
+    cursor: pointer
+    &:hover 
+        background-color: var(--Gray-100)
+.range 
+    display: flex
+    align-items: center
+    column-gap: 12px
+    &__input 
+        appearance: none
+        max-width: 666px
+        width: 100%
+        height: 30px
+        border: none
+        overflow: hidden
+        transition: opacity 0.3s ease
+        cursor: pointer
+        &::-webkit-slider-thumb
+            appearance: none
+            background-color: var(--Primary-40)
+            border-radius: 50%
+            height: 28px
+            width: 28px
+            margin-top: -12px
+            box-shadow: calc(-100vmax - 28px) 0 0 100vmax var(--Primary-40)
+            clip-path: polygon(100% 0, 1px 0, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 1px 100%, 100% 100%)
+        &::-moz-range-thumb
+            appearance: none
+            background-color: var(--Primary-40)
+            border-radius: 50%
+            height: 28px
+            width: 28px
+            margin-top: -12px
+            box-shadow: calc(-100vmax - 28px) 0 0 100vmax var(--Primary-40)
+            clip-path: polygon(100% 0, 1px 0, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 1px 100%, 100% 100%)
+        &::-webkit-slider-runnable-track
+            height: 6px
+            border-radius: 3px
+            background-color: rgba(0, 0, 0, 0.20)
+        &-disabled 
+            opacity: 0.3
+    &__conclusion 
+        position: relative
+        &-text 
+            position: absolute
+            bottom: -12px
+            left: 50% 
+            @include subtitle-medium
+            color: var(--Primary-40)
+            white-space: nowrap
+            transform: translateX(-50%)
+        &-disabled 
+            opacity: 0.3
+    &__number 
+        width: 85px
+        @include headline-medium
+        color: var(--Primary-40)
+        text-align: center
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__explanation
+        display: flex
+        align-items: center
+        gap: 4px
+.clue 
+    position: relative
+    display: flex
+    flex: 0 0 auto
+    cursor: pointer
+    &__wrapper 
+        position: absolute
+        bottom: calc( 100% + 4px)
+        left: -150px
+        display: none
+        flex-direction: column
+        gap: 4px
+        width: 300px
+        padding: 10px
+        border-radius: 8px
+        background-color: var(--Gray-90)
+        z-index: 40
+        &-small 
+            width: max-content
+            max-width: 300px
+        &-bottom 
+            top: calc( 100% + 4px )
+            bottom: auto
+        &-active 
+            display: flex
+    &__text 
+        @include subtitle-large
+        color: var(--Gray-30)
+        &-center 
+            text-align: center
+    &__list 
+        margin-left: 8px
+        padding-left: 16px
+        &-item 
+            list-style-type: disc
+            &::marker 
+                color: var(--Gray-30)
+    &__accounting
+        display: none
+        &-active 
+            display: block
+.switch 
+    position: relative
+    display: inline-block
+    flex: 0 0 auto
+    width: 51px
+    height: 31px
+    &__input 
+        display: none
+    &__slider 
+        position: absolute
+        cursor: pointer
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: rgba(0, 0, 0, 0.20)
+        -webkit-transition: .3s
+        transition: .3s
+        &:before 
+            position: absolute
+            content: ""
+            height: 27px
+            width: 27px
+            left: 2px
+            bottom: 2px
+            background-color: white
+            -webkit-transition: .3s
+            transition: .3s
+    &__input:checked + .switch__slider
+        background:
+            color: var(--Primary-40)
+    &__input:checked + .switch__slider:before 
+        -webkit-transform: translateX(20px)
+        -ms-transform: translateX(20px)
+        transform: translateX(20px)
+    &__round 
+        border-radius: 25px
+    &__round:before 
+        border-radius: 50%
+.check 
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .check__label .check__check
+            background:
+                color: var(--Black)
+                image: url(../images/icons/check.png)
+    &__label 
+        display: flex
+        justify-content: start
+        column-gap: 8px
+    &__check 
+        flex: 0 0 auto
+        width: 20px
+        height: 20px
+        border: 1px solid var(--Black)
+        border-radius: 4px 
+        background:
+            repeat: no-repeat
+            position: center center
+        transition: background 0.3s ease
+    &__info 
+        display: flex
+        flex-direction: column
+        gap: 4px
+    &__title 
+        margin-top: -2px
+        @include title-medium
+        color: var(--black)
+    &__text 
+        @include subtitle-large
+        color: var(--Gray-30)
+.radio
+    &__input
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked 
+            & ~ .radio__label
+                border: 2px solid var(--Primary-40)
+            & ~ .radio__label .radio__check
+                border: 7px solid var(--Primary-40)
+            & ~ .radio__label .radio__title
+                color: var(--Primary-40)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        align-items: center
+        column-gap: 16px
+        padding: 20px 24px
+        border: 2px solid var(--Gray-60)
+        border-radius: 8px
+        transition: border 0.3s linear
+    &__check 
+        width: 20px
+        height: 20px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+        transition: border 0.3s linear
+    &__title 
+        @include title-medium
+        color: var(--Gray-20)
+        transition: color 0.3s ease
+.tax 
+    &__radio 
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked ~ .tax__label .tax__check
+            border: 7px solid var(--Black)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        column-gap: 16px
+        row-gap: 4px
+    &__check 
+        grid-row: span 2
+        width: 20px
+        height: 20px
+        margin-top: 2px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+        transition: border 0.3s linear
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__text        
+        @include subtitle-large
+        color: var(--Gray-30)
+.tabs 
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    align-items: stretch
+    gap: 24px
+.tab 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 12px
+    padding: 12px
+    border-radius: 12px
+    box-shadow: 0px 2px 16px 0px #00000033
+    background-color: var(--White)
+    &__icon 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 40px
+        height: 40px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        & path 
+            fill: var(--Icons)
+            transition: fill 0.3s ease
+    &__text 
+        @include title-small
+        color: var(--Gray-20)
+        text-align: left
+        transition: color 0.3s ease
+    &_active 
+        & .tab__icon 
+            & path 
+                fill: var(--Primary-40)
+        & .tab__text 
+            color: var(--Primary-40)
+.tags // TAGS
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    gap: 14px
+.tag 
+    display: flex
+    &__label
+        padding: 7px 16px 7px 42px
+        border: 1px solid var(--Gray-70)
+        border-radius: 18px
+        background:
+            color: var(--Gray-100)
+            image: url(../images/icons/plus.png)
+            repeat: no-repeat
+            position: left 16px center
+        @include subtitle-large
+        color: var(--Gray-20)
+        transition: all 0.3s ease
+        &:hover
+            background-color: var(--Gray-80)
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .tag__label
+            background:
+                color: var(--Gray-20)
+                image: url(../images/icons/check.png)
+            color: var(--White)
+            &:hover
+                background-color: var(--Gray-20)
+::-webkit-scrollbar 
+    width: 5px
+    background-color: #ffffff00
+::-webkit-scrollbar-thumb 
+    border-radius: 5px
+    background-color: var(--Scrollbar)
+::-webkit-scrollbar-track 
+    margin: 8px 0
+    background-color: #ffffff00
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button 
+    -webkit-appearance: none
+    margin: 0
+input[type="number"] 
+    -moz-appearance: textfield
+input[type="number"]:hover,
+input[type="number"]:focus 
+    -moz-appearance: number-input
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button 
+    -webkit-appearance: none
+    margin: 0
+#currency 
+    padding: 16px 12px
+// GENERAL END
+
+.aside // ASIDE 
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    display: flex
+    flex-direction: column
+    width: 250px
+    height: 100%
+    border-right: 1px solid var(--Aside)
+    background-color: var(--Gray-100)
+    z-index: 300
+    transition: left 0.3s ease
+    &_off
+        left: -250px
+    &_active 
+        left: 0
+    &__logo
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        height: 80px
+        &-img
+            width: 78px
+    &__list 
+        display: flex
+        flex-direction: column
+        gap: 10px
+        margin-right: 10px
+        padding: 10px 
+        &-line 
+            border-bottom: 1px solid var(--Gray-80)
+        &-bottom 
+            margin-top: auto
+    &__link
+        display: flex
+        align-items: center
+        gap: 10px
+        width: 100%
+        height: 40px
+        padding: 8px 10px 
+        border-radius: 10px
+        font: 600 13px/17px 'Inter', 'sans-serif'
+        letter-spacing: +0.03em
+        color: var(--Gray-30)
+        transition: background-color 0.3s ease, color 0.3s ease
+        & svg 
+            flex: 0 0 auto
+        & path
+            fill: var(--Icons)
+            transition: fill 0.3s ease
+        &-active
+            background-color: var(--Aside)
+            color: var(--Black)
+            & path  
+                fill: var(--Black)
+@media (max-width: 1429px)
+    .aside 
+        left: -250px
+        &_active 
+            left: 0
+// ASIDE END
+.header // HEADER
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 24px
+    padding: 9px 32px
+    z-index: 200
+    &__logo 
+        width: 78px
+        height: 30px
+    &__line 
+        width: 1px
+        height: 32px
+        background-color: var(--Gray-90)
+    &__access 
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 1px 17px
+        border: 1px solid var(--Gray-80)
+        border-radius: 8px
+    &__text 
+        @include text-medium
+        color: var(--Black)
+    &__span 
+        font: 500 12px/17px 'Inter', 'sans-serif'
+        color: var(--Gray-40)
+    &__avatar 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 46px
+        height: 46px
+        border-radius: 13px
+        background: var(--Gray-80)
+        &-text 
+            font: 500 12px/17px 'Inter', 'sans-serif'
+            color: var(--Black)
+.bulb 
+    & path 
+        fill: var(--Icons)
+    &_yellow 
+        & path 
+            fill: var(--Yellow)
+    &_green
+        & path 
+            fill: var(--Green)
+    &_red
+        & path 
+            fill: var(--Red)
+.message 
+    width: 30px
+.bell
+    width: 30px
+.notifications 
+    position: absolute
+    top: -8px
+    left: 14px
+    min-width: 18px
+    padding: 0 3px
+    border: 1px solid var(--White)
+    border-radius: 9px
+    background-color: var(--Primary-50)
+    &__number 
+        @include number
+        color: var(--White)
+// HEADER END
+.section // SECTION 
+    display: none
+    padding: 10px 16px 24px
+    &_active
+        display: block
+    &__g24 
+        display: flex
+        flex-direction: column
+        gap: 24px
+    &_toleft 
+        display: grid
+        grid-template-columns: 1090px 48px
+        align-items: end
+        justify-content: center
+        gap: 16px
+        padding: 10px 
+        padding-bottom: 24px
+        &-btn 
+            position: sticky
+            right: 0
+            bottom: 24px
+            background-color: var(--White)
+    &__form 
+        display: flex
+        flex-direction: column
+        gap: 20px
+        width: 100%
+        &-title 
+            @include title-large
+            color: var(--Black)
+        &-subtitle
+            @include title-medium
+            color: var(--Black)
+    &__tabs 
+        display: flex
+        gap: 16px
+    &__tab 
+        display: none
+        flex-direction: column
+        gap: 24px
+        align-items: stretch
+        &-active 
+            display: flex
+    &__top 
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        margin-bottom: 20px
+    &__head 
+        display: flex
+        flex-direction: column
+        &-top
+            display: flex
+            justify-content: space-between
+            padding: 10px 16px
+        &-bottom 
+            display: grid
+            grid-template-rows: 1fr 1fr
+            grid-template-columns: 1fr 1fr 1fr 1fr
+            grid-auto-flow: column
+            row-gap: 10px
+            padding: 10px 16px
+        &-title 
+            @include headline-small
+            color: var(--Black)
+        &-subtitle 
+            @include title-small
+            color: var(--Black)
+        &-text 
+            @include subtitle-small
+            color: var(--Gray-40)
+    &__wrapper 
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 32px 
+        border-radius: 12px
+        background-color: var(--White)
+        &-h50 
+            height: 50px
+            padding: 7px 20px 7px 50px
+        &-l50
+            gap: 0
+            padding: 20px
+            padding-left: 50px
+        &-ai 
+            background: 
+                image: url('../images/icons/ai.png')
+                repeat: no-repeat 
+                position: center left 13px
+                size: 24px 24px
+    &__experiences
+        display: flex
+        flex-direction: column
+        gap: 24px
+    &__experience
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &:nth-child(n + 2)
+            padding-top: 24px
+            border-top: 1px solid var(--Gray-90)
+    &__knowledges
+        &-item
+            display: flex
+            flex-direction: column
+            gap: 24px
+    &__knowledge
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &:nth-child(n + 3)
+            padding-top: 24px
+            border-top: 1px solid var(--Gray-90)
+        &:last-child
+            margin-bottom: 24px
+    &__vakansi 
+        position: relative
+        display: grid 
+        grid-template-columns: 160px 1fr
+        gap: 24px
+        padding: 20px 
+        border-radius: 12px
+        background-color: var(--White)
+    &__flexend
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        gap: 16px
+    &__plan
+        display: grid
+        grid-template-columns: 1fr 56px 56px 
+        gap: 16px
+    &__icon 
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 8px
+        width: 56px
+        height: 56px
+        background-color: var(--Gray-100)
+        & path 
+            fill: var(--Black)
+        &:disabled
+            & path
+                fill: var(--Gray-60)
+        &-icon
+            & path 
+                fill: var(--Icons)
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        &-withbtn 
+            display: grid
+            grid-template-columns: 1fr 56px
+            gap: 0 24px
+        &-small 
+            width: 322px
+    &__avatar
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 8px
+        &-image 
+            width: 160px
+            height: 160px
+            border: 1px solid var(--Aside)
+            border-radius: 16px
+            overflow: hidden
+            object-fit: cover
+            object-position: center
+        &-logo 
+            padding: 20px
+        &-site 
+            @include link-small
+            color: var(--Primary-50)
+            text-align: center
+    &__status 
+        margin-top: 14px
+        padding: 4px 8px
+        border-radius: 16px
+        background-color: #006FD81A
+        @include subtitle-small
+        &-blue 
+            color: var(--Primary-40)
+    &__rezyumes 
+        grid-column: span 2
+        padding: 0 16px
+    &__rezyume 
+        display: grid
+        grid-template-columns: 180px 1fr
+        gap: 24px 40px
+        padding: 0 16px
+        &-col
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-h2
+            @include subtitle-large
+            color: var(--Black)
+        &-h3
+            @include title-large
+            color: var(--Black)
+        &-h4
+            @include title-medium
+            color: var(--Black)
+        &-h5
+            @include  subtitle-medium
+            color: var(--Gray-40)
+        &-text
+            @include body-large
+            color: var(--Black)
+    &__show 
+        display: none
+        &-active 
+            display: block
+        &-btn 
+            & path
+                transition: fill 0.3s ease
+            &:hover 
+                & path 
+                    fill: var(--Red-error)
+    &__col 
+        display: flex
+        flex-direction: column
+        gap: 2px
+    &__tags 
+        display: flex
+        flex-wrap: wrap
+        column-gap: 16px
+        &-item 
+            padding: 8px 16px
+            border: 1px solid var(--Aside)
+            border-radius: 18px
+            @include subtitle-large
+            color: var(--Gray-20)
+    &__tag 
+        display: flex
+        align-items: center
+        gap: 4px
+        margin-top: 20px
+        padding: 4px 8px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        &-text 
+            @include subtitle-medium
+            color: var(--Black)
+        &-btn
+            width: 12px
+            height: 12px
+            background: 
+                image: url('../images/icons/close.png')
+                position: center center 
+                repeat: no-repeat
+    &__or
+        display: flex
+        justify-content: center
+        @include body-medium
+        color: var(--Gray-10)
+    &__imgloading 
+        display: grid
+        grid-template-columns: 96px auto 
+        gap: 24px
+        align-items: center
+        &-image 
+            position: relative
+            width: 96px
+            height: 96px
+            border-radius: 16px
+        &-bg
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 2px dashed var(--Aside)
+            border-radius: 16px
+        &-info 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 16px
+        &-top 
+            display: flex
+            flex-direction: column
+            gap: 8px
+        &-title 
+            @include title-medium
+            color: var(--Black)
+        &-text 
+            @include body-small
+            color: var(--Gray-60)
+        &-btn 
+            padding: 5px 16px
+            border-radius: 6px
+            background-color: var(--Gray-80)
+            @include btn-small
+            color: var(--Black)
+    &__educations 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 24px
+            &:nth-child(n + 2)
+                padding-top: 24px
+                border-top: 1px solid var(--Gray-90)
+    &__education 
+        display: none
+        flex-direction: column
+        gap: 24px
+        &-active 
+            display: flex
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__line 
+        display: grid
+        grid-template-columns: 1fr 1fr 80px
+        gap: 16px
+    &__linesmall
+        display: grid
+        grid-template-columns: 150px 150px
+        gap: 16px
+    &__linedate
+        display: grid
+        align-items: center
+        grid-template-columns: 200px 120px auto
+        gap: 16px
+    &__line50
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 24px
+    &__footer 
+        display: flex
+        justify-content: space-between
+        padding: 0 50px
+    &__burger 
+        position: absolute
+        top: 50%
+        width: 20px
+        height: 20px
+        background: 
+            image: url('../images/icons/menu.png')
+            position: center center 
+            repeat: no-repeat
+        transform: translateY(-50%)
+    &__view
+        position: relative
+        padding: 15px
+        padding-left: 50px
+        &-text 
+            display: -webkit-box
+            height: 20px
+            @include text-medium
+            color: var(--Black)
+            -webkit-line-clamp: 1
+            -webkit-box-orient: vertical
+            overflow: hidden
+        &-btn 
+            position: absolute
+            right: 12px
+            top: 15px
+    &_collapse 
+        position: fixed
+        top: 64px
+        left: 250px
+        right: 0
+        display: grid
+        align-items: end
+        justify-content: center
+        gap: 16px
+        grid-template-columns: 1090px 48px
+        padding-top: 25px
+        padding-left: 0
+        padding-right: 0
+        padding-bottom: 30px
+        border-bottom: 1px solid var(--Aside)
+        background-color: var(--Gray-100)
+        z-index: 100
+    &__collapse
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 20px
+        & .section__hide 
+            display: flex
+        & .section__view
+            display: none
+        & .section__burger 
+            left: -44px
+        &-collapse
+            & .section__hide 
+                display: none
+            & .section__view
+                display: block
+            & .section__burger 
+                left: 15px
+    &__content 
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__main 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        transition: margin 0.3s ease
+        &-active 
+            margin-right: 620px
+    &__btns 
+        display: flex
+        justify-content: flex-end 
+        margin-bottom: 16px
+        &-width
+            display: flex
+            justify-content: flex-end 
+            gap: 16px
+            width: 176px
+            transition: width 0.3s ease
+            &-active 
+                width: 596px
+    &__video 
+        position: relative
+        border-radius: 16px
+        overflow: hidden
+        &-player 
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            height: 60px
+            background: 
+                image: url('../images/player.png')
+                repeat: no-repeat 
+                position: contain
+                size: 100% 100%
+        &-video 
+            width: 100%
+            height: 696px
+    &__part 
+        display: flex
+        flex-direction: column
+        gap: 12px
+        &-upline 
+            padding-top: 12px
+            border-top: 1px solid #D9D9D9
+        &-title 
+            display: flex
+            align-items: center
+            gap: 5px
+            @include title-medium
+            color: var(--Gray-20)
+        &-text 
+            @include body-large
+            color: var(--Black)
+    &__list 
+        padding-left: 44px
+        &-item 
+            @include body-large
+            color: var(--Black)
+            list-style: disc
+    &__description 
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 12px
+        &-title 
+            @include headline-medium
+            color: var(--Black)
+        &-info 
+            display: flex
+            gap: 6px
+            align-items: center
+        &-text
+            @include subtitle-large
+            color: var(--Gray-40)
+    &__dots 
+        position: absolute
+        top: -6px
+        right: 0
+        border: 0.5px solid var(--Black)
+        border-radius: 8px
+    &__delete 
+        & path 
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                fill: var(--Red)
+    &__reset
+        & path 
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                fill: var(--Red)
+    &_mt 
+        margin-top: 375px
+        &-collapse 
+            margin-top: 585px
+.adjustment 
+    position: absolute
+    top: 18px 
+    right: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+.btn-subvideo 
+    display: none
+    &-active 
+        display: flex
+        margin-left: auto
+.datepicker
+    max-width: 322px
+    background: 
+        image: url('../images/icons/calendar.png')
+        position: center right 12px 
+        repeat: no-repeat
+#email 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/mail.png')
+        position: center left 12px 
+        repeat: no-repeat
+#tel 
+    padding-left: 44px
+    background: 
+        image: url('../images/icons/phone.png')
+        position: center left 12px 
+        repeat: no-repeat
+@media (max-width: 1429px)
+    .section 
+        &_collapse
+            left: 0
+// SECTION END
+// SUBVIDEO
+.subvideo 
+    position: absolute
+    top: 0
+    right: -100%
+    bottom: 0
+    flex: 0 0 auto
+    width: 596px
+    overflow: hidden
+    transition: right 0.3s ease
+    &_active 
+        right: 0
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        height: 100%
+    &__top 
+        display: flex
+        align-items: center
+        gap: 24px
+    &__content 
+        display: none
+        flex-direction: column
+        gap: 20px
+        height: 100%
+        padding: 16px
+        border-radius: 16px
+        box-shadow: 0px 1px 8px 0px #0000001A
+        background-color: var(--White)
+        overflow: auto
+        &-active 
+            display: flex
+    &__item 
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        gap: 8px
+        &-avatar 
+            flex: 0 0 auto
+            width: 36px
+            height: 36px
+            border-radius: 50%
+            background-color: var(--Gray-80)
+        &_content 
+            display: flex
+            flex-direction: column
+        &-top 
+            display: flex
+            align-items: center 
+            justify-content: flex-start
+            gap: 8px
+        &-name 
+            @include subtitle-medium
+            color: var(--Gray-20)
+        &-time 
+            @include subtitle-small
+            color: var(--Gray-40)
+    &__text 
+        @include subtitle-large
+        color: var(--Black)
+// SUBVIDEO END
+.portfolios // PORTFOLIO
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 25px
+.portfolio 
+    position: relative
+    display: flex
+    flex-direction: column
+    border-radius: 12px
+    box-shadow: 5px 5px 11px 0px #B6B7B8
+    background-color: var(--White)
+    &__topline 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 10px
+        padding: 10px
+    &__language 
+        flex: 0 0 auto
+        width: 25px
+        height: 17px
+        border: 0.1px solid var(--Gray-80)
+        border-radius: 4px
+        overflow: hidden
+        & img 
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__status 
+        width: 135px
+        height: 17px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 16px
+        background: #8989901A
+        @include subtitle-small
+        letter-spacing: -0.2px
+        text-align: center
+        &-green 
+            color: var(--Green)
+        &-red
+            color: var(--Red)
+        &-blue 
+            color: var(--Primary-40)
+    &__position 
+        flex: 0 0 auto
+        display: flex
+        align-items: center
+        gap: 5px
+        &-text 
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 25px
+            height: 17px
+            padding: 2px
+            border: 0.1px solid var(--White)
+            border-radius: 4px
+            background-color: var(--Primary-40)
+            font: 700 11px/11px "Inter", "sans-serif"
+            color: var(--White)
+    &__line 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 20px
+        padding: 10px
+    &__fits
+        padding: 8px
+        font-weight: 500
+        font-size: 14px
+        line-height: 15px 
+        border-radius: 8px
+        & path 
+            stroke: none
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                stroke: none
+                fill: var(--White)
+        &-disabled
+            opacity: 0.3
+            &:hover 
+                background-color: var(--White)
+                color: var(--Black)
+                & path 
+                    stroke: none
+                    fill: var(--Black)
+        &-success 
+            display: none
+            & path 
+                stroke: none
+                fill: var(--White)
+    &__content 
+        display: grid
+        grid-template-columns: 150px 190px
+        gap: 10px 
+        padding: 10px
+        border-top: 1px solid var(--Aside)
+    &__contact 
+        display: flex
+        flex-direction: column
+        gap: 6px
+        margin-top: auto
+    &__top 
+        display: flex
+        flex-direction: column
+        gap: 15px
+    &__avatar 
+        position: relative
+        grid-row: span 2
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 160px
+        height: 160px
+        border-radius: 16px 
+        overflow: hidden
+        cursor: pointer
+        &-bg 
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            border-radius: 16px 
+            outline: 2px dashed #C7C9CF
+            outline-offset: -2px
+            background:
+                image: url('../images/icons/avatar.png')
+                repeat: no-repeat
+                position: center center
+                size: 36px
+        &-img 
+            width: 160px
+            height: 160px
+            border-radius: 16px 
+            object-fit: cover
+            position: relative
+            z-index: 2
+            &:hover 
+                outline: 2px solid var(--Primary-50)
+                outline-offset: -2px
+    &__title 
+        @include headline-small
+        color: var(--Black)
+    &__stitle 
+        display: flex
+        align-items: center
+        gap: 10px
+        font: 600 12px/16px 'Inter', 'sans-serif'
+        letter-spacing: -0.1px
+        color: var(--Black)
+        &-copy 
+            opacity: 0
+        &:hover 
+            & .portfolio__stitle-copy
+                opacity: 1
+    &__text 
+        @include subtitle-small
+        color: var(--Gray-40)
+    &__main 
+        grid-row: span 2
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        gap: 12px
+        &-mr 
+            margin-right: -150px
+    &__center 
+        display: flex
+        flex-direction: column
+        gap: 10px
+        padding: 10px
+        border-bottom: 1px solid var(--Aside)
+        &-line 
+            display: flex
+            align-items: flex-start
+            justify-content: space-between
+    &__info 
+        grid-row: span 2
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 8px
+        &-title
+            @include headline-large
+            color: var(--Primary-40)
+        &-text 
+            @include subtitle-small
+            color: var(--Gray-40)
+    &__row 
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        gap: 8px
+        width: 100%
+        &-link 
+            display: flex
+            align-items: center
+            justify-content: center
+    &__col
+        display: flex
+        flex-direction: column
+        gap: 2px
+    &__btns 
+        display: flex
+        align-items: center
+        gap: 15px
+        padding: 10px
+        &-bl 
+            width: 1px
+            height: 48px
+            border-right: 1px solid var(--Gray-80)
+    &__ai 
+        display: flex
+        align-items: center
+        justify-content: center
+        font: 700 20px/22px "inter", "sans-serif"
+        letter-spacing: -0.2px
+        color: var(--Primary-40)
+    
+    &__loader 
+        position: relative
+        flex: 0 0 24px
+        width: 24px
+        height: 24px
+        background: 
+            image: url('../images/icons/loading.png')
+            position: center center 
+            repeat: no-repeat
+        opacity: 0
+        &-loading
+            opacity: 1
+            animation: rotation 5s linear infinite
+        &-success
+            border: 1.5px solid var(--Primary-40)
+            border-radius: 50%
+            background: 
+                image: url('../images/icons/success.png')
+            opacity: 1
+    &__view 
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        height: 16px
+    .portfolio__slider 
+        padding: 10px
+        & .itc-slider 
+            position: relative
+        & .itc-slider-wrapper 
+            overflow: hidden
+        & .itc-slider-items 
+            display: flex
+            gap: 20px
+            transition: transform 0.5s ease
+            will-change: transform
+        & .itc-slider-transition-none 
+            transition: none
+        & .itc-slider-item 
+            position: relative
+            flex: 0 0 auto
+            display: flex
+            flex-direction: column
+            gap: 10px
+            width: 302px
+            user-select: none
+            will-change: transform
+        & .itc-slider-media 
+            position: absolute
+            top: 2px
+            left: 2px
+            width: 302px
+            height: 170px
+            border-radius: 16px
+            object-fit: cover
+            overflow: hidden
+            z-index: 2
+            &:hover 
+                outline: 2px solid var(--Primary-50)
+        & .itc-slider-bg
+            width: 302px
+            height: 170px
+            margin-top: 2px
+            margin-left: 2px
+            border: 1px dashed #C7C9CF
+            border-radius: 16px
+            background-image: url(../images/icons/add_video.png)
+            background-position: center center
+            background-size: 48px
+            background-repeat: no-repeat
+            cursor: pointer
+        & .itc-slider-video
+            position: relative
+            display: flex
+            width: 100% 
+            height: 100%
+            object-fit: cover
+        & .itc-slider-play
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 20px
+            height: 28px
+            background-image: url('../images/icons/play.png')
+            background-repeat: no-repeat
+            background-position: center center
+            transform: translate3d(-50%, -50%, 0)
+            z-index: 3
+        & .itc-slider-time
+            position: absolute
+            right: 10px
+            bottom: 10px
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 32px
+            height: 21px
+            border-radius: 6px
+            background:#00000099
+            font: 600 10px/14px 'Inter', 'sans-serif'
+            color: #fff
+            z-index: 3
+        & .itc-slider-img
+            position: relative
+            width: 100%
+            height: 100%
+            object-fit: cover
+            z-index: 2
+        & .itc-slider-bottom
+            display: flex
+            flex-direction: column
+        & .itc-slider-title
+            position: relative
+            padding-right: 20px
+            font: 600 14px/19px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            color: #202123
+        & .itc-slider-dots
+            position: absolute
+            top: 0
+            right: 0
+        & .itc-slider-info
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            gap: 6px
+        & .itc-slider-text
+            font: 500 10px/12px 'Inter', 'sans-serif'
+            color: var(--Gray-40)
+        & .itc-slider-btn 
+            position: absolute
+            top: 67px
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 36px
+            height: 36px
+            border: none
+            border-radius: 50%
+            box-shadow: 0px 2px 4px 0px #00000040
+            background-color: #fff
+            cursor: pointer
+        & .itc-slider-btn-hide 
+            display: none
+        & .itc-slider-btn-prev 
+            left: 1px
+        & .itc-slider-btn-next 
+            right: 1px
+        & .itc-slider-btn::before 
+            content: ""
+            display: inline-block
+            width: 20px
+            height: 20px
+            background: transparent no-repeat center center
+            background-size: 100% 100%
+        & .itc-slider-btn-prev::before 
+            background-image: url("../images/icons/chevron_left.png")
+        & .itc-slider-btn-next::before 
+            background-image: url("../images/icons/chevron_right.png")
+// PORTFOLIO END
+.modal // MODAL
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: none
+    background: #000000B2
+    box-shadow: 0px 4px 4px 0px #00000040
+    z-index: 1000
+    &_active 
+        display: flex
+    &__wrapper 
+        position: absolute
+        top: 50%
+        left: 50%
+        display: none
+        flex-direction: column
+        gap: 10px
+        max-width: 1119px
+        max-height: 1000px
+        height: 90vh
+        padding: 20px
+        border-radius: 16px
+        background-color: var(--White)
+        transform: translate3d(-50%, -50%, 0)
+        &-active 
+            display: flex 
+        &-avatar 
+            width: 540px
+            height: 550px
+            padding: 10px 40px 40px
+            & .modal__top 
+                height: 30px
+    &__top 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 8px
+        height: 48px
+    &__die 
+        display: flex
+        align-items: center
+        gap: 24px
+        &-text 
+            @include title-small
+            color: var(--Blacks)
+    &__name
+        position: relative
+        @include headline-small
+        color: var(--Black)
+        text-align: center
+    &__close 
+        width: 24px
+        height: 24px
+        background: 
+            image: url('../images/icons/close_24.png')
+            position: center center 
+            repeat: no-repeat
+    &__avatar 
+        position: relative
+        width: 460px
+        height: 460px
+        border-radius: 12px
+        object-fit: cover
+        overflow: hidden
+        &-img 
+            position: relative
+            width: 100%
+            height: 100%
+            object-fit: cover
+            z-index: 1
+        &-bg 
+            position: absolute
+            top: 0
+            bottom: 0
+            right: 0
+            left: 0
+            border: 2px dashed var(--Gray-70)
+            border-radius: 16px
+            background: 
+                image: url('../images/icons/avatar.png')
+                position: center center
+                repeat: no-repeat
+    &__content 
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        width: 1079px
+        padding: 12px
+        overflow-y: auto
+        &-vert 
+            flex-direction: column
+            justify-content: flex-start
+            gap: 16px
+    &__list 
+        display: flex
+        flex-direction: column
+        gap: 20px
+    &__text 
+        @include body-large
+        color: var(--Black)
+    &__grid 
+        display: grid
+        grid-template-columns: repeat(4, 242px)
+        justify-content: center
+        align-items: center
+        row-gap: 40px
+        column-gap: 24px
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 8px
+        width: 242px
+        &-img 
+            flex: 0 0 auto
+            width: 242px
+            height: 242px
+            border-radius: 16px
+            overflow: hidden
+            object-fit: cover
+            cursor: pointer
+        &-text 
+            display: -webkit-box
+            @include body-large
+            color: var(--Black)
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            overflow: hidden
+    &__line 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        margin-bottom: 32px
+    &__comments 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        width: 100%
+    &__comment 
+        position: relative
+        min-height: 80px
+        padding: 10px 12px
+        border-radius: 12px
+        background: var(--Gray-100)
+        @include text-medium
+        color: var(--Black)
+        &-btns 
+            position: absolute
+            top: 50%
+            right: 12px
+            display: flex
+            align-items: center
+            gap: 12px
+            transform: translateY(-50%)
+            opacity: 0
+            transition: opacity 0.3s ease
+        &:hover .modal__comment-btns
+            opacity: 1
+    &__author 
+        display: flex
+        gap: 12px
+        align-items: center
+        padding-left: 30px
+        &-avatar 
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            overflow: hidden 
+        &-text 
+            @include body-large
+            line-height: 18px
+            color: var(--Gray-10)
+        &-img 
+            position: absolute
+            top: 0
+            width: 180%
+            max-width: 200%
+    &__footer 
+        display: flex
+        gap: 16px
+        align-items: center
+        margin-top: auto
+    &__addcommvent 
+        @include body-medium
+        color: var(--Gray-10)
+    & .link-medium 
+        text-decoration: underline
+    & .section__vakansi
+        padding: 0
+@media (max-height: 699px)
+    .modal
+        overflow-y: auto
+        &__wrapper 
+            top: 0
+            transform: translate3d(-50%, 0, 0)
+            &-avatar 
+                top: 50%
+                transform: translate3d(-50%, -50%, 0)
+@media (max-height: 574px)
+    .modal
+        &__wrapper-avatar
+            top: 0
+            transform: translate3d(-50%, 0, 0)
+@media (max-width: 899px)
+    .modal
+        &__wrapper 
+            &-avatar 
+                width: 370px
+                height: 400px
+                padding: 10px 20px 20px
+        &__avatar 
+            width: 330px
+            height: 330px
+        &__name 
+            font-size: 16px
+// MODAL END
+// MODAL-SLIDER
+.modal-slider 
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: none
+    box-shadow: 0px 2px 16px 0px #00000033
+    background: #000000CC
+    z-index: 1000
+    &-active 
+        display: block
+    & .itc-slider 
+        position: relative
+        width: 100%
+        height: 100%
+    & .itc-slider-wrapper 
+        width: 100%
+        height: 100%
+        overflow: hidden
+    & .itc-slider-items 
+        display: flex
+        width: 100%
+        height: 100%
+        transition: transform 0.5s ease
+        will-change: transform
+    & .itc-slider-transition-none 
+        transition: none
+    & .itc-slider-item 
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: 24px
+        flex: 0 0 100%
+        max-width: 100%
+        max-height: 100%
+        padding: 80px
+        user-select: none
+        will-change: transform
+    &__close 
+        position: absolute
+        top: 16px
+        right: 16px
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 48px
+        height: 48px
+        border-radius: 50%
+        background: #0000004D
+        z-index: 1010
+    &__top 
+        position: absolute
+        top: 0
+        left: 50%
+        height: 80px
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 16px
+        transform: translateX(-50%)
+        z-index: 1010
+    &-btn
+        display: flex
+        justify-content: center
+        align-items: center 
+        width: 48px
+        height: 48px
+
+    &-img 
+        width: 100%
+        height: 100%
+        object-fit: contain
+    &-title 
+        position: absolute
+        bottom: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 26px
+        @include link-large
+        color: var(--White)
+    & .itc-slider-btn 
+        position: absolute
+        top: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 48px
+        height: 48px
+        border: none
+        border-radius: 50%
+        box-shadow: 0px 2px 4px 0px #00000040
+        background-color: #0000004D
+        transform: translateY(-50%)
+        cursor: pointer
+    & .itc-slider-btn-hide 
+        display: none
+    & .itc-slider-btn-prev 
+        left: 16px
+    & .itc-slider-btn-next 
+        right: 16px
+    & .itc-slider-btn::before 
+        content: ""
+        display: inline-block
+        width: 20px
+        height: 20px
+        background: transparent no-repeat center center
+        background-size: 100% 100%
+    & .itc-slider-btn-prev::before 
+        background-image: url("../images/icons/chevron_left-white.png")
+    & .itc-slider-btn-next::before 
+        background-image: url("../images/icons/chevron_right-white.png")
+// MODAL-SLIDER END  
+
+@keyframes rotation 
+    0% 
+        transform: rotate(0deg)
+    100% 
+        transform: rotate(360deg)
+
+@media (max-width: 1200px)
+    .btn_150 
+        flex: 0 0 48px
+    .header 
+        padding: 9px 16px
+    .section
+        &_collapse 
+            grid-template-columns: 800px 48px
+        &_toleft 
+            grid-template-columns: 800px 48px
+    .portfolio
+        &__title 
+            font-size: 18px
+            line-height: 24px
+        &__position 
+            right: 20px
+        &__top 
+            gap: 32px
+        &__show 
+            display: none
+        &__content 
+            grid-template-columns: 160px 274px 295px
+        &__contact 
+            align-items: start
+@media (max-width: 899px)
+    .title
+        font-size: 26px
+        line-height: 26px
+    .btn
+        &_150 
+            width: 48px
+    .range
+        gap: 15px
+        &__explanation
+            flex: 0 0 auto
+        &__text
+            display: none
+        & .clue__wrapper 
+            left: -210px
+    .range 
+        &__input 
+            appearance: none
+            max-width: 666px
+            width: 100%
+            height: 30px
+            border: none
+            overflow: hidden
+            transition: opacity 0.3s ease
+            cursor: pointer
+            &::-webkit-slider-thumb
+                height: 18px
+                width: 18px
+                margin-top: -7px
+                box-shadow: calc(-100vmax - 18px) 0 0 100vmax var(--Primary-40)
+                clip-path: polygon(100% 0, 1px 0, 0 7px, -100vmax 7px, -100vmax 13px, 0 13px, 1px 100%, 100% 100%)
+            &::-moz-range-thumb
+                height: 18px
+                width: 18px
+                margin-top: -7px
+                box-shadow: calc(-100vmax - 18px) 0 0 100vmax var(--Primary-40)
+                clip-path: polygon(100% 0, 1px 0, 0 7px, -100vmax 7px, -100vmax 13px, 0 13px, 1px 100%, 100% 100%)
+        &__number 
+            width: 60px
+            font-size: 20px
+    .switch 
+        width: 45px
+        height: 24px
+        &__slider 
+            &:before 
+                position: absolute
+                content: ""
+                height: 20px
+                width: 20px
+                left: 2px
+                bottom: 2px
+    .link__show 
+        display: none
+    .header
+        gap: 16px
+        padding: 9px 10px
+        &__logo 
+            display: none
+        &__name 
+            display: none
+        &__access
+            display: none
+    .section
+        &__wrapper 
+            &-h50 
+                padding-right: 10px
+        &_mt 
+            margin-top: 304px
+        &__form 
+            gap: 10px
+        &__top 
+            align-items: center
+            gap: 16px
+            margin-bottom: 10px
+            & .link 
+                margin-left: auto
+                margin-right: 10px
+        &_collapse 
+            grid-template-columns: 370px
+            padding: 10px
+            padding-bottom: 25px
+        &_toleft 
+            grid-template-columns: 370px
+            padding-top: 10px
+            padding-left: 10px
+            padding-right: 10px
+            &-btn 
+                position: fixed
+                bottom: 20px
+                right: 16px
+                background-color: var(--White)
+    .portfolios 
+        gap: 20px
+    .portfolio
+        &__content 
+            align-items: start
+            grid-template-columns: 150px 190px
+            gap: 12px 10px
+        &__avatar
+            grid-row: span 2
+            width: 150px
+            height: 150px
+            &-img 
+                width: 150px
+                height: 150px
+        &__main 
+            &-mr 
+                margin-right: 0
+        &__top 
+            grid-column: span 1
+            flex-direction: column
+            align-items: flex-start
+            gap: 10px
+        &__info 
+            grid-row: span 1
+            width: 150px
+            margin: 0 auto
+        &__center 
+            grid-column: span 2
+            &-line 
+                display: grid
+                grid-template-columns: 2fr 1fr
+        &__loader 
+            margin: 0 auto
+        &__invite 
+            width: 160px
+            margin-left: auto
+        &__btns 
+            &-bl 
+                display: none
+        .portfolio__slider 
+            grid-column: span 2
+            margin-right: -9px
+            & .itc-slider-title
+                font-size: 12px
+.logo 
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 3px
+    width: max-content
+    margin: 0 auto
+    &__job 
+        margin: 0
+        font: 700 22px/22px 'Inter', 'sans-serif'
+        letter-spacing: -0.2px
+        text-shadow: 3px 3px 3px #A3B1C6, -3px -3px 3px #FFFFFF
+        &-white 
+            padding: 4px
+            border-radius: 8px
+            box-shadow: 3px 3px 3px #A3B1C6, -3px -3px 3px #FFF
+            background-color: #0095FF
+            color: #fff
+            text-shadow: 3px 3px 3px #1E1E1E
+    &__r 
+        position: absolute
+        top: 0
+        right: -12px
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 10px 
+        height: 10px
+        border: 0.5px solid #000000
+        border-radius: 50%
+        &-text 
+            font: 700 8px/8px 'Inter', 'sans-serif'
+            color: #000
