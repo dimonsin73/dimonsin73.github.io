@@ -11,11 +11,11 @@ for (let i = 0; i < btnModalopenArray.length; i++) {
             const modalWrapper = modalWrapperArray[i];
             if (modalWrapper.dataset.modal === dataModalopen) {
                 modalWrapper.classList.add('modal__wrapper-active')
-                const modalName = modalWrapper.querySelector('.modal__name')
                 const modalClose = modalWrapper.querySelector('.modal__close')
-                modalName.textContent = name
                 switch (modalWrapper.dataset.modal) {
                     case 'avatar':
+                    const modalName = modalWrapper.querySelector('.modal__name')
+                    modalName.textContent = name
                         const img = btnModalOpen.querySelector('.portfolio__avatar-img')
                         if (img != null) {
                             const imgSrc = img.getAttribute('src')

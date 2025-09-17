@@ -2025,18 +2025,17 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
     &__wrapper 
         position: absolute
-        top: 50%
+        top: 20px
         left: 50%
         display: none
         flex-direction: column
         max-width: 1119px
-        max-height: 1000px
         min-width: 370px
         width: calc(100vw - 20px)
-        height: calc(100vh - 20px)
+        max-height: 1000px
         border-radius: 12px
         background-color: var(--White)
-        transform: translate3d(-50%, -50%, 0)
+        transform: translate3d(-50%, 0, 0)
         &-active 
             display: flex 
         &-avatar 
@@ -2114,6 +2113,10 @@ input[type=number]::-webkit-outer-spin-button
         &-sex 
             font: 500 10px/12px 'Inter', 'sans-serif'
             color: var(--Gray-40)
+        &-line 
+            display: flex
+            align-items: center
+            justify-content: space-between
     &__die 
         grid-column: span 2
         display: flex
@@ -2130,6 +2133,7 @@ input[type=number]::-webkit-outer-spin-button
         flex-wrap: wrap
         gap: 10px 5px
         padding: 10px
+        padding-right: 5px
         border-bottom: 1px solid var(--Aside)
     &__tag 
         min-width: 90px
@@ -2144,18 +2148,21 @@ input[type=number]::-webkit-outer-spin-button
         align-items: flex-start
         justify-content: space-between
         padding: 10px
+        padding-right: 5px
         border-bottom: 1px solid var(--Aside)
     &__center 
         display: flex
         flex-direction: column
         gap: 10px
         padding: 10px
+        padding-right: 5px
         border-bottom: 1px solid var(--Aside)
     &__letter  
         display: flex
         flex-direction: column
         gap: 20px
         padding: 10px
+        padding-right: 5px
         border-bottom: 1px solid var(--Aside)
         &-title 
             font: 500 14px/20px 'Inter', "sans-serif"
@@ -2168,6 +2175,7 @@ input[type=number]::-webkit-outer-spin-button
             gap: 10px
             align-items: center
             padding: 10px
+            padding-right: 5px
             border-top: 1px solid var(--Aside)
             border-bottom: 1px solid var(--Aside)
         &-title 
@@ -2177,6 +2185,7 @@ input[type=number]::-webkit-outer-spin-button
             display: flex
             flex-direction: column
             padding: 10px
+            padding-right: 5px
             border-bottom: 1px solid var(--Aside)
             &:last-child
                 border-bottom: none
@@ -2202,43 +2211,52 @@ input[type=number]::-webkit-outer-spin-button
         &-jobtitle 
             font: 600 14px/22px 'Inter', 'sans-serif'
             color: var(--Black)
-    
+    &__suitable 
+        display: flex
+        flex-direction: column
+        gap: 20px
+        padding: 10px
+        padding-right: 5px
+        &-title 
+            font: 500 14px/20px 'Inter', "sans-serif"
+            color: var(--Black)
     &__text 
         font: 400 14px/20px 'Inter', "sans-serif"
         color: var(--Black)
         
-
+    
+    &__addcommvent 
+        padding: 16px 10px 6px
+        font: 400 10px/14px 'Inter', 'sans-serif'
+        color: var(--Black)
     
     &__list 
         display: flex
         flex-direction: column
         gap: 20px
-    &__text 
-        @include body-large
-        color: var(--Black)
     &__grid 
         display: grid
-        grid-template-columns: repeat(4, 242px)
+        grid-template-columns: repeat(2, 150px)
         justify-content: center
         align-items: center
-        row-gap: 40px
-        column-gap: 24px
+        row-gap: 18px
+        column-gap: 30px
+        padding: 10px
     &__item 
         display: flex
         flex-direction: column
-        gap: 8px
-        width: 242px
+        gap: 5px
         &-img 
             flex: 0 0 auto
-            width: 242px
-            height: 242px
+            width: 150px
+            height: 150px
             border-radius: 16px
             overflow: hidden
             object-fit: cover
             cursor: pointer
         &-text 
             display: -webkit-box
-            @include body-large
+            font: 400 10px/14px 'Inter', 'sans-serif'
             color: var(--Black)
             -webkit-line-clamp: 2
             -webkit-box-orient: vertical
@@ -2252,14 +2270,12 @@ input[type=number]::-webkit-outer-spin-button
     &__comments 
         display: flex
         flex-direction: column
-        gap: 16px
         width: 100%
+        padding: 10px
     &__comment 
         position: relative
         min-height: 80px
-        padding: 10px 12px
         border-radius: 12px
-        background: var(--Gray-100)
         @include text-medium
         color: var(--Black)
         &-btns 
@@ -2272,14 +2288,22 @@ input[type=number]::-webkit-outer-spin-button
             transform: translateY(-50%)
             opacity: 0
             transition: opacity 0.3s ease
-        &:hover .modal__comment-btns
-            opacity: 1
+        &-time 
+            @include subtitle-small
+            color: var(--Gray-40)
+            text-align: right
+        &-content 
+            padding: 5px 8px
+            border-radius: 8px
+            background-color: var(--Gray-100)
+            &:hover .modal__comment-btns
+                opacity: 1
     &__author 
         display: flex
-        gap: 12px
+        gap: 5px
         align-items: center
-        padding-left: 30px
         &-avatar 
+            flex: 0 0 auto
             position: relative
             display: flex
             align-items: center
@@ -2289,9 +2313,8 @@ input[type=number]::-webkit-outer-spin-button
             border-radius: 50%
             overflow: hidden 
         &-text 
-            @include body-large
-            line-height: 18px
-            color: var(--Gray-10)
+            font: 600 10px/14px 'Inter', 'sans-serif'
+            color: var(--Black)
         &-img 
             position: absolute
             top: 0
@@ -2302,9 +2325,6 @@ input[type=number]::-webkit-outer-spin-button
         gap: 16px
         align-items: center
         margin-top: auto
-    &__addcommvent 
-        @include body-medium
-        color: var(--Gray-10)
     & .link-medium 
         text-decoration: underline
     & .section__vakansi
@@ -2619,6 +2639,9 @@ input[type=number]::-webkit-outer-spin-button
             margin-right: -9px
             & .itc-slider-title
                 font-size: 12px
+    .modal 
+        &__wrapper 
+            max-height: calc(100vh - 40px)
 .logo 
     position: relative
     display: flex
@@ -2653,3 +2676,4 @@ input[type=number]::-webkit-outer-spin-button
         &-text 
             font: 700 8px/8px 'Inter', 'sans-serif'
             color: #000
+    
