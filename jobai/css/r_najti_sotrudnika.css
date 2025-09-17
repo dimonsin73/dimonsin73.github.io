@@ -2385,9 +2385,9 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   justify-content: center;
   width: 32px;
-  height: 21px;
+  height: 20px;
   border-radius: 6px;
-  background: rgba(0, 0, 0, 0.6);
+  background: #8A8E96;
   font: 600 10px/14px "Inter", "sans-serif";
   color: #fff;
   z-index: 3;
@@ -2807,6 +2807,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .modal__comment-content:hover .modal__comment-btns {
   opacity: 1;
+}
+.modal__comment-text {
+  font: 400 14px/18px "Inter", "sans-serif";
 }
 .modal__author {
   display: flex;
