@@ -74,21 +74,24 @@ sectionBurger.addEventListener('click', function(){
     }
 })
 
+
 const modalItemImgArray = document.querySelectorAll('.modal__item-img')
 const modalSlider = document.querySelector('.modal-slider')
 const modalSliderClose = document.querySelector('.modal-slider__close')
-const modalSliderItemArray = modalSlider.querySelectorAll('.itc-slider-item')
 for (let i = 0; i < modalItemImgArray.length; i++) {
     const modalItemImg = modalItemImgArray[i];
     modalItemImg.addEventListener('click', function(){
         modalSlider.classList.add('modal-slider-active')
-        for (let j = 0; j < modalSliderItemArray.length; j++) {
-            const modalSliderItem = modalSliderItemArray[j];
-        }
+        let sliderElem = document.querySelector('#modal-slider');
+        let slider = ItcSlider.getOrCreateInstance(sliderElem);
+        slider.slideTo(i)
+        console.log(i)
+        modalSliderClose.addEventListener('click', function(){
+            modalSlider.classList.remove('modal-slider-active')
+            slider.dispose()
+        })
     })
-    modalSliderClose.addEventListener('click', function(){
-        modalSlider.classList.remove('modal-slider-active')
-    })
+    
 }
 
 const btnLikeArray = document.querySelectorAll('.btn_like')

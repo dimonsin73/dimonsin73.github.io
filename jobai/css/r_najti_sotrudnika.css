@@ -2576,14 +2576,15 @@ input[type=number]::-webkit-outer-spin-button {
 .modal__topfix-info {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: space-between;
+  gap: 2px;
 }
 .modal__topfix-name {
-  font: 700 14px/16px "Inter", "sans-serif";
+  font: 700 14px/14px "Inter", "sans-serif";
   color: var(--Black);
 }
 .modal__topfix-sex {
-  font: 500 10px/12px "Inter", "sans-serif";
+  font: 500 10px/10px "Inter", "sans-serif";
   color: var(--Gray-40);
 }
 .modal__topfix-line {
@@ -2801,6 +2802,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: right;
 }
 .modal__comment-content {
+  height: 70px;
   padding: 5px 8px;
   border-radius: 8px;
   background-color: var(--Gray-100);
@@ -2824,18 +2826,13 @@ input[type=number]::-webkit-outer-spin-button {
   justify-content: center;
   width: 40px;
   height: 40px;
+  border: 1px solid var(--Aside);
   border-radius: 50%;
   overflow: hidden;
 }
 .modal__author-text {
   font: 600 10px/14px "Inter", "sans-serif";
   color: var(--Black);
-}
-.modal__author-img {
-  position: absolute;
-  top: 0;
-  width: 180%;
-  max-width: 200%;
 }
 .modal__footer {
   display: flex;
@@ -3226,7 +3223,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 12px;
   }
   .modal__wrapper {
-    max-height: calc(100vh - 20px);
+    height: calc(100vh - 20px);
   }
 }
 .logo {
