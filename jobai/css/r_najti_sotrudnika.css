@@ -2722,8 +2722,8 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--Black);
 }
 .modal__addcommvent {
-  padding: 16px 10px 6px;
-  font: 400 10px/14px "Inter", "sans-serif";
+  padding: 22px 10px 22px;
+  font: 400 14px/22px "Inter", "sans-serif";
   color: var(--Black);
 }
 .modal__list {
@@ -2774,6 +2774,7 @@ input[type=number]::-webkit-outer-spin-button {
 .modal__comments {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   width: 100%;
   padding: 10px;
 }
@@ -2796,13 +2797,14 @@ input[type=number]::-webkit-outer-spin-button {
   transition: opacity 0.3s ease;
 }
 .modal__comment-time {
+  margin-top: -9px;
   font: 500 10px/14px "Inter", "sans-serif";
   letter-spacing: 0;
   color: var(--Gray-40);
   text-align: right;
 }
 .modal__comment-content {
-  height: 70px;
+  height: 80px;
   padding: 5px 8px;
   border-radius: 8px;
   background-color: var(--Gray-100);
@@ -2816,7 +2818,7 @@ input[type=number]::-webkit-outer-spin-button {
 .modal__author {
   display: flex;
   gap: 5px;
-  align-items: center;
+  align-items: flex-end;
 }
 .modal__author-avatar {
   flex: 0 0 auto;

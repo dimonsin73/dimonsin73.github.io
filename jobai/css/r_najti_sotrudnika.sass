@@ -2224,13 +2224,10 @@ input[type=number]::-webkit-outer-spin-button
     &__text 
         font: 400 14px/20px 'Inter', "sans-serif"
         color: var(--Black)
-        
-    
     &__addcommvent 
-        padding: 16px 10px 6px
-        font: 400 10px/14px 'Inter', 'sans-serif'
+        padding: 22px 10px 22px
+        font: 400 14px/22px 'Inter', 'sans-serif'
         color: var(--Black)
-    
     &__list 
         display: flex
         flex-direction: column
@@ -2271,6 +2268,7 @@ input[type=number]::-webkit-outer-spin-button
     &__comments 
         display: flex
         flex-direction: column
+        gap: 10px
         width: 100%
         padding: 10px
     &__comment 
@@ -2290,11 +2288,12 @@ input[type=number]::-webkit-outer-spin-button
             opacity: 0
             transition: opacity 0.3s ease
         &-time 
+            margin-top: -9px
             @include subtitle-small
             color: var(--Gray-40)
             text-align: right
         &-content 
-            height: 70px
+            height: 80px
             padding: 5px 8px
             border-radius: 8px
             background-color: var(--Gray-100)
@@ -2305,7 +2304,7 @@ input[type=number]::-webkit-outer-spin-button
     &__author 
         display: flex
         gap: 5px
-        align-items: center
+        align-items: flex-end
         &-avatar 
             flex: 0 0 auto
             position: relative
