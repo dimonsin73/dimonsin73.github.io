@@ -7,7 +7,6 @@ html(lang="ru")
         link(rel="stylesheet", href="css/reset.css")
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet", href="css/r_najti_sotrudnika.css")
-        script(src="js/itc-slider.js" defer) 
         script(src="js/r_najti_sotrudnika.js" defer) 
     body.bg
         aside.aside 
@@ -132,7 +131,7 @@ html(lang="ru")
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.39922 3.30078C3.18419 3.30078 2.19922 4.28575 2.19922 5.50078V16.5008C2.19922 17.7158 3.18419 18.7008 4.39922 18.7008H17.5992C18.8142 18.7008 19.7992 17.7158 19.7992 16.5008V5.50078C19.7992 4.28575 18.8142 3.30078 17.5992 3.30078H4.39922ZM7.69922 5.50078H14.2992V9.90078H7.69922V5.50078ZM16.4992 14.3008V16.5008H17.5992V14.3008H16.4992ZM14.2992 12.1008H7.69922V16.5008H14.2992V12.1008ZM16.4992 12.1008H17.5992V9.90078H16.4992V12.1008ZM17.5992 7.70078V5.50078H16.4992V7.70078H17.5992ZM5.49922 5.50078V7.70078H4.39922V5.50078H5.49922ZM5.49922 9.90078H4.39922V12.1008H5.49922V9.90078ZM4.39922 14.3008H5.49922V16.5008H4.39922V14.3008Z" fill="#6A6A73"/>
                             </svg>
-                    form.section__form.section__form-collapse
+                    form.section__form.section__form-collapse(data-form='najti_sotrudnika')
                         .section__collapse.section__collapse-collapse
                             .section__wrapper.section__wrapper-l50.section__wrapper-ai.section__hide
                                 label(for="job-description").label
