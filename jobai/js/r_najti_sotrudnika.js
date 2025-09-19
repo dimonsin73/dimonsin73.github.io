@@ -352,7 +352,9 @@ const sectionCollapse = document.querySelector('.section__collapse')
 const sectionMt = document.querySelector('.section_mt')
 sectionBurger.addEventListener('click', function(){
     sectionCollapse.classList.remove('section__collapse-collapse')
-    sectionMt.classList.add('section_mt-collapse')
+    if (sectionMt !== null ) {
+        sectionMt.classList.add('section_mt-collapse')
+    }
 })
 sectionCollapse.addEventListener('click', function(e){
     if (e.target === sectionCollapse) {
@@ -366,7 +368,9 @@ sectionFormCollapse.addEventListener('click', function(e){
 })
 function collapseClose() {
     sectionCollapse.classList.add('section__collapse-collapse')
-    sectionMt.classList.remove('section_mt-collapse')
+    if (sectionMt !== null ) {
+        sectionMt.classList.remove('section_mt-collapse')
+    }
     if (jobDescription.value != '') {
         sectionViewText.textContent = jobDescription.value
     } else {
