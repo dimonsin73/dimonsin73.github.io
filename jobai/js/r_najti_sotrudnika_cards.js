@@ -57,23 +57,6 @@ for (let i = 0; i < itcSliderArray.length; i++) {
         }
     }
 }
-//  Разворачивание/сворачивание/заполнение полей поиска сотрудника
-const sectionBurger = document.querySelector('.section__burger')
-const jobDescription = document.getElementById('job-description')
-const jobTitle = document.getElementById('job-title')
-const sectionViewText = document.querySelector('.section__view-text')
-const sectionCollapse = document.querySelector('.section__collapse')
-const sectionMt = document.querySelector('.section_mt')
-sectionBurger.addEventListener('click', function(){
-    sectionCollapse.classList.toggle('section__collapse-collapse')
-    sectionMt.classList.toggle('section_mt-collapse')
-    if (jobDescription.value != '') {
-        sectionViewText.textContent = jobDescription.value
-    } else {
-        sectionViewText.textContent = jobTitle.value
-    }
-})
-
 
 const modalItemImgArray = document.querySelectorAll('.modal__item-img')
 const modalSlider = document.querySelector('.modal-slider')

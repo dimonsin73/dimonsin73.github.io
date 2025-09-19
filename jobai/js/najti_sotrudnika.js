@@ -30,18 +30,22 @@ headerBurger.addEventListener('click', function(){
     }) //Скрытие Aside по нажатию на ESC
 })
 // Открытие дополнительных фильтров
-const adjustment = document.querySelector('.adjustment')
+const adjustmentArray = document.querySelectorAll('.adjustment')
 const sectionArray = document.querySelectorAll('.section')
-adjustment.addEventListener('click', function(){
-    for (let i = 0; i < sectionArray.length; i++) {
-        const section = sectionArray[i];
-        if (section.dataset.section === 'additional-filters') {
-            section.classList.add('section_active')
-        } else {
-            section.classList.remove('section_active')
+for (let i = 0; i < adjustmentArray.length; i++) {
+    const adjustment = adjustmentArray[i];
+    adjustment.addEventListener('click', function(){
+        for (let i = 0; i < sectionArray.length; i++) {
+            const section = sectionArray[i];
+            if (section.dataset.section === 'additional-filters') {
+                section.classList.add('section_active')
+            } else {
+                section.classList.remove('section_active')
+            }
         }
-    }
-})
+    })
+}
+
 // Закрытие дополнительных фильтров
 const sectionClose = document.querySelector('.section__close')
 const sectionFormArray = document.querySelectorAll('.section__form')
@@ -337,4 +341,35 @@ for (let i = 0; i < textareaAdjustmentArray.length; i++) {
     textareaAdjustment.addEventListener('focusout', function(){
         textareaAdjustment.classList.remove('textarea_adjustment-active')
     }) 
+}
+// Разворачивание/сворачивание/заполнение полей поиска сотрудника
+const sectionBurger = document.querySelector('.section__burger')
+const jobDescription = document.getElementById('job-description')
+const jobTitle = document.getElementById('job-title')
+const sectionViewText = document.querySelector('.section__view-text')
+const sectionFormCollapse = document.querySelector('.section__form-collapse')
+const sectionCollapse = document.querySelector('.section__collapse')
+const sectionMt = document.querySelector('.section_mt')
+sectionBurger.addEventListener('click', function(){
+    sectionCollapse.classList.remove('section__collapse-collapse')
+    sectionMt.classList.add('section_mt-collapse')
+})
+sectionCollapse.addEventListener('click', function(e){
+    if (e.target === sectionCollapse) {
+        collapseClose()
+    }
+})
+sectionFormCollapse.addEventListener('click', function(e){
+    if (e.target === sectionFormCollapse) {
+        collapseClose()
+    }
+})
+function collapseClose() {
+    sectionCollapse.classList.add('section__collapse-collapse')
+    sectionMt.classList.remove('section_mt-collapse')
+    if (jobDescription.value != '') {
+        sectionViewText.textContent = jobDescription.value
+    } else {
+        sectionViewText.textContent = jobTitle.value
+    }
 }

@@ -486,7 +486,7 @@ html
         color: var(--Gray-30)
     &_adjustment
         display: -webkit-box
-        padding: 0px 54px 0 12px
+        padding: 0px 40px 0 10px
         -webkit-line-clamp: 1
         -webkit-box-orient: vertical
         line-height: 60px
@@ -552,6 +552,8 @@ html
     &_active 
         height: 176px
         overflow-y: scroll
+        &.options_2item 
+            height: 128px
 .option 
     padding: 14px 12px 
     border-radius: 8px
@@ -1026,12 +1028,13 @@ input[type=number]::-webkit-outer-spin-button
     padding: 10px 16px 24px
     &_active
         display: block
+        &.section_toleft
+            display: grid
     &__g24 
         display: flex
         flex-direction: column
         gap: 24px
     &_toleft 
-        display: grid
         grid-template-columns: 1090px 48px
         align-items: end
         justify-content: center
@@ -1104,10 +1107,10 @@ input[type=number]::-webkit-outer-spin-button
             height: 50px
             padding: 7px 20px 7px 50px
         &-l50
-            gap: 0
             padding: 20px
             padding-left: 50px
         &-ai 
+            gap: 0
             background: 
                 image: url('../images/icons/ai.png')
                 repeat: no-repeat 
@@ -1280,7 +1283,9 @@ input[type=number]::-webkit-outer-spin-button
     &__or
         display: flex
         justify-content: center
+        margin: 0 auto
         @include body-medium
+        line-height: 14px
         color: var(--Gray-10)
     &__imgloading 
         display: grid
@@ -1381,29 +1386,25 @@ input[type=number]::-webkit-outer-spin-button
     &__view
         position: relative
         padding: 15px
-        padding-left: 50px
+        padding-right: 40px
         &-text 
             display: -webkit-box
-            height: 20px
+            height: 30px
             @include text-medium
+            line-height: 30px
             color: var(--Black)
             -webkit-line-clamp: 1
             -webkit-box-orient: vertical
             overflow: hidden
         &-btn 
             position: absolute
-            right: 12px
+            right: 10px
             top: 15px
     &_collapse 
         position: fixed
         top: 64px
         left: 250px
         right: 0
-        display: grid
-        align-items: end
-        justify-content: center
-        gap: 16px
-        grid-template-columns: 1090px 48px
         padding-top: 25px
         padding-left: 0
         padding-right: 0
@@ -1428,7 +1429,7 @@ input[type=number]::-webkit-outer-spin-button
             & .section__view
                 display: block
             & .section__burger 
-                left: 15px
+                left: 10px
     &__content 
         position: relative
         display: flex
@@ -1533,7 +1534,7 @@ input[type=number]::-webkit-outer-spin-button
 .adjustment 
     position: absolute
     top: 18px 
-    right: 20px
+    right: 10px
     display: flex
     align-items: center
     justify-content: center
@@ -2268,7 +2269,7 @@ input[type=number]::-webkit-outer-spin-button
     &__comments 
         display: flex
         flex-direction: column
-        gap: 10px
+        gap: 10px 
         width: 100%
         padding: 10px
     &__comment 
@@ -2345,10 +2346,13 @@ input[type=number]::-webkit-outer-spin-button
 @media (max-width: 899px)
     .modal
         &__wrapper 
+            height: calc(100vh - 20px)
             &-avatar 
+                top: 50%
                 width: 370px
                 height: 400px
                 padding: 10px 20px 20px
+                transform: translate3d(-50%, -50%, 0)
         &__avatar 
             width: 330px
             height: 330px
@@ -2481,8 +2485,6 @@ input[type=number]::-webkit-outer-spin-button
     .header 
         padding: 9px 16px
     .section
-        &_collapse 
-            grid-template-columns: 800px 48px
         &_toleft 
             grid-template-columns: 800px 48px
     .portfolio
@@ -2562,13 +2564,28 @@ input[type=number]::-webkit-outer-spin-button
         &__access
             display: none
     .section
+        padding: 10px 10px 20px
         &__wrapper 
-            &-h50 
-                padding-right: 10px
+            gap: 10px
+            padding: 10px
+            &-ai 
+                padding-top: 7px
+                padding-bottom: 7px
+                padding-left: 50px
+            &-l50
+                gap: 0
+                padding-left: 50px
+        &__view 
+            padding-left: 40px
+            padding-right: 40px
         &_mt 
             margin-top: 304px
+            &-collapse 
+                margin-top: 397px
         &__form 
             gap: 10px
+        &__tag
+            margin-top: 10px
         &__top 
             align-items: center
             gap: 16px
@@ -2576,10 +2593,11 @@ input[type=number]::-webkit-outer-spin-button
             & .link 
                 margin-left: auto
                 margin-right: 10px
-        &_collapse 
-            grid-template-columns: 370px
+        &_collapse  
             padding: 10px
             padding-bottom: 25px
+        &__collapse 
+            gap: 8px
         &_toleft 
             grid-template-columns: 370px
             padding-top: 10px
@@ -2590,6 +2608,44 @@ input[type=number]::-webkit-outer-spin-button
                 bottom: 20px
                 right: 16px
                 background-color: var(--White)
+        &__select 
+            &-input 
+                padding: 7px 40px 7px 10px
+                background-position: center right 10px
+                font-size: 13px
+                line-height: 16px
+        &__footer 
+            margin-top: 10px
+            padding-left: 20px
+            padding-right: 20px
+    .adjustment
+        top: 15px
+    #specialization 
+        width: calc(100% - 40px)
+        height: 30px
+        margin-left: 40px
+        padding: 7px 44px 7px 10px
+        border-radius: 15px
+        font: 400 13px / 16px 'Inter', 'sans-serif'
+        color: var(--Black)
+        &::placeholder
+            font: 400 13px / 16px 'Inter', 'sans-serif'
+            color: var(--Gray-30)
+    .textarea_adjustment
+        height: 50px
+        padding-left: 10px
+        line-height: 50px
+        &::placeholder 
+            padding-top: 10px
+            line-height: 15px
+        &-active 
+            height: 300px
+            padding-top: 10px
+            padding-bottom: 10px
+            line-height: 15px
+            &::placeholder 
+                padding-top: 0
+                line-height: 15px
     .portfolios 
         gap: 20px
     .portfolio
@@ -2634,9 +2690,8 @@ input[type=number]::-webkit-outer-spin-button
             margin-right: -9px
             & .itc-slider-title
                 font-size: 12px
-    .modal 
-        &__wrapper 
-            height: calc(100vh - 20px)
+
+
 .logo 
     position: relative
     display: flex
