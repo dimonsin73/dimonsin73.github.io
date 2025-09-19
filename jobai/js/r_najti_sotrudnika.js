@@ -377,3 +377,7 @@ function collapseClose() {
         sectionViewText.textContent = jobTitle.value
     }
 }
+const sectionToleftBtn = document.querySelector('.section_toleft-btn')
+sectionToleftBtn.addEventListener('click', function(){
+    window.scrollTo(0, 0)
+})
