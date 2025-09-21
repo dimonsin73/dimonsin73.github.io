@@ -3301,6 +3301,19 @@ input[type=number]::-webkit-outer-spin-button {
   .portfolio .portfolio__slider .itc-slider-title {
     font-size: 12px;
   }
+  .modal-slider__top {
+    height: 60px;
+  }
+  .modal-slider__close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  .modal-slider-btn {
+    width: 40px;
+    height: 40px;
+  }
   .modal-slider .itc-slider-item {
     padding: 60px;
   }
