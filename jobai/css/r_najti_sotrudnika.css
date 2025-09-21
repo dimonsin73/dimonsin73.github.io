@@ -1547,6 +1547,9 @@ input[type=number]::-webkit-outer-spin-button {
   letter-spacing: -0.25px;
   color: var(--Gray-20);
 }
+.section__tags-2 {
+  margin-left: -30px;
+}
 .section__tag {
   display: flex;
   align-items: center;
@@ -1690,13 +1693,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .section__burger {
   position: absolute;
-  top: 50%;
+  top: 15px;
   width: 20px;
   height: 20px;
   background-image: url("../images/icons/menu.png");
   background-position: center center;
   background-repeat: no-repeat;
-  transform: translateY(-50%);
 }
 .section__view {
   position: relative;

@@ -49,7 +49,8 @@ for (let i = 0; i < adjustmentArray.length; i++) {
 // Закрытие дополнительных фильтров
 const sectionClose = document.querySelector('.section__close')
 const sectionFormArray = document.querySelectorAll('.section__form')
-const sectionTags = document.querySelector('.section__tags')
+const sectionTags1 = document.querySelector('.section__tags-1')
+const sectionTags2 = document.querySelector('.section__tags-2')
 sectionClose.addEventListener('click', function(){
     openNajtiSotrudnika()
 })
@@ -59,7 +60,8 @@ for (let i = 0; i < sectionFormArray.length; i++) {
         case 'additional-filters':
             sectionForm.addEventListener('submit', function(e){
                 e.preventDefault()
-                sectionTags.innerHTML = ''
+                sectionTags1.innerHTML = ''
+                sectionTags2.innerHTML = ''
                 openNajtiSotrudnika()
                 const formData = new FormData(sectionForm)
                 const tags = []
@@ -163,7 +165,9 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                     sectionTagBtn.setAttribute('type', 'button')
                     sectionTagBtn.classList.add('section__tag-btn', 'btn-icon')
                     sectionTag.append(sectionTagText, sectionTagBtn)
-                    sectionTags.append(sectionTag)
+                    let cloneSectionTag = sectionTag.cloneNode(true)
+                    sectionTags1.append(sectionTag)
+                    sectionTags2.append(cloneSectionTag)
                     sectionTagBtn.addEventListener('click', function(){
                         const sectionTagTarget = sectionTagBtn.parentElement
                         sectionTagTarget.remove()
