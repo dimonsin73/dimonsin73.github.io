@@ -333,7 +333,7 @@ html {
 .total-found {
   position: absolute;
   bottom: 4px;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 4px;
 }
@@ -652,6 +652,7 @@ html {
 .range {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   -moz-column-gap: 12px;
        column-gap: 12px;
 }
@@ -1282,6 +1283,9 @@ input[type=number]::-webkit-outer-spin-button {
   letter-spacing: -0.1px;
   color: var(--Black);
 }
+.section__form-new-search {
+  display: none;
+}
 .section__tabs {
   display: flex;
   gap: 16px;
@@ -1548,7 +1552,9 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--Gray-20);
 }
 .section__tags-2 {
+  max-height: 68px;
   margin-left: -30px;
+  overflow: hidden;
 }
 .section__tag {
   display: flex;
@@ -1693,7 +1699,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .section__burger {
   position: absolute;
-  top: 15px;
+  top: 20px;
   width: 20px;
   height: 20px;
   background-image: url("../images/icons/menu.png");
@@ -1703,6 +1709,7 @@ input[type=number]::-webkit-outer-spin-button {
 .section__view {
   position: relative;
   padding: 15px;
+  padding-left: 40px;
   padding-right: 40px;
 }
 .section__view-text {
@@ -1747,6 +1754,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .section__collapse .section__burger {
   left: -44px;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
 }
 .section__collapse-collapse .section__hide {
   display: none;
@@ -1756,6 +1765,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .section__collapse-collapse .section__burger {
   left: 10px;
+  top: 20px;
+  transform: none;
 }
 .section__content {
   position: relative;
@@ -1887,7 +1898,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .adjustment {
   position: absolute;
-  top: 18px;
+  top: 20px;
   right: 10px;
   display: flex;
   align-items: center;
@@ -3163,10 +3174,6 @@ input[type=number]::-webkit-outer-spin-button {
     gap: 0;
     padding-left: 50px;
   }
-  .section__view {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
   .section_mt {
     margin-top: 304px;
   }
@@ -3175,6 +3182,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .section__form {
     gap: 10px;
+  }
+  .section__tags-2 {
+    margin-left: -40px;
   }
   .section__tag {
     margin-top: 10px;
@@ -3194,6 +3204,13 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .section__collapse {
     gap: 8px;
+  }
+  .section__collapse .section__burger {
+    top: 69px;
+    transform: none;
+  }
+  .section__collapse-collapse .section__burger {
+    top: 15px;
   }
   .section_toleft {
     grid-template-columns: 370px;

@@ -49,7 +49,8 @@ for (let i = 0; i < adjustmentArray.length; i++) {
 // Закрытие дополнительных фильтров
 const sectionClose = document.querySelector('.section__close')
 const sectionFormArray = document.querySelectorAll('.section__form')
-const sectionTags = document.querySelector('.section__tags')
+const sectionTags1 = document.querySelector('.section__tags-1')
+const sectionTags2 = document.querySelector('.section__tags-2')
 sectionClose.addEventListener('click', function(){
     openNajtiSotrudnika()
 })
@@ -59,7 +60,8 @@ for (let i = 0; i < sectionFormArray.length; i++) {
         case 'additional-filters':
             sectionForm.addEventListener('submit', function(e){
                 e.preventDefault()
-                sectionTags.innerHTML = ''
+                sectionTags1.innerHTML = ''
+                sectionTags2.innerHTML = ''
                 openNajtiSotrudnika()
                 const formData = new FormData(sectionForm)
                 const tags = []
@@ -163,7 +165,9 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                     sectionTagBtn.setAttribute('type', 'button')
                     sectionTagBtn.classList.add('section__tag-btn', 'btn-icon')
                     sectionTag.append(sectionTagText, sectionTagBtn)
-                    sectionTags.append(sectionTag)
+                    let cloneSectionTag = sectionTag.cloneNode(true)
+                    sectionTags1.append(sectionTag)
+                    sectionTags2.append(cloneSectionTag)
                     sectionTagBtn.addEventListener('click', function(){
                         const sectionTagTarget = sectionTagBtn.parentElement
                         sectionTagTarget.remove()
@@ -351,8 +355,10 @@ const sectionFormCollapse = document.querySelector('.section__form-collapse')
 const sectionCollapse = document.querySelector('.section__collapse')
 const sectionMt = document.querySelector('.section_mt')
 sectionBurger.addEventListener('click', function(){
-    sectionCollapse.classList.remove('section__collapse-collapse')
-    sectionMt.classList.add('section_mt-collapse')
+    sectionCollapse.classList.toggle('section__collapse-collapse')
+    if (sectionMt !== null ) {
+        sectionMt.classList.toggle('section_mt-collapse')
+    }
 })
 sectionCollapse.addEventListener('click', function(e){
     if (e.target === sectionCollapse) {
@@ -366,10 +372,19 @@ sectionFormCollapse.addEventListener('click', function(e){
 })
 function collapseClose() {
     sectionCollapse.classList.add('section__collapse-collapse')
-    sectionMt.classList.remove('section_mt-collapse')
+    if (sectionMt !== null ) {
+        sectionMt.classList.remove('section_mt-collapse')
+    }
     if (jobDescription.value != '') {
         sectionViewText.textContent = jobDescription.value
     } else {
         sectionViewText.textContent = jobTitle.value
     }
+}
+const sectionToleftBtnArray = document.querySelectorAll('.section_toleft-btn')
+for (let i = 0; i < sectionToleftBtnArray.length; i++) {
+    const sectionToleftBtn = sectionToleftBtnArray[i];
+    sectionToleftBtn.addEventListener('click', function(){
+        window.scrollTo(0, 0)
+    })
 }
