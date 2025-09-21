@@ -1103,9 +1103,6 @@ input[type=number]::-webkit-outer-spin-button
         padding: 32px 
         border-radius: 12px
         background-color: var(--White)
-        &-h50 
-            height: 50px
-            padding: 7px 20px 7px 50px
         &-l50
             padding: 20px
             padding-left: 50px
@@ -1114,8 +1111,13 @@ input[type=number]::-webkit-outer-spin-button
             background: 
                 image: url('../images/icons/ai.png')
                 repeat: no-repeat 
-                position: center left 13px
+                position: top 20px left 13px
                 size: 24px 24px
+        &-h50 
+            height: 50px
+            padding: 7px 20px 7px 50px
+            background: 
+                position: top 13px left 13px
     &__experiences
         display: flex
         flex-direction: column
@@ -2372,6 +2374,8 @@ input[type=number]::-webkit-outer-spin-button
     z-index: 1000
     &-active 
         display: block
+    &__img 
+        position: relative
     & .itc-slider 
         position: relative
         width: 100%
@@ -2430,14 +2434,15 @@ input[type=number]::-webkit-outer-spin-button
         align-items: center 
         width: 48px
         height: 48px
-
     &-img 
         width: 100%
         object-fit: contain
     &-title 
+        position: absolute
         display: flex
         align-items: center
         justify-content: center
+        margin-top: 10px
         font: 500 12px/14px 'Inter', 'sans-serif'
         color: var(--White)
     & .itc-slider-btn 
@@ -2620,17 +2625,6 @@ input[type=number]::-webkit-outer-spin-button
             padding-right: 20px
     .adjustment
         top: 15px
-    #specialization 
-        width: calc(100% - 40px)
-        height: 30px
-        margin-left: 40px
-        padding: 7px 44px 7px 10px
-        border-radius: 15px
-        font: 400 13px / 16px 'Inter', 'sans-serif'
-        color: var(--Black)
-        &::placeholder
-            font: 400 13px / 16px 'Inter', 'sans-serif'
-            color: var(--Gray-30)
     .textarea_adjustment
         height: 50px
         padding-left: 10px
@@ -2690,7 +2684,16 @@ input[type=number]::-webkit-outer-spin-button
             margin-right: -9px
             & .itc-slider-title
                 font-size: 12px
-
+    .modal-slider 
+        & .itc-slider-item 
+            padding: 60px
+        & .itc-slider-btn 
+            width: 40px
+            height: 40px
+        & .itc-slider-btn-prev 
+            left: 10px
+        & .itc-slider-btn-next 
+            right: 10px
 
 .logo 
     position: relative

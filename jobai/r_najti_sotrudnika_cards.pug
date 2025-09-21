@@ -148,7 +148,7 @@ html(lang="ru")
                             p.section__or.section__hide или
                             .section__wrapper.section__wrapper-l50.section__hide
                                 .select.section__select
-                                    input(type="text", readonly, name="job-title", placeholder="Выберите свою вакансию").select__input.input#job-title.section__select-input
+                                    input(type="text", readonly, name="job-title").select__input.input#job-title.section__select-input
                                     .options 
                                         .options__wrapper
                                             .option Вакансия 1
@@ -191,8 +191,9 @@ html(lang="ru")
                         h2.title Дополнительные фильтры
                     form.section__form(data-form='additional-filters')
                         .section__wrapper
-                            .select
-                                input(type="text", readonly, name="specialization", placeholder='Выберите специализацию или отрасль').select__input.input#specialization
+                            .select.select_up
+                                input(type="text", readonly, name="specialization").select__input.input#specialization
+                                label(for="specialization").select__title Выберите специализацию или отрасль
                                 .options 
                                     .options__wrapper
                                         .option Строительство
@@ -231,7 +232,7 @@ html(lang="ru")
                             .section__item
                                 .select.select_up
                                     input(type="text", readonly, name="region").select__input.input#region
-                                    label(for="region").select__title Регион и адрес трудоустройства
+                                    label(for="region").select__title Город и адрес трудоустройства
                                     .options 
                                         .options__wrapper
                                             .option Москва
@@ -1144,23 +1145,29 @@ html(lang="ru")
                             </svg>
                     .itc-slider-items
                         .itc-slider-item
-                            img(src="images/kuznecov/portfolio/portfolio_1.jpg", alt="Фото из портфолио").modal-slider-img
-                            h2.modal-slider-title Диплом о профессональном образовании МГТУ им. Н.Э.Баумана
+                            .modal-slider__img
+                                img(src="images/kuznecov/portfolio/portfolio_1.jpg", alt="Фото из портфолио").modal-slider-img
+                                h2.modal-slider-title Диплом о профессональном образовании МГТУ им. Н.Э.Баумана
                         .itc-slider-item
-                            img(src="images/kuznecov/portfolio/portfolio_2.png", alt="Фото из портфолио").modal-slider-img
-                            h2.modal-slider-title Диплом о профессональном переподготвке РАНХиГС при Президенте Российской Федерации
+                            .modal-slider__img
+                                img(src="images/kuznecov/portfolio/portfolio_2.png", alt="Фото из портфолио").modal-slider-img
+                                h2.modal-slider-title Диплом о профессональном переподготвке РАНХиГС при Президенте Российской Федерации
                         .itc-slider-item
-                            img(src="images/kuznecov/portfolio/portfolio_3.jpg", alt="Фото из портфолио").modal-slider-img
-                            h2.modal-slider-title Фотография 1
+                            .modal-slider__img
+                                img(src="images/kuznecov/portfolio/portfolio_3.jpg", alt="Фото из портфолио").modal-slider-img
+                                h2.modal-slider-title Фотография 1
                         .itc-slider-item
-                            img(src="images/kuznecov/portfolio/portfolio_4.jpg", alt="Фото из портфолио").modal-slider-img
-                            h2.modal-slider-title Фотография 2
+                            .modal-slider__img
+                                img(src="images/kuznecov/portfolio/portfolio_4.jpg", alt="Фото из портфолио").modal-slider-img
+                                h2.modal-slider-title Фотография 2
                         .itc-slider-item
-                            img(src="images/kuznecov/portfolio/portfolio_5.jpg", alt="Фото из портфолио").modal-slider-img
-                            h2.modal-slider-title Фотография 3
+                            .modal-slider__img
+                                img(src="images/kuznecov/portfolio/portfolio_5.jpg", alt="Фото из портфолио").modal-slider-img
+                                h2.modal-slider-title Фотография 3
                         .itc-slider-item
-                            img(src="images/kuznecov/portfolio/portfolio_6.jpg", alt="Фото из портфолио").modal-slider-img
-                            h2.modal-slider-title Фотография 4
+                            .modal-slider__img
+                                img(src="images/kuznecov/portfolio/portfolio_6.jpg", alt="Фото из портфолио").modal-slider-img
+                                h2.modal-slider-title Фотография 4
                     .itc-slider-btn.itc-slider-btn-prev
                     .itc-slider-btn.itc-slider-btn-next
 

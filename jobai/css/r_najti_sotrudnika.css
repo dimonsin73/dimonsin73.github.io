@@ -1342,10 +1342,6 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 12px;
   background-color: var(--White);
 }
-.section__wrapper-h50 {
-  height: 50px;
-  padding: 7px 20px 7px 50px;
-}
 .section__wrapper-l50 {
   padding: 20px;
   padding-left: 50px;
@@ -1354,8 +1350,13 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 0;
   background-image: url("../images/icons/ai.png");
   background-repeat: no-repeat;
-  background-position: center left 13px;
+  background-position: top 20px left 13px;
   background-size: 24px 24px;
+}
+.section__wrapper-h50 {
+  height: 50px;
+  padding: 7px 20px 7px 50px;
+  background-position: top 13px left 13px;
 }
 .section__experiences {
   display: flex;
@@ -2904,6 +2905,9 @@ input[type=number]::-webkit-outer-spin-button {
 .modal-slider-active {
   display: block;
 }
+.modal-slider__img {
+  position: relative;
+}
 .modal-slider .itc-slider {
   position: relative;
   width: 100%;
@@ -2978,9 +2982,11 @@ input[type=number]::-webkit-outer-spin-button {
      object-fit: contain;
 }
 .modal-slider-title {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
   font: 500 12px/14px "Inter", "sans-serif";
   color: var(--White);
 }
@@ -3213,23 +3219,6 @@ input[type=number]::-webkit-outer-spin-button {
   .adjustment {
     top: 15px;
   }
-  #specialization {
-    width: calc(100% - 40px);
-    height: 30px;
-    margin-left: 40px;
-    padding: 7px 44px 7px 10px;
-    border-radius: 15px;
-    font: 400 13px/16px "Inter", "sans-serif";
-    color: var(--Black);
-  }
-  #specialization::-moz-placeholder {
-    font: 400 13px/16px "Inter", "sans-serif";
-    color: var(--Gray-30);
-  }
-  #specialization::placeholder {
-    font: 400 13px/16px "Inter", "sans-serif";
-    color: var(--Gray-30);
-  }
   .textarea_adjustment {
     height: 50px;
     padding-left: 10px;
@@ -3311,6 +3300,19 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .portfolio .portfolio__slider .itc-slider-title {
     font-size: 12px;
+  }
+  .modal-slider .itc-slider-item {
+    padding: 60px;
+  }
+  .modal-slider .itc-slider-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .modal-slider .itc-slider-btn-prev {
+    left: 10px;
+  }
+  .modal-slider .itc-slider-btn-next {
+    right: 10px;
   }
 }
 .logo {

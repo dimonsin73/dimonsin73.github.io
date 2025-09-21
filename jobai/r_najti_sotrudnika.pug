@@ -186,8 +186,9 @@ html(lang="ru")
                         h2.title Дополнительные фильтры
                     form.section__form(data-form='additional-filters')
                         .section__wrapper
-                            .select
-                                input(type="text", readonly, name="specialization", placeholder='Выберите специализацию или отрасль').select__input.input#specialization
+                            .select.select_up
+                                input(type="text", readonly, name="specialization").select__input.input#specialization
+                                label(for="specialization").select__title Выберите специализацию или отрасль
                                 .options 
                                     .options__wrapper
                                         .option Строительство
@@ -226,7 +227,7 @@ html(lang="ru")
                             .section__item
                                 .select.select_up
                                     input(type="text", readonly, name="region").select__input.input#region
-                                    label(for="region").select__title Регион и адрес трудоустройства
+                                    label(for="region").select__title Город и адрес трудоустройства
                                     .options 
                                         .options__wrapper
                                             .option Москва
@@ -241,14 +242,14 @@ html(lang="ru")
                                             .check__check
                                             .check__info
                                                 h3.check__title Готовность к релокации
-                                                p.check__text Кандидат должен переехать к месту трудоустройства?
+                                                p.check__text Готовы ли вы изменить город проживания?
                                     .check
                                         input.check__input#business-trip(type="checkbox", name="business-trip" value="Готовность к командировкам")
                                         label.check__label(for="business-trip")
                                             .check__check
                                             .check__info
                                                 h3.check__title Готовность к командировкам
-                                                p.check__text У кандидата будут частые рабочие командировки?
+                                                p.check__text Готовы ли вы изменить город проживания?
                             .select.select_up
                                 input(type="text", readonly, name="citizenship").select__input.input#citizenship
                                 label(for="citizenship").select__title Гражданство
