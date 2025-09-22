@@ -2167,7 +2167,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: grid;
   align-items: end;
   grid-template-columns: 160px 274px 585px;
-  gap: 0 25px;
+  gap: 6px 25px;
   padding: 20px;
   padding-bottom: 0;
 }
@@ -2176,12 +2176,13 @@ input[type=number]::-webkit-outer-spin-button {
   flex-direction: column;
   gap: 6px;
   margin-top: auto;
+  padding-left: 10px;
 }
 .portfolio__top {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 12px;
+  margin-top: 25px;
 }
 .portfolio__avatar {
   position: relative;
@@ -2189,8 +2190,8 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -2210,8 +2211,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-size: 36px;
 }
 .portfolio__avatar-img {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 16px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -2283,7 +2284,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 18px;
 }
 .portfolio__info-title {
   font: 700 40px/48px "Inter", "sans-serif";
@@ -2464,11 +2465,12 @@ input[type=number]::-webkit-outer-spin-button {
 .portfolio .portfolio__slider .itc-slider-bottom {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 .portfolio .portfolio__slider .itc-slider-title {
   position: relative;
   padding-right: 20px;
-  font: 600 14px/19px "Inter", "sans-serif";
+  font: 600 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.1px;
   color: #202123;
 }
@@ -2484,7 +2486,7 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 6px;
 }
 .portfolio .portfolio__slider .itc-slider-text {
-  font: 500 10px/12px "Inter", "sans-serif";
+  font: 500 10px/14px "Inter", "sans-serif";
   color: var(--Gray-40);
 }
 .portfolio .portfolio__slider .itc-slider-btn {
@@ -3284,14 +3286,14 @@ input[type=number]::-webkit-outer-spin-button {
     right: 20px;
   }
   .portfolio__top {
-    gap: 32px;
+    margin-top: 30px;
   }
   .portfolio__show {
     display: none;
   }
   .portfolio__content {
     grid-template-columns: 160px 274px 302px;
-    gap: 0 21px;
+    gap: 6px 21px;
   }
   .portfolio__contact {
     align-items: start;
@@ -3519,9 +3521,16 @@ input[type=number]::-webkit-outer-spin-button {
   .portfolio__content {
     align-items: start;
     grid-template-columns: 150px 190px;
-    gap: 12px 10px;
+    gap: 6px 10px;
     padding: 10px;
     border-top: 1px solid var(--Aside);
+  }
+  .portfolio__contact {
+    padding-left: 0;
+    gap: 2px;
+  }
+  .portfolio__title {
+    line-height: 22px;
   }
   .portfolio__avatar {
     grid-row: span 2;
@@ -3531,6 +3540,11 @@ input[type=number]::-webkit-outer-spin-button {
   .portfolio__avatar-img {
     width: 150px;
     height: 150px;
+  }
+  .portfolio__tel {
+    height: -moz-max-content;
+    height: max-content;
+    line-height: 14px;
   }
   .portfolio__main-mr {
     margin-right: 0;
