@@ -175,6 +175,7 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                     sectionTagBtn.addEventListener('click', function(){
                         const sectionTagTarget = sectionTagBtn.parentElement
                         sectionTagTarget.remove()
+                        sectionTagsHeight()
                     })
                 }
                 sectionTagsHeight()
@@ -389,10 +390,28 @@ for (let i = 0; i < sectionToleftBtnArray.length; i++) {
     })
 }
 function sectionTagsHeight() {
-    const marginTopStart = sectionTags2.scrollHeight
-    const marginTopStartDelta = Number(getComputedStyle(sectionMt).marginTop.slice(0, -2))
-    const marginTopSum = `${marginTopStart + marginTopStartDelta}px`
-    sectionMt.style.marginTop = marginTopSum
+    const marginTopTags1 = sectionTags1.scrollHeight
+    const marginTopTags2 = sectionTags2.scrollHeight
+    if (marginTopTags1 > marginTopTags2) {
+        funMarginTop(marginTopTags1)
+    } else {
+        funMarginTop(marginTopTags2)
+    }
+    
+}
+function funMarginTop(marginTop) {
+    if (marginTop === 0 ) {
+        sectionMt.classList.remove('section_1line')
+        sectionMt.classList.remove('section_2line')
+    }
+    if (marginTop > 20) {
+        sectionMt.classList.add('section_1line')
+        sectionMt.classList.remove('section_2line')
+    }
+    if (marginTop > 60) {
+        sectionMt.classList.remove('section_1line')
+        sectionMt.classList.add('section_2line')
+    }
 }
 const btnModalopenArray = document.querySelectorAll('.btn-modalopen')
 const modal = document.querySelector('.modal')

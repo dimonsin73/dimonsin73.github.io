@@ -72,12 +72,6 @@ html(lang="ru")
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10C17 9.44772 16.5523 9 16 9H4C3.44771 9 3 9.44772 3 10C3 10.5523 3.44771 11 4 11H16C16.5523 11 17 10.5523 17 10Z" fill="#6A6A73"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M17 15C17 14.4477 16.5523 14 16 14H4C3.44771 14 3 14.4477 3 15C3 15.5523 3.44771 16 4 16H16C16.5523 16 17 15.5523 17 15Z" fill="#6A6A73"/>
                 </svg>
-            .header__logo
-                .logo 
-                    p.logo__job JOB 
-                    p.logo__job.logo__job-white AI 
-                    .logo__r 
-                        p.logo__r-text R
             .press-right
             button(type="button").btn-icon.bulb
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +140,7 @@ html(lang="ru")
                                 .section__tags.section__tags-1
                             p.section__or.section__hide или
                             .section__wrapper.section__wrapper-l50.section__hide
-                                .select.section__select
+                                .select
                                     input(type="text", readonly, name="job-title", placeholder="Выберите свою вакансию").select__input.input#job-title.section__select-input
                                     .options 
                                         .options__wrapper
@@ -412,12 +406,12 @@ html(lang="ru")
                                         p.portfolio__text Мужчина, 37 лет
                                 .portfolio__contact
                                     .portfolio__col 
-                                        h2.portfolio__stitle +7 (985) 743-34-42
+                                        h2.portfolio__tel +7 (985) 743-34-42
                                             a(href="tel:+79857433442").btn-icon
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
                                                 </svg>
-                                        h2.portfolio__stitle +7 (985) 220-89-91
+                                        h2.portfolio__tel +7 (985) 220-89-91
                                             a(href="https://t.me/+79852208991" target="_blank").btn-icon
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M14.7011 1.41966L0.525853 6.91424C-0.0445783 7.1701 -0.237518 7.68254 0.387955 7.96062L4.02455 9.12227L12.8173 3.66009C13.2974 3.31718 13.7889 3.40862 13.3659 3.78583L5.81416 10.6588L5.57693 13.5674C5.79666 14.0165 6.19898 14.0186 6.4556 13.7954L8.54492 11.8082L12.1232 14.5016C12.9543 14.9962 13.4065 14.677 13.5853 13.7705L15.9323 2.5996C16.176 1.48379 15.7605 0.992165 14.7011 1.41966Z" fill="#5C5C5C"/>
@@ -578,7 +572,7 @@ html(lang="ru")
                                         p.portfolio__text Женщина, 30 лет
                                 .portfolio__contact
                                     .portfolio__col 
-                                        h2.portfolio__stitle +7 (977) 137-01-02
+                                        h2.portfolio__tel +7 (977) 137-01-02
                                             a(href="tel:+79771370102").btn-icon
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M1.60156 2.4001C1.60156 1.95827 1.95973 1.6001 2.40156 1.6001H4.12386C4.51493 1.6001 4.84868 1.88283 4.91298 2.26858L5.50443 5.81728C5.56216 6.1637 5.38721 6.50728 5.07308 6.66434L3.83457 7.28359C4.72761 9.50275 6.49891 11.2741 8.71807 12.1671L9.33732 10.9286C9.49438 10.6145 9.83796 10.4395 10.1844 10.4972L13.7331 11.0887C14.1188 11.153 14.4016 11.4867 14.4016 11.8778V13.6001C14.4016 14.0419 14.0434 14.4001 13.6016 14.4001H12.0016C6.2578 14.4001 1.60156 9.74386 1.60156 4.0001V2.4001Z" fill="black" fill-opacity="0.64"/>
@@ -824,13 +818,14 @@ html(lang="ru")
                     .modal__topfix-img
                         img(src="images/kuznecov/avatars/kuznecov.png", alt="avatars")
                     .modal__topfix-info
-                        h2.modal__topfix-name Кузнецов Владимир Михайлович
+                        h2.modal__topfix-name 
+                            | Кузнецов Владимир Михайлович
+                            .portfolio__language 
+                                img(src="images/language/ru.png", alt="ru")
                         p.modal__topfix-sex Мужчина, 38 лет
                         .modal__topfix-line
                             .modal__status
                                 p.portfolio__status.portfolio__status-green Открыт к предложениям
-                            .portfolio__language 
-                                img(src="images/language/ru.png", alt="ru")
                     .modal__die 
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_16_24163)">
@@ -879,13 +874,14 @@ html(lang="ru")
                     .modal__topfix-img
                         img(src="images/kuznecov/avatars/kuznecov.png", alt="avatars")
                     .modal__topfix-info
-                        h2.modal__topfix-name Кузнецов Владимир Михайлович
+                        h2.modal__topfix-name 
+                            | Кузнецов Владимир Михайлович
+                            .portfolio__language 
+                                img(src="images/language/ru.png", alt="ru")
                         p.modal__topfix-sex Мужчина, 38 лет
                         .modal__topfix-line
                             .modal__status
                                 p.portfolio__status.portfolio__status-green Открыт к предложениям
-                            .portfolio__language 
-                                img(src="images/language/ru.png", alt="ru")
                     .modal__die 
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 6H5C3.89543 6 3 6.89543 3 8V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V8C21 6.89543 20.1046 6 19 6H14M10 6V5C10 3.89543 10.8954 3 12 3C13.1046 3 14 3.89543 14 5V6M10 6C10 7.10457 10.8954 8 12 8C13.1046 8 14 7.10457 14 6M9 14C10.1046 14 11 13.1046 11 12C11 10.8954 10.1046 10 9 10C7.89543 10 7 10.8954 7 12C7 13.1046 7.89543 14 9 14ZM9 14C10.3062 14 11.4174 14.8348 11.8292 16M9 14C7.69378 14 6.58249 14.8348 6.17065 16M15 11H18M15 15H17" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1049,13 +1045,14 @@ html(lang="ru")
                     .modal__topfix-img
                         img(src="images/kuznecov/avatars/kuznecov.png", alt="avatars")
                     .modal__topfix-info
-                        h2.modal__topfix-name Кузнецов Владимир Михайлович
+                        h2.modal__topfix-name 
+                            | Кузнецов Владимир Михайлович
+                            .portfolio__language 
+                                img(src="images/language/ru.png", alt="ru")
                         p.modal__topfix-sex Мужчина, 38 лет
                         .modal__topfix-line
                             .modal__status
                                 p.portfolio__status.portfolio__status-green Открыт к предложениям
-                            .portfolio__language 
-                                img(src="images/language/ru.png", alt="ru")
                     .modal__die 
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21 13.2554C18.2207 14.3805 15.1827 15 12 15C8.8173 15 5.7793 14.3805 3 13.2554M16 6V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V6M12 12H12.01M5 20H19C20.1046 20 21 19.1046 21 18V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V18C3 19.1046 3.89543 20 5 20Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1087,13 +1084,14 @@ html(lang="ru")
                     .modal__topfix-img
                         img(src="images/kuznecov/avatars/kuznecov.png", alt="avatars")
                     .modal__topfix-info
-                        h2.modal__topfix-name Кузнецов Владимир Михайлович
+                        h2.modal__topfix-name 
+                            | Кузнецов Владимир Михайлович
+                            .portfolio__language 
+                                img(src="images/language/ru.png", alt="ru")
                         p.modal__topfix-sex Мужчина, 38 лет
                         .modal__topfix-line
                             .modal__status
                                 p.portfolio__status.portfolio__status-green Открыт к предложениям
-                            .portfolio__language 
-                                img(src="images/language/ru.png", alt="ru")
                     .modal__die 
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 8H17M7 12H11M12 20L8 16H5C3.89543 16 3 15.1046 3 14V6C3 4.89543 3.89543 4 5 4H19C20.1046 4 21 4.89543 21 6V14C21 15.1046 20.1046 16 19 16H16L12 20Z" stroke="#202123" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
