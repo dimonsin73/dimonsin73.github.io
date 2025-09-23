@@ -26,34 +26,6 @@ languageView.addEventListener('click', function(){
         }
     }) //Закрытие меню выбора языка по нажатию на ESC
 })
-const menuLanguage = document.querySelector('.menu__language')
-const menuLanguageView = menuLanguage.querySelector('.language__view')
-const menuLanguageDropdawn = menuLanguage.querySelector('.language__dropdawn')
-const menuLanguageDropdawnOptionArray = menuLanguage.querySelectorAll('.language__dropdawn-option')
-menuLanguageView.addEventListener('click', function(){
-    menuLanguageDropdawn.classList.toggle('language__dropdawn-active')
-    for (let i = 0; i < menuLanguageDropdawnOptionArray.length; i++) {
-        const menuLanguageDropdawnOption = menuLanguageDropdawnOptionArray[i];
-        menuLanguageDropdawnOption.addEventListener('click', function(){
-            const style = getComputedStyle(menuLanguageDropdawnOption)
-            const bgImage= style['background-image']
-            menuLanguageView.style.backgroundImage = bgImage
-            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
-        })
-    }
-    document.addEventListener('click', (e) => {
-        const withinBoundaries = e.composedPath().includes(menuLanguage);
-        if ( ! withinBoundaries ) {
-            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
-        }
-    }) //Закрытие меню выбора языка по щелчку вне меню
-    document.addEventListener('keydown', function(e) {
-        if( e.keyCode == 27 ){ 
-            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
-        }
-    }) //Закрытие меню выбора языка по нажатию на ESC
-})
-
 const popupArray = document.querySelectorAll('.popup')
 for (let i = 0; i < popupArray.length; i++) {
     const popup = popupArray[i];
@@ -85,26 +57,22 @@ for (let i = 0; i < neumorphicButtonArray.length; i++) {
         neumorphicButton.classList.toggle('neumorphic-button-active')
     })    
 }
-
-
 const arrowMenu = document.querySelector('.arrow-menu')
-const aarrowLogiin = document.querySelector('.arrow-login')
+const arrowHiro = document.querySelector('.arrow-hiro')
 const menu = document.getElementById('menu')
-const login = document.getElementById('login')
-
+const hiro = document.getElementById('hiro')
 window.addEventListener('wheel', function (e) {
     const delta = e.deltaY;
     if (delta > 0) {
         menu.scrollIntoView(true)
         arrowMenu.style.display = 'none'
-        aarrowLogiin.style.display = 'block'
+        arrowHiro.style.display = 'block'
     } else {
-        login.scrollIntoView(true)
+        hiro.scrollIntoView(true)
         arrowMenu.style.display = 'block'
-        aarrowLogiin.style.display = 'none'
+        arrowHiro.style.display = 'none'
     }
 })
-
 let startX, startY;
 window.addEventListener('touchstart', function(e) {
     startX = e.touches[0].clientX;
@@ -125,11 +93,11 @@ window.addEventListener('touchmove', function(e) {
         if (deltaY < 0) {
             menu.scrollIntoView(true)
             arrowMenu.style.display = 'none'
-            aarrowLogiin.style.display = 'block'
+            arrowHiro.style.display = 'block'
         } else {
-            login.scrollIntoView(true)
+            hiro.scrollIntoView(true)
             arrowMenu.style.display = 'block'
-            aarrowLogiin.style.display = 'none'
+            arrowHiro.style.display = 'none'
         }
     }
 })

@@ -562,11 +562,6 @@ body {
   }
 }
 @media (max-width: 1023px) {
-  .popup {
-    bottom: 110px;
-  }
-}
-@media (max-width: 899px) {
   .hiro__wrapper {
     padding: 20px;
   }
