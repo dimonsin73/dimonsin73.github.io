@@ -33,15 +33,17 @@
     --Red-error: #FF0034
     --Rose: #F29792
     --Scrollbar: #D9D9D9
-    --Neobg: #e0e5ec
-    --Neoshadow: #A3B1C6
+    --Neubg: #e0e5ec
+    --Neushadow: #A3B1C6
+    --Neutext: #5A6A82
 
 html 
     scroll-behavior: smooth
 body 
     min-width: 390px
-    background-color: var(--Neobg)
-    font: 400 16px/20px Inter, sans-serif
+    min-height: 755px
+    background-color: var(--Neubg)
+    font: 400 16px/20px 'Inter', 'sans-serif'
     color: var(--Black)
 .container
     display: flex
@@ -49,23 +51,84 @@ body
     align-items: center
     justify-content: center
     width: 350px
+    height: 100%
     margin: 0 auto
-
+.neumorphic
+    border-radius: 20px
+    background-color: var(--Neubg)
+    box-shadow: 10px 10px 20px var(--Neushadow), -10px -10px 20px var(--White)
+    &-inset
+        border-radius: 20px
+        background-color: var(--Neubg)
+        box-shadow: inset 10px 10px 20px var(--Neushadow), inset -10px -10px 20px #fff
+    &-input 
+        width: 300px
+        padding: 15px
+        border: none 
+        border-radius: 10px
+        outline: none
+        color: var(--Neutext)
+        &::placeholder 
+            color: var(--Neushadow)
+        &:focus 
+            outline: 1px solid var(--Neushadow)
+            background-color: var(--White)
+    &-button 
+        padding: 18px 
+        color: var(--Neutext)
+        border: none
+        cursor: pointer
+        transition: all 0.3s ease
+        &:active 
+            font-weight: 600
+            box-shadow: inset 5px 5px 10px var(--Neushadow), inset -5px -5px 10px var(--White)
+        &-active 
+            font-weight: 600
+            box-shadow: inset 5px 5px 10px var(--Neushadow), inset -5px -5px 10px var(--White)
 .hiro
     position: relative
     display: flex
     flex-direction: column
+    justify-content: space-between
     width: 100%
-    min-height: 100vh
+    height: 100vh
     &__wrapper
         display: flex
         flex-direction: column
         gap: 20px
+        width: 390px
         height: 100%
-        padding: 48px 20px
+        margin: 0 auto
+        padding: 48px 20px 140px
     &__btn 
         width: 140px
         margin: 10px auto 0
+    &__block 
+        display: flex
+        flex-direction: column
+        justify-content: center
+        gap: 20px
+        width: 100%
+        padding: 25px
+        &-search 
+            padding-top: 13px
+            gap: 15px
+        &-title 
+            font: 600 16px/22px "Inter", 'sans-serif'
+            color: var(--Neutext)
+            text-align: center
+    &__footer 
+        position: absolute
+        left: 120px
+        right: 120px
+        bottom: 45px
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 40px
+        max-width: 1400px
+        height: 60px
+        margin: 0 auto
 .logo 
     position: relative
     display: flex
@@ -77,11 +140,11 @@ body
     &__job 
         font: 700 60px/60px 'Inter', 'sans-serif'
         letter-spacing: -0.2px
-        text-shadow: 5px 5px 5px var(--Neoshadow), -5px -5px 5px var(--White)
+        text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
         &-white 
             padding: 20px
             border-radius: 24px
-            box-shadow: 5px 5px 5px var(--Neoshadow), -5px -5px 5px var(--White)
+            box-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
             background-color: var(--Primary-50)
             color: var(--White)
             text-shadow: 4px 4px 5px var(--Black)
@@ -101,9 +164,72 @@ body
             font: 700 16px/16px 'Inter', 'sans-serif'
             letter-spacing: -0.2px
             color: var(--Black)
-.video 
-    position: absolute
-    top: -85px
+.switch 
+    position: relative
+    display: inline-block
+    flex: 0 0 auto
+    width: 300px
+    height: 56px
+    &__input 
+        display: none
+    &__points 
+        position: relative
+        display: flex
+        align-items: center
+        height: 56px
+        width: 300px
+        z-index: 10
+    &__point 
+        flex: 0 0 50%
+        font: 400 16px/22px 'Inter', 'sans-serif'
+        color: var(--Neutext)
+        text-align: center
+        transition: font 0.4s ease
+        &-left
+            font-weight: 600
+    &__slider 
+        position: absolute
+        width: 300px
+        height: 56px
+        border-radius: 20px
+        box-shadow: inset 5px 5px 10px var(--Neushadow), inset -5px -5px 10px var(--White)
+        cursor: pointer
+        transition: font 0.4s ease
+        &:before 
+            content: ""
+            position: absolute
+            width: 150px
+            height: 56px
+            border-radius: 20px
+            background-color: var(--Neubg)
+            box-shadow: 10px 10px 20px var(--Neushadow), -10px -10px 20px var(--White)
+            transition: transform 0.4s ease
+    &__slider2 
+        box-shadow: inset 10px 10px 20px var(--Neushadow), inset -10px -10px 20px var(--White)
+    &__input:checked + .switch__slider:before 
+        transform: translateX(150px)
+    &__input:checked ~ .switch__points .switch__point-left
+        font-weight: 400
+    &__input:checked ~ .switch__points .switch__point-right
+        font-weight: 600
+.radio 
+    display: contents
+    &__label
+        padding: 18px 30px 
+        color: var(--Neutext)
+        border: none
+        border-radius: 20px
+        box-shadow: 10px 10px 20px var(--Neushadow), -10px -10px 20px var(--White)
+        background-color: var(--Neubg)
+        text-align: center
+        cursor: pointer
+        transition: all 0.3s ease
+    &__input 
+        display: none
+        &:checked ~ .radio__label
+            font-weight: 600
+            box-shadow: inset 5px 5px 10px var(--Neushadow), inset -5px -5px 10px var(--White)
+.video  
     display: flex
     align-items: center
     justify-content: center
@@ -114,8 +240,8 @@ body
     margin-top: auto
     &__text 
         font: 700 16px/26px 'Inter', 'sans-serif'
-        color: #000
-        text-shadow: 5px 5px 5px #A3B1C6, -5px -5px 5px #FFFFFF
+        color: var(--Black)
+        text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
     &__icon 
         flex: 0 0 auto
         display: flex
@@ -124,32 +250,153 @@ body
         width: 35px
         height: 35px
         border-radius: 6px
-        box-shadow: 5px 5px 5px #A3B1C6, -5px -5px 5px #FFFFFF
+        box-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
         background-color: var(--Primary-50)
         & svg 
             position: relative
             top: 4px
             left: 4px
-
-.block 
+.nav
+    position: relative
     display: flex
-    flex-direction: column
-    justify-content: center
-    gap: 20px
-    width: 350px
-    padding: 25px
-    border-radius: 20px
-    box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
-    &_search 
-        padding-top: 13px
-        gap: 15px
-    &__title 
-        font: 600 16px/22px "Inter", 'sans-serif'
-        color: #5A6A82
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    z-index: 10
+    &__link
+        max-width: 260px
+        padding: 0 10px
+        font: 600 16px/24px "Inter", "sans-serif"
+        color: var(--Neutext)
         text-align: center
-    
-.reg 
-    text-align: center
+        transition: text-shadow 0.3s ease, color 0.3s ease
+        &:hover 
+            color: var(--Black)
+            text-shadow: -5px -5px 5px var(--White), 5px 5px 5px var(--Neushadow)
+.popup 
+    position: absolute
+    display: flex
+    bottom: 80px
+    &_left 
+        left: 30px
+    &_right
+        right: 30px
+    &_active
+        & .popup__wrapper
+            width: 350px
+            height: 300px
+            padding: 15px
+            border-radius: 20px
+            transform: translate3d(0, -90px, 0)
+        & .popup__icon 
+            position: absolute
+            top: 0
+            left: 0
+    &__wrapper
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 60px
+        height: 60px
+        border-radius: 30px
+        overflow: hidden
+        transition: bottom 0.3s ease, width 0.3s ease, height 0.3s ease, border-radius 0.3s ease
+    &__top 
+        display: flex
+        justify-content: center
+        width: 100%
+        margin-bottom: auto
+        padding: 4px 0
+        padding-left: 30px
+        font: 600 16px/22px 'Inter', 'sans-serif'
+        color: #5A6A82
+        &-2line 
+            padding: 0
+    &__icon 
+        flex: 0 0 auto
+        width: 60px
+        height: 60px
+        padding: 15px
+    &__info 
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 18px
+        padding: 0 26px 
+        &-text 
+            font: 400 16px/24px 'Inter', 'sans-serif'
+            color: var(--Neutext)
+    &__btn
+        width: 140px
+        font: 500 16px/20px "inter", 'sans-serif'
+    &__link 
+        font: 600 16px/22px 'Inter', 'sans-serif'
+        color: var(--Primary-40)
+.rights 
+    position: absolute
+    bottom: 8px
+    right: 8px
+    display: flex
+    justify-content: flex-end
+    gap: 10px
+    &__text 
+        font: 400 11px/12px 'Inter', 'sans-serif'
+        color: var(--Neutext)
+        text-align: right
+.mirax 
+    position: absolute
+    top: 30px
+    left: 30px
+.language 
+    position: absolute
+    top: 30px
+    right: 30px
+    width: 53px
+    height: 32px
+    border: 1px solid var(--Scrollbar)
+    z-index: 20
+    &__view 
+        width: 100%
+        height: 100%
+        background: 
+            image: url('../images/language/ru.png')
+            size: contain 
+            repeat: no-repeat
+        cursor: pointer
+    &__dropdawn 
+        height: 0
+        margin-top: 8px
+        overflow: hidden
+        transition: height 0.3s ease
+        &-active 
+            height: 64px
+        &-option
+            width: 53px
+            height: 32px
+            background: 
+                size: contain 
+                repeat: no-repeat
+            cursor: pointer
+        &-option1 
+            background: 
+                image: url('../images/language/ru.png')
+        &-option2
+            background: 
+                image: url('../images/language/uk.png')
+.arrow
+    display: none
+    animation: arrowUp 1s infinite alternate ease 0s
+    &-menu
+        display: none
+        align-items: center
+        justify-content: center
+    &-login
+        display: none
+        align-items: center
+        justify-content: center
+.menu
+    display: none
+
 .form 
     display: none
     flex-direction: column
@@ -195,333 +442,54 @@ body
         margin: 0 auto
         font: 600 16px/26px 'Inter', 'sans-serif'
         color: #006FD8
-.radio 
-    display: contents
-    &__label
-        padding: 18px 30px 
-        color: #5A6A82
-        border: none
-        border-radius: 20px
-        box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
-        background-color: var(--Neobg)
-        text-align: center
-        cursor: pointer
-        transition: all 0.3s ease
-    &__input 
-        display: none
-        &:checked ~ .radio__label
-            font-weight: 600
-            box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
 .title 
     color: #707C84
     font: 700 24px/28px 'Inter', 'sans-serif'
 .timer 
     display: flex
     align-items: center
-.neumorphic
-    border-radius: 20px
-    background-color: var(--Neobg)
-    box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
-    &-inset
-        border-radius: 20px
-        background-color: var(--Neobg)
-        box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
-    &-input 
-        width: 300px
-        padding: 15px
-        border: none 
-        outline: none
-        font: 400 16px/20px 'Inter', 'sans-serif'
-        color: #5A6A82
-        &::placeholder 
-            color: #a3b1c6
-    &-input3
-        &:focus 
-            outline: 1px solid #A3B1C6
-            background-color: #fff
-    &-input2 
-        border-radius: 10px
-    &-button 
-        padding: 18px 
-        color: #5A6A82
-        border: none
-        cursor: pointer
-        transition: all 0.3s ease
-        &:active 
-            box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
-        &-active 
-            font-weight: 600
-            box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
-            &.neumorphic-button3
-                box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
-    &-button1
-        font-weight: 500
-    &-button2
-        font-weight: 600
-    &-button3
-        font-weight: 600
-        &:active 
-            box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
-            
-.footer 
-    position: relative
-    display: flex
-    align-items: center
-    justify-content: center
-    gap: 40px
-    height: 60px
-    margin-left: 200px
-    margin-right: 200px
-    margin-top: auto
-    margin-bottom: 45px
-.nav
-    position: relative
-    display: flex
-    align-items: center
-    justify-content: space-between
-    gap: 20px
-    width: 100%
-    z-index: 10
-    &__link
-        font: 600 16px/26px "Inter", "sans-serif"
-        color: #5A6A82
-        text-align: center
-.arrow
-    display: none
-    animation: arrowUp 1s infinite alternate ease 0s
-    &-menu
-        display: none
-    &-login
-        display: none
-.popup 
-    position: absolute
-    display: flex
-    bottom: 80px
-    &_left 
-        left: 30px
-    &_left2
-        bottom: 110px
-        left: 30px
-    &_right
-        right: 30px
-    &_right2
-        bottom: 110px
-        right: 30px
-    &_active
-        & .popup__wrapper
-            width: 350px
-            height: 300px
-            padding: 15px
-            border-radius: 20px
-            transform: translate3d(0, -80px, 0)
-        & .popup__icon 
-            position: absolute
-            top: 0
-            left: 0
-    &__wrapper
-        display: flex
-        flex-direction: column
-        align-items: center
-        width: 60px
-        height: 60px
-        border-radius: 30px
-        overflow: hidden
-        transition: bottom 0.3s ease, width 0.3s ease, height 0.3s ease, border-radius 0.3s ease
-    &__top 
-        display: flex
-        justify-content: center
-        width: 100%
-        margin-bottom: auto
-        padding: 4px 0
-        padding-left: 30px
-        font: 600 16px/22px 'Inter', 'sans-serif'
-        color: #5A6A82
-        &-2line 
-            padding: 0
-    &__icon 
-        flex: 0 0 auto
-        width: 60px
-        height: 60px
-        padding: 15px
-    &__info 
-        display: flex
-        flex-direction: column
-        align-items: center
-        gap: 18px
-        padding: 0 26px 
-        &-text 
-            font: 400 16px/24px 'Inter', 'sans-serif'
-            color: #5A6A82
-    &__btn
-        width: 140px
-        font: 500 16px/20px "inter", 'sans-serif'
-    &__link 
-        font: 600 16px/22px 'Inter', 'sans-serif'
-        color: #006FD8
-.mirax 
-    position: absolute
-    top: 30px
-    left: 30px
-    display: flex
-    flex-direction: column
-    gap: 16px
-.rights 
-    position: absolute
-    bottom: 16px
-    right: 8px
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-    &__text 
-        font: 400 14px/20px 'Inter', 'sans-serif'
-        color: #5A6A82
-        text-align: right
-.language 
-    position: absolute
-    top: 30px
-    right: 30px
-    width: 53px
-    height: 32px
-    border: 1px solid #D9D9D9
-    z-index: 20
-    &__view 
-        width: 100%
-        height: 100%
-        background: 
-            image: url('../images/language/ru.png')
-            size: contain 
-            repeat: no-repeat
-        cursor: pointer
-    &__dropdawn 
-        height: 0
-        margin-top: 8px
-        overflow: hidden
-        transition: height 0.3s ease
-        &-active 
-            height: 64px
-        &-option
-            width: 53px
-            height: 32px
-            background: 
-                size: contain 
-                repeat: no-repeat
-            cursor: pointer
-        &-option1 
-            background: 
-                image: url('../images/language/ru.png')
-        &-option2
-            background: 
-                image: url('../images/language/uk.png')
-.menu
-    display: none
 @keyframes arrowUp
   from 
-    transform: translate3d(0, 30px, 0)
+    transform: translate3d(0, 15px, 0)
   to 
-    transform: translate3d(0, -30px, 0)
-@media (max-width:1399px)
-    .footer 
-        margin-left: 120px
-        margin-right: 120px
+    transform: translate3d(0, -15px, 0) 
 @media (max-width:1023px)
-    .arrow
-        display: block
-    .language 
-        display: none 
-    .rights 
-        display: none
-    .video
-        display: none
-    .mirax
-        display: none
-    .nav 
-        display: none
-    .arrow-menu
-        display: flex
-    .mirax 
-        display: none
-    .language
-        display: none
-    .menu 
-        display: flex
-        flex-direction: column
-        &__block 
-            display: flex
-            align-items: center
-            gap: 16px
-            padding-left: 20px
-        &__rights 
-            display: flex
-            flex-direction: column
-            &-text 
-                font: 400 14px/20px 'Inter', 'sans-serif'
-                color: #5A6A82
-        &__link 
-            padding-left: 15px
-            padding-right: 15px
-            text-align: left
-        &__language
-            width: 53px
-            height: 32px
-            border: 1px solid var(--Scrollbar)
-            z-index: 20
-            &__view 
-                width: 100%
-                height: 100%
-                background: 
-                    image: url('../images/language/ru.png')
-                    size: contain 
-                    repeat: no-repeat
-                cursor: pointer
-            &__dropdawn 
-                height: 0
-                margin-top: 8px
-                overflow: hidden
-                transition: height 0.3s ease
-                &-active 
-                    height: 64px
-                &-option
-                    width: 53px
-                    height: 32px
-                    background: 
-                        size: contain 
-                        repeat: no-repeat
-                    cursor: pointer
-                &-option1 
-                    background: 
-                        image: url('../images/language/ru.png')
-                &-option2
-                    background: 
-                        image: url('../images/language/uk.png')
-        &__video
-            display: flex
-            align-items: center
-            justify-content: center
-            gap: 10px
-            width: 120px
-            height: 50px
-            margin: 46px auto
-@media (max-width:767px)
+    .popup 
+        bottom: 110px
+@media (max-width:899px)
     .hiro
-        &__wrapper 
+        &__wrapper
             padding: 20px
-            gap: 20px
+        &__block 
+            padding: 20px 25px
+        &__footer 
+            position: static
+            margin-bottom: 20px
     .logo
         margin-bottom: 0
-    .footer 
-        margin-bottom: 20px
+        &__job 
+            font: 700 32px/32px 'Inter', 'sans-serif'
+            &-white 
+                padding: 14px
+                border-radius: 16px
+        &__r 
+            right: -15px
+            width: 11px 
+            height: 11px
+            border: 1.6px solid var(--Black)
+            &-text 
+                padding-left: 0
+                font: 700 9px/8px 'Inter', 'sans-serif'
+    .video 
+        margin-top: 0
+    .nav 
+        display: none
     .popup 
-        bottom: 20px
+        bottom: 110px
         &_left
             left: 20px
-        &_left2
-            left: 20px
-            bottom: 110px
         &_right
             right: 20px
-        &_right2
-            right: 20px
-            bottom: 110px
         &_active 
             position: fixed
             top: 0
@@ -541,58 +509,59 @@ body
                 border-radius: 20px
                 box-shadow: none
                 transform: translate3d(0, 0, 0)
-            & .popup__wrapper2
-                
-.switch 
-    position: relative
-    display: inline-block
-    flex: 0 0 auto
-    width: 300px
-    height: 56px
-    &__input 
+    .rights 
         display: none
-    &__points 
-        position: relative
+    .mirax
+        display: none
+    .language 
+        top: auto
+        right: auto
+        bottom: 20px
+        left: 20px
+    .arrow
+        display: block
+        &-menu
+            display: flex
+    .menu 
         display: flex
-        align-items: center
-        height: 56px
-        width: 300px
-        z-index: 10
-    &__point 
-        flex: 0 0 50%
-        font: 400 16px/22px 'Inter', 'sans-serif'
-        color: #5A6A82
-        text-align: center
-        transition: font 0.4s ease
-        &-left
-            font-weight: 600
-    &__slider 
-        position: absolute
-        width: 300px
-        height: 56px
-        border-radius: 20px
-        box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #fff
-        cursor: pointer
-        transition: font 0.4s ease
-        &:before 
-            content: ""
-            position: absolute
-            width: 150px
-            height: 56px
-            border-radius: 20px
-            background-color: var(--Neobg)
-            box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #fff
-            transition: transform 0.4s ease
-    &__slider2 
-        box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #fff
-    &__input:checked + .switch__slider:before 
-        transform: translateX(150px)
-    &__input:checked ~ .switch__points .switch__point-left
-        font-weight: 400
-    &__input:checked ~ .switch__points .switch__point-right
-        font-weight: 600
-
-
-.login2 
-    margin-bottom: 180px
+        flex-direction: column
+        &__wrapper 
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            gap: 20px
+            width: 350px
+            height: 100%
+            margin: 0 auto
+        &__block 
+            display: flex
+            flex-direction: column
+            justify-content: center
+            gap: 20px
+            width: 100%
+            padding: 20px 25px
+            &-title 
+                margin-top: -7px
+                margin-bottom: -10px
+                font: 600 16px/22px 'Inter', 'sans-serif'
+                color: var(--Neutext)
+                text-align: center
+        &__link 
+            padding: 15px
+            text-align: left
+            line-height: 26px
+            &-active 
+                font-weight: 600
+                box-shadow: inset 5px 5px 10px var(--Neushadow), inset -5px -5px 10px var(--White)
+        &__rights 
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 10px
+            margin-top: -5px
+            padding: 0 15px 15px
+        
     
+    
+           
