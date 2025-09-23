@@ -2419,6 +2419,9 @@ input[type=number]::-webkit-outer-spin-button {
   background-repeat: no-repeat;
   cursor: pointer;
 }
+.portfolio .portfolio__slider .itc-slider-bottom {
+  height: 58px;
+}
 .portfolio .portfolio__slider .itc-slider-video {
   position: relative;
   display: flex;
@@ -3599,6 +3602,10 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .portfolio .portfolio__slider .itc-slider-title {
     font-size: 12px;
+  }
+  .portfolio .portfolio__slider .itc-slider-bottom {
+    height: -moz-max-content;
+    height: max-content;
   }
   .modal-slider__top {
     height: 60px;
