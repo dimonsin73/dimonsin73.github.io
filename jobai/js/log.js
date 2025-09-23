@@ -101,3 +101,11 @@ window.addEventListener('touchmove', function(e) {
         }
     }
 })
+arrowMenu.addEventListener("click", function(){
+    arrowMenu.style.display = 'none'
+    arrowHiro.style.display = 'block'
+})
+arrowHiro.addEventListener("click", function(){
+    arrowMenu.style.display = 'block'
+    arrowHiro.style.display = 'none'
+})
