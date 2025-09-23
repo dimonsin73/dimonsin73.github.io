@@ -2617,8 +2617,10 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 24px;
-  height: 24px;
+  width: 35px;
+  height: 35px;
+  border-radius: 12px;
+  background-color: #F2F3F7;
   background-image: url("../images/icons/close_24.png");
   background-position: center center;
   background-repeat: no-repeat;
@@ -3017,6 +3019,9 @@ input[type=number]::-webkit-outer-spin-button {
   .modal__close {
     top: 5px;
     right: 5px;
+    width: 24px;
+    height: 24px;
+    background-size: 16px;
   }
   .modal__die {
     position: static;
