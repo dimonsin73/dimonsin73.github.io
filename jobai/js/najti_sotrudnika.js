@@ -51,6 +51,10 @@ const sectionClose = document.querySelector('.section__close')
 const sectionFormArray = document.querySelectorAll('.section__form')
 const sectionTags1 = document.querySelector('.section__tags-1')
 const sectionTags2 = document.querySelector('.section__tags-2')
+const sectionFormSearch = document.querySelector('.section__form-search')
+const sectionFormNewSearch = document.querySelector('.section__form-new-search')
+const totalFound = document.querySelector('.total-found')
+let sectionPortfolios = false
 sectionClose.addEventListener('click', function(){
     openNajtiSotrudnika()
 })
@@ -171,14 +175,25 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                     sectionTagBtn.addEventListener('click', function(){
                         const sectionTagTarget = sectionTagBtn.parentElement
                         sectionTagTarget.remove()
+                        sectionTagsHeight()
                     })
                 }
+                sectionTagsHeight()
             })
             break;
-        case 'najti_sotrudnika':
+        case 'najti-sotrudnika':
             sectionForm.addEventListener('submit', function(e){
                 e.preventDefault()
-                window.location.href='najti_sotrudnika_cards.html'
+                sectionFormSearch.style.display = 'none'
+                sectionFormNewSearch.style.display = 'flex'
+                totalFound.style.display = 'flex'
+                for (let i = 0; i < sectionArray.length; i++) {
+                    const section = sectionArray[i];
+                    if (section.dataset.section === 'portfolios') {
+                        section.classList.add('section_active')
+                        sectionPortfolios = true
+                    }
+                }
             })
             break;
         default:
@@ -195,25 +210,11 @@ function openNajtiSotrudnika() {
             section.classList.remove('section_active')
         }
         if (section.dataset.section === 'portfolios') {
-            section.classList.add('section_active')
+            if (sectionPortfolios) {
+                section.classList.add('section_active')
+            } 
         }
     }
-}
-
-// Раскрывающееся описание
-const portfolioDescriptionUpArray = document.querySelectorAll('.portfolio__description-up')
-for (let i = 0; i < portfolioDescriptionUpArray.length; i++) {
-    const portfolioDescriptionUp = portfolioDescriptionUpArray[i];
-    portfolioDescriptionUp.addEventListener('click', function(){
-        const portfolioDescription = portfolioDescriptionUp.parentElement
-        const portfolioDescriptionList = portfolioDescriptionUp.parentElement.querySelector('.portfolio__description-list')
-        portfolioDescription.classList.toggle('portfolio__description-active')
-        if (portfolioDescription.classList.contains('portfolio__description-active')) {
-           portfolioDescriptionList.style.height = `${portfolioDescriptionList.scrollHeight}px`
-        } else {
-            portfolioDescriptionList.style.height = `40px`
-        }
-    })
 }
 
 // Включение/выключение тегов
@@ -386,5 +387,158 @@ for (let i = 0; i < sectionToleftBtnArray.length; i++) {
     const sectionToleftBtn = sectionToleftBtnArray[i];
     sectionToleftBtn.addEventListener('click', function(){
         window.scrollTo(0, 0)
+    })
+}
+function sectionTagsHeight() {
+    const marginTopTags1 = sectionTags1.scrollHeight
+    const marginTopTags2 = sectionTags2.scrollHeight
+    if (marginTopTags1 > marginTopTags2) {
+        funMarginTop(marginTopTags1)
+    } else {
+        funMarginTop(marginTopTags2)
+    }
+    
+}
+function funMarginTop(marginTop) {
+    if (marginTop === 0 ) {
+        sectionMt.classList.remove('section_1line')
+        sectionMt.classList.remove('section_2line')
+    }
+    if (marginTop > 20) {
+        sectionMt.classList.add('section_1line')
+        sectionMt.classList.remove('section_2line')
+    }
+    if (marginTop > 60) {
+        sectionMt.classList.remove('section_1line')
+        sectionMt.classList.add('section_2line')
+    }
+}
+const btnModalopenArray = document.querySelectorAll('.btn-modalopen')
+const modal = document.querySelector('.modal')
+for (let i = 0; i < btnModalopenArray.length; i++) {
+    const btnModalOpen = btnModalopenArray[i];
+    btnModalOpen.addEventListener('click', function(){
+        const dataModalopen = btnModalOpen.dataset.modalopen
+        modal.classList.add('modal_active')
+        const modalWrapperArray = modal.querySelectorAll('.modal__wrapper')
+        const name = btnModalOpen.parentElement.parentElement.querySelector('.portfolio__title').textContent
+        for (let i = 0; i < modalWrapperArray.length; i++) {
+            const modalWrapper = modalWrapperArray[i];
+            if (modalWrapper.dataset.modal === dataModalopen) {
+                modalWrapper.classList.add('modal__wrapper-active')
+                const modalClose = modalWrapper.querySelector('.modal__close')
+                switch (modalWrapper.dataset.modal) {
+                    case 'avatar':
+                    const modalName = modalWrapper.querySelector('.modal__name')
+                    modalName.textContent = name
+                        const img = btnModalOpen.querySelector('.portfolio__avatar-img')
+                        if (img != null) {
+                            const imgSrc = img.getAttribute('src')
+                            const modalAvatar = modal.querySelector('.modal__avatar')
+                            const modalAvatarImg = document.createElement('img')
+                            modalAvatarImg.classList.add('modal__avatar-img')
+                            modalAvatarImg.setAttribute('src', imgSrc)
+                            modalAvatar.append(modalAvatarImg)
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                modalClose.addEventListener('click', function(){
+                    modal.classList.remove('modal_active')
+                    const modalAvatarImg = modal.querySelector('.modal__avatar-img')
+                    if (modalAvatarImg != null) {
+                        modalAvatarImg.remove()
+                    }
+                    
+                })
+            } else {
+                modalWrapper.classList.remove('modal__wrapper-active')
+            }
+        }
+    })
+}
+// Скрытие кнопок слайдера
+const itcSliderArray = document.querySelectorAll('.itc-slider')
+for (let i = 0; i < itcSliderArray.length; i++) {
+    const itcSlider = itcSliderArray[i];
+    const itcSliderItemArray = itcSlider.querySelectorAll('.itc-slider-item')
+    const itcSliderItemActiveArray = itcSlider.querySelectorAll('.itc-slider-item-active')
+    const itcSliderBtnArray = itcSlider.querySelectorAll('.itc-slider-btn')
+    if (itcSliderItemArray.length === itcSliderItemActiveArray.length) {
+        for (let i = 0; i < itcSliderBtnArray.length; i++) {
+            const itcSliderBtn = itcSliderBtnArray[i];
+            itcSliderBtn.classList.add('itc-slider-btn-hide')
+        }
+    }
+}
+
+const modalItemImgArray = document.querySelectorAll('.modal__item-img')
+const modalSlider = document.querySelector('.modal-slider')
+const modalSliderClose = document.querySelector('.modal-slider__close')
+for (let i = 0; i < modalItemImgArray.length; i++) {
+    const modalItemImg = modalItemImgArray[i];
+    modalItemImg.addEventListener('click', function(){
+        modalSlider.classList.add('modal-slider-active')
+        let sliderElem = document.querySelector('#modal-slider');
+        let slider = ItcSlider.getOrCreateInstance(sliderElem);
+        slider.slideTo(i)
+        console.log(i)
+        modalSliderClose.addEventListener('click', function(){
+            modalSlider.classList.remove('modal-slider-active')
+            slider.dispose()
+        })
+    })
+    
+}
+
+const btnLikeArray = document.querySelectorAll('.btn_like')
+for (let i = 0; i < btnLikeArray.length; i++) {
+    const btnLike = btnLikeArray[i];
+    btnLike.addEventListener('click', function(){
+        btnLike.classList.toggle('btn_like-active')
+    })
+}
+const portfolioStitleCopyArray = document.querySelectorAll('.portfolio__stitle-copy')
+for (let i = 0; i < portfolioStitleCopyArray.length; i++) {
+    const portfolioStitleCopy = portfolioStitleCopyArray[i];
+    portfolioStitleCopy.addEventListener('click', function(){
+        const textCopy = portfolioStitleCopy.parentElement.textContent
+        navigator.clipboard.writeText(textCopy)
+    })
+}
+const portfolioFitsAiArray = document.querySelectorAll('.portfolio__fits-ai')
+for (let i = 0; i < portfolioFitsAiArray.length; i++) {
+    const portfolioFitsAi = portfolioFitsAiArray[i];
+    portfolioFitsAi.addEventListener('click', function(){
+        const loader = portfolioFitsAi.parentElement.querySelector('.portfolio__loader')
+        const portfolioSuccess = portfolioFitsAi.parentElement.querySelector('.portfolio__fits-success')
+        portfolioFitsAi.classList.add('portfolio__fits-disabled')
+        loader.classList.add('portfolio__loader-loading')
+
+        function success() {
+            portfolioFitsAi.style.display = 'none'
+            loader.classList.remove('portfolio__loader-loading')
+            loader.classList.add('portfolio__loader-success')
+            portfolioSuccess.style.display = 'flex'
+        }
+        setTimeout(success, 5000)
+    })
+}
+const portfolioPositionArray = document.querySelectorAll('.portfolio__position')
+for (let i = 0; i < portfolioPositionArray.length; i++) {
+    const portfolioPosition = portfolioPositionArray[i];
+    portfolioPosition.addEventListener('click', function(){
+        const windowScreen = screen.width
+        const portfolio = portfolioPosition.parentElement.parentElement
+        const portfolioHeight = portfolio.scrollHeight
+        let yOffset
+        if (windowScreen > 899) {
+            yOffset = portfolioHeight - 360;
+        } else {
+            yOffset = portfolioHeight - 291;
+        }
+        const y = portfolio.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y })
     })
 }
