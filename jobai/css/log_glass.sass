@@ -40,11 +40,13 @@
 html 
     scroll-behavior: smooth
 body 
+    position: relative
     min-width: 390px
     min-height: 755px
     background-color: var(--Neubg)
     font: 400 16px/20px 'Inter', 'sans-serif'
     color: var(--Black)
+    overflow: hidden
 .container
     display: flex
     flex-direction: column
@@ -85,6 +87,52 @@ body
         &-active 
             font-weight: 600
             box-shadow: inset 5px 5px 10px var(--Neushadow), inset -5px -5px 10px var(--White)
+.glass 
+    position: relative
+    border: 1px solid rgba(255, 255, 255, 0.4)
+    border-radius: 28px
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4)
+    background-color: rgba(255, 255, 255, 0.1)
+    backdrop-filter: blur(15px)
+    z-index: 10
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: -100%
+        width: 100%
+        height: 100%
+        background-color: rgba(255, 255, 255, 0.05)
+        transform: skewX(-15deg)
+        transition: 0.5s 
+    &:hover 
+        &::before 
+            left: 120%
+    &__btn
+        padding: 17px 24px
+        border-radius: 20px
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1)
+        background-color: rgba(255, 255, 255, 0.3)
+        font: 300 16px/22px 'Inter', 'sans-serif'
+        color: var(--White)
+        text-align: center
+        &:hover 
+            background-color: rgba(255, 255, 255, 0.4)
+            transform: translateY(-3px)
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2)
+        &-active 
+            font-weight: 700
+.bg
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0 
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: -1
 .hiro
     position: relative
     display: flex
@@ -94,19 +142,12 @@ body
     width: 100%
     height: 100vh
     overflow: hidden
-    &__bg
-        position: absolute
-        top: 0
-        right: 0
-        bottom: 0 
-        left: 0
-        z-index: -1
     &__wrapper
         display: flex
         flex-direction: column
         width: 500px
         height: 600px
-            
+        padding: 40px 50px 25px
     &__btn 
         width: 140px
         margin: 10px auto 0
@@ -126,16 +167,101 @@ body
             text-align: center
     &__footer 
         position: absolute
-        left: 120px
-        right: 120px
-        bottom: 45px
+        left: 160px
+        right: 160px
+        bottom: 35px
         display: flex
         align-items: center
         justify-content: center
         gap: 40px
         max-width: 1400px
-        height: 60px
         margin: 0 auto
+        border-radius: 16px
+    &__title 
+        margin-bottom: 30px
+        font: 500 16px/22px 'Inter', 'sans-serif'
+        letter-spacing: -0.1px
+        color: var(--White)
+        text-align: center
+    &__group 
+        position: relative
+        margin-bottom: 30px
+    &__label 
+        position: absolute
+        top: 50%
+        left: 20px
+        font: 700 16px/22px 'Inter', 'sans-serif'
+        color: rgba(255, 255, 255, 0.8)
+        transform: translateY(-50%)
+        transition: all 0.3s ease
+    &__input 
+        width: 100%
+        padding: 17px 24px
+        border: none
+        border-radius: 20px
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05)
+        outline: none
+        background-color: rgba(255, 255, 255, 0.2)
+        font: 400 16px/22px 'Inter', 'sans-serif'
+        color: var(--White)
+        transition: all 0.3s ease
+        &::placeholder 
+            font-weight: 300
+            color: rgba(255, 255, 255, 0.7)
+        &:focus, &:valid
+            background-color: rgba(255, 255, 255, 0.3)
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1)
+            & + .hiro__label
+                top: 0
+                left: 15px
+                padding: 2px 8px
+                border-radius: 10px
+                background-color: rgba(255, 255, 255, 0.2)
+                font-size: 12px
+                color: var(--White)
+    &__button
+        margin-top: auto
+        margin-bottom: 30px
+        width: 100%
+        
+    &__bottom 
+        display: flex
+        align-items: center 
+        justify-content: center
+        gap: 4px
+        &-text
+            font: 300 16px/22px 'Inter', 'sans-serif'
+            color: var(--White)
+    &__link 
+        font: 600 16px/20px 'Inter', 'sans-serif'
+        color: var(--White)
+    &__line 
+        display: flex
+        justify-content: space-between
+        padding-left: 24px
+    &__check 
+        &-label 
+            display: flex
+            align-items: center
+            gap: 4px
+        &-check 
+            width: 20px
+            height: 20px
+            border: 1.5px solid #FFFFFF
+            border-radius: 4px
+            background-color: var(--White)
+        &-text 
+            font: 700 16px/20px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            color: var(--White)
+        &-input 
+            display: none
+            &:checked 
+                & ~ .hiro__check-label .hiro__check-check 
+                    background: 
+                        image: url('../images/icons/close.png')
+                        position: center center 
+                        repeat: no-repeat
 .logo 
     position: relative
     display: flex
@@ -143,39 +269,42 @@ body
     justify-content: center
     gap: 10px
     width: max-content
-    margin: 0 auto 82px
+    margin: 0 auto 20px
+    padding: 14px 23px
+    border-radius: 20px
+    background-color: rgba(255, 255, 255, 0.2)
     &__job 
-        font: 700 60px/60px 'Inter', 'sans-serif'
+        font: 700 42px/42px 'Inter', 'sans-serif'
         letter-spacing: -0.2px
         text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
         &-white 
-            padding: 20px
-            border-radius: 24px
+            padding: 9px
+            border-radius: 16px
             box-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
             background-color: var(--Primary-50)
             color: var(--White)
             text-shadow: 4px 4px 5px var(--Black)
     &__r 
         position: absolute
-        top: 0
-        right: -25px
+        top: 14px
+        right: 10px
         display: flex
         align-items: center
         justify-content: center
-        width: 20px 
-        height: 20px
-        border: 2px solid var(--Black)
+        width: 11px 
+        height: 11px
+        border: 1.6px solid var(--Black)
         border-radius: 50%
+        box-shadow: 3px 3px 5px var(--Neushadow) -3px -3px 5px var(--White)
         &-text 
-            padding-left: 1px
-            font: 700 16px/16px 'Inter', 'sans-serif'
+            font: 900 9px/9px 'Inter', 'sans-serif'
             letter-spacing: -0.2px
             color: var(--Black)
 .switch 
     position: relative
     display: inline-block
     flex: 0 0 auto
-    width: 300px
+    width: 290px
     height: 56px
     &__input 
         display: none
@@ -184,22 +313,23 @@ body
         display: flex
         align-items: center
         height: 56px
-        width: 300px
+        width: 290px
         z-index: 10
     &__point 
         flex: 0 0 50%
-        font: 400 16px/22px 'Inter', 'sans-serif'
-        color: var(--Neutext)
+        font: 300 16px/22px 'Inter', 'sans-serif'
+        color: var(--White)
         text-align: center
         transition: font 0.4s ease
         &-left
             font-weight: 600
     &__slider 
         position: absolute
-        width: 300px
+        width: 290px
         height: 56px
         border-radius: 20px
-        box-shadow: inset 5px 5px 10px var(--Neushadow), inset -5px -5px 10px var(--White)
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1)
+        background-color: rgba(255, 255, 255, 0.3)
         cursor: pointer
         transition: font 0.4s ease
         &:before 
@@ -207,14 +337,14 @@ body
             position: absolute
             width: 150px
             height: 56px
+            border: 1px solid rgba(255, 255, 255, 0.4)
             border-radius: 20px
-            background-color: var(--Neubg)
-            box-shadow: 10px 10px 20px var(--Neushadow), -10px -10px 20px var(--White)
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4)
+            background-color: rgba(255, 255, 255, 0.1)
+            backdrop-filter: blur(15px)
             transition: transform 0.4s ease
-    &__slider2 
-        box-shadow: inset 10px 10px 20px var(--Neushadow), inset -10px -10px 20px var(--White)
     &__input:checked + .switch__slider:before 
-        transform: translateX(150px)
+        transform: translateX(140px)
     &__input:checked ~ .switch__points .switch__point-left
         font-weight: 400
     &__input:checked ~ .switch__points .switch__point-right
@@ -269,23 +399,31 @@ body
     align-items: center
     justify-content: space-between
     width: 100%
+    padding: 15px
+    border: 1px solid rgba(255, 255, 255, 0.5)
     border-radius: 28px
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5)
+    background-color: (255, 255, 255, 0.15)
+    backdrop-filter: blur(10px)
     z-index: 10
-
-    &__link
+    & a
         max-width: 260px
-        padding: 0 10px
-        font: 600 16px/24px "Inter", "sans-serif"
-        color: var(--Neutext)
+        padding: 0 15px
+        font: 300 16px/24px "Inter", "sans-serif"
+        color: var(--White)
         text-align: center
-        transition: text-shadow 0.3s ease, color 0.3s ease
+        text-decoration: underline
+        text-decoration-color: #ffffff00
+        text-decoration-thickness: 2px
+        text-underline-offset: 4px
+        transition: all 0.3s ease
         &:hover 
-            color: var(--Black)
-            text-shadow: -5px -5px 5px var(--White), 5px 5px 5px var(--Neushadow)
+            font-weight: 600
+            text-decoration-color: #ffffffff
 .popup 
     position: absolute
     display: flex
-    bottom: 80px
+    bottom: 45px
     &_left 
         left: 30px
     &_right
@@ -296,6 +434,7 @@ body
             height: 300px
             padding: 15px
             border-radius: 20px
+            background: none
             transform: translate3d(0, -90px, 0)
         & .popup__icon 
             position: absolute
@@ -308,6 +447,7 @@ body
         width: 60px
         height: 60px
         border-radius: 30px
+        background: #FFFFFF4D
         overflow: hidden
         transition: bottom 0.3s ease, width 0.3s ease, height 0.3s ease, border-radius 0.3s ease
     &__top 
@@ -318,7 +458,7 @@ body
         padding: 4px 0
         padding-left: 30px
         font: 600 16px/22px 'Inter', 'sans-serif'
-        color: #5A6A82
+        color: var(--White)
         &-2line 
             padding: 0
     &__icon 
@@ -334,13 +474,14 @@ body
         padding: 0 26px 
         &-text 
             font: 400 16px/24px 'Inter', 'sans-serif'
-            color: var(--Neutext)
+            color: var(--White)
     &__btn
         width: 140px
-        font: 500 16px/20px "inter", 'sans-serif'
     &__link 
         font: 600 16px/22px 'Inter', 'sans-serif'
-        color: var(--Primary-40)
+        color: var(--Primary-70)
+    & path 
+        fill: var(--White)
 .rights 
     position: absolute
     bottom: 8px
@@ -350,7 +491,7 @@ body
     gap: 10px
     &__text 
         font: 400 11px/12px 'Inter', 'sans-serif'
-        color: var(--Neutext)
+        color: var(--White)
         text-align: right
 .mirax 
     position: absolute
@@ -404,7 +545,6 @@ body
         justify-content: center
 .menu
     display: none
-
 .form 
     display: none
     flex-direction: column
@@ -461,36 +601,23 @@ body
     transform: translate3d(0, 15px, 0)
   to 
     transform: translate3d(0, -15px, 0) 
-@media (max-width:1023px)
+@media (max-width: 1199px)
     .hiro
+        justify-content: flex-start
+        transition: transform 0.5s linear
+        &_up 
+            transform: translateY(-120%)
         &__wrapper
-            padding: 20px
-        &__block 
-            padding: 20px 25px
+            margin-top: 75px
         &__footer 
-            position: static
-            margin-bottom: 20px
+            bottom: 20px
     .logo
-        margin-bottom: 0
-        &__job 
-            font: 700 32px/32px 'Inter', 'sans-serif'
-            &-white 
-                padding: 14px
-                border-radius: 16px
-        &__r 
-            right: -15px
-            width: 11px 
-            height: 11px
-            border: 1.6px solid var(--Black)
-            &-text 
-                padding-left: 0
-                font: 700 9px/8px 'Inter', 'sans-serif'
     .video 
         margin-top: 0
     .nav 
         display: none
     .popup 
-        bottom: 110px
+        bottom: 20px
         &_left
             left: 20px
         &_right
@@ -519,24 +646,30 @@ body
     .mirax
         display: none
     .language 
-        top: auto
-        right: auto
-        bottom: 20px
-        left: 20px
+        top: 20px
+        right: 20px
     .arrow
         display: block
         &-menu
             display: flex
     .menu 
+        position: absolute
+        top: 120%
+        left: 50%
         display: flex
         flex-direction: column
+        height: 100vh
+        transform: translate3d(-50%, 0, 0)
+        transition: top 0.5s linear
+        &_up 
+            top: 0%
         &__wrapper 
             display: flex
             flex-direction: column
             align-items: center
             justify-content: center
             gap: 20px
-            width: 350px
+            width: 330px
             height: 100%
             margin: 0 auto
         &__block 
@@ -545,12 +678,13 @@ body
             justify-content: center
             gap: 20px
             width: 100%
-            padding: 20px 25px
+            padding: 20px
             &-title 
                 margin-top: -7px
                 margin-bottom: -10px
-                font: 600 16px/22px 'Inter', 'sans-serif'
-                color: var(--Neutext)
+                font: 700 16px/22px 'Inter', 'sans-serif'
+                letter-spacing: -0.1px
+                color: var(--White)
                 text-align: center
         &__link 
             padding: 15px
@@ -558,7 +692,6 @@ body
             line-height: 26px
             &-active 
                 font-weight: 600
-                box-shadow: inset 5px 5px 10px var(--Neushadow), inset -5px -5px 10px var(--White)
         &__rights 
             display: flex
             align-items: center
@@ -567,6 +700,29 @@ body
             margin-top: -5px
             padding: 0 15px 15px
         
-    
-    
-           
+@media (max-width: 787px)
+    .hiro 
+        &__wrapper 
+            width: 330px
+            height: 525px
+            padding: 14px 20px
+        &__line 
+        &__bottom 
+            flex-direction: column
+            align-items: flex-start
+            padding-left: 10px
+            &-text 
+                font-size: 14px
+        &__check 
+            &-text 
+                font-size: 14px
+        &__link 
+            font-size: 14px
+        &__button 
+            margin-bottom: 12px
+        &__footer 
+            bottom: 110px
+    .popup 
+        bottom: 110px
+    .logo
+        margin: 0 auto 12px
