@@ -158,6 +158,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   z-index: -1;
 }
 
@@ -884,12 +885,18 @@ body {
     margin-bottom: 12px;
   }
   .hiro__footer {
-    bottom: 110px;
+    bottom: 80px;
   }
   .popup {
-    bottom: 110px;
+    bottom: 80px;
   }
   .logo {
     margin: 0 auto 12px;
+  }
+  .menu {
+    padding-bottom: 40px;
+  }
+  .menu__block {
+    gap: 15px;
   }
 }/*# sourceMappingURL=log_glass.css.map */
