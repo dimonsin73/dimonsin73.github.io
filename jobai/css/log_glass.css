@@ -865,6 +865,7 @@ body {
   .hiro__wrapper {
     width: 330px;
     height: 525px;
+    margin-top: 25px;
     padding: 14px 20px;
   }
   .hiro__bottom {
@@ -888,7 +889,7 @@ body {
     bottom: 80px;
   }
   .popup {
-    bottom: 80px;
+    bottom: 85px;
   }
   .logo {
     margin: 0 auto 12px;
