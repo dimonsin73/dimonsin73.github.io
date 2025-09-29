@@ -64,11 +64,13 @@ const hiro = document.getElementById('hiro')
 window.addEventListener('wheel', function (e) {
     const delta = e.deltaY;
     if (delta > 0) {
-        menu.scrollIntoView(true)
+        menu.classList.add('menu_up')
+        hiro.classList.add('hiro_up')
         arrowMenu.style.display = 'none'
         arrowHiro.style.display = 'block'
     } else {
-        hiro.scrollIntoView(true)
+        menu.classList.remove('menu_up')
+        hiro.classList.remove('hiro_up')
         arrowMenu.style.display = 'block'
         arrowHiro.style.display = 'none'
     }
@@ -91,21 +93,23 @@ window.addEventListener('touchmove', function(e) {
         }
     } else {
         if (deltaY < 0) {
-            menu.scrollIntoView(true)
+            menu.classList.add('menu_up')
+            hiro.classList.add('hiro_up')
             arrowMenu.style.display = 'none'
             arrowHiro.style.display = 'block'
         } else {
-            hiro.scrollIntoView(true)
+            menu.classList.remove('menu_up')
+            hiro.classList.remove('hiro_up')
             arrowMenu.style.display = 'block'
             arrowHiro.style.display = 'none'
         }
     }
 })
 arrowMenu.addEventListener("click", function(){
-    arrowMenu.style.display = 'none'
-    arrowHiro.style.display = 'block'
+    menu.classList.add('menu_up')
+    hiro.classList.add('hiro_up')
 })
 arrowHiro.addEventListener("click", function(){
-    arrowMenu.style.display = 'block'
-    arrowHiro.style.display = 'none'
+    menu.classList.remove('menu_up')
+    hiro.classList.remove('hiro_up')
 })

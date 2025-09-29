@@ -455,13 +455,16 @@ body
     transform: translate3d(0, -15px, 0) 
 @media (max-width:1023px)
     .hiro
+        justify-content: flex-start
+        transition: transform 0.5s linear
+        &_up 
+            transform: translateY(-110%)
         &__wrapper
             padding: 20px
         &__block 
             padding: 20px 25px
         &__footer 
-            position: static
-            margin-bottom: 20px
+            bottom: 20px
     .logo
         margin-bottom: 0
         &__job 
@@ -520,8 +523,16 @@ body
         &-menu
             display: flex
     .menu 
+        position: absolute
+        top: 110%
+        left: 50%
         display: flex
         flex-direction: column
+        height: 100vh
+        transform: translate3d(-50%, 0, 0)
+        transition: top 0.5s linear
+        &_up 
+            top: 0%
         &__wrapper 
             display: flex
             flex-direction: column
@@ -559,6 +570,37 @@ body
             margin-top: -5px
             padding: 0 15px 15px
         
+@media (max-width: 787px)
+    .hiro 
+        &__wrapper 
+            margin-top: 25px
+            padding: 14px 20px
+        &__line 
+        &__bottom 
+            flex-direction: column
+            align-items: flex-start
+            padding-left: 10px
+            &-text 
+                font-size: 14px
+        &__check 
+            &-text 
+                font-size: 14px
+        &__link 
+            font-size: 14px
+        &__button 
+            margin-bottom: 12px
+        &__footer 
+            bottom: 80px
+    .popup 
+        bottom: 85px
+        &_active 
+            bottom: 0
+    .logo
+        margin: 0 auto 12px
+    .menu
+        padding-bottom: 40px
+        &__block 
+            gap: 15px
     
     
            

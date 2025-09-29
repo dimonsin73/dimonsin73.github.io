@@ -745,7 +745,7 @@ body {
     transition: transform 0.5s linear;
   }
   .hiro_up {
-    transform: translateY(-120%);
+    transform: translateY(-110%);
   }
   .hiro__wrapper {
     margin-top: 75px;
@@ -807,7 +807,7 @@ body {
   }
   .menu {
     position: absolute;
-    top: 120%;
+    top: 110%;
     left: 50%;
     display: flex;
     flex-direction: column;
@@ -890,6 +890,9 @@ body {
   }
   .popup {
     bottom: 85px;
+  }
+  .popup_active {
+    bottom: 0;
   }
   .logo {
     margin: 0 auto 12px;
