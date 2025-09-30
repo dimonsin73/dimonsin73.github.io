@@ -113,3 +113,125 @@ arrowHiro.addEventListener("click", function(){
     menu.classList.remove('menu_up')
     hiro.classList.remove('hiro_up')
 })
+
+const cardsBtn = document.querySelector('.cards-btn')
+const section = document.querySelector('.section')
+const cardsWrapperArray = document.querySelectorAll('.cards__wrapper')
+const cardsclose = document.querySelector('.cards__btn')
+cardsBtn.addEventListener('click', function(){
+    const switchInput = cardsBtn.parentElement.querySelector('.switch__input')
+    menu.classList.add('menu_hide')
+    hiro.classList.add('hiro_hide')
+    section.classList.add('section_active')
+    if (switchInput.checked) {
+        for (let i = 0; i < cardsWrapperArray.length; i++) {
+            const cardsWrapper = cardsWrapperArray[i];
+            if (cardsWrapper.dataset.cards === 'najti-sotrudnika') {
+                cardsWrapper.classList.add('cards__wrapper-active')
+            } else {
+                cardsWrapper.classList.remove('cards__wrapper-active')
+            }
+        }
+    } else {
+        for (let i = 0; i < cardsWrapperArray.length; i++) {
+            const cardsWrapper = cardsWrapperArray[i];
+            if (cardsWrapper.dataset.cards === 'najti-rabotu') {
+                cardsWrapper.classList.add('cards__wrapper-active')
+            } else {
+                cardsWrapper.classList.remove('cards__wrapper-active')
+            }
+        }
+    }
+})
+cardsclose.addEventListener('click', function(){
+    
+    section.classList.remove('section_active')
+    for (let i = 0; i < cardsWrapperArray.length; i++) {
+        const cardsWrapper = cardsWrapperArray[i];
+        cardsWrapper.classList.remove('cards__wrapper-active')
+    }
+    
+    menu.classList.remove('menu_hide')
+    hiro.classList.remove('hiro_hide')
+})
+const sectionToleftBtnArray = document.querySelectorAll('.section_toleft-btn')
+for (let i = 0; i < sectionToleftBtnArray.length; i++) {
+    const sectionToleftBtn = sectionToleftBtnArray[i];
+    sectionToleftBtn.addEventListener('click', function(){
+        window.scrollTo(0, 0)
+    })
+}
+const hiroBtnFirst = document.querySelector('.hiro__btn-first')
+const hiroBtnSecondPrevArray = document.querySelectorAll('.hiro__btn-second-prev')
+const hiroBtnSecondNextArray = document.querySelectorAll('.hiro__btn-second-next')
+const hiroBtnThirdPrevArray = document.querySelectorAll('.hiro__btn-third-prev')
+const hiroBlockFirst = document.querySelector('.hiro__block-first')
+const hiroBlockSecondArray = document.querySelectorAll('.hiro__block-second')
+const hiroBlockThirdArray = document.querySelectorAll('.hiro__block-third')
+hiroBtnFirst.addEventListener('click', function(){
+    const radioInputArray = hiroBtnFirst.parentElement.querySelectorAll('.radio__input')
+    hiroBlockFirst.style.display = 'none'
+    for (let i = 0; i < radioInputArray.length; i++) {
+        const radioInput = radioInputArray[i];
+        if (radioInput.checked) {
+            const dataFirst = radioInput.id
+            for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+                const hiroBlockSecond = hiroBlockSecondArray[i];
+                if (hiroBlockSecond.dataset.block === dataFirst) {
+                    hiroBlockSecond.style.display = 'flex'
+                }
+            }
+        }
+    }
+    
+})
+for (let i = 0; i < hiroBtnSecondPrevArray.length; i++) {
+    const hiroBtnSecondPrev = hiroBtnSecondPrevArray[i];
+    hiroBtnSecondPrev.addEventListener('click', function(){
+        for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+            const hiroBlockSecond = hiroBlockSecondArray[i];
+            hiroBlockSecond.style.display = 'none'
+        }
+        hiroBlockFirst.style.display = 'flex'
+    })
+}
+for (let i = 0; i < hiroBtnSecondNextArray.length; i++) {
+    const hiroBtnSecondNext = hiroBtnSecondNextArray[i];
+    hiroBtnSecondNext.addEventListener('click', function(){
+        const radioInputArray = hiroBtnSecondNext.parentElement.parentElement.querySelectorAll('.radio__input')
+        for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+            const hiroBlockSecond = hiroBlockSecondArray[i];
+            hiroBlockSecond.style.display = 'none'
+        }
+        for (let i = 0; i < radioInputArray.length; i++) {
+            const radioInput = radioInputArray[i];
+            if (radioInput.checked) {
+                const dataSecond = radioInput.id
+                for (let i = 0; i < hiroBlockThirdArray.length; i++) {
+                    const hiroBlockThird = hiroBlockThirdArray[i];
+                    if (hiroBlockThird.dataset.block === dataSecond) {
+                        hiroBlockThird.style.display = 'flex'
+                    }
+                }
+            }
+        }
+    })
+}
+
+for (let i = 0; i < hiroBtnThirdPrevArray.length; i++) {
+    const hiroBtnThirdPrev = hiroBtnThirdPrevArray[i];
+    hiroBtnThirdPrev.addEventListener('click', function(){
+        for (let i = 0; i < hiroBlockThirdArray.length; i++) {
+            const hiroBlockThird = hiroBlockThirdArray[i];
+            hiroBlockThird.style.display = 'none'
+        }
+        const dataPrev = hiroBtnThirdPrev.dataset.prev
+        for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+            const hiroBlockSecond = hiroBlockSecondArray[i];
+            if (hiroBlockSecond.dataset.block === dataPrev) {
+                hiroBlockSecond.style.display = 'flex'
+            }
+            
+        }
+    })
+}

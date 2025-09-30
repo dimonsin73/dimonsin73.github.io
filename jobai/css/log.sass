@@ -36,9 +36,310 @@
     --Neubg: #e0e5ec
     --Neushadow: #A3B1C6
     --Neutext: #5A6A82
-
+@mixin headline-large
+    font: 700 40px/48px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin headline-medium
+    font: 700 30px/36px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin headline-small
+    font: 700 22px/30px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin title-large
+    font: 600 20px/28px 'Inter', 'sans-serif'
+    letter-spacing: -0.2px
+@mixin title-medium
+    font: 600 16px/22px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin title-small
+    font: 600 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-extralarge
+    font: 500 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin subtitle-large
+    font: 500 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin subtitle-medium
+    font: 500 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: -0.1px
+@mixin subtitle-small
+    font: 500 10px/14px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin body-large
+    font: 400 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.5px
+@mixin body-medium
+    font: 400 14px/20px 'Inter', 'sans-serif'
+    letter-spacing: -0.25px
+@mixin body-small
+    font: 400 13px/16px 'Inter', 'sans-serif'
+    letter-spacing: 0
+@mixin label-large
+    font: 600 13px/18px 'Inter', 'sans-serif'
+    letter-spacing: +0.1em
+    text-transform: uppercase
+@mixin label-medium
+    font: 600 12px/16px 'Inter', 'sans-serif'
+    letter-spacing: +0.1em
+    text-transform: uppercase
+@mixin label-small
+    font: 600 11px/16px 'Inter', 'sans-serif'
+    letter-spacing: +0.12em
+    text-transform: uppercase
+@mixin text-medium 
+    font: 500 14px/20px 'Inter', 'sans-serif'    
+@mixin link-large 
+    font: 500 20px/28px 'Inter', 'sans-serif'
+@mixin link-medium 
+    font: 500 14px/21px 'Inter', 'sans-serif'
+@mixin link-xsmall 
+    font: 500 12px/18px 'Inter', 'sans-serif'
+@mixin link-small
+    font: 300 14px/16px 'Inter', 'sans-serif'
+@mixin btn-big 
+    font: 600 16px/24px 'Inter', 'sans-serif'
+    letter-spacing: -0.03em
+@mixin btn-medium 
+    font: 600 15px/22px 'Inter', 'sans-serif'
+    letter-spacing: 0.01em
+@mixin btn-small
+    font: 600 13px/20px 'Inter', 'sans-serif'
+    letter-spacing: 0.03em
+@mixin number
+    font: 700 11px/16px 'Inter', 'sans-serif'
+    letter-spacing: 0.01em
 html 
     scroll-behavior: smooth
+.btn 
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 6px
+    width: max-content
+    padding: 15px 23px
+    border-radius: 12px
+    @include btn-big
+    font-size: 15px
+    white-space: nowrap
+    &_h48 
+        padding: 11px 23px
+    &_150
+        max-width: 150px
+        width: 100%
+    &_160
+        max-width: 160px
+        width: 100%
+    &_240
+        max-width: 240px
+        width: 100%
+    &_primary 
+        border: 1px solid var(--Primary-40)
+        background-color: var(--Primary-40)
+        color: var(--White)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        &:hover 
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30) 
+        &:active
+            border: 1px solid var(--Primary-20)
+            background-color: var(--Primary-20)
+    &_secondary 
+        border: 1px solid var(--Gray-80)
+        background-color: var(--Gray-80)
+        color: var(--Black)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        &:hover 
+            border: 1px solid var(--Gray-70)
+            background-color: var(--Gray-70)
+        &:active
+            border: 1px solid var(--Gray-60)
+            background-color: var(--Gray-60)
+    &_tertiary
+        border: 1px solid var(--Black)
+        color: var(--Black)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        & path 
+            fill: var(--Black)
+            transition: fill 0.3s ease
+        &:hover 
+            border: 1px solid var(--Primary-40)
+            background-color: var(--Primary-40)
+            color: var(--White)
+            & path 
+                fill: var(--White)
+        &:active
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+            color: var(--White)
+    &_quaternary 
+        border: 1px solid var(--Primary-40)
+        color: var(--Primary-40)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        &:hover 
+            border: 1px solid var(--Primary-40)
+            background-color: var(--Primary-40)
+            color: var(--White)
+        &:active
+            border: 1px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+            color: var(--White)
+    &_black 
+        padding: 11px
+        border: 0.5px solid var(--Black)
+        border-radius: 8px
+        @include title-small
+        color: var(--Black)
+        transition: background-color 0.3s ease, color 0.3s ease
+        & path 
+            stroke: var(--Black)
+            transition: stroke 0.3s ease
+        &:hover 
+            background-color: var(--Black)
+            color: var(--White)
+            & path 
+                stroke: var(--White)
+    &_white
+        padding: 11px 23px
+        border: 0.5px solid var(--White)
+        border-radius: 8px
+        box-shadow: 0px 1px 8px 0px #0000001A
+        background-color: var(--White)
+        @include title-small
+        color: var(--Gray-10)
+        transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease
+        & path 
+            stroke: var(--Gray-10)
+            transition: stroke 0.3s ease
+        &-hide
+            display: none
+        &:hover 
+            border: 0.5px solid var(--Gray-100)
+            background-color: var(--Gray-100)
+            color: var(--Black)
+            & path 
+                stroke: var(--Black)
+        &-active
+            border: 0.5px solid var(--Black)
+            box-shadow: 0px 2px 16px 0px #00000033
+            background-color: var(--Black)
+            color: var(--White)
+            & path 
+                stroke: var(--White)
+            &:hover 
+                border: 0.5px solid var(--Gray-10)
+                background-color: var(--Gray-10)
+                color: var(--White)
+                & path 
+                    stroke: var(--White)
+            & .btn_white-hide
+                display: block
+    &_blue 
+        padding: 11px 23px
+        border: 0.5px solid var(--Primary-40)
+        border-radius: 8px
+        background-color: var(--Primary-40)
+        @include title-small
+        color: var(--White)
+        transition: background-color 0.3s ease, border 0.3s ease
+        & path 
+            stroke: var(--White)
+        &:hover 
+            border: 0.5px solid var(--Primary-30)
+            background-color: var(--Primary-30)
+        &:active 
+            border: 0.5px solid var(--Primary-20)
+            background-color: var(--Primary-20)
+    &-icon 
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 0 0 auto
+    &-icon48
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 0 0 auto
+        padding: 11px
+    &_center 
+        margin: 0 auto
+    &_full 
+        width: 100%
+        justify-content: flex-start
+    &:disabled 
+        opacity: 0.2
+    &_like 
+        &-active 
+            & path
+                stroke: var(--Red)
+                fill: var(--Red)
+                transition: stroke 0.3s ease, fill 0.3s ease
+            &:hover 
+                & path
+                    stroke: var(--Red)
+                    fill: var(--Red)
+.clue 
+    position: relative
+    display: flex
+    flex: 0 0 auto
+    cursor: pointer
+    &__wrapper 
+        position: absolute
+        bottom: calc( 100% + 4px)
+        left: -150px
+        display: none
+        flex-direction: column
+        gap: 4px
+        width: 300px
+        padding: 10px
+        border-radius: 8px
+        background-color: var(--Gray-90)
+        z-index: 40
+        &-small 
+            width: max-content
+            max-width: 300px
+        &-bottom 
+            top: calc( 100% + 4px )
+            bottom: auto
+        &-active 
+            display: flex
+    &__text 
+        @include subtitle-large
+        color: var(--Gray-30)
+        &-center 
+            text-align: center
+    &__list 
+        margin-left: 8px
+        padding-left: 16px
+        &-item 
+            list-style-type: disc
+            &::marker 
+                color: var(--Gray-30)
+    &__accounting
+        display: none
+        &-active 
+            display: blocks
+.section // SECTION 
+    display: none
+    padding: 10px 16px 24px
+    &_active
+        display: block
+        &.section_toleft
+            display: grid
+    &_toleft 
+        grid-template-columns: 1090px 48px
+        align-items: end
+        justify-content: center
+        gap: 16px
+        padding: 10px 
+        padding-bottom: 24px
+        &-btn 
+            position: sticky
+            right: 0
+            bottom: 24px
+            background-color: var(--White)
 body 
     min-width: 390px
     min-height: 755px
@@ -92,6 +393,8 @@ body
     justify-content: space-between
     width: 100%
     height: 100vh
+    &_hide 
+        display: none
     &__wrapper
         display: flex
         flex-direction: column
@@ -117,6 +420,18 @@ body
             font: 600 16px/22px "Inter", 'sans-serif'
             color: var(--Neutext)
             text-align: center
+        &-footer 
+            display: flex
+            justify-content: space-between
+            gap: 20px
+        &-second 
+            display: none
+            padding-top: 20px
+            padding-bottom: 20px
+        &-third
+            display: none
+            padding-top: 20px
+            padding-bottom: 20px
     &__footer 
         position: absolute
         left: 120px
@@ -396,6 +711,8 @@ body
         justify-content: center
 .menu
     display: none
+    &_hide 
+        display: none
 
 .form 
     display: none
@@ -448,11 +765,33 @@ body
 .timer 
     display: flex
     align-items: center
+.cards 
+    display: flex
+    flex-direction: column
+    gap: 10px
+    &__btn 
+        width: 300px
+        margin: 10px auto
+    &__wrapper 
+        display: none
+        &-active 
+            display: block
+
 @keyframes arrowUp
   from 
     transform: translate3d(0, 15px, 0)
   to 
     transform: translate3d(0, -15px, 0) 
+@media (max-height: 899px)
+    .logo
+        margin: 0 auto 20px
+@media (max-height: 814px)
+    .logo
+        margin: 0 auto 
+@media (max-height: 799px)
+    .hiro
+        &__wrapper 
+            padding-top: 20px
 @media (max-width:1023px)
     .hiro
         justify-content: flex-start
@@ -462,7 +801,10 @@ body
         &__wrapper
             padding: 20px
         &__block 
-            padding: 20px 25px
+            &-search 
+                gap: 10px
+                padding-top: 13px
+                padding-bottom: 20px
         &__footer 
             bottom: 20px
     .logo
@@ -473,7 +815,7 @@ body
                 padding: 14px
                 border-radius: 16px
         &__r 
-            right: -15px
+            right: -10px
             width: 11px 
             height: 11px
             border: 1.6px solid var(--Black)
@@ -533,6 +875,8 @@ body
         transition: top 0.5s linear
         &_up 
             top: 0%
+        &_hide 
+            display: none
         &__wrapper 
             display: flex
             flex-direction: column
@@ -572,10 +916,6 @@ body
         
 @media (max-width: 787px)
     .hiro 
-        &__wrapper 
-            margin-top: 25px
-            padding: 14px 20px
-        &__line 
         &__bottom 
             flex-direction: column
             align-items: flex-start
@@ -604,3 +944,537 @@ body
     
     
            
+
+.portfolios // PORTFOLIO
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 25px
+    &_big
+        display: flex
+    &_small 
+        display: none
+.portfolio 
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 10px
+    border-radius: 12px
+    box-shadow: 5px 5px 11px 0px #B6B7B8
+    background-color: var(--White)
+    &__topline 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 10px
+        padding: 10px
+    &__language 
+        flex: 0 0 auto
+        width: 25px
+        height: 17px
+        border: 0.1px solid var(--Gray-80)
+        border-radius: 4px
+        overflow: hidden
+        & img 
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__status 
+        width: 160px
+        height: 22px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 16px
+        background: #8989901A
+        @include subtitle-small
+        letter-spacing: -0.2px
+        text-align: center
+        &-green 
+            color: var(--Green)
+        &-red
+            color: var(--Red)
+        &-blue 
+            color: var(--Primary-40)
+    &__t
+        position: absolute
+        top: 10px
+        right: 30px
+    &__position 
+        padding-left: 100px
+        flex: 0 0 auto
+        display: flex
+        align-items: center
+        gap: 5px
+        &-text 
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 25px
+            height: 17px
+            padding: 2px
+            border: 0.1px solid var(--White)
+            border-radius: 4px
+            background-color: var(--Primary-40)
+            font: 700 11px/11px "Inter", "sans-serif"
+            color: var(--White)
+    &__line 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 20px
+        padding: 10px
+    &__fits
+        padding: 8px
+        font-weight: 500
+        font-size: 14px
+        line-height: 15px 
+        border-radius: 8px
+        & path 
+            stroke: none
+            transition: fill 0.3s ease
+        &:hover 
+            & path 
+                stroke: none
+                fill: var(--White)
+        &-disabled
+            opacity: 0.2
+            &:hover 
+                background-color: var(--White)
+                color: var(--Black)
+                & path 
+                    stroke: none
+                    fill: var(--Black)
+        &-success 
+            display: none
+            & path 
+                stroke: none
+                fill: var(--White)
+    &__content 
+        display: grid
+        align-items: end
+        grid-template-columns: 160px 274px 585px
+        gap: 6px 25px
+        padding: 20px
+        padding-bottom: 0
+    &__contact 
+        display: flex
+        flex-direction: column
+        gap: 6px
+        margin-top: auto
+        padding-left: 10px
+    &__top 
+        display: flex
+        flex-direction: column
+        gap: 12px
+        margin-top: 25px
+    &__avatar 
+        position: relative
+        grid-row: span 2
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 140px
+        height: 140px
+        border-radius: 16px 
+        overflow: hidden
+        cursor: pointer
+        &-bg 
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            border-radius: 16px 
+            outline: 2px dashed #C7C9CF
+            outline-offset: -2px
+            background:
+                image: url('../images/icons/avatar.png')
+                repeat: no-repeat
+                position: center center
+                size: 36px
+        &-img 
+            width: 140px
+            height: 140px
+            border-radius: 16px 
+            object-fit: cover
+            position: relative
+            z-index: 2
+            &:hover 
+                outline: 2px solid var(--Primary-50)
+                outline-offset: -2px
+        &-logo 
+            width: 140px
+            height: 140px
+            padding: 16px
+            border-radius: 16px 
+            background-color: #fff
+            object-fit: contain
+            position: relative
+            z-index: 2
+            &:hover 
+                outline: 2px solid var(--Primary-50)
+                outline-offset: -2px
+    &__title 
+        display: flex
+        align-items: center
+        gap: 12px
+        @include headline-small
+        color: var(--Black)
+    &__stitle 
+        display: flex
+        align-items: center
+        gap: 10px
+        font: 600 14px/20px 'Inter', 'sans-serif'
+        letter-spacing: -0.1px
+        color: var(--Black)
+    &__tel 
+        display: flex
+        align-items: center
+        gap: 10px
+        height: 21px
+        font: 500 12px/18px "inter", "sans-serif"
+        color: var(--Black)
+        &-copy 
+            opacity: 0
+        &:hover 
+            & .portfolio__tel-copy
+                opacity: 1
+    &__text 
+        @include subtitle-small
+        color: var(--Gray-40)
+    &__main 
+        grid-row: span 2
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        gap: 12px
+        &-mr 
+            margin-right: -150px
+    &__center 
+        grid-row: span 2
+        display: flex
+        flex-direction: column
+        gap: 10px
+        &-line 
+            display: flex
+            align-items: flex-start
+            justify-content: space-between
+    &__info 
+        grid-row: span 2
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 18px
+        &-title
+            @include headline-large
+            color: var(--Primary-40)
+        &-text 
+            @include subtitle-small
+            color: var(--Gray-40)
+    &__row 
+        display: flex
+        align-items: center
+        gap: 8px
+        width: 100%
+        height: 16px
+        &-link 
+            display: flex
+            align-items: center
+            justify-content: center
+    &__col
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 2px
+    &__btns 
+        display: flex
+        align-items: center
+        gap: 20px
+        padding: 15.5px 20px
+        border-top: 1px solid var(--Gray-80)
+        &-bl 
+            width: 1px
+            height: 48px
+            border-right: 1px solid var(--Gray-80)
+    &__ai 
+        display: flex
+        align-items: center
+        justify-content: center
+        font: 700 20px/22px "inter", "sans-serif"
+        letter-spacing: -0.2px
+        color: var(--Primary-40)
+    &__loader 
+        position: relative
+        flex: 0 0 24px
+        width: 24px
+        height: 24px
+        background: 
+            image: url('../images/icons/loading.png')
+            position: center center 
+            repeat: no-repeat
+        opacity: 0
+        &-loading
+            opacity: 1
+            animation: rotation 5s linear infinite
+        &-success
+            border: 1.5px solid var(--Primary-40)
+            border-radius: 50%
+            background: 
+                image: url('../images/icons/success.png')
+            opacity: 1
+    &__view 
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        height: 16px
+    .portfolio__slider 
+        grid-row: span 3
+        & .itc-slider 
+            position: relative
+        & .itc-slider-wrapper 
+            overflow: hidden
+        & .itc-slider-items 
+            display: flex
+            gap: 20px
+            transition: transform 0.5s ease
+            will-change: transform
+        & .itc-slider-transition-none 
+            transition: none
+        & .itc-slider-item 
+            position: relative
+            flex: 0 0 auto
+            display: flex
+            flex-direction: column
+            gap: 10px
+            width: 302px
+            user-select: none
+            will-change: transform
+        & .itc-slider-media 
+            position: absolute
+            top: 2px
+            left: 2px
+            width: 302px
+            height: 170px
+            border-radius: 16px
+            object-fit: cover
+            overflow: hidden
+            z-index: 2
+            &:hover 
+                outline: 2px solid var(--Primary-50)
+        & .itc-slider-bg
+            width: 302px
+            height: 170px
+            margin-top: 2px
+            margin-left: 2px
+            border: 1px dashed #C7C9CF
+            border-radius: 16px
+            background-image: url(../images/icons/add_video.png)
+            background-position: center center
+            background-size: 48px
+            background-repeat: no-repeat
+            cursor: pointer
+        & .itc-slider-bottom 
+            height: 58px
+        & .itc-slider-video
+            position: relative
+            display: flex
+            width: 100% 
+            height: 100%
+            object-fit: cover
+        & .itc-slider-play
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 20px
+            height: 28px
+            background-image: url('../images/icons/play.png')
+            background-repeat: no-repeat
+            background-position: center center
+            transform: translate3d(-50%, -50%, 0)
+            z-index: 3
+        & .itc-slider-time
+            position: absolute
+            right: 10px
+            bottom: 10px
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 32px
+            height: 20px
+            border-radius: 6px
+            background: #8A8E96
+            font: 600 10px/14px 'Inter', 'sans-serif'
+            color: #fff
+            z-index: 3
+        & .itc-slider-img
+            position: relative
+            width: 100%
+            height: 100%
+            object-fit: cover
+            z-index: 2
+        & .itc-slider-bottom
+            display: flex
+            flex-direction: column
+            gap: 4px
+        & .itc-slider-title
+            position: relative
+            padding-right: 20px
+            font: 600 14px/20px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            color: #202123
+        & .itc-slider-dots
+            position: absolute
+            top: 0
+            right: 0
+        & .itc-slider-info
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            gap: 6px
+        & .itc-slider-text
+            font: 500 10px/14px 'Inter', 'sans-serif'
+            color: var(--Gray-40)
+        & .itc-slider-btn 
+            position: absolute
+            top: 67px
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 36px
+            height: 36px
+            border: none
+            border-radius: 50%
+            box-shadow: 0px 2px 4px 0px #00000040
+            background-color: #fff
+            cursor: pointer
+        & .itc-slider-btn-hide 
+            display: none
+        & .itc-slider-btn-prev 
+            left: 1px
+        & .itc-slider-btn-next 
+            right: 1px
+        & .itc-slider-btn::before 
+            content: ""
+            display: inline-block
+            width: 20px
+            height: 20px
+            background: transparent no-repeat center center
+            background-size: 100% 100%
+        & .itc-slider-btn-prev::before 
+            background-image: url("../images/icons/chevron_left.png")
+        & .itc-slider-btn-next::before 
+            background-image: url("../images/icons/chevron_right.png")
+@media (max-width: 1200px)
+    .btn_150 
+        flex: 0 0 48px
+    .section
+        &_toleft 
+            grid-template-columns: 800px 48px
+    .portfolio
+        &__title 
+            font-size: 18px
+            line-height: 24px
+        &__position 
+            right: 20px
+        &__top 
+            margin-top: 30px
+        &__show 
+            display: none
+        &__content 
+            grid-template-columns: 160px 274px 302px
+            gap: 6px 21px
+        &__contact 
+            align-items: start
+@media ( max-width: 899px )
+    .section 
+        &_toleft 
+            grid-template-columns: 370px
+            padding: 10px
+            &-btn 
+                position: fixed
+                bottom: 20px
+                right: 16px
+                background-color: var(--White)
+    .portfolios 
+        gap: 20px
+        &_big
+            display: none
+        &_small 
+            display: flex
+    .portfolio
+        gap: 0
+        &__position 
+            position: static
+            padding-left: 0
+        &__content 
+            align-items: start
+            grid-template-columns: 150px 190px
+            gap: 6px 10px
+            padding: 10px
+            border-top: 1px solid var(--Aside)
+        &__contact 
+            padding-left: 0
+            gap: 2px
+        &__title 
+            line-height: 22px
+        &__avatar
+            grid-row: span 2
+            width: 150px
+            height: 150px
+            &-img 
+                width: 150px
+                height: 150px
+            &-logo
+                width: 150px
+                height: 150px
+        &__tel 
+            height: max-content
+            line-height: 14px
+        &__main 
+            &-mr 
+                margin-right: 0
+        &__top 
+            grid-column: span 1
+            flex-direction: column
+            align-items: flex-start
+            gap: 10px
+            margin-top: 0
+        &__info 
+            grid-row: span 1
+            width: 150px
+            margin: 0 auto
+        &__status
+            width: 135px
+            height: 17px
+        &__status2
+            width: 90px
+        &__center 
+            grid-row: span 1
+            grid-column: span 2
+            padding: 10px
+            border-bottom: 1px solid var(--Aside)
+            &-line 
+                display: grid
+                grid-template-columns: 2fr 1fr
+        &__stitle 
+            font: 600 12px/16px 'Inter', 'sans-serif'
+        &__loader 
+            margin: 0 auto
+        &__invite 
+            width: 160px
+            margin-left: auto
+        &__btns 
+            gap: 15px
+            padding: 10px
+            &-bl 
+                display: none
+        .portfolio__slider 
+            grid-column: span 2
+            margin-right: -9px
+            padding: 10px
+            & .itc-slider-title
+                font-size: 12px
+            & .itc-slider-bottom 
+                height: max-content

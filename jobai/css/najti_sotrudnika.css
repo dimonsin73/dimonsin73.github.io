@@ -276,14 +276,6 @@ html {
   flex: 0 0 auto;
   padding: 11px;
 }
-.btn-icon48 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  padding: 11px;
-}
 .btn_center {
   margin: 0 auto;
 }
