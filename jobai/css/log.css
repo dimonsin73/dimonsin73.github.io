@@ -1021,7 +1021,7 @@ body {
   .menu {
     display: flex;
     flex-direction: column;
-    min-height: 100svh;
+    min-height: 100lvh;
     padding: 12px 0;
   }
   .menu_hide {
