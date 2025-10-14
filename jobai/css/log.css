@@ -967,6 +967,13 @@ body {
   .language {
     display: none;
   }
+  .language__dropdawn-active {
+    height: 42px;
+  }
+  .language__dropdawn-option {
+    width: 35px;
+    height: 21px;
+  }
   .arrow {
     display: block;
   }
@@ -1001,7 +1008,7 @@ body {
   }
   .menu__block-title {
     margin-top: -7px;
-    margin-bottom: -10px;
+    margin-bottom: -5px;
     font: 600 16px/22px "Inter", "sans-serif";
     color: var(--Neutext);
     text-align: center;
@@ -1020,8 +1027,12 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: -5px;
-    padding: 0 15px 15px;
+    padding: 0 15px;
+  }
+  .menu__language {
+    width: 35px;
+    height: 21px;
+    margin-top: -10px;
   }
 }
 @media (max-width: 787px) {

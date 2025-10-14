@@ -26,6 +26,34 @@ languageView.addEventListener('click', function(){
         }
     }) //Закрытие меню выбора языка по нажатию на ESC
 })
+// Работа меню выбора языка 
+const menuLanguage = document.querySelector('.menu__language')
+const menuLanguageView = menuLanguage.querySelector('.language__view')
+const menuLanguageDropdawn = menuLanguage.querySelector('.language__dropdawn')
+const menuLanguageDropdawnOptionArray = menuLanguage.querySelectorAll('.language__dropdawn-option')
+menuLanguageView.addEventListener('click', function(){
+    menuLanguageDropdawn.classList.toggle('language__dropdawn-active')
+    for (let i = 0; i < menuLanguageDropdawnOptionArray.length; i++) {
+        const menuLanguageDropdawnOption = menuLanguageDropdawnOptionArray[i];
+        menuLanguageDropdawnOption.addEventListener('click', function(){
+            const style = getComputedStyle(menuLanguageDropdawnOption)
+            const bgImage= style['background-image']
+            menuLanguageView.style.backgroundImage = bgImage
+            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
+        })
+    }
+    document.addEventListener('click', (e) => {
+        const withinBoundaries = e.composedPath().includes(menuLanguage);
+        if ( ! withinBoundaries ) {
+            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
+        }
+    }) //Закрытие меню выбора языка по щелчку вне меню
+    document.addEventListener('keydown', function(e) {
+        if( e.keyCode == 27 ){ 
+            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
+        }
+    }) //Закрытие меню выбора языка по нажатию на ESC
+})
 const popupArray = document.querySelectorAll('.popup')
 for (let i = 0; i < popupArray.length; i++) {
     const popup = popupArray[i];
