@@ -27,33 +27,37 @@ languageView.addEventListener('click', function(){
     }) //Закрытие меню выбора языка по нажатию на ESC
 })
 // Работа меню выбора языка 
-const menuLanguage = document.querySelector('.menu__language')
-const menuLanguageView = menuLanguage.querySelector('.language__view')
-const menuLanguageDropdawn = menuLanguage.querySelector('.language__dropdawn')
-const menuLanguageDropdawnOptionArray = menuLanguage.querySelectorAll('.language__dropdawn-option')
-menuLanguageView.addEventListener('click', function(){
-    menuLanguageDropdawn.classList.toggle('language__dropdawn-active')
-    for (let i = 0; i < menuLanguageDropdawnOptionArray.length; i++) {
-        const menuLanguageDropdawnOption = menuLanguageDropdawnOptionArray[i];
-        menuLanguageDropdawnOption.addEventListener('click', function(){
-            const style = getComputedStyle(menuLanguageDropdawnOption)
-            const bgImage= style['background-image']
-            menuLanguageView.style.backgroundImage = bgImage
-            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
-        })
-    }
-    document.addEventListener('click', (e) => {
-        const withinBoundaries = e.composedPath().includes(menuLanguage);
-        if ( ! withinBoundaries ) {
-            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
+const menuLanguageArray = document.querySelectorAll('.menu__language')
+for (let i = 0; i < menuLanguageArray.length; i++) {
+    const menuLanguage = menuLanguageArray[i];
+    const menuLanguageView = menuLanguage.querySelector('.language__view')
+    const menuLanguageDropdawn = menuLanguage.querySelector('.language__dropdawn')
+    const menuLanguageDropdawnOptionArray = menuLanguage.querySelectorAll('.language__dropdawn-option')
+    menuLanguageView.addEventListener('click', function(){
+        menuLanguageDropdawn.classList.toggle('language__dropdawn-active')
+        for (let i = 0; i < menuLanguageDropdawnOptionArray.length; i++) {
+            const menuLanguageDropdawnOption = menuLanguageDropdawnOptionArray[i];
+            menuLanguageDropdawnOption.addEventListener('click', function(){
+                const style = getComputedStyle(menuLanguageDropdawnOption)
+                const bgImage= style['background-image']
+                menuLanguageView.style.backgroundImage = bgImage
+                menuLanguageDropdawn.classList.remove('language__dropdawn-active')
+            })
         }
-    }) //Закрытие меню выбора языка по щелчку вне меню
-    document.addEventListener('keydown', function(e) {
-        if( e.keyCode == 27 ){ 
-            menuLanguageDropdawn.classList.remove('language__dropdawn-active')
-        }
-    }) //Закрытие меню выбора языка по нажатию на ESC
-})
+        document.addEventListener('click', (e) => {
+            const withinBoundaries = e.composedPath().includes(menuLanguage);
+            if ( ! withinBoundaries ) {
+                menuLanguageDropdawn.classList.remove('language__dropdawn-active')
+            }
+        }) //Закрытие меню выбора языка по щелчку вне меню
+        document.addEventListener('keydown', function(e) {
+            if( e.keyCode == 27 ){ 
+                menuLanguageDropdawn.classList.remove('language__dropdawn-active')
+            }
+        }) //Закрытие меню выбора языка по нажатию на ESC
+    })
+}
+
 const popupArray = document.querySelectorAll('.popup')
 for (let i = 0; i < popupArray.length; i++) {
     const popup = popupArray[i];
@@ -77,13 +81,6 @@ for (let i = 0; i < popupArray.length; i++) {
         })
     }
     
-}
-const neumorphicButtonArray = document.querySelectorAll('.neumorphic-button')
-for (let i = 0; i < neumorphicButtonArray.length; i++) {
-    const neumorphicButton = neumorphicButtonArray[i];
-    neumorphicButton.addEventListener('click', function(){
-        neumorphicButton.classList.toggle('neumorphic-button-active')
-    })    
 }
 const cardsBtnArray = document.querySelectorAll('.cards-btn')
 const section = document.querySelector('.section')
@@ -218,3 +215,56 @@ hiroWraper.addEventListener('scroll', function() {
         hiroBlockExample.classList.remove('hiro__block-example-up')
     }
 })
+
+const menuLinkArray = document.querySelectorAll('.menu__link')
+for (let i = 0; i < menuLinkArray.length; i++) {
+    const menuLink = menuLinkArray[i];
+    menuLink.addEventListener('click', function(){
+        const dataDocum = menuLink.dataset.docum
+        documFun(dataDocum)
+    })
+}
+const docum = document.querySelector('.docum')
+const documWrapperArray = document.querySelectorAll('.docum__wrapper')
+function documFun(dataDocum) {
+    menu.classList.add('menu_hide')
+    hiro.classList.add('hiro_hide')
+    docum.classList.add('docum_active')
+    for (let i = 0; i < documWrapperArray.length; i++) {
+        const documWrapper = documWrapperArray[i];
+        if (documWrapper.dataset.docum === dataDocum) {
+            documWrapper.classList.add('docum__wrapper-active')
+        } else {
+            documWrapper.classList.remove('docum__wrapper-active')
+        }
+    }
+}
+
+const documBtnArray = document.querySelectorAll('.docum__btn')
+for (let i = 0; i < documBtnArray.length; i++) {
+    const documBtn = documBtnArray[i];
+    documBtn.addEventListener("click", function(){
+        menu.classList.remove('menu_hide')
+        hiro.classList.remove('hiro_hide')
+        docum.classList.remove('docum_active')
+        for (let i = 0; i < documWrapperArray.length; i++) {
+            const documWrapper = documWrapperArray[i];
+            documWrapper.classList.remove('docum__wrapper-active')
+        }
+    })
+}
+
+const documBackArray = document.querySelectorAll('.docum__back')
+for (let i = 0; i < documBackArray.length; i++) {
+    const documBack = documBackArray[i];
+    documBack.addEventListener("click", function(){
+        for (let i = 0; i < documWrapperArray.length; i++) {
+            const documWrapper = documWrapperArray[i];
+            if (documWrapper.dataset.docum === 'other') {
+                documWrapper.classList.add('docum__wrapper-active')
+            } else {
+                documWrapper.classList.remove('docum__wrapper-active')
+            }
+        }
+    })
+}

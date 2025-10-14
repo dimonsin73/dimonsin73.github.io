@@ -281,6 +281,13 @@ html
                 & path
                     stroke: var(--Red)
                     fill: var(--Red)
+.press 
+    &-right 
+        margin-left: auto
+    &-left
+        margin-right: auto
+    &-bottom
+        margin-top: auto
 .clue 
     position: relative
     display: flex
@@ -751,12 +758,22 @@ body
     &_hide 
         display: none
 .docum 
+    display: none
+    flex-direction: column
+    align-items: center
+    gap: 20px
     padding: 20px
-    &__wrapper 
+    &_active 
         display: flex
+    &__wrapper 
+        display: none
         flex-direction: column
         gap: 20px
+        width: 100%
+        height: 85vh
         padding: 10px 15px 20px
+        &-active 
+            display: flex
     &__title 
         margin-bottom: -12px
         font: 600 16px/22px 'Inter', 'sans-serif'
@@ -773,10 +790,12 @@ body
         display: flex
         flex-direction: column
         gap: 16px
+        height: 100%
         padding: 10px
         border: 1px solid var(--Neushadow)
         border-radius: 10px
         background-color: var(--White)
+        overflow-y: auto
         &-item 
             display: flex
             flex-direction: column
@@ -806,6 +825,9 @@ body
             letter-spacing: 0
             color: var(--Black)
     &__btn 
+        width: 300px
+        margin: 0 auto
+    &__back
         width: 300px
         margin: 0 auto
 

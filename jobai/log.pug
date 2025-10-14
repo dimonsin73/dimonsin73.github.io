@@ -193,12 +193,12 @@ html(lang="ru")
                             .switch__point.switch__point-right сотрудников
                     button(type="button").cards-btn.neumorphic.neumorphic-button Попробовать
                 .menu__block.neumorphic
-                    button(type="button").menu__link.neumorphic.neumorphic-button Связаться с нами
-                    button(type="button").menu__link.neumorphic.neumorphic-button О компании
-                    button(type="button").menu__link.neumorphic.neumorphic-button Тарифы
-                    button(type="button").menu__link.neumorphic.neumorphic-button Условия предоставления услуг
-                    button(type="button").menu__link.neumorphic.neumorphic-button Персональные данные
-                    button(type="button").menu__link.neumorphic.neumorphic-button Прочая информация
+                    button(type="button", data-docum='contact-us').menu__link.neumorphic.neumorphic-button Связаться с нами
+                    button(type="button", data-docum='about').menu__link.neumorphic.neumorphic-button О компании
+                    button(type="button", data-docum='tariffs').menu__link.neumorphic.neumorphic-button Тарифы
+                    button(type="button", data-docum='terms').menu__link.neumorphic.neumorphic-button Условия предоставления услуг
+                    button(type="button", data-docum='personal-data').menu__link.neumorphic.neumorphic-button Персональные данные
+                    button(type="button", data-docum='other').menu__link.neumorphic.neumorphic-button Прочая информация
                 .menu__rights
                     p.rights__text © 2025 
                     p.rights__text ООО «Май нью джоб Девелопмент Компани»
@@ -1157,7 +1157,7 @@ html(lang="ru")
                 </svg>
         
         .docum 
-            .docum__wrapper.neumorphic  
+            .docum__wrapper.neumorphic(data-docum='contact-us')
                 h2.docum__title Связаться с нами
                 .docum__content 
                     .docum__content-item
@@ -1181,7 +1181,7 @@ html(lang="ru")
                         h3.docum__content-title Чат
                         button(type="button").btn.btn_primary.btn_h48.btn_160 Начать чат
                 button(type="button").docum__btn.neumorphic.neumorphic-button Вернуться в меню
-            .docum__wrapper.neumorphic  
+            .docum__wrapper.neumorphic(data-docum='about') 
                 h2.docum__title О компании
                 .docum__content 
                     .docum__content-item
@@ -1238,11 +1238,11 @@ html(lang="ru")
                             p.docum__content-text Сайт
                             a(href="www.job-ai.ru", target="_blank").docum__content-link www.job-ai.ru
                 button(type="button").docum__btn.neumorphic.neumorphic-button Вернуться в меню
-            .docum__wrapper.neumorphic  
+            .docum__wrapper.neumorphic(data-docum='tariffs') 
                 h2.docum__title Тарифы
                 .docum__content
                 button(type="button").docum__btn.neumorphic.neumorphic-button Вернуться в меню
-            .docum__wrapper.neumorphic  
+            .docum__wrapper.neumorphic(data-docum='terms')
                 h2.docum__title Условия предоставления  услуг
                 .docum__content 
                     p.docum__content-time Дата публикации 01.10.2025
@@ -1252,7 +1252,7 @@ html(lang="ru")
                         p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями.
                         p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях.
                 button(type="button").docum__btn.neumorphic.neumorphic-button Вернуться в меню
-            .docum__wrapper.neumorphic  
+            .docum__wrapper.neumorphic(data-docum='personal-data')
                 h2.docum__title Политика обработки персональных данных
                 .docum__content 
                     p.docum__content-time Дата публикации 01.10.2025
@@ -1262,3 +1262,47 @@ html(lang="ru")
                         p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями.
                         p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях.
                 button(type="button").docum__btn.neumorphic.neumorphic-button Вернуться в меню
+            .docum__wrapper.neumorphic(data-docum='other')
+                button(type="button", data-docum='confidentiality').menu__link.neumorphic.neumorphic-button Политика конфидециальности
+                button(type="button", data-docum='cookies').menu__link.neumorphic.neumorphic-button Политика использования cookies
+                button(type="button", data-docum='user-agreement').menu__link.neumorphic.neumorphic-button Пользовательское соглашение
+                .press-bottom
+                button(type="button").docum__btn.neumorphic.neumorphic-button Вернуться в меню
+            .docum__wrapper.neumorphic(data-docum='confidentiality')
+                h2.docum__title Политика конфидециальности
+                .docum__content 
+                    p.docum__content-time Дата публикации 01.10.2025
+                    .docum__content-part
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями. 
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях.
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями.
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях.
+                button(type="button").docum__back.neumorphic.neumorphic-button Назад
+            .docum__wrapper.neumorphic(data-docum='cookies')
+                h2.docum__title Политика использования cookies
+                .docum__content 
+                    p.docum__content-time Дата публикации 01.10.2025
+                    .docum__content-part
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями. 
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях.
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями.
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях.
+                button(type="button").docum__back.neumorphic.neumorphic-button Назад
+            .docum__wrapper.neumorphic(data-docum='user-agreement')
+                h2.docum__title Пользовательское соглашение
+                .docum__content 
+                    p.docum__content-time Дата публикации 01.10.2025
+                    .docum__content-part
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями. 
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях.
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях. При это обязанности, которые предполагается по вакансии данный кандидат сможет выполнять. Есть опыт работы с крупными сетями.
+                        p.docum__content-doc Кузнецов Владимир обладает более чем 15-летним опытом в сфере продаж, из которых более 10 лет на руководящих позициях.
+                button(type="button").docum__back.neumorphic.neumorphic-button Назад
+            .menu__rights
+                p.rights__text © 2025 
+                p.rights__text ООО «Май нью джоб Девелопмент Компани»
+            .menu__language 
+                .language__view
+                .language__dropdawn
+                    .language__dropdawn-option.language__dropdawn-option1
+                    .language__dropdawn-option.language__dropdawn-option2 
