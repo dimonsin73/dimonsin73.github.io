@@ -993,7 +993,8 @@ body {
   .menu {
     display: flex;
     flex-direction: column;
-    height: 100dvh;
+    min-height: 100dvh;
+    padding: 20px 0;
   }
   .menu_hide {
     display: none;
@@ -1064,10 +1065,10 @@ body {
     margin-bottom: 12px;
   }
   .hiro__footer {
-    bottom: 103px;
+    bottom: 20px;
   }
   .popup {
-    bottom: 103px;
+    bottom: 20px;
   }
   .popup_active {
     bottom: 0;
