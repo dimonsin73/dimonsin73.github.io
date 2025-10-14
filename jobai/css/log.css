@@ -407,7 +407,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
 }
 .hiro_hide {
   display: none;
@@ -605,7 +605,6 @@ body {
   font: 600 16px/24px "Inter", "sans-serif";
   color: var(--Neutext);
   letter-spacing: 0.02em;
-  text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White);
 }
 .video__icon {
   flex: 0 0 auto;
@@ -620,6 +619,17 @@ body {
 }
 .video__icon svg {
   padding-left: 1px;
+}
+.video:hover .video__text {
+  font-weight: 700;
+  color: var(--Black);
+  text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White);
+}
+.video:hover .video__icon {
+  box-shadow: 5px 5px 5px 0px #A3B1C6, -5px -5px 5px 0px #FFFFFF;
+}
+.video:hover .video__icon svg path {
+  box-shadow: 4px 4px 5px 0px var(--Black);
 }
 
 .nav {
@@ -983,7 +993,7 @@ body {
   .menu {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100dvh;
   }
   .menu_hide {
     display: none;
