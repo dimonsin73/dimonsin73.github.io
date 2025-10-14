@@ -991,10 +991,24 @@ body {
   .language {
     display: none;
   }
+  .language__view {
+    flex: 0 0 auto;
+    width: 35px;
+    height: 21px;
+  }
+  .language__dropdawn {
+    display: flex;
+    width: 0;
+    height: 21px;
+    margin-top: 0;
+    margin-left: 8px;
+    transition: width 0.3s ease;
+  }
   .language__dropdawn-active {
-    height: 42px;
+    width: 70px;
   }
   .language__dropdawn-option {
+    flex: 0 0 auto;
     width: 35px;
     height: 21px;
   }
@@ -1055,8 +1069,7 @@ body {
     padding: 0 15px;
   }
   .menu__language {
-    width: 35px;
-    height: 21px;
+    display: flex;
     margin-top: -10px;
   }
 }

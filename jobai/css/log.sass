@@ -860,10 +860,21 @@ body
         display: none
     .language 
         display: none
-        &__dropdawn 
+        &__view
+            flex: 0 0 auto
+            width: 35px
+            height: 21px
+        &__dropdawn
+            display: flex
+            width: 0
+            height: 21px 
+            margin-top: 0
+            margin-left: 8px
+            transition: width 0.3s ease
             &-active 
-                height: 42px
+                width: 70px
             &-option 
+                flex: 0 0 auto
                 width: 35px
                 height: 21px
     .arrow
@@ -913,9 +924,9 @@ body
             gap: 10px
             padding: 0 15px
         &__language 
-            width: 35px
-            height: 21px
+            display: flex
             margin-top: -10px
+            
         
 @media (max-width: 787px)
     .hiro 
