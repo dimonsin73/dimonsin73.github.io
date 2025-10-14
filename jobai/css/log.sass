@@ -345,6 +345,7 @@ body
     min-height: 755px
     background-color: var(--Neubg)
     font: 400 16px/20px 'Inter', 'sans-serif'
+    letter-spacing: 0.02em
     color: var(--Black)
 .container
     display: flex
@@ -406,7 +407,9 @@ body
         padding: 48px 20px 140px
     &__btn 
         width: 140px
-        margin: 10px auto 0
+        margin: 16px auto 0
+        &-first 
+            margin-top: 20px
     &__block 
         display: flex
         flex-direction: column
@@ -419,6 +422,7 @@ body
             gap: 15px
         &-title 
             font: 600 16px/22px "Inter", 'sans-serif'
+            letter-spacing: 0.02em
             color: var(--Neutext)
             text-align: center
         &-footer 
@@ -472,7 +476,7 @@ body
         height: 16px
         border: 2px solid var(--Black)  
         border-radius: 50%
-        box-shadow: 3px 3px 5px 0px #A3B1C6, -3px -3px 5px 0px #FFFFFF
+        box-shadow: 3px 3px 5px 0px var(--Neushadow), -3px -3px 5px 0px #FFFFFF
         &-text 
             padding-left: 2.5px
             font: 900 12px/12px 'Inter', 'sans-serif'
@@ -496,6 +500,7 @@ body
     &__point 
         flex: 0 0 50%
         font: 400 16px/22px 'Inter', 'sans-serif'
+        letter-spacing: 0.02em
         color: var(--Neutext)
         text-align: center
         transition: font 0.4s ease
@@ -572,7 +577,7 @@ body
             color: var(--Black)
             text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
         .video__icon 
-            box-shadow: 5px 5px 5px 0px #A3B1C6, -5px -5px 5px 0px #FFFFFF
+            box-shadow: 5px 5px 5px 0px var(--Neushadow), -5px -5px 5px 0px #FFFFFF
             & svg path 
                 box-shadow: 4px 4px 5px 0px var(--Black)
 .nav
@@ -640,17 +645,23 @@ body
         display: flex
         flex-direction: column
         align-items: center
-        gap: 18px
-        padding: 0 26px 
+        gap: 20px
         &-text 
+            padding-left: 25px
             font: 400 16px/24px 'Inter', 'sans-serif'
             color: var(--Neutext)
     &__btn
         width: 140px
-        font: 500 16px/20px "inter", 'sans-serif'
+        font: 400 16px/20px "inter", 'sans-serif'
+        &.neumorphic-button-active 
+            font-weight: 600
     &__link 
         font: 600 16px/22px 'Inter', 'sans-serif'
-        color: var(--Primary-40)
+        color: var(--Neutext)
+        &:hover 
+            color: var(--Black)
+            text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
+
 .rights 
     position: absolute
     bottom: 8px
@@ -780,10 +791,7 @@ body
         &-active 
             display: block
 
-@media (max-height: 799px)
-    .hiro
-        &__wrapper 
-            padding-top: 20px
+
 
 @media (max-width:1023px)
     .hiro
@@ -794,10 +802,10 @@ body
         &__wrapper
             padding: 20px
         &__block 
+            padding: 20px 25px
             &-search 
                 gap: 10px
                 padding-top: 13px
-                padding-bottom: 20px
         &__footer 
             bottom: 20px
     .logo
@@ -863,7 +871,7 @@ body
         display: flex
         flex-direction: column
         min-height: 100dvh
-        padding: 20px 0
+        padding: 12px 0
         &_hide 
             display: none
         &__wrapper 
@@ -930,6 +938,29 @@ body
     .menu
         &__block 
             gap: 15px
+    @media (max-height: 799px)
+        .hiro
+            &__wrapper 
+                padding-top: 20px
+    @media (max-height: 673px)
+        .hiro
+            &__wrapper 
+                gap: 10px
+                padding-top: 10px
+            &__block 
+                gap: 10px
+                padding-top: 10px
+                padding-bottom: 10px
+        .menu
+            &__wrapper 
+                gap: 10px
+            &__block 
+                gap: 10px
+                padding-top: 10px
+                padding-bottom: 10px
+                &-title 
+                    margin-top: 0
+                    margin-bottom: 0
     
     
            
