@@ -57,63 +57,6 @@ for (let i = 0; i < neumorphicButtonArray.length; i++) {
         neumorphicButton.classList.toggle('neumorphic-button-active')
     })    
 }
-const arrowMenu = document.querySelector('.arrow-menu')
-const arrowHiro = document.querySelector('.arrow-hiro')
-const menu = document.getElementById('menu')
-const hiro = document.getElementById('hiro')
-window.addEventListener('wheel', function (e) {
-    const delta = e.deltaY;
-    if (delta > 0) {
-        menu.classList.add('menu_up')
-        hiro.classList.add('hiro_up')
-        arrowMenu.style.display = 'none'
-        arrowHiro.style.display = 'block'
-    } else {
-        menu.classList.remove('menu_up')
-        hiro.classList.remove('hiro_up')
-        arrowMenu.style.display = 'block'
-        arrowHiro.style.display = 'none'
-    }
-})
-let startX, startY;
-window.addEventListener('touchstart', function(e) {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-})
-window.addEventListener('touchmove', function(e) {
-    let currentX = e.touches[0].clientX;
-    let currentY = e.touches[0].clientY;
-    let deltaX = currentX - startX;
-    let deltaY = currentY - startY;
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        if (deltaX > 0) {
-            // свайп вправо
-        } else {
-            // свайп влево
-        }
-    } else {
-        if (deltaY < 0) {
-            menu.classList.add('menu_up')
-            hiro.classList.add('hiro_up')
-            arrowMenu.style.display = 'none'
-            arrowHiro.style.display = 'block'
-        } else {
-            menu.classList.remove('menu_up')
-            hiro.classList.remove('hiro_up')
-            arrowMenu.style.display = 'block'
-            arrowHiro.style.display = 'none'
-        }
-    }
-})
-arrowMenu.addEventListener("click", function(){
-    menu.classList.add('menu_up')
-    hiro.classList.add('hiro_up')
-})
-arrowHiro.addEventListener("click", function(){
-    menu.classList.remove('menu_up')
-    hiro.classList.remove('hiro_up')
-})
-
 const cardsBtn = document.querySelector('.cards-btn')
 const section = document.querySelector('.section')
 const cardsWrapperArray = document.querySelectorAll('.cards__wrapper')
@@ -144,13 +87,11 @@ cardsBtn.addEventListener('click', function(){
     }
 })
 cardsclose.addEventListener('click', function(){
-    
     section.classList.remove('section_active')
     for (let i = 0; i < cardsWrapperArray.length; i++) {
         const cardsWrapper = cardsWrapperArray[i];
         cardsWrapper.classList.remove('cards__wrapper-active')
     }
-    
     menu.classList.remove('menu_hide')
     hiro.classList.remove('hiro_hide')
 })

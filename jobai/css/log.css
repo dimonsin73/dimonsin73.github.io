@@ -479,7 +479,7 @@ body {
   gap: 10px;
   width: -moz-max-content;
   width: max-content;
-  margin: 0 auto 82px;
+  margin: 0 auto;
 }
 .logo__job {
   font: 700 60px/60px "Inter", "sans-serif";
@@ -498,17 +498,15 @@ body {
   position: absolute;
   top: 0;
   right: -25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 2px solid var(--Black);
   border-radius: 50%;
+  box-shadow: 3px 3px 5px 0px #A3B1C6, -3px -3px 5px 0px #FFFFFF;
 }
 .logo__r-text {
-  padding-left: 1px;
-  font: 700 16px/16px "Inter", "sans-serif";
+  padding-left: 2.5px;
+  font: 900 12px/12px "Inter", "sans-serif";
   letter-spacing: -0.2px;
   color: var(--Black);
 }
@@ -599,15 +597,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  width: 120px;
-  height: 50px;
+  gap: 6px;
   margin: 0 auto;
-  margin-top: auto;
+  padding: 7px 5px;
 }
 .video__text {
-  font: 700 16px/26px "Inter", "sans-serif";
-  color: var(--Black);
+  font: 600 16px/24px "Inter", "sans-serif";
+  color: var(--Neutext);
+  letter-spacing: 0.02em;
   text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White);
 }
 .video__icon {
@@ -615,16 +612,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
-  border-radius: 6px;
-  box-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White);
+  width: 27.5px;
+  height: 27.5px;
+  border: 2px solid var(--White);
+  border-radius: 50%;
   background-color: var(--Primary-50);
 }
 .video__icon svg {
-  position: relative;
-  top: 4px;
-  left: 4px;
+  padding-left: 1px;
 }
 
 .nav {
@@ -782,7 +777,6 @@ body {
 
 .arrow {
   display: none;
-  animation: arrowUp 1s infinite alternate ease 0s;
 }
 .arrow-menu {
   display: none;
@@ -887,24 +881,6 @@ body {
   display: block;
 }
 
-@keyframes arrowUp {
-  from {
-    transform: translate3d(0, 15px, 0);
-  }
-  to {
-    transform: translate3d(0, -15px, 0);
-  }
-}
-@media (max-height: 899px) {
-  .logo {
-    margin: 0 auto 20px;
-  }
-}
-@media (max-height: 814px) {
-  .logo {
-    margin: 0 auto;
-  }
-}
 @media (max-height: 799px) {
   .hiro__wrapper {
     padding-top: 20px;
@@ -929,25 +905,22 @@ body {
   .hiro__footer {
     bottom: 20px;
   }
-  .logo {
-    margin-bottom: 0;
-  }
   .logo__job {
-    font: 700 32px/32px "Inter", "sans-serif";
+    font: 700 42px/32px "Inter", "sans-serif";
   }
   .logo__job-white {
-    padding: 14px;
+    padding: 14px 9px;
     border-radius: 16px;
   }
   .logo__r {
     right: -10px;
     width: 11px;
     height: 11px;
-    border: 1.6px solid var(--Black);
+    border: 1px solid var(--Black);
   }
   .logo__r-text {
-    padding-left: 0;
-    font: 700 9px/8px "Inter", "sans-serif";
+    padding-left: 2px;
+    font: 900 9px/9px "Inter", "sans-serif";
   }
   .video {
     margin-top: 0;
@@ -992,10 +965,7 @@ body {
     display: none;
   }
   .language {
-    top: auto;
-    right: auto;
-    bottom: 20px;
-    left: 20px;
+    display: none;
   }
   .arrow {
     display: block;
@@ -1004,17 +974,9 @@ body {
     display: flex;
   }
   .menu {
-    position: absolute;
-    top: 110%;
-    left: 50%;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    transform: translate3d(-50%, 0, 0);
-    transition: top 0.5s linear;
-  }
-  .menu_up {
-    top: 0%;
   }
   .menu_hide {
     display: none;
@@ -1081,19 +1043,13 @@ body {
     margin-bottom: 12px;
   }
   .hiro__footer {
-    bottom: 80px;
+    bottom: 103px;
   }
   .popup {
-    bottom: 85px;
+    bottom: 103px;
   }
   .popup_active {
     bottom: 0;
-  }
-  .logo {
-    margin: 0 auto 12px;
-  }
-  .menu {
-    padding-bottom: 40px;
   }
   .menu__block {
     gap: 15px;
