@@ -504,17 +504,21 @@ body {
   position: absolute;
   top: 0;
   right: -25px;
-}
-.logo__r-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 16px;
   height: 16px;
   border: 2px solid var(--Black);
   border-radius: 50%;
   box-shadow: 3px 3px 5px 0px var(--Neushadow), -3px -3px 5px 0px #FFFFFF;
+}
+.logo__r-text {
+  padding-left: 0.5px;
+  padding-top: 0.5px;
   font: 900 12px/12px "Inter", "sans-serif";
   letter-spacing: -0.2px;
   color: var(--Black);
-  text-align: center;
 }
 
 .switch {
@@ -935,11 +939,11 @@ body {
   }
   .logo__r {
     right: -10px;
-  }
-  .logo__r-text {
     width: 11px;
     height: 11px;
     border: 1px solid var(--Black);
+  }
+  .logo__r-text {
     font: 900 9px/9px "Inter", "sans-serif";
   }
   .video {
@@ -1113,6 +1117,9 @@ body {
   .menu__block-title {
     margin-top: 0;
     margin-bottom: 0;
+  }
+  .menu__language {
+    margin-top: 0;
   }
 }
 .portfolios {
