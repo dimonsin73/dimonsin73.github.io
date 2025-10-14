@@ -85,35 +85,38 @@ for (let i = 0; i < neumorphicButtonArray.length; i++) {
         neumorphicButton.classList.toggle('neumorphic-button-active')
     })    
 }
-const cardsBtn = document.querySelector('.cards-btn')
+const cardsBtnArray = document.querySelectorAll('.cards-btn')
 const section = document.querySelector('.section')
 const cardsWrapperArray = document.querySelectorAll('.cards__wrapper')
 const cardsclose = document.querySelector('.cards__btn')
-cardsBtn.addEventListener('click', function(){
-    const switchInput = cardsBtn.parentElement.querySelector('.switch__input')
-    menu.classList.add('menu_hide')
-    hiro.classList.add('hiro_hide')
-    section.classList.add('section_active')
-    if (switchInput.checked) {
-        for (let i = 0; i < cardsWrapperArray.length; i++) {
-            const cardsWrapper = cardsWrapperArray[i];
-            if (cardsWrapper.dataset.cards === 'najti-sotrudnika') {
-                cardsWrapper.classList.add('cards__wrapper-active')
-            } else {
-                cardsWrapper.classList.remove('cards__wrapper-active')
+for (let i = 0; i < cardsBtnArray.length; i++) {
+    const cardsBtn = cardsBtnArray[i];
+    cardsBtn.addEventListener('click', function(){
+        const switchInput = cardsBtn.parentElement.querySelector('.switch__input')
+        menu.classList.add('menu_hide')
+        hiro.classList.add('hiro_hide')
+        section.classList.add('section_active')
+        if (switchInput.checked) {
+            for (let i = 0; i < cardsWrapperArray.length; i++) {
+                const cardsWrapper = cardsWrapperArray[i];
+                if (cardsWrapper.dataset.cards === 'najti-sotrudnika') {
+                    cardsWrapper.classList.add('cards__wrapper-active')
+                } else {
+                    cardsWrapper.classList.remove('cards__wrapper-active')
+                }
+            }
+        } else {
+            for (let i = 0; i < cardsWrapperArray.length; i++) {
+                const cardsWrapper = cardsWrapperArray[i];
+                if (cardsWrapper.dataset.cards === 'najti-rabotu') {
+                    cardsWrapper.classList.add('cards__wrapper-active')
+                } else {
+                    cardsWrapper.classList.remove('cards__wrapper-active')
+                }
             }
         }
-    } else {
-        for (let i = 0; i < cardsWrapperArray.length; i++) {
-            const cardsWrapper = cardsWrapperArray[i];
-            if (cardsWrapper.dataset.cards === 'najti-rabotu') {
-                cardsWrapper.classList.add('cards__wrapper-active')
-            } else {
-                cardsWrapper.classList.remove('cards__wrapper-active')
-            }
-        }
-    }
-})
+    })
+}
 cardsclose.addEventListener('click', function(){
     section.classList.remove('section_active')
     for (let i = 0; i < cardsWrapperArray.length; i++) {
@@ -204,3 +207,14 @@ for (let i = 0; i < hiroBtnThirdPrevArray.length; i++) {
         }
     })
 }
+const hiroWraper = document.querySelector('.hiro__wrapper')
+const hiroArrow = document.querySelector('.hiro__arrow')
+const hiroBlockExample = document.querySelector('.hiro__block-example')
+hiroWraper.addEventListener('scroll', function() {
+    hiroArrow.classList.add('hiro__arrow-hide')
+    hiroBlockExample.classList.add('hiro__block-example-up')
+    if (hiroWraper.scrollTop === 0) {
+        hiroArrow.classList.remove('hiro__arrow-hide')
+        hiroBlockExample.classList.remove('hiro__block-example-up')
+    }
+})

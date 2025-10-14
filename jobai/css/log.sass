@@ -111,6 +111,7 @@
     letter-spacing: 0.01em
 html 
     scroll-behavior: smooth
+    -webkit-tap-highlight-color: transparent
 .btn 
     display: flex
     align-items: center
@@ -376,6 +377,10 @@ body
             outline: 1px solid var(--Neushadow)
             background-color: var(--White)
     &-button 
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 8px
         padding: 18px 
         color: var(--Neutext)
         border: none
@@ -404,12 +409,12 @@ body
         width: 390px
         height: 100%
         margin: 0 auto
-        padding: 48px 20px 140px
+        padding: 40px 20px 180px
     &__btn 
         width: 140px
-        margin: 16px auto 0
+        margin: 0 auto 
         &-first 
-            margin-top: 20px
+            margin-top: 10px
     &__block 
         display: flex
         flex-direction: column
@@ -420,6 +425,13 @@ body
         &-search 
             padding-top: 13px
             gap: 15px
+        &-example 
+            margin-top: auto
+            padding-top: 13px
+            padding-bottom: 20px
+            gap: 10px
+            &-btn 
+                margin-top: 5px
         &-title 
             font: 600 16px/22px "Inter", 'sans-serif'
             letter-spacing: 0.02em
@@ -437,17 +449,19 @@ body
             display: none
             padding-top: 20px
             padding-bottom: 20px
+    &__arrow 
+        display: none
     &__footer 
         position: absolute
         left: 120px
         right: 120px
         bottom: 45px
         display: flex
+        flex-direction: column
         align-items: center
         justify-content: center
-        gap: 40px
+        gap: 30px 40px
         max-width: 1400px
-        height: 60px
         margin: 0 auto
 .logo 
     position: relative
@@ -456,7 +470,7 @@ body
     justify-content: center
     gap: 10px
     width: max-content
-    margin: 0 auto
+    margin: 0 auto 20px
     &__job 
         font: 700 60px/60px 'Inter', 'sans-serif'
         letter-spacing: -0.2px
@@ -538,6 +552,10 @@ body
 .radio 
     display: contents
     &__label
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 8px
         padding: 18px 30px 
         color: var(--Neutext)
         border: none
@@ -558,11 +576,11 @@ body
     justify-content: center
     gap: 6px
     margin: 0 auto
-    padding: 7px 5px
     &__text 
         font: 600 16px/24px 'Inter', 'sans-serif'
         color: var(--Neutext)
         letter-spacing: 0.02em
+        transition: font 0.3s ease, color 0.3s ease, text-shadow 0.3s ease
     &__icon 
         flex: 0 0 auto
         display: flex
@@ -573,6 +591,7 @@ body
         border: 2px solid var(--White)
         border-radius: 50%
         background-color: var(--Primary-50)
+        transition: box-shadow 0.3s ease
         & svg 
             padding-left: 1px
     &:hover 
@@ -581,9 +600,7 @@ body
             color: var(--Black)
             text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
         .video__icon 
-            box-shadow: 5px 5px 5px 0px var(--Neushadow), -5px -5px 5px 0px #FFFFFF
-            & svg path 
-                box-shadow: 4px 4px 5px 0px var(--Black)
+            box-shadow: 5px 5px 5px 0px var(--Neushadow), -5px -5px 5px 0px var(--White)
 .nav
     position: relative
     display: flex
@@ -605,6 +622,7 @@ body
     position: absolute
     display: flex
     bottom: 80px
+    z-index: 30
     &_left 
         left: 30px
     &_right
@@ -662,14 +680,15 @@ body
     &__link 
         font: 600 16px/22px 'Inter', 'sans-serif'
         color: var(--Neutext)
+        transition: font 0.3s ease, text-shadow 0.3s ease, color 0.3s ease
         &:hover 
+            font-weight: 700
             color: var(--Black)
             text-shadow: 5px 5px 5px var(--Neushadow), -5px -5px 5px var(--White)
-
 .rights 
     position: absolute
-    bottom: 8px
-    right: 8px
+    bottom: 20px
+    right: 12px
     display: flex
     justify-content: flex-end
     gap: 10px
@@ -731,6 +750,64 @@ body
     display: none
     &_hide 
         display: none
+.docum 
+    padding: 20px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 20px
+        padding: 10px 15px 20px
+    &__title 
+        margin-bottom: -12px
+        font: 600 16px/22px 'Inter', 'sans-serif'
+        letter-spacing: 0.02em
+        color: var(--Neutext)
+        text-align: center
+    &__text 
+        display: flex
+        gap: 4px
+        font: 400 12px/18px 'Inter', 'sans-serif'
+        letter-spacing: -0.1px
+        color: var(--Black)
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        padding: 10px
+        border: 1px solid var(--Neushadow)
+        border-radius: 10px
+        background-color: var(--White)
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 5px
+        &-part 
+            display: flex
+            flex-direction: column
+        &-title 
+            font: 600 16px/22px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            color: var(--Black)
+        &-text
+            margin-bottom: 4px
+            font: 500 10px/14px 'Inter', 'sans-serif'
+            letter-spacing: 0
+            color: var(--Gray-40)
+        &-link 
+            font: 400 12px/20px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            color: var(--Black)
+        &-time 
+            font: 400 10px/16px 'Inter', 'sans-serif'
+            letter-spacing: 0
+            color: var(--Black)
+        &-doc
+            font: 400 14px/20px 'Inter', 'sans-serif'
+            letter-spacing: 0
+            color: var(--Black)
+    &__btn 
+        width: 300px
+        margin: 0 auto
 
 .form 
     display: none
@@ -787,6 +864,13 @@ body
     display: flex
     flex-direction: column
     gap: 10px
+    &__top
+        position: fixed
+        bottom: 0
+        left: 0
+        right: 0
+        background-color: var(--Neubg)
+        z-index: 20
     &__btn 
         width: 300px
         margin: 10px auto
@@ -795,8 +879,31 @@ body
         &-active 
             display: block
 
+@media (max-height: 1044px)
+    .hiro 
+        &__wrapper 
+            overflow-y: scroll
+            scrollbar-width: none
+        &__arrow 
+            display: block
+            margin: 0 auto
+            &-hide 
+                display: none
+        &__block 
+            &-example
+                margin-bottom: 54px
+                transform: translateY(230px)
+                transition: transform 0.3s ease
+                &-up
+                    transform: translateY(0)
 
-
+        &__footer 
+            position: fixed
+            bottom: 0
+            padding-top: 20px
+            padding-bottom: 45px
+            background-color: var(--Neubg)
+            z-index: 20
 @media (max-width:1023px)
     .hiro
         justify-content: flex-start
@@ -810,9 +917,16 @@ body
             &-search 
                 gap: 10px
                 padding-top: 13px
+            &-example
+                display: none 
+        &__arrow 
+            display: none
         &__footer 
-            bottom: 20px
+            position: absolute
+            bottom: 30px
+            padding: 0
     .logo
+        margin: 0 auto
         &__job 
             font: 700 42px/32px 'Inter', 'sans-serif'
             &-white 
@@ -944,8 +1058,6 @@ body
             font-size: 14px
         &__button 
             margin-bottom: 12px
-        &__footer 
-            bottom: 20px
     .popup 
         bottom: 20px
         &_active 
