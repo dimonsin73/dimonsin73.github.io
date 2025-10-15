@@ -62,7 +62,7 @@ const popupArray = document.querySelectorAll('.popup')
 for (let i = 0; i < popupArray.length; i++) {
     const popup = popupArray[i];
     const popupWrapper = popup.querySelector('.popup__wrapper')
-    if (window.innerWidth < '767') {
+    if (window.innerWidth < '1023') {
         popup.addEventListener('click', function(){
             popup.classList.add('popup_active')
         })
