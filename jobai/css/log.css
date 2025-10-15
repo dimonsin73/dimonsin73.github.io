@@ -352,7 +352,6 @@ html {
 
 body {
   min-width: 390px;
-  min-height: 755px;
   background-color: var(--Neubg);
   font: 400 16px/20px "Inter", "sans-serif";
   letter-spacing: 0.02em;
