@@ -623,6 +623,7 @@ body {
   border-radius: 20px;
   box-shadow: 10px 10px 20px var(--Neushadow), -10px -10px 20px var(--White);
   background-color: var(--Neubg);
+  letter-spacing: 0;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -716,6 +717,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  cursor: auto;
 }
 .popup__wrapper {
   display: flex;
@@ -745,6 +747,7 @@ body {
   width: 60px;
   height: 60px;
   padding: 15px;
+  cursor: pointer;
 }
 .popup__info {
   display: flex;
@@ -1123,7 +1126,7 @@ body {
     display: none;
   }
   .popup {
-    bottom: 110px;
+    bottom: 20px;
   }
   .popup_left {
     left: 20px;
@@ -1268,13 +1271,15 @@ body {
   .popup_active {
     bottom: 0;
   }
-  .menu__block {
-    gap: 15px;
-  }
 }
 @media (max-width: 787px) and (max-height: 799px) {
   .hiro__wrapper {
     padding-top: 20px;
+  }
+}
+@media (max-width: 787px) and (max-height: 750px) {
+  .menu__block {
+    gap: 15px;
   }
 }
 @media (max-width: 787px) and (max-height: 673px) {
