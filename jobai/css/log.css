@@ -1266,6 +1266,9 @@ body {
   font: 500 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
 }
+.check_circle2 .check__text {
+  max-width: 245px;
+}
 
 .radio {
   display: contents;
