@@ -258,7 +258,7 @@ function documFun(dataDocum) {
         }
     }
 }
-
+const menu = document.querySelector('#menu')
 const documBtnArray = document.querySelectorAll('.docum__btn')
 for (let i = 0; i < documBtnArray.length; i++) {
     const documBtn = documBtnArray[i];
@@ -270,6 +270,10 @@ for (let i = 0; i < documBtnArray.length; i++) {
             const documWrapper = documWrapperArray[i];
             documWrapper.classList.remove('docum__wrapper-active')
         }
+        window.scrollBy({
+            top: 10000,
+            behavior: "auto",
+        });
     })
 }
 
