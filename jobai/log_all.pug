@@ -8,7 +8,7 @@ html(lang="ru")
         link(rel="stylesheet", href="css/reset.css")
         link(rel="stylesheet", href="css/log.css")
         script(src="js/itc-slider.js", defer) 
-        script(src="js/log.js", defer) 
+        script(src="js/log_all.js", defer) 
     body    
         .hiro#hiro
             .hiro__wrapper   
@@ -1340,12 +1340,12 @@ html(lang="ru")
                                 h3.docum__ranges-title 
                                     | Доступ на 
                                     span период 
-                                input(type="number", value='1', name='access-for-period').input.input_number.docum__access-input#access-for-period
+                                input(type="number", value='1', name='access-for-period', readonly).input.input_number.docum__access-input#access-for-period.nofocus
                                 h3.docum__ranges-title календарных дней
                         .docum__col2
                             h2.docum__content-title Базовая стоимость доступа
                             label(for='tariffs-sale').label.docum__tariffs-sale
-                                input(type="text", readonly, name="tariffs-sale", value='Без скидок').input.input_gray.input_textcenter#tariffs-sale
+                                input(type="text", readonly, name="tariffs-sale", value='Без скидок').input.input_gray.input_textcenter#tariffs-sale.nofocus
                                 p.label__bottom.label__bottom-small считается автоматически
                                 .label__clue.label__clue2
                                     .clue
@@ -1360,7 +1360,7 @@ html(lang="ru")
                                                 li.clue__list-item.clue__text от 3 до 6 месяцев - скидка 10%
                                                 li.clue__list-item.clue__text от 6 месяцев до 1 года - скидка 20%
                             .docum__tariffs2
-                                input(type="text", readonly, name="tariffs-price", value='1 666.00').input.input_gray.input_textcenter#tariffs-price
+                                input(type="text", readonly, name="tariffs-price", value='1 666.00').input.input_gray.input_textcenter#tariffs-price.nofocus
                                 .select.select_currency
                                     input(type="text", readonly, name="tariffs-currency", value="₽").select__input.input#tariffs-currency
                                     .options
@@ -1369,7 +1369,7 @@ html(lang="ru")
                                             .option $
                                             .option €
                                 label(for='tariffs-vat').label
-                                    input(type="text", readonly, name="tariffs-vat", value="277.67").input.input_gray.input_textcenter#tariffs-vat
+                                    input(type="text", readonly, name="tariffs-vat", value="277.67").input.input_gray.input_textcenter#tariffs-vat.nofocus
                                     p.label__bottom.label__bottom-left в том числе НДС&nbsp;22%
                                     p.label__currency ₽
                         .docum__clean
@@ -1423,7 +1423,7 @@ html(lang="ru")
                                         h3.docum__col-title дополнительных рекрутеров под одной компанией
                                         p.docum__col-text По умолчанию бесплатно включены + 2 рекрутера
                                     label(for='percentage-of-cost').label.docum__tariffs-percentage
-                                        input(type="text", readonly, name="percentage-of-cost", value='0%').input.input_textcenter.input_gray#percentage-of-cost
+                                        input(type="text", readonly, name="percentage-of-cost", value='0%').input.input_textcenter.input_gray#percentage-of-cost.nofocus
                                         p.label__bottom.label__bottom-small считается автоматически
                                         .label__clue.label__clue2 
                                             .clue
@@ -1439,12 +1439,12 @@ html(lang="ru")
                         .docum__col2
                             h2.docum__content-title Общая стоимость доступа
                             label(for='tariffs-day-price').label.docum__tariffs-price
-                                input(type="text", readonly, name="tariffs-day-price", value='1 666,00').input.input_textcenter.input_gray#tariffs-day-price
+                                input(type="text", readonly, name="tariffs-day-price", value='1 666,00').input.input_textcenter.input_gray#tariffs-day-price.nofocus
                                 p.label__bottom.label__bottom-left Стоимость календарного дня с&nbsp;НДС&nbsp;22%
                                 p.label__currency ₽
                             .docum__tariffs1
                                 label(for='tariffs-total-price').label
-                                    input(type="text", readonly, name="tariffs-total-price", value="1 666,00").input.input_textcenter#tariffs-total-price
+                                    input(type="text", readonly, name="tariffs-total-price", value="1 666,00").input.input_textcenter#tariffs-total-price.nofocus
                                     p.label__bottom.label__bottom-left общая стоимость за период
                                 .select.select_currency
                                     input(type="text", readonly, name="tariffs-currency-total", value="₽").select__input.input#tariffs-currency-total
@@ -1454,7 +1454,7 @@ html(lang="ru")
                                             .option $
                                             .option €
                                 label(for='tariffs-total-vat').label
-                                    input(type="text", readonly, name="tariffs-total-vat", value="277,67").input.input_textcenter.input_gray#tariffs-total-vat
+                                    input(type="text", readonly, name="tariffs-total-vat", value="277,67").input.input_textcenter.input_gray#tariffs-total-vat.nofocus
                                     p.label__bottom.label__bottom-left в том числе НДС&nbsp;22%
                                     p.label__currency ₽
                 button(type="button").docum__btn.neumorphic.neumorphic-button Вернуться в меню
