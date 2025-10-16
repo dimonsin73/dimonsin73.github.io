@@ -297,6 +297,409 @@ html
         margin-right: auto
     &-bottom
         margin-top: auto
+.input 
+    width: 100%
+    padding: 16px 12px
+    border-radius: 12px
+    background-color: var(--Gray-100)
+    @include body-large
+    color: var(--Black)
+    outline: none
+    transition: background-color 0.3s ease
+    &__help 
+        position: absolute
+        left: 0
+        right: 0
+        top: calc(100% + 8px)
+        display: flex
+        flex-direction: column
+        height: 0
+        box-shadow: 0px 2px 16px 0px #00000033
+        background-color: var(--White)
+        overflow: hidden
+        transition: height 0.3s ease
+        z-index: 20
+        &-active 
+            height: 198px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 2px
+            padding: 14px
+            &:hover 
+                background-color: var(--Gray-100)                 
+        &-title 
+            @include subtitle-large
+            color: var(--Black)
+        &-text 
+            @include body-small
+            color: var(--Gray-20)
+    &::placeholder 
+        @include body-small
+        color: var(--Gray-30)
+    &_number 
+        text-align: center
+    &_textcenter
+        text-align: center
+    &:focus 
+        background-color: var(--White)
+        outline: 2px solid var(--Gray-40)
+    &_search 
+        padding: 16px 12px 16px 48px
+        background: 
+            image: url('../images/icons/search.png')
+            position: center left 12px
+            repeat: no-repeat
+        &::placeholder
+            @include body-large
+            color: var(--Gray-40)
+    &_search2
+        display: none
+        padding: 16px 12px 16px 48px
+        background: 
+            image: url('../images/icons/search.png')
+            position: center left 12px
+            repeat: no-repeat
+        &::placeholder
+            @include body-large
+            color: var(--Gray-40)
+        &-active 
+            display: flex
+    &_gray
+        color: var(--Gray-30)
+.label 
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 4px
+    &__input 
+        padding: 24px 12px 8px
+    &__title 
+        position: absolute
+        top: 16px
+        left: 12px
+        @include body-large
+        color: var(--Gray-30)
+        transition: top 0.3s ease, font 0.3s ease
+        z-index: 1
+        &-textarea 
+            top: 8px
+        &-icon 
+            left: 44px
+    &__textarea 
+        width: 100%
+        height: 136px
+        padding: 44px 12px 8px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        @include body-large
+        color: var(--Black)
+        outline: none
+        resize: none
+        transition: padding 0.3s ease
+        &::placeholder 
+            @include body-medium
+        &-big
+            height: 181px
+        &-extrabig
+            height: 361px
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__subtext
+        @include body-small
+        color: var(--Gray-30)
+    &__redtext 
+        position: absolute
+        bottom: -16px
+        right: 0
+        @include body-small
+        font-size: 12px
+        color: var(--Red-error)
+        text-align: right
+        &-b0 
+            bottom: 0
+    &__eye 
+        position: absolute
+        right: 7px
+        top: 14px
+        width: 30px
+        height: 30px
+        background: 
+            image: url('../images/icons/eye_slash.png')
+            position: center center
+        transition: background 0.3s ease
+        &-active 
+            background: 
+                image: url('../images/icons/eye_visible.png')
+    &__flyingtext 
+        position: absolute
+        top: 24px 
+        left: 24px
+        display: none
+        @include body-large
+        color: var(--Black)
+    &__clue 
+        position: absolute
+        top: 50%
+        right: -36px
+        transform: translateY(-50%)
+    &__clue2
+        right: -28px
+    &-active 
+        & .label__title
+            top: 8px
+            @include body-small
+        & .label__textarea 
+            padding: 28px 12px 8px
+        & .label__flyingtext 
+            display: block
+    &_search 
+        position: relative
+        z-index: 9
+    &__top
+        position: absolute
+        bottom: 100%
+        display: flex
+        width: 100%
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__bottom 
+        position: absolute
+        top: 100%
+        display: flex
+        justify-content: center
+        width: 100%
+        @include subtitle-medium
+        color: var(--Gray-40)
+        &-small 
+            @include subtitle-small
+            white-space: nowrap
+        &-left 
+            justify-content: flex-start
+    &__currency 
+        position: absolute
+        top: 50%
+        right: 15px
+        @include title-medium
+        color: var(--Black)
+        transform: translate3d(0, -50%, 0)
+    &__line 
+        display: flex
+        gap: 12px
+        padding: 8px 0
+        &-item 
+            flex: 0 0 calc(25% - 8px)
+            height: 8px
+            border-radius: 4px
+            background-color: var(--Gray-80)
+            transition: background-color 0.3s ease
+        &-error 
+            background-color: var(--Red-error)
+        &-orange 
+            background-color: var(--Orange)
+        &-success
+            background-color: var(--Success)
+    &__edit
+        position: absolute
+        top: 50%
+        right: 16px
+        transform: translate3d(0, -50%, 0)
+        &:hover 
+            & path 
+                fill: var(--Primary-40)
+    &__ok 
+        position: absolute
+        top: 50%
+        right: 16px
+        display: none
+        transform: translate3d(0, -50%, 0)
+        &:hover 
+            & path 
+                fill: var(--Primary-40)
+    &__link 
+        position: absolute
+        bottom: -24px
+        @include body-large
+        color: var(--Primary-50)
+    &-active 
+        & .label__title
+            top: 8px
+            @include body-small
+        & .label__textarea 
+            padding: 28px 12px 8px
+        & .label__flyingtext 
+            display: block
+    &_error
+        &-text 
+            position: absolute
+            bottom: -16px
+            display: none
+            font: 400 12px/16px 'Inter', 'sans-serif'
+            color: var(--Red-error)
+        & .label__input
+            color: var(--Red-error)
+            outline: 2px solid var(--Red-error)
+        & .label_error-text
+            display: block
+        & #password
+            background: 
+                image: url('../images/icons/password_error.png')
+        & #password-repeat
+            background: 
+                image: url('../images/icons/password_error.png')
+    &_blur
+        opacity: 0.5
+.select 
+    position: relative
+    &__input 
+        background: 
+            image: url('../images/icons/chevron_down.png')
+            position: center right 12px
+            repeat: no-repeat
+        cursor: pointer
+    &__title 
+        position: absolute
+        top: 16px
+        left: 12px
+        @include body-large
+        color: var(--Gray-30)
+        transition: top 0.3s ease, font 0.3s ease
+        &-active 
+            top: 8px
+            @include body-small
+    &_up 
+        & .select__input 
+            padding: 24px 12px 8px
+            @include body-large
+    &__box 
+        display: flex
+        flex-direction: column
+        gap: 8px
+        padding-left: 14px
+        &-vert 
+            padding-top: 10px
+            padding-bottom: 10px
+    &_currency 
+        & .select__input
+            @include title-medium
+.options 
+    position: absolute
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 0
+    margin-top: 10px 
+    border-radius: 16px
+    box-shadow: 0px 2px 16px 0px #00000033
+    background-color: var(--White)
+    overflow: hidden
+    transition: height 0.3s ease
+    z-index: 10
+    &__wrapper 
+        padding: 16px
+    &_active 
+        height: 176px
+        overflow-y: scroll
+        &.options_2item 
+            height: 128px
+    &_currency 
+        @include title-medium
+        
+.option 
+    padding: 14px 12px 
+    border-radius: 8px
+    @include text-medium
+    color: var(--Black)
+    cursor: pointer
+    &:hover 
+        background-color: var(--Gray-100)
+    &_disabled 
+        opacity: 0.7
+.range 
+    position: relative
+    display: flex
+    align-items: center
+    column-gap: 13px
+    &__input 
+        appearance: none
+        max-width: 666px
+        width: 100%
+        height: 30px
+        border: none
+        overflow: hidden
+        transition: opacity 0.3s ease
+        cursor: pointer
+        &::-webkit-slider-thumb
+            appearance: none
+            background-color: var(--Primary-40)
+            border-radius: 50%
+            height: 28px
+            width: 28px
+            margin-top: -12px
+            box-shadow: calc(-100vmax - 28px) 0 0 100vmax var(--Primary-40)
+            clip-path: polygon(100% 0, 1px 0, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 1px 100%, 100% 100%)
+        &::-moz-range-thumb
+            appearance: none
+            background-color: var(--Primary-40)
+            border-radius: 50%
+            height: 28px
+            width: 28px
+            margin-top: -12px
+            box-shadow: calc(-100vmax - 28px) 0 0 100vmax var(--Primary-40)
+            clip-path: polygon(100% 0, 1px 0, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 1px 100%, 100% 100%)
+        &::-webkit-slider-runnable-track
+            height: 6px
+            border-radius: 3px
+            background-color: rgba(0, 0, 0, 0.20)
+        &-disabled 
+            opacity: 0.5
+    &__conclusion 
+        position: relative
+        &-text 
+            position: absolute
+            bottom: -12px
+            left: 50% 
+            @include subtitle-medium
+            color: var(--Primary-40)
+            white-space: nowrap
+            transform: translate3d(-50%, 0, 0)
+        &-disabled 
+            opacity: 0.5
+    &__number 
+        width: 85px
+        @include headline-medium
+        color: var(--Primary-40)
+        text-align: center
+    &__text 
+        @include subtitle-medium
+        color: var(--Gray-40)
+    &__explanation
+        display: flex
+        align-items: center
+        gap: 4px
+    &__meaning
+        position: absolute
+        left: 50%
+        top: -6px
+        width: 16px
+        @include number
+        font-size: 12px
+        color: var(--Primary-40)
+        text-align: center
+        transform: translate3d(-50%, 0 ,0)
+    &__start 
+        position: absolute
+        left: -12px
+        bottom: -6px
+        @include title-small
+        color: var(--Black)
+    &__finish
+        position: absolute
+        right: -12px
+        bottom: -6px
+        @include title-small
+        color: var(--Black)
 .clue 
     position: relative
     display: flex
@@ -562,6 +965,78 @@ body
         font-weight: 400
     &__input:checked ~ .switch__points .switch__point-right
         font-weight: 600
+.check 
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .check__label .check__check
+            background:
+                color: var(--Black)
+                image: url(../images/icons/check.png)
+    &__label 
+        display: flex
+        justify-content: start
+        column-gap: 8px
+    &__check 
+        flex: 0 0 auto
+        width: 20px
+        height: 20px
+        border: 1px solid var(--Black)
+        border-radius: 4px 
+        background:
+            repeat: no-repeat
+            position: center center
+        transition: background 0.3s ease
+    &__info 
+        display: flex
+        flex-direction: column
+        gap: 4px
+    &__title 
+        margin-top: -2px
+        @include title-medium
+        color: var(--black)
+        &-span 
+            padding: 4px
+            border-radius: 4px
+            background-color: var(--Gray-90)
+    &__text 
+        @include subtitle-large
+        color: var(--Gray-30)
+    &__textpanel 
+        @include body-large
+        color: var(--Gray-20)
+    &__span 
+        @include body-large
+        font-weight: 600
+        color: var(--Gray-20)
+    &__clue 
+        display: flex
+        align-items: center
+        justify-content: center
+    &__link
+        color: var(--Primary-50)
+    &_circle 
+        display: grid
+        grid-template-columns: auto 80px
+        & .check__label 
+            align-items: center
+        & .check__check 
+            margin: 0 16px
+            border-radius: 50%
+        & .check__title
+            @include subtitle-large
+    &_circle2
+        position: relative
+        & .check__clue
+            position: absolute
+            left: 5px
+            bottom: 22px
+        & .check__check 
+            margin: 6px
+            border-radius: 50%
+        & .check__title
+            @include subtitle-large
 .radio 
     display: contents
     &__label
@@ -927,8 +1402,140 @@ body
             color: var(--Black)
             &::placeholder
                 color: var(--Gray-30)
-                
-.form 
+    &__top 
+        display: flex
+        flex-direction: column
+        gap: 10px
+        margin-bottom: -5px
+        padding: 9px 6px
+        border: 1px solid #A3B1C6
+        border-radius: 12px
+        background-color: var(--White)
+        &-text 
+            font: 500 14px/16px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            color: var(--Gray-40)
+            text-align: center
+            & span 
+                font-weight: 700
+    &__tariffs 
+        display: flex
+        flex-direction: column
+        gap: 16px
+        height: 100%
+        overflow-y: auto  
+        &-sale 
+            width: 130px
+            margin: 0 auto 26px
+            & input 
+                font-weight: 600
+        &-percentage 
+            grid-column: span 2
+            width: 130px
+            margin: 0 auto
+            & input 
+                font-weight: 600
+        &-price 
+            width: 190px
+            margin: 0 auto 56px
+    &__tariff 
+        display: flex
+        flex-direction: column
+        gap: 8px
+        padding: 12px 14px 45px
+        border: 1px solid #A3B1C6
+        border-radius: 12px
+        background-color: var(--White)
+    &__col 
+        display: flex
+        flex-direction: column
+        gap: 4px
+        &-title
+            font: 500 14px/22px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            color: var(--Black)
+        &-text 
+            font: 500 14px/22px 'Inter', 'sans-serif'
+            letter-spacing: 0.02em
+            color: var(--Gray-30)
+    &__col1 
+        display: flex
+        flex-direction: column
+        gap: 8px  
+        padding-bottom: 12px 
+        border-bottom: 1px solid #DBDDE1
+    &__col2
+        display: flex
+        flex-direction: column
+        gap: 12px  
+    &__tariffs1
+        display: grid
+        grid-template-columns: auto 80px 
+        gap: 30px 20px 
+    &__tariffs2
+        display: grid
+        grid-template-columns: auto 80px 
+        gap: 15px 20px 
+    &__tariffs3
+        display: grid
+        grid-template-columns: 80px auto
+        gap: 20px 8px
+        padding-bottom: 32px 
+        border-bottom: 1px solid #DBDDE1
+        & .option 
+            padding-left: 0
+            padding-right: 0
+    &__ranges 
+        display: flex
+        flex-direction: column
+        gap: 12px
+        &-title 
+            font: 500 12px/16px 'Inter', sans-serif
+            letter-spacing: -0.1px
+            color: var(--Gray-40)
+            & span 
+                font-weight: 700
+        & .range 
+            &__input 
+                max-width: 500px
+                width: 100%
+                height: 38px
+                &::-webkit-slider-thumb
+                    height: 15px
+                    width: 15px
+                    margin-top: -6px
+                    box-shadow: calc(-100vmax - 15px) 0 0 100vmax var(--Primary-40)
+                    clip-path: polygon(100% 0, 1px 0, 0 6px, -100vmax 6px, -100vmax 10px, 0 10px, 1px 100%, 100% 100%)
+                &::-moz-range-thumb
+                    height: 15px
+                    width: 15px
+                    margin-top: -6px
+                    box-shadow: calc(-100vmax - 15px) 0 0 100vmax var(--Primary-40)
+                    clip-path: polygon(100% 0, 1px 0, 0 6px, -100vmax 6px, -100vmax 10px, 0 10px, 1px 100%, 100% 100%)
+                &::-webkit-slider-runnable-track
+                    height: 4px
+                    border-radius: 2px
+    &__range
+        margin: 0 17px
+    &__access 
+        display: flex
+        flex-direction: column 
+        gap: 6px
+        width: 110px
+        margin: 0 auto
+        &-input 
+            border: 1px solid var(--Black)
+            @include body-large
+            color: var(--Gray-30)
+        &-center 
+            align-items: center
+        &-period 
+            width: 110px
+            margin-left: 60px
+#tariffs-total-price
+    border: 1px solid var(--Black)
+    font-weight: 600
+.form
     display: none
     flex-direction: column
     justify-content: center
@@ -1189,6 +1796,64 @@ body
                 max-width: 250px
             &-interlocutor
                 max-width: 250px
+        
+        &__tags 
+            display: flex
+            align-items: center
+            gap: 6px
+        &__tag 
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            gap: 12px
+            width: 150px
+            height: 110px
+            padding: 12px
+            padding-bottom: 6px
+            border: 1px solid #DBDDE1
+            border-radius: 12px
+            transition: border 0.3s ease
+            &:hover 
+                border: 1px solid #006FD8
+            &-top 
+                display: flex
+                align-items: center 
+                gap: 8px
+            &-icon 
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 10px
+                border-radius: 12px
+                background-color: var(--Gray-100)
+            &-text 
+                font: 600 14px/20px 'Inter', 'sans-serif'
+                color: var(--Primary-30)
+                text-align: left
+            &:disabled
+                &::after 
+                    content: ''
+                    position: absolute
+                    top: 0
+                    right: 0
+                    width: 52px
+                    height: 44px
+                    background: 
+                        image: url('../images/coming_soon.png')
+                        repeat: no-repeat 
+                        position: top 10px right 12px
+                        size: 42px 34px
+                    z-index: 100
+                &:hover 
+                    border: 1px solid #DBDDE1
+                & .docum__tag-top 
+                    opacity: 0.3
+                & .docum__tag-text
+                    color: var(--Gray-20)
+                    opacity: 0.3
+                & path 
+                    fill: #6A6A73
 @media (max-width: 787px)
     .hiro 
         &__bottom 
