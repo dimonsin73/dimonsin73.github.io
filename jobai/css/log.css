@@ -42,6 +42,22 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--Scrollbar);
+}
+
+::-webkit-scrollbar-track {
+  margin: 8px 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+
 .btn {
   display: flex;
   align-items: center;
@@ -733,7 +749,7 @@ body {
   padding: 4px 0;
   padding-left: 30px;
   font: 600 16px/22px "Inter", "sans-serif";
-  color: #5A6A82;
+  color: var(--Neutext);
 }
 .popup__top-2line {
   padding: 0;
@@ -895,7 +911,7 @@ body {
   flex-direction: column;
   gap: 16px;
   height: 100%;
-  padding: 10px;
+  padding: 25px 28px 15px;
   border: 1px solid var(--Neushadow);
   border-radius: 10px;
   background-color: var(--White);
@@ -911,8 +927,8 @@ body {
   flex-direction: column;
 }
 .docum__content-title {
-  font: 600 16px/22px "Inter", "sans-serif";
-  letter-spacing: -0.1px;
+  font: 700 30px/48px "Inter", "sans-serif";
+  letter-spacing: -0.2px;
   color: var(--Black);
 }
 .docum__content-text {
@@ -943,6 +959,112 @@ body {
 .docum__back {
   width: 300px;
   margin: 0 auto;
+}
+.docum__chatbtn {
+  margin: 0 auto;
+}
+.docum__chat {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.docum__chat-active {
+  display: flex;
+}
+.docum__chat-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 25px;
+  padding-bottom: 15px;
+  border: 2px solid #E4E8EB;
+  border-radius: 12px;
+}
+.docum__chat-search {
+  position: absolute;
+  top: 18px;
+  right: 70px;
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icons/search_2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.docum__chat-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 35px;
+  height: 35px;
+  border-radius: 12px;
+  background-color: #F2F3F7;
+  background-image: url("../images/icons/close_24.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.docum__chat-date {
+  width: 110px;
+  height: 30px;
+  margin: 0 auto 15px;
+  padding: 7px;
+  border-radius: 20px;
+  box-shadow: 0px -2px 10px 0px #D2D2D3, 0px 6px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  font: 400 12px/16px "Inter", "sans-serif";
+  color: var(--Neutext);
+  text-align: center;
+}
+.docum__chat-i {
+  max-width: 415px;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: auto;
+  padding: 10px;
+  padding-bottom: 5px;
+  border-radius: 12px 12px 0 12px;
+  background-color: #CBCBD4;
+}
+.docum__chat-interlocutor {
+  max-width: 415px;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px;
+  padding-bottom: 5px;
+  border-radius: 12px 12px 12px 0;
+  background-color: #F2F4F7;
+}
+.docum__chat-text {
+  padding-right: 10px;
+  font: 400 12px/16px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Black);
+}
+.docum__chat-time {
+  font: 400 10px/16px "Inter", "sans-serif";
+  letter-spacing: -0.1px;
+  color: var(--Black);
+  text-align: right;
+}
+.docum__message {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.docum__message-input {
+  padding: 12px 16px;
+  border: 2px solid #E4E8EB;
+  border-radius: 20px;
+  font: 400 13px/16px "Inter", "sans-serif";
+  letter-spacing: 0;
+  color: var(--Black);
+}
+.docum__message-input::-moz-placeholder {
+  color: var(--Gray-30);
+}
+.docum__message-input::placeholder {
+  color: var(--Gray-30);
 }
 
 .form {
@@ -977,7 +1099,7 @@ body {
 }
 .form__text {
   font: 400 16px/26px "Inter", "sans-serif";
-  color: #5A6A82;
+  color: var(--Neutext);
 }
 .form__text-center {
   margin: 0 auto;
@@ -990,7 +1112,7 @@ body {
   display: flex;
   gap: 4px;
   font: 500 16px/26px "Inter", "sans-serif";
-  color: #5A6A82;
+  color: var(--Neutext);
 }
 .form__timer2 {
   font-weight: 600;
@@ -1243,6 +1365,39 @@ body {
   .menu__language {
     display: flex;
     margin-top: -10px;
+  }
+  .docum__content {
+    padding: 10px;
+  }
+  .docum__content-title {
+    font: 600 16px/22px "Inter", "sans-serif";
+  }
+  .docum__chat-close {
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    background-size: 16px;
+  }
+  .docum__chat-search {
+    top: 10px;
+    right: 40px;
+    width: 20px;
+    height: 20px;
+    background-size: 16px;
+  }
+  .docum__chat-content {
+    padding: 10px;
+  }
+  .docum__chat-date {
+    margin-bottom: 5px;
+  }
+  .docum__chat-i {
+    max-width: 250px;
+  }
+  .docum__chat-interlocutor {
+    max-width: 250px;
   }
 }
 @media (max-width: 787px) {

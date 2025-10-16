@@ -291,3 +291,15 @@ for (let i = 0; i < documBackArray.length; i++) {
         }
     })
 }
+// Чат в Связаться с нами
+const documChatbtn = document.querySelector('.docum__chatbtn')
+const documChat = document.querySelector('.docum__chat')
+const documChatClose = document.querySelector('.docum__chat-close')
+documChatbtn.addEventListener('click', function(){
+    documChat.classList.add('docum__chat-active')
+    documChatbtn.style.display = 'none'
+})
+documChatClose.addEventListener('click', function(){
+    documChat.classList.remove('docum__chat-active')
+    documChatbtn.style.display = 'block'
+})
