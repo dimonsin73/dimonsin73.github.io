@@ -1399,6 +1399,7 @@ body {
   padding-left: 30px;
   font: 600 16px/22px "Inter", "sans-serif";
   color: var(--Neutext);
+  text-align: center;
 }
 .popup__top-2line {
   padding: 0;
