@@ -82,6 +82,7 @@ for (let i = 0; i < popupArray.length; i++) {
     }
     
 }
+/* Переход к карточкам
 const cardsBtnArray = document.querySelectorAll('.cards-btn')
 const section = document.querySelector('.section')
 const cardsWrapperArray = document.querySelectorAll('.cards__wrapper')
@@ -130,6 +131,10 @@ for (let i = 0; i < sectionToleftBtnArray.length; i++) {
         window.scrollTo(0, 0)
     })
 }
+    */
+
+/* Путь к Авторизации/Регистрации
+
 const hiroBtnFirst = document.querySelector('.hiro__btn-first')
 const hiroBtnSecondPrevArray = document.querySelectorAll('.hiro__btn-second-prev')
 const hiroBtnSecondNextArray = document.querySelectorAll('.hiro__btn-second-next')
@@ -204,13 +209,27 @@ for (let i = 0; i < hiroBtnThirdPrevArray.length; i++) {
         }
     })
 }
-const hiroWraper = document.querySelector('.hiro__wrapper')
+    */
+// Временное нажатие кнопок
+const hiroBtnFirst = document.querySelector('.hiro__btn-first')
+const cardsBtnArray = document.querySelectorAll('.cards-btn')
+hiroBtnFirst.addEventListener('click', function(){
+    hiroBtnFirst.classList.toggle('neumorphic-button-active')
+})
+for (let i = 0; i < cardsBtnArray.length; i++) {
+    const cardsBtn = cardsBtnArray[i];
+    cardsBtn.addEventListener('click', function(){
+        cardsBtn.classList.toggle('neumorphic-button-active')
+    })
+}
+
+const hiroWraзper = document.querySelector('.hiro__wrapper')
 const hiroArrow = document.querySelector('.hiro__arrow')
 const hiroBlockExample = document.querySelector('.hiro__block-example')
-hiroWraper.addEventListener('scroll', function() {
+hiroWraзper.addEventListener('scroll', function() {
     hiroArrow.classList.add('hiro__arrow-hide')
     hiroBlockExample.classList.add('hiro__block-example-up')
-    if (hiroWraper.scrollTop === 0) {
+    if (hiroWraзper.scrollTop === 0) {
         hiroArrow.classList.remove('hiro__arrow-hide')
         hiroBlockExample.classList.remove('hiro__block-example-up')
     }
