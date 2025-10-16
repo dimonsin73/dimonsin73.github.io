@@ -855,6 +855,12 @@ html {
   top: calc(100% + 4px);
   bottom: auto;
 }
+.clue__wrapper-left {
+  left: -220px;
+}
+.clue__wrapper-right {
+  left: -15px;
+}
 .clue__wrapper-active {
   display: flex;
 }
