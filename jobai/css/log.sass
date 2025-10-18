@@ -800,11 +800,18 @@ body
         width: 300px
         padding: 15px
         border: none 
+        border: 1px solid #A3B1C6
         border-radius: 10px
         outline: none
+        background-color: var(--White)
         color: var(--Neutext)
+        text-align: center
         &::placeholder 
-            color: var(--Neushadow)
+            position: absolute
+            top: 5px
+            left: 10px
+            @include body-small
+            color: var(--Gray-30)
         &:focus 
             outline: 1px solid var(--Neushadow)
             background-color: var(--White)
@@ -878,6 +885,10 @@ body
             padding-top: 20px
             padding-bottom: 20px
         &-third
+            display: none
+            padding-top: 20px
+            padding-bottom: 20px
+        &-fourth
             display: none
             padding-top: 20px
             padding-bottom: 20px

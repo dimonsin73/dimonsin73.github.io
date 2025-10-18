@@ -268,13 +268,13 @@ for (let i = 0; i < hiroBtnThirdPrevArray.length; i++) {
     })
 }
 
-const hiroWraзper = document.querySelector('.hiro__wrapper')
+const hiroWrapper = document.querySelector('.hiro__wrapper')
 const hiroArrow = document.querySelector('.hiro__arrow')
 const hiroBlockExample = document.querySelector('.hiro__block-example')
-hiroWraзper.addEventListener('scroll', function() {
+hiroWrapper.addEventListener('scroll', function() {
     hiroArrow.classList.add('hiro__arrow-hide')
     hiroBlockExample.classList.add('hiro__block-example-up')
-    if (hiroWraзper.scrollTop === 0) {
+    if (hiroWrapper.scrollTop === 0) {
         hiroArrow.classList.remove('hiro__arrow-hide')
         hiroBlockExample.classList.remove('hiro__block-example-up')
     }

@@ -145,11 +145,7 @@ for (let i = 0; i < popupArray.length; i++) {
 }
 
 // Временное нажатие кнопок
-const hiroBtnFirst = document.querySelector('.hiro__btn-first')
 const cardsBtnArray = document.querySelectorAll('.cards-btn')
-hiroBtnFirst.addEventListener('click', function(){
-    hiroBtnFirst.classList.toggle('neumorphic-button-active')
-})
 for (let i = 0; i < cardsBtnArray.length; i++) {
     const cardsBtn = cardsBtnArray[i];
     cardsBtn.addEventListener('click', function(){
@@ -157,13 +153,13 @@ for (let i = 0; i < cardsBtnArray.length; i++) {
     })
 }
 
-const hiroWraзper = document.querySelector('.hiro__wrapper')
+const hiroWrapper = document.querySelector('.hiro__wrapper')
 const hiroArrow = document.querySelector('.hiro__arrow')
 const hiroBlockExample = document.querySelector('.hiro__block-example')
-hiroWraзper.addEventListener('scroll', function() {
+hiroWrapper.addEventListener('scroll', function() {
     hiroArrow.classList.add('hiro__arrow-hide')
     hiroBlockExample.classList.add('hiro__block-example-up')
-    if (hiroWraзper.scrollTop === 0) {
+    if (hiroWrapper.scrollTop === 0) {
         hiroArrow.classList.remove('hiro__arrow-hide')
         hiroBlockExample.classList.remove('hiro__block-example-up')
     }
@@ -426,5 +422,88 @@ for (let i = 0; i < tariffsCurrencyTotalArray.length; i++) {
             labelCurrencyTotal.textContent = tariffsCurrencyTotal.textContent
             tariffsDayPriceCurrency.textContent = tariffsCurrencyTotal.textContent
         }
+    })
+}
+// Регистрация/Авторизация 
+const hiroBtnFirst = document.querySelector('.hiro__btn-first')
+const hiroBtnSecondPrevArray = document.querySelectorAll('.hiro__btn-second-prev')
+const hiroBtnSecondNextArray = document.querySelectorAll('.hiro__btn-second-next')
+const hiroBtnThirdPrevArray = document.querySelectorAll('.hiro__btn-third-prev')
+const hiroBtnThirdNextArray = document.querySelectorAll('.hiro__btn-third-next')
+const hiroBlockFirst = document.querySelector('.hiro__block-first')
+const hiroBlockSecondArray = document.querySelectorAll('.hiro__block-second')
+const hiroBlockThirdArray = document.querySelectorAll('.hiro__block-third')
+hiroBtnFirst.addEventListener('click', function(){
+    const radioInputArray = hiroBtnFirst.parentElement.querySelectorAll('.radio__input')
+    hiroBlockFirst.style.display = 'none'
+    for (let i = 0; i < radioInputArray.length; i++) {
+        const radioInput = radioInputArray[i];
+        if (radioInput.checked) {
+            const dataFirst = radioInput.id
+            for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+                const hiroBlockSecond = hiroBlockSecondArray[i];
+                if (hiroBlockSecond.dataset.block === dataFirst) {
+                    hiroBlockSecond.style.display = 'flex'
+                }
+            }
+        }
+    }
+    
+})
+for (let i = 0; i < hiroBtnSecondPrevArray.length; i++) {
+    const hiroBtnSecondPrev = hiroBtnSecondPrevArray[i];
+    hiroBtnSecondPrev.addEventListener('click', function(){
+        for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+            const hiroBlockSecond = hiroBlockSecondArray[i];
+            hiroBlockSecond.style.display = 'none'
+        }
+        hiroBlockFirst.style.display = 'flex'
+    })
+}
+for (let i = 0; i < hiroBtnSecondNextArray.length; i++) {
+    const hiroBtnSecondNext = hiroBtnSecondNextArray[i];
+    hiroBtnSecondNext.addEventListener('click', function(){
+        const radioInputArray = hiroBtnSecondNext.parentElement.parentElement.querySelectorAll('.radio__input')
+        for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+            const hiroBlockSecond = hiroBlockSecondArray[i];
+            hiroBlockSecond.style.display = 'none'
+        }
+        for (let i = 0; i < radioInputArray.length; i++) {
+            const radioInput = radioInputArray[i];
+            if (radioInput.checked) {
+                const dataSecond = radioInput.id
+                for (let i = 0; i < hiroBlockThirdArray.length; i++) {
+                    const hiroBlockThird = hiroBlockThirdArray[i];
+                    if (hiroBlockThird.dataset.block === dataSecond) {
+                        hiroBlockThird.style.display = 'flex'
+                    }
+                }
+            }
+        }
+    })
+}
+
+for (let i = 0; i < hiroBtnThirdPrevArray.length; i++) {
+    const hiroBtnThirdPrev = hiroBtnThirdPrevArray[i];
+    hiroBtnThirdPrev.addEventListener('click', function(){
+        for (let i = 0; i < hiroBlockThirdArray.length; i++) {
+            const hiroBlockThird = hiroBlockThirdArray[i];
+            hiroBlockThird.style.display = 'none'
+        }
+        const dataPrev = hiroBtnThirdPrev.dataset.prev
+        for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+            const hiroBlockSecond = hiroBlockSecondArray[i];
+            if (hiroBlockSecond.dataset.block === dataPrev) {
+                hiroBlockSecond.style.display = 'flex'
+            }
+            
+        }
+    })
+}
+for (let i = 0; i < hiroBtnThirdNextArray.length; i++) {
+    const hiroBtnThirdNext = hiroBtnThirdNextArray[i];
+    hiroBtnThirdNext.addEventListener('click', function(){
+        const inputThird = hiroBtnThirdNext.parentElement.parentElement.querySelector('.neumorphic-input')
+        console.log(inputThird.value)
     })
 }
