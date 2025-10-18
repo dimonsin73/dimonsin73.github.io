@@ -177,6 +177,39 @@ for (let i = 0; i < menuLinkArray.length; i++) {
         documFun(dataDocum)
     })
 }
+const navLinkArray = document.querySelectorAll('.nav__link')
+for (let i = 0; i < navLinkArray.length; i++) {
+    const navLink = navLinkArray[i];
+    navLink.addEventListener('click', function(){
+        const dataDocum = navLink.dataset.docum
+        documFun(dataDocum)
+    })
+}
+const navOther = document.querySelector('.nav__other')
+const hiroBlockArray = document.querySelectorAll('.hiro__block')
+navOther.addEventListener('click', function(){
+    const dataDocum = navOther.dataset.docum
+    for (let i = 0; i < hiroBlockArray.length; i++) {
+        const hiroBlock = hiroBlockArray[i];
+        if (hiroBlock.dataset.block === dataDocum) {
+            hiroBlock.style.display = 'flex'
+        } else (
+            hiroBlock.style.display = 'none'
+        )
+    }
+})
+const navOtherBtn = document.querySelector('.hiro__other-btn')
+navOtherBtn.addEventListener('click', function(){
+    for (let i = 0; i < hiroBlockArray.length; i++) {
+        const hiroBlock = hiroBlockArray[i];
+        if (hiroBlock.dataset.block === 'first' || hiroBlock.dataset.block === 'search') {
+            hiroBlock.style.display = 'flex'
+        } else (
+            hiroBlock.style.display = 'none'
+        )
+    }
+})
+
 const docum = document.querySelector('.docum')
 const documWrapperArray = document.querySelectorAll('.docum__wrapper')
 function documFun(dataDocum) {
@@ -208,6 +241,9 @@ for (let i = 0; i < documBtnArray.length; i++) {
             top: 10000,
             behavior: "auto",
         });
+        
+        documChat.classList.remove('docum__chat-active')
+        documChatbtn.style.display = 'block'
     })
 }
 
@@ -215,14 +251,24 @@ const documBackArray = document.querySelectorAll('.docum__back')
 for (let i = 0; i < documBackArray.length; i++) {
     const documBack = documBackArray[i];
     documBack.addEventListener("click", function(){
-        for (let i = 0; i < documWrapperArray.length; i++) {
-            const documWrapper = documWrapperArray[i];
-            if (documWrapper.dataset.docum === 'other') {
-                documWrapper.classList.add('docum__wrapper-active')
-            } else {
+        if (window.innerWidth < '1023') {
+            for (let i = 0; i < documWrapperArray.length; i++) {
+                const documWrapper = documWrapperArray[i];
+                if (documWrapper.dataset.docum === 'other') {
+                    documWrapper.classList.add('docum__wrapper-active')
+                } else {
+                    documWrapper.classList.remove('docum__wrapper-active')
+                }
+            }
+        } else {
+            for (let i = 0; i < documWrapperArray.length; i++) {
+                const documWrapper = documWrapperArray[i];
                 documWrapper.classList.remove('docum__wrapper-active')
             }
+            docum.classList.remove('docum_active')
+            hiro.classList.remove('hiro_hide')
         }
+        
     })
 }
 // Чат в Связаться с нами
