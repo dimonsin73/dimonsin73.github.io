@@ -241,9 +241,12 @@ for (let i = 0; i < documBtnArray.length; i++) {
             top: 10000,
             behavior: "auto",
         });
-        
         documChat.classList.remove('docum__chat-active')
         documChatbtn.style.display = 'block'
+        for (let i = 0; i < documContentHideArray.length; i++) {
+            const documContentHide = documContentHideArray[i];
+            documContentHide.style.display = 'flex'
+        }
     })
 }
 
@@ -275,13 +278,22 @@ for (let i = 0; i < documBackArray.length; i++) {
 const documChatbtn = document.querySelector('.docum__chatbtn')
 const documChat = document.querySelector('.docum__chat')
 const documChatClose = document.querySelector('.docum__chat-close')
+const documContentHideArray = document.querySelectorAll('.docum__content-hide')
 documChatbtn.addEventListener('click', function(){
     documChat.classList.add('docum__chat-active')
     documChatbtn.style.display = 'none'
+    for (let i = 0; i < documContentHideArray.length; i++) {
+        const documContentHide = documContentHideArray[i];
+        documContentHide.style.display = 'none'
+    }
 })
 documChatClose.addEventListener('click', function(){
     documChat.classList.remove('docum__chat-active')
     documChatbtn.style.display = 'block'
+    for (let i = 0; i < documContentHideArray.length; i++) {
+        const documContentHide = documContentHideArray[i];
+        documContentHide.style.display = 'flex'
+    }
 })
 
 // Расчёт дней и стоимости
