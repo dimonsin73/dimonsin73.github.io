@@ -739,6 +739,8 @@ html
             left: -240px
         &-active 
             display: flex
+        &-neu 
+            left: -302px
     &__text 
         @include subtitle-large
         color: var(--Gray-30)
@@ -823,6 +825,14 @@ body
             border: 1px solid var(--Red-error)
             & ~ .neumorphic-error
                 display: block
+        &-mb 
+            margin-bottom: 0
+        &-left 
+            text-align: left
+    &-clue 
+        position: absolute
+        top: 15px
+        right: -22px
     &-error 
         position: absolute
         display: none
@@ -905,6 +915,9 @@ body
         &-restart 
             width: 170px
             margin: 40px auto 0
+        &-warning 
+            &-next
+                width: auto
     &__block 
         display: flex
         flex-direction: column
@@ -960,6 +973,8 @@ body
         &-newpassword 
             display: none
             padding: 10px 25px 20px
+        &-warning 
+            display: none
     &__list 
         padding-left: 35px
         & li 
@@ -2238,6 +2253,9 @@ body
                 gap: 30px
             & .docum__content-item-contacts 
                 gap: 10px
+        &__message 
+            &-input 
+                width: 265px
         &__chat 
             position: fixed
             top: 0

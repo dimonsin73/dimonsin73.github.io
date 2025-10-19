@@ -876,6 +876,9 @@ html {
 .clue__wrapper-active {
   display: flex;
 }
+.clue__wrapper-neu {
+  left: -302px;
+}
 .clue__text {
   font: 500 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
@@ -996,6 +999,17 @@ body {
 .neumorphic-input-error ~ .neumorphic-error {
   display: block;
 }
+.neumorphic-input-mb {
+  margin-bottom: 0;
+}
+.neumorphic-input-left {
+  text-align: left;
+}
+.neumorphic-clue {
+  position: absolute;
+  top: 15px;
+  right: -22px;
+}
 .neumorphic-error {
   position: absolute;
   display: none;
@@ -1095,6 +1109,9 @@ body {
   width: 170px;
   margin: 40px auto 0;
 }
+.hiro__btn-warning-next {
+  width: auto;
+}
 .hiro__block {
   display: flex;
   flex-direction: column;
@@ -1164,6 +1181,9 @@ body {
 .hiro__block-newpassword {
   display: none;
   padding: 10px 25px 20px;
+}
+.hiro__block-warning {
+  display: none;
 }
 .hiro__list {
   padding-left: 35px;
@@ -2754,6 +2774,9 @@ body {
   }
   .docum__about .docum__content-item-contacts {
     gap: 10px;
+  }
+  .docum__message-input {
+    width: 265px;
   }
   .docum__chat {
     position: fixed;

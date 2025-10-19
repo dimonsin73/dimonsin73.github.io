@@ -446,6 +446,12 @@ const neumorphicRememberArray = document.querySelectorAll('.neumorphic-remember'
 const hiroBtnResetArray = document.querySelectorAll('.hiro__btn-reset')
 const hiroBtnNoResetArray = document.querySelectorAll('.hiro__btn-noreset')
 const hiroBtnNewpassword = document.querySelector('.hiro__btn-newpassword')
+const hiroBtnSecondRegArray = document.querySelectorAll('.hiro__btn-second-reg')
+const hiroBtnReg = document.querySelector('.hiro__btn-reg')
+const hiroBtnCompanyNext = document.querySelector('.hiro__btn-company-next')
+const hiroBtnCompanyPrev = document.querySelector('.hiro__btn-company-prev')
+const hiroBtnWarningNextArray = document.querySelectorAll('.hiro__btn-warning-next')
+const hiroBtnWarningPrevArray = document.querySelectorAll('.hiro__btn-warning-prev')
 
 const hiroBlockSearch = document.querySelector('.hiro__block-search')
 const hiroBlockFirst = document.querySelector('.hiro__block-first')
@@ -456,6 +462,7 @@ const hiroBlockFifthArray = document.querySelectorAll('.hiro__block-fifth')
 const hiroBlockBlockingArray = document.querySelectorAll('.hiro__block-blocking')
 const hiroBlockRememberArray = document.querySelectorAll('.hiro__block-remember')
 const hiroBlockNewpassword = document.querySelector('.hiro__block-newpassword')
+const hiroBlockWarningArray = document.querySelectorAll('.hiro__block-warning')
 
 hiroBtnFirst.addEventListener('click', function(){
     const radioInputArray = hiroBtnFirst.parentElement.querySelectorAll('.radio__input')
@@ -464,12 +471,23 @@ hiroBtnFirst.addEventListener('click', function(){
         if (radioInput.checked) {
             const dataFirst = radioInput.id
             if (role.checked) {
-                for (let i = 0; i < hiroBlockThirdArray.length; i++) {
-                    const hiroBlockThird = hiroBlockThirdArray[i];
-                    if (hiroBlockThird.dataset.block === `${dataFirst}-email`) {
-                        hiroBlockThird.style.display = 'flex'
+                if (dataFirst === 'avtorizaciya') {
+                    for (let i = 0; i < hiroBlockThirdArray.length; i++) {
+                        const hiroBlockThird = hiroBlockThirdArray[i];
+                        if (hiroBlockThird.dataset.block === `${dataFirst}-email`) {
+                            hiroBlockThird.style.display = 'flex'
+                        }
                     }
                 }
+                if (dataFirst === 'registraciya') {
+                    for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+                        const hiroBlockSecond = hiroBlockSecondArray[i];
+                        if (hiroBlockSecond.dataset.block === `${dataFirst}-company`) {
+                            hiroBlockSecond.style.display = 'flex'
+                        }
+                    }
+                }
+                
             } else {
                 for (let i = 0; i < hiroBlockSecondArray.length; i++) {
                     const hiroBlockSecond = hiroBlockSecondArray[i];
@@ -568,15 +586,49 @@ for (let i = 0; i < hiroBtnThirdNextArray.length; i++) {
                 hiroBlockThird.style.display = 'none'
             }
             const dataBlock = hiroBtnThirdNext.dataset.block
-            for (let i = 0; i < hiroBlockFourthArray.length; i++) {
-                const hiroBlockFourth = hiroBlockFourthArray[i];
-                if (hiroBlockFourth.dataset.block === dataBlock) {
-                    hiroBlockFourth.style.display = 'flex'
-                    
+            const data = hiroBtnThirdNext.dataset.reg
+            if (data === 'registraciya') {
+                if (inputThird.value === 'd.p.mezentsev@job-ai.ru' || inputThird.value === '+79852208991') {
+                    if (inputThird.value === 'd.p.mezentsev@job-ai.ru') {
+                        for (let i = 0; i < hiroBlockWarningArray.length; i++) {
+                            const hiroBlockWarning = hiroBlockWarningArray[i];
+                            if (hiroBlockWarning.dataset.block === 'warning-email') {
+                                hiroBlockWarning.style.display = 'flex'
+                            }
+                        } 
+                    }
+                    if (inputThird.value === '+79852208991') {
+                       for (let i = 0; i < hiroBlockWarningArray.length; i++) {
+                            const hiroBlockWarning = hiroBlockWarningArray[i];
+                            if (hiroBlockWarning.dataset.block === 'warning-tel') {
+                                hiroBlockWarning.style.display = 'flex'
+                            }
+                        }  
+                    }
+                    hiroBlockSearch.style.display = 'none'
                 } else {
-                    hiroBlockFourth.style.display = 'none'
+                    for (let i = 0; i < hiroBlockFourthArray.length; i++) {
+                        const hiroBlockFourth = hiroBlockFourthArray[i];
+                        if (hiroBlockFourth.dataset.block === dataBlock) {
+                            hiroBlockFourth.style.display = 'flex'
+                            
+                        } else {
+                            hiroBlockFourth.style.display = 'none'
+                        }
+                    }
+                }
+            } else {
+                for (let i = 0; i < hiroBlockFourthArray.length; i++) {
+                    const hiroBlockFourth = hiroBlockFourthArray[i];
+                    if (hiroBlockFourth.dataset.block === dataBlock) {
+                        hiroBlockFourth.style.display = 'flex'
+                        
+                    } else {
+                        hiroBlockFourth.style.display = 'none'
+                    }
                 }
             }
+            
         } else {
             inputThird.classList.add('neumorphic-input-error')
         }
@@ -669,6 +721,10 @@ for (let i = 0; i < hiroBtnFifthNextArray.length; i++) {
                 const hiroBlockFifth = hiroBlockFifthArray[i];
                 hiroBlockFifth.style.display = 'none'
             }
+            for (let i = 0; i < hiroBlockFourthArray.length; i++) {
+                const hiroBlockFourth = hiroBlockFourthArray[i];
+                hiroBlockFourth.style.display = 'none'
+            }
         } else {
             inputFifth.classList.add('neumorphic-input-error')
             const blockFifth = hiroBtnFifthNext.parentElement.parentElement
@@ -756,6 +812,59 @@ for (let i = 0; i < hiroBtnNoResetArray.length; i++) {
         }
     })
 }
+for (let i = 0; i < hiroBtnSecondRegArray.length; i++) {
+    const hiroBtnSecondReg = hiroBtnSecondRegArray[i];
+    hiroBtnSecondReg.addEventListener('click', function(){
+        const dataNext = hiroBtnSecondReg.dataset.next
+        for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+            const hiroBlockSecond = hiroBlockSecondArray[i];
+            if (hiroBlockSecond.dataset.block === dataNext) {
+                hiroBlockSecond.style.display = 'flex'
+            } 
+            else (
+                hiroBlockSecond.style.display = 'none'
+            )
+        }
+    })
+}
+hiroBtnCompanyNext.addEventListener('click', function(){
+    const dataBlock = hiroBtnCompanyNext.dataset.block
+    for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+        const hiroBlockSecond = hiroBlockSecondArray[i];
+        hiroBlockSecond.style.display = 'none'
+    }
+    for (let i = 0; i < hiroBlockThirdArray.length; i++) {
+        const hiroBlockThird = hiroBlockThirdArray[i];
+        if (hiroBlockThird.dataset.block === dataBlock) {
+            hiroBlockThird.style.display = 'flex'
+        }else {
+            hiroBlockThird.style.display = 'none'
+        }
+    }
+})
+hiroBtnCompanyPrev.addEventListener('click', function(){
+    const dataBlock = hiroBtnCompanyPrev.dataset.block
+    for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+        const hiroBlockSecond = hiroBlockSecondArray[i];
+        if (hiroBlockSecond.dataset.block === dataBlock) {
+            hiroBlockSecond.style.display = 'flex'
+        } else {
+            hiroBlockSecond.style.display = 'none'
+        }
+    }
+})
+hiroBtnReg.addEventListener('click', function(){
+    const dataPrev = hiroBtnReg.dataset.prev
+    for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+        const hiroBlockSecond = hiroBlockSecondArray[i];
+        if (hiroBlockSecond.dataset.block === dataPrev) {
+            hiroBlockSecond.style.display = 'flex'
+        } 
+        else (
+            hiroBlockSecond.style.display = 'none'
+        )
+    }
+})
 hiroBtnNewpassword.addEventListener('click', function(){
     for (let i = 0; i < hiroBlockRememberArray.length; i++) {
         const hiroBlockRemember = hiroBlockRememberArray[i];
@@ -763,6 +872,39 @@ hiroBtnNewpassword.addEventListener('click', function(){
     }
     hiroBlockNewpassword.style.display = 'flex'
 })
+for (let i = 0; i < hiroBtnWarningNextArray.length; i++) {
+    const hiroBtnWarningNext = hiroBtnWarningNextArray[i];
+    hiroBtnWarningNext.addEventListener('click', function(){
+        for (let i = 0; i < hiroBlockWarningArray.length; i++) {
+            const hiroBlockWarning = hiroBlockWarningArray[i];
+            hiroBlockWarning.style.display = 'none'
+        }
+        for (let i = 0; i < hiroBlockSecondArray.length; i++) {
+            const hiroBlockSecond = hiroBlockSecondArray[i];
+            if (hiroBlockSecond.dataset.block === 'avtorizaciya') {
+                hiroBlockSecond.style.display = 'flex'
+            }
+        }
+        hiroBlockSearch.style.display = 'flex'
+    })
+}
+for (let i = 0; i < hiroBtnWarningPrevArray.length; i++) {
+    const hiroBtnWarningPrev = hiroBtnWarningPrevArray[i];
+    hiroBtnWarningPrev.addEventListener('click', function(){
+        const data = hiroBtnWarningPrev.dataset.prev
+        for (let i = 0; i < hiroBlockThirdArray.length; i++) {
+            const hiroBlockThird = hiroBlockThirdArray[i];
+            if (hiroBlockThird.dataset.block === data) {
+                hiroBlockThird.style.display = 'flex'
+            }
+        }
+        for (let i = 0; i < hiroBlockWarningArray.length; i++) {
+            const hiroBlockWarning = hiroBlockWarningArray[i];
+            hiroBlockWarning.style.display = 'none'
+        }
+        hiroBlockSearch.style.display = 'flex'
+    })
+}
 
 
 const neumorphicInputArray = document.querySelectorAll('.neumorphic-input')
