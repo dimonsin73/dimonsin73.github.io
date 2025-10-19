@@ -145,7 +145,11 @@ for (let i = 0; i < popupArray.length; i++) {
 }
 
 // Временное нажатие кнопок
+const hiroBtnFirst = document.querySelector('.hiro__btn-first')
 const cardsBtnArray = document.querySelectorAll('.cards-btn')
+hiroBtnFirst.addEventListener('click', function(){
+    hiroBtnFirst.classList.toggle('neumorphic-button-active')
+})
 for (let i = 0; i < cardsBtnArray.length; i++) {
     const cardsBtn = cardsBtnArray[i];
     cardsBtn.addEventListener('click', function(){
@@ -153,7 +157,17 @@ for (let i = 0; i < cardsBtnArray.length; i++) {
     })
 }
 
-
+const hiroWrapper = document.querySelector('.hiro__wrapper')
+const hiroArrow = document.querySelector('.hiro__arrow')
+const hiroBlockExample = document.querySelector('.hiro__block-example')
+hiroWrapper.addEventListener('scroll', function() {
+    hiroArrow.classList.add('hiro__arrow-hide')
+    hiroBlockExample.classList.add('hiro__block-example-up')
+    if (hiroWrapper.scrollTop === 0) {
+        hiroArrow.classList.remove('hiro__arrow-hide')
+        hiroBlockExample.classList.remove('hiro__block-example-up')
+    }
+})
 
 const menuLinkArray = document.querySelectorAll('.menu__link')
 for (let i = 0; i < menuLinkArray.length; i++) {
@@ -414,304 +428,5 @@ for (let i = 0; i < tariffsCurrencyTotalArray.length; i++) {
             labelCurrencyTotal.textContent = tariffsCurrencyTotal.textContent
             tariffsDayPriceCurrency.textContent = tariffsCurrencyTotal.textContent
         }
-    })
-}
-// Регистрация/Авторизация 
-const role = document.querySelector('#role')
-const hiroBtnFirst = document.querySelector('.hiro__btn-first')
-const hiroBtnSecondPrevArray = document.querySelectorAll('.hiro__btn-second-prev')
-const hiroBtnSecondNextArray = document.querySelectorAll('.hiro__btn-second-next')
-const hiroBtnThirdPrevArray = document.querySelectorAll('.hiro__btn-third-prev')
-const hiroBtnThirdNextArray = document.querySelectorAll('.hiro__btn-third-next')
-const hiroBtnFourthPrevArray = document.querySelectorAll('.hiro__btn-fourth-prev')
-const hiroBtnFourthNextArray = document.querySelectorAll('.hiro__btn-fourth-next')
-const hiroBtnFifthhPrevArray = document.querySelectorAll('.hiro__btn-fifth-prev')
-const hiroBtnFifthNextArray = document.querySelectorAll('.hiro__btn-fifth-next')
-
-const hiroBlockFirst = document.querySelector('.hiro__block-first')
-const hiroBlockSecondArray = document.querySelectorAll('.hiro__block-second')
-const hiroBlockThirdArray = document.querySelectorAll('.hiro__block-third')
-const hiroBlockFourthArray = document.querySelectorAll('.hiro__block-fourth')
-const hiroBlockFifthArray = document.querySelectorAll('.hiro__block-fifth')
-
-hiroBtnFirst.addEventListener('click', function(){
-    const radioInputArray = hiroBtnFirst.parentElement.querySelectorAll('.radio__input')
-    for (let i = 0; i < radioInputArray.length; i++) {
-        const radioInput = radioInputArray[i];
-        if (radioInput.checked) {
-            const dataFirst = radioInput.id
-            if (role.checked) {
-                for (let i = 0; i < hiroBlockThirdArray.length; i++) {
-                    const hiroBlockThird = hiroBlockThirdArray[i];
-                    if (hiroBlockThird.dataset.block === `${dataFirst}-email`) {
-                        hiroBlockThird.style.display = 'flex'
-                    }
-                }
-            } else {
-                for (let i = 0; i < hiroBlockSecondArray.length; i++) {
-                    const hiroBlockSecond = hiroBlockSecondArray[i];
-                    if (hiroBlockSecond.dataset.block === dataFirst) {
-                        hiroBlockSecond.style.display = 'flex'
-                    }
-                }
-            }
-            role.disabled = true
-            hiroBlockFirst.style.display = 'none'
-            hiroArrow.classList.add('hiro__arrow-hide')
-            hiroBlockExample.style.display = 'none'
-        }
-    }
-})
-for (let i = 0; i < hiroBtnSecondPrevArray.length; i++) {
-    const hiroBtnSecondPrev = hiroBtnSecondPrevArray[i];
-    hiroBtnSecondPrev.addEventListener('click', function(){
-        for (let i = 0; i < hiroBlockSecondArray.length; i++) {
-            const hiroBlockSecond = hiroBlockSecondArray[i];
-            hiroBlockSecond.style.display = 'none'
-        }
-        hiroBlockFirst.style.display = 'flex'
-        const radioArray = hiroBlockFirst.querySelectorAll('.radio__input')
-        for (let i = 0; i < radioArray.length; i++) {
-            const radio = radioArray[i];
-            radio.checked = false
-        }
-        role.disabled = false
-        hiroArrow.classList.remove('hiro__arrow-hide')
-        hiroBlockExample.style.display = 'flex'
-    })
-}
-for (let i = 0; i < hiroBtnSecondNextArray.length; i++) {
-    const hiroBtnSecondNext = hiroBtnSecondNextArray[i];
-    hiroBtnSecondNext.addEventListener('click', function(){
-        const radioInputArray = hiroBtnSecondNext.parentElement.parentElement.querySelectorAll('.radio__input')
-        for (let i = 0; i < radioInputArray.length; i++) {
-            const radioInput = radioInputArray[i];
-            if (radioInput.checked) {
-                const dataSecond = radioInput.id
-                for (let i = 0; i < hiroBlockThirdArray.length; i++) {
-                    const hiroBlockThird = hiroBlockThirdArray[i];
-                    if (hiroBlockThird.dataset.block === dataSecond) {
-                        hiroBlockThird.style.display = 'flex'
-                    }
-                }
-                for (let i = 0; i < hiroBlockSecondArray.length; i++) {
-                    const hiroBlockSecond = hiroBlockSecondArray[i];
-                    hiroBlockSecond.style.display = 'none'
-                }
-            }
-        }
-    })
-}
-for (let i = 0; i < hiroBtnThirdPrevArray.length; i++) {
-    const hiroBtnThirdPrev = hiroBtnThirdPrevArray[i];
-    hiroBtnThirdPrev.addEventListener('click', function(){
-        for (let i = 0; i < hiroBlockThirdArray.length; i++) {
-            const hiroBlockThird = hiroBlockThirdArray[i];
-            hiroBlockThird.style.display = 'none'
-            const input = hiroBlockThird.querySelector('.neumorphic-input')
-            input.classList.remove('neumorphic-input-error')
-        }
-        if (role.checked) {
-            hiroBlockFirst.style.display = 'flex'
-            const radioArray = hiroBlockFirst.querySelectorAll('.radio__input')
-            for (let i = 0; i < radioArray.length; i++) {
-                const radio = radioArray[i];
-                radio.checked = false
-            }
-            role.disabled = false
-        } else {
-            const dataPrev = hiroBtnThirdPrev.dataset.prev
-            for (let i = 0; i < hiroBlockSecondArray.length; i++) {
-                const hiroBlockSecond = hiroBlockSecondArray[i];
-                if (hiroBlockSecond.dataset.block === dataPrev) {
-                    hiroBlockSecond.style.display = 'flex'
-                }
-                const radioArray = hiroBlockSecond.querySelectorAll('.radio__input')
-                for (let i = 0; i < radioArray.length; i++) {
-                    const radio = radioArray[i];
-                    radio.checked = false
-                }
-            }
-        }
-    })
-}
-for (let i = 0; i < hiroBtnThirdNextArray.length; i++) {
-    const hiroBtnThirdNext = hiroBtnThirdNextArray[i];
-    hiroBtnThirdNext.addEventListener('click', function(){
-        const inputThird = hiroBtnThirdNext.parentElement.parentElement.querySelector('.neumorphic-input')
-        if (inputThird.value != 0) {
-            for (let i = 0; i < hiroBlockThirdArray.length; i++) {
-                const hiroBlockThird = hiroBlockThirdArray[i];
-                hiroBlockThird.style.display = 'none'
-            }
-            const dataBlock = hiroBtnThirdNext.dataset.block
-            for (let i = 0; i < hiroBlockFourthArray.length; i++) {
-                const hiroBlockFourth = hiroBlockFourthArray[i];
-                if (hiroBlockFourth.dataset.block === dataBlock) {
-                    hiroBlockFourth.style.display = 'flex'
-                    
-                } else {
-                    hiroBlockFourth.style.display = 'none'
-                }
-            }
-        } else {
-            inputThird.classList.add('neumorphic-input-error')
-        }
-    })
-}
-for (let i = 0; i < hiroBtnFourthPrevArray.length; i++) {
-    const hiroBtnFourthPrev = hiroBtnFourthPrevArray[i];
-    hiroBtnFourthPrev.addEventListener('click', function(){
-        for (let i = 0; i < hiroBlockFourthArray.length; i++) {
-            const hiroBlockFourth = hiroBlockFourthArray[i];
-            hiroBlockFourth.style.display = 'none'
-        }
-        const dataPrev = hiroBtnFourthPrev.dataset.prev
-        for (let i = 0; i < hiroBlockThirdArray.length; i++) {
-            const hiroBlockThird = hiroBlockThirdArray[i];
-            if (hiroBlockThird.dataset.block === dataPrev) {
-                hiroBlockThird.style.display = 'flex'
-            }
-        }
-    })
-}
-for (let i = 0; i < hiroBtnFourthNextArray.length; i++) {
-    const hiroBtnFourthNext = hiroBtnFourthNextArray[i];
-    hiroBtnFourthNext.addEventListener('click', function(){
-        const radioInputArray = hiroBtnFourthNext.parentElement.parentElement.querySelectorAll('.radio__input')
-        for (let i = 0; i < radioInputArray.length; i++) {
-            const radioInput = radioInputArray[i];
-            if (radioInput.checked) {
-                const dataFourth = radioInput.id
-                for (let i = 0; i < hiroBlockFifthArray.length; i++) {
-                    const hiroBlockFifth = hiroBlockFifthArray[i];
-                    if (hiroBlockFifth.dataset.block === dataFourth) {
-                        hiroBlockFifth.style.display = 'flex'
-                        const timer = hiroBlockFifth.querySelector('.timer')
-                        const neumorphicTimer = hiroBlockFifth.querySelector('.neumorphic-timer')
-                        if (timer != null) {
-                           timerFun(timer, neumorphicTimer) 
-                        }
-                    }
-                }
-                for (let i = 0; i < hiroBlockFourthArray.length; i++) {
-                    const hiroBlockFourth = hiroBlockFourthArray[i];
-                    hiroBlockFourth.style.display = 'none'
-                }
-            }
-        }
-    })
-}
-for (let i = 0; i < hiroBtnFifthhPrevArray.length; i++) {
-    const hiroBtnFifthhPrev = hiroBtnFifthhPrevArray[i];
-    hiroBtnFifthhPrev.addEventListener('click', function(){
-        for (let i = 0; i < hiroBlockFifthArray.length; i++) {
-            const hiroBlockFifth = hiroBlockFifthArray[i];
-            hiroBlockFifth.style.display = 'none'
-            const input = hiroBlockFifth.querySelector('.neumorphic-input')
-            input.classList.remove('neumorphic-input-error')
-        }
-        const dataPrev = hiroBtnFifthhPrev.dataset.prev
-        for (let i = 0; i < hiroBlockFourthArray.length; i++) {
-            const hiroBlockFourth = hiroBlockFourthArray[i];
-            if (hiroBlockFourth.dataset.block === dataPrev) {
-                hiroBlockFourth.style.display = 'flex'
-                
-                const radioInputArray = hiroBlockFourth.querySelectorAll('.radio__input')
-                for (let i = 0; i < radioInputArray.length; i++) {
-                    const radioInput = radioInputArray[i];
-                    radioInput.checked = false
-                }
-            }
-        }
-    })
-}
-for (let i = 0; i < hiroBtnFifthNextArray.length; i++) {
-    const hiroBtnFifthNext = hiroBtnFifthNextArray[i];
-    hiroBtnFifthNext.addEventListener('click', function(){
-        const inputFifth = hiroBtnFifthNext.parentElement.parentElement.querySelector('.neumorphic-input')
-        if (inputFifth.value != 0) {
-        } else {
-            inputFifth.classList.add('neumorphic-input-error')
-            const blockFifth = hiroBtnFifthNext.parentElement.parentElement
-            const neuTimer = blockFifth.querySelector('.neumorphic-timer')
-            const neuError = blockFifth.querySelector('.neumorphic-error')
-            neuTimer.style.display = 'none'
-            neuError.style.display = 'block'
-            setTimeout(() => {
-                neuError.style.display = 'none'
-                neuTimer.style.display = 'flex'
-            }, 5000)
-            
-        }
-    })
-}
-
-const neumorphicInputArray = document.querySelectorAll('.neumorphic-input')
-for (let i = 0; i < neumorphicInputArray.length; i++) {
-    const neumorphicInput = neumorphicInputArray[i];
-    neumorphicInput.addEventListener('input', function(){
-        neumorphicInput.classList.remove('neumorphic-input-error')
-    })
-}
-function timerFun(timer, neumorphicTimer) {
-    const minutes = timer.querySelector('.timer__minutes')
-    const seconds = timer.querySelector('.timer__seconds')
-    let minutesValue =  Number(minutes.textContent)
-    let secondsValue = Number(seconds.textContent)
-    setInterval(function() {
-        if (secondsValue > 0) {
-            secondsValue--
-        } else {
-            if (minutesValue - 1 >= 0) {
-                minutesValue--
-                secondsValue = 60 - 1
-            } else {
-                clearInterval
-            }
-        }
-        if (secondsValue < 10) {
-            seconds.textContent = `0${secondsValue}`
-        } else {
-            seconds.textContent = secondsValue
-        }
-        if (minutesValue < 10) {
-            minutes.textContent = `0${minutesValue}`
-        } else {
-            minutes.textContent = minutesValue
-        }
-    }, 1000)
-    setTimeout(function(){
-        neumorphicTimer.innerHTML = 'Получить <span> новый</span> код'
-    }, 60000)
-}
-
-const hiroWrapper = document.querySelector('.hiro__wrapper')
-const hiroArrow = document.querySelector('.hiro__arrow')
-const hiroBlockExample = document.querySelector('.hiro__block-example')
-hiroWrapper.addEventListener('scroll', function() {
-    if (hiroBlockFirst.style.display != 'none') {
-       hiroArrow.classList.add('hiro__arrow-hide')
-        hiroBlockExample.classList.add('hiro__block-example-up')
-        if (hiroWrapper.scrollTop === 0) {
-            hiroArrow.classList.remove('hiro__arrow-hide')
-            hiroBlockExample.classList.remove('hiro__block-example-up')
-        } 
-    }
-    
-})
-const neumorphicPasswordArray = document.querySelectorAll('.neumorphic-password')
-for (let i = 0; i < neumorphicPasswordArray.length; i++) {
-    const neumorphicPassword = neumorphicPasswordArray[i];
-    neumorphicPassword.addEventListener('click', function(){
-        neumorphicPassword.classList.toggle('neumorphic-password-slash')
-        const input = neumorphicPassword.nextSibling
-        if (neumorphicPassword.classList.contains('neumorphic-password-slash')) {
-            input.setAttribute('type', 'text')
-        } else {
-            input.setAttribute('type', 'password')
-        }
-        
-       
     })
 }
