@@ -427,12 +427,14 @@ const hiroBtnFourthPrevArray = document.querySelectorAll('.hiro__btn-fourth-prev
 const hiroBtnFourthNextArray = document.querySelectorAll('.hiro__btn-fourth-next')
 const hiroBtnFifthhPrevArray = document.querySelectorAll('.hiro__btn-fifth-prev')
 const hiroBtnFifthNextArray = document.querySelectorAll('.hiro__btn-fifth-next')
+const hiroBtnRestart = document.querySelectorAll('.hiro__btn-restart')
 
 const hiroBlockFirst = document.querySelector('.hiro__block-first')
 const hiroBlockSecondArray = document.querySelectorAll('.hiro__block-second')
 const hiroBlockThirdArray = document.querySelectorAll('.hiro__block-third')
 const hiroBlockFourthArray = document.querySelectorAll('.hiro__block-fourth')
 const hiroBlockFifthArray = document.querySelectorAll('.hiro__block-fifth')
+const hiroBlockBlockingArray = document.querySelectorAll('.hiro__block-blocking')
 
 hiroBtnFirst.addEventListener('click', function(){
     const radioInputArray = hiroBtnFirst.parentElement.querySelectorAll('.radio__input')
@@ -588,9 +590,10 @@ for (let i = 0; i < hiroBtnFourthNextArray.length; i++) {
                     if (hiroBlockFifth.dataset.block === dataFourth) {
                         hiroBlockFifth.style.display = 'flex'
                         const timer = hiroBlockFifth.querySelector('.timer')
-                        const neumorphicTimer = hiroBlockFifth.querySelector('.neumorphic-timer')
+                        const neumorphicCode = hiroBlockFifth.querySelector('.neumorphic-code')
+                        const neumorphicNewcode = hiroBlockFifth.querySelector('.neumorphic-newcode')
                         if (timer != null) {
-                           timerFun(timer, neumorphicTimer) 
+                           timerFun(timer, neumorphicCode, neumorphicNewcode) 
                         }
                     }
                 }
@@ -631,22 +634,51 @@ for (let i = 0; i < hiroBtnFifthNextArray.length; i++) {
     hiroBtnFifthNext.addEventListener('click', function(){
         const inputFifth = hiroBtnFifthNext.parentElement.parentElement.querySelector('.neumorphic-input')
         if (inputFifth.value != 0) {
+            const dataBlock = hiroBtnFifthNext.dataset.block
+            for (let i = 0; i < hiroBlockBlockingArray.length; i++) {
+                const hiroBlockBlocking = hiroBlockBlockingArray[i];
+                if (hiroBlockBlocking.dataset.block === dataBlock) {
+                    hiroBlockBlocking.style.display = 'flex'
+                } else {
+                    hiroBlockBlocking.style.display = 'none'
+                }
+            }
+            for (let i = 0; i < hiroBlockFifthArray.length; i++) {
+                const hiroBlockFifth = hiroBlockFifthArray[i];
+                hiroBlockFifth.style.display = 'none'
+            }
         } else {
             inputFifth.classList.add('neumorphic-input-error')
             const blockFifth = hiroBtnFifthNext.parentElement.parentElement
-            const neuTimer = blockFifth.querySelector('.neumorphic-timer')
             const neuError = blockFifth.querySelector('.neumorphic-error')
-            neuTimer.style.display = 'none'
-            neuError.style.display = 'block'
-            setTimeout(() => {
-                neuError.style.display = 'none'
-                neuTimer.style.display = 'flex'
-            }, 5000)
-            
+
+            const neuTimer = blockFifth.querySelector('.neumorphic-timer')
+            if (neuTimer != null) {
+                neuTimer.style.display = 'none'
+                neuError.style.display = 'block'
+                setTimeout(() => {
+                    neuError.style.display = 'none'
+                    neuTimer.style.display = 'flex'
+                }, 5000)
+            }
+            const neuRemember = document.querySelector('.neumorphic-remember')
+            if (neuRemember != null) {
+                neuRemember.style.display = 'none'
+                neuError.style.display = 'block'
+                setTimeout(() => {
+                    neuError.style.display = 'none'
+                    neuRemember.style.display = 'flex'
+                }, 5000)
+            }
         }
     })
 }
-
+for (let i = 0; i < hiroBlockBlockingArray.length; i++) {
+    const hiroBlockBlocking = hiroBlockBlockingArray[i];
+    hiroBlockBlocking.addEventListener('click', function(){
+        location.reload()
+    })
+}
 const neumorphicInputArray = document.querySelectorAll('.neumorphic-input')
 for (let i = 0; i < neumorphicInputArray.length; i++) {
     const neumorphicInput = neumorphicInputArray[i];
@@ -654,7 +686,7 @@ for (let i = 0; i < neumorphicInputArray.length; i++) {
         neumorphicInput.classList.remove('neumorphic-input-error')
     })
 }
-function timerFun(timer, neumorphicTimer) {
+function timerFun(timer, neumorphicCode, neumorphicNewcode) {
     const minutes = timer.querySelector('.timer__minutes')
     const seconds = timer.querySelector('.timer__seconds')
     let minutesValue =  Number(minutes.textContent)
@@ -682,7 +714,9 @@ function timerFun(timer, neumorphicTimer) {
         }
     }, 1000)
     setTimeout(function(){
-        neumorphicTimer.innerHTML = 'Получить <span> новый</span> код'
+        timer.style.display = 'none'
+        neumorphicNewcode.style.display = 'flex'
+        neumorphicCode.style.display = 'none'
     }, 60000)
 }
 
@@ -711,7 +745,5 @@ for (let i = 0; i < neumorphicPasswordArray.length; i++) {
         } else {
             input.setAttribute('type', 'password')
         }
-        
-       
     })
 }

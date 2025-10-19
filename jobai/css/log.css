@@ -960,7 +960,7 @@ body {
 .neumorphic-input {
   width: 300px;
   height: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   padding: 15px;
   border: none;
   border: 1px solid #A3B1C6;
@@ -999,7 +999,7 @@ body {
 .neumorphic-error {
   position: absolute;
   display: none;
-  bottom: -12px;
+  bottom: -10px;
   font: 400 14px/16px "Inter", "sans-serif";
   color: var(--Red-error);
 }
@@ -1017,7 +1017,7 @@ body {
 }
 .neumorphic-timer {
   position: absolute;
-  bottom: -12px;
+  bottom: -10px;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -1026,6 +1026,17 @@ body {
 }
 .neumorphic-timer span {
   font-weight: 600;
+}
+.neumorphic-newcode {
+  display: none;
+  gap: 4px;
+}
+.neumorphic-remember {
+  position: absolute;
+  bottom: -10px;
+  display: flex;
+  font: 400 14px/16px "Inter", "sans-serif";
+  color: var(--Neutext);
 }
 .neumorphic-button {
   display: flex;
@@ -1079,6 +1090,10 @@ body {
 }
 .hiro__btn-first {
   margin-top: 10px;
+}
+.hiro__btn-restart {
+  width: 170px;
+  margin: 40px auto 0;
 }
 .hiro__block {
   display: flex;
@@ -1139,6 +1154,10 @@ body {
   display: none;
   padding: 0;
 }
+.hiro__block-blocking {
+  display: none;
+  padding: 10px 35px 20px;
+}
 .hiro__arrow {
   display: none;
 }
@@ -1163,6 +1182,32 @@ body {
 }
 .hiro__other-btn {
   margin: 30px 25px;
+}
+.hiro__top {
+  display: flex;
+  justify-content: center;
+}
+.hiro__top-title {
+  position: relative;
+  font: 600 16px/25px "Inter", "sans-serif";
+  letter-spacing: 0.02em;
+  color: var(--Neutext);
+}
+.hiro__top-icon {
+  position: absolute;
+  top: 0;
+  right: -35px;
+}
+.hiro__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font: 400 14px/22px "Inter", "sans-serif";
+  letter-spacing: 0.02em;
+  color: var(--Neutext);
+}
+.hiro__content-center {
+  text-align: center;
 }
 
 .logo {

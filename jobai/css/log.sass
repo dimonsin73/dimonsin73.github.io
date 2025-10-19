@@ -801,7 +801,7 @@ body
     &-input 
         width: 300px
         height: 50px
-        margin-bottom: 10px
+        margin-bottom: 16px
         padding: 15px
         border: none 
         border: 1px solid #A3B1C6
@@ -826,7 +826,7 @@ body
     &-error 
         position: absolute
         display: none
-        bottom: -12px
+        bottom: -10px
         font: 400 14px/16px 'Inter', 'sans-serif'
         color: var(--Red-error)
     &-password 
@@ -843,7 +843,7 @@ body
                 image: url('../images/icons/eye_visible.png')
     &-timer 
         position: absolute
-        bottom: -12px
+        bottom: -10px
         display: flex
         align-items: center 
         gap: 4px
@@ -851,6 +851,15 @@ body
         color: var(--Neutext)
         & span 
             font-weight: 600
+    &-newcode 
+        display: none
+        gap: 4px
+    &-remember 
+        position: absolute
+        bottom: -10px
+        display: flex
+        font: 400 14px/16px 'Inter', 'sans-serif'
+        color: var(--Neutext)
     &-button 
         display: flex
         align-items: center
@@ -893,6 +902,9 @@ body
         margin: 0 auto 
         &-first 
             margin-top: 10px
+        &-restart 
+            width: 170px
+            margin: 40px auto 0
     &__block 
         display: flex
         flex-direction: column
@@ -940,6 +952,9 @@ body
         &-other 
             display: none
             padding: 0
+        &-blocking 
+            display: none
+            padding: 10px 35px 20px
     &__arrow 
         display: none
     &__footer 
@@ -961,6 +976,27 @@ body
         padding: 20px 25px
         &-btn 
             margin: 30px 25px
+    &__top 
+        display: flex
+        justify-content: center
+        &-title 
+            position: relative
+            font: 600 16px/25px 'Inter', 'sans-serif'
+            letter-spacing: 0.02em
+            color: var(--Neutext)
+        &-icon 
+            position: absolute
+            top: 0
+            right: -35px
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 20px
+        font: 400 14px/22px 'Inter', 'sans-serif'
+        letter-spacing: 0.02em
+        color: var(--Neutext)
+        &-center 
+            text-align: center
 .logo 
     position: relative
     display: flex
