@@ -1158,6 +1158,57 @@ body {
   display: none;
   padding: 10px 35px 20px;
 }
+.hiro__block-remember {
+  display: none;
+}
+.hiro__block-newpassword {
+  display: none;
+  padding: 10px 25px 20px;
+}
+.hiro__list {
+  padding-left: 35px;
+}
+.hiro__list li {
+  list-style: disc;
+}
+.hiro__password {
+  position: relative;
+}
+.hiro__password-error .hiro__password-input {
+  border: 1px solid var(--Red-error);
+}
+.hiro__password-error .hiro__password-text-error {
+  width: 300px;
+}
+.hiro__password-input {
+  margin-bottom: 0;
+  transition: border 0.3s ease;
+}
+.hiro__password-text {
+  font: 400 14px/16px "Inter", "sans-serif";
+  color: var(--Neutext);
+}
+.hiro__password-text-error {
+  width: 0;
+  height: 16px;
+  font: 400 14px/16px "Inter", "sans-serif";
+  color: var(--Red-error);
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.hiro__password-text-noerror {
+  width: 300px;
+  color: var(--Neutext);
+}
+.hiro__password-btn {
+  display: none;
+  width: 140px;
+  margin: 0 auto;
+}
+.hiro__password-footer {
+  height: 56px;
+}
 .hiro__arrow {
   display: none;
 }
@@ -1208,6 +1259,34 @@ body {
 }
 .hiro__content-center {
   text-align: center;
+}
+.hiro__content span {
+  font-weight: 600;
+}
+.hiro__content-list {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.hiro__line {
+  display: flex;
+  gap: 12px;
+  padding: 6px 0;
+}
+.hiro__line-item {
+  flex: 0 0 calc(25% - 9px);
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--White);
+  transition: background-color 0.3s ease;
+}
+.hiro__line-error {
+  background-color: var(--Red-error);
+}
+.hiro__line-orange {
+  background-color: var(--Orange);
+}
+.hiro__line-success {
+  background-color: var(--Success);
 }
 
 .logo {

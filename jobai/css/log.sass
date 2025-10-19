@@ -955,6 +955,45 @@ body
         &-blocking 
             display: none
             padding: 10px 35px 20px
+        &-remember 
+            display: none
+        &-newpassword 
+            display: none
+            padding: 10px 25px 20px
+    &__list 
+        padding-left: 35px
+        & li 
+            list-style: disc
+    &__password
+        position: relative
+        &-error 
+            & .hiro__password-input
+                border: 1px solid var(--Red-error)
+            & .hiro__password-text-error 
+                width: 300px
+        &-input 
+            margin-bottom: 0
+            transition: border 0.3s ease
+        &-text 
+            font: 400 14px/16px 'Inter', 'sans-serif'
+            color: var(--Neutext)
+            &-error 
+                width: 0
+                height: 16px
+                font: 400 14px/16px 'Inter', 'sans-serif'
+                color: var(--Red-error)
+                overflow: hidden
+                white-space: nowrap
+                transition: all 0.3s ease
+            &-noerror 
+                width: 300px
+                color: var(--Neutext)
+        &-btn 
+            display: none
+            width: 140px
+            margin: 0 auto
+        &-footer 
+            height: 56px
     &__arrow 
         display: none
     &__footer 
@@ -997,6 +1036,27 @@ body
         color: var(--Neutext)
         &-center 
             text-align: center
+        & span 
+            font-weight: 600
+        &-list 
+            padding-left: 15px
+            padding-right: 15px
+    &__line 
+        display: flex
+        gap: 12px
+        padding: 6px 0
+        &-item 
+            flex: 0 0 calc(25% - 9px)
+            height: 8px
+            border-radius: 4px
+            background-color: var(--White)
+            transition: background-color 0.3s ease
+        &-error 
+            background-color: var(--Red-error)
+        &-orange 
+            background-color: var(--Orange)
+        &-success
+            background-color: var(--Success)
 .logo 
     position: relative
     display: flex

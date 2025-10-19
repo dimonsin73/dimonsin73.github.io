@@ -416,6 +416,20 @@ for (let i = 0; i < tariffsCurrencyTotalArray.length; i++) {
         }
     })
 }
+const hiroWrapper = document.querySelector('.hiro__wrapper')
+const hiroArrow = document.querySelector('.hiro__arrow')
+const hiroBlockExample = document.querySelector('.hiro__block-example')
+hiroWrapper.addEventListener('scroll', function() {
+    if (hiroBlockFirst.style.display != 'none') {
+        hiroArrow.classList.add('hiro__arrow-hide')
+        hiroBlockExample.classList.add('hiro__block-example-up')
+        if (hiroWrapper.scrollTop === 0) {
+            hiroArrow.classList.remove('hiro__arrow-hide')
+            hiroBlockExample.classList.remove('hiro__block-example-up')
+        } 
+    }
+    
+})
 // Регистрация/Авторизация 
 const role = document.querySelector('#role')
 const hiroBtnFirst = document.querySelector('.hiro__btn-first')
@@ -427,14 +441,21 @@ const hiroBtnFourthPrevArray = document.querySelectorAll('.hiro__btn-fourth-prev
 const hiroBtnFourthNextArray = document.querySelectorAll('.hiro__btn-fourth-next')
 const hiroBtnFifthhPrevArray = document.querySelectorAll('.hiro__btn-fifth-prev')
 const hiroBtnFifthNextArray = document.querySelectorAll('.hiro__btn-fifth-next')
-const hiroBtnRestart = document.querySelectorAll('.hiro__btn-restart')
+const hiroBtnRestartArray = document.querySelectorAll('.hiro__btn-restart')
+const neumorphicRememberArray = document.querySelectorAll('.neumorphic-remember')
+const hiroBtnResetArray = document.querySelectorAll('.hiro__btn-reset')
+const hiroBtnNoResetArray = document.querySelectorAll('.hiro__btn-noreset')
+const hiroBtnNewpassword = document.querySelector('.hiro__btn-newpassword')
 
+const hiroBlockSearch = document.querySelector('.hiro__block-search')
 const hiroBlockFirst = document.querySelector('.hiro__block-first')
 const hiroBlockSecondArray = document.querySelectorAll('.hiro__block-second')
 const hiroBlockThirdArray = document.querySelectorAll('.hiro__block-third')
 const hiroBlockFourthArray = document.querySelectorAll('.hiro__block-fourth')
 const hiroBlockFifthArray = document.querySelectorAll('.hiro__block-fifth')
 const hiroBlockBlockingArray = document.querySelectorAll('.hiro__block-blocking')
+const hiroBlockRememberArray = document.querySelectorAll('.hiro__block-remember')
+const hiroBlockNewpassword = document.querySelector('.hiro__block-newpassword')
 
 hiroBtnFirst.addEventListener('click', function(){
     const radioInputArray = hiroBtnFirst.parentElement.querySelectorAll('.radio__input')
@@ -541,7 +562,7 @@ for (let i = 0; i < hiroBtnThirdNextArray.length; i++) {
     const hiroBtnThirdNext = hiroBtnThirdNextArray[i];
     hiroBtnThirdNext.addEventListener('click', function(){
         const inputThird = hiroBtnThirdNext.parentElement.parentElement.querySelector('.neumorphic-input')
-        if (inputThird.value != 0) {
+        if (inputThird.value.length != 0) {
             for (let i = 0; i < hiroBlockThirdArray.length; i++) {
                 const hiroBlockThird = hiroBlockThirdArray[i];
                 hiroBlockThird.style.display = 'none'
@@ -633,8 +654,9 @@ for (let i = 0; i < hiroBtnFifthNextArray.length; i++) {
     const hiroBtnFifthNext = hiroBtnFifthNextArray[i];
     hiroBtnFifthNext.addEventListener('click', function(){
         const inputFifth = hiroBtnFifthNext.parentElement.parentElement.querySelector('.neumorphic-input')
-        if (inputFifth.value != 0) {
+        if (inputFifth.value.length != 0) {
             const dataBlock = hiroBtnFifthNext.dataset.block
+            hiroBlockSearch.style.display = 'none'
             for (let i = 0; i < hiroBlockBlockingArray.length; i++) {
                 const hiroBlockBlocking = hiroBlockBlockingArray[i];
                 if (hiroBlockBlocking.dataset.block === dataBlock) {
@@ -673,12 +695,76 @@ for (let i = 0; i < hiroBtnFifthNextArray.length; i++) {
         }
     })
 }
-for (let i = 0; i < hiroBlockBlockingArray.length; i++) {
-    const hiroBlockBlocking = hiroBlockBlockingArray[i];
-    hiroBlockBlocking.addEventListener('click', function(){
+for (let i = 0; i < hiroBtnRestartArray.length; i++) {
+    const hiroBtnRestart = hiroBtnRestartArray[i];
+    hiroBtnRestart.addEventListener('click', function(){
         location.reload()
     })
 }
+for (let i = 0; i < neumorphicRememberArray.length; i++) {
+    const neumorphicRemember = neumorphicRememberArray[i];
+    neumorphicRemember.addEventListener('click', function(){
+        for (let i = 0; i < hiroBlockFifthArray.length; i++) {
+            const hiroBlockFifth = hiroBlockFifthArray[i];
+            hiroBlockFifth.style.display = 'none'
+        }
+        hiroBlockSearch.style.display = 'none'
+        const dataRemember = neumorphicRemember.dataset.block
+        for (let i = 0; i < hiroBlockRememberArray.length; i++) {
+            const hiroBlockRemember = hiroBlockRememberArray[i];
+            if (hiroBlockRemember.dataset.block === dataRemember) {
+                hiroBlockRemember.style.display = 'flex'
+            }
+        }
+    })
+}
+for (let i = 0; i < hiroBtnResetArray.length; i++) {
+    const hiroBtnReset = hiroBtnResetArray[i];
+    hiroBtnReset.addEventListener('click', function(){
+        const passwordRecovery = hiroBtnReset.parentElement.parentElement.querySelector('.neumorphic-input')
+        if (passwordRecovery.value.length != 0) {
+            for (let i = 0; i < hiroBlockRememberArray.length; i++) {
+                const hiroBlockRemember = hiroBlockRememberArray[i];
+                if (hiroBlockRemember.dataset.block === 'remember-finish') {
+                    hiroBlockRemember.style.display = 'flex'
+                } else {
+                    hiroBlockRemember.style.display = 'none'
+                }
+            }
+        } else {
+            passwordRecovery.classList.add('neumorphic-input-error')
+        }
+    })
+}
+
+for (let i = 0; i < hiroBtnNoResetArray.length; i++) {
+    const hiroBtnNoReset = hiroBtnNoResetArray[i];
+    hiroBtnNoReset.addEventListener('click', function(){
+        for (let i = 0; i < hiroBlockRememberArray.length; i++) {
+            const hiroBlockRemember = hiroBlockRememberArray[i];
+            hiroBlockRemember.style.display = 'none'
+        }
+        hiroBlockSearch.style.display = 'flex'
+        const dataNoreset = hiroBtnNoReset.dataset.prev
+        for (let i = 0; i < hiroBlockFifthArray.length; i++) {
+            const hiroBlockFifth = hiroBlockFifthArray[i];
+            if (hiroBlockFifth.dataset.block === dataNoreset) {
+                hiroBlockFifth.style.display = 'flex'
+            } else {
+                hiroBlockFifth.style.display = 'none'
+            }
+        }
+    })
+}
+hiroBtnNewpassword.addEventListener('click', function(){
+    for (let i = 0; i < hiroBlockRememberArray.length; i++) {
+        const hiroBlockRemember = hiroBlockRememberArray[i];
+        hiroBlockRemember.style.display = 'none'
+    }
+    hiroBlockNewpassword.style.display = 'flex'
+})
+
+
 const neumorphicInputArray = document.querySelectorAll('.neumorphic-input')
 for (let i = 0; i < neumorphicInputArray.length; i++) {
     const neumorphicInput = neumorphicInputArray[i];
@@ -720,20 +806,7 @@ function timerFun(timer, neumorphicCode, neumorphicNewcode) {
     }, 60000)
 }
 
-const hiroWrapper = document.querySelector('.hiro__wrapper')
-const hiroArrow = document.querySelector('.hiro__arrow')
-const hiroBlockExample = document.querySelector('.hiro__block-example')
-hiroWrapper.addEventListener('scroll', function() {
-    if (hiroBlockFirst.style.display != 'none') {
-        hiroArrow.classList.add('hiro__arrow-hide')
-        hiroBlockExample.classList.add('hiro__block-example-up')
-        if (hiroWrapper.scrollTop === 0) {
-            hiroArrow.classList.remove('hiro__arrow-hide')
-            hiroBlockExample.classList.remove('hiro__block-example-up')
-        } 
-    }
-    
-})
+
 const neumorphicPasswordArray = document.querySelectorAll('.neumorphic-password')
 for (let i = 0; i < neumorphicPasswordArray.length; i++) {
     const neumorphicPassword = neumorphicPasswordArray[i];
@@ -747,3 +820,131 @@ for (let i = 0; i < neumorphicPasswordArray.length; i++) {
         }
     })
 }
+// Поля ввода
+const password = document.getElementById('password')
+const passwordSecond = document.getElementById('password-repeat')
+const hiroPassword = password.parentElement
+const hiroPasswordRepeat = passwordSecond.parentElement
+const hiroPasswordTextError = document.querySelector('.hiro__password-text-error')
+const hiroPasswordSave = document.querySelector('.hiro__password-save')
+const hiroPasswordReset = document.querySelector('.hiro__password-reset')
+// Проверка надёжности пароля
+password.addEventListener('input', function(){
+    const hiroLine = password.nextSibling
+    const hiroLineItemArr = hiroLine.children
+    attributLineAddColor(password, hiroLineItemArr)
+    passwordComparison()
+})
+passwordSecond.addEventListener('input', function(){
+    const hiroLine = passwordSecond.nextSibling
+    const hiroLineItemArr = hiroLine.children
+    attributLineAddColor(passwordSecond, hiroLineItemArr)
+    passwordComparison()
+})
+// Ф-ия очистки цветов
+function attributLineRemoveColor(element) {
+    element.classList.remove('hiro__line-orange')
+    element.classList.remove('hiro__line-success')
+    element.classList.remove('hiro__line-error')
+}
+// Ф-ция окрашивания 
+function attributLineAddColor(password, hiroLineItemArr) {
+    if (password.value.length < 16) {
+        for (let i = 0; i < hiroLineItemArr.length; i++) {
+            const element = hiroLineItemArr[i];
+            attributLineRemoveColor(element)
+        }
+        for (let i = 0; i < hiroLineItemArr.length; i++) {
+            const element = hiroLineItemArr[i];
+            element.classList.add('hiro__line-success')
+        }
+    }
+    if (password.value.length < 14) {
+        for (let i = 0; i < hiroLineItemArr.length; i++) {
+            const element = hiroLineItemArr[i];
+            attributLineRemoveColor(element)
+        }
+        for (let i = 0; i < 3; i++) {
+            const element = hiroLineItemArr[i];
+            element.classList.add('hiro__line-success')
+        }
+    }
+    if (password.value.length < 12) {
+        for (let i = 0; i < hiroLineItemArr.length; i++) {
+            const element = hiroLineItemArr[i];
+            attributLineRemoveColor(element)
+        }
+        for (let i = 0; i < 2; i++) {
+            const element = hiroLineItemArr[i];
+            element.classList.add('hiro__line-orange')
+        }
+    }
+    if (password.value.length < 8) {
+        for (let i = 0; i < hiroLineItemArr.length; i++) {
+            const element = hiroLineItemArr[i];
+            attributLineRemoveColor(element)
+        }
+        for (let i = 0; i < 1; i++) {
+            const element = hiroLineItemArr[i];
+            element.classList.add('hiro__line-error')
+        }
+    }
+    if (password.value.length === 0) {
+        for (let i = 0; i < hiroLineItemArr.length; i++) {
+            const element = hiroLineItemArr[i];
+            attributLineRemoveColor(element)
+        }
+    }
+}
+// Ф-ция проверки совпадения паролей
+function passwordComparison() {
+    if (passwordSecond.value.length === 0) {
+        hiroPasswordRepeat.classList.remove('hiro__password-error')
+    } else {
+        if (passwordSecond.value != password.value) {
+            hiroPasswordRepeat.classList.add('hiro__password-error')
+            const hiroLine = passwordSecond.nextSibling
+            const hiroLineItemArr = hiroLine.children
+            for (let i = 0; i < hiroLineItemArr.length; i++) {
+                const element = hiroLineItemArr[i];
+                attributLineRemoveColor(element)
+            }
+            for (let i = 0; i < 2; i++) {
+                const element = hiroLineItemArr[i];
+                element.classList.add('hiro__line-error')
+            }
+            hiroPasswordTextError.textContent = 'Пароли не совпадают'
+            hiroPasswordTextError.classList.remove('hiro__password-text-noerror')
+            hiroPasswordReset.style.display = 'flex'
+            hiroPasswordSave.style.display = 'none'
+        } else {
+            hiroPasswordRepeat.classList.remove('hiro__password-error')
+            hiroPasswordTextError.textContent = 'Пароли совпадают'
+            hiroPasswordTextError.classList.add('hiro__password-text-noerror')
+            hiroPasswordReset.style.display = 'none'
+            if (password.value.length > 7) {
+                hiroPasswordSave.style.display = 'flex'
+            } else {
+                hiroPasswordSave.style.display = 'none'
+            }
+        }
+    }
+}
+// Функция очистки полей 
+hiroPasswordReset.addEventListener('click', function(){
+    password.value = ''
+    passwordSecond.value = ''
+    const hiroLine = password.nextSibling
+    const hiroLineItemArr = hiroLine.children
+    for (let i = 0; i < hiroLineItemArr.length; i++) {
+        const element = hiroLineItemArr[i];
+        attributLineRemoveColor(element)
+    }
+    const hiroLine2 = passwordSecond.nextSibling
+    const hiroLineItemArr2 = hiroLine2.children
+    for (let i = 0; i < hiroLineItemArr2.length; i++) {
+        const element = hiroLineItemArr2[i];
+        attributLineRemoveColor(element)
+    }
+    hiroPasswordRepeat.classList.remove('hiro__password-error')
+})

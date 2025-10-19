@@ -229,7 +229,7 @@ html(lang="ru")
                         button(type="button").neumorphic-password
                         input(type='password', placeholder="Введите пароль", name='avtorizaciya-email-password').neumorphic-input
                         p.neumorphic-error Неверный пароль
-                        button(type="button").neumorphic-remember Не помню пароль
+                        button(type="button", data-block='remember-email').neumorphic-remember Не помню пароль
                     .hiro__block-footer
                         button(type="button", data-block='blocking-email').hiro__btn.hiro__btn-fifth-next.neumorphic.neumorphic-button Дальше
                         button(type="button", data-prev='avtorizaciya-email-enter').hiro__btn.hiro__btn-fifth-prev.neumorphic.neumorphic-button Назад
@@ -244,7 +244,7 @@ html(lang="ru")
                         button(type="button").neumorphic-password
                         input(type='password', placeholder="Введите пароль", name='avtorizaciya-tel-password').neumorphic-input
                         p.neumorphic-error Неверный пароль
-                        button(type="button").neumorphic-remember Не помню пароль
+                        button(type="button", data-block='remember-tel').neumorphic-remember Не помню пароль
                     .hiro__block-footer
                         button(type="button", data-block='blocking-tel').hiro__btn.hiro__btn-fifth-next.neumorphic.neumorphic-button Дальше
                         button(type="button", data-prev='avtorizaciya-tel-enter').hiro__btn.hiro__btn-fifth-prev.neumorphic.neumorphic-button Назад
@@ -287,6 +287,70 @@ html(lang="ru")
                             p Вы можете повторить вход по истечению периода блокировки или использовать другой номер телефона
                     button(type="button").hiro__btn-restart.neumorphic.neumorphic-button Начать сначала
 
+                .hiro__block.hiro__block-remember.neumorphic(data-block='remember-email')
+                    .hiro__top 
+                        .hiro__top-title Восстановление пароля 
+                    .neumorphic-label
+                        input(type='email', placeholder="Введите электронную почту", name='password-recovery').neumorphic-input
+                        p.neumorphic-error Обязательное поле 
+                    .hiro__block-footer
+                        button(type="button").hiro__btn.hiro__btn-reset.neumorphic.neumorphic-button Сбросить
+                        button(type="button", data-prev='avtorizaciya-email-password').hiro__btn.hiro__btn-noreset.neumorphic.neumorphic-button Назад
+                .hiro__block.hiro__block-remember.neumorphic(data-block='remember-tel')
+                    .hiro__top 
+                        .hiro__top-title Восстановление пароля 
+                    .neumorphic-label
+                        input(type='email', placeholder="Введите электронную почту", name='password-recovery').neumorphic-input
+                        p.neumorphic-error Обязательное поле 
+                    .hiro__block-footer
+                        button(type="button").hiro__btn.hiro__btn-reset.neumorphic.neumorphic-button Сбросить
+                        button(type="button", data-prev='avtorizaciya-tel-password').hiro__btn.hiro__btn-noreset.neumorphic.neumorphic-button Назад
+                .hiro__block.hiro__block-remember.neumorphic(data-block='remember-finish')
+                    .hiro__top 
+                        .hiro__top-title Восстановление пароля 
+                    .hiro__content 
+                        .hiro__content-item
+                            p.hiro__content-center Проверьте свою электронную почту 
+                            p.hiro__content-center d.p.mezentsev@job-ai.ru
+                        p.hiro__content-center 
+                            | Отправили ссылку для создания <br>
+                            span нового 
+                            | пароля
+                    .hiro__block-footer
+                        button(type="button").hiro__btn.hiro__btn-newpassword.neumorphic.neumorphic-button Понятно
+
+                .hiro__block.hiro__block-newpassword.neumorphic
+                    .hiro__top 
+                        h2.hiro__top-title Создайте новый пароль
+                    .hiro__content 
+                        .hiro__content-item.hiro__content-list
+                            p Рекомендуемая сложность пароля:
+                            ul.hiro__list 
+                                li.hiro__list-item одна цифра
+                                li.hiro__list-item одна строчная буква
+                                li.hiro__list-item одна прописная буква
+                                li.hiro__list-item один специалный знак
+                    .hiro__password 
+                        button(type="button").neumorphic-password
+                        input(type='password', placeholder="Введите пароль", name='password', maxlength='15').neumorphic-input.hiro__password-input#password
+                        .hiro__line
+                            .hiro__line-item
+                            .hiro__line-item
+                            .hiro__line-item
+                            .hiro__line-item
+                        p.hiro__password-text Не менее 8 и не более 15 символов
+                    .hiro__password 
+                        button(type="button").neumorphic-password
+                        input(type='password', placeholder="Повторите пароль", name='password', maxlength='15').neumorphic-input.hiro__password-input#password-repeat
+                        .hiro__line
+                            .hiro__line-item
+                            .hiro__line-item
+                            .hiro__line-item
+                            .hiro__line-item
+                        p.hiro__password-text-error 
+                    .hiro__password-footer
+                        button(type="button").hiro__password-btn.hiro__password-save.neumorphic.neumorphic-button Сохранить
+                        button(type="button").hiro__password-btn.hiro__password-reset.neumorphic.neumorphic-button Повторить
 
                 .hiro__arrow
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
