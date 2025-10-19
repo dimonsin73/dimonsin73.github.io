@@ -1101,6 +1101,9 @@ body {
 .hiro__block-example-btn {
   margin-top: 5px;
 }
+.hiro__block-example-hide {
+  display: none;
+}
 .hiro__block-title {
   font: 600 16px/22px "Inter", "sans-serif";
   letter-spacing: 0.02em;

@@ -458,7 +458,7 @@ hiroBtnFirst.addEventListener('click', function(){
             role.disabled = true
             hiroBlockFirst.style.display = 'none'
             hiroArrow.classList.add('hiro__arrow-hide')
-            hiroBlockExample.style.display = 'none'
+            hiroBlockExample.classList.add('hiro__block-example-hide')
         }
     }
 })
@@ -477,7 +477,7 @@ for (let i = 0; i < hiroBtnSecondPrevArray.length; i++) {
         }
         role.disabled = false
         hiroArrow.classList.remove('hiro__arrow-hide')
-        hiroBlockExample.style.display = 'flex'
+        hiroBlockExample.classList.remove('hiro__block-example-hide')
     })
 }
 for (let i = 0; i < hiroBtnSecondNextArray.length; i++) {
@@ -691,7 +691,7 @@ const hiroArrow = document.querySelector('.hiro__arrow')
 const hiroBlockExample = document.querySelector('.hiro__block-example')
 hiroWrapper.addEventListener('scroll', function() {
     if (hiroBlockFirst.style.display != 'none') {
-       hiroArrow.classList.add('hiro__arrow-hide')
+        hiroArrow.classList.add('hiro__arrow-hide')
         hiroBlockExample.classList.add('hiro__block-example-up')
         if (hiroWrapper.scrollTop === 0) {
             hiroArrow.classList.remove('hiro__arrow-hide')
