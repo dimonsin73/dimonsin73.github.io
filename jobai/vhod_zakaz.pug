@@ -1,0 +1,30 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Панель
+        link(rel="stylesheet", href="css/reset.css")
+        link(rel="stylesheet", href="css/fonts.css")
+        link(rel="stylesheet", href="css/panel.css")
+        script(src="js/vhod.js" defer) 
+    body.bg
+        .hiro 
+            .hiro__wrapper
+                .logo 
+                    p.logo__job JOB 
+                    p.logo__job.logo__job-white AI 
+                    .logo__r 
+                        img(src="images/icons/r.png", alt="R")
+                .hiro__fly
+                    .hiro__title Панель (заказа / записи)
+                    form.hiro__block.neumorphic.hiro__form
+                        .neumorphic-label
+                            input(type="text", name="login", placeholder="Введите логин").neumorphic-input#login
+                            p.neumorphic-error Логин не существует
+                        .neumorphic-label
+                            button(type="button").neumorphic-password
+                            input(type="password", name="password", placeholder="Введите пароль").neumorphic-input#password
+                            p.neumorphic-error Не верный пароль
+                        button(type="submit").neumorphic.neumorphic-button.hiro__block-btn Войти
+        

@@ -354,6 +354,7 @@ sectionBack.addEventListener('click', function(){
         const sectionWrapper = sectionWrapperArray[i];
         if (sectionWrapper.dataset.tariffs === '1') {
             sectionWrapper.style.display = 'flex'
+            title.textContent = 'Тарифы'
         } else {
             sectionWrapper.style.display = 'none'
         }

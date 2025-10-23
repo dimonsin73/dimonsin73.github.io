@@ -128,6 +128,8 @@
             max-width: 1920px
     &_medium
         max-width: 1090px
+    &_tablet 
+        max-width: 905px
     &_small 
         max-width: 726px
     &_extrasmall
@@ -619,6 +621,8 @@
     display: flex
     align-items: center
     column-gap: 13px
+    max-width: 500px
+    margin: 0 17px
     &__input 
         appearance: none
         max-width: 666px
@@ -897,11 +901,13 @@
     &_small
         grid-template-columns: repeat(2, 1fr)
 .tab 
+    position: relative
     display: flex
     flex-direction: column
     align-items: flex-start
     gap: 12px
     padding: 12px
+    border: 1px solid var(--White)
     border-radius: 12px
     box-shadow: 0px 1px 8px 0px #0000001A
     background-color: var(--White)
@@ -936,8 +942,22 @@
         transition: color 0.3s ease
     &:disabled
         opacity: 0.5
+        &:hover 
+            border: 1px solid var(--White)
+        &::after
+            content: ""
+            position: absolute
+            top: 0
+            right: 0
+            width: 52px
+            height: 44px
+            background-image: url(../images/coming_soon.png)
+            background-repeat: no-repeat
+            background-position: top 10px right 12px
+            background-size: 42px 34px
+            z-index: 100
     &_active 
-        box-shadow: 0px 2px 16px 0px #00000033
+        border: 1px solid var(--Primary-40)
         & .tab__icon 
             & path 
                 fill: var(--Primary-40)
@@ -1164,6 +1184,10 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         flex-direction: column
         gap: 24px
+    &__g16
+        display: flex
+        flex-direction: column
+        gap: 16px
     &__form 
         display: flex
         flex-direction: column
@@ -1235,6 +1259,8 @@ input[type=number]::-webkit-outer-spin-button
                 size: 24px 24px
         &-p24 
             padding: 24px
+        &-p105 
+            padding: 20px 105px
     &__experiences
         display: flex
         flex-direction: column
@@ -1668,7 +1694,6 @@ input[type=number]::-webkit-outer-spin-button
         flex-direction: column
         gap: 16px
         margin-bottom: 24px
-        padding: 0  40px 0 12px
         &-title 
             @include subtitle-medium
             color: var(--Gray-40)
@@ -1699,11 +1724,15 @@ input[type=number]::-webkit-outer-spin-button
         flex-direction: column 
         gap: 2px
         &-input 
+            border: 1px solid var(--Black)  
             @include body-large
             color: var(--Gray-30)
+            &:focus 
+                background-color: var(--Gray-100)
+                outline: none
         &-center 
             align-items: center
-        &-period 
+        &-peri
             width: 110px
             margin-left: 60px
     &__tariffs 
@@ -1791,6 +1820,21 @@ input[type=number]::-webkit-outer-spin-button
                 font-weight: 700
         & svg 
             margin: 0 auto
+    &__banner
+        display: flex
+        flex-direction: column
+        gap: 10px
+        padding: 9px 105px
+        border: 1px solid #A3B1C6
+        border-radius: 12px
+        background-color: var(--White)
+        &-title 
+            font: 500 14px / 16px "Inter", "sans-serif"
+            letter-spacing: -0.1px
+            color: var(--Gray-40)
+            text-align: center
+            & span 
+                font-weight: 700
 #tariffs-sale
     width: 126px
 #payment-for-period 
@@ -1906,3 +1950,34 @@ input[type=number]::-webkit-outer-spin-button
             text-align: center
     &__span 
         font-weight: 600
+@media (max-width: 1023px)
+    .section
+        &__wrapper 
+            &-p105 
+                padding: 12px 14px
+        &__tariffs 
+            grid-template-columns: auto
+            gap: 8px
+            margin-bottom: 12px
+            padding-bottom: 25px
+        &__banner
+            padding: 9px 6px
+        &__col1 
+            gap: 8px
+        &__access
+            gap: 6px
+            width: 110px
+            margin: 0 auto
+            &-input 
+                border: 1px solid var(--Black)
+        &__form 
+            gap: 8px
+        &__tariffs1 
+            grid-template-columns: auto 80px
+            gap: 15px 20px
+            &-span 
+                grid-column: span 2
+                margin: 0 auto 26px
+    .tabs 
+        gap: 6px
+    #tariffs-sale 

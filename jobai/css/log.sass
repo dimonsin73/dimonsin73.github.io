@@ -1509,17 +1509,19 @@ body
         &-item 
             display: flex
             flex-direction: column
-            gap: 8px
-        &.docum__about 
-            gap: 30px
+            gap: 15px
         &-map 
-            width: 650px
-            height: 344px
-            margin: 0 auto 30px
+            width: 674px
+            height: 358px
             border-radius: 12px 
         &-part 
             display: flex
             flex-direction: column
+        &-part2
+            display: grid
+            grid-template-columns: 120px 120px
+            gap: 10px 20px
+
         &-title 
             font: 700 30px/38px 'Inter', 'sans-serif'
             letter-spacing: -0.2px
@@ -1550,6 +1552,59 @@ body
             font: 600 18px/22px 'Inter', 'sans-serif'
             letter-spacing: -0.1px
             color: var(--Black)
+    &__about 
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        align-items: flex-start
+        gap: 40px 20px
+        padding-top: 50px
+        &-info 
+            display: grid
+            grid-template-columns: 220px 200px
+            gap: 38px 15px
+            width: 435px
+        &-description
+            width: 550px
+            font: 400 12px/20px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            & span 
+                font-weight: 600
+        &-contacts
+            width: 310px
+        &-hitem 
+            grid-column: span 2
+            display: flex
+            align-items: center
+            gap: 8px
+        &-item 
+            display: flex
+            align-items: center
+            gap: 6px
+        &-title 
+            display: flex
+            align-items: center
+            gap: 6px
+            font: 500 18px/23px "Inter", 'sans-serif'
+            letter-spacing: -0.1px
+        &-text 
+            font: 400 16px/20px "Inter", 'sans-serif'
+            letter-spacing: -0.1px
+        &-img 
+            width: 30px
+            height: 20px
+            border: 0.5px solid #898990
+        &-language 
+            display: flex
+            align-items: center
+            gap: 6px
+        &-link 
+            padding-left: 28px
+            font: 400 16px/20px 'Inter', 'sans-serif'
+            letter-spacing: 0.02em
+            color: var(--Primary-50)
+        &-refresh 
+            animation: refresh 2s infinite normal linear 0s
     &__btn 
         width: 300px
         margin: 0 auto
@@ -2909,3 +2964,14 @@ body
                 font-size: 12px
             & .itc-slider-bottom 
                 height: max-content
+@keyframes refresh 
+    from 
+        transform: rotate(0)
+    25%
+        transform: rotate(-90deg)
+    50% 
+        transform: rotate(-180deg)
+    75% 
+        transform: rotate(-270deg)
+    to 
+        transform: rotate(-360deg)
