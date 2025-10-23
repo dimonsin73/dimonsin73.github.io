@@ -1466,6 +1466,8 @@ body
             max-width: 1670px
         &-small
             max-width: 756px
+        &-tablet 
+            max-width: 905px
         &-active 
             display: flex
     &__other
@@ -1509,6 +1511,7 @@ body
         &-item 
             display: flex
             flex-direction: column
+            justify-content: space-between
             gap: 15px
         &-map 
             width: 674px
@@ -1521,7 +1524,6 @@ body
             display: grid
             grid-template-columns: 120px 120px
             gap: 10px 20px
-
         &-title 
             font: 700 30px/38px 'Inter', 'sans-serif'
             letter-spacing: -0.2px
@@ -1552,6 +1554,15 @@ body
             font: 600 18px/22px 'Inter', 'sans-serif'
             letter-spacing: -0.1px
             color: var(--Black)
+        &-chat 
+            grid-column: span 2
+            &-title 
+                margin-bottom: 6px
+                font: 500 14px/20px 'Inter', 'sans-serif'
+    &__us 
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: max-content auto
     &__about 
         display: flex
         flex-direction: row
@@ -1577,6 +1588,13 @@ body
             display: flex
             align-items: center
             gap: 8px
+            font: 600 20px/20px 'Inter', 'sans-serif'
+            letter-spacing: -0.1px
+            color: var(--Black)
+            span 
+                position: relative
+                top: -8px
+                font-size: 10px
         &-item 
             display: flex
             align-items: center
@@ -1590,14 +1608,55 @@ body
         &-text 
             font: 400 16px/20px "Inter", 'sans-serif'
             letter-spacing: -0.1px
-        &-img 
+        &-language 
+            position: relative
+            display: flex
+            flex-direction: column
+            align-items: center
             width: 30px
             height: 20px
-            border: 0.5px solid #898990
-        &-language 
-            display: flex
-            align-items: center
-            gap: 6px
+            outline: 0.5px solid #898990
+            background: 
+                image: url(../images/language/ru.png)
+                position: center center 
+                repeat: no-repeat 
+                size: cover
+            cursor: pointer
+            &::after
+                content: ""
+                position: absolute
+                top: 50%
+                right: -20px
+                width: 13px
+                height: 6px
+                background: 
+                    image: url(../images/icons/dropdown.png)
+                    position: center center 
+                    repeat: no-repeat 
+                    size: 13px
+                transform: translateY(-50%)
+        &-dropdown 
+            position: absolute
+            top: 20px
+            height: 0
+            overflow: hidden
+            transition: height 0.3s ease
+            z-index: 10
+            &-active
+                height: 60px
+        &-option
+            width: 30px
+            height: 20px
+            background: 
+                position: center center 
+                size: 30px 
+                repeat: no-repeat 
+        &-option1 
+            background-image: url(../images/language/ru.png)
+        &-option2
+            background-image: url(../images/language/uk.png)
+        &-option3
+            background-image: url(../images/language/usa.png)
         &-link 
             padding-left: 28px
             font: 400 16px/20px 'Inter', 'sans-serif'
@@ -1612,19 +1671,14 @@ body
         width: 300px
         margin: 0 auto
     &__chatbtn 
+        display: none
         margin: 0 auto
     &__chat 
-        position: absolute
-        top: 70px
-        bottom: 15px
-        right: 50px
-        left: 50px
-        display: none
+        display: flex
         flex-direction: column
         align-items: center
         gap: 15px
-        &-active 
-            display: flex
+        height: calc(100% - 26px)
         &-wrapper 
             display: flex
             flex-direction: column
@@ -1658,6 +1712,7 @@ body
             position: absolute
             top: 12px
             right: 12px
+            display: none
             width: 35px
             height: 35px
             border-radius: 12px
@@ -1666,6 +1721,31 @@ body
                 image: url('../images/icons/close_24.png')
                 repeat: no-repeat 
                 position: center center
+        &-message 
+            position: absolute
+            top: 12px
+            right: 12px
+            width: 35px
+            height: 35px
+            border-radius: 12px
+            background: 
+                image: url('../images/icons/message.png')
+                repeat: no-repeat 
+                position: center center
+            & p
+                position: absolute
+                top: 0
+                right: 0
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 1px 4.5px
+                border: 1px solid var(--White)
+                border-radius: 50%
+                background-color: var(--Primary-50)
+                font: 700 11px/12px "Inter", 'sans-serif'
+                letter-spacing: 0.01em
+                color: var(--White)
         &-date 
             width: 110px
             height: 30px
@@ -1701,6 +1781,8 @@ body
             letter-spacing: -0.1px
             color: var(--Black)
             text-align: right
+        &-new 
+            border: 1px solid #0095FF
     &__message 
         display: flex
         align-items: center
@@ -1719,7 +1801,7 @@ body
         flex-direction: column
         gap: 10px
         margin-bottom: -5px
-        padding: 9px 15px
+        padding: 9px 90px
         border: 1px solid #A3B1C6
         border-radius: 12px
         background-color: var(--White)
@@ -1750,8 +1832,8 @@ body
         flex-direction: column
         gap: 8px
         height: calc(100vh - 64px - 96px - 20px - 48px - 20px - 22px - 36px - 142px)
-        padding: 20px 25px 45px
-        border: 1px solid #A3B1C6
+        padding: 20px 90px 45px
+        border: 1px solid var(--White)
         border-radius: 12px
         background-color: var(--White)
         overflow-y: auto  
@@ -1784,12 +1866,12 @@ body
         gap: 12px  
     &__tariffs1
         display: grid
-        grid-template-columns: 140px 187px 80px 187px
-        gap: 25px
+        grid-template-columns: 146px 209px 80px 192px
+        gap: 20px
     &__tariffs2
         display: grid
-        grid-template-columns: 146px 184px 80px 184px
-        gap: 25px
+        grid-template-columns: 146px 209px 80px 192px
+        gap: 20px
     &__tariffs3
         display: grid
         grid-template-columns: 80px 370px auto
@@ -1861,10 +1943,10 @@ body
     &__tags 
         display: flex
         align-items: center
-        gap: 14px
+        gap: 13px
     &__tag 
         position: relative
-        flex: 0 0 calc(50% - 7px)
+        flex: 0 0 calc(50% - 6.5px)
         display: flex
         flex-direction: column
         justify-content: flex-start
@@ -1920,9 +2002,17 @@ body
     &:focus 
         background-color: var(--Gray-100)
         outline: none
+#tariffs-price
+    max-width: 192px
 #tariffs-total-price
+    max-width: 192px
     border: 1px solid var(--Black)
     font-weight: 600
+@media (max-width: 1023px)
+    #tariffs-price
+        max-width: 100%
+    #tariffs-total-price
+        max-width: 100%
 .aside 
     position: fixed
     top: 0
@@ -2037,7 +2127,6 @@ body
         display: none
         &-active 
             display: block
-
 @media (max-height: 1044px)
     .hiro 
         &__wrapper 
@@ -2068,6 +2157,16 @@ body
         margin-left: 0
     .aside
         left: -250px
+@media (max-width:1154px)
+    .docum
+        &__content 
+            &-map 
+                width: 543px
+                & iframe 
+                    width: 543px
+        &__about 
+            &-description
+                width: 419px
 @media (max-width:1023px)
     .hiro
         justify-content: flex-start
@@ -2211,54 +2310,48 @@ body
                 left: -220px
             &-right 
                 left: -15px
-    .check 
-        &_circle2
-            & .check__info 
-                max-width: 245px
-            & .check__clue 
-                right: auto
-                left: 5px
-                bottom: 22px
+    
     .docum   
         padding: 20px
+        &__wrapper
+            &-tablet 
         &__top 
             padding: 9px 6px
         &__tags 
-            gap: 6px
+            max-width: 693px
+            width: 100%
+            margin: 0 auto
         &__tag 
             height: 110px
             flex: 0 0 calc(50% - 3px)
-        &__tariffs 
-            &-sale 
-                grid-column: span 2
-                width: 130px
-                margin: 0 auto 26px
-                & input 
-                    font-weight: 600
-            &-percentage 
-                grid-column: span 2
-            &-price 
-                grid-column: span 2
-                width: 190px
-                margin: 0 auto 26px
         &__tariff  
             padding: 12px 14px 45px
             height: calc(85vh - 350px)
+            &-title 
+                max-width: 693px
+                width: 100%
+                margin: 0 auto
         &__tariffs1
-            grid-template-columns: auto 80px 
-            gap: 30px 20px 
+            max-width: 693px
+            width: 100%
+            margin: 0 auto
         &__tariffs2
-            grid-template-columns: auto 80px 
-            gap: 15px 20px 
+            max-width: 693px
+            width: 100%
+            margin: 0 auto
         &__tariffs3
-            grid-template-columns: 80px auto
-            gap: 20px 8px
-            padding-bottom: 32px 
-            border-bottom: 1px solid #DBDDE1
+            max-width: 693px
+            width: 100%
+            margin: 0 auto
         &__col1 
-            grid-template-columns: auto
-            gap: 8px  
-            margin-bottom: 12px
+            max-width: 693px
+            width: 100%
+            margin: 0 auto
+        &__col2 
+            max-width: 693px
+            width: 100%
+            margin: 0 auto
+
         &__access
             gap: 6px
             margin: 0 auto
@@ -2286,7 +2379,14 @@ body
             border: 1px solid var(--Neushadow)
             border-radius: 10px
             &-map 
-                display: none
+                width: 100%
+                height: 400px
+                border: 3px solid #E0E5EC
+                border-radius: 12px
+                order: 0
+                & iframe 
+                    width: 100%
+                    height: 400px
             &-print
                 display: none
             &-download 
@@ -2303,11 +2403,11 @@ body
                 font: 400 10px/16px 'Inter', 'sans-serif'
             &-bold
                 font: 600 16px/20px 'Inter', 'sans-serif'
-        &__about 
-            & .docum__content-item 
-                gap: 30px
-            & .docum__content-item-contacts 
-                gap: 10px
+            &-chat 
+                grid-column: span 1
+                margin-top: auto
+                &-title 
+                    display: none
         &__message 
             &-input 
                 width: 265px
@@ -2317,7 +2417,10 @@ body
             right: 0
             left: 0
             bottom: 0
+            display: none
             z-index: 1000
+            &-active 
+                display: flex
             &::before 
                 content: ''
                 position: fixed
@@ -2340,12 +2443,7 @@ body
                 border-radius: 12px
                 background-color: var(--White)
             &-close
-                top: 8px
-                right: 8px
-                width: 24px
-                height: 24px
-                border-radius: 8px
-                background-size: 16px
+                display: flex
             &-search 
                 top: 10px
                 right: 40px
@@ -2356,9 +2454,10 @@ body
                 height: 100%
                 padding: 10px
                 background-color: var(--White)
-            
+            &-message 
+                right: 60px
             &-date 
-                margin-bottom: 5px
+                margin-bottom: 20px
             &-i 
                 max-width: 250px
             &-interlocutor
@@ -2368,7 +2467,87 @@ body
             height: max-content
             margin: 20px 10px 0
             box-shadow: none
+        &__about 
+            flex-wrap: nowrap
+            flex-direction: column
+            align-items: center
+            gap: 20px
+            &-contacts 
+                gap: 10px
+                width: 100%
+                order: -1
+            &-info 
+                grid-template-columns: 145px 138px
+                justify-content: center
+                gap: 16px 10px
+                width: 100%
+                order: 1
+            &-description
+                gap: 10px
+                width: 100%
+                order: 2
+            &-title 
+                font-size: 12px
+                line-height: 15px
+            &-text 
+                font-size: 10px
+                line-height: 12px
+            &-link 
+                grid-column: span 2
+                padding-left: 0
+                font-size: 10px
+                line-height: 13px
+                text-align: center
+        &__chatbtn 
+            display: flex
+        &__us 
+            grid-template-columns: 1fr
+            grid-template-rows: max-content max-content auto
+            padding-bottom: 20px
 @media (max-width: 787px)
+    .check 
+        &_circle2
+            & .check__info 
+                max-width: 245px
+            & .check__clue 
+                right: auto
+                left: 5px
+                bottom: 22px
+    .docum
+        &__content 
+            &-map 
+                height: 260px
+                & iframe 
+                    height: 260px
+            padding: 9px 6px
+        &__tags 
+            gap: 6px
+        &__col1 
+            grid-template-columns: auto
+            gap: 8px  
+            margin-bottom: 12px
+        &__tariffs 
+            &-sale 
+                grid-column: span 2
+                width: 130px
+                margin: 0 auto 26px
+            &-percentage 
+                grid-column: span 2
+            &-price 
+                grid-column: span 2
+                width: 190px
+                margin: 0 auto 26px
+        &__tariffs1
+            grid-template-columns: auto 80px 
+            gap: 30px 20px 
+        &__tariffs2
+            grid-template-columns: auto 80px 
+            gap: 15px 20px 
+        &__tariffs3
+            grid-template-columns: 80px auto
+            gap: 20px 8px
+            padding-bottom: 32px 
+            border-bottom: 1px solid #DBDDE1
     .hiro 
         &__bottom 
             flex-direction: column
@@ -2425,6 +2604,13 @@ body
                     margin-bottom: 0
             &__language
                 margin-top: 0
+@media (max-width:599px)
+    .docum
+        &__content 
+            &-map 
+                height: 160px
+                & iframe 
+                    height: 160px
 @media (max-width:409px)
     .hiro
         &__wrapper

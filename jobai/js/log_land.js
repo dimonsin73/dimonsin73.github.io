@@ -430,3 +430,18 @@ for (let i = 0; i < tariffsCurrencyTotalArray.length; i++) {
         }
     })
 }
+
+const documAboutLanguage = document.querySelector(' .docum__about-language')
+const documAboutDropdown  = document.querySelector('.docum__about-dropdown')
+const documAboutOptionArray = document.querySelectorAll('.docum__about-option')
+documAboutLanguage.addEventListener('click', function(){
+    documAboutDropdown.classList.toggle('docum__about-dropdown-active')
+})
+for (let i = 0; i < documAboutOptionArray.length; i++) {
+    const documAboutOption = documAboutOptionArray[i];
+        documAboutOption.addEventListener('click', function(){
+        const style = getComputedStyle(documAboutOption)
+        const bgImage = style['background-image']
+        documAboutLanguage.style.backgroundImage = bgImage
+    })
+}

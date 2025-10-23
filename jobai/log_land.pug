@@ -138,8 +138,8 @@ html(lang="ru")
                         img(src="images/icons/r.png", alt="R")
             .docum__wrapper(data-docum='contact-us')
                 h2.docum__title Связаться с нами
-                .docum__content 
-                    .docum__content-item.docum__content-hide
+                .docum__content.docum__us
+                    .docum__content-item
                         h3.docum__content-title Техническая поддержка
                         .docum__content-part
                             p.docum__content-text Телефон
@@ -148,7 +148,7 @@ html(lang="ru")
                             p.docum__content-text Электронная почта
                             a(href="mailto:support@job-ai.ru").docum__content-link support@job-ai.ru
                     
-                    .docum__content-item.docum__content-hide
+                    .docum__content-item
                         h3.docum__content-title Общие вопросы
                         .docum__content-part
                             p.docum__content-text Телефон
@@ -157,13 +157,14 @@ html(lang="ru")
                         .docum__content-part
                             p.docum__content-text Электронная почта
                             a(href="mailto:info@job-ai.ru").docum__content-link info@job-ai.ru
-                    .docum__content-item
-                        h3.docum__content-title Чат
-                        button(type="button").docum__chatbtn.btn.btn_primary.btn_h48.btn_160 Начать чат
-                        .docum__chat 
+                    .docum__content-chat
+                        h3.docum__content-chat-title Свяжитесь с нами через чат
+                        .docum__chat
                             .docum__chat-wrapper
                                 .docum__chat-content
                                     button(type="button").docum__chat-close 
+                                    button(type="button").docum__chat-message
+                                        p 1
                                     p.docum__chat-date Сегодня
                                     .docum__chat-i
                                         p.docum__chat-text Здравствуйте, у меня есть вопрос. С кем можно пообщаться?
@@ -174,7 +175,7 @@ html(lang="ru")
                                     .docum__chat-i
                                         p.docum__chat-text Как мне выбрать тариф? На какой период времени рекомендуете?
                                         p.docum__chat-time 16:01
-                                    .docum__chat-interlocutor
+                                    .docum__chat-interlocutor.docum__chat-new
                                         p.docum__chat-text Сейчас с вами свяжемся и все подробно расскажем
                                         p.docum__chat-time 16:03
                                 .docum__message 
@@ -187,19 +188,25 @@ html(lang="ru")
                                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 20.5C16.0228 20.5 20.5 16.0228 20.5 10.5C20.5 4.97715 16.0228 0.5 10.5 0.5C4.97715 0.5 0.5 4.97715 0.5 10.5C0.5 16.0228 4.97715 20.5 10.5 20.5ZM15.1339 9.61612L11.3839 5.86612C10.8957 5.37796 10.1043 5.37796 9.61612 5.86612C9.12796 6.35427 9.12796 7.14573 9.61612 7.63388L11.2322 9.25L6.75 9.25C6.05964 9.25 5.5 9.80964 5.5 10.5C5.5 11.1904 6.05964 11.75 6.75 11.75H11.2322L9.61612 13.3661C9.12796 13.8543 9.12796 14.6457 9.61612 15.1339C10.1043 15.622 10.8957 15.622 11.3839 15.1339L15.1339 11.3839C15.622 10.8957 15.622 10.1043 15.1339 9.61612Z" fill="#007AFF"/>
                                         </svg>
+
+                        button(type="button").docum__chatbtn.btn.btn_primary.btn_h48.btn_160 Начать чат
+                        
                 .docum__footer
                     button(type="button").docum__btn.neumorphic.neumorphic-button Вернуться в меню
             .docum__wrapper(data-docum='about') 
                 h2.docum__title О компании
                 .docum__content.docum__about
-                    .docum__content-item.docum__about-info 
+                    .docum__about-info 
                         .docum__about-hitem
-                            h3 JobAI  - сегодня это в
+                            h3 
+                                | JobAI
+                                span ® 
+                                | - сегодня это в
                             .docum__about-language
-                                img(src="images/language/ru.png", alt="язык").docum__about-img
-                                <svg width="13" height="6" viewBox="0 0 13 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.364301 0.269572C0.850035 -0.0898571 1.63757 -0.0898571 2.1233 0.269572L6.219 3.30027L10.3147 0.269572C10.8004 -0.0898572 11.588 -0.0898572 12.0737 0.269572C12.5594 0.629 12.5594 1.21175 12.0737 1.57118L7.0985 5.25268C6.61276 5.61211 5.82523 5.61211 5.3395 5.25268L0.364301 1.57118C-0.121434 1.21175 -0.121434 0.629 0.364301 0.269572Z" fill="#898990"/>
-                                </svg>
+                                .docum__about-dropdown 
+                                    .docum__about-option.docum__about-option1
+                                    .docum__about-option.docum__about-option2
+                                    .docum__about-option.docum__about-option3
                         .docum__about-item 
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13 6C13 7.65685 11.6569 9 10 9C8.34315 9 7 7.65685 7 6C7 4.34315 8.34315 3 10 3C11.6569 3 13 4.34315 13 6Z" fill="black"/>
@@ -257,7 +264,7 @@ html(lang="ru")
                                         </svg>
                                 p.docum__about-text посещений в месяц
                         a(href="").docum__about-link  Подробнее
-                    .docum__content-item.docum__about-description
+                    .docum__about-description
                         p
                             span JobAI 
                             | - платформа для подбора сотрудников и поиска работы со сквозным искусственным интеллектом (AI), позволяющий реализовать двухстороннюю модель поиска через общую единую степень соответствия между кандидатами и вакансиями.
@@ -270,8 +277,7 @@ html(lang="ru")
                             span Для работодателей 
                             | - полная автоматизация поиска сотрудников за счёт перехода, в том числе на новые видеоформаты взаимодействия. Больше не нужно самостоятельно искать резюме кандидатов, в том числе заниматься трудоемким «холодным» поиском. AI система платформы, по наперед заданной общей степени соответствия, найдет максимально релевантных кандидатов и «объяснит» почему они соответствуют требованиям вакансии.
 
-
-                    .docum__content-item.docum__about-contacts
+                    .docum__about-contacts
                         .docum__content-part
                             p.docum__content-text Наименование компании
                             p.docum__text 
@@ -300,38 +306,10 @@ html(lang="ru")
                                 a(href="www.job-ai.ru", target="_blank").docum__content-link www.job-ai.ru
                     .docum__content-map
                         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aaed6c82e5de5c40dd8e8c3a3884e6e2dacb9cc27a747aed49fa5e00e3ec04444&amp;source=constructor" width="674" height="358" frameborder="0"></iframe>
-                    .docum__content-item.docum__about-contacts
-                        .docum__content-part
-                            p.docum__content-text Наименование компании
-                            p.docum__text 
-                                | ООО «Май нью джоб Девелопмент Компани»
-                        .docum__content-part
-                            p.docum__content-text Реквизиты 
-                            p.docum__text ИНН 9731076178
-                            p.docum__text КПП 773101001
-                            p.docum__text ОГРН 1217700093324
-                            p.docum__text Дата регистрации - 03.03.2021
-                            p.docum__text Генеральный директор - Мезенцев Денис Петрович
-                        .docum__content-part
-                            p.docum__content-text Юридический адрес
-                            p.docum__text 121205, г. Москва, территория инновационного центра «Сколково», Большой бульвар, 42, стр. 1, этаж 3, помещение № 1273
-                        .docum__content-part2
-                            .docum__content-part
-                                p.docum__content-text Телефон
-                                a(href="tel:+74951183136").docum__content-link +7 (495) 118-31-36
-                                a(href="tel:+78005113912").docum__content-link 8 (800) 511-39-12
-                            .docum__content-part
-                                p.docum__content-text Электронная почта
-                                a(href="mailto:info@job-ai.ru").docum__content-link info@job-ai.ru
-                                a(href="mailto:press@job-ai.ru").docum__content-link press@job-ai.ru
-                            .docum__content-part
-                                p.docum__content-text Сайт
-                                a(href="www.job-ai.ru", target="_blank").docum__content-link www.job-ai.ru
-                    .docum__content-map
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6003.484248168671!2d37.337348427400705!3d55.693060294857354!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b551d8051a7bb9%3A0x17d1f1eed0377fb9!2sTekhnopark%20Skolkovo!5e0!3m2!1sen!2sby!4v1761220082835!5m2!1sen!2sby" width="674" height="358" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
                 .docum__footer
                     button(type="button").docum__btn.neumorphic.neumorphic-button Вернуться в меню
-            .docum__wrapper.docum__wrapper-small(data-docum='tariffs') 
+            .docum__wrapper.docum__wrapper-tablet(data-docum='tariffs') 
                 h2.docum__title Тарифы
                 .docum__tariffs
                     .docum__top 
