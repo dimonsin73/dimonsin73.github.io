@@ -1576,12 +1576,18 @@ body
             gap: 38px 15px
             width: 435px
         &-description
+            display: flex
+            flex-direction: column
+            gap: 15px
             width: 550px
             font: 400 12px/20px 'Inter', 'sans-serif'
             letter-spacing: -0.1px
             & span 
                 font-weight: 600
         &-contacts
+            display: flex
+            flex-direction: column
+            gap: 15px
             width: 310px
         &-hitem 
             grid-column: span 2
@@ -2477,11 +2483,7 @@ body
                 width: 100%
                 order: -1
             &-info 
-                grid-template-columns: 145px 138px
-                justify-content: center
-                gap: 16px 10px
-                width: 100%
-                order: 1
+                display: none
             &-description
                 gap: 10px
                 width: 100%
