@@ -94,47 +94,11 @@ for (let i = 0; i < clueArray.length; i++) {
         clueWrapper.classList.remove('clue__wrapper-active')
     })
 }
-// Работа TABS 
-const tabArray = document.querySelectorAll('.tab')
-const sectionTabArray = document.querySelectorAll('.section__tab')
-const sectionNavArray = document.querySelectorAll('.section__nav')
-const title = document.querySelector('.title')
-for (let i = 0; i < tabArray.length; i++) {
-    const tab = tabArray[i];
-    tab.addEventListener('click', function(){
-        const dataTab = tab.dataset.tab
-        openSectionTab(dataTab)
-    })
-}
-for (let i = 0; i < sectionNavArray.length; i++) {
-    const sectionNav = sectionNavArray[i];
-    sectionNav.addEventListener('click', function(){
-        const dataTab = sectionNav.dataset.nav
-        openSectionTab(dataTab)
-    })
-}
-function openSectionTab(dataTab) {
-    for (let i = 0; i < sectionTabArray.length; i++) {
-        const sectionTab = sectionTabArray[i];
-        if (sectionTab.dataset.tab === dataTab) {
-            sectionTab.classList.add('section__tab-active')
-        } else {
-            sectionTab.classList.remove('section__tab-active')
-        }
-    }
-    for (let i = 0; i < tabArray.length; i++) {
-        const tab = tabArray[i];
-        if (tab.dataset.tab === dataTab) {
-            tab.classList.add('tab_active')
-        } else {
-            tab.classList.remove('tab_active')
-        }
-    }
-}
+
 // Расчёт дней и стоимости
 const priceDay = 1666
-const sectionRangeArray = document.querySelectorAll('.section__range')
-const sectionAccessInput = document.querySelector('.section__access-input')
+const tariffsRangeArray = document.querySelectorAll('.tariffs__range')
+const tariffsAccessInput = document.querySelector('.tariffs__access-input')
 const tariffsSale = document.getElementById('tariffs-sale')
 const tariffsPrice = document.getElementById('tariffs-price')
 const tariffsVat = document.getElementById('tariffs-vat')
@@ -146,18 +110,18 @@ const percentageOfCost = document.getElementById('percentage-of-cost')
 const paymentForPeriod = document.getElementById('payment-for-period')
 const paymentTotalPrice = document.getElementById('payment-total-price')
 const paymentTotalVat = document.getElementById('payment-total-vat')
-
-for (let i = 0; i < sectionRangeArray.length; i++) {
-    const sectionRange = sectionRangeArray[i];
-    const sectionRangeInput = sectionRange.querySelector('.range__input')
-    const sectionRangeMeaning = sectionRange.querySelector('.range__meaning')
-    let sectionRangeMeaningPosition = sectionRangeInput.value * 100 / sectionRangeInput.max
-    sectionRangeMeaning.style.left = `${sectionRangeMeaningPosition}%`
-    sectionRangeInput.addEventListener('input', function(){
-        sectionRangeMeaning.textContent = sectionRangeInput.value
-        let sectionRangeMeaningPosition = sectionRangeInput.value * 100 / sectionRangeInput.max
-        sectionRangeMeaning.style.left = `${sectionRangeMeaningPosition}%`
-        sectionAccessInputNum ()
+const tariffsBannerRabotodatel = document.querySelector('.tariffs__banner_rabotodatel')
+for (let i = 0; i < tariffsRangeArray.length; i++) {
+    const tariffsRange = tariffsRangeArray[i];
+    const tariffsRangeInput = tariffsRange.querySelector('.range__input')
+    const tariffsRangeMeaning = tariffsRange.querySelector('.range__meaning')
+    let tariffsRangeMeaningPosition = tariffsRangeInput.value * 100 / tariffsRangeInput.max
+    tariffsRangeMeaning.style.left = `${tariffsRangeMeaningPosition}%`
+    tariffsRangeInput.addEventListener('input', function(){
+        tariffsRangeMeaning.textContent = tariffsRangeInput.value
+        let tariffsRangeMeaningPosition = tariffsRangeInput.value * 100 / tariffsRangeInput.max
+        tariffsRangeMeaning.style.left = `${tariffsRangeMeaningPosition}%`
+        tariffsAccessInputNum ()
     })   
 }
 const additionalRecruitersOptionArray = additionalRecruiters.parentElement.querySelectorAll('.option')
@@ -186,12 +150,12 @@ for (let i = 0; i < additionalRecruitersOptionArray.length; i++) {
             default:
                 break;
         }
-        totalPrice(sectionAccessInput.value)
+        totalPrice(tariffsAccessInput.value)
     })
 }
 
 
-function sectionAccessInputNum (){
+function tariffsAccessInputNum (){
     const rangeDays =  document.getElementById('range-days')
     const rangeDaysValue = rangeDays.value
     const rangeDaysMeaning = rangeDays.parentElement.querySelector('.range__meaning')
@@ -202,15 +166,15 @@ function sectionAccessInputNum (){
         rangeDaysMeaning.style.left = 0
         rangeDays.disabled = true
         rangeDays.classList.add('range__input-disabled')
-        sectionAccessInput.value = 360
+        tariffsAccessInput.value = 360
         paymentForPeriod.value = 360
-        totalPrice(sectionAccessInput.value)
+        totalPrice(tariffsAccessInput.value)
     } else {
         rangeDays.disabled = false
         rangeDays.classList.remove('range__input-disabled')
-        sectionAccessInput.value = Number(rangeDaysValue) + Number(rangeMonthsValue)*30
-        paymentForPeriod.value = sectionAccessInput.value
-        totalPrice(sectionAccessInput.value)
+        tariffsAccessInput.value = Number(rangeDaysValue) + Number(rangeMonthsValue)*30
+        paymentForPeriod.value = tariffsAccessInput.value
+        totalPrice(tariffsAccessInput.value)
     }
 }
 function totalPrice(days){
@@ -236,47 +200,11 @@ function totalPrice(days){
     tariffsTotalPrice.value = tariffsPrice.value
     paymentTotalPrice.value = tariffsPrice.value
     
-    tariffsVat.value = ( (tariffsPrice.value * 20/100) / (1 + 20/100) ).toFixed(2)
-    tariffsTotalVat.value = ( (tariffsTotalPrice.value * 20/100) / (1 + 20/100) ).toFixed(2)
+    tariffsVat.value = ( (tariffsPrice.value * 22/100) / (1 + 22/100) ).toFixed(2)
+    tariffsTotalVat.value = ( (tariffsTotalPrice.value * 22/100) / (1 + 22/100) ).toFixed(2)
     paymentTotalVat.value = tariffsTotalVat.value
 }
 
-const tariffsCurrency = document.getElementById('tariffs-currency')
-const tariffsCurrencyOptionArray = tariffsCurrency.parentElement.querySelectorAll('.option')
-const labelCurrencyArray = tariffsCurrency.parentElement.parentElement.querySelectorAll('.label__currency')
-for (let i = 0; i < tariffsCurrencyOptionArray.length; i++) {
-    const tariffsCurrencyOption = tariffsCurrencyOptionArray[i];
-    tariffsCurrencyOption.addEventListener('click', function(){
-        for (let i = 0; i < labelCurrencyArray.length; i++) {
-            const labelCurrency = labelCurrencyArray[i];
-            labelCurrency.textContent = tariffsCurrencyOption.textContent
-        }
-    })
-}
-const tariffsCurrencyTotal = document.getElementById('tariffs-currency-total')
-const tariffsCurrencyTotalArray = tariffsCurrencyTotal.parentElement.querySelectorAll('.option')
-const labelCurrencyTotalArray = tariffsCurrencyTotal.parentElement.parentElement.querySelectorAll('.label__currency')
-for (let i = 0; i < tariffsCurrencyTotalArray.length; i++) {
-    const tariffsCurrencyTotal = tariffsCurrencyTotalArray[i];
-    tariffsCurrencyTotal.addEventListener('click', function(){
-        for (let i = 0; i < labelCurrencyTotalArray.length; i++) {
-            const labelCurrencyTotal = labelCurrencyTotalArray[i];
-            labelCurrencyTotal.textContent = tariffsCurrencyTotal.textContent
-        }
-    })
-}
-const paymentCurrencyTotal = document.getElementById('payment-currency-total')
-const paymentCurrencyTotalArray = paymentCurrencyTotal.parentElement.querySelectorAll('.option')
-const labelPaymentCurrencyTotalArray = paymentCurrencyTotal.parentElement.parentElement.querySelectorAll('.label__currency')
-for (let i = 0; i < paymentCurrencyTotalArray.length; i++) {
-    const paymentCurrencyTotal = paymentCurrencyTotalArray[i];
-    paymentCurrencyTotal.addEventListener('click', function(){
-        for (let i = 0; i < labelPaymentCurrencyTotalArray.length; i++) {
-            const labelPaymentCurrencyTotal = labelPaymentCurrencyTotalArray[i];
-            labelPaymentCurrencyTotal.textContent = paymentCurrencyTotal.textContent
-        }
-    })
-}
 
 const withVat = document.getElementById('with-vat')
 withVat.addEventListener('change', function(){
@@ -288,20 +216,20 @@ withVat.addEventListener('change', function(){
     }
     
 })
-const sectionRadioInputArray = document.querySelectorAll('.section__radio-input')
+const tariffsRadioInputArray = document.querySelectorAll('.tariffs__radio-input')
 const invoice = document.getElementById('invoice')
 const payBtn = document.getElementById('pay-btn')
-const sectionTariffs4 = document.querySelector('.section__tariffs4')
-for (let i = 0; i < sectionRadioInputArray.length; i++) {
-    const sectionRadioInput = sectionRadioInputArray[i];
-    sectionRadioInput.addEventListener('change', function(){
+const tariffsGrid7 = document.querySelector('.tariffs__grid7')
+for (let i = 0; i < tariffsRadioInputArray.length; i++) {
+    const tariffsRadioInput = tariffsRadioInputArray[i];
+    tariffsRadioInput.addEventListener('change', function(){
         if (invoice.checked) {
-            sectionTariffs4.style.opacity = '1'
+            tariffsGrid7.style.opacity = '1'
             payBtn.style.display = 'none'
             invoiceSend.style.display = 'none'
             enterMailLabel.style.display = 'flex'
         } else {
-            sectionTariffs4.style.opacity = '0'
+            tariffsGrid7.style.opacity = '0'
             payBtn.style.display = 'flex'
             personalAccount.style.display = 'none'
         }
@@ -325,38 +253,53 @@ sendEmail.addEventListener('click', function(){
     personalAccount.style.display = 'flex'
 })
 
-const sectionWrapperArray = document.querySelectorAll('.section__wrapper')
-for (let i = 0; i < sectionWrapperArray.length; i++) {
-    const sectionWrapper = sectionWrapperArray[i];
-    if (sectionWrapper.dataset.tariffs === '1') {
-        sectionWrapper.style.display = 'flex'
-        title.textContent = 'Тарифы'
-    } else {
-        sectionWrapper.style.display = 'none'
-    }
-}
-const sectionFormStart = document.querySelector('.section__form-start')
-sectionFormStart.addEventListener('submit', function(e){
+const title = document.querySelector('.title')
+const tariffsFormArray = document.querySelectorAll('.tariffs__form')
+const tariffsFormStart = document.querySelector('.tariffs__form-start')
+tariffsFormStart.addEventListener('submit', function(e){
     e.preventDefault()
-    for (let i = 0; i < sectionWrapperArray.length; i++) {
-        const sectionWrapper = sectionWrapperArray[i];
-        if (sectionWrapper.dataset.tariffs === '2') {
-            sectionWrapper.style.display = 'flex'
+    for (let i = 0; i < tariffsFormArray.length; i++) {
+        const tariffsForm = tariffsFormArray[i];
+        if (tariffsForm.dataset.tariffs === '2') {
+            tariffsForm.style.display = 'flex'
             title.textContent = 'Выбор способа оплаты'
+            tariffsBannerRabotodatel.classList.remove('tariffs__banner-min')
+            for (let i = 0; i < tariffsFormArray.length; i++) {
+                const tariffsForm = tariffsFormArray[i];
+                tariffsForm.scrollTo(0, 0)
+            }
         } else {
-            sectionWrapper.style.display = 'none'
+            tariffsForm.style.display = 'none'
         }
     }
 })
-const sectionBack = document.getElementById('section-back')
-sectionBack.addEventListener('click', function(){
-    for (let i = 0; i < sectionWrapperArray.length; i++) {
-        const sectionWrapper = sectionWrapperArray[i];
-        if (sectionWrapper.dataset.tariffs === '1') {
-            sectionWrapper.style.display = 'flex'
+const tariffsBack = document.getElementById('tariffs-back')
+tariffsBack.addEventListener('click', function(){
+    for (let i = 0; i < tariffsFormArray.length; i++) {
+        const tariffsForm = tariffsFormArray[i];
+        if (tariffsForm.dataset.tariffs === '1') {
+            tariffsForm.style.display = 'flex'
             title.textContent = 'Тарифы'
+            tariffsBannerRabotodatel.classList.remove('tariffs__banner-min')
+            for (let i = 0; i < tariffsFormArray.length; i++) {
+                const tariffsForm = tariffsFormArray[i];
+                tariffsForm.scrollTo(0, 0)
+            }
         } else {
-            sectionWrapper.style.display = 'none'
+            tariffsForm.style.display = 'none'
         }
     }
 })
+
+for (let i = 0; i < tariffsFormArray.length; i++) {
+    const tariffsForm = tariffsFormArray[i];
+    tariffsForm.addEventListener('scroll', function(){
+        if (tariffsForm.scrollTop > 0) {
+            tariffsBannerRabotodatel.classList.add('tariffs__banner-min')
+            tariffsForm.classList.add('tariffs__form-max')
+        } else {
+            tariffsBannerRabotodatel.classList.remove('tariffs__banner-min')
+            tariffsForm.classList.remove('tariffs__form-max')
+        }
+    })
+}

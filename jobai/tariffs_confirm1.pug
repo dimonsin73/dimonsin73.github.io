@@ -9,8 +9,11 @@ html(lang="ru")
         link(rel="stylesheet", href="css/tariffs.css")
     body.bg
         aside.aside 
-            .aside__logo 
-                img(src="images/logo.png", alt="job ai").aside__logo-img
+            .aside__logo
+                p.aside__logo-job JOB 
+                p.aside__logo-job.aside__logo-job-white AI 
+                .aside__logo-r 
+                    img(src="images/icons/r.png", alt="R")
             ul.aside__list.aside__list-bottom
                 li.aside__item
                     a(href="tariffs.html").aside__link.aside__link-active
@@ -39,10 +42,7 @@ html(lang="ru")
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10C17 9.44772 16.5523 9 16 9H4C3.44771 9 3 9.44772 3 10C3 10.5523 3.44771 11 4 11H16C16.5523 11 17 10.5523 17 10Z" fill="#6A6A73"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M17 15C17 14.4477 16.5523 14 16 14H4C3.44771 14 3 14.4477 3 15C3 15.5523 3.44771 16 4 16H16C16.5523 16 17 15.5523 17 15Z" fill="#6A6A73"/>
                 </svg>
-            .header__logo
-                img(src="images/logo.png", alt="").header__logo0-img
             .press-right
-        
         .confirm.confirm_active
             .confirm__wrapper.confirm__wrapper-active(data-confirm='success')
                 .confirm__item
@@ -54,7 +54,7 @@ html(lang="ru")
                     | данного запроса и необходимость его удаления
                 .confirm__item
                     p.confirm__text Текущий запрос на выставления счёта:
-                    p.confirm__text.confirm__text-center на сумму 251 899,20 руб.  с НДС 20% 46 181,52 руб. 
+                    p.confirm__text.confirm__text-center на сумму 277 089,12 руб. с НДС 22% 49 966,89 руб. 
                 p.confirm__text станет актуальным и мы направим на указанную вами электронную почту счёт на оплату.
                 .confirm__btns
                     button(type="button").confirm__btn.btn.btn_primary.confirm__ok Подтвердить

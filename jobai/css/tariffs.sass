@@ -328,16 +328,7 @@
                 & path
                     stroke: var(--Red)
                     fill: var(--Red)
-@media (max-width: 1199px)
-    .btn 
-        padding: 12px 24px
-        border-radius: 8px
-        @include btn-medium
-@media (max-width:954px)
-    .btn 
-        padding: 5px 16px
-        border-radius: 6px
-        @include btn-small
+
 .link 
     &-large 
         @include link-large
@@ -466,7 +457,7 @@
         right: -36px
         transform: translateY(-50%)
     &__clue2
-        right: -28px
+        right: -46px
     &-active 
         & .label__title
             top: 8px
@@ -489,21 +480,21 @@
         position: absolute
         top: 100%
         display: flex
-        justify-content: center
+        justify-content: flex-start
         width: 100%
         @include subtitle-medium
         color: var(--Gray-40)
         &-small 
             @include subtitle-small
             white-space: nowrap
-        &-left 
-            justify-content: flex-start
     &__currency 
         position: absolute
         top: 50%
-        right: 15px
+        right: 25px
         @include title-medium
-        color: var(--Black)
+        font-size: 20px
+        line-height: 24px
+        color: var(--Icons)
         transform: translate3d(0, -50%, 0)
     &_error
         &-text 
@@ -722,6 +713,8 @@
         &-bottom 
             top: calc( 100% + 4px )
             bottom: auto
+        &-left 
+            left: -200px
         &-active 
             display: flex
     &__text 
@@ -824,11 +817,9 @@
         color: var(--Primary-50)
     &_circle 
         display: grid
-        grid-template-columns: auto 80px
-        & .check__label 
-            align-items: center
+        grid-template-columns: auto 50px
         & .check__check 
-            margin: 0 16px
+            margin: 6px 16px 0
             border-radius: 50%
         & .check__title
             @include subtitle-large
@@ -900,6 +891,7 @@
     gap: 24px
     &_small
         grid-template-columns: repeat(2, 1fr)
+        gap: 14px
 .tab 
     position: relative
     display: flex
@@ -907,11 +899,10 @@
     align-items: flex-start
     gap: 12px
     padding: 12px
-    border: 1px solid var(--White)
+    border: 1px solid var(--Gray-80)
     border-radius: 12px
-    box-shadow: 0px 1px 8px 0px #0000001A
     background-color: var(--White)
-    transition: box-shadow 0.3s ease
+    transition: box-shadow 0.3s ease, border 0.3s ease
     &__icons 
         display: flex
         align-items: center
@@ -941,9 +932,10 @@
         text-align: left
         transition: color 0.3s ease
     &:disabled
-        opacity: 0.5
-        &:hover 
-            border: 1px solid var(--White)
+        & .tab__icons 
+            opacity: 0.3
+        & .tab__text 
+            opacity: 0.3
         &::after
             content: ""
             position: absolute
@@ -958,6 +950,7 @@
             z-index: 100
     &_active 
         border: 1px solid var(--Primary-40)
+        box-shadow: 0px 1px 8px 0px #0000001A
         & .tab__icon 
             & path 
                 fill: var(--Primary-40)
@@ -1062,13 +1055,32 @@ input[type=number]::-webkit-outer-spin-button
     &_active 
         left: 0
     &__logo
+        position: relative
         display: flex
         align-items: center
         justify-content: center
-        width: 100%
-        height: 80px
-        &-img
-            width: 78px
+        gap: 3px
+        width: max-content
+        margin: 25px auto
+        &-job 
+            font: 700 22px/22px 'Inter', 'sans-serif'
+            letter-spacing: -0.2px
+            text-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White)
+            &-white 
+                padding: 4px
+                border-radius: 8px
+                box-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White)
+                background-color: var(--Primary-50)
+                color: var(--White)
+                text-shadow: 3px 3px 3px var(--Black)
+        &-r 
+            position: absolute
+            top: 0
+            right: -9px
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            box-shadow: 3px 3px 5px 0px #A3B1C6, -3px -3px 5px 0px #FFFFFF
     &__list 
         display: flex
         flex-direction: column
@@ -1443,11 +1455,7 @@ input[type=number]::-webkit-outer-spin-button
                 image: url('../images/icons/close.png')
                 position: center center 
                 repeat: no-repeat
-    &__or
-        display: flex
-        justify-content: center
-        @include body-medium
-        color: var(--Gray-10)
+    
     &__imgloading 
         display: grid
         grid-template-columns: 96px auto 
@@ -1820,27 +1828,7 @@ input[type=number]::-webkit-outer-spin-button
                 font-weight: 700
         & svg 
             margin: 0 auto
-    &__banner
-        display: flex
-        flex-direction: column
-        gap: 10px
-        padding: 9px 105px
-        border: 1px solid #A3B1C6
-        border-radius: 12px
-        background-color: var(--White)
-        &-title 
-            font: 500 14px / 16px "Inter", "sans-serif"
-            letter-spacing: -0.1px
-            color: var(--Gray-40)
-            text-align: center
-            & span 
-                font-weight: 700
-#tariffs-sale
-    width: 126px
-#payment-for-period 
-    width: 110px
-#tariffs-total-price
-    font-weight: 600
+
 #enter-mail 
     width: 100%
 .enter-mail 
@@ -1857,7 +1845,7 @@ input[type=number]::-webkit-outer-spin-button
 #send-clue 
     position: absolute 
     bottom: calc( 100% + 4px)
-    left: -150px
+    left: -200px
     width: 300px
     right: 0
     display: none
@@ -1873,6 +1861,7 @@ input[type=number]::-webkit-outer-spin-button
     align-items: center
     justify-content: center
     width: 100%
+    height: 56px
     &__text 
         @include body-large
         color: var(--Gray-20)
@@ -1919,7 +1908,7 @@ input[type=number]::-webkit-outer-spin-button
         max-width: 600px
         width: 100%
         padding: 38px 55px
-        border-radius: 32px
+        border-radius: 12px
         background-color: var(--White)
         transform: translate3d(-50%, -50%, 0)
         &-active 
@@ -1980,4 +1969,391 @@ input[type=number]::-webkit-outer-spin-button
                 margin: 0 auto 26px
     .tabs 
         gap: 6px
-    #tariffs-sale 
+
+.tariffs 
+    display: flex
+    flex-direction: column
+    gap: 20px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 15px
+    &__banner 
+        display: flex
+        flex-direction: column
+        gap: 15px
+        border: 1px solid #A3B1C6
+        border-radius: 12px
+        background-color: var(--White)
+        &-title 
+            font: 500 14px / 16px "Inter", "sans-serif"
+            letter-spacing: -0.1px
+            color: var(--Gray-40)
+            text-align: center
+            & span 
+                font-weight: 700
+        &_kandidat
+            padding: 9px 99px
+        &_rabotodatel
+            padding: 13px 99px
+    &__form
+        display: none
+        flex-direction: column
+        gap: 15px
+        height: calc(100vh - 64px - 34px - 48px - 20px - 36px - 15px - 157px - 15px)
+        padding: 15px 99px 25px
+        border: 1px solid var(--White)
+        border-radius: 12px
+        background-color: var(--White)
+        overflow-y: auto
+        &_active
+            display: flex
+        &-title
+            @include subtitle-large
+            color: var(--Black) 
+        &-text 
+            @include subtitle-large
+            color: var(--Gray-30)
+    &__col1
+        display: flex
+        flex-direction: column
+        gap: 12px
+    &__col2
+        display: flex
+        flex-direction: column
+        gap: 4px
+    &__col3
+        display: flex
+        flex-direction: column
+        gap: 25px
+        margin-bottom: 10px
+    &__col4
+        display: flex
+        flex-direction: column
+        gap: 20px
+    &__grid1 
+        display: flex
+        align-items: center
+        gap: 32px
+        border-bottom: 1px solid var(--Gray-80)
+    &__grid2 
+        display: grid
+        grid-template-columns: 150px 200px 200px
+        justify-content: space-between
+        margin-bottom: 13px
+    &__grid3 
+        display: flex
+        flex-direction: column
+        gap: 8px
+    &__grid4 
+        display: grid 
+        grid-template-columns: 80px 370px 154px 
+        align-items: center
+        gap: 25px
+        padding-bottom: 19px
+        border-bottom: 1px solid var(--Gray-80)
+        & .options__wrapper 
+            padding: 16px 8px
+    &__grid5 
+        display: grid
+        grid-template-columns: 110px 200px 200px
+        justify-content: space-between
+        margin-top: 16px
+        margin-bottom: 16px
+    &__grid6
+        display: flex
+        flex-direction: column
+        gap: 12px
+        padding-bottom: 12px
+        border-bottom: 1px solid var(--Gray-80)
+    &__grid7 
+        display: flex
+        align-items: center
+        gap: 16px
+        margin-left: 160px
+        opacity: 0
+    &__grid8
+        display: flex
+        flex-direction: column
+        gap: 15px
+    &__ranges
+        display: flex
+        flex-direction: column
+        width: 100%
+        margin-left: 25px
+        margin-bottom: 5px
+        &-title 
+            @include subtitle-medium
+            color: var(--Gray-40)
+            & span 
+                font-weight: 700
+        & .range 
+            &__input 
+                width: 100%
+                height: 38px
+                &::-webkit-slider-thumb
+                    height: 15px
+                    width: 15px
+                    margin-top: -6px
+                    box-shadow: calc(-100vmax - 15px) 0 0 100vmax var(--Primary-40)
+                    clip-path: polygon(100% 0, 1px 0, 0 6px, -100vmax 6px, -100vmax 10px, 0 10px, 1px 100%, 100% 100%)
+                &::-moz-range-thumb
+                    height: 15px
+                    width: 15px
+                    margin-top: -6px
+                    box-shadow: calc(-100vmax - 15px) 0 0 100vmax var(--Primary-40)
+                    clip-path: polygon(100% 0, 1px 0, 0 6px, -100vmax 6px, -100vmax 10px, 0 10px, 1px 100%, 100% 100%)
+                &::-webkit-slider-runnable-track
+                    height: 4px
+                    border-radius: 2px
+    &__range 
+        display: flex
+        flex-direction: column
+        gap: 9px
+        padding-bottom: 26px
+        &-title 
+            @include subtitle-medium
+            color: var(--Gray-40)
+            & span 
+                font-weight: 700
+    &__access
+        display: flex
+        flex-direction: column 
+        align-items: center
+        gap: 3px
+        flex: 0 0 110px
+        width: 110px
+        &-input 
+            border: 1px solid var(--Icons)
+            background-color: var(--Gray-100)
+            @include body-large
+            font-weight: 600
+            color: var(--Gray-30)
+            &:focus 
+                outline: none
+                background-color: var(--Gray-100)
+    &__title
+        @include title-medium
+        color: var(--Black)
+    &__title2 
+        @include headline-medium
+        color: var(--Black)
+    &__text 
+        font: 600 16px/22px 'Inter', 'sans-serif'
+        color: var(--Gray-20)
+    &__link 
+        font: 600 16px/22px 'Inter', 'sans-serif'
+        color: var(--Primary-40)
+    &__input 
+        background-color: var(--Gray-90)
+        &:focus
+            outline: none
+            background-color: var(--Gray-90)
+    &__btn 
+        margin-top: 40px
+    &__radios 
+        display: flex
+        flex-direction: column
+        gap: 32px
+        padding-top: 17px
+    &__radio
+        &-input 
+            display: none
+            &:checked 
+                & ~ .tariffs__radio-label .tariffs__radio-check
+                    border: 7px solid var(--Black)
+        &-label 
+            display: grid
+            align-items: center 
+            grid-template-columns: 20px 60px auto
+            gap: 20px
+            align-items: center
+            gap: 20px
+        &-check 
+            width: 20px
+            height: 20px
+            border: 1.5px solid var(--Gray-40)
+            border-radius: 50%
+            transition: border 0.3s linear
+        &-title 
+            @include subtitle-extralarge
+            color: var(--Black)
+        &-text 
+            @include subtitle-large
+            color: var(--Gray-30)
+            & span 
+                font-weight: 700
+    &__footer 
+        display: flex
+        justify-content: space-between
+        margin-top: 90px
+    &__or
+        display: flex
+        justify-content: center
+        @include body-medium
+        color: var(--Gray-10)
+    &__receipt
+        display: flex
+        align-items: center
+        gap: 8px
+        padding-left: 55px
+        @include body-large
+        color: var(--Gray-20)
+        &-link 
+            color: var(--Primary-50)
+#tariffs-sale
+    width: 150px
+    font-weight: 600
+#payment-for-period 
+    border: 1px solid var(--Icons)
+    background-color: var(--Gray-100)
+    font-weight: 600
+    &:focus 
+        outline: none
+        background-color: var(--Gray-100)
+#tariffs-total-price
+    font-weight: 600
+#percentage-of-cost 
+    width: 150px
+    font-weight: 600
+#additional-recruiters 
+    padding-left: 17px
+    background-color: var(--Gray-90)
+    font-weight: 600
+    &:focus 
+        background-color: var(--White)
+#tariffs-day-price 
+    &:focus 
+        outline: none
+        background-color: var(--Gray-100)
+#tariffs-total-price 
+    border: 1px solid var(--Icons)
+    font-weight: 600
+    &:focus 
+        outline: none
+        background-color: var(--Gray-100)
+#tariffs-total-vat 
+    &:focus 
+        outline: none
+        background-color: var(--Gray-100)
+#payment-total-price
+    border: 1px solid var(--Icons)
+    &:focus 
+        outline: none
+        background-color: var(--Gray-100)
+#payment-total-vat
+    &:focus 
+        outline: none
+        background-color: var(--Gray-100)
+#tariffs-email 
+    max-width: 460px
+    padding-left: 44px
+    background: 
+        color: var(--Gray-90)
+        image: url('../images/icons/mail.png')
+        position: center left 12px 
+        repeat: no-repeat
+    outline: none
+#access-start
+    &:focus 
+        outline: none
+        background-color: var(--Gray-100)
+#access-finish
+    &:focus 
+        outline: none
+        background-color: var(--Gray-100)
+@media (max-width: 1023px)
+    .section 
+        padding-left: 10px
+        padding-right: 10px 
+    .tariffs 
+        max-width: 747px
+        margin: 0 auto
+        &__banner 
+            &_kandidat
+                padding-left: 20px
+                padding-right: 20px
+            &_rabotodatel
+                padding-left: 20px
+                padding-right: 20px
+        &__form 
+            padding: 15px 20px 25px
+@media (max-width: 767px)
+    .label
+        &__clue2 
+            right: 15px
+    .check 
+        position: relative
+        &_circle 
+            grid-template-columns: auto
+            & .check__check 
+                margin: 6px 5px
+        &__clue 
+            position: absolute
+            left: 5px
+            bottom: 10px
+    .section 
+        padding: 0 20px 
+    .title 
+        justify-content: center
+        font: 600 16px/22px "Inter", 'sans-serif'
+        color: #5A6A82
+    .tariffs 
+        gap: 10px
+        &__banner 
+            padding: 9px 7px
+            gap: 9px
+            &_rabotodatel 
+                height: 163px
+                transition: all 0.3s ease
+            &-min
+                height: 36px
+                overflow: hidden
+        &__form 
+            height: calc(100vh - 64px - 22px - 10px - 36px - 15px - 163px - 15px - 25px)
+            padding: 12px 14px
+            transition: all 0.3s ease
+            &-max
+                height: calc(100vh - 64px - 22px - 10px - 36px - 15px - 163px - 15px - 25px + 127px)
+        &__ranges 
+            margin-left: 0
+            margin-bottom: 0
+        &__range
+            padding-bottom: 10px
+        &__access 
+            gap: 6px
+        &__grid1
+            flex-direction: column
+            gap: 0
+        &__grid2 
+            grid-template-columns: auto
+            gap: 25px
+            width: 200px
+            margin-bottom: 40px
+        &__grid4 
+            grid-template-columns: 80px auto
+            gap: 12px
+            padding-bottom: 26px
+            & .label 
+                grid-column: span 2
+                width: 150px
+        &__grid5 
+            grid-template-columns: auto
+            gap: 25px
+            width: 200px
+        &__grid7
+            flex-direction: column
+            gap: 4px
+            margin-left: 0
+        &__label 
+            margin-bottom: 25px
+        &__btn
+            margin-top: 0
+        &__radio 
+            &-label 
+                grid-template-columns: 20px auto
+                row-gap: 10px
+            &-info 
+                grid-column: span 2
+        &__footer 
+            margin-top: 0
