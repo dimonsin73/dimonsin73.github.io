@@ -31,6 +31,9 @@
   --Red-error: #FF0034;
   --Rose: #F29792;
   --Scrollbar: #D9D9D9;
+  --Neubg: #e0e5ec;
+  --Neushadow: #A3B1C6;
+  --Neutext: #5A6A82;
 }
 
 .main {
@@ -840,6 +843,7 @@
   width: 300px;
   padding: 10px;
   border-radius: 8px;
+  box-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White);
   background-color: var(--Gray-90);
   z-index: 40;
 }
@@ -848,6 +852,9 @@
   bottom: auto;
 }
 .clue__wrapper-left {
+  left: -200px;
+}
+.clue__wrapper-left2 {
   left: -200px;
 }
 .clue__wrapper-active {
@@ -2354,6 +2361,17 @@ input[type=number]::-webkit-outer-spin-button {
 .confirm_active {
   display: flex;
 }
+.confirm__x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/icons/close_24.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 .confirm__wrapper {
   position: absolute;
   top: 50%;
@@ -2388,6 +2406,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 .confirm__btns-center {
   justify-content: center;
@@ -2408,45 +2427,6 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 600;
 }
 
-@media (max-width: 1023px) {
-  .section__wrapper-p105 {
-    padding: 12px 14px;
-  }
-  .section__tariffs {
-    grid-template-columns: auto;
-    gap: 8px;
-    margin-bottom: 12px;
-    padding-bottom: 25px;
-  }
-  .section__banner {
-    padding: 9px 6px;
-  }
-  .section__col1 {
-    gap: 8px;
-  }
-  .section__access {
-    gap: 6px;
-    width: 110px;
-    margin: 0 auto;
-  }
-  .section__access-input {
-    border: 1px solid var(--Black);
-  }
-  .section__form {
-    gap: 8px;
-  }
-  .section__tariffs1 {
-    grid-template-columns: auto 80px;
-    gap: 15px 20px;
-  }
-  .section__tariffs1-span {
-    grid-column: span 2;
-    margin: 0 auto 26px;
-  }
-  .tabs {
-    gap: 6px;
-  }
-}
 .tariffs {
   display: flex;
   flex-direction: column;
@@ -2639,7 +2619,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 110px;
 }
 .tariffs__access-input {
-  border: 1px solid var(--Icons);
+  outline: 1px solid var(--Icons);
   background-color: var(--Gray-100);
   font: 400 16px/24px "Inter", "sans-serif";
   letter-spacing: -0.5px;
@@ -2647,7 +2627,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--Gray-30);
 }
 .tariffs__access-input:focus {
-  outline: none;
+  outline: 1px solid var(--Icons);
   background-color: var(--Gray-100);
 }
 .tariffs__title {
@@ -2749,12 +2729,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #payment-for-period {
-  border: 1px solid var(--Icons);
+  outline: 1px solid var(--Icons);
   background-color: var(--Gray-100);
   font-weight: 600;
 }
 #payment-for-period:focus {
-  outline: none;
+  outline: 1px solid var(--Icons);
   background-color: var(--Gray-100);
 }
 
@@ -2782,11 +2762,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #tariffs-total-price {
-  border: 1px solid var(--Icons);
+  outline: 1px solid var(--Icons);
   font-weight: 600;
 }
 #tariffs-total-price:focus {
-  outline: none;
+  outline: 1px solid var(--Icons);
   background-color: var(--Gray-100);
 }
 
@@ -2796,10 +2776,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #payment-total-price {
-  border: 1px solid var(--Icons);
+  outline: 1px solid var(--Icons);
 }
 #payment-total-price:focus {
-  outline: none;
+  outline: 1px solid var(--Icons);
   background-color: var(--Gray-100);
 }
 
@@ -2850,6 +2830,12 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 @media (max-width: 767px) {
+  .clue__wrapper-left {
+    left: 0px;
+  }
+  .clue__wrapper-left2 {
+    left: -150px;
+  }
   .label__clue2 {
     right: 15px;
   }
@@ -2869,6 +2855,13 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .section {
     padding: 0 20px;
+  }
+  .confirm__x {
+    display: block;
+  }
+  .confirm__wrapper {
+    width: calc(100% - 40px);
+    padding: 40px 20px 25px;
   }
   .title {
     justify-content: center;
@@ -2950,7 +2943,19 @@ input[type=number]::-webkit-outer-spin-button {
   .tariffs__radio-info {
     grid-column: span 2;
   }
+  .tariffs__title2 {
+    font-size: 24px;
+  }
+  .tariffs__receipt {
+    padding-left: 10px;
+  }
+  .tariffs__receipt svg {
+    flex: 0 0 auto;
+  }
   .tariffs__footer {
     margin-top: 0;
+  }
+  #payment-for-period {
+    width: 110px;
   }
 }/*# sourceMappingURL=tariffs.css.map */

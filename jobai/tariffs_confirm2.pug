@@ -47,22 +47,24 @@ html(lang="ru")
             .confirm__wrapper(data-confirm='success')
                 .confirm__item
                     p.confirm__text Ранее вы уже отправляли запрос на выставление счёта: 
-                    p.confirm__text.confirm__text-center 12.08.2025г., 16:45 на сумму  3 709,00 руб. без НДС
+                    p.confirm__text.confirm__text-center 12.08.2025г., 16:45 
+                    p.confirm__text.confirm__text-center на сумму  3 709,00 руб. без НДС
                 p.confirm__text 
                     | Подтвердите, пожалуйста, 
                     span.confirm__text.confirm__span неактуальность 
                     | данного запроса и необходимость его удаления
                 .confirm__item
                     p.confirm__text Текущий запрос на выставления счёта:
-                    p.confirm__text.confirm__text-center на сумму 251 899,20 руб.  с НДС 20% 46 181,52 руб. 
+                    p.confirm__text.confirm__text-center на сумму 277 089,12 руб. 
+                    p.confirm__text.confirm__text-center с НДС 22% 49 966,89 руб. 
                 p.confirm__text станет актуальным и мы направим на указанную вами электронную почту счёт на оплату.
                 .confirm__btns
                     button(type="button").confirm__btn.btn.btn_primary.confirm__ok Подтвердить
                     button(type="button").confirm__btn.btn.btn_tertiary.confirm__close Отмена
             .confirm__wrapper.confirm__wrapper-active(data-confirm='notification')
                 .confirm__item
-                    p.confirm__text У вас есть оплаченный период доступа до 
-                    p.confirm__text.confirm__text-center 12.08.2025г., 16:45 
+                    p.confirm__text У вас есть оплаченный период доступа 
+                    p.confirm__text.confirm__text-center до 12.08.2025г., 16:45 
                 p.confirm__text Вы можете отправить запрос на выставления счёта (и продлить период после оплаты) сразу после окончания текущего периода
                 .confirm__btns.confirm__btns-center
                     button(type="button").confirm__btn.btn.btn_primary.confirm__close Понятно

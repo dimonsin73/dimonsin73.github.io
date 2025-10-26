@@ -31,6 +31,9 @@
     --Red-error: #FF0034
     --Rose: #F29792
     --Scrollbar: #D9D9D9
+    --Neubg: #e0e5ec
+    --Neushadow: #A3B1C6
+    --Neutext: #5A6A82
 
 @mixin headline-large
     font: 700 40px/48px 'Inter', 'sans-serif'
@@ -708,12 +711,15 @@
         width: 300px
         padding: 10px
         border-radius: 8px
+        box-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White)
         background-color: var(--Gray-90)
         z-index: 40
         &-bottom 
             top: calc( 100% + 4px )
             bottom: auto
         &-left 
+            left: -200px
+        &-left2
             left: -200px
         &-active 
             display: flex
@@ -1898,6 +1904,17 @@ input[type=number]::-webkit-outer-spin-button
     z-index: 1000
     &_active 
         display: flex
+    &__x
+        position: absolute
+        top: 10px
+        right: 10px
+        display: none
+        width: 24px
+        height: 24px
+        background: 
+            image: url(../images/icons/close_24.png)
+            position: center center
+            repeat: no-repeat
     &__wrapper 
         position: absolute
         top: 50%
@@ -1927,6 +1944,7 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         align-items: center
         justify-content: space-between
+        gap: 10px
         &-center
             justify-content: center
     &__btn 
@@ -1939,36 +1957,7 @@ input[type=number]::-webkit-outer-spin-button
             text-align: center
     &__span 
         font-weight: 600
-@media (max-width: 1023px)
-    .section
-        &__wrapper 
-            &-p105 
-                padding: 12px 14px
-        &__tariffs 
-            grid-template-columns: auto
-            gap: 8px
-            margin-bottom: 12px
-            padding-bottom: 25px
-        &__banner
-            padding: 9px 6px
-        &__col1 
-            gap: 8px
-        &__access
-            gap: 6px
-            width: 110px
-            margin: 0 auto
-            &-input 
-                border: 1px solid var(--Black)
-        &__form 
-            gap: 8px
-        &__tariffs1 
-            grid-template-columns: auto 80px
-            gap: 15px 20px
-            &-span 
-                grid-column: span 2
-                margin: 0 auto 26px
-    .tabs 
-        gap: 6px
+
 
 .tariffs 
     display: flex
@@ -2124,13 +2113,13 @@ input[type=number]::-webkit-outer-spin-button
         flex: 0 0 110px
         width: 110px
         &-input 
-            border: 1px solid var(--Icons)
+            outline: 1px solid var(--Icons)
             background-color: var(--Gray-100)
             @include body-large
             font-weight: 600
             color: var(--Gray-30)
             &:focus 
-                outline: none
+                outline: 1px solid var(--Icons)
                 background-color: var(--Gray-100)
     &__title
         @include title-medium
@@ -2205,11 +2194,11 @@ input[type=number]::-webkit-outer-spin-button
     width: 150px
     font-weight: 600
 #payment-for-period 
-    border: 1px solid var(--Icons)
+    outline: 1px solid var(--Icons)
     background-color: var(--Gray-100)
     font-weight: 600
     &:focus 
-        outline: none
+        outline: 1px solid var(--Icons)
         background-color: var(--Gray-100)
 #tariffs-total-price
     font-weight: 600
@@ -2227,19 +2216,19 @@ input[type=number]::-webkit-outer-spin-button
         outline: none
         background-color: var(--Gray-100)
 #tariffs-total-price 
-    border: 1px solid var(--Icons)
+    outline: 1px solid var(--Icons)
     font-weight: 600
     &:focus 
-        outline: none
+        outline: 1px solid var(--Icons)
         background-color: var(--Gray-100)
 #tariffs-total-vat 
     &:focus 
         outline: none
         background-color: var(--Gray-100)
 #payment-total-price
-    border: 1px solid var(--Icons)
+    outline: 1px solid var(--Icons)
     &:focus 
-        outline: none
+        outline: 1px solid var(--Icons)
         background-color: var(--Gray-100)
 #payment-total-vat
     &:focus 
@@ -2279,6 +2268,12 @@ input[type=number]::-webkit-outer-spin-button
         &__form 
             padding: 15px 20px 25px
 @media (max-width: 767px)
+    .clue
+        &__wrapper 
+            &-left 
+                left: 0px
+            &-left2
+                left: -150px
     .label
         &__clue2 
             right: 15px
@@ -2294,6 +2289,12 @@ input[type=number]::-webkit-outer-spin-button
             bottom: 10px
     .section 
         padding: 0 20px 
+    .confirm 
+        &__x 
+            display: block
+        &__wrapper 
+            width: calc( 100% - 40px )
+            padding: 40px 20px 25px
     .title 
         justify-content: center
         font: 600 16px/22px "Inter", 'sans-serif'
@@ -2355,5 +2356,13 @@ input[type=number]::-webkit-outer-spin-button
                 row-gap: 10px
             &-info 
                 grid-column: span 2
+        &__title2 
+            font-size: 24px
+        &__receipt
+            padding-left: 10px
+            & svg 
+                flex: 0 0 auto
         &__footer 
             margin-top: 0
+    #payment-for-period 
+        width: 110px
