@@ -525,7 +525,6 @@ html {
   position: absolute;
   top: 100%;
   display: flex;
-  justify-content: center;
   width: 100%;
   font: 500 10px/16px "Inter", "sans-serif";
   color: var(--Gray-40);
@@ -850,11 +849,14 @@ html {
   flex-direction: column;
   gap: 4px;
   width: 300px;
-  padding: 10px;
+  padding: 6px;
   border-radius: 8px;
-  box-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White);
-  background-color: var(--Gray-90);
+  box-shadow: 10px 10px 20px var(--Neushadow), -10px -10px 20px var(--White);
+  background-color: var(--Neubg);
   z-index: 40;
+}
+.clue__wrapper-270 {
+  width: 270px;
 }
 .clue__wrapper-small {
   width: -moz-max-content;
@@ -878,11 +880,12 @@ html {
   display: flex;
 }
 .clue__wrapper-neu {
-  left: -302px;
+  left: 50px;
 }
 .clue__text {
   font: 500 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
+  letter-spacing: -0.5px;
   color: var(--Gray-30);
 }
 .clue__text-center {
@@ -964,7 +967,7 @@ body {
 .neumorphic-input {
   width: 300px;
   height: 50px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   padding: 15px;
   border: none;
   border: 1px solid #A3B1C6;
@@ -994,6 +997,12 @@ body {
   outline: 1px solid var(--Neushadow);
   background-color: var(--White);
 }
+.neumorphic-input:focus::-moz-placeholder {
+  color: transparent;
+}
+.neumorphic-input:focus::placeholder {
+  color: transparent;
+}
 .neumorphic-input-error {
   border: 1px solid var(--Red-error);
 }
@@ -1004,12 +1013,13 @@ body {
   margin-bottom: 0;
 }
 .neumorphic-input-left {
+  width: 290px;
   text-align: left;
 }
 .neumorphic-clue {
   position: absolute;
   top: 15px;
-  right: -22px;
+  right: -17px;
 }
 .neumorphic-error {
   position: absolute;
@@ -1032,7 +1042,7 @@ body {
 }
 .neumorphic-timer {
   position: absolute;
-  bottom: -10px;
+  bottom: -14px;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -1094,10 +1104,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 410px;
+  width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding: 40px 30px 180px;
+  padding: 40px 337px 180px;
 }
 .hiro__btn {
   width: 140px;
@@ -1108,7 +1118,7 @@ body {
 }
 .hiro__btn-restart {
   width: 170px;
-  margin: 40px auto 0;
+  margin: 23px auto 0;
 }
 .hiro__btn-warning-next {
   width: auto;
@@ -1176,6 +1186,10 @@ body {
   display: none;
   padding: 10px 35px 20px;
 }
+.hiro__block-development {
+  display: none;
+  padding: 10px 25px 20px;
+}
 .hiro__block-remember {
   display: none;
 }
@@ -1185,6 +1199,24 @@ body {
 }
 .hiro__block-warning {
   display: none;
+}
+.hiro__block-h66 {
+  height: 66px;
+}
+.hiro__block-mt4 {
+  margin-top: 4px;
+}
+.hiro__block-mt6 {
+  margin-top: 6px;
+}
+.hiro__block-mt19 {
+  margin-top: 19px;
+}
+.hiro__block-mt41 {
+  margin-top: 41px;
+}
+.hiro__block-mt131 {
+  margin-top: 131px;
 }
 .hiro__list {
   padding-left: 35px;
@@ -2673,6 +2705,7 @@ body {
     transform: translateY(-110%);
   }
   .hiro__wrapper {
+    width: 410px;
     padding: 20px 30px;
   }
   .hiro__block {
@@ -2844,6 +2877,9 @@ body {
   }
   .clue__wrapper-right {
     left: -15px;
+  }
+  .clue__wrapper-neu {
+    left: -290px;
   }
   .docum {
     padding: 20px;
@@ -3090,9 +3126,6 @@ body {
     right: auto;
     left: 5px;
     bottom: 22px;
-  }
-  .docum__content {
-    padding: 9px 6px;
   }
   .docum__content-map {
     height: 260px;

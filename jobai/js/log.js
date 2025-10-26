@@ -611,7 +611,10 @@ for (let i = 0; i < hiroBtnThirdNextArray.length; i++) {
                         const hiroBlockFourth = hiroBlockFourthArray[i];
                         if (hiroBlockFourth.dataset.block === dataBlock) {
                             hiroBlockFourth.style.display = 'flex'
-                            
+                            const timer = hiroBlockFourth.querySelector('.timer')
+                            const neumorphicCode = hiroBlockFourth.querySelector('.neumorphic-code')
+                            const neumorphicNewcode = hiroBlockFourth.querySelector('.neumorphic-newcode')
+                            timerFun(timer, neumorphicCode, neumorphicNewcode)
                         } else {
                             hiroBlockFourth.style.display = 'none'
                         }
@@ -707,24 +710,74 @@ for (let i = 0; i < hiroBtnFifthNextArray.length; i++) {
     hiroBtnFifthNext.addEventListener('click', function(){
         const inputFifth = hiroBtnFifthNext.parentElement.parentElement.querySelector('.neumorphic-input')
         if (inputFifth.value.length != 0) {
-            const dataBlock = hiroBtnFifthNext.dataset.block
-            hiroBlockSearch.style.display = 'none'
-            for (let i = 0; i < hiroBlockBlockingArray.length; i++) {
-                const hiroBlockBlocking = hiroBlockBlockingArray[i];
-                if (hiroBlockBlocking.dataset.block === dataBlock) {
-                    hiroBlockBlocking.style.display = 'flex'
-                } else {
-                    hiroBlockBlocking.style.display = 'none'
-                }
+            switch (inputFifth.value) {
+                case 'Fortuna666':
+                    inputFifth.classList.add('neumorphic-input-error')
+                    const blockFifth = hiroBtnFifthNext.parentElement.parentElement
+                    const neuError = blockFifth.querySelector('.neumorphic-error')
+
+                    const neuTimer = blockFifth.querySelector('.neumorphic-timer')
+                    if (neuTimer != null) {
+                        neuTimer.style.display = 'none'
+                        neuError.style.display = 'block'
+                        setTimeout(() => {
+                            neuError.style.display = 'none'
+                            neuTimer.style.display = 'flex'
+                        }, 5000)
+                    }
+                    const neuRemember = hiroBtnFifthNext.parentElement.parentElement.querySelector('.neumorphic-remember')
+                    console.log(neuRemember)
+                    if (neuRemember != null) {
+                        neuRemember.style.display = 'none'
+                        neuError.style.display = 'block'
+                        setTimeout(() => {
+                            neuError.style.display = 'none'
+                            neuRemember.style.display = 'flex'
+                        }, 5000)
+                    }
+                    break;
+                case 'Fortuna777':
+                    const dataBlocking = hiroBtnFifthNext.dataset.blocking
+                    hiroBlockSearch.style.display = 'none'
+                    for (let i = 0; i < hiroBlockArray.length; i++) {
+                        const hiroBlock = hiroBlockArray[i];
+                        if (hiroBlock.dataset.block === dataBlocking) {
+                            hiroBlock.style.display = 'flex'
+                        } else {
+                            hiroBlock.style.display = 'none'
+                        }
+                    }
+                    for (let i = 0; i < hiroBlockFifthArray.length; i++) {
+                        const hiroBlockFifth = hiroBlockFifthArray[i];
+                        hiroBlockFifth.style.display = 'none'
+                    }
+                    for (let i = 0; i < hiroBlockFourthArray.length; i++) {
+                        const hiroBlockFourth = hiroBlockFourthArray[i];
+                        hiroBlockFourth.style.display = 'none'
+                    }
+                    break;
+                default:
+                    const dataBlock = hiroBtnFifthNext.dataset.block
+                    hiroBlockSearch.style.display = 'none'
+                    for (let i = 0; i < hiroBlockArray.length; i++) {
+                        const hiroBlock = hiroBlockArray[i];
+                        if (hiroBlock.dataset.block === dataBlock) {
+                            hiroBlock.style.display = 'flex'
+                        } else {
+                            hiroBlock.style.display = 'none'
+                        }
+                    }
+                    for (let i = 0; i < hiroBlockFifthArray.length; i++) {
+                        const hiroBlockFifth = hiroBlockFifthArray[i];
+                        hiroBlockFifth.style.display = 'none'
+                    }
+                    for (let i = 0; i < hiroBlockFourthArray.length; i++) {
+                        const hiroBlockFourth = hiroBlockFourthArray[i];
+                        hiroBlockFourth.style.display = 'none'
+                    }
+                    break;
             }
-            for (let i = 0; i < hiroBlockFifthArray.length; i++) {
-                const hiroBlockFifth = hiroBlockFifthArray[i];
-                hiroBlockFifth.style.display = 'none'
-            }
-            for (let i = 0; i < hiroBlockFourthArray.length; i++) {
-                const hiroBlockFourth = hiroBlockFourthArray[i];
-                hiroBlockFourth.style.display = 'none'
-            }
+            
         } else {
             inputFifth.classList.add('neumorphic-input-error')
             const blockFifth = hiroBtnFifthNext.parentElement.parentElement
@@ -739,7 +792,7 @@ for (let i = 0; i < hiroBtnFifthNextArray.length; i++) {
                     neuTimer.style.display = 'flex'
                 }, 5000)
             }
-            const neuRemember = document.querySelector('.neumorphic-remember')
+            const neuRemember = hiroBtnFifthNext.parentElement.parentElement.querySelector('.neumorphic-remember')
             if (neuRemember != null) {
                 neuRemember.style.display = 'none'
                 neuError.style.display = 'block'

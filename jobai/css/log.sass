@@ -468,7 +468,6 @@ html
         position: absolute
         top: 100%
         display: flex
-        justify-content: center
         width: 100%
         font: 500 10px/16px 'Inter', 'sans-serif'
         color: var(--Gray-40)
@@ -721,11 +720,13 @@ html
         flex-direction: column
         gap: 4px
         width: 300px
-        padding: 10px
+        padding: 6px
         border-radius: 8px
-        box-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White)
-        background-color: var(--Gray-90)
+        box-shadow: 10px 10px 20px var(--Neushadow), -10px -10px 20px var(--White)
+        background-color: var(--Neubg)
         z-index: 40
+        &-270
+            width: 270px
         &-small 
             width: max-content
             max-width: 300px
@@ -741,9 +742,10 @@ html
         &-active 
             display: flex
         &-neu 
-            left: -302px
+            left: 50px
     &__text 
         @include subtitle-large
+        letter-spacing: -0.5px
         color: var(--Gray-30)
         &-center 
             text-align: center
@@ -804,7 +806,7 @@ body
     &-input 
         width: 300px
         height: 50px
-        margin-bottom: 16px
+        margin-bottom: 10px
         padding: 15px
         border: none 
         border: 1px solid #A3B1C6
@@ -822,6 +824,8 @@ body
         &:focus 
             outline: 1px solid var(--Neushadow)
             background-color: var(--White)
+            &::placeholder
+                color: transparent
         &-error 
             border: 1px solid var(--Red-error)
             & ~ .neumorphic-error
@@ -829,11 +833,12 @@ body
         &-mb 
             margin-bottom: 0
         &-left 
+            width: 290px
             text-align: left
     &-clue 
         position: absolute
         top: 15px
-        right: -22px
+        right: -17px
     &-error 
         position: absolute
         display: none
@@ -854,7 +859,7 @@ body
                 image: url('../images/icons/eye_visible.png')
     &-timer 
         position: absolute
-        bottom: -10px
+        bottom: -14px
         display: flex
         align-items: center 
         gap: 4px
@@ -904,10 +909,10 @@ body
         display: flex
         flex-direction: column
         gap: 20px
-        width: 410px
+        width: 1024px
         height: 100%
         margin: 0 auto
-        padding: 40px 30px 180px
+        padding: 40px 337px 180px
     &__btn 
         width: 140px
         margin: 0 auto 
@@ -915,7 +920,7 @@ body
             margin-top: 10px
         &-restart 
             width: 170px
-            margin: 40px auto 0
+            margin: 23px auto 0
         &-warning 
             &-next
                 width: auto
@@ -969,6 +974,9 @@ body
         &-blocking 
             display: none
             padding: 10px 35px 20px
+        &-development
+            display: none
+            padding: 10px 25px 20px
         &-remember 
             display: none
         &-newpassword 
@@ -976,6 +984,18 @@ body
             padding: 10px 25px 20px
         &-warning 
             display: none
+        &-h66 
+            height: 66px
+        &-mt4
+            margin-top: 4px
+        &-mt6 
+            margin-top: 6px
+        &-mt19
+            margin-top: 19px
+        &-mt41
+            margin-top: 41px
+        &-mt131
+            margin-top: 131px
     &__list 
         padding-left: 35px
         & li 
@@ -1834,7 +1854,6 @@ body
             margin: 0 auto
             & input 
                 font-weight: 600
-        &-price 
     &__tariff 
         display: flex
         flex-direction: column
@@ -2178,12 +2197,14 @@ body
             &-description
                 width: 419px
 @media (max-width:1023px)
+    
     .hiro
         justify-content: flex-start
         transition: transform 0.5s linear
         &_up 
             transform: translateY(-110%)
         &__wrapper
+            width: 410px
             padding: 20px 30px
         &__block 
             padding: 20px 25px
@@ -2320,11 +2341,10 @@ body
                 left: -220px
             &-right 
                 left: -15px
-    
+            &-neu 
+                left: -290px
     .docum   
         padding: 20px
-        &__wrapper
-            &-tablet 
         &__top 
             padding: 9px 6px
         &__tags 
@@ -2525,7 +2545,6 @@ body
                 height: 260px
                 & iframe 
                     height: 260px
-            padding: 9px 6px
         &__tags 
             gap: 6px
         &__col1 
