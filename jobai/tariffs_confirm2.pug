@@ -45,6 +45,7 @@ html(lang="ru")
             .press-right
         .confirm.confirm_active
             .confirm__wrapper(data-confirm='success')
+                button(type="button").confirm__x
                 .confirm__item
                     p.confirm__text Ранее вы уже отправляли запрос на выставление счёта: 
                     p.confirm__text.confirm__text-center 12.08.2025г., 16:45 
@@ -62,6 +63,7 @@ html(lang="ru")
                     button(type="button").confirm__btn.btn.btn_primary.confirm__ok Подтвердить
                     button(type="button").confirm__btn.btn.btn_tertiary.confirm__close Отмена
             .confirm__wrapper.confirm__wrapper-active(data-confirm='notification')
+                button(type="button").confirm__x
                 .confirm__item
                     p.confirm__text У вас есть оплаченный период доступа 
                     p.confirm__text.confirm__text-center до 12.08.2025г., 16:45 

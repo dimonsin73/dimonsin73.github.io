@@ -298,10 +298,25 @@ documChatClose.addEventListener('click', function(){
     }
 })
 
+const documAboutLanguage = document.querySelector(' .docum__about-language')
+const documAboutDropdown  = document.querySelector('.docum__about-dropdown')
+const documAboutOptionArray = document.querySelectorAll('.docum__about-option')
+documAboutLanguage.addEventListener('click', function(){
+    documAboutDropdown.classList.toggle('docum__about-dropdown-active')
+})
+for (let i = 0; i < documAboutOptionArray.length; i++) {
+    const documAboutOption = documAboutOptionArray[i];
+        documAboutOption.addEventListener('click', function(){
+        const style = getComputedStyle(documAboutOption)
+        const bgImage = style['background-image']
+        documAboutLanguage.style.backgroundImage = bgImage
+    })
+}
+
 // Расчёт дней и стоимости
 const priceDay = 1666
-const documRangeArray = document.querySelectorAll('.docum__range')
-const documAccessInput = document.querySelector('.docum__access-input')
+const tariffsRangeArray = document.querySelectorAll('.tariffs__range')
+const tariffsAccessInput = document.querySelector('.tariffs__access-input')
 const tariffsSale = document.getElementById('tariffs-sale')
 const tariffsPrice = document.getElementById('tariffs-price')
 const tariffsVat = document.getElementById('tariffs-vat')
@@ -310,20 +325,18 @@ const tariffsTotalPrice = document.getElementById('tariffs-total-price')
 const tariffsTotalVat = document.getElementById('tariffs-total-vat')
 const additionalRecruiters = document.getElementById('additional-recruiters')
 const percentageOfCost = document.getElementById('percentage-of-cost')
-const paymentTotalPrice = document.getElementById('payment-total-price')
-const paymentTotalVat = document.getElementById('payment-total-vat')
-
-for (let i = 0; i < documRangeArray.length; i++) {
-    const documRange = documRangeArray[i];
-    const documRangeInput = documRange.querySelector('.range__input')
-    const documRangeMeaning = documRange.querySelector('.range__meaning')
-    let documRangeMeaningPosition = documRangeInput.value * 100 / documRangeInput.max
-    documRangeMeaning.style.left = `${documRangeMeaningPosition}%`
-    documRangeInput.addEventListener('input', function(){
-        documRangeMeaning.textContent = documRangeInput.value
-        let documRangeMeaningPosition = documRangeInput.value * 100 / documRangeInput.max
-        documRangeMeaning.style.left = `${documRangeMeaningPosition}%`
-        documAccessInputNum ()
+const tariffsBannerRabotodatel = document.querySelector('.tariffs__banner_rabotodatel')
+for (let i = 0; i < tariffsRangeArray.length; i++) {
+    const tariffsRange = tariffsRangeArray[i];
+    const tariffsRangeInput = tariffsRange.querySelector('.range__input')
+    const tariffsRangeMeaning = tariffsRange.querySelector('.range__meaning')
+    let tariffsRangeMeaningPosition = tariffsRangeInput.value * 100 / tariffsRangeInput.max
+    tariffsRangeMeaning.style.left = `${tariffsRangeMeaningPosition}%`
+    tariffsRangeInput.addEventListener('input', function(){
+        tariffsRangeMeaning.textContent = tariffsRangeInput.value
+        let tariffsRangeMeaningPosition = tariffsRangeInput.value * 100 / tariffsRangeInput.max
+        tariffsRangeMeaning.style.left = `${tariffsRangeMeaningPosition}%`
+        tariffsAccessInputNum ()
     })   
 }
 const additionalRecruitersOptionArray = additionalRecruiters.parentElement.querySelectorAll('.option')
@@ -352,12 +365,12 @@ for (let i = 0; i < additionalRecruitersOptionArray.length; i++) {
             default:
                 break;
         }
-        totalPrice(documAccessInput.value)
+        totalPrice(tariffsAccessInput.value)
     })
 }
 
 
-function documAccessInputNum (){
+function tariffsAccessInputNum (){
     const rangeDays =  document.getElementById('range-days')
     const rangeDaysValue = rangeDays.value
     const rangeDaysMeaning = rangeDays.parentElement.querySelector('.range__meaning')
@@ -368,13 +381,13 @@ function documAccessInputNum (){
         rangeDaysMeaning.style.left = 0
         rangeDays.disabled = true
         rangeDays.classList.add('range__input-disabled')
-        documAccessInput.value = 360
-        totalPrice(documAccessInput.value)
+        tariffsAccessInput.value = 360
+        totalPrice(tariffsAccessInput.value)
     } else {
         rangeDays.disabled = false
         rangeDays.classList.remove('range__input-disabled')
-        documAccessInput.value = Number(rangeDaysValue) + Number(rangeMonthsValue)*30
-        totalPrice(documAccessInput.value)
+        tariffsAccessInput.value = Number(rangeDaysValue) + Number(rangeMonthsValue)*30
+        totalPrice(tariffsAccessInput.value)
     }
 }
 function totalPrice(days){
@@ -399,49 +412,40 @@ function totalPrice(days){
     tariffsPrice.value = (days * priceDay * sale * risePrice).toFixed(2)
     tariffsTotalPrice.value = tariffsPrice.value
     
-    tariffsVat.value = ( (tariffsPrice.value * 20/100) / (1 + 20/100) ).toFixed(2)
-    tariffsTotalVat.value = ( (tariffsTotalPrice.value * 20/100) / (1 + 20/100) ).toFixed(2)
+    tariffsVat.value = ( (tariffsPrice.value * 22/100) / (1 + 22/100) ).toFixed(2)
+    tariffsTotalVat.value = ( (tariffsTotalPrice.value * 22/100) / (1 + 22/100) ).toFixed(2)
 }
-
-const tariffsCurrency = document.getElementById('tariffs-currency')
-const tariffsCurrencyOptionArray = tariffsCurrency.parentElement.querySelectorAll('.option')
-const labelCurrencyArray = tariffsCurrency.parentElement.parentElement.querySelectorAll('.label__currency')
-
-for (let i = 0; i < tariffsCurrencyOptionArray.length; i++) {
-    const tariffsCurrencyOption = tariffsCurrencyOptionArray[i];
-    tariffsCurrencyOption.addEventListener('click', function(){
-        for (let i = 0; i < labelCurrencyArray.length; i++) {
-            const labelCurrency = labelCurrencyArray[i];
-            labelCurrency.textContent = tariffsCurrencyOption.textContent
-        }
-    })
-}
-const tariffsCurrencyTotal = document.getElementById('tariffs-currency-total')
-const tariffsCurrencyTotalArray = tariffsCurrencyTotal.parentElement.querySelectorAll('.option')
-const labelCurrencyTotalArray = tariffsCurrencyTotal.parentElement.parentElement.querySelectorAll('.label__currency')
-const tariffsDayPriceCurrency = tariffsDayPrice.parentElement.querySelector('.label__currency')
-for (let i = 0; i < tariffsCurrencyTotalArray.length; i++) {
-    const tariffsCurrencyTotal = tariffsCurrencyTotalArray[i];
-    tariffsCurrencyTotal.addEventListener('click', function(){
-        for (let i = 0; i < labelCurrencyTotalArray.length; i++) {
-            const labelCurrencyTotal = labelCurrencyTotalArray[i];
-            labelCurrencyTotal.textContent = tariffsCurrencyTotal.textContent
-            tariffsDayPriceCurrency.textContent = tariffsCurrencyTotal.textContent
+const tariffsRadioInputArray = document.querySelectorAll('.tariffs__radio-input')
+const invoice = document.getElementById('invoice')
+const payBtn = document.getElementById('pay-btn')
+const tariffsGrid7 = document.querySelector('.tariffs__grid7')
+for (let i = 0; i < tariffsRadioInputArray.length; i++) {
+    const tariffsRadioInput = tariffsRadioInputArray[i];
+    tariffsRadioInput.addEventListener('change', function(){
+        if (invoice.checked) {
+            tariffsGrid7.style.opacity = '1'
+            payBtn.style.display = 'none'
+            invoiceSend.style.display = 'none'
+            enterMailLabel.style.display = 'flex'
+        } else {
+            tariffsGrid7.style.opacity = '0'
+            payBtn.style.display = 'flex'
+            personalAccount.style.display = 'none'
         }
     })
 }
 
-const documAboutLanguage = document.querySelector(' .docum__about-language')
-const documAboutDropdown  = document.querySelector('.docum__about-dropdown')
-const documAboutOptionArray = document.querySelectorAll('.docum__about-option')
-documAboutLanguage.addEventListener('click', function(){
-    documAboutDropdown.classList.toggle('docum__about-dropdown-active')
-})
-for (let i = 0; i < documAboutOptionArray.length; i++) {
-    const documAboutOption = documAboutOptionArray[i];
-        documAboutOption.addEventListener('click', function(){
-        const style = getComputedStyle(documAboutOption)
-        const bgImage = style['background-image']
-        documAboutLanguage.style.backgroundImage = bgImage
+const tariffsFormArray = document.querySelectorAll('.tariffs__form')
+for (let i = 0; i < tariffsFormArray.length; i++) {
+    const tariffsForm = tariffsFormArray[i];
+    tariffsForm.addEventListener('scroll', function(){
+        console.log(tariffsForm.scrollTop)
+        if (tariffsForm.scrollTop > 0) {
+            tariffsBannerRabotodatel.classList.add('tariffs__banner-min')
+            tariffsForm.classList.add('tariffs__form-max')
+        } else {
+            tariffsBannerRabotodatel.classList.remove('tariffs__banner-min')
+            tariffsForm.classList.remove('tariffs__form-max')
+        }
     })
 }
