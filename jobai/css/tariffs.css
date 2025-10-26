@@ -2830,6 +2830,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 @media (max-width: 767px) {
+  .tabs_small {
+    gap: 6px;
+  }
   .clue__wrapper-left {
     left: 0px;
   }
