@@ -124,6 +124,7 @@ const popupArray = document.querySelectorAll('.popup')
 for (let i = 0; i < popupArray.length; i++) {
     const popup = popupArray[i];
     const popupWrapper = popup.querySelector('.popup__wrapper')
+    const popupBtn = popup.querySelector('.popup__btn')
     if (window.innerWidth < '1023') {
         popup.addEventListener('click', function(){
             popup.classList.add('popup_active')
@@ -134,9 +135,15 @@ for (let i = 0; i < popupArray.length; i++) {
                 popup.classList.remove('popup_active')
             }
         })
+        popupBtn.addEventListener('click', function(){
+            popup.classList.remove('popup_active')
+        })
     } else {
         popup.addEventListener('mouseenter', function(){
             popup.classList.add('popup_active')
+        })
+        popupBtn.addEventListener('click', function(){
+            popup.classList.remove('popup_active')
         })
         popup.addEventListener('mouseleave', function(){
             popup.classList.remove('popup_active')
@@ -1143,3 +1150,214 @@ hiroPasswordReset.addEventListener('click', function(){
     }
     hiroPasswordRepeat.classList.remove('hiro__password-error')
 })
+
+const hiroTextareaArray = document.querySelectorAll('.hiro__textarea')
+for (let i = 0; i < hiroTextareaArray.length; i++) {
+    const hiroTextarea = hiroTextareaArray[i];  
+    hiroTextarea.addEventListener('input', function(){
+        const hiroTextareaValue = hiroTextarea.parentElement.querySelector('.hiro__textarea-value')
+        const hiroTextareaValueLength = hiroTextarea.value.length
+        hiroTextareaValue.textContent = `${hiroTextareaValueLength} символов`
+    })
+}
+// Каледнарь 
+let datepicker = new Datepicker('#job-start', {
+    weekStart: 1
+});
+let datepicker1 = new Datepicker('#job-finish', {
+    weekStart: 1
+});
+let datepicker2 = new Datepicker('#interview-start', {
+    weekStart: 1
+});
+let datepicker3 = new Datepicker('#interview-finish', {
+    weekStart: 1
+});
+
+const hiroSelectArray = document.querySelectorAll('.hiro__select')
+for (let i = 0; i < hiroSelectArray.length; i++) {
+    const hiroSelect = hiroSelectArray[i];
+    const hiroInput = hiroSelect.querySelector('.neumorphic-input')
+    hiroInput
+}
+
+
+const popupBtnArray = document.querySelectorAll('.popup__btn')
+for (let i = 0; i < popupBtnArray.length; i++) {
+    const popupBtn = popupBtnArray[i];
+    popupBtn.addEventListener('click', function(){
+        const popupWrapper = popupBtn.parentElement.parentElement
+        const popup = popupWrapper.parentElement
+        const dataBtn = popupBtn.dataset.btn
+        for (let i = 0; i < hiroBlockArray.length; i++) {
+            const hiroBlock = hiroBlockArray[i];
+            if (hiroBlock.dataset.block === dataBtn) {
+                hiroBlock.style.display = 'flex'
+                hiroArrow.classList.add('hiro__arrow-hide')
+            } else {
+                hiroBlock.style.display = 'none'
+            }
+        }
+        popupWrapper.classList.add('neumorphic-act')
+        popup.classList.remove('popup_active')
+    })
+}
+const hiroBlockCloseArray = document.querySelectorAll('.hiro__block-close')
+const popupWrapperArray = document.querySelectorAll('.popup__wrapper')
+for (let i = 0; i < hiroBlockCloseArray.length; i++) {
+    const hiroBlockClose = hiroBlockCloseArray[i];
+    hiroBlockClose.addEventListener('click', function(){
+        for (let i = 0; i < hiroBlockArray.length; i++) {
+            const hiroBlock = hiroBlockArray[i];
+            if (hiroBlock.dataset.block === 'search' || hiroBlock.dataset.block === 'first'|| hiroBlock.dataset.block === 'example') {
+                hiroBlock.style.display = 'flex'
+                hiroArrow.classList.remove('hiro__arrow-hide')
+            } else {
+                hiroBlock.style.display = 'none'
+            }
+        }
+        for (let i = 0; i < popupWrapperArray.length; i++) {
+            const popupWrapper = popupWrapperArray[i];
+            popupWrapper.classList.remove('neumorphic-act')   
+        }
+    })
+}
+const neumorphicButtonNextArray = document.querySelectorAll('.neumorphic-button-next')
+
+for (let i = 0; i < neumorphicButtonNextArray.length; i++) {
+    const neumorphicButtonNext = neumorphicButtonNextArray[i];
+    neumorphicButtonNext.addEventListener('click', function(){
+        const hiroGridArray = neumorphicButtonNext.parentElement.parentElement.parentElement.querySelectorAll('.hiro__grid')
+        const neumorphicInputArray = neumorphicButtonNext.parentElement.parentElement.querySelectorAll('.neumorphic-input')
+        const dataGridbtn = neumorphicButtonNext.dataset.gridbtn
+        let errorNum = 0
+        if (neumorphicInputArray != null) {
+            for (let i = 0; i < neumorphicInputArray.length; i++) {
+                const neumorphicInput = neumorphicInputArray[i];
+                if (neumorphicInput.dataset.valid === 'true') {
+                    if (neumorphicInput.value.length === 0) {
+                        neumorphicInput.classList.add('neumorphic-input-error')
+                        errorNum++
+                    }
+                }
+            }
+        }
+        if (neumorphicButtonNext.dataset.datepicker === 'true') {
+            const hiroGrid = neumorphicButtonNext.parentElement.parentElement
+            const neumorphicErrorArray = hiroGrid.querySelectorAll('.neumorphic-error')
+            
+            for (let i = 0; i < neumorphicInputArray.length; i++) {
+                const neumorphicInput = neumorphicInputArray[i];
+                if (neumorphicInput.value.length === 0) {
+                    const dataDatepicker = neumorphicInput.dataset.datepicker
+                    for (let i = 0; i < neumorphicErrorArray.length; i++) {
+                        const neumorphicError = neumorphicErrorArray[i];
+                        if (neumorphicError.dataset.datepicker === dataDatepicker) {
+                            neumorphicError.style.display = 'block'
+                        }
+                    }
+                } else {
+                    neumorphicInput.classList.remove('neumorphic-input-error')
+                    for (let i = 0; i < neumorphicErrorArray.length; i++) {
+                        const neumorphicError = neumorphicErrorArray[i];
+                        neumorphicError.style.display = 'none'
+                    }
+                }
+            }
+        }
+        const neumorphicCheck = neumorphicButtonNext.parentElement.parentElement.querySelector('.check__input')
+        if (neumorphicCheck != null) {
+            if (neumorphicCheck.checked) {
+            } else {
+                errorNum++
+            }
+        }
+        const neumorphicTextarea = neumorphicButtonNext.parentElement.parentElement.querySelector('.neumorphic-textarea')
+        if (neumorphicTextarea != null) {
+            if (neumorphicTextarea.value.trim().length === 0) {
+                neumorphicTextarea.classList.add('neumorphic-textarea-error')
+                errorNum++
+            }
+        }
+
+        if (errorNum === 0) {
+            for (let i = 0; i < hiroGridArray.length; i++) {
+                const hiroGrid = hiroGridArray[i];
+                if (hiroGrid.dataset.grid === dataGridbtn) {
+                    hiroGrid.classList.add('hiro__grid-active')
+                } else {
+                    hiroGrid.classList.remove('hiro__grid-active')
+                }
+            }
+        }
+    })
+}
+const neumorphicButtonPrevArray = document.querySelectorAll('.neumorphic-button-prev')
+for (let i = 0; i < neumorphicButtonPrevArray.length; i++) {
+    const neumorphicButtonPrev = neumorphicButtonPrevArray[i];
+    neumorphicButtonPrev.addEventListener('click', function(){
+        const hiroGridArray = neumorphicButtonPrev.parentElement.parentElement.parentElement.querySelectorAll('.hiro__grid')
+        const dataGridbtn = neumorphicButtonPrev.dataset.gridbtn
+        for (let i = 0; i < hiroGridArray.length; i++) {
+            const hiroGrid = hiroGridArray[i];
+            if (hiroGrid.dataset.grid === dataGridbtn) {
+                hiroGrid.classList.add('hiro__grid-active')
+            } else {
+                hiroGrid.classList.remove('hiro__grid-active')
+            }
+        }
+    })
+}
+
+const neumorphicTextareaArray = document.querySelectorAll('.neumorphic-textarea')
+for (let i = 0; i < neumorphicTextareaArray.length; i++) {
+    const neumorphicTextarea = neumorphicTextareaArray[i];
+    neumorphicTextarea.addEventListener('input', function(){
+        neumorphicTextarea.classList.remove('neumorphic-textarea-error')
+    })
+}
+
+const hirolabelContent = document.querySelector('.hiro__label-content')
+const hiroLabelBtn = document.querySelector('.hiro__label-btn')
+hiroLabelBtn.addEventListener('click', function(){
+    const itemArray = hirolabelContent.querySelectorAll('.hiro__label-item')
+    if (itemArray.length > 4) {
+    } else {
+        const hiroLabelItem = document.createElement('div')
+        hiroLabelItem.classList.add('hiro__label-item')
+
+        const hiroLabelDoc = document.createElement('button')
+        hiroLabelDoc.classList.add('hiro__label-doc')
+        hiroLabelDoc.setAttribute('type', 'button')
+        hiroLabelDoc.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.80005 4.7999C4.80005 3.47442 5.87457 2.3999 7.20005 2.3999H12.703C13.3395 2.3999 13.95 2.65276 14.4 3.10285L18.4971 7.1999C18.9472 7.64999 19.2 8.26044 19.2 8.89696V19.1999C19.2 20.5254 18.1255 21.5999 16.8 21.5999H7.20005C5.87456 21.5999 4.80005 20.5254 4.80005 19.1999V4.7999ZM7.20005 11.9999C7.20005 11.3372 7.73731 10.7999 8.40005 10.7999H15.6C16.2628 10.7999 16.8 11.3372 16.8 11.9999C16.8 12.6626 16.2628 13.1999 15.6 13.1999H8.40005C7.73731 13.1999 7.20005 12.6626 7.20005 11.9999ZM8.40005 15.5999C7.73731 15.5999 7.20005 16.1372 7.20005 16.7999C7.20005 17.4626 7.73731 17.9999 8.40005 17.9999H15.6C16.2628 17.9999 16.8 17.4626 16.8 16.7999C16.8 16.1372 16.2628 15.5999 15.6 15.5999H8.40005Z" fill="#6A6A73"/></svg> Презентация компании'
+
+        const hiroLabelDelete = document.createElement('button')
+        hiroLabelDelete.classList.add('hiro__label-delete')
+        hiroLabelDelete.setAttribute('type', 'button')
+        hiroLabelDelete.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>`
+
+        hiroLabelItem.append(hiroLabelDoc, hiroLabelDelete)
+        hirolabelContent.append(hiroLabelItem)
+
+        hiroLabelDelete.addEventListener('click', function(){
+            const item = hiroLabelDelete.parentElement
+            item.remove()
+        })
+    } 
+    
+})
+
+const hiroStatus = document.querySelector('.hiro__status')
+const hiroStatusInput = hiroStatus.querySelector('.neumorphic-input')
+const hiroStatusOptionArray = hiroStatus.querySelectorAll('.option')
+const hiroStatusStatus = hiroStatus.querySelector('.hiro__status-status')
+for (let i = 0; i < hiroStatusOptionArray.length; i++) {
+    const hiroStatusOption = hiroStatusOptionArray[i];
+    hiroStatusOption.addEventListener('click', function(){
+        hiroStatusInput.classList.remove('neumorphic-input-error')
+        if (hiroStatusOption.textContent === 'Сейчас не работаю') {
+        } else {
+            hiroStatusStatus.style.display = 'flex'
+        }
+    })
+}

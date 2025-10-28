@@ -6,7 +6,9 @@ html(lang="ru")
         title Log
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet", href="css/reset.css")
+        link(rel="stylesheet" href="css/datepicker.material.css")
         link(rel="stylesheet", href="css/log.css")
+        script(type="text/javascript" src="js/datepicker.js" defer)  
         script(src="js/log.js", defer) 
     body    
         .hiro#hiro
@@ -529,13 +531,6 @@ html(lang="ru")
                         .hiro__content-item
                             p До встречи!
                     button(type="button").hiro__btn-restart.neumorphic.neumorphic-button Понятно
-
-
-
-
-
-
-
                 .hiro__block.hiro__block-newpassword.neumorphic
                     .hiro__top 
                         h2.hiro__top-title Создайте новый пароль
@@ -568,7 +563,492 @@ html(lang="ru")
                     .hiro__password-footer
                         button(type="button").hiro__password-btn.hiro__password-save.neumorphic.neumorphic-button Сохранить
                         button(type="button").hiro__password-btn.hiro__password-reset.neumorphic.neumorphic-button Повторить
+                .hiro__block.hiro__block-interview.neumorphic(data-block='interview_rabotodatel')
+                    .hiro__head
+                        h2.hiro__head-title
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.5 9C19.5 11.4853 17.4853 13.5 15 13.5C12.5147 13.5 10.5 11.4853 10.5 9C10.5 6.51472 12.5147 4.5 15 4.5C17.4853 4.5 19.5 6.51472 19.5 9Z" fill="#6A6A73"/>
+                                <path d="M27 12C27 13.6569 25.6568 15 24 15C22.3431 15 21 13.6569 21 12C21 10.3431 22.3431 9 24 9C25.6568 9 27 10.3431 27 12Z" fill="#6A6A73"/>
+                                <path d="M21 22.5C21 19.1863 18.3137 16.5 15 16.5C11.6863 16.5 8.99999 19.1863 8.99999 22.5V27H21V22.5Z" fill="#6A6A73"/>
+                                <path d="M8.99999 12C8.99999 13.6569 7.65685 15 6 15C4.34314 15 3 13.6569 3 12C3 10.3431 4.34314 9 6 9C7.65685 9 8.99999 10.3431 8.99999 12Z" fill="#6A6A73"/>
+                                <path d="M24 27V22.5C24 20.9188 23.5922 19.4328 22.8761 18.1415C23.2353 18.0491 23.6119 18 24 18C26.4853 18 28.5 20.0147 28.5 22.5V27H24Z" fill="#6A6A73"/>
+                                <path d="M7.12389 18.1415C6.40777 19.4328 6 20.9188 6 22.5V27H1.5V22.5C1.5 20.0147 3.51472 18 6 18C6.38806 18 6.76465 18.0491 7.12389 18.1415Z" fill="#6A6A73"/>
+                            </svg>
+                            | Заказать запись кандидатов
+                        button(type="button").hiro__block-close
+                    .hiro__grid.hiro__grid-big.hiro__grid-active(data-grid='1')
+                        h2.hiro__head-title Персональные данные
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_rabotodatel-name", placeholder='Введите своё Имя').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", data-valid='false', name="interview_rabotodatel-lastname", placeholder='Введите своё Отчество').neumorphic-input.neumorphic-input-left
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_rabotodatel-surname", placeholder='Введите свою Фамилию').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_rabotodatel-company", placeholder='Введите название вашей компании').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="email", data-valid='true', name="interview_rabotodatel-email", placeholder='Введите электронную почту').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_rabotodatel-tel", placeholder='Введите телефон').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .hiro__check 
+                            .check
+                                input.check__input#interview_rabotodatel-agreement(type="checkbox", name="agreement" value='согласен на обработку персональных данных')
+                                label.check__label(for="interview_rabotodatel-agreement")
+                                    .check__check
+                                    .check__info
+                                        p.check__text согласен на обработку персональных данных
+                        .hiro__down
+                            button(type="button", data-gridbtn='2').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                    .hiro__grid.hiro__grid-small.hiro__grid-active(data-grid='1')
+                        h2.hiro__head-title Персональные данные
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_rabotodatel-name", placeholder='Введите своё Имя').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", data-valid='false', name="interview_rabotodatel-lastname", placeholder='Введите своё Отчество').neumorphic-input.neumorphic-input-left
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_rabotodatel-surname", placeholder='Введите свою Фамилию').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_rabotodatel-company", placeholder='Введите название вашей компании').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .hiro__check 
+                            .check
+                                input.check__input#interview_rabotodatel-agreement-small(type="checkbox", name="agreement" value='согласен на обработку персональных данных')
+                                label.check__label(for="interview_rabotodatel-agreement-small")
+                                    .check__check
+                                    .check__info
+                                        p.check__text согласен на обработку персональных данных
+                        .hiro__down
+                            button(type="button", data-gridbtn='1.5').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                    .hiro__grid(data-grid='1.5')
+                        h2.hiro__head-title Персональные данные
+                        .neumorphic-label
+                            input(type="email", data-valid='true', name="interview_rabotodatel-email", placeholder='Введите электронную почту').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_rabotodatel-tel", placeholder='Введите телефон').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .hiro__check 
+                            .check
+                                input.check__input#interview_rabotodatel-agreement-small2(type="checkbox", name="agreement" value='согласен на обработку персональных данных')
+                                label.check__label(for="interview_rabotodatel-agreement-small2")
+                                    .check__check
+                                    .check__info
+                                        p.check__text согласен на обработку персональных данных
+                        .hiro__down
+                            button(type="button", data-gridbtn='2').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                    .hiro__grid(data-grid='2')
+                        h2.hiro__head-title Специализация компании
+                        label.neumorphic-label.hiro__label
+                            textarea(name="market" maxlength="1000").neumorphic-textarea.hiro__textarea
+                            p.neumorphic-error Обязательное поле 
+                            h3.hiro__textarea-title На каком рынке ваша компания работает?
+                            p.hiro__textarea-text Опишите своими словами
+                            .hiro__textarea-footer
+                                p.hiro__textarea-value 0 символов
+                                p.hiro__textarea-max не более 1 000 символов
+                        .hiro__down
+                            button(type="button", data-gridbtn='3').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                            button(type="button", data-gridbtn='1').neumorphic.neumorphic-button.neumorphic-button-prev Назад
+                    .hiro__grid(data-grid='3')
+                        h2.hiro__head-title Перечень должностей
+                        label.neumorphic-label.hiro__label
+                            textarea(name="position" maxlength="2000").neumorphic-textarea.hiro__textarea 
+                            p.neumorphic-error Обязательное поле 
+                            h3.hiro__textarea-title На какие должности нужны кандидаты?
+                            p.hiro__textarea-text Опишите своими словами
+                            .hiro__textarea-footer
+                                p.hiro__textarea-value 0 символов
+                                p.hiro__textarea-max не более 2 000 символов
+                        .hiro__down
+                            button(type="button", data-gridbtn='4').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                            button(type="button", data-gridbtn='2').neumorphic.neumorphic-button.neumorphic-button-prev Назад
+                    .hiro__grid(data-grid='4')
+                        h2.hiro__head-title Прикрепленные файлы
+                        .neumorphic-label.hiro__label
+                            .hiro__label-content
+                                button(type="button").hiro__label-btn Прикрепить файлы
+                                p.hiro__label-text
+                                    | Прикрепить можно не более 5 файлов, 
+                                    | каждый не более 10 Мв
+                        .hiro__down
+                            button(type="button").neumorphic.neumorphic-button Далее
+                            button(type="button", data-gridbtn='3').neumorphic.neumorphic-button.neumorphic-button-prev Назад
+                
 
+
+
+
+                            
+                .hiro__block.hiro__block-interview.neumorphic(data-block='interview_kandidat')
+                    .hiro__head
+                        h2.hiro__head-title
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9C3 7.34315 4.34315 6 6 6H15C16.6569 6 18 7.34315 18 9V21C18 22.6569 16.6569 24 15 24H6C4.34315 24 3 22.6569 3 21V9Z" fill="#6A6A73"/>
+                                <path d="M21.8292 10.6584C21.321 10.9124 21 11.4318 21 12V18C21 18.5682 21.321 19.0876 21.8292 19.3416L24.8292 20.8416C25.2942 21.0741 25.8464 21.0493 26.2886 20.776C26.7308 20.5027 27 20.0199 27 19.5V10.5C27 9.98014 26.7308 9.49734 26.2886 9.22403C25.8464 8.95072 25.2942 8.92587 24.8292 9.15836L21.8292 10.6584Z" fill="#6A6A73"/>
+                            </svg>
+                            | Записаться на бесплатное видеособеседование
+                        button(type="button").hiro__block-close
+                    .hiro__grid.hiro__grid-big.hiro__grid-active(data-grid='1')
+                        h2.hiro__head-title Персональные данные
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_kandidat-name", placeholder='Введите своё Имя').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", name="interview_kandidat-lastname", placeholder='Введите своё Отчество').neumorphic-input.neumorphic-input-left
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_kandidat-surname", placeholder='Введите свою Фамилию').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="email", data-valid='true', name="interview_kandidat-email", placeholder='Введите электронную почту').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_kandidat-tel", placeholder='Введите телефон').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            .neumorphic-label-clean
+                        .hiro__check 
+                            .check
+                                input.check__input#interview_kandidat-agreement(type="checkbox", name="agreement" value='согласен на обработку персональных данных')
+                                label.check__label(for="interview_kandidat-agreement")
+                                    .check__check
+                                    .check__info
+                                        p.check__text согласен на обработку персональных данных
+                        .hiro__down
+                            button(type="button", data-gridbtn='2').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                    .hiro__grid.hiro__grid-small.hiro__grid-active(data-grid='1')
+                        h2.hiro__head-title Персональные данные
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_kandidat-name", placeholder='Введите своё Имя').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", name="interview_kandidat-lastname", placeholder='Введите своё Отчество').neumorphic-input.neumorphic-input-left
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_kandidat-surname", placeholder='Введите свою Фамилию').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .hiro__check 
+                            .check
+                                input.check__input#interview_kandidat-agreement-small(type="checkbox", name="agreement" value='согласен на обработку персональных данных')
+                                label.check__label(for="interview_kandidat-agreement-small")
+                                    .check__check
+                                    .check__info
+                                        p.check__text согласен на обработку персональных данных
+                        .hiro__down
+                            button(type="button", data-gridbtn='1.5').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                    .hiro__grid(data-grid='1.5')
+                        h2.hiro__head-title Персональные данные
+                        .neumorphic-label
+                            input(type="email", data-valid='true', name="interview_kandidat-email", placeholder='Введите электронную почту').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .neumorphic-label
+                            input(type="text", data-valid='true', name="interview_kandidat-tel", placeholder='Введите телефон').neumorphic-input.neumorphic-input-left
+                            p.neumorphic-error Обязательное поле 
+                        .hiro__check 
+                            .check
+                                input.check__input#interview_kandidat-agreement-small2(type="checkbox", name="agreement" value='согласен на обработку персональных данных')
+                                label.check__label(for="interview_kandidat-agreement-small2")
+                                    .check__check
+                                    .check__info
+                                        p.check__text согласен на обработку персональных данных
+                        .hiro__down
+                            button(type="button", data-gridbtn='2').neumorphic.neumorphic-button.neumorphic-button-next Далее
+
+
+
+
+                    .hiro__grid(data-grid='2')
+                        h2.hiro__head-title Желаемая должность
+                        label.neumorphic-label.hiro__label
+                            textarea(name="market" maxlength="1000").neumorphic-textarea.hiro__textarea 
+                            h3.hiro__textarea-title Какие должности/вакансии вам подходят?
+                            p.hiro__textarea-text Перечислите несколько
+                            .hiro__textarea-footer
+                                p.hiro__textarea-value 0 символов
+                                p.hiro__textarea-max не более 1 000 символов
+                        .hiro__down
+                            button(type="button", data-gridbtn='3').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                            button(type="button", data-gridbtn='1').neumorphic.neumorphic-button.neumorphic-button-prev Назад
+                    .hiro__grid(data-grid='3')
+                        .hiro__grid-smallcontent
+                            h2.hiro__head-title Желаемый ежемесячный доход
+                            label(for='income-start').label
+                                input(type="number", data-valid='true', name="income").neumorphic-input#income-start
+                                p.neumorphic-error Обязательное поле 
+                                h3.label__smalltitle от
+                                p.label__currency ₽
+                            label(for='income-finish').label
+                                input(type="number", data-valid='true', name="income").neumorphic-input#income-finish
+                                p.neumorphic-error Обязательное поле 
+                                h3.label__smalltitle до
+                                p.label__currency ₽
+                        .hiro__down
+                            button(type="button", data-gridbtn='4').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                            button(type="button", data-gridbtn='2').neumorphic.neumorphic-button.neumorphic-button-prev Назад
+                    .hiro__grid(data-grid='4')
+                        .hiro__grid-smallcontent
+                            h2.hiro__head-title Желаемый период трудоустройства
+                            label(for='job-start').label
+                                input(type="text", data-valid='true', data-datepicker='1', readonly, name="job").neumorphic-input.datepicker#job-start
+                                p(data-datepicker='1').neumorphic-error Обязательное поле 
+                                h3.label__smalltitle с
+                            label(for='job-finish').label
+                                input(type="text", data-valid='true', data-datepicker='2', readonly, name="job").neumorphic-input.datepicker#job-finish
+                                p(data-datepicker='2').neumorphic-error Обязательное поле 
+                                h3.label__smalltitle по
+                        .hiro__down
+                            button(type="button", data-gridbtn='5', data-datepicker='true').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                            button(type="button", data-gridbtn='3').neumorphic.neumorphic-button.neumorphic-button-prev Назад
+                    .hiro__grid(data-grid='5')
+                        .hiro__grid-smallcontent.hiro__status
+                            h2.hiro__head-title Текущий статус
+                            .hiro__select.select.select_up
+                                input(type="text", data-valid='true', readonly, name="status").select__input.neumorphic-input.neumorphic-input-left#interview-status
+                                p.neumorphic-error Обязательное поле 
+                                label(for="interview-status").select__title Выберите статус
+                                .options 
+                                    .options__wrapper
+                                        .option Сейчас не работаю
+                                        .option Сейчас трудоустроен 
+                                        .option Трудоустроен, но увольняюсь
+                            label.label.hiro__status-status
+                                input(type="number", name="status", placeholder="Укажите примерное время отработки, дн.").neumorphic-input
+                        .hiro__down
+                            button(type="button", data-gridbtn='6').neumorphic.neumorphic-button.neumorphic-button-next Далее
+                            button(type="button", data-gridbtn='4').neumorphic.neumorphic-button.neumorphic-button-prev Назад
+                    .hiro__grid(data-grid='6')
+                        .hiro__grid-smallcontent
+                            h2.hiro__head-title Желаемая дата и время проведения видеособеседования
+                            label(for='').label
+                                input(type="text", readonly, name="").neumorphic-input.datepicker#interview-start
+                                h3.label__smalltitle с
+                            label(for='').label
+                                input(type="text", readonly, name="").neumorphic-input.datepicker#interview-finish
+                                h3.label__smalltitle по
+                            .hiro__times
+                                .select
+                                    input(type="text", readonly, name="time").select__input.input#time-start.hiro__times-input
+                                    .options
+                                        .options__wrapper
+                                            .option 00:00
+                                            .option 00:15
+                                            .option 00:30
+                                            .option 00:45
+                                            .option 01:00
+                                            .option 01:15
+                                            .option 01:30
+                                            .option 01:45
+                                            .option 02:00
+                                            .option 02:15
+                                            .option 02:30
+                                            .option 02:45
+                                            .option 03:00
+                                            .option 03:15
+                                            .option 03:30
+                                            .option 03:45
+                                            .option 04:00
+                                            .option 04:15
+                                            .option 04:30
+                                            .option 04:45
+                                            .option 05:00
+                                            .option 05:15
+                                            .option 05:30
+                                            .option 05:45
+                                            .option 06:00
+                                            .option 06:15
+                                            .option 06:30
+                                            .option 06:45
+                                            .option 07:00
+                                            .option 07:15
+                                            .option 07:30
+                                            .option 07:45
+                                            .option 08:00
+                                            .option 08:15
+                                            .option 08:30
+                                            .option 08:45
+                                            .option 09:00
+                                            .option 09:15
+                                            .option 09:30
+                                            .option 09:45
+                                            .option 10:00
+                                            .option 10:15
+                                            .option 10:30
+                                            .option 10:45
+                                            .option 11:00
+                                            .option 11:15
+                                            .option 11:30
+                                            .option 11:45
+                                            .option 12:00
+                                            .option 12:15
+                                            .option 12:30
+                                            .option 12:45
+                                            .option 13:00
+                                            .option 13:15
+                                            .option 13:30
+                                            .option 13:45
+                                            .option 14:00
+                                            .option 14:15
+                                            .option 14:30
+                                            .option 14:45
+                                            .option 15:00
+                                            .option 15:15
+                                            .option 15:30
+                                            .option 15:45
+                                            .option 16:00
+                                            .option 16:15
+                                            .option 16:30
+                                            .option 16:45
+                                            .option 17:00
+                                            .option 17:15
+                                            .option 17:30
+                                            .option 17:45
+                                            .option 18:00
+                                            .option 18:15
+                                            .option 18:30
+                                            .option 18:45
+                                            .option 19:00
+                                            .option 19:15
+                                            .option 19:30
+                                            .option 19:45
+                                            .option 20:00
+                                            .option 20:15
+                                            .option 20:30
+                                            .option 20:45
+                                            .option 21:00
+                                            .option 21:15
+                                            .option 21:30
+                                            .option 21:45
+                                            .option 22:00
+                                            .option 22:15
+                                            .option 22:30
+                                            .option 22:45
+                                            .option 23:00
+                                            .option 23:15
+                                            .option 23:30
+                                            .option 23:45
+                                .select
+                                    input(type="text", readonly, name="time").select__input.input#time-finish.hiro__times-input
+                                    .options
+                                        .options__wrapper
+                                            .option 00:00
+                                            .option 00:15
+                                            .option 00:30
+                                            .option 00:45
+                                            .option 01:00
+                                            .option 01:15
+                                            .option 01:30
+                                            .option 01:45
+                                            .option 02:00
+                                            .option 02:15
+                                            .option 02:30
+                                            .option 02:45
+                                            .option 03:00
+                                            .option 03:15
+                                            .option 03:30
+                                            .option 03:45
+                                            .option 04:00
+                                            .option 04:15
+                                            .option 04:30
+                                            .option 04:45
+                                            .option 05:00
+                                            .option 05:15
+                                            .option 05:30
+                                            .option 05:45
+                                            .option 06:00
+                                            .option 06:15
+                                            .option 06:30
+                                            .option 06:45
+                                            .option 07:00
+                                            .option 07:15
+                                            .option 07:30
+                                            .option 07:45
+                                            .option 08:00
+                                            .option 08:15
+                                            .option 08:30
+                                            .option 08:45
+                                            .option 09:00
+                                            .option 09:15
+                                            .option 09:30
+                                            .option 09:45
+                                            .option 10:00
+                                            .option 10:15
+                                            .option 10:30
+                                            .option 10:45
+                                            .option 11:00
+                                            .option 11:15
+                                            .option 11:30
+                                            .option 11:45
+                                            .option 12:00
+                                            .option 12:15
+                                            .option 12:30
+                                            .option 12:45
+                                            .option 13:00
+                                            .option 13:15
+                                            .option 13:30
+                                            .option 13:45
+                                            .option 14:00
+                                            .option 14:15
+                                            .option 14:30
+                                            .option 14:45
+                                            .option 15:00
+                                            .option 15:15
+                                            .option 15:30
+                                            .option 15:45
+                                            .option 16:00
+                                            .option 16:15
+                                            .option 16:30
+                                            .option 16:45
+                                            .option 17:00
+                                            .option 17:15
+                                            .option 17:30
+                                            .option 17:45
+                                            .option 18:00
+                                            .option 18:15
+                                            .option 18:30
+                                            .option 18:45
+                                            .option 19:00
+                                            .option 19:15
+                                            .option 19:30
+                                            .option 19:45
+                                            .option 20:00
+                                            .option 20:15
+                                            .option 20:30
+                                            .option 20:45
+                                            .option 21:00
+                                            .option 21:15
+                                            .option 21:30
+                                            .option 21:45
+                                            .option 22:00
+                                            .option 22:15
+                                            .option 22:30
+                                            .option 22:45
+                                            .option 23:00
+                                            .option 23:15
+                                            .option 23:30
+                                            .option 23:45
+                                .hiro__gmt
+                                    p GMT+03:00 
+                                    p Москва
+                            .hiro__clue 
+                                .clue
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM10 7C9.63113 7 9.3076 7.19922 9.13318 7.50073C8.85664 7.97879 8.24491 8.14215 7.76685 7.86561C7.28879 7.58906 7.12543 6.97733 7.40197 6.49927C7.91918 5.60518 8.88833 5 10 5C11.6569 5 13 6.34315 13 8C13 9.30622 12.1652 10.4175 11 10.8293V11C11 11.5523 10.5523 12 10 12C9.44773 12 9.00001 11.5523 9.00001 11V10C9.00001 9.44772 9.44773 9 10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7ZM10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="#A0A1A9"/>
+                                    </svg>
+                                    .clue__wrapper.clue__wrapper-neu    
+                                        p.clue__text Выберите один временной слот, который вам наиболее подходит:
+                                        ul.clue__list
+                                            li.clue__list-item.clue__text период с и по 
+                                            li.clue__list-item.clue__text временной интервал
+                                        p.clue__text С вами свяжутся и дополнительно согласуют
+
+                        .hiro__down
+                            button(type="button").neumorphic.neumorphic-button Далее
+                            button(type="button", data-gridbtn='5').neumorphic.neumorphic-button.neumorphic-button-prev Назад
                 .hiro__arrow
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM13.5 7.5C13.5 6.67157 12.8284 6 12 6C11.1716 6 10.5 6.67157 10.5 7.5L10.5 12.8787L8.56066 10.9393C7.97487 10.3536 7.02513 10.3536 6.43934 10.9393C5.85355 11.5251 5.85355 12.4749 6.43934 13.0607L10.9393 17.5607C11.5251 18.1464 12.4749 18.1464 13.0607 17.5607L17.5607 13.0607C18.1464 12.4749 18.1464 11.5251 17.5607 10.9393C16.9749 10.3536 16.0251 10.3536 15.4393 10.9393L13.5 12.8787V7.5Z" fill="#6A6A73"/>
@@ -611,7 +1091,7 @@ html(lang="ru")
                         h2 Заказать запись кандидатов
                     .popup__info
                         p.popup__info-text Вы можете оставить заявку на запись видеособеседований с кандидатами по конкретным должностям или специальностям
-                        button(type="button").popup__btn.neumorphic.neumorphic-button Заказать
+                        button(type="button", data-btn='interview_rabotodatel').popup__btn.neumorphic.neumorphic-button Заказать
                         a(href='').popup__link Как это работает?
             .popup.popup_right
                 .popup__wrapper.neumorphic
@@ -624,7 +1104,7 @@ html(lang="ru")
                         h2 Записаться на бесплатное<br>видеособеседование
                     .popup__info
                         p.popup__info-text Вы можете записатья на бесплатное видеособеседование<br>С вами свяжутся и назначат удобную дату и время
-                        button(type="button").popup__btn.neumorphic.neumorphic-button Записаться
+                        button(type="button", data-btn='interview_kandidat').popup__btn.neumorphic.neumorphic-button Записаться
                         a(href='').popup__link Как это работает?
             .language
                 .language__view
@@ -1124,3 +1604,4 @@ html(lang="ru")
                 .language__dropdawn
                     .language__dropdawn-option.language__dropdawn-option1
                     .language__dropdawn-option.language__dropdawn-option2 
+                

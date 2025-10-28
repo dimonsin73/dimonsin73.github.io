@@ -439,7 +439,6 @@ const tariffsFormArray = document.querySelectorAll('.tariffs__form')
 for (let i = 0; i < tariffsFormArray.length; i++) {
     const tariffsForm = tariffsFormArray[i];
     tariffsForm.addEventListener('scroll', function(){
-        console.log(tariffsForm.scrollTop)
         if (tariffsForm.scrollTop > 0) {
             tariffsBannerRabotodatel.classList.add('tariffs__banner-min')
             tariffsForm.classList.add('tariffs__form-max')
