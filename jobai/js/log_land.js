@@ -168,7 +168,6 @@ hiroWrapper.addEventListener('scroll', function() {
         hiroBlockExample.classList.remove('hiro__block-example-up')
     }
 })
-
 const menuLinkArray = document.querySelectorAll('.menu__link')
 for (let i = 0; i < menuLinkArray.length; i++) {
     const menuLink = menuLinkArray[i];
@@ -368,8 +367,6 @@ for (let i = 0; i < additionalRecruitersOptionArray.length; i++) {
         totalPrice(tariffsAccessInput.value)
     })
 }
-
-
 function tariffsAccessInputNum (){
     const rangeDays =  document.getElementById('range-days')
     const rangeDaysValue = rangeDays.value
@@ -434,7 +431,6 @@ for (let i = 0; i < tariffsRadioInputArray.length; i++) {
         }
     })
 }
-
 const tariffsFormArray = document.querySelectorAll('.tariffs__form')
 for (let i = 0; i < tariffsFormArray.length; i++) {
     const tariffsForm = tariffsFormArray[i];
