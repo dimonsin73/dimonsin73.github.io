@@ -1671,8 +1671,7 @@ html
             top: 10px
             right: 10px
             width: 40px
-            height: 40px
-        &-title             
+            height: 40px        
         &-btn 
             width: 40px
             height: 40px
@@ -1964,7 +1963,30 @@ body
             margin-bottom: 20px
             margin-left: -300px
             padding: 20px 25px 25px
-            
+        &-popup
+            & .popup__wrapper
+                position: relative
+                width: 350px
+                height: 300px
+                padding: 15px
+                border-radius: 20px
+            & .popup__icon 
+                position: absolute
+                top: 0
+                left: 0
+                cursor: auto
+            &.popup_active 
+                & .popup__wrapper
+                    position: relative
+                    width: 350px
+                    height: 300px
+                    padding: 15px
+                    transform: none
+                & .popup__icon 
+                    position: absolute
+                    top: 0
+                    left: 0
+                    cursor: auto
         &-close 
             width: 24px
             height: 24px
