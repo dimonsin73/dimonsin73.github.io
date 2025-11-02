@@ -120,20 +120,32 @@ for (let i = 0; i < menuLanguageArray.length; i++) {
     })
 }
 
-const popupArray = document.querySelectorAll('.popup')
 const popupIconArray = document.querySelectorAll('.popup__icon')
 for (let i = 0; i < popupIconArray.length; i++) {
     const popupIcon = popupIconArray[i];
     const popup = popupIcon.parentElement.parentElement
     const popupWrapper = popup.querySelector('.popup__wrapper')
     if (window.innerWidth < '1023') {
-        popup.addEventListener('click', function(){
+        popupIcon.addEventListener('click', function(){
             popup.classList.add('popup_active')
+            for (let i = 0; i < hiroBlockArray.length; i++) {
+                const hiroBlock = hiroBlockArray[i];
+                hiroBlock.style.display = 'none'
+            }
         })
-        document.addEventListener('click', (e) => {
+        popup.addEventListener('click', (e) => {
             const withinBoundaries = e.composedPath().includes(popupWrapper);
             if ( ! withinBoundaries ) {
                 popup.classList.remove('popup_active')
+                for (let i = 0; i < hiroBlockArray.length; i++) {
+                    const hiroBlock = hiroBlockArray[i];
+                    if (hiroBlock.dataset.block === 'search' || hiroBlock.dataset.block === 'first') {
+                        hiroBlock.style.display = 'flex'
+                        hiroArrow.classList.add('hiro__arrow-hide')
+                    } else {
+                        hiroBlock.style.display = 'none'
+                    }
+                }
             }
         })
     } else {
@@ -157,9 +169,11 @@ for (let i = 0; i < popupBtnArray.length; i++) {
             const hiroBlock = hiroBlockArray[i];
             if (hiroBlock.dataset.block === dataBtn) {
                 hiroBlock.style.display = 'flex'
+                console.log(hiroBlock.style.display)
                 hiroArrow.classList.add('hiro__arrow-hide')
             } else {
                 hiroBlock.style.display = 'none'
+                console.log(hiroBlock.dataset.block)
             }
         }
         popupWrapper.classList.add('neumorphic-act')
@@ -1392,6 +1406,7 @@ for (let i = 0; i < hiroStatusOptionArray.length; i++) {
     hiroStatusOption.addEventListener('click', function(){
         hiroStatusInput.classList.remove('neumorphic-input-error')
         if (hiroStatusOption.textContent === 'Сейчас не работаю') {
+            hiroStatusStatus.classList.add('hiro__status-status-hide')
         } else {
             hiroStatusStatus.classList.remove('hiro__status-status-hide')
         }

@@ -1963,30 +1963,7 @@ body
             margin-bottom: 20px
             margin-left: -300px
             padding: 20px 25px 25px
-        &-popup
-            & .popup__wrapper
-                position: relative
-                width: 350px
-                height: 300px
-                padding: 15px
-                border-radius: 20px
-            & .popup__icon 
-                position: absolute
-                top: 0
-                left: 0
-                cursor: auto
-            &.popup_active 
-                & .popup__wrapper
-                    position: relative
-                    width: 350px
-                    height: 300px
-                    padding: 15px
-                    transform: none
-                & .popup__icon 
-                    position: absolute
-                    top: 0
-                    left: 0
-                    cursor: auto
+
         &-close 
             width: 24px
             height: 24px
@@ -2054,9 +2031,7 @@ body
             border-radius: 10px
             background:
                 color: var(--White)
-                image: url(../images/icons/paper_clip.png)
-                repeat: no-repeat 
-                position: 13px 13px
+            overflow: auto
         &-btn 
             margin-bottom: -6px
             font: 400 16px/22px 'Inter', 'sans-serif'
@@ -2102,6 +2077,17 @@ body
             align-items: flex-start
             gap: 16px
             height: 88px
+            &::before
+                content: ""
+                position: absolute
+                top: 0
+                left: -24px
+                width: 20px
+                height: 20px
+                background: 
+                    image: url(../images/icons/paper_clip.png)
+                    repeat: no-repeat
+                    position: center center
         &-fails 
             position: relative
             display: flex
@@ -3505,7 +3491,7 @@ body
         &_right
             right: 20px
         &_active 
-            position: fixed
+            position: absolute
             top: 0
             right: 0
             left: 0
@@ -3513,15 +3499,12 @@ body
             display: flex
             align-items: center
             justify-content: center
-            box-shadow: 0px 4px 4px 0px #00000040
-            background: #000000B2
             z-index: 100
             & .popup__wrapper
                 width: 350px
                 height: 300px
                 padding: 15px
                 border-radius: 20px
-                box-shadow: none
                 transform: translate3d(0, 0, 0)
     .rights 
         display: none
