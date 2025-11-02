@@ -489,7 +489,6 @@ for (let i = 0; i < modalItemImgArray.length; i++) {
             slider.dispose()
         })
     })
-    
 }
 
 const btnLikeArray = document.querySelectorAll('.btn_like')

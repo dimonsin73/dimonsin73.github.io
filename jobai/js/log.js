@@ -121,8 +121,10 @@ for (let i = 0; i < menuLanguageArray.length; i++) {
 }
 
 const popupArray = document.querySelectorAll('.popup')
-for (let i = 0; i < popupArray.length; i++) {
-    const popup = popupArray[i];
+const popupIconArray = document.querySelectorAll('.popup__icon')
+for (let i = 0; i < popupIconArray.length; i++) {
+    const popupIcon = popupIconArray[i];
+    const popup = popupIcon.parentElement.parentElement
     const popupWrapper = popup.querySelector('.popup__wrapper')
     if (window.innerWidth < '1023') {
         popup.addEventListener('click', function(){
@@ -144,15 +146,28 @@ for (let i = 0; i < popupArray.length; i++) {
     }
 }
 
-// Временное нажатие кнопок
-const cardsBtnArray = document.querySelectorAll('.cards-btn')
-for (let i = 0; i < cardsBtnArray.length; i++) {
-    const cardsBtn = cardsBtnArray[i];
-    cardsBtn.addEventListener('click', function(){
-        cardsBtn.classList.toggle('neumorphic-button-active')
+const popupBtnArray = document.querySelectorAll('.popup__btn')
+for (let i = 0; i < popupBtnArray.length; i++) {
+    const popupBtn = popupBtnArray[i];
+    popupBtn.addEventListener('click', function(){
+        const popupWrapper = popupBtn.parentElement.parentElement
+        const popup = popupWrapper.parentElement
+        const dataBtn = popupBtn.dataset.btn
+        for (let i = 0; i < hiroBlockArray.length; i++) {
+            const hiroBlock = hiroBlockArray[i];
+            if (hiroBlock.dataset.block === dataBtn) {
+                hiroBlock.style.display = 'flex'
+                hiroArrow.classList.add('hiro__arrow-hide')
+            } else {
+                hiroBlock.style.display = 'none'
+            }
+        }
+        popupWrapper.classList.add('neumorphic-act')
+        setTimeout(() => {
+            popup.classList.remove('popup_active')
+        }, 100);
     })
 }
-
 
 
 const hiroWrapper = document.querySelector('.hiro__wrapper')
@@ -792,7 +807,6 @@ for (let i = 0; i < hiroBtnFifthNextArray.length; i++) {
                     }
                     break;
             }
-            
         } else {
             inputFifth.classList.add('neumorphic-input-error')
             const blockFifth = hiroBtnFifthNext.parentElement.parentElement
@@ -1182,34 +1196,9 @@ let datepicker3 = new Datepicker('#interview-finish', {
     weekStart: 1
 });
 
-const hiroSelectArray = document.querySelectorAll('.hiro__select')
-for (let i = 0; i < hiroSelectArray.length; i++) {
-    const hiroSelect = hiroSelectArray[i];
-    const hiroInput = hiroSelect.querySelector('.neumorphic-input')
-    hiroInput
-}
 
 
-const popupBtnArray = document.querySelectorAll('.popup__btn')
-for (let i = 0; i < popupBtnArray.length; i++) {
-    const popupBtn = popupBtnArray[i];
-    popupBtn.addEventListener('click', function(){
-        const popupWrapper = popupBtn.parentElement.parentElement
-        const popup = popupWrapper.parentElement
-        const dataBtn = popupBtn.dataset.btn
-        for (let i = 0; i < hiroBlockArray.length; i++) {
-            const hiroBlock = hiroBlockArray[i];
-            if (hiroBlock.dataset.block === dataBtn) {
-                hiroBlock.style.display = 'flex'
-                hiroArrow.classList.add('hiro__arrow-hide')
-            } else {
-                hiroBlock.style.display = 'none'
-            }
-        }
-        popupWrapper.classList.add('neumorphic-act')
-        popup.classList.remove('popup_active')
-    })
-}
+
 const hiroBlockCloseArray = document.querySelectorAll('.hiro__block-close')
 const popupWrapperArray = document.querySelectorAll('.popup__wrapper')
 for (let i = 0; i < hiroBlockCloseArray.length; i++) {
@@ -1325,35 +1314,74 @@ for (let i = 0; i < neumorphicTextareaArray.length; i++) {
     })
 }
 
-const hirolabelContent = document.querySelector('.hiro__label-content')
-const hiroLabelBtn = document.querySelector('.hiro__label-btn')
-hiroLabelBtn.addEventListener('click', function(){
-    const itemArray = hirolabelContent.querySelectorAll('.hiro__label-item')
-    if (itemArray.length > 4) {
-    } else {
-        const hiroLabelItem = document.createElement('div')
-        hiroLabelItem.classList.add('hiro__label-item')
+const hiroLabelBtnArray = document.querySelectorAll('.hiro__label-btn')
+for (let i = 0; i < hiroLabelBtnArray.length; i++) {
+    const hiroLabelBtn = hiroLabelBtnArray[i];
+    hiroLabelBtn.addEventListener('click', function(){
+        const hirolabelContent = hiroLabelBtn.parentElement
+        const itemArray = hirolabelContent.querySelectorAll('.hiro__label-item')
+        if (itemArray.length < 5) {
+            const hiroLabelItem = document.createElement('div')
+            hiroLabelItem.classList.add('hiro__label-item')
 
-        const hiroLabelDoc = document.createElement('button')
-        hiroLabelDoc.classList.add('hiro__label-doc')
-        hiroLabelDoc.setAttribute('type', 'button')
-        hiroLabelDoc.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.80005 4.7999C4.80005 3.47442 5.87457 2.3999 7.20005 2.3999H12.703C13.3395 2.3999 13.95 2.65276 14.4 3.10285L18.4971 7.1999C18.9472 7.64999 19.2 8.26044 19.2 8.89696V19.1999C19.2 20.5254 18.1255 21.5999 16.8 21.5999H7.20005C5.87456 21.5999 4.80005 20.5254 4.80005 19.1999V4.7999ZM7.20005 11.9999C7.20005 11.3372 7.73731 10.7999 8.40005 10.7999H15.6C16.2628 10.7999 16.8 11.3372 16.8 11.9999C16.8 12.6626 16.2628 13.1999 15.6 13.1999H8.40005C7.73731 13.1999 7.20005 12.6626 7.20005 11.9999ZM8.40005 15.5999C7.73731 15.5999 7.20005 16.1372 7.20005 16.7999C7.20005 17.4626 7.73731 17.9999 8.40005 17.9999H15.6C16.2628 17.9999 16.8 17.4626 16.8 16.7999C16.8 16.1372 16.2628 15.5999 15.6 15.5999H8.40005Z" fill="#6A6A73"/></svg> Презентация компании'
+            const hiroLabelDoc = document.createElement('button')
+            hiroLabelDoc.classList.add('hiro__label-doc')
+            hiroLabelDoc.setAttribute('type', 'button')
+            hiroLabelDoc.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.80005 4.7999C4.80005 3.47442 5.87457 2.3999 7.20005 2.3999H12.703C13.3395 2.3999 13.95 2.65276 14.4 3.10285L18.4971 7.1999C18.9472 7.64999 19.2 8.26044 19.2 8.89696V19.1999C19.2 20.5254 18.1255 21.5999 16.8 21.5999H7.20005C5.87456 21.5999 4.80005 20.5254 4.80005 19.1999V4.7999ZM7.20005 11.9999C7.20005 11.3372 7.73731 10.7999 8.40005 10.7999H15.6C16.2628 10.7999 16.8 11.3372 16.8 11.9999C16.8 12.6626 16.2628 13.1999 15.6 13.1999H8.40005C7.73731 13.1999 7.20005 12.6626 7.20005 11.9999ZM8.40005 15.5999C7.73731 15.5999 7.20005 16.1372 7.20005 16.7999C7.20005 17.4626 7.73731 17.9999 8.40005 17.9999H15.6C16.2628 17.9999 16.8 17.4626 16.8 16.7999C16.8 16.1372 16.2628 15.5999 15.6 15.5999H8.40005Z" fill="#6A6A73"/></svg> Презентация компании'
 
-        const hiroLabelDelete = document.createElement('button')
-        hiroLabelDelete.classList.add('hiro__label-delete')
-        hiroLabelDelete.setAttribute('type', 'button')
-        hiroLabelDelete.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>`
+            const hiroLabelDelete = document.createElement('button')
+            hiroLabelDelete.classList.add('hiro__label-delete')
+            hiroLabelDelete.setAttribute('type', 'button')
+            hiroLabelDelete.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>`
 
-        hiroLabelItem.append(hiroLabelDoc, hiroLabelDelete)
-        hirolabelContent.append(hiroLabelItem)
+            hiroLabelItem.append(hiroLabelDoc, hiroLabelDelete)
+            hirolabelContent.append(hiroLabelItem)
 
-        hiroLabelDelete.addEventListener('click', function(){
-            const item = hiroLabelDelete.parentElement
-            item.remove()
-        })
-    } 
-    
-})
+            hiroLabelDelete.addEventListener('click', function(){
+                const item = hiroLabelDelete.parentElement
+                item.remove()
+                hiroLabelBtn.classList.remove('hiro__label-btn-hide')
+            })
+            if (itemArray.length === 4) {
+                hiroLabelBtn.classList.add('hiro__label-btn-hide')
+            }
+        } else {
+        } 
+    })
+}
+const hiroLabelBtnrezume = document.querySelector('.hiro__label-btnrezume')
+hiroLabelBtnrezume.addEventListener('click', function(){
+        const hirolabelContent = hiroLabelBtnrezume.parentElement
+        const itemArray = hirolabelContent.querySelectorAll('.hiro__label-item')
+        if (itemArray.length < 1) {
+            const hiroLabelItem = document.createElement('div')
+            hiroLabelItem.classList.add('hiro__label-item')
+
+            const hiroLabelDoc = document.createElement('button')
+            hiroLabelDoc.classList.add('hiro__label-doc')
+            hiroLabelDoc.setAttribute('type', 'button')
+            hiroLabelDoc.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.80005 4.7999C4.80005 3.47442 5.87457 2.3999 7.20005 2.3999H12.703C13.3395 2.3999 13.95 2.65276 14.4 3.10285L18.4971 7.1999C18.9472 7.64999 19.2 8.26044 19.2 8.89696V19.1999C19.2 20.5254 18.1255 21.5999 16.8 21.5999H7.20005C5.87456 21.5999 4.80005 20.5254 4.80005 19.1999V4.7999ZM7.20005 11.9999C7.20005 11.3372 7.73731 10.7999 8.40005 10.7999H15.6C16.2628 10.7999 16.8 11.3372 16.8 11.9999C16.8 12.6626 16.2628 13.1999 15.6 13.1999H8.40005C7.73731 13.1999 7.20005 12.6626 7.20005 11.9999ZM8.40005 15.5999C7.73731 15.5999 7.20005 16.1372 7.20005 16.7999C7.20005 17.4626 7.73731 17.9999 8.40005 17.9999H15.6C16.2628 17.9999 16.8 17.4626 16.8 16.7999C16.8 16.1372 16.2628 15.5999 15.6 15.5999H8.40005Z" fill="#6A6A73"/></svg> Презентация компании'
+
+            const hiroLabelDelete = document.createElement('button')
+            hiroLabelDelete.classList.add('hiro__label-delete')
+            hiroLabelDelete.setAttribute('type', 'button')
+            hiroLabelDelete.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C8.62123 2 8.27497 2.214 8.10557 2.55279L7.38197 4H4C3.44772 4 3 4.44772 3 5C3 5.55228 3.44772 6 4 6L4 16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V6C16.5523 6 17 5.55228 17 5C17 4.44772 16.5523 4 16 4H12.618L11.8944 2.55279C11.725 2.214 11.3788 2 11 2H9ZM7 8C7 7.44772 7.44772 7 8 7C8.55228 7 9 7.44772 9 8V14C9 14.5523 8.55228 15 8 15C7.44772 15 7 14.5523 7 14V8ZM12 7C11.4477 7 11 7.44772 11 8V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V8C13 7.44772 12.5523 7 12 7Z" fill="#6A6A73"/></svg>`
+
+            hiroLabelItem.append(hiroLabelDoc, hiroLabelDelete)
+            hirolabelContent.append(hiroLabelItem)
+
+            hiroLabelDelete.addEventListener('click', function(){
+                const item = hiroLabelDelete.parentElement
+                item.remove()
+                hiroLabelBtn.classList.remove('hiro__label-btnrezume-hide')
+            })
+            console.log(itemArray.length)
+            if (itemArray.length === 0) {
+                hiroLabelBtn.classList.add('hiro__label-btnrezume-hide')
+            }
+        } else {
+        } 
+    })
 
 const hiroStatus = document.querySelector('.hiro__status')
 const hiroStatusInput = hiroStatus.querySelector('.neumorphic-input')
@@ -1365,7 +1393,196 @@ for (let i = 0; i < hiroStatusOptionArray.length; i++) {
         hiroStatusInput.classList.remove('neumorphic-input-error')
         if (hiroStatusOption.textContent === 'Сейчас не работаю') {
         } else {
-            hiroStatusStatus.style.display = 'flex'
+            hiroStatusStatus.classList.remove('hiro__status-status-hide')
+        }
+    })
+}
+
+const cardsBtnArray = document.querySelectorAll('.cards-btn')
+const cardsWrapperArray = document.querySelectorAll('.cards__wrapper')
+const cardsclose = document.querySelector('.cards__btn')
+for (let i = 0; i < cardsBtnArray.length; i++) {
+    const cardsBtn = cardsBtnArray[i];
+    cardsBtn.addEventListener('click', function(){
+        const switchInput = cardsBtn.parentElement.querySelector('.switch__input')
+        menu.classList.add('menu_hide')
+        hiro.classList.add('hiro_hide')
+        example.classList.add('example_active')
+        if (switchInput.checked) {
+            for (let i = 0; i < cardsWrapperArray.length; i++) {
+                const cardsWrapper = cardsWrapperArray[i];
+                if (cardsWrapper.dataset.cards === 'najti-sotrudnika') {
+                    cardsWrapper.classList.add('cards__wrapper-active')
+                } else {
+                    cardsWrapper.classList.remove('cards__wrapper-active')
+                }
+            }
+        } else {
+            for (let i = 0; i < cardsWrapperArray.length; i++) {
+                const cardsWrapper = cardsWrapperArray[i];
+                if (cardsWrapper.dataset.cards === 'najti-rabotu') {
+                    cardsWrapper.classList.add('cards__wrapper-active')
+                } else {
+                    cardsWrapper.classList.remove('cards__wrapper-active')
+                }
+            }
+        }
+    })
+}
+cardsclose.addEventListener('click', function(){
+    example.classList.remove('example_active')
+    for (let i = 0; i < cardsWrapperArray.length; i++) {
+        const cardsWrapper = cardsWrapperArray[i];
+        cardsWrapper.classList.remove('cards__wrapper-active')
+    }
+    menu.classList.remove('menu_hide')
+    hiro.classList.remove('hiro_hide')
+    window.scrollBy({
+        top: 10000,
+        behavior: "auto",
+    });
+})
+
+const example = document.querySelector('.example')
+const sectionToleftBtnArray = document.querySelectorAll('.section_toleft-btn')
+for (let i = 0; i < sectionToleftBtnArray.length; i++) {
+    const sectionToleftBtn = sectionToleftBtnArray[i];
+    sectionToleftBtn.addEventListener('click', function(){
+        example.scrollTo(0, 0)
+    })  
+}
+
+
+const portfolioFitsAiArray = document.querySelectorAll('.portfolio__fits-ai')
+for (let i = 0; i < portfolioFitsAiArray.length; i++) {
+    const portfolioFitsAi = portfolioFitsAiArray[i];
+    portfolioFitsAi.addEventListener('click', function(){
+        const loader = portfolioFitsAi.parentElement.querySelector('.portfolio__loader')
+        const portfolioSuccess = portfolioFitsAi.parentElement.querySelector('.portfolio__fits-success')
+        portfolioFitsAi.classList.add('portfolio__fits-disabled')
+        loader.classList.add('portfolio__loader-loading')
+
+        function success() {
+            portfolioFitsAi.style.display = 'none'
+            loader.classList.remove('portfolio__loader-loading')
+            loader.classList.add('portfolio__loader-success')
+            portfolioSuccess.style.display = 'flex'
+        }
+        setTimeout(success, 5000)
+    })
+}
+
+// Скрытие кнопок слайдера
+const itcSliderArray = document.querySelectorAll('.itc-slider')
+for (let i = 0; i < itcSliderArray.length; i++) {
+    const itcSlider = itcSliderArray[i];
+    const itcSliderItemArray = itcSlider.querySelectorAll('.itc-slider-item')
+    const itcSliderItemActiveArray = itcSlider.querySelectorAll('.itc-slider-item-active')
+    const itcSliderBtnArray = itcSlider.querySelectorAll('.itc-slider-btn')
+    if (itcSliderItemArray.length === itcSliderItemActiveArray.length) {
+        for (let i = 0; i < itcSliderBtnArray.length; i++) {
+            const itcSliderBtn = itcSliderBtnArray[i];
+            itcSliderBtn.classList.add('itc-slider-btn-hide')
+        }
+    }
+}
+
+const modalItemImgArray = document.querySelectorAll('.modal__item-img')
+const modalSlider = document.querySelector('.modal-slider')
+const modalSliderClose = document.querySelector('.modal-slider__close')
+for (let i = 0; i < modalItemImgArray.length; i++) {
+    const modalItemImg = modalItemImgArray[i];
+    modalItemImg.addEventListener('click', function(){
+        modalSlider.classList.add('modal-slider-active')
+        let sliderElem = document.querySelector('#modal-slider');
+        let slider = ItcSlider.getOrCreateInstance(sliderElem);
+        slider.slideTo(i)
+        console.log(i)
+        modalSliderClose.addEventListener('click', function(){
+            modalSlider.classList.remove('modal-slider-active')
+            slider.dispose()
+        })
+    })
+}
+const btnModalopenArray = document.querySelectorAll('.btn-modalopen')
+const modal = document.querySelector('.modal')
+for (let i = 0; i < btnModalopenArray.length; i++) {
+    const btnModalOpen = btnModalopenArray[i];
+    btnModalOpen.addEventListener('click', function(){
+        const dataModalopen = btnModalOpen.dataset.modalopen
+        modal.classList.add('modal_active')
+        const modalWrapperArray = modal.querySelectorAll('.modal__wrapper')
+        const name = btnModalOpen.parentElement.parentElement.querySelector('.portfolio__title').textContent
+        for (let i = 0; i < modalWrapperArray.length; i++) {
+            const modalWrapper = modalWrapperArray[i];
+            if (modalWrapper.dataset.modal === dataModalopen) {
+                modalWrapper.classList.add('modal__wrapper-active')
+                const modalClose = modalWrapper.querySelector('.modal__close')
+                switch (modalWrapper.dataset.modal) {
+                    case 'avatar':
+                    const modalName = modalWrapper.querySelector('.modal__name')
+                    modalName.textContent = name
+                        const img = btnModalOpen.querySelector('.portfolio__avatar-img')
+                        if (img != null) {
+                            const imgSrc = img.getAttribute('src')
+                            const modalAvatar = modal.querySelector('.modal__avatar')
+                            const modalAvatarImg = document.createElement('img')
+                            modalAvatarImg.classList.add('modal__avatar-img')
+                            modalAvatarImg.setAttribute('src', imgSrc)
+                            modalAvatar.append(modalAvatarImg)
+                        }
+                        const imglogo = btnModalOpen.querySelector('.portfolio__avatar-logo')
+                        if (imglogo != null) {
+                            const imgSrc = imglogo.getAttribute('src')
+                            const modalAvatar = modal.querySelector('.modal__avatar')
+                            const modalAvatarImg = document.createElement('img')
+                            modalAvatarImg.classList.add('modal__avatar-logo')
+                            modalAvatarImg.setAttribute('src', imgSrc)
+                            modalAvatar.append(modalAvatarImg)
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                modalClose.addEventListener('click', function(){
+                    modal.classList.remove('modal_active')
+                    const modalAvatarImg = modal.querySelector('.modal__avatar-img')
+                    if (modalAvatarImg != null) {
+                        modalAvatarImg.remove()
+                    }
+                    
+                })
+            } else {
+                modalWrapper.classList.remove('modal__wrapper-active')
+            }
+        }
+    })
+}
+// Работа ползунка
+const rangeInputArray = document.querySelectorAll('.range__input')
+for (let i = 0; i < rangeInputArray.length; i++) {
+    const rangeInput = rangeInputArray[i];
+    const rangeNumber = rangeInput.parentElement.querySelector('.range__number')
+    rangeInput.addEventListener('input', function(){
+        rangeNumber.textContent = `${rangeInput.value}%`
+    })
+}
+// Disabled ползунка
+const section = document.querySelector('.section_collapse')
+const switchInputArray = section.querySelectorAll('.switch__input')
+for (let i = 0; i < switchInputArray.length; i++) {
+    const switchInput = switchInputArray[i];
+    switchInput.addEventListener('change', function(){
+        const rangeInput = switchInput.parentElement.parentElement.querySelector('.range__input')
+        const rangeConclusion = switchInput.parentElement.parentElement.querySelector('.range__conclusion')
+        if (switchInput.checked) {
+            rangeInput.disabled = false
+            rangeInput.classList.remove('range__input-disabled')
+            rangeConclusion.classList.remove('range__conclusion-disabled')
+        } else {
+            rangeInput.disabled = true
+            rangeInput.classList.add('range__input-disabled')
+            rangeConclusion.classList.add('range__conclusion-disabled')
         }
     })
 }
