@@ -2881,6 +2881,10 @@ input[type=number]::-webkit-outer-spin-button {
   width: 135px;
   height: 17px;
 }
+.modal__topfix .portfolio__status2 {
+  width: 135px;
+  height: 17px;
+}
 .modal__topfix-hide {
   display: none;
 }
@@ -3345,6 +3349,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 20px;
   }
   .switch {
+    width: 45px;
+    height: 24px;
+  }
+  .switch__slider {
     width: 45px;
     height: 24px;
   }
