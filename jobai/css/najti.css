@@ -3006,7 +3006,7 @@ input[type=number]::-webkit-outer-spin-button {
 .modal__author {
   display: flex;
   gap: 5px;
-  align-items: flex-end;
+  align-items: center;
 }
 .modal__author-avatar {
   flex: 0 0 auto;
@@ -3812,4 +3812,4 @@ input[type=number]::-webkit-outer-spin-button {
 .logo__r-text {
   font: 700 8px/8px "Inter", "sans-serif";
   color: #000;
-}/*# sourceMappingURL=najti_sotrudnika.css.map */
+}/*# sourceMappingURL=najti.css.map */

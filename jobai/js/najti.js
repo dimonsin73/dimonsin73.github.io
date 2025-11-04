@@ -181,7 +181,7 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                 sectionTagsHeight()
             })
             break;
-        case 'najti-sotrudnika':
+        case 'najti':
             sectionForm.addEventListener('submit', function(e){
                 e.preventDefault()
                 sectionFormSearch.style.display = 'none'
@@ -204,7 +204,7 @@ for (let i = 0; i < sectionFormArray.length; i++) {
 function openNajtiSotrudnika() {
     for (let i = 0; i < sectionArray.length; i++) {
         const section = sectionArray[i];
-        if (section.dataset.section === 'najti-sotrudnika') {
+        if (section.dataset.section === 'najti') {
             section.classList.add('section_active')
         } else {
             section.classList.remove('section_active')
@@ -483,7 +483,6 @@ for (let i = 0; i < modalItemImgArray.length; i++) {
         let sliderElem = document.querySelector('#modal-slider');
         let slider = ItcSlider.getOrCreateInstance(sliderElem);
         slider.slideTo(i)
-        console.log(i)
         modalSliderClose.addEventListener('click', function(){
             modalSlider.classList.remove('modal-slider-active')
             slider.dispose()

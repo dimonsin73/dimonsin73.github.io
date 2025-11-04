@@ -6076,7 +6076,7 @@ body {
 .modal__author {
   display: flex;
   gap: 5px;
-  align-items: flex-end;
+  align-items: center;
 }
 .modal__author-avatar {
   flex: 0 0 auto;
