@@ -1697,6 +1697,8 @@ for (let i = 0; i < modalContentArray.length; i++) {
         if (modalContentBtn != null) {
             if (modalContent.scrollTop > 20) {
                 modalContentBtn.classList.add("modal__content-btn-active")
+            } else {
+                modalContentBtn.classList.remove("modal__content-btn-active")
             }
         }
     })

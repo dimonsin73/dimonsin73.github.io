@@ -541,3 +541,25 @@ for (let i = 0; i < portfolioPositionArray.length; i++) {
         window.scrollTo({ top: y })
     })
 }
+const modalContentArray = document.querySelectorAll('.modal__content')
+for (let i = 0; i < modalContentArray.length; i++) {
+    const modalContent = modalContentArray[i];
+    modalContent.addEventListener('scroll', function(){
+        const modalContentBtn = modalContent.querySelector('.modal__content-btn')
+        if (modalContentBtn != null) {
+            if (modalContent.scrollTop > 20) {
+                modalContentBtn.classList.add("modal__content-btn-active")
+            } else {
+                modalContentBtn.classList.remove("modal__content-btn-active")
+            }
+        }
+    })
+}
+const modalContentBtnArray = document.querySelectorAll('.modal__content-btn')
+for (let i = 0; i < modalContentBtnArray.length; i++) {
+    const modalContentBtn = modalContentBtnArray[i];
+    modalContentBtn.addEventListener('click', function(){
+        const modalContent = modalContentBtn.parentElement
+        modalContent.scrollTo(0, 0)
+    })
+}
