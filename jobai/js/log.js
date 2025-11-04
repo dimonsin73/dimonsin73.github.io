@@ -1651,3 +1651,11 @@ for (let i = 0; i < switchInputArray.length; i++) {
         }
     })
 }
+// Работа кнопки Лайк 
+const btnLikeArray = document.querySelectorAll('.btn_like')
+for (let i = 0; i < btnLikeArray.length; i++) {
+    const btnLike = btnLikeArray[i];
+    btnLike.addEventListener('click', function(){
+        btnLike.classList.toggle('btn_like-active')
+    })
+}

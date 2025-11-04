@@ -614,6 +614,8 @@ body
                 & path
                     stroke: var(--Red)
                     fill: var(--Red)
+    & svg 
+        flex: 0 0 auto
 .link 
     display: flex
     align-items: center
@@ -4219,7 +4221,7 @@ body
         display: flex
         flex-direction: column
         gap: 12px
-        margin-top: 25px
+        margin: 25px 0
     &__avatar 
         position: relative
         grid-row: span 2
@@ -4307,7 +4309,9 @@ body
         grid-row: span 2
         display: flex
         flex-direction: column
+        justify-content: space-between
         gap: 10px
+        height: 100%
         &-line 
             display: flex
             align-items: flex-start
@@ -4834,11 +4838,16 @@ body
         & .portfolio__status  
             width: 135px
             height: 17px
+        & .modal__status2 
+            position: absolute
+            top: 90px
+            left: 17px
+            width: 67px
         &-hide 
             display: none
     &__head 
         display: grid
-        grid-template-columns: 160px 360px 230px 130px 200px
+        grid-template-columns: 160px auto 230px 130px 200px
         gap: 20px 10px
         padding: 10px
         &-img 
@@ -4864,7 +4873,7 @@ body
             color: var(--Black)
         &-subtext 
             position: absolute
-            bottom: -8px
+            bottom: -10px
             font: 500 8px/10px 'Inter', 'sans-serif'
             color: var(--Black)
         &-contacts 
@@ -4908,6 +4917,11 @@ body
         padding-top: 30px
     &__small
         display: none
+    &__status2
+        & .portfolio__status 
+            width: 100%
+            border-radius: 8px
+            font-size: 9px
     & .link-medium 
         text-decoration: underline
     & .section__vakansi
@@ -5086,7 +5100,7 @@ body
             align-items: start
     .modal
         &__head 
-            grid-template-columns: 160px 210px 150px 100px 160px
+            grid-template-columns: 160px auto 155px 140px 160px
         &__grid 
             grid-template-columns: repeat(3, 242px)
 @media (max-width: 1023px)
@@ -5271,6 +5285,13 @@ body
             &-line2
                 display: grid
                 grid-template-columns: 1fr 1fr
+            &-line3
+                display: grid
+                grid-template-columns: 1fr 1fr
+                margin-bottom: 10px
+                & .modal__head-subtext 
+                    bottom: 0
+                    right: auto
         &__stitle 
             font: 600 12px/16px 'Inter', 'sans-serif'
         &__loader 
@@ -5316,6 +5337,11 @@ body
             padding: 0
             border-radius: none
             background: none
+        &__head 
+            &-subtext 
+                right: 0
+                bottom: 100%
+                transform: translate3d(0, 100%, 0)
         &__avatar 
             width: 330px
             height: 330px
@@ -5342,6 +5368,8 @@ body
                 font: 400 10px/14px 'Inter', 'sans-serif'
         &__head 
             display: none
+            &-tag 
+                padding: 6px
         &__addcommvent
             padding: 22px 10px
         &__comments 
@@ -5378,21 +5406,22 @@ body
         &__topfix 
             &-hide 
                 display: grid
+            & .modal__status2
+                position: absolute
+                top: 67px
+                left: 7px
+                width: 57px
         &__footer 
-            display: none
-        &__status2 
-            position: absolute
-            top: 67px
-            left: 7px
-            width: 56px
-            & .portfolio__status 
+            gap: 10px
+            padding: 10px
+            & .btn_blue 
                 width: 100%
-                border-radius: 8px
-                font-size: 9px
+                max-width: 200px
         & .portfolio__language  
             position: absolute
             right: 5px
             top: 40px
+        
     .modal-slider 
         &__top 
             height: 60px
@@ -5418,7 +5447,13 @@ body
     .section 
         &_mt
             margin-top: 236px
+@media (max-width: 499px)
+    .modal
+        &__footer
+            justify-content: center
 
+            & .press-right 
+                display: none
 
 @keyframes refresh 
     from 
