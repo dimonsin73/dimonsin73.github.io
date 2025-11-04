@@ -1633,23 +1633,26 @@ for (let i = 0; i < rangeInputArray.length; i++) {
     })
 }
 // Disabled ползунка
-const section = document.querySelector('.section_collapse')
-const switchInputArray = section.querySelectorAll('.switch__input')
-for (let i = 0; i < switchInputArray.length; i++) {
-    const switchInput = switchInputArray[i];
-    switchInput.addEventListener('change', function(){
-        const rangeInput = switchInput.parentElement.parentElement.querySelector('.range__input')
-        const rangeConclusion = switchInput.parentElement.parentElement.querySelector('.range__conclusion')
-        if (switchInput.checked) {
-            rangeInput.disabled = false
-            rangeInput.classList.remove('range__input-disabled')
-            rangeConclusion.classList.remove('range__conclusion-disabled')
-        } else {
-            rangeInput.disabled = true
-            rangeInput.classList.add('range__input-disabled')
-            rangeConclusion.classList.add('range__conclusion-disabled')
-        }
-    })
+const sectionArray = document.querySelectorAll('.section_collapse')
+for (let i = 0; i < sectionArray.length; i++) {
+    const section = sectionArray[i];
+    const switchInputArray = section.querySelectorAll('.switch__input')
+    for (let i = 0; i < switchInputArray.length; i++) {
+        const switchInput = switchInputArray[i];
+        switchInput.addEventListener('change', function(){
+            const rangeInput = switchInput.parentElement.parentElement.querySelector('.range__input')
+            const rangeConclusion = switchInput.parentElement.parentElement.querySelector('.range__conclusion')
+            if (switchInput.checked) {
+                rangeInput.disabled = false
+                rangeInput.classList.remove('range__input-disabled')
+                rangeConclusion.classList.remove('range__conclusion-disabled')
+            } else {
+                rangeInput.disabled = true
+                rangeInput.classList.add('range__input-disabled')
+                rangeConclusion.classList.add('range__conclusion-disabled')
+            }
+        })
+    } 
 }
 // Работа кнопки Лайк 
 const btnLikeArray = document.querySelectorAll('.btn_like')
