@@ -117,11 +117,13 @@ html
     .main 
         margin-left: 0
 .container
+    position: relative
     width: 100%
     margin: 0 auto
     &_video
         max-width: 1240px
         transition: max-width 0.3s ease
+        overflow-x: hidden
         &-active 
             max-width: 1920px
     &_medium
@@ -327,6 +329,8 @@ html
         text-align: center
         color: var(--Gray-30)
         cursor: pointer
+    & svg 
+        flex: 0 0 auto
 .total-found
     position: absolute
     bottom: 4px
@@ -899,13 +903,32 @@ input[type=number]::-webkit-outer-spin-button
     &_active 
         left: 0
     &__logo
+        position: relative
         display: flex
         align-items: center
         justify-content: center
-        width: 100%
-        height: 80px
-        &-img
-            width: 78px
+        gap: 3px
+        width: max-content
+        margin: 25px auto
+        &-job 
+            font: 700 22px/22px 'Inter', 'sans-serif'
+            letter-spacing: -0.2px
+            text-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White)
+            &-white 
+                padding: 4px
+                border-radius: 8px
+                box-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White)
+                background-color: var(--Primary-50)
+                color: var(--White)
+                text-shadow: 3px 3px 3px var(--Black)
+        &-r 
+            position: absolute
+            top: 0
+            right: -9px
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            box-shadow: 3px 3px 5px 0px #A3B1C6, -3px -3px 5px 0px #FFFFFF
     &__list 
         display: flex
         flex-direction: column
@@ -1289,10 +1312,13 @@ input[type=number]::-webkit-outer-spin-button
     &__or
         display: flex
         justify-content: center
+        gap: 15px
         margin: 0 auto
         @include body-medium
         line-height: 14px
         color: var(--Gray-10)
+        &-small 
+            display: none
     &__imgloading 
         display: grid
         grid-template-columns: 96px auto 
@@ -1634,6 +1660,16 @@ input[type=number]::-webkit-outer-spin-button
             height: 36px
             border-radius: 50%
             background-color: var(--Gray-80)
+        &-avatar1
+            background: 
+                image: url(../images/strelcova/avatars/strelcova.png)
+                position: center center
+                size: cover
+        &-avatar2
+            background: 
+                image: url(../images/kuznecov/avatars/kuznecov.png)
+                position: center center
+                size: cover
         &_content 
             display: flex
             flex-direction: column
@@ -1650,7 +1686,55 @@ input[type=number]::-webkit-outer-spin-button
             color: var(--Gray-40)
     &__text 
         @include subtitle-large
+        font-weight: 400
         color: var(--Black)
+        & span 
+            font-weight: 600
+@media (max-width: 1023px)
+    .btn 
+        &-transcription
+            padding: 11px
+        &-structuring
+            padding: 11px
+        &-subvideo 
+            display: flex
+            opacity: 0
+            z-index: -10
+            &-active 
+                opacity: 1 
+                z-index: 10
+    .container 
+        &_video 
+            max-width: 1240px
+    .section
+        &__main 
+            &-active 
+                margin-right: 0
+        &__btns 
+            display: none
+        &__description
+            gap: 0
+            &-title 
+                font-weight: 600
+                font-size: 12px
+                line-height: 18px
+            &-info 
+                @include subtitle-small
+        &__or 
+            &-small 
+                display: flex
+                align-items: center
+                gap: 15px
+        &__dots 
+            border: none
+    .subvideo 
+        position: relative
+        top: 100%
+        width: 100%
+        right: 0
+        height: 0
+        &_active 
+            height: max-content
 // SUBVIDEO END
 .portfolios // PORTFOLIO
     position: relative

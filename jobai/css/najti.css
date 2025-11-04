@@ -50,12 +50,14 @@ html {
   }
 }
 .container {
+  position: relative;
   width: 100%;
   margin: 0 auto;
 }
 .container_video {
   max-width: 1240px;
   transition: max-width 0.3s ease;
+  overflow-x: hidden;
 }
 .container_video-active {
   max-width: 1920px;
@@ -323,6 +325,9 @@ html {
   text-align: center;
   color: var(--Gray-30);
   cursor: pointer;
+}
+.link svg {
+  flex: 0 0 auto;
 }
 
 .total-found {
@@ -1079,14 +1084,36 @@ input[type=number]::-webkit-outer-spin-button {
   left: 0;
 }
 .aside__logo {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 80px;
+  gap: 3px;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 25px auto;
 }
-.aside__logo-img {
-  width: 78px;
+.aside__logo-job {
+  font: 700 22px/22px "Inter", "sans-serif";
+  letter-spacing: -0.2px;
+  text-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White);
+}
+.aside__logo-job-white {
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px var(--Neushadow), -3px -3px 3px var(--White);
+  background-color: var(--Primary-50);
+  color: var(--White);
+  text-shadow: 3px 3px 3px var(--Black);
+}
+.aside__logo-r {
+  position: absolute;
+  top: 0;
+  right: -9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 5px 0px #A3B1C6, -3px -3px 5px 0px #FFFFFF;
 }
 .aside__list {
   display: flex;
@@ -1574,11 +1601,15 @@ input[type=number]::-webkit-outer-spin-button {
 .section__or {
   display: flex;
   justify-content: center;
+  gap: 15px;
   margin: 0 auto;
   font: 400 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
   line-height: 14px;
   color: var(--Gray-10);
+}
+.section__or-small {
+  display: none;
 }
 .section__imgloading {
   display: grid;
@@ -2003,6 +2034,16 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 50%;
   background-color: var(--Gray-80);
 }
+.subvideo__item-avatar1 {
+  background-image: url(../images/strelcova/avatars/strelcova.png);
+  background-position: center center;
+  background-size: cover;
+}
+.subvideo__item-avatar2 {
+  background-image: url(../images/kuznecov/avatars/kuznecov.png);
+  background-position: center center;
+  background-size: cover;
+}
 .subvideo__item_content {
   display: flex;
   flex-direction: column;
@@ -2026,9 +2067,70 @@ input[type=number]::-webkit-outer-spin-button {
 .subvideo__text {
   font: 500 14px/20px "Inter", "sans-serif";
   letter-spacing: -0.25px;
+  font-weight: 400;
   color: var(--Black);
 }
+.subvideo__text span {
+  font-weight: 600;
+}
 
+@media (max-width: 1023px) {
+  .btn-transcription {
+    padding: 11px;
+  }
+  .btn-structuring {
+    padding: 11px;
+  }
+  .btn-subvideo {
+    display: flex;
+    opacity: 0;
+    z-index: -10;
+  }
+  .btn-subvideo-active {
+    opacity: 1;
+    z-index: 10;
+  }
+  .container_video {
+    max-width: 1240px;
+  }
+  .section__main-active {
+    margin-right: 0;
+  }
+  .section__btns {
+    display: none;
+  }
+  .section__description {
+    gap: 0;
+  }
+  .section__description-title {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .section__description-info {
+    font: 500 10px/14px "Inter", "sans-serif";
+    letter-spacing: 0;
+  }
+  .section__or-small {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .section__dots {
+    border: none;
+  }
+  .subvideo {
+    position: relative;
+    top: 100%;
+    width: 100%;
+    right: 0;
+    height: 0;
+  }
+  .subvideo_active {
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
 .portfolios {
   position: relative;
   display: flex;
