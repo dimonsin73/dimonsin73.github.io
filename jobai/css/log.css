@@ -5104,7 +5104,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 .portfolios_big {
   display: flex;
@@ -5328,8 +5328,10 @@ body {
   height: 21px;
   font: 500 12px/18px "inter", "sans-serif";
   color: var(--Black);
+  white-space: nowrap;
 }
 .portfolio__tel-copy {
+  flex: 0 0 auto;
   opacity: 0;
 }
 .portfolio__tel:hover .portfolio__tel-copy {
@@ -5748,6 +5750,18 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.modal__content-btn {
+  position: fixed;
+  bottom: 0px;
+  right: -75px;
+  display: none;
+  background-color: var(--White);
+  z-index: 2000;
+}
+.modal__content-btn-active {
+  display: flex;
 }
 .modal__tags {
   display: none;
@@ -5844,7 +5858,6 @@ body {
   flex-direction: column;
   gap: 20px;
   padding: 10px;
-  padding-right: 5px;
 }
 .modal__suitable-title {
   font: 500 14px/20px "Inter", "sans-serif";
@@ -6290,6 +6303,10 @@ body {
   .section_collapse {
     left: 0;
   }
+  .modal__content-btn {
+    bottom: 100px;
+    right: 25px;
+  }
 }
 @media (max-width: 1200px) {
   .section_collapse {
@@ -6423,7 +6440,7 @@ body {
   }
   .section_toleft-btn {
     position: fixed;
-    bottom: 20px;
+    bottom: 100px;
     right: 16px;
     background-color: var(--White);
   }
@@ -6675,6 +6692,10 @@ body {
   }
   .modal__head-tag {
     padding: 6px;
+  }
+  .modal__content-btn {
+    bottom: 80px;
+    right: 10px;
   }
   .modal__addcommvent {
     padding: 22px 10px;

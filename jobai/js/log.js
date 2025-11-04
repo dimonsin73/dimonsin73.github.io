@@ -1654,11 +1654,58 @@ for (let i = 0; i < sectionArray.length; i++) {
         })
     } 
 }
+const portfolioTelCopyArray = document.querySelectorAll('.portfolio__tel-copy')
+for (let i = 0; i < portfolioTelCopyArray.length; i++) {
+    const portfolioTelCopy = portfolioTelCopyArray[i];
+    portfolioTelCopy.addEventListener('click', function(){
+        const textCopy = portfolioTelCopy.parentElement.textContent
+        navigator.clipboard.writeText(textCopy)
+    })
+}
 // Работа кнопки Лайк 
 const btnLikeArray = document.querySelectorAll('.btn_like')
 for (let i = 0; i < btnLikeArray.length; i++) {
     const btnLike = btnLikeArray[i];
     btnLike.addEventListener('click', function(){
         btnLike.classList.toggle('btn_like-active')
+    })
+}
+
+const portfolioPositionArray = document.querySelectorAll('.portfolio__position')
+for (let i = 0; i < portfolioPositionArray.length; i++) {
+    const portfolioPosition = portfolioPositionArray[i];
+    portfolioPosition.addEventListener('click', function(){
+        const windowScreen = screen.width
+        const portfolio = portfolioPosition.parentElement.parentElement
+        const portfolioHeight = portfolio.scrollHeight
+        const example = portfolio.parentElement.parentElement.parentElement.parentElement
+        let yOffset
+        if (windowScreen > 899) {
+            yOffset = portfolioHeight - 302;
+        } else {
+            yOffset = portfolioHeight - 226;
+        }
+        const y = portfolio.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        example.scrollBy({ top: y })
+    })
+}
+const modalContentArray = document.querySelectorAll('.modal__content')
+for (let i = 0; i < modalContentArray.length; i++) {
+    const modalContent = modalContentArray[i];
+    modalContent.addEventListener('scroll', function(){
+        const modalContentBtn = modalContent.querySelector('.modal__content-btn')
+        if (modalContentBtn != null) {
+            if (modalContent.scrollTop > 20) {
+                modalContentBtn.classList.add("modal__content-btn-active")
+            }
+        }
+    })
+}
+const modalContentBtnArray = document.querySelectorAll('.modal__content-btn')
+for (let i = 0; i < modalContentBtnArray.length; i++) {
+    const modalContentBtn = modalContentBtnArray[i];
+    modalContentBtn.addEventListener('click', function(){
+        const modalContent = modalContentBtn.parentElement
+        modalContent.scrollTo(0, 0)
     })
 }

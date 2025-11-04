@@ -4103,7 +4103,7 @@ body
     position: relative
     display: flex
     flex-direction: column
-    gap: 25px
+    gap: 20px
     &_big
         display: flex
     &_small 
@@ -4289,7 +4289,9 @@ body
         height: 21px
         font: 500 12px/18px "inter", "sans-serif"
         color: var(--Black)
+        white-space: nowrap
         &-copy 
+            flex: 0 0 auto
             opacity: 0
         &:hover 
             & .portfolio__tel-copy
@@ -4637,6 +4639,16 @@ body
         display: flex
         flex-direction: column
         overflow-y: auto
+        scroll-behavior: smooth
+        &-btn 
+            position: fixed
+            bottom: 0px
+            right: -75px
+            display: none
+            background-color: var(--White)
+            z-index: 2000
+            &-active 
+                display: flex
     &__tags 
         display: none
     &__tag 
@@ -4714,7 +4726,6 @@ body
         flex-direction: column
         gap: 20px
         padding: 10px
-        padding-right: 5px
         &-title 
             font: 500 14px/20px 'Inter', "sans-serif"
             color: var(--Black)
@@ -5077,6 +5088,11 @@ body
         padding-left: 0
     .section_collapse 
         left: 0
+    .modal
+        &__content 
+            &-btn 
+                bottom: 100px
+                right: 25px
 @media (max-width: 1200px)
     .section
         &_collapse 
@@ -5177,7 +5193,7 @@ body
             padding-right: 10px
             &-btn 
                 position: fixed
-                bottom: 20px
+                bottom: 100px
                 right: 16px
                 background-color: var(--White)
         &__select 
@@ -5370,6 +5386,10 @@ body
             display: none
             &-tag 
                 padding: 6px
+        &__content 
+            &-btn 
+                bottom: 80px
+                right: 10px
         &__addcommvent
             padding: 22px 10px
         &__comments 
