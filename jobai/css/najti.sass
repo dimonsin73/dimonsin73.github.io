@@ -1542,6 +1542,7 @@ input[type=number]::-webkit-outer-spin-button
         flex-direction: column
         gap: 12px
         &-title 
+            padding-right: 60px
             @include headline-medium
             color: var(--Black)
         &-info 
@@ -1581,6 +1582,9 @@ input[type=number]::-webkit-outer-spin-button
                 margin-top: 524px
             &.section_2line 
                 margin-top: 568px
+    &__back 
+        font: 600 15px/20px 'Inter', 'sans-serif'
+        letter-spacing: 0.01em
 .adjustment 
     position: absolute
     top: 8px 
@@ -1593,6 +1597,8 @@ input[type=number]::-webkit-outer-spin-button
     &-active 
         display: flex
         margin-left: auto
+    & path 
+        stroke: var(--Black)
 .datepicker
     max-width: 322px
     background: 
@@ -1624,11 +1630,13 @@ input[type=number]::-webkit-outer-spin-button
     bottom: 0
     flex: 0 0 auto
     width: 596px
+    height: 83%
     overflow: hidden
     transition: right 0.3s ease
     &_active 
         right: 0
     &__wrapper 
+        position: relative
         display: flex
         flex-direction: column
         gap: 16px
@@ -1649,6 +1657,14 @@ input[type=number]::-webkit-outer-spin-button
         overflow: auto
         &-active 
             display: flex
+        &-btn 
+            position: absolute
+            bottom: 20px
+            right: 25px
+            display: none
+            background-color: var(--White)
+            &-active 
+                display: flex
     &__item 
         display: flex
         align-items: flex-start
@@ -1668,6 +1684,16 @@ input[type=number]::-webkit-outer-spin-button
         &-avatar2
             background: 
                 image: url(../images/kuznecov/avatars/kuznecov.png)
+                position: center center
+                size: cover
+        &-avatar3
+            background: 
+                image: url(../images/korotenko/avatars/korotenko.png)
+                position: center center
+                size: cover
+        &-avatar4
+            background: 
+                image: url(../images/mihajlova/avatars/mihajlova2.png)
                 position: center center
                 size: cover
         &_content 
@@ -1720,6 +1746,9 @@ input[type=number]::-webkit-outer-spin-button
                 line-height: 18px
             &-info 
                 @include subtitle-small
+            &-text 
+                font-size: 10px
+                line-height: 14px
         &__or 
             &-small 
                 display: flex
@@ -1735,6 +1764,14 @@ input[type=number]::-webkit-outer-spin-button
         height: 0
         &_active 
             height: max-content
+            & .subvideo__content-btn
+                display: flex
+        &__content 
+            overflow: hidden
+            &-btn 
+                position: fixed
+                right: 35px
+                bottom: 30px
 // SUBVIDEO END
 .portfolios // PORTFOLIO
     position: relative
@@ -2881,7 +2918,7 @@ input[type=number]::-webkit-outer-spin-button
 @media (max-width: 899px)
     .title
         font-size: 26px
-        line-height: 26px
+        line-height: 30px
     .btn
         &_150 
             width: 48px

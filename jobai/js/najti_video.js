@@ -121,3 +121,32 @@ function openSubvideoConten(data) {
         }
     }
 }
+
+
+for (let i = 0; i < subvideoContentArray.length; i++) {
+    const subvideoContent = subvideoContentArray[i];
+    subvideoContent.addEventListener('scroll', function(){
+        const subvideoContentBtn = subvideoContent.querySelector('.subvideo__content-btn')
+        if (subvideoContentBtn != null) {
+            if (subvideoContent.scrollTop > 20) {
+                subvideoContentBtn.classList.add("subvideo__content-btn-active")
+            } else {
+                subvideoContentBtn.classList.remove("subvideo__content-btn-active")
+            }
+        }
+    })
+}
+const subvideoContentBtnArray = document.querySelectorAll('.subvideo__content-btn')
+const windowScreen = screen.width
+for (let i = 0; i < subvideoContentBtnArray.length; i++) {
+    const subvideoContentBtn = subvideoContentBtnArray[i];
+    subvideoContentBtn.addEventListener('click', function(){
+        if (windowScreen > 1023) {
+            const subvideoContent = subvideoContentBtn.parentElement
+            subvideoContent.scrollTo(0, 0)
+        } else {
+            window.scrollTo(0, 0)
+        }
+        
+    })
+}

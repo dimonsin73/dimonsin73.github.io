@@ -1888,6 +1888,7 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 12px;
 }
 .section__description-title {
+  padding-right: 60px;
   font: 700 30px/36px "Inter", "sans-serif";
   letter-spacing: -0.1px;
   color: var(--Black);
@@ -1939,6 +1940,10 @@ input[type=number]::-webkit-outer-spin-button {
 .section_mt-collapse.section_2line {
   margin-top: 568px;
 }
+.section__back {
+  font: 600 15px/20px "Inter", "sans-serif";
+  letter-spacing: 0.01em;
+}
 
 .adjustment {
   position: absolute;
@@ -1955,6 +1960,9 @@ input[type=number]::-webkit-outer-spin-button {
 .btn-subvideo-active {
   display: flex;
   margin-left: auto;
+}
+.btn-subvideo path {
+  stroke: var(--Black);
 }
 
 .datepicker {
@@ -1990,6 +1998,7 @@ input[type=number]::-webkit-outer-spin-button {
   bottom: 0;
   flex: 0 0 auto;
   width: 596px;
+  height: 83%;
   overflow: hidden;
   transition: right 0.3s ease;
 }
@@ -1997,6 +2006,7 @@ input[type=number]::-webkit-outer-spin-button {
   right: 0;
 }
 .subvideo__wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -2021,6 +2031,16 @@ input[type=number]::-webkit-outer-spin-button {
 .subvideo__content-active {
   display: flex;
 }
+.subvideo__content-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  display: none;
+  background-color: var(--White);
+}
+.subvideo__content-btn-active {
+  display: flex;
+}
 .subvideo__item {
   display: flex;
   align-items: flex-start;
@@ -2041,6 +2061,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .subvideo__item-avatar2 {
   background-image: url(../images/kuznecov/avatars/kuznecov.png);
+  background-position: center center;
+  background-size: cover;
+}
+.subvideo__item-avatar3 {
+  background-image: url(../images/korotenko/avatars/korotenko.png);
+  background-position: center center;
+  background-size: cover;
+}
+.subvideo__item-avatar4 {
+  background-image: url(../images/mihajlova/avatars/mihajlova2.png);
   background-position: center center;
   background-size: cover;
 }
@@ -2111,6 +2141,10 @@ input[type=number]::-webkit-outer-spin-button {
     font: 500 10px/14px "Inter", "sans-serif";
     letter-spacing: 0;
   }
+  .section__description-text {
+    font-size: 10px;
+    line-height: 14px;
+  }
   .section__or-small {
     display: flex;
     align-items: center;
@@ -2129,6 +2163,17 @@ input[type=number]::-webkit-outer-spin-button {
   .subvideo_active {
     height: -moz-max-content;
     height: max-content;
+  }
+  .subvideo_active .subvideo__content-btn {
+    display: flex;
+  }
+  .subvideo__content {
+    overflow: hidden;
+  }
+  .subvideo__content-btn {
+    position: fixed;
+    right: 35px;
+    bottom: 30px;
   }
 }
 .portfolios {
@@ -3520,7 +3565,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media (max-width: 899px) {
   .title {
     font-size: 26px;
-    line-height: 26px;
+    line-height: 30px;
   }
   .btn_150 {
     width: 48px;
