@@ -1718,6 +1718,11 @@ for (let i = 0; i < sectionFormArray.length; i++) {
     const sectionForm = sectionFormArray[i];
     sectionForm.addEventListener('submit', function(e){
         e.preventDefault()
+        const sectionCollapse = sectionForm.querySelector('.section__collapse')
+        const sectionMt = sectionForm.querySelector('.section_mt') 
+        const jobDescription = sectionForm.querySelector('.textarea_adjustment')
+        const sectionViewText = sectionForm.querySelector('.section__view-text')
+        collapseClose(sectionCollapse, sectionMt, jobDescription, sectionViewText)
         const sectionFormSearch = sectionForm.querySelector('.section__form-search')
         const sectionFormNewSearch = sectionForm.querySelector('.section__form-new-search')
         const sectionToleft = sectionForm.parentElement.parentElement.parentElement.querySelector('.section_toleft')
@@ -1735,7 +1740,27 @@ for (let i = 0; i < sectionFormNewSearchArray.length; i++) {
         const sectionToleft = sectionFormNewSearch.parentElement.parentElement.parentElement.parentElement.querySelector('.section_toleft')
         sectionToleft.style.display = 'none'
         setTimeout(function(){
-            sectionToleft.style.display = 'flex'
+            sectionToleft.style.display = 'grid'
         }, 500)
     })
+}
+
+const sectionBurgerArray= document.querySelectorAll('.section__burger')
+for (let i = 0; i < sectionBurgerArray.length; i++) {
+    const sectionBurger = sectionBurgerArray[i];
+    sectionBurger.addEventListener('click', function(){
+        const sectionCollapse = sectionBurger.parentElement
+        const sectionMt = sectionCollapse.parentElement.parentElement.parentElement.parentElement.querySelector('.section_mt')
+        sectionCollapse.classList.toggle('section__collapse-collapse')
+        if (sectionMt !== null ) {
+            sectionMt.classList.toggle('section_mt-collapse')
+        }
+    })
+}
+function collapseClose(sectionCollapse, sectionMt, jobDescription, sectionViewText) {
+    sectionCollapse.classList.add('section__collapse-collapse')
+    if (sectionMt !== null ) {
+        sectionMt.classList.remove('section_mt-collapse')
+    }
+    sectionViewText.textContent = jobDescription.value
 }
