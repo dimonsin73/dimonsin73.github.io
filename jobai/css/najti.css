@@ -332,7 +332,7 @@ html {
 
 .total-found {
   position: absolute;
-  bottom: 4px;
+  bottom: -26px;
   display: none;
   align-items: center;
   gap: 4px;
@@ -544,8 +544,8 @@ html {
 }
 .textarea_adjustment {
   display: -webkit-box;
-  height: 36px;
-  padding: 0px 40px 0 10px;
+  height: 60px;
+  padding: 12px 40px 12px 10px;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   line-height: 36px;
@@ -1793,13 +1793,24 @@ input[type=number]::-webkit-outer-spin-button {
 .section__collapse .section__burger {
   left: -44px;
   top: auto;
-  bottom: 66px;
+  bottom: 117px;
+}
+.section__collapse .section__wrapper-l50 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-position-y: 38px;
+}
+.section__collapse .select__input {
+  height: 60px;
 }
 .section__collapse-collapse .section__hide {
   display: none;
 }
 .section__collapse-collapse .section__view {
   display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
 }
 .section__collapse-collapse .section__burger {
   left: 10px;
@@ -1938,7 +1949,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 464px;
 }
 .section_mt-collapse {
-  margin-top: 480px;
+  margin-top: 580px;
 }
 .section_mt-collapse.section_1line {
   margin-top: 524px;
@@ -1953,7 +1964,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .adjustment {
   position: absolute;
-  top: 8px;
+  top: 20px;
   right: 10px;
   display: flex;
   align-items: center;
@@ -3678,7 +3689,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 392px;
   }
   .section_mt-collapse {
-    margin-top: 397px;
+    margin-top: 408px;
   }
   .section_mt-collapse .section_1line {
     margin-top: 441px;
@@ -3716,6 +3727,14 @@ input[type=number]::-webkit-outer-spin-button {
     top: 69px;
     transform: none;
   }
+  .section__collapse .section__wrapper-l50 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-position-y: 25px;
+  }
+  .section__collapse .select__input {
+    height: 30px;
+  }
   .section__collapse-collapse .section__burger {
     top: 15px;
   }
@@ -3750,7 +3769,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .textarea_adjustment {
     height: 50px;
-    padding-left: 10px;
+    padding: 0 40px 0 10px;
     line-height: 50px;
   }
   .textarea_adjustment::-moz-placeholder {
@@ -3924,6 +3943,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .modal-slider .itc-slider-btn-next {
     right: 10px;
+  }
+  .total-found {
+    bottom: -21px;
   }
 }
 .logo {
