@@ -422,6 +422,38 @@ body
             @include subtitle-large
         & .check__info 
             max-width: 560px
+.textarea 
+    width: 100%
+    padding: 20px 12px
+    border-radius: 12px
+    background-color: var(--Gray-100)
+    @include text-medium
+    color: var(--Black)
+    outline: none
+    resize: none
+    &::placeholder 
+        @include body-small
+        color: var(--Gray-30)
+    &_adjustment
+        display: -webkit-box
+        height: 36px
+        padding: 0px 40px 0 10px
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+        line-height: 36px
+        overflow: hidden
+        transition: height 0.3s ease, line-height 0.3s ease
+        &::placeholder 
+            line-height: 36px
+        &-active 
+            display: -webkit-box
+            height: 500px
+            -webkit-line-clamp: 23
+            -webkit-box-orient: vertical
+            overflow: auto
+        &:focus 
+            &::placeholder
+                color: transparent
 .radio 
     display: contents
     &__label
@@ -3924,7 +3956,7 @@ body
         & .section__burger 
             left: -44px
             top: auto
-            bottom: 66px
+            bottom: 15px
         &-collapse
             & .section__hide 
                 display: none
@@ -4089,7 +4121,7 @@ body
 .total-found
     position: absolute
     bottom: 4px
-    display: flex
+    display: none
     align-items: center
     gap: 4px
     &-text 

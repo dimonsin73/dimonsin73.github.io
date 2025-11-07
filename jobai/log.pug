@@ -1717,37 +1717,13 @@ html(lang="ru")
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.39922 3.30078C3.18419 3.30078 2.19922 4.28575 2.19922 5.50078V16.5008C2.19922 17.7158 3.18419 18.7008 4.39922 18.7008H17.5992C18.8142 18.7008 19.7992 17.7158 19.7992 16.5008V5.50078C19.7992 4.28575 18.8142 3.30078 17.5992 3.30078H4.39922ZM7.69922 5.50078H14.2992V9.90078H7.69922V5.50078ZM16.4992 14.3008V16.5008H17.5992V14.3008H16.4992ZM14.2992 12.1008H7.69922V16.5008H14.2992V12.1008ZM16.4992 12.1008H17.5992V9.90078H16.4992V12.1008ZM17.5992 7.70078V5.50078H16.4992V7.70078H17.5992ZM5.49922 5.50078V7.70078H4.39922V5.50078H5.49922ZM5.49922 9.90078H4.39922V12.1008H5.49922V9.90078ZM4.39922 14.3008H5.49922V16.5008H4.39922V14.3008Z" fill="#6A6A73"/>
                             </svg>
                     form.section__form.section__form-collapse
-                        .section__collapse.section__collapse-collapse
+                        .section__collapse
                             .section__wrapper.section__wrapper-l50.section__wrapper-ai.section__hide
                                 label(for="job-description").label
-                                    textarea(name="job-description", placeholder="Введите название должности или описание вакансии").textarea.textarea_adjustment#job-description
-                                    button(type="button").btn-icon.adjustment 
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5 4C5 3.44772 4.55228 3 4 3C3.44772 3 3 3.44772 3 4V11.2676C2.4022 11.6134 2 12.2597 2 13C2 13.7403 2.4022 14.3866 3 14.7324V16C3 16.5523 3.44772 17 4 17C4.55228 17 5 16.5523 5 16V14.7324C5.5978 14.3866 6 13.7403 6 13C6 12.2597 5.5978 11.6134 5 11.2676V4Z" fill="#6A6A73"/>
-                                            <path d="M11 4C11 3.44772 10.5523 3 10 3C9.44772 3 9 3.44772 9 4V5.26756C8.4022 5.61337 8 6.25972 8 7C8 7.74028 8.4022 8.38663 9 8.73244V16C9 16.5523 9.44772 17 10 17C10.5523 17 11 16.5523 11 16V8.73244C11.5978 8.38663 12 7.74028 12 7C12 6.25972 11.5978 5.61337 11 5.26756V4Z" fill="#6A6A73"/>
-                                            <path d="M16 3C16.5523 3 17 3.44772 17 4V11.2676C17.5978 11.6134 18 12.2597 18 13C18 13.7403 17.5978 14.3866 17 14.7324V16C17 16.5523 16.5523 17 16 17C15.4477 17 15 16.5523 15 16V14.7324C14.4022 14.3866 14 13.7403 14 13C14 12.2597 14.4022 11.6134 15 11.2676V4C15 3.44772 15.4477 3 16 3Z" fill="#6A6A73"/>
-                                        </svg>
+                                    textarea(name="job-description", placeholder="Введите название должности или специальности").textarea.textarea_adjustment#job-description
                                 .section__tags.section__tags-1
-                            p.section__or.section__hide или
-                            .section__wrapper.section__wrapper-l50.section__hide
-                                .select    
-                                    input(type="text", readonly, name="job-title", placeholder="Выберите свою вакансию").select__input.input#job-title.section__select-input
-                                    .options 
-                                        .options__wrapper
-                                            .option Вакансия 1
-                                            .option Вакансия 2
-                                            .option Вакансия 3
-                                            .option Вакансия 4
-                                            .option Вакансия 5
                             .section__wrapper.section__view.section__wrapper-l50
                                 p.section__view-text 
-                                button(type="button").btn-icon.section__view-btn.adjustment 
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 4C5 3.44772 4.55228 3 4 3C3.44772 3 3 3.44772 3 4V11.2676C2.4022 11.6134 2 12.2597 2 13C2 13.7403 2.4022 14.3866 3 14.7324V16C3 16.5523 3.44772 17 4 17C4.55228 17 5 16.5523 5 16V14.7324C5.5978 14.3866 6 13.7403 6 13C6 12.2597 5.5978 11.6134 5 11.2676V4Z" fill="#6A6A73"/>
-                                        <path d="M11 4C11 3.44772 10.5523 3 10 3C9.44772 3 9 3.44772 9 4V5.26756C8.4022 5.61337 8 6.25972 8 7C8 7.74028 8.4022 8.38663 9 8.73244V16C9 16.5523 9.44772 17 10 17C10.5523 17 11 16.5523 11 16V8.73244C11.5978 8.38663 12 7.74028 12 7C12 6.25972 11.5978 5.61337 11 5.26756V4Z" fill="#6A6A73"/>
-                                        <path d="M16 3C16.5523 3 17 3.44772 17 4V11.2676C17.5978 11.6134 18 12.2597 18 13C18 13.7403 17.5978 14.3866 17 14.7324V16C17 16.5523 16.5523 17 16 17C15.4477 17 15 16.5523 15 16V14.7324C14.4022 14.3866 14 13.7403 14 13C14 12.2597 14.4022 11.6134 15 11.2676V4C15 3.44772 15.4477 3 16 3Z" fill="#6A6A73"/>
-                                    </svg>
-                                .section__tags.section__tags-2
                             button(type="button").section__burger
                         .section__wrapper.section__wrapper-l50.section__wrapper-ai.section__wrapper-range
                             .range
@@ -1770,7 +1746,7 @@ html(lang="ru")
                         .total-found
                             p.total-found-text Всего найдено  
                             p.total-found-number 3
-            .section.section_mt.section_active.section_toleft
+            .section.section_mt.section_toleft
                 .cards
                     .portfolios.portfolios_big
                         .portfolio
@@ -1804,7 +1780,7 @@ html(lang="ru")
                                                 .itc-slider-item
                                                     .itc-slider-bg
                                                     .itc-slider-media 
-                                                        .itc-slider-video
+                                                        a(href="videosobesedovanie_1.html").itc-slider-video
                                                             img(src="images/kuznecov/video/video_4.png", alt="video").itc-slider-img
                                                             .itc-slider-play
                                                             p.itc-slider-time 23:12
@@ -1946,7 +1922,7 @@ html(lang="ru")
                                                 .itc-slider-item
                                                     .itc-slider-bg
                                                     .itc-slider-media 
-                                                        .itc-slider-video
+                                                        a(href="videosobesedovanie_2.html").itc-slider-video
                                                             img(src="images/mihajlova/video/video_1.png", alt="video").itc-slider-img
                                                             .itc-slider-play
                                                             p.itc-slider-time 23:12
@@ -2238,7 +2214,7 @@ html(lang="ru")
                                             .itc-slider-item
                                                 .itc-slider-bg
                                                 .itc-slider-media 
-                                                    .itc-slider-video
+                                                    a(href="videosobesedovanie_1.html").itc-slider-video
                                                         img(src="images/kuznecov/video/video_4.png", alt="video").itc-slider-img
                                                         .itc-slider-play
                                                         p.itc-slider-time 23:12
@@ -2381,7 +2357,7 @@ html(lang="ru")
                                             .itc-slider-item
                                                 .itc-slider-bg
                                                 .itc-slider-media 
-                                                    .itc-slider-video
+                                                    a(href="videosobesedovanie_2.html").itc-slider-video
                                                         img(src="images/mihajlova/video/video_1.png", alt="video").itc-slider-img
                                                         .itc-slider-play
                                                         p.itc-slider-time 23:12
@@ -2564,12 +2540,12 @@ html(lang="ru")
                                         <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21 12C21 16.4183 16.9706 20 12 20C10.4607 20 9.01172 19.6565 7.74467 19.0511L3 20L4.39499 16.28C3.51156 15.0423 3 13.5743 3 12C3 7.58172 7.02944 4 12 4C16.9706 4 21 7.58172 21 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                     | Пригласить
-                    .cards__footer
-                        button(type="button").cards__btn.neumorphic.neumorphic-button Вернуться в меню
                 button(type="button").btn.btn-icon48.btn_black.section_toleft-btn
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 15L12 8L19 15" stroke="#202123" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
+            .cards__footer
+                button(type="button").cards__btn.neumorphic.neumorphic-button Вернуться в меню
             .modal
                 .modal__wrapper.modal__wrapper-avatar(data-modal='avatar')
                     button(type="button").modal__close.btn-icon 
@@ -3112,36 +3088,13 @@ html(lang="ru")
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.39922 3.30078C3.18419 3.30078 2.19922 4.28575 2.19922 5.50078V16.5008C2.19922 17.7158 3.18419 18.7008 4.39922 18.7008H17.5992C18.8142 18.7008 19.7992 17.7158 19.7992 16.5008V5.50078C19.7992 4.28575 18.8142 3.30078 17.5992 3.30078H4.39922ZM7.69922 5.50078H14.2992V9.90078H7.69922V5.50078ZM16.4992 14.3008V16.5008H17.5992V14.3008H16.4992ZM14.2992 12.1008H7.69922V16.5008H14.2992V12.1008ZM16.4992 12.1008H17.5992V9.90078H16.4992V12.1008ZM17.5992 7.70078V5.50078H16.4992V7.70078H17.5992ZM5.49922 5.50078V7.70078H4.39922V5.50078H5.49922ZM5.49922 9.90078H4.39922V12.1008H5.49922V9.90078ZM4.39922 14.3008H5.49922V16.5008H4.39922V14.3008Z" fill="#6A6A73"/>
                             </svg>
                     form.section__form.section__form-collapse
-                        .section__collapse.section__collapse-collapse
+                        .section__collapse
                             .section__wrapper.section__wrapper-l50.section__wrapper-ai.section__hide
                                 label(for="job-description").label
                                     textarea(name="job-description", placeholder="Введите название должности или описание вакансии").textarea.textarea_adjustment#job-description
-                                    button(type="button").btn-icon.adjustment 
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5 4C5 3.44772 4.55228 3 4 3C3.44772 3 3 3.44772 3 4V11.2676C2.4022 11.6134 2 12.2597 2 13C2 13.7403 2.4022 14.3866 3 14.7324V16C3 16.5523 3.44772 17 4 17C4.55228 17 5 16.5523 5 16V14.7324C5.5978 14.3866 6 13.7403 6 13C6 12.2597 5.5978 11.6134 5 11.2676V4Z" fill="#6A6A73"/>
-                                            <path d="M11 4C11 3.44772 10.5523 3 10 3C9.44772 3 9 3.44772 9 4V5.26756C8.4022 5.61337 8 6.25972 8 7C8 7.74028 8.4022 8.38663 9 8.73244V16C9 16.5523 9.44772 17 10 17C10.5523 17 11 16.5523 11 16V8.73244C11.5978 8.38663 12 7.74028 12 7C12 6.25972 11.5978 5.61337 11 5.26756V4Z" fill="#6A6A73"/>
-                                            <path d="M16 3C16.5523 3 17 3.44772 17 4V11.2676C17.5978 11.6134 18 12.2597 18 13C18 13.7403 17.5978 14.3866 17 14.7324V16C17 16.5523 16.5523 17 16 17C15.4477 17 15 16.5523 15 16V14.7324C14.4022 14.3866 14 13.7403 14 13C14 12.2597 14.4022 11.6134 15 11.2676V4C15 3.44772 15.4477 3 16 3Z" fill="#6A6A73"/>
-                                        </svg>
                                 .section__tags.section__tags-1
-                            p.section__or.section__hide или
-                            .section__wrapper.section__wrapper-l50.section__hide
-                                .select    
-                                    input(type="text", readonly, name="job-title", placeholder="Выберите свою вакансию").select__input.input#job-title.section__select-input
-                                    .options 
-                                        .options__wrapper
-                                            .option Вакансия 1
-                                            .option Вакансия 2
-                                            .option Вакансия 3
-                                            .option Вакансия 4
-                                            .option Вакансия 5
                             .section__wrapper.section__view.section__wrapper-l50
-                                p.section__view-text 
-                                button(type="button").btn-icon.section__view-btn.adjustment 
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 4C5 3.44772 4.55228 3 4 3C3.44772 3 3 3.44772 3 4V11.2676C2.4022 11.6134 2 12.2597 2 13C2 13.7403 2.4022 14.3866 3 14.7324V16C3 16.5523 3.44772 17 4 17C4.55228 17 5 16.5523 5 16V14.7324C5.5978 14.3866 6 13.7403 6 13C6 12.2597 5.5978 11.6134 5 11.2676V4Z" fill="#6A6A73"/>
-                                        <path d="M11 4C11 3.44772 10.5523 3 10 3C9.44772 3 9 3.44772 9 4V5.26756C8.4022 5.61337 8 6.25972 8 7C8 7.74028 8.4022 8.38663 9 8.73244V16C9 16.5523 9.44772 17 10 17C10.5523 17 11 16.5523 11 16V8.73244C11.5978 8.38663 12 7.74028 12 7C12 6.25972 11.5978 5.61337 11 5.26756V4Z" fill="#6A6A73"/>
-                                        <path d="M16 3C16.5523 3 17 3.44772 17 4V11.2676C17.5978 11.6134 18 12.2597 18 13C18 13.7403 17.5978 14.3866 17 14.7324V16C17 16.5523 16.5523 17 16 17C15.4477 17 15 16.5523 15 16V14.7324C14.4022 14.3866 14 13.7403 14 13C14 12.2597 14.4022 11.6134 15 11.2676V4C15 3.44772 15.4477 3 16 3Z" fill="#6A6A73"/>
-                                    </svg>
+                                p.section__view-text    
                                 .section__tags.section__tags-2
                             button(type="button").section__burger
                         .section__wrapper.section__wrapper-l50.section__wrapper-ai.section__wrapper-range
@@ -3165,7 +3118,7 @@ html(lang="ru")
                         .total-found
                             p.total-found-text Всего найдено  
                             p.total-found-number 3
-            .section.section_mt.section_active.section_toleft
+            .section.section_mt.section_toleft
                 .cards
                     .portfolios.portfolios_big
                         .portfolio
@@ -3977,12 +3930,12 @@ html(lang="ru")
                                         <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21 12C21 16.4183 16.9706 20 12 20C10.4607 20 9.01172 19.6565 7.74467 19.0511L3 20L4.39499 16.28C3.51156 15.0423 3 13.5743 3 12C3 7.58172 7.02944 4 12 4C16.9706 4 21 7.58172 21 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                     | Откликнуться
-                    .cards__footer
-                        button(type="button").cards__btn.neumorphic.neumorphic-button Вернуться в меню
                 button(type="button").btn.btn-icon48.btn_black.section_toleft-btn
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 15L12 8L19 15" stroke="#202123" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
+            .cards__footer
+                button(type="button").cards__btn.neumorphic.neumorphic-button Вернуться в меню
             .modal
                 .modal__wrapper.modal__wrapper-avatar(data-modal='avatar')
                     button(type="button").modal__close.btn-icon 

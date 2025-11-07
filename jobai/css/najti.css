@@ -563,7 +563,13 @@ html {
   height: 500px;
   -webkit-line-clamp: 23;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow: auto;
+}
+.textarea_adjustment:focus::-moz-placeholder {
+  color: transparent;
+}
+.textarea_adjustment:focus::placeholder {
+  color: transparent;
 }
 
 .select {

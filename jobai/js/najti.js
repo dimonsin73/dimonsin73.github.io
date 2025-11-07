@@ -54,6 +54,7 @@ const sectionTags2 = document.querySelector('.section__tags-2')
 const sectionFormSearch = document.querySelector('.section__form-search')
 const sectionFormNewSearch = document.querySelector('.section__form-new-search')
 const totalFound = document.querySelector('.total-found')
+const sectionToleftArray = document.querySelectorAll('.section_toleft')
 let sectionPortfolios = false
 sectionClose.addEventListener('click', function(){
     openNajtiSotrudnika()
@@ -162,19 +163,43 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                     const tag = tags[i];
                     const sectionTag = document.createElement('div')
                     sectionTag.classList.add('section__tag')
+                    const sectionTagClone = sectionTag.cloneNode(true)
                     const sectionTagText = document.createElement('p')
                     sectionTagText.classList.add('section__tag-text')
                     sectionTagText.textContent = tag
+                    const sectionTagTextClone = sectionTagText.cloneNode(true)
                     const sectionTagBtn = document.createElement('button')
                     sectionTagBtn.setAttribute('type', 'button')
                     sectionTagBtn.classList.add('section__tag-btn', 'btn-icon')
+                    const sectionTagBtnClone = sectionTagBtn.cloneNode(true)
                     sectionTag.append(sectionTagText, sectionTagBtn)
-                    let cloneSectionTag = sectionTag.cloneNode(true)
+                    sectionTagClone.append(sectionTagTextClone, sectionTagBtnClone)
                     sectionTags1.append(sectionTag)
-                    sectionTags2.append(cloneSectionTag)
+                    sectionTags2.append(sectionTagClone)
                     sectionTagBtn.addEventListener('click', function(){
                         const sectionTagTarget = sectionTagBtn.parentElement
+                        const sectionTagTextTarget = sectionTagTarget.textContent
                         sectionTagTarget.remove()
+                        const tagArray = sectionTags2.querySelectorAll('.section__tag')
+                        for (let i = 0; i < tagArray.length; i++) {
+                            const tag = tagArray[i];
+                            if (sectionTagTextTarget === tag.textContent) {
+                                tag.remove()
+                            }
+                        }
+                        sectionTagsHeight()
+                    })
+                    sectionTagBtnClone.addEventListener('click', function(){
+                        const sectionTagTarget = sectionTagBtnClone.parentElement
+                        const sectionTagTextTarget = sectionTagTarget.textContent
+                        sectionTagTarget.remove()
+                        const tagArray = sectionTags1.querySelectorAll('.section__tag')
+                        for (let i = 0; i < tagArray.length; i++) {
+                            const tag = tagArray[i];
+                            if (sectionTagTextTarget === tag.textContent) {
+                                tag.remove()
+                            }
+                        }
                         sectionTagsHeight()
                     })
                 }
@@ -187,6 +212,11 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                 sectionFormSearch.style.display = 'none'
                 sectionFormNewSearch.style.display = 'flex'
                 totalFound.style.display = 'flex'
+                sectionCollapse.classList.add('section__collapse-collapse')
+                for (let i = 0; i < sectionToleftArray.length; i++) {
+                    const sectionToleft = sectionToleftArray[i];
+                    sectionToleft.classList.remove('section_mt-collapse')
+                }
                 for (let i = 0; i < sectionArray.length; i++) {
                     const section = sectionArray[i];
                     if (section.dataset.section === 'portfolios') {
@@ -345,6 +375,7 @@ for (let i = 0; i < textareaAdjustmentArray.length; i++) {
     }) 
     textareaAdjustment.addEventListener('focusout', function(){
         textareaAdjustment.classList.remove('textarea_adjustment-active')
+        textareaAdjustment.scrollTo(0, 0)
     }) 
 }
 // Разворачивание/сворачивание/заполнение полей поиска сотрудника
@@ -562,3 +593,15 @@ for (let i = 0; i < modalContentBtnArray.length; i++) {
         modalContent.scrollTo(0, 0)
     })
 }
+
+sectionFormNewSearch.addEventListener('click', function(){
+    for (let i = 0; i < sectionArray.length; i++) {
+        const section = sectionArray[i];
+        if (section.dataset.section === 'portfolios') {
+            section.style.display = 'none'
+            setTimeout(function(){
+                section.style.display = 'flex'
+            }, 500)
+        }
+    }
+})

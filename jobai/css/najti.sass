@@ -498,7 +498,10 @@ html
             height: 500px
             -webkit-line-clamp: 23
             -webkit-box-orient: vertical
-            overflow: hidden
+            overflow: auto
+        &:focus 
+            &::placeholder
+                color: transparent
 .select 
     position: relative
     &__input 

@@ -1477,7 +1477,7 @@ for (let i = 0; i < cardsBtnArray.length; i++) {
 for (let i = 0; i < cardscloseArray.length; i++) {
     const cardsclose = cardscloseArray[i];
     cardsclose.addEventListener('click', function(){
-        const example = cardsclose.parentElement.parentElement.parentElement.parentElement
+        const example = cardsclose.parentElement.parentElement
         example.classList.remove('example_active')
         for (let i = 0; i < cardsWrapperArray.length; i++) {
             const cardsWrapper = cardsWrapperArray[i];
@@ -1709,5 +1709,33 @@ for (let i = 0; i < modalContentBtnArray.length; i++) {
     modalContentBtn.addEventListener('click', function(){
         const modalContent = modalContentBtn.parentElement
         modalContent.scrollTo(0, 0)
+    })
+}
+
+
+const sectionFormArray = document.querySelectorAll('.section__form')
+for (let i = 0; i < sectionFormArray.length; i++) {
+    const sectionForm = sectionFormArray[i];
+    sectionForm.addEventListener('submit', function(e){
+        e.preventDefault()
+        const sectionFormSearch = sectionForm.querySelector('.section__form-search')
+        const sectionFormNewSearch = sectionForm.querySelector('.section__form-new-search')
+        const sectionToleft = sectionForm.parentElement.parentElement.parentElement.querySelector('.section_toleft')
+        const totalFound = sectionForm.querySelector('.total-found')
+        sectionFormSearch.style.display = 'none'
+        sectionFormNewSearch.style.display = 'flex'
+        totalFound.style.display = 'flex'
+        sectionToleft.classList.add('section_active')
+    })
+}
+const sectionFormNewSearchArray = document.querySelectorAll('.section__form-new-search')
+for (let i = 0; i < sectionFormNewSearchArray.length; i++) {
+    const sectionFormNewSearch = sectionFormNewSearchArray[i];
+    sectionFormNewSearch.addEventListener('click', function(){
+        const sectionToleft = sectionFormNewSearch.parentElement.parentElement.parentElement.parentElement.querySelector('.section_toleft')
+        sectionToleft.style.display = 'none'
+        setTimeout(function(){
+            sectionToleft.style.display = 'flex'
+        }, 500)
     })
 }
