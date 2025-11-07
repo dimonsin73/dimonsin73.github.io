@@ -208,6 +208,7 @@ for (let i = 0; i < sectionFormArray.length; i++) {
             break;
         case 'najti':
             sectionForm.addEventListener('submit', function(e){
+                collapseClose()
                 e.preventDefault()
                 sectionFormSearch.style.display = 'none'
                 sectionFormNewSearch.style.display = 'flex'
@@ -600,7 +601,7 @@ sectionFormNewSearch.addEventListener('click', function(){
         if (section.dataset.section === 'portfolios') {
             section.style.display = 'none'
             setTimeout(function(){
-                section.style.display = 'flex'
+                section.style.display = 'grid'
             }, 500)
         }
     }
