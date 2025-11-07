@@ -436,8 +436,8 @@ body
         color: var(--Gray-30)
     &_adjustment
         display: -webkit-box
-        height: 36px
-        padding: 0px 40px 0 10px
+        height: 60px
+        padding: 12px 40px 12px 10px
         -webkit-line-clamp: 1
         -webkit-box-orient: vertical
         line-height: 36px
@@ -3956,7 +3956,11 @@ body
         & .section__burger 
             left: -44px
             top: auto
-            bottom: 15px
+            bottom: 40px
+        & .section__wrapper-ai 
+            padding-top: 20px
+            padding-bottom: 20px
+            background-position-y: 38px
         &-collapse
             & .section__hide 
                 display: none
@@ -4070,7 +4074,7 @@ body
         &.section_2line 
             margin-top: 464px
         &-collapse 
-            margin-top: 480px
+            margin-top: 362px
             &.section_1line 
                 margin-top: 524px
             &.section_2line 
@@ -5159,6 +5163,8 @@ body
         padding-right: 10px 
         &_mt
             margin-top: 292px
+            &-collapse 
+                margin-top: 342px
 @media (max-width: 899px)
     .section
         padding: 10px 10px 20px
@@ -5184,7 +5190,7 @@ body
             & .section_2line 
                 margin-top: 392px
             &-collapse 
-                margin-top: 397px
+                margin-top: 262px
                 & .section_1line 
                     margin-top: 441px
                 & .section_2line 
@@ -5215,6 +5221,10 @@ body
             &-collapse 
                 & .section__burger 
                     top: 15px
+            & .section__wrapper-ai
+                padding-top: 10px
+                padding-bottom: 10px
+                background-position-y: 25px
         &_collapse 
             grid-template-columns: 370px
         &_toleft 
@@ -5254,7 +5264,7 @@ body
         top: 15px
     .textarea_adjustment
         height: 50px
-        padding-left: 10px
+        padding: 0 40px 0 10px
         line-height: 50px
         &::placeholder 
             padding-top: 10px
