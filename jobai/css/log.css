@@ -4231,10 +4231,10 @@ body {
   }
   .tariffs__banner {
     padding: 9px 7px;
-    gap: 9px;
+    gap: 12px;
   }
   .tariffs__banner_rabotodatel {
-    height: 163px;
+    height: 166px;
     transition: all 0.3s ease;
   }
   .tariffs__banner-min {
@@ -4364,11 +4364,12 @@ body {
     width: 140px;
   }
   .docum .tariffs__banner_rabotodatel {
-    height: 149px;
+    height: 152px;
   }
   .docum .tariffs__banner-min {
     height: 36px;
     overflow: hidden;
+    gap: 40px;
   }
   .docum .tariffs__form {
     height: calc(100vh - 64px - 20px - 48px - 20px - 36px - 15px - 157px - 15px - 113px);

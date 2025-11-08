@@ -2876,15 +2876,16 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .tariffs__banner {
     padding: 9px 7px;
-    gap: 9px;
+    gap: 12px;
   }
   .tariffs__banner_rabotodatel {
-    height: 163px;
+    height: 166px;
     transition: all 0.3s ease;
   }
   .tariffs__banner-min {
     height: 36px;
     overflow: hidden;
+    gap: 40px;
   }
   .tariffs__form {
     height: calc(100vh - 64px - 22px - 10px - 36px - 15px - 163px - 15px - 25px);

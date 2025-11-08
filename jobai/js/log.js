@@ -1170,6 +1170,9 @@ function passwordComparison() {
         }
     }
 }
+hiroPasswordSave.addEventListener('click', function(){
+    location.reload()
+})
 // Функция очистки полей 
 hiroPasswordReset.addEventListener('click', function(){
     password.value = ''
@@ -1764,3 +1767,20 @@ function collapseClose(sectionCollapse, sectionMt, jobDescription, sectionViewTe
     }
     sectionViewText.textContent = jobDescription.value
 }
+let scrollPos = 0
+window.addEventListener('scroll', function(){
+    let st = window.pageYOffset
+    if (st > scrollPos){
+        window.scrollTo({
+            top: 1000,
+            behavior: "smooth",
+        });
+    } else {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+    scrollPos = st;
+    
+})
