@@ -308,6 +308,13 @@ html
                     fill: var(--Red)
     & svg 
         flex: 0 0 auto
+    &_small 
+        width: 100px
+        height: 32px
+        padding: 6px
+        border-radius: 6px
+        @include btn-small
+        
 .link 
     display: flex
     align-items: center
@@ -484,8 +491,8 @@ html
         color: var(--Gray-30)
     &_adjustment
         display: -webkit-box
-        height: 60px
-        padding: 12px 40px 12px 10px
+        height: 50px
+        padding: 7px 40px 7px 10px
         -webkit-line-clamp: 1
         -webkit-box-orient: vertical
         line-height: 36px
@@ -1092,7 +1099,7 @@ input[type=number]::-webkit-outer-spin-button
     &__top 
         display: flex
         justify-content: space-between
-        align-items: flex-end
+        align-items: center
         margin-bottom: 20px
     &__head 
         display: flex
@@ -1312,16 +1319,6 @@ input[type=number]::-webkit-outer-spin-button
                 image: url('../images/icons/close.png')
                 position: center center 
                 repeat: no-repeat
-    &__or
-        display: flex
-        justify-content: center
-        gap: 15px
-        margin: 0 auto
-        @include body-medium
-        line-height: 14px
-        color: var(--Gray-10)
-        &-small 
-            display: none
     &__imgloading 
         display: grid
         grid-template-columns: 96px auto 
@@ -1453,37 +1450,6 @@ input[type=number]::-webkit-outer-spin-button
         background-color: var(--Gray-100)
         z-index: 100
         transition: left 0.3s ease
-    &__collapse
-        position: relative
-        display: flex
-        flex-direction: column
-        gap: 20px
-        & .section__hide 
-            display: flex
-        & .section__view
-            display: none
-        & .section__burger 
-            left: -44px
-            top: auto
-            bottom: 117px
-        & .section__wrapper-l50
-            padding-top: 20px
-            padding-bottom: 20px
-            background-position-y: 38px
-        & .select__input 
-            height: 60px
-        &-collapse
-            & .section__hide 
-                display: none
-            & .section__view
-                display: block
-                padding-top: 10px
-                padding-bottom: 10px
-                padding-right: 30px
-            & .section__burger 
-                left: 10px
-                top: 15px
-                transform: none
     &__content 
         position: relative
         display: flex
@@ -1583,7 +1549,7 @@ input[type=number]::-webkit-outer-spin-button
             & path 
                 fill: var(--Red)
     &_mt 
-        margin-top: 375px
+        margin-top: 428px
         &.section_1line 
             margin-top: 420px
         &.section_2line 
@@ -1597,13 +1563,59 @@ input[type=number]::-webkit-outer-spin-button
     &__back 
         font: 600 15px/20px 'Inter', 'sans-serif'
         letter-spacing: 0.01em
+    &__search 
+        padding: 25px 70px 25px 50px
+        background-position-y: 38px
+        &-btn 
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 30px
+            height: 0
+            margin-top: 0
+            margin-bottom: 0
+            overflow: hidden
+            transition: height 0.3s ease, margin 0.3s ease
+        &-active 
+            & .section__search-btn 
+                height: 32px
+                margin-top: 30px
+                margin-bottom: 10px
 .adjustment 
     position: absolute
     top: 20px 
     right: 10px
-    display: flex
-    align-items: center
-    justify-content: center
+.dropdown 
+    position: absolute
+    top: 38px 
+    right: 23px
+.drops 
+    position: absolute
+    top: 24px
+    right: -113px
+    width: 250px
+    height: 0
+    border-radius: 12px
+    box-shadow: 5px 5px 11px 0px #B6B7B8
+    background-color: var(--White)
+    overflow: auto
+    z-index: 100
+    transition: height 0.3s ease
+    &_active 
+        height: 160px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 12px
+        padding: 20px 0
+.drop 
+    height: 32px
+    padding: 0 20px
+    font: 500 16px/32px 'Inter', 'sans-serif'
+    text-align: left
+    cursor: pointer
+    &:hover 
+        background-color: var(--Gray-100)
 .btn-subvideo 
     display: none
     &-active 
@@ -1798,7 +1810,7 @@ input[type=number]::-webkit-outer-spin-button
     position: relative
     display: flex
     flex-direction: column
-    gap: 10px
+    gap: 20px
     border-radius: 12px
     box-shadow: 5px 5px 11px 0px #B6B7B8
     background-color: var(--White)
@@ -1900,7 +1912,8 @@ input[type=number]::-webkit-outer-spin-button
     &__contact 
         display: flex
         flex-direction: column
-        gap: 6px
+        gap: 7px
+        height: 84px
         margin-top: auto
         padding-left: 10px
     &__top 
@@ -1971,8 +1984,9 @@ input[type=number]::-webkit-outer-spin-button
     &__tel 
         display: flex
         align-items: center
+        justify-content: space-between
         gap: 10px
-        height: 21px
+        height: 18px
         font: 500 12px/18px "inter", "sans-serif"
         color: var(--Black)
         white-space: nowrap
@@ -2031,6 +2045,13 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         flex-direction: column
         gap: 2px
+    &__col1
+        position: relative
+        display: grid
+        grid-template-rows: 1fr 1fr
+        align-items: end
+        gap: 2px
+        height: 100%
     &__btns 
         display: flex
         align-items: center
@@ -2096,7 +2117,6 @@ input[type=number]::-webkit-outer-spin-button
             flex: 0 0 auto
             display: flex
             flex-direction: column
-            gap: 10px
             width: 302px
             user-select: none
             will-change: transform
@@ -3006,7 +3026,7 @@ input[type=number]::-webkit-outer-spin-button
             &-h50 
                 background-position: top 13px left 13px
         &_mt 
-            margin-top: 304px
+            margin-top: 328px
             & .section_1line 
                 margin-top: 348px
             & .section_2line 
@@ -3033,24 +3053,9 @@ input[type=number]::-webkit-outer-spin-button
                 margin-left: auto
                 margin-right: 10px
         &_collapse  
+            grid-template-columns: 370px
             padding: 10px
             padding-bottom: 25px
-        &__collapse 
-            gap: 8px
-            & .section__burger 
-                top: 69px
-                transform: none
-            & .section__wrapper-l50 
-                padding-top: 10px
-                padding-bottom: 10px
-                background-position-y: 25px
-            & .select__input 
-                height: 30px
-            &-collapse 
-                & .section__burger 
-                    top: 15px
-        &_collapse 
-            grid-template-columns: 370px
         &_toleft 
             grid-template-columns: 370px
             padding-top: 10px
@@ -3071,12 +3076,21 @@ input[type=number]::-webkit-outer-spin-button
             margin-top: 10px
             padding-left: 20px
             padding-right: 20px
+        &__search 
+            gap: 0
+            padding: 10px 70px 10px 50px
+            background-position-y: 23px
+            &-active
+                & .section__search-btn 
+                    margin-bottom: 0
+                    margin-top: 10px
+    .dropdown
+        top: 23px
+    .drops 
+        right: -16px
     .adjustment
         top: 15px
     .textarea_adjustment
-        height: 50px
-        padding: 0 40px 0 10px
-        line-height: 50px
         &::placeholder 
             padding-top: 10px
             line-height: 15px
@@ -3145,6 +3159,7 @@ input[type=number]::-webkit-outer-spin-button
         &__center 
             grid-row: span 1
             grid-column: span 2
+            gap: 26px
             padding: 10px
             border-bottom: 1px solid var(--Aside)
             &-line 

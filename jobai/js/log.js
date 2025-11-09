@@ -1767,6 +1767,7 @@ function collapseClose(sectionCollapse, sectionMt, jobDescription, sectionViewTe
     }
     sectionViewText.textContent = jobDescription.value
 }
+/*
 let scrollPos = 0
 window.addEventListener('scroll', function(){
     let st = window.pageYOffset
@@ -1782,5 +1783,5 @@ window.addEventListener('scroll', function(){
         });
     }
     scrollPos = st;
-    
 })
+    */

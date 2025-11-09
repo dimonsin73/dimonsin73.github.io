@@ -2466,9 +2466,6 @@ body {
     height: max-content;
     min-height: 300px;
   }
-  .hiro_up {
-    transform: translateY(-110%);
-  }
   .hiro__wrapper {
     width: 410px;
     padding: 20px 30px;

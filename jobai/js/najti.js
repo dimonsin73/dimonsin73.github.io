@@ -57,7 +57,7 @@ const totalFound = document.querySelector('.total-found')
 const sectionToleftArray = document.querySelectorAll('.section_toleft')
 let sectionPortfolios = false
 sectionClose.addEventListener('click', function(){
-    openNajtiSotrudnika()
+    openNajti()
 })
 for (let i = 0; i < sectionFormArray.length; i++) {
     const sectionForm = sectionFormArray[i];
@@ -67,7 +67,7 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                 e.preventDefault()
                 sectionTags1.innerHTML = ''
                 sectionTags2.innerHTML = ''
-                openNajtiSotrudnika()
+                openNajti()
                 const formData = new FormData(sectionForm)
                 const tags = []
                 if (formData.get('specialization') != '') {
@@ -208,12 +208,10 @@ for (let i = 0; i < sectionFormArray.length; i++) {
             break;
         case 'najti':
             sectionForm.addEventListener('submit', function(e){
-                collapseClose()
                 e.preventDefault()
                 sectionFormSearch.style.display = 'none'
                 sectionFormNewSearch.style.display = 'flex'
                 totalFound.style.display = 'flex'
-                sectionCollapse.classList.add('section__collapse-collapse')
                 for (let i = 0; i < sectionToleftArray.length; i++) {
                     const sectionToleft = sectionToleftArray[i];
                     sectionToleft.classList.remove('section_mt-collapse')
@@ -232,7 +230,7 @@ for (let i = 0; i < sectionFormArray.length; i++) {
     }
 }
 // Функция закрытия дополнительных фильтров
-function openNajtiSotrudnika() {
+function openNajti() {
     for (let i = 0; i < sectionArray.length; i++) {
         const section = sectionArray[i];
         if (section.dataset.section === 'najti') {
@@ -371,49 +369,39 @@ for (let i = 0; i < clueArray.length; i++) {
 const textareaAdjustmentArray = document.querySelectorAll('.textarea_adjustment')
 for (let i = 0; i < textareaAdjustmentArray.length; i++) {
     const textareaAdjustment = textareaAdjustmentArray[i];
+    const sectionSearch = textareaAdjustment.parentElement.parentElement
+    const save = sectionSearch.querySelector('.section__search-save')
+    const close = sectionSearch.querySelector('.section__search-close')
+    let textStart = ''
     textareaAdjustment.addEventListener('focus', function(){
+        dropdown.disabled = true
+        sectionFormSearch.disabled = true
+        sectionFormNewSearch.disabled = true
+        textStart = textareaAdjustment.value
+        sectionSearch.classList.add('section__search-active')
         textareaAdjustment.classList.add('textarea_adjustment-active')
     }) 
-    textareaAdjustment.addEventListener('focusout', function(){
+    save.addEventListener('click', function(){
+        dropdown.disabled = false
+        sectionFormSearch.disabled = false
+        sectionFormNewSearch.disabled = false
+        sectionSearch.classList.remove('section__search-active')
         textareaAdjustment.classList.remove('textarea_adjustment-active')
         textareaAdjustment.scrollTo(0, 0)
-    }) 
+    })
+    close.addEventListener('click', function(){
+        dropdown.disabled = false
+        sectionFormSearch.disabled = false
+        sectionFormNewSearch.disabled = false
+        sectionSearch.classList.remove('section__search-active')
+        textareaAdjustment.classList.remove('textarea_adjustment-active')
+        textareaAdjustment.scrollTo(0, 0)
+        textareaAdjustment.value = textStart
+    })
 }
-// Разворачивание/сворачивание/заполнение полей поиска сотрудника
-const sectionBurger = document.querySelector('.section__burger')
-const jobDescription = document.getElementById('job-description')
-const jobTitle = document.getElementById('job-title')
-const sectionViewText = document.querySelector('.section__view-text')
-const sectionFormCollapse = document.querySelector('.section__form-collapse')
-const sectionCollapse = document.querySelector('.section__collapse')
+
 const sectionMt = document.querySelector('.section_mt')
-sectionBurger.addEventListener('click', function(){
-    sectionCollapse.classList.toggle('section__collapse-collapse')
-    if (sectionMt !== null ) {
-        sectionMt.classList.toggle('section_mt-collapse')
-    }
-})
-sectionCollapse.addEventListener('click', function(e){
-    if (e.target === sectionCollapse) {
-        collapseClose()
-    }
-})
-sectionFormCollapse.addEventListener('click', function(e){
-    if (e.target === sectionFormCollapse) {
-        collapseClose()
-    }
-})
-function collapseClose() {
-    sectionCollapse.classList.add('section__collapse-collapse')
-    if (sectionMt !== null ) {
-        sectionMt.classList.remove('section_mt-collapse')
-    }
-    if (jobDescription.value != '') {
-        sectionViewText.textContent = jobDescription.value
-    } else {
-        sectionViewText.textContent = jobTitle.value
-    }
-}
+
 const sectionToleftBtnArray = document.querySelectorAll('.section_toleft-btn')
 for (let i = 0; i < sectionToleftBtnArray.length; i++) {
     const sectionToleftBtn = sectionToleftBtnArray[i];
@@ -604,5 +592,29 @@ sectionFormNewSearch.addEventListener('click', function(){
                 section.style.display = 'grid'
             }, 500)
         }
+    }
+})
+const dropdown = document.querySelector('.dropdown')
+dropdown.addEventListener('click', function(){
+    const drops = dropdown.parentElement.querySelector('.drops')
+    drops.classList.add('drops_active')
+    document.addEventListener('click', (e) => {
+        const withinBoundaries = e.composedPath().includes(dropdown)
+        if ( ! withinBoundaries ) {
+            drops.classList.remove('drops_active')
+        }
+    })
+    const dropArray = drops.querySelectorAll('.drop')
+    for (let i = 0; i < dropArray.length; i++) {
+        const drop = dropArray[i];
+        drop.addEventListener('click', function(){
+            const dropText = drop.textContent
+            const textarea = dropdown.parentElement.querySelector('.textarea_adjustment')
+            textarea.value = dropText
+            setTimeout(() => {
+                drops.classList.remove('drops_active')
+            }, 100);
+            
+        })
     }
 })
