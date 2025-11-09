@@ -552,9 +552,9 @@ for (let i = 0; i < portfolioPositionArray.length; i++) {
         const portfolioHeight = portfolio.scrollHeight
         let yOffset
         if (windowScreen > 899) {
-            yOffset = portfolioHeight - 360;
+            yOffset = portfolioHeight - 408;
         } else {
-            yOffset = portfolioHeight - 291;
+            yOffset = portfolioHeight - 318;
         }
         const y = portfolio.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y })
