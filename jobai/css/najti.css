@@ -568,7 +568,7 @@ html {
 }
 .textarea_adjustment-active {
   display: -webkit-box;
-  height: 500px;
+  height: 425px;
   -webkit-line-clamp: 23;
   -webkit-box-orient: vertical;
   overflow: auto;
@@ -1578,6 +1578,7 @@ input[type=number]::-webkit-outer-spin-button {
   -moz-column-gap: 16px;
        column-gap: 16px;
   max-height: 88px;
+  margin-right: -50px;
   overflow: hidden;
 }
 .section__tags-item {
@@ -1722,15 +1723,6 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   justify-content: space-between;
   padding: 0 50px;
-}
-.section__burger {
-  position: absolute;
-  top: 20px;
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/icons/menu.png");
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 .section__view {
   position: relative;
@@ -1899,10 +1891,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 428px;
 }
 .section_mt.section_1line {
-  margin-top: 420px;
+  margin-top: 472px;
 }
 .section_mt.section_2line {
-  margin-top: 464px;
+  margin-top: 516px;
 }
 .section_mt-collapse {
   margin-top: 580px;
@@ -1921,7 +1913,7 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 25px 70px 25px 50px;
   background-position-y: 38px;
 }
-.section__search-btn {
+.section__search-btns {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1932,7 +1924,13 @@ input[type=number]::-webkit-outer-spin-button {
   overflow: hidden;
   transition: height 0.3s ease, margin 0.3s ease;
 }
-.section__search-active .section__search-btn {
+.section__search-sotrudnika {
+  padding-right: 100px;
+}
+.section__search-sotrudnika .dropdown {
+  right: 55px;
+}
+.section__search-active .section__search-btns {
   height: 32px;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -1940,8 +1938,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .adjustment {
   position: absolute;
-  top: 20px;
-  right: 10px;
+  top: 40px;
+  right: 20px;
 }
 
 .dropdown {
@@ -3771,7 +3769,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 10px 70px 10px 50px;
     background-position-y: 23px;
   }
-  .section__search-active .section__search-btn {
+  .section__search-active .section__search-btns {
     margin-bottom: 0;
     margin-top: 10px;
   }
@@ -3793,7 +3791,7 @@ input[type=number]::-webkit-outer-spin-button {
     line-height: 15px;
   }
   .textarea_adjustment-active {
-    height: 300px;
+    height: 380px;
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 15px;

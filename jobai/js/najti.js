@@ -49,8 +49,7 @@ for (let i = 0; i < adjustmentArray.length; i++) {
 // Закрытие дополнительных фильтров
 const sectionClose = document.querySelector('.section__close')
 const sectionFormArray = document.querySelectorAll('.section__form')
-const sectionTags1 = document.querySelector('.section__tags-1')
-const sectionTags2 = document.querySelector('.section__tags-2')
+const sectionTags = document.querySelector('.section__tags')
 const sectionFormSearch = document.querySelector('.section__form-search')
 const sectionFormNewSearch = document.querySelector('.section__form-new-search')
 const totalFound = document.querySelector('.total-found')
@@ -65,8 +64,7 @@ for (let i = 0; i < sectionFormArray.length; i++) {
         case 'additional-filters':
             sectionForm.addEventListener('submit', function(e){
                 e.preventDefault()
-                sectionTags1.innerHTML = ''
-                sectionTags2.innerHTML = ''
+                sectionTags.innerHTML = ''
                 openNajti()
                 const formData = new FormData(sectionForm)
                 const tags = []
@@ -174,19 +172,10 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                     const sectionTagBtnClone = sectionTagBtn.cloneNode(true)
                     sectionTag.append(sectionTagText, sectionTagBtn)
                     sectionTagClone.append(sectionTagTextClone, sectionTagBtnClone)
-                    sectionTags1.append(sectionTag)
-                    sectionTags2.append(sectionTagClone)
+                    sectionTags.append(sectionTag)
                     sectionTagBtn.addEventListener('click', function(){
                         const sectionTagTarget = sectionTagBtn.parentElement
-                        const sectionTagTextTarget = sectionTagTarget.textContent
                         sectionTagTarget.remove()
-                        const tagArray = sectionTags2.querySelectorAll('.section__tag')
-                        for (let i = 0; i < tagArray.length; i++) {
-                            const tag = tagArray[i];
-                            if (sectionTagTextTarget === tag.textContent) {
-                                tag.remove()
-                            }
-                        }
                         sectionTagsHeight()
                     })
                     sectionTagBtnClone.addEventListener('click', function(){
@@ -410,13 +399,8 @@ for (let i = 0; i < sectionToleftBtnArray.length; i++) {
     })
 }
 function sectionTagsHeight() {
-    const marginTopTags1 = sectionTags1.scrollHeight
-    const marginTopTags2 = sectionTags2.scrollHeight
-    if (marginTopTags1 > marginTopTags2) {
-        funMarginTop(marginTopTags1)
-    } else {
-        funMarginTop(marginTopTags2)
-    }
+    const marginTopTags = sectionTags.scrollHeight
+    funMarginTop(marginTopTags)
     
 }
 function funMarginTop(marginTop) {
@@ -460,6 +444,15 @@ for (let i = 0; i < btnModalopenArray.length; i++) {
                             modalAvatarImg.setAttribute('src', imgSrc)
                             modalAvatar.append(modalAvatarImg)
                         }
+                        const logo = btnModalOpen.querySelector('.portfolio__avatar-logo')
+                        if (logo != null) {
+                            const logoSrc = logo.getAttribute('src')
+                            const modalAvatar = modal.querySelector('.modal__avatar')
+                            const modalAvatarlogo = document.createElement('img')
+                            modalAvatarlogo.classList.add('modal__avatar-logo')
+                            modalAvatarlogo.setAttribute('src', logoSrc)
+                            modalAvatar.append(modalAvatarlogo)
+                        }
                         break;
                     default:
                         break;
@@ -470,7 +463,10 @@ for (let i = 0; i < btnModalopenArray.length; i++) {
                     if (modalAvatarImg != null) {
                         modalAvatarImg.remove()
                     }
-                    
+                    const modalAvatarLogo = modal.querySelector('.modal__avatar-logo')
+                    if (modalAvatarLogo != null) {
+                        modalAvatarLogo.remove()
+                    }
                 })
             } else {
                 modalWrapper.classList.remove('modal__wrapper-active')

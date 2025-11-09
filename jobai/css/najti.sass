@@ -502,7 +502,7 @@ html
             line-height: 36px
         &-active 
             display: -webkit-box
-            height: 500px
+            height: 425px
             -webkit-line-clamp: 23
             -webkit-box-orient: vertical
             overflow: auto
@@ -841,6 +841,7 @@ html
     justify-content: flex-start
     flex-wrap: wrap
     gap: 14px
+
 .tag 
     display: flex
     &__label
@@ -1292,6 +1293,7 @@ input[type=number]::-webkit-outer-spin-button
         flex-wrap: wrap
         column-gap: 16px
         max-height: 88px
+        margin-right: -50px
         overflow: hidden
         &-item 
             padding: 8px 16px
@@ -1405,15 +1407,6 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         justify-content: space-between
         padding: 0 50px
-    &__burger 
-        position: absolute
-        top: 20px
-        width: 20px
-        height: 20px
-        background: 
-            image: url('../images/icons/menu.png')
-            position: center center 
-            repeat: no-repeat
     &__view
         position: relative
         padding: 10px
@@ -1551,9 +1544,9 @@ input[type=number]::-webkit-outer-spin-button
     &_mt 
         margin-top: 428px
         &.section_1line 
-            margin-top: 420px
+            margin-top: 472px
         &.section_2line 
-            margin-top: 464px
+            margin-top: 516px
         &-collapse 
             margin-top: 580px
             &.section_1line 
@@ -1566,7 +1559,7 @@ input[type=number]::-webkit-outer-spin-button
     &__search 
         padding: 25px 70px 25px 50px
         background-position-y: 38px
-        &-btn 
+        &-btns
             display: flex
             align-items: center
             justify-content: center
@@ -1576,15 +1569,19 @@ input[type=number]::-webkit-outer-spin-button
             margin-bottom: 0
             overflow: hidden
             transition: height 0.3s ease, margin 0.3s ease
+        &-sotrudnika 
+            padding-right: 100px
+            & .dropdown
+                right: 55px
         &-active 
-            & .section__search-btn 
+            & .section__search-btns
                 height: 32px
                 margin-top: 30px
                 margin-bottom: 10px
 .adjustment 
     position: absolute
-    top: 20px 
-    right: 10px
+    top: 40px 
+    right: 20px
 .dropdown 
     position: absolute
     top: 38px 
@@ -3081,7 +3078,7 @@ input[type=number]::-webkit-outer-spin-button
             padding: 10px 70px 10px 50px
             background-position-y: 23px
             &-active
-                & .section__search-btn 
+                & .section__search-btns
                     margin-bottom: 0
                     margin-top: 10px
     .dropdown
@@ -3095,7 +3092,7 @@ input[type=number]::-webkit-outer-spin-button
             padding-top: 10px
             line-height: 15px
         &-active 
-            height: 300px
+            height: 380px
             padding-top: 10px
             padding-bottom: 10px
             line-height: 15px
