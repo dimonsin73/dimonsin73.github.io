@@ -568,10 +568,16 @@ html {
 }
 .textarea_adjustment-active {
   display: -webkit-box;
-  height: 425px;
+  height: 428px;
   -webkit-line-clamp: 23;
   -webkit-box-orient: vertical;
   overflow: auto;
+}
+.textarea_adjustment-active.textarea_sotrudnika-line1 {
+  height: 384px;
+}
+.textarea_adjustment-active.textarea_sotrudnika-line2 {
+  height: 340px;
 }
 .textarea_adjustment:focus::-moz-placeholder {
   color: transparent;
@@ -1700,7 +1706,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .section__line {
   display: grid;
-  grid-template-columns: 1fr 1fr 80px;
+  grid-template-columns: 150px 150px 80px;
   gap: 16px;
 }
 .section__linesmall {
@@ -1934,6 +1940,10 @@ input[type=number]::-webkit-outer-spin-button {
   height: 32px;
   margin-top: 30px;
   margin-bottom: 10px;
+}
+.section__rub {
+  font: 600 18px/56px "Inter", "sans-serif";
+  color: var(--Gray-10);
 }
 
 .adjustment {
@@ -2345,7 +2355,7 @@ input[type=number]::-webkit-outer-spin-button {
 .portfolio__contact {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  justify-content: flex-end;
   height: 84px;
   margin-top: auto;
   padding-left: 10px;
@@ -3720,9 +3730,10 @@ input[type=number]::-webkit-outer-spin-button {
   .section__form {
     gap: 10px;
   }
-  .section__tags-2 {
+  .section__tags {
     max-height: 68px;
-    margin-left: -40px;
+    margin-left: -30px;
+    margin-right: -80px;
   }
   .section__tag {
     margin-top: 10px;
@@ -3769,6 +3780,9 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 10px 70px 10px 50px;
     background-position-y: 23px;
   }
+  .section__search-sotrudnika {
+    padding-right: 100px;
+  }
   .section__search-active .section__search-btns {
     margin-bottom: 0;
     margin-top: 10px;
@@ -3780,7 +3794,7 @@ input[type=number]::-webkit-outer-spin-button {
     right: -16px;
   }
   .adjustment {
-    top: 15px;
+    top: 23px;
   }
   .textarea_adjustment::-moz-placeholder {
     padding-top: 10px;
@@ -3828,6 +3842,8 @@ input[type=number]::-webkit-outer-spin-button {
     border-top: 1px solid var(--Aside);
   }
   .portfolio__contact {
+    height: -moz-max-content;
+    height: max-content;
     padding-left: 0;
     gap: 2px;
   }

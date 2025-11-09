@@ -356,6 +356,8 @@ for (let i = 0; i < clueArray.length; i++) {
 }
 // Разворачивание/сворачивание текстового поля
 const textareaAdjustmentArray = document.querySelectorAll('.textarea_adjustment')
+const textareaSotrudnika = document.querySelector('.textarea_sotrudnika')
+const sectionMt = document.querySelector('.section_mt')
 for (let i = 0; i < textareaAdjustmentArray.length; i++) {
     const textareaAdjustment = textareaAdjustmentArray[i];
     const sectionSearch = textareaAdjustment.parentElement.parentElement
@@ -389,8 +391,6 @@ for (let i = 0; i < textareaAdjustmentArray.length; i++) {
     })
 }
 
-const sectionMt = document.querySelector('.section_mt')
-
 const sectionToleftBtnArray = document.querySelectorAll('.section_toleft-btn')
 for (let i = 0; i < sectionToleftBtnArray.length; i++) {
     const sectionToleftBtn = sectionToleftBtnArray[i];
@@ -399,23 +399,26 @@ for (let i = 0; i < sectionToleftBtnArray.length; i++) {
     })
 }
 function sectionTagsHeight() {
-    const marginTopTags = sectionTags.scrollHeight
-    funMarginTop(marginTopTags)
-    
-}
-function funMarginTop(marginTop) {
+    const marginTop = sectionTags.scrollHeight
     if (marginTop === 0 ) {
         sectionMt.classList.remove('section_1line')
         sectionMt.classList.remove('section_2line')
+        textareaSotrudnika.classList.remove('textarea_sotrudnika-line1')
+        textareaSotrudnika.classList.remove('textarea_sotrudnika-line2')
     }
     if (marginTop > 20) {
         sectionMt.classList.add('section_1line')
         sectionMt.classList.remove('section_2line')
+        textareaSotrudnika.classList.add('textarea_sotrudnika-line1')
+        textareaSotrudnika.classList.remove('textarea_sotrudnika-line2')
     }
     if (marginTop > 60) {
         sectionMt.classList.remove('section_1line')
         sectionMt.classList.add('section_2line')
+        textareaSotrudnika.classList.remove('textarea_sotrudnika-line1')
+        textareaSotrudnika.classList.add('textarea_sotrudnika-line2')
     }
+    
 }
 const btnModalopenArray = document.querySelectorAll('.btn-modalopen')
 const modal = document.querySelector('.modal')
@@ -606,9 +609,12 @@ dropdown.addEventListener('click', function(){
         drop.addEventListener('click', function(){
             const dropText = drop.textContent
             const textarea = dropdown.parentElement.querySelector('.textarea_adjustment')
+            const sectionTags = dropdown.parentElement.querySelector('.section__tags')
             textarea.value = dropText
             setTimeout(() => {
                 drops.classList.remove('drops_active')
+                sectionTags.innerHTML = ''
+                sectionTagsHeight()
             }, 100);
             
         })

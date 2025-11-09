@@ -502,10 +502,14 @@ html
             line-height: 36px
         &-active 
             display: -webkit-box
-            height: 425px
+            height: 428px
             -webkit-line-clamp: 23
             -webkit-box-orient: vertical
             overflow: auto
+            &.textarea_sotrudnika-line1 
+                height: 384px
+            &.textarea_sotrudnika-line2
+                height: 340px
         &:focus 
             &::placeholder
                 color: transparent
@@ -1388,7 +1392,7 @@ input[type=number]::-webkit-outer-spin-button
         color: var(--Gray-40)
     &__line 
         display: grid
-        grid-template-columns: 1fr 1fr 80px
+        grid-template-columns: 150px 150px 80px
         gap: 16px
     &__linesmall
         display: grid
@@ -1578,6 +1582,9 @@ input[type=number]::-webkit-outer-spin-button
                 height: 32px
                 margin-top: 30px
                 margin-bottom: 10px
+    &__rub 
+        font: 600 18px/56px 'Inter', 'sans-serif'
+        color: var(--Gray-10)
 .adjustment 
     position: absolute
     top: 40px 
@@ -1909,7 +1916,7 @@ input[type=number]::-webkit-outer-spin-button
     &__contact 
         display: flex
         flex-direction: column
-        gap: 7px
+        justify-content: flex-end
         height: 84px
         margin-top: auto
         padding-left: 10px
@@ -3037,9 +3044,9 @@ input[type=number]::-webkit-outer-spin-button
         &__form 
             gap: 10px
         &__tags 
-            &-2 
-                max-height: 68px
-                margin-left: -40px
+            max-height: 68px
+            margin-left: -30px
+            margin-right: -80px
         &__tag
             margin-top: 10px
         &__top 
@@ -3077,6 +3084,8 @@ input[type=number]::-webkit-outer-spin-button
             gap: 0
             padding: 10px 70px 10px 50px
             background-position-y: 23px
+            &-sotrudnika 
+                padding-right: 100px
             &-active
                 & .section__search-btns
                     margin-bottom: 0
@@ -3086,7 +3095,7 @@ input[type=number]::-webkit-outer-spin-button
     .drops 
         right: -16px
     .adjustment
-        top: 15px
+        top: 23px
     .textarea_adjustment
         &::placeholder 
             padding-top: 10px
@@ -3117,6 +3126,7 @@ input[type=number]::-webkit-outer-spin-button
             padding: 10px
             border-top: 1px solid var(--Aside)
         &__contact 
+            height: max-content
             padding-left: 0
             gap: 2px
         &__title 
