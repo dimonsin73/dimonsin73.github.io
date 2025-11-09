@@ -2782,6 +2782,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .modal__wrapper-avatar {
   top: 50%;
+  gap: 10px;
   width: 540px;
   height: 550px;
   padding: 10px 40px 40px;

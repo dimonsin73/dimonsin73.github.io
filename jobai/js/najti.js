@@ -363,12 +363,10 @@ for (let i = 0; i < textareaAdjustmentArray.length; i++) {
     const sectionSearch = textareaAdjustment.parentElement.parentElement
     const save = sectionSearch.querySelector('.section__search-save')
     const close = sectionSearch.querySelector('.section__search-close')
-    let textStart = ''
     textareaAdjustment.addEventListener('focus', function(){
         dropdown.disabled = true
         sectionFormSearch.disabled = true
         sectionFormNewSearch.disabled = true
-        textStart = textareaAdjustment.value
         sectionSearch.classList.add('section__search-active')
         textareaAdjustment.classList.add('textarea_adjustment-active')
     }) 
@@ -386,8 +384,8 @@ for (let i = 0; i < textareaAdjustmentArray.length; i++) {
         sectionFormNewSearch.disabled = false
         sectionSearch.classList.remove('section__search-active')
         textareaAdjustment.classList.remove('textarea_adjustment-active')
-        textareaAdjustment.scrollTo(0, 0)
-        textareaAdjustment.value = textStart
+        textareaAdjustment.value = ''
+        sectionTags.innerHTML = ''
     })
 }
 
