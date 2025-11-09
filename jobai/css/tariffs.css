@@ -983,7 +983,7 @@
 }
 .check_circle {
   display: grid;
-  grid-template-columns: auto 50px;
+  grid-template-columns: auto 40px;
 }
 .check_circle .check__check {
   margin: 6px 16px 0;
@@ -2844,6 +2844,9 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .check {
     position: relative;
+  }
+  .check__info {
+    max-width: 380px;
   }
   .check_circle {
     grid-template-columns: auto;

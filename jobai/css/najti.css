@@ -1894,6 +1894,13 @@ input[type=number]::-webkit-outer-spin-button {
 .section__reset:hover path {
   fill: var(--Red);
 }
+.section__or {
+  display: flex;
+  justify-content: center;
+}
+.section__or-small {
+  display: none;
+}
 .section_mt {
   margin-top: 428px;
 }

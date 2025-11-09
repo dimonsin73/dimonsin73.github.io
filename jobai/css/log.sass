@@ -403,7 +403,7 @@ body
         color: var(--Primary-50)
     &_circle 
         display: grid
-        grid-template-columns: auto 50px
+        grid-template-columns: auto 40px
         & .check__check 
             margin: 6px 16px 0
             border-radius: 50%
@@ -436,8 +436,8 @@ body
         color: var(--Gray-30)
     &_adjustment
         display: -webkit-box
-        height: 60px
-        padding: 12px 40px 12px 10px
+        height: 50px
+        padding: 7px 10px 7px 10px
         -webkit-line-clamp: 1
         -webkit-box-orient: vertical
         line-height: 36px
@@ -447,10 +447,15 @@ body
             line-height: 36px
         &-active 
             display: -webkit-box
-            height: 500px
+            height: 428px
+            line-height: 20px
             -webkit-line-clamp: 23
             -webkit-box-orient: vertical
             overflow: auto
+            &.textarea_sotrudnika-line1 
+                height: 384px
+            &.textarea_sotrudnika-line2
+                height: 340px
         &:focus 
             &::placeholder
                 color: transparent
@@ -476,6 +481,101 @@ body
         &:checked ~ .radio__label
             font-weight: 600
             box-shadow: inset 5px 5px 10px var(--Neushadow), inset -5px -5px 10px var(--White)
+.tax 
+    &__radio 
+        position: absolute
+        width: 0
+        opacity: 0
+        &:checked ~ .tax__label .tax__check
+            border: 7px solid var(--Black)
+    &__label 
+        display: grid
+        grid-template-columns: 20px auto
+        column-gap: 16px
+        row-gap: 4px
+    &__check 
+        grid-row: span 2
+        width: 20px
+        height: 20px
+        margin-top: 2px
+        border: 1.5px solid var(--Gray-40)
+        border-radius: 50%
+        transition: border 0.3s linear
+    &__title 
+        @include title-medium
+        color: var(--Black)
+    &__text        
+        @include subtitle-large
+        color: var(--Gray-30)
+.tabs 
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    align-items: stretch
+    gap: 24px
+.tab 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 12px
+    padding: 12px
+    border-radius: 12px
+    box-shadow: 0px 2px 16px 0px #00000033
+    background-color: var(--White)
+    &__icon 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 40px
+        height: 40px
+        border-radius: 12px
+        background-color: var(--Gray-100)
+        & path 
+            fill: var(--Icons)
+            transition: fill 0.3s ease
+    &__text 
+        @include title-small
+        color: var(--Gray-20)
+        text-align: left
+        transition: color 0.3s ease
+    &_active 
+        & .tab__icon 
+            & path 
+                fill: var(--Primary-40)
+        & .tab__text 
+            color: var(--Primary-40)
+.tags // TAGS
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    gap: 14px
+
+.tag 
+    display: flex
+    &__label
+        padding: 7px 16px 7px 42px
+        border: 1px solid var(--Gray-70)
+        border-radius: 18px
+        background:
+            color: var(--Gray-100)
+            image: url(../images/icons/plus.png)
+            repeat: no-repeat
+            position: left 16px center
+        @include subtitle-large
+        color: var(--Gray-20)
+        transition: all 0.3s ease
+        &:hover
+            background-color: var(--Gray-80)
+    &__input 
+        display: none
+        width: 0
+        opacity: 0
+        &:checked ~ .tag__label
+            background:
+                color: var(--Gray-20)
+                image: url(../images/icons/check.png)
+            color: var(--White)
+            &:hover
+                background-color: var(--Gray-20)
 .btn 
     display: flex
     align-items: center
@@ -647,6 +747,12 @@ body
                     fill: var(--Red)
     & svg 
         flex: 0 0 auto
+    &_small 
+        width: 100px
+        height: 32px
+        padding: 6px
+        border-radius: 6px
+        @include btn-small
 .link 
     display: flex
     align-items: center
@@ -1183,6 +1289,8 @@ body
             right: -14px
             width: 13px 
             height: 13px
+    .label__clue 
+        right: -24px
     .clue 
         &__wrapper 
             &-left 
@@ -1266,7 +1374,7 @@ body
             left: 5px
             bottom: 10px
         &__info 
-            width: 253px
+            width: 280px
         
 .timer 
     font-weight: 600
@@ -2253,7 +2361,7 @@ body
         &-small
             max-width: 756px
         &-tablet 
-            max-width: 905px
+            max-width: 935px
         &-active 
             display: flex
     &__other
@@ -2348,6 +2456,8 @@ body
             &-title 
                 margin-bottom: 6px
                 font: 500 14px/20px 'Inter', 'sans-serif'
+        &-a 
+            color: var(--Primary-40)
     &__us 
         display: grid
         grid-template-columns: 1fr 1fr
@@ -3187,6 +3297,7 @@ body
             &-description
                 width: 419px
 @media (max-width: 1023px)
+    
     .docum   
         padding: 20px
         &__top 
@@ -3392,6 +3503,11 @@ body
                 padding-right: 20px
         &__form 
             padding: 15px 20px 25px
+        &__grid4
+            grid-template-columns: 80px 340px 120px
+            gap: 16px
+    #percentage-of-cost 
+        width: 120px
 @media (max-width: 767px)
     .tabs_small
         gap: 6px
@@ -3535,12 +3651,14 @@ body
     & .title 
         font: 700 40px/48px 'Inter', 'sans-serif'
         color: var(--Black)
-.section  
+.section // SECTION 
     display: none
     padding: 10px 16px 24px
     &_active
         display: block
         &.section_toleft
+            display: grid
+        &.section_addf
             display: grid
         &.section_collapse
             display: grid
@@ -3549,6 +3667,18 @@ body
         flex-direction: column
         gap: 24px
     &_toleft 
+        grid-template-columns: 1090px 48px
+        align-items: end
+        justify-content: center
+        gap: 16px
+        padding: 10px 
+        padding-bottom: 24px
+        &-btn 
+            position: sticky
+            right: 0
+            bottom: 24px
+            background-color: var(--White)
+    &_addf
         grid-template-columns: 1090px 48px
         align-items: end
         justify-content: center
@@ -3586,7 +3716,7 @@ body
     &__top 
         display: flex
         justify-content: space-between
-        align-items: flex-end
+        align-items: center
         margin-bottom: 20px
     &__head 
         display: flex
@@ -3779,6 +3909,7 @@ body
         flex-wrap: wrap
         column-gap: 16px
         max-height: 88px
+        margin-right: -50px
         overflow: hidden
         &-item 
             padding: 8px 16px
@@ -3806,13 +3937,6 @@ body
                 image: url('../images/icons/close.png')
                 position: center center 
                 repeat: no-repeat
-    &__or
-        display: flex
-        justify-content: center
-        margin: 0 auto
-        @include body-medium
-        line-height: 14px
-        color: var(--Gray-10)
     &__imgloading 
         display: grid
         grid-template-columns: 96px auto 
@@ -3880,7 +4004,7 @@ body
         color: var(--Gray-40)
     &__line 
         display: grid
-        grid-template-columns: 1fr 1fr 80px
+        grid-template-columns: 150px 150px 80px
         gap: 16px
     &__linesmall
         display: grid
@@ -3899,15 +4023,6 @@ body
         display: flex
         justify-content: space-between
         padding: 0 50px
-    &__burger 
-        position: absolute
-        top: 20px
-        width: 20px
-        height: 20px
-        background: 
-            image: url('../images/icons/menu.png')
-            position: center center 
-            repeat: no-repeat
     &__view
         position: relative
         padding: 10px
@@ -3943,32 +4058,7 @@ body
         border-bottom: 1px solid var(--Aside)
         background-color: var(--Gray-100)
         z-index: 100
-    &__collapse
-        position: relative
-        display: flex
-        flex-direction: column
-        gap: 20px
-        & .section__hide 
-            display: flex
-        & .section__view
-            display: none
-        & .section__burger 
-            left: -44px
-            top: auto
-            bottom: 40px
-        & .section__wrapper-ai 
-            padding-top: 20px
-            padding-bottom: 20px
-            background-position-y: 38px
-        &-collapse
-            & .section__hide 
-                display: none
-            & .section__view
-                display: block
-            & .section__burger 
-                left: 10px
-                top: 15px
-                transform: none
+        transition: left 0.3s ease
     &__content 
         position: relative
         display: flex
@@ -4039,6 +4129,7 @@ body
         flex-direction: column
         gap: 12px
         &-title 
+            padding-right: 60px
             @include headline-medium
             color: var(--Black)
         &-info 
@@ -4067,17 +4158,45 @@ body
             & path 
                 fill: var(--Red)
     &_mt 
-        margin-top: 312px
+        margin-top: 362px
         &.section_1line 
-            margin-top: 420px
+            margin-top: 406px
         &.section_2line 
-            margin-top: 464px
+            margin-top: 450px
         &-collapse 
-            margin-top: 362px
+            margin-top: 580px
             &.section_1line 
                 margin-top: 524px
             &.section_2line 
                 margin-top: 568px
+    &__back 
+        font: 600 15px/20px 'Inter', 'sans-serif'
+        letter-spacing: 0.01em
+    &__search 
+        padding: 25px 70px 25px 50px
+        background-position-y: 38px
+        &-btns
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 30px
+            height: 0
+            margin-top: 0
+            margin-bottom: 0
+            overflow: hidden
+            transition: height 0.3s ease, margin 0.3s ease
+        &-sotrudnika 
+            padding-right: 100px
+            & .dropdown
+                right: 55px
+        &-active 
+            & .section__search-btns
+                height: 32px
+                margin-top: 30px
+                margin-bottom: 10px
+    &__rub 
+        font: 600 18px/56px 'Inter', 'sans-serif'
+        color: var(--Gray-10)
     & .switch 
         position: relative
         display: inline-block
@@ -4121,6 +4240,41 @@ body
             border-radius: 25px
         &__round:before 
             border-radius: 50%
+.adjustment 
+    position: absolute
+    top: 40px 
+    right: 20px
+.dropdown 
+    position: absolute
+    top: 38px 
+    right: 23px
+.drops 
+    position: absolute
+    top: 24px
+    right: -113px
+    width: 250px
+    height: 0
+    border-radius: 12px
+    box-shadow: 5px 5px 11px 0px #B6B7B8
+    background-color: var(--White)
+    overflow: auto
+    z-index: 100
+    transition: height 0.3s ease
+    &_active 
+        height: 160px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 12px
+        padding: 20px 0
+.drop 
+    height: 32px
+    padding: 0 20px
+    font: 500 16px/32px 'Inter', 'sans-serif'
+    text-align: left
+    cursor: pointer
+    &:hover 
+        background-color: var(--Gray-100)
 .total-found
     position: absolute
     bottom: 4px
@@ -4146,7 +4300,7 @@ body
     position: relative
     display: flex
     flex-direction: column
-    gap: 10px
+    gap: 20px
     border-radius: 12px
     box-shadow: 5px 5px 11px 0px #B6B7B8
     background-color: var(--White)
@@ -4248,14 +4402,15 @@ body
     &__contact 
         display: flex
         flex-direction: column
-        gap: 6px
+        justify-content: flex-end
+        height: 84px
         margin-top: auto
         padding-left: 10px
     &__top 
         display: flex
         flex-direction: column
         gap: 12px
-        margin: 25px 0
+        margin: 12px 0
     &__avatar 
         position: relative
         grid-row: span 2
@@ -4319,8 +4474,9 @@ body
     &__tel 
         display: flex
         align-items: center
+        justify-content: space-between
         gap: 10px
-        height: 21px
+        height: 18px
         font: 500 12px/18px "inter", "sans-serif"
         color: var(--Black)
         white-space: nowrap
@@ -4379,6 +4535,13 @@ body
         display: flex
         flex-direction: column
         gap: 2px
+    &__col1
+        position: relative
+        display: grid
+        grid-template-rows: 1fr 1fr
+        align-items: end
+        gap: 2px
+        height: 100%
     &__btns 
         display: flex
         align-items: center
@@ -4444,7 +4607,6 @@ body
             flex: 0 0 auto
             display: flex
             flex-direction: column
-            gap: 10px
             width: 302px
             user-select: none
             will-change: transform
@@ -4563,6 +4725,7 @@ body
             background-image: url("../images/icons/chevron_left.png")
         & .itc-slider-btn-next::before 
             background-image: url("../images/icons/chevron_right.png")
+
 .modal 
     position: fixed
     top: 0
@@ -5133,6 +5296,8 @@ body
             grid-template-columns: 800px 48px
         &_toleft 
             grid-template-columns: 800px 48px
+        &_addf
+            grid-template-columns: 800px 48px
     .portfolio
         &__title 
             font-size: 18px
@@ -5162,8 +5327,10 @@ body
         padding-right: 10px 
         &_mt
             margin-top: 292px
-            &-collapse 
-                margin-top: 342px
+            &.section_1line 
+                margin-top: 386px
+            &.section_2line 
+                margin-top: 430px
 @media (max-width: 899px)
     .section
         padding: 10px 10px 20px
@@ -5184,10 +5351,10 @@ body
                 background-position: top 13px left 13px
         &_mt 
             margin-top: 242px
-            & .section_1line 
-                margin-top: 348px
-            & .section_2line 
-                margin-top: 392px
+            &.section_1line 
+                margin-top: 296px
+            &.section_2line 
+                margin-top: 330px
             &-collapse 
                 margin-top: 262px
                 & .section_1line 
@@ -5197,6 +5364,7 @@ body
         &__form 
             gap: 10px
         &__tags 
+            max-height: 68px
             &-2 
                 max-height: 68px
                 margin-left: -40px
@@ -5236,6 +5404,16 @@ body
                 bottom: 100px
                 right: 16px
                 background-color: var(--White)
+        &_addf
+            grid-template-columns: 370px
+            padding-top: 10px
+            padding-left: 10px
+            padding-right: 10px
+            &-btn 
+                position: fixed
+                bottom: 100px
+                right: 16px
+                background-color: var(--White)
         &__select 
             &-input 
                 padding: 7px 40px 7px 10px
@@ -5246,6 +5424,16 @@ body
             margin-top: 10px
             padding-left: 20px
             padding-right: 20px
+        &__search 
+            gap: 0
+            padding: 10px 70px 10px 50px
+            background-position-y: 23px
+            &-sotrudnika 
+                padding-right: 100px
+            &-active
+                & .section__search-btns
+                    margin-bottom: 0
+                    margin-top: 10px
         & .switch 
             width: 45px
             height: 24px
@@ -5259,23 +5447,18 @@ body
                     width: 20px
                     left: 2px
                     bottom: 2px
+    .dropdown
+        top: 23px
+    .drops 
+        right: -16px
     .adjustment
-        top: 15px
+        top: 23px
     .textarea_adjustment
-        height: 50px
-        padding: 0 40px 0 10px
-        line-height: 50px
-        &::placeholder 
-            padding-top: 10px
-            line-height: 15px
         &-active 
-            height: 300px
+            height: 380px
             padding-top: 10px
             padding-bottom: 10px
-            line-height: 15px
-            &::placeholder 
-                padding-top: 0
-                line-height: 15px
+            line-height: 20px
     .portfolios 
         gap: 20px
         &_big
@@ -5333,6 +5516,7 @@ body
         &__center 
             grid-row: span 1
             grid-column: span 2
+            gap: 26px
             padding: 10px
             border-bottom: 1px solid var(--Aside)
             &-line 
@@ -5506,7 +5690,7 @@ body
 @media (max-width: 767px)
     .section 
         &_mt
-            margin-top: 236px
+            margin-top: 262px
 @media (max-width: 499px)
     .modal
         &__footer

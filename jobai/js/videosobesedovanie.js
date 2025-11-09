@@ -150,3 +150,7 @@ for (let i = 0; i < subvideoContentBtnArray.length; i++) {
         
     })
 }
+const btnBack = document.querySelector('.btn_blue')
+btnBack.addEventListener('click', function(){
+    history.back()
+})

@@ -1684,9 +1684,9 @@ for (let i = 0; i < portfolioPositionArray.length; i++) {
         const example = portfolio.parentElement.parentElement.parentElement.parentElement
         let yOffset
         if (windowScreen > 899) {
-            yOffset = portfolioHeight - 302;
+            yOffset = portfolioHeight - 352;
         } else {
-            yOffset = portfolioHeight - 226;
+            yOffset = portfolioHeight - 252;
         }
         const y = portfolio.getBoundingClientRect().top + window.pageYOffset + yOffset;
         example.scrollBy({ top: y })
@@ -1715,58 +1715,312 @@ for (let i = 0; i < modalContentBtnArray.length; i++) {
     })
 }
 
+const dropdownArray = document.querySelectorAll('.dropdown')
+for (let i = 0; i < dropdownArray.length; i++) {
+    const dropdown = dropdownArray[i];
+    dropdown.addEventListener('click', function(){
+        const drops = dropdown.parentElement.querySelector('.drops')
+        drops.classList.add('drops_active')
+        document.addEventListener('click', (e) => {
+            const withinBoundaries = e.composedPath().includes(dropdown)
+            if ( ! withinBoundaries ) {
+                drops.classList.remove('drops_active')
+            }
+        })
+        const dropArray = drops.querySelectorAll('.drop')
+        for (let i = 0; i < dropArray.length; i++) {
+            const drop = dropArray[i];
+            drop.addEventListener('click', function(){
+                const dropText = drop.textContent
+                const textarea = dropdown.parentElement.querySelector('.textarea_adjustment')
+                const sectionTags = dropdown.parentElement.querySelector('.section__tags')
+                textarea.value = dropText
+                setTimeout(() => {
+                    drops.classList.remove('drops_active')
+                    if (sectionTags != null) {
+                        sectionTags.innerHTML = ''
+                    }
+                    
+                    sectionTagsHeight()
+                }, 100);
+                
+            })
+        }
+    })
+}
 
+function sectionTagsHeight() {
+    const marginTop = sectionTags.scrollHeight
+    if (marginTop === 0 ) {
+        sectionMt.classList.remove('section_1line')
+        sectionMt.classList.remove('section_2line')
+        textareaSotrudnika.classList.remove('textarea_sotrudnika-line1')
+        textareaSotrudnika.classList.remove('textarea_sotrudnika-line2')
+    }
+    if (marginTop > 20) {
+        sectionMt.classList.add('section_1line')
+        sectionMt.classList.remove('section_2line')
+        textareaSotrudnika.classList.add('textarea_sotrudnika-line1')
+        textareaSotrudnika.classList.remove('textarea_sotrudnika-line2')
+    }
+    if (marginTop > 60) {
+        sectionMt.classList.remove('section_1line')
+        sectionMt.classList.add('section_2line')
+        textareaSotrudnika.classList.remove('textarea_sotrudnika-line1')
+        textareaSotrudnika.classList.add('textarea_sotrudnika-line2')
+    }
+}
+// Закрытие дополнительных фильтров
 const sectionFormArray = document.querySelectorAll('.section__form')
+const sectionClose = document.querySelector('.section__close')
+const sectionTags = document.querySelector('.section__tags')
+/*
+const sectionFormSearch = document.querySelector('.section__form-search')
+const sectionFormNewSearch = document.querySelector('.section__form-new-search')
+const totalFound = document.querySelector('.total-found')
+*/
+const sectionToleftArray = document.querySelectorAll('.section_toleft')
+let sectionPortfolios = false
+sectionClose.addEventListener('click', function(){
+    openNajti()
+})
 for (let i = 0; i < sectionFormArray.length; i++) {
     const sectionForm = sectionFormArray[i];
-    sectionForm.addEventListener('submit', function(e){
-        e.preventDefault()
-        const sectionCollapse = sectionForm.querySelector('.section__collapse')
-        const sectionMt = sectionForm.querySelector('.section_mt') 
-        const jobDescription = sectionForm.querySelector('.textarea_adjustment')
-        const sectionViewText = sectionForm.querySelector('.section__view-text')
-        collapseClose(sectionCollapse, sectionMt, jobDescription, sectionViewText)
-        const sectionFormSearch = sectionForm.querySelector('.section__form-search')
-        const sectionFormNewSearch = sectionForm.querySelector('.section__form-new-search')
-        const sectionToleft = sectionForm.parentElement.parentElement.parentElement.querySelector('.section_toleft')
-        const totalFound = sectionForm.querySelector('.total-found')
-        sectionFormSearch.style.display = 'none'
-        sectionFormNewSearch.style.display = 'flex'
-        totalFound.style.display = 'flex'
-        sectionToleft.classList.add('section_active')
-    })
+    switch (sectionForm.dataset.form) {
+        case 'additional-filters':
+            sectionForm.addEventListener('submit', function(e){
+                e.preventDefault()
+                sectionTags.innerHTML = ''
+                openNajti()
+                const formData = new FormData(sectionForm)
+                const tags = []
+                if (formData.get('specialization') != '') {
+                    tags.push(formData.get('specialization'))
+                }
+                if ( formData.get('salary-from') != '' || formData.get('salary-to') != '' ) {
+                    if ( formData.get('salary-from') != '') {
+                        if (formData.get('salary-to') != '') {
+                            tags.push(`от ${formData.get('salary-from')} до ${formData.get('salary-to')} ${formData.get('currency')}`)
+                        } else {
+                            tags.push(`от ${formData.get('salary-from')} ${formData.get('currency')}`)
+                        }
+                    } else {
+                        if (formData.get('salary-to') != '') {
+                            tags.push(`до ${formData.get('salary-to')} ${formData.get('currency')}`)
+                        }
+                    }
+                }
+                if (formData.get('tax') != '') {
+                    tags.push(formData.get('tax'))
+                }
+                if (formData.get('region') != '') {
+                    tags.push(formData.get('region'))
+                }
+                if (formData.get('relocation') != null) {
+                    tags.push(formData.get('relocation'))
+                }
+                if (formData.get('business-trip') != null) {
+                    tags.push(formData.get('business-trip'))
+                }
+                if (formData.get('citizenship') != '') {
+                    tags.push(formData.get('citizenship'))
+                }
+                if (formData.get('education') != '') {
+                    tags.push(formData.get('education'))
+                }
+                if (formData.get('employment-full') != null) {
+                    tags.push(formData.get('employment-full'))
+                }
+                if (formData.get('employment-part') != null) {
+                    tags.push(formData.get('employment-part'))
+                }
+                if (formData.get('employment-project') != null) {
+                    tags.push(formData.get('employment-project'))
+                }
+                if (formData.get('work-office') != null) {
+                    tags.push(formData.get('work-office'))
+                }
+                if (formData.get('work-remote') != null) {
+                    tags.push(formData.get('work-remote'))
+                }
+                if (formData.get('work-hybrid') != null) {
+                    tags.push(formData.get('work-hybrid'))
+                }
+                if (formData.get('work-shift') != null) {
+                    tags.push(formData.get('work-shift'))
+                }
+                if (formData.get('experience-no') != null) {
+                    tags.push(formData.get('experience-no'))
+                }
+                if (formData.get('experience-1') != null) {
+                    tags.push(formData.get('experience-1'))
+                }
+                if (formData.get('experience-3') != null) {
+                    tags.push(formData.get('experience-3'))
+                }
+                if (formData.get('experience-5') != null) {
+                    tags.push(formData.get('experience-5'))
+                }
+                if (formData.get('experience-10') != null) {
+                    tags.push(formData.get('experience-10'))
+                }
+                if (formData.get('experience-more') != null) {
+                    tags.push(formData.get('experience-more'))
+                }
+                if ( formData.get('age-from') != '' || formData.get('age-to') != '' ) {
+                    if ( formData.get('age-from') != '') {
+                        if (formData.get('age-to') != '') {
+                            tags.push(`от ${formData.get('age-from')} до ${formData.get('age-to')} лет`)
+                        } else {
+                            tags.push(`от ${formData.get('age-from')} лет`)
+                        }
+                    } else {
+                        if (formData.get('age-to') != '') {
+                            tags.push(`до ${formData.get('age-to')} лет`)
+                        }
+                    }
+                }
+                if (formData.get('sex') != '') {
+                    tags.push(formData.get('sex'))
+                }
+                for (let i = 0; i < tags.length; i++) {
+                    const tag = tags[i];
+                    const sectionTag = document.createElement('div')
+                    sectionTag.classList.add('section__tag')
+                    const sectionTagClone = sectionTag.cloneNode(true)
+                    const sectionTagText = document.createElement('p')
+                    sectionTagText.classList.add('section__tag-text')
+                    sectionTagText.textContent = tag
+                    const sectionTagTextClone = sectionTagText.cloneNode(true)
+                    const sectionTagBtn = document.createElement('button')
+                    sectionTagBtn.setAttribute('type', 'button')
+                    sectionTagBtn.classList.add('section__tag-btn', 'btn-icon')
+                    const sectionTagBtnClone = sectionTagBtn.cloneNode(true)
+                    sectionTag.append(sectionTagText, sectionTagBtn)
+                    sectionTagClone.append(sectionTagTextClone, sectionTagBtnClone)
+                    sectionTags.append(sectionTag)
+                    sectionTagBtn.addEventListener('click', function(){
+                        const sectionTagTarget = sectionTagBtn.parentElement
+                        sectionTagTarget.remove()
+                        sectionTagsHeight()
+                    })
+                    sectionTagBtnClone.addEventListener('click', function(){
+                        const sectionTagTarget = sectionTagBtnClone.parentElement
+                        const sectionTagTextTarget = sectionTagTarget.textContent
+                        sectionTagTarget.remove()
+                        const tagArray = sectionTags1.querySelectorAll('.section__tag')
+                        for (let i = 0; i < tagArray.length; i++) {
+                            const tag = tagArray[i];
+                            if (sectionTagTextTarget === tag.textContent) {
+                                tag.remove()
+                            }
+                        }
+                        sectionTagsHeight()
+                    })
+                }
+                sectionTagsHeight()
+            })
+            break;
+        case 'najti':
+            sectionForm.addEventListener('submit', function(e){
+                e.preventDefault()
+                const sectionFormSearch = sectionForm.querySelector('.section__form-search')
+                const sectionFormNewSearch = sectionForm.querySelector('.section__form-new-search')
+                const totalFound = sectionForm.querySelector('.total-found')
+                const sectionPortfolio = sectionForm.parentElement.parentElement.parentElement.querySelector('.section_toleft')
+                sectionFormSearch.style.display = 'none'
+                sectionFormNewSearch.style.display = 'flex'
+                totalFound.style.display = 'flex'  
+                setTimeout(function(){
+                    sectionPortfolio.classList.add('section_active')
+                }, 500)
+                sectionPortfolios = true
+            })
+            break;
+        default:
+            break;
+    }
 }
 const sectionFormNewSearchArray = document.querySelectorAll('.section__form-new-search')
 for (let i = 0; i < sectionFormNewSearchArray.length; i++) {
     const sectionFormNewSearch = sectionFormNewSearchArray[i];
     sectionFormNewSearch.addEventListener('click', function(){
         const sectionToleft = sectionFormNewSearch.parentElement.parentElement.parentElement.parentElement.querySelector('.section_toleft')
-        sectionToleft.style.display = 'none'
+        sectionToleft.classList.remove('section_active')
         setTimeout(function(){
-            sectionToleft.style.display = 'grid'
+            sectionToleft.classList.add('section_active')
         }, 500)
     })
 }
-
-const sectionBurgerArray= document.querySelectorAll('.section__burger')
-for (let i = 0; i < sectionBurgerArray.length; i++) {
-    const sectionBurger = sectionBurgerArray[i];
-    sectionBurger.addEventListener('click', function(){
-        const sectionCollapse = sectionBurger.parentElement
-        const sectionMt = sectionCollapse.parentElement.parentElement.parentElement.parentElement.querySelector('.section_mt')
-        sectionCollapse.classList.toggle('section__collapse-collapse')
-        if (sectionMt !== null ) {
-            sectionMt.classList.toggle('section_mt-collapse')
+// Функция закрытия дополнительных фильтров
+function openNajti() {
+    for (let i = 0; i < sectionArr.length; i++) {
+        const section = sectionArr[i];
+        if (section.dataset.section === 'najti') {
+            section.classList.add('section_active')
+        } else {
+            section.classList.remove('section_active')
         }
+        if (section.dataset.section === 'portfolios') {
+            if (sectionPortfolios) {
+                section.classList.add('section_active')
+            } 
+        }
+    }
+}
+
+
+
+
+// Разворачивание/сворачивание текстового поля
+const textareaAdjustmentArray = document.querySelectorAll('.textarea_adjustment')
+const textareaSotrudnika = document.querySelector('.textarea_sotrudnika')
+const sectionMt = document.querySelector('.section_mt')
+for (let i = 0; i < textareaAdjustmentArray.length; i++) {
+    const textareaAdjustment = textareaAdjustmentArray[i];
+    const sectionSearch = textareaAdjustment.parentElement.parentElement
+    const dropdown = sectionSearch.querySelector('.dropdown')
+    const save = sectionSearch.querySelector('.section__search-save')
+    const close = sectionSearch.querySelector('.section__search-close')
+    textareaAdjustment.addEventListener('focus', function(){
+        dropdown.disabled = true
+        sectionFormSearch.disabled = true
+        sectionFormNewSearch.disabled = true
+        sectionSearch.classList.add('section__search-active')
+        textareaAdjustment.classList.add('textarea_adjustment-active')
+    }) 
+    save.addEventListener('click', function(){
+        dropdown.disabled = false
+        sectionFormSearch.disabled = false
+        sectionFormNewSearch.disabled = false
+        sectionSearch.classList.remove('section__search-active')
+        textareaAdjustment.classList.remove('textarea_adjustment-active')
+        textareaAdjustment.scrollTo(0, 0)
+    })
+    close.addEventListener('click', function(){
+        dropdown.disabled = false
+        sectionFormSearch.disabled = false
+        sectionFormNewSearch.disabled = false
+        sectionSearch.classList.remove('section__search-active')
+        textareaAdjustment.classList.remove('textarea_adjustment-active')
+        textareaAdjustment.value = ''
+        sectionTags.innerHTML = ''
     })
 }
-function collapseClose(sectionCollapse, sectionMt, jobDescription, sectionViewText) {
-    sectionCollapse.classList.add('section__collapse-collapse')
-    if (sectionMt !== null ) {
-        sectionMt.classList.remove('section_mt-collapse')
+
+// Открытие дополнительных фильтров
+const adjustment = document.querySelector('.adjustment')
+const sectionArr = document.querySelectorAll('.section')
+adjustment.addEventListener('click', function(){
+    for (let i = 0; i < sectionArr.length; i++) {
+        const section = sectionArr[i];
+        if (section.dataset.section === 'additional-filters') {
+            section.classList.add('section_active')
+        } else {
+            section.classList.remove('section_active')
+        }
     }
-    sectionViewText.textContent = jobDescription.value
-}
+    })
 /*
 let scrollPos = 0
 window.addEventListener('scroll', function(){

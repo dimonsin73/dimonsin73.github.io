@@ -182,7 +182,7 @@ for (let i = 0; i < sectionFormArray.length; i++) {
                         const sectionTagTarget = sectionTagBtnClone.parentElement
                         const sectionTagTextTarget = sectionTagTarget.textContent
                         sectionTagTarget.remove()
-                        const tagArray = sectionTags1.querySelectorAll('.section__tag')
+                        const tagArray = sectionTags.querySelectorAll('.section__tag')
                         for (let i = 0; i < tagArray.length; i++) {
                             const tag = tagArray[i];
                             if (sectionTagTextTarget === tag.textContent) {
@@ -416,7 +416,6 @@ function sectionTagsHeight() {
         textareaSotrudnika.classList.remove('textarea_sotrudnika-line1')
         textareaSotrudnika.classList.add('textarea_sotrudnika-line2')
     }
-    
 }
 const btnModalopenArray = document.querySelectorAll('.btn-modalopen')
 const modal = document.querySelector('.modal')
