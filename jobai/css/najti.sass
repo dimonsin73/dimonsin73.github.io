@@ -492,7 +492,7 @@ html
     &_adjustment
         display: -webkit-box
         height: 50px
-        padding: 7px 40px 7px 10px
+        padding: 7px 10px 7px 10px
         -webkit-line-clamp: 1
         -webkit-box-orient: vertical
         line-height: 36px
@@ -503,6 +503,7 @@ html
         &-active 
             display: -webkit-box
             height: 428px
+            line-height: 20px
             -webkit-line-clamp: 23
             -webkit-box-orient: vertical
             overflow: auto
@@ -1924,7 +1925,7 @@ input[type=number]::-webkit-outer-spin-button
         display: flex
         flex-direction: column
         gap: 12px
-        margin: 25px 0
+        margin: 12px 0
     &__avatar 
         position: relative
         grid-row: span 2
@@ -3097,17 +3098,11 @@ input[type=number]::-webkit-outer-spin-button
     .adjustment
         top: 23px
     .textarea_adjustment
-        &::placeholder 
-            padding-top: 10px
-            line-height: 15px
         &-active 
             height: 380px
             padding-top: 10px
             padding-bottom: 10px
-            line-height: 15px
-            &::placeholder 
-                padding-top: 0
-                line-height: 15px
+            line-height: 20px
     .portfolios 
         gap: 20px
         &_big
