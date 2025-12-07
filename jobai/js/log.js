@@ -772,7 +772,6 @@ for (let i = 0; i < hiroBtnFifthNextArray.length; i++) {
                         }, 5000)
                     }
                     const neuRemember = hiroBtnFifthNext.parentElement.parentElement.querySelector('.neumorphic-remember')
-                    console.log(neuRemember)
                     if (neuRemember != null) {
                         neuRemember.style.display = 'none'
                         neuError.style.display = 'block'
@@ -1377,8 +1376,6 @@ hiroLabelBtnfails.addEventListener('click', function(){
         hiroLabelDoc.setAttribute('type', 'button')
         hiroLabelDoc.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.80005 4.7999C4.80005 3.47442 5.87457 2.3999 7.20005 2.3999H12.703C13.3395 2.3999 13.95 2.65276 14.4 3.10285L18.4971 7.1999C18.9472 7.64999 19.2 8.26044 19.2 8.89696V19.1999C19.2 20.5254 18.1255 21.5999 16.8 21.5999H7.20005C5.87456 21.5999 4.80005 20.5254 4.80005 19.1999V4.7999ZM7.20005 11.9999C7.20005 11.3372 7.73731 10.7999 8.40005 10.7999H15.6C16.2628 10.7999 16.8 11.3372 16.8 11.9999C16.8 12.6626 16.2628 13.1999 15.6 13.1999H8.40005C7.73731 13.1999 7.20005 12.6626 7.20005 11.9999ZM8.40005 15.5999C7.73731 15.5999 7.20005 16.1372 7.20005 16.7999C7.20005 17.4626 7.73731 17.9999 8.40005 17.9999H15.6C16.2628 17.9999 16.8 17.4626 16.8 16.7999C16.8 16.1372 16.2628 15.5999 15.6 15.5999H8.40005Z" fill="#6A6A73"/></svg> Файл'
 
-        console.log(itemArray.length)
-
         const hiroLabelDelete = document.createElement('button')
         hiroLabelDelete.classList.add('hiro__label-delete')
         hiroLabelDelete.setAttribute('type', 'button')
@@ -1740,10 +1737,8 @@ for (let i = 0; i < dropdownArray.length; i++) {
                     if (sectionTags != null) {
                         sectionTags.innerHTML = ''
                     }
-                    
                     sectionTagsHeight()
-                }, 100);
-                
+                }, 200);
             })
         }
     })
@@ -1774,9 +1769,9 @@ function sectionTagsHeight() {
 const sectionFormArray = document.querySelectorAll('.section__form')
 const sectionClose = document.querySelector('.section__close')
 const sectionTags = document.querySelector('.section__tags')
-/*
 const sectionFormSearch = document.querySelector('.section__form-search')
 const sectionFormNewSearch = document.querySelector('.section__form-new-search')
+/*
 const totalFound = document.querySelector('.total-found')
 */
 const sectionToleftArray = document.querySelectorAll('.section_toleft')
@@ -1969,9 +1964,6 @@ function openNajti() {
     }
 }
 
-
-
-
 // Разворачивание/сворачивание текстового поля
 const textareaAdjustmentArray = document.querySelectorAll('.textarea_adjustment')
 const textareaSotrudnika = document.querySelector('.textarea_sotrudnika')
@@ -1979,18 +1971,15 @@ const sectionMt = document.querySelector('.section_mt')
 for (let i = 0; i < textareaAdjustmentArray.length; i++) {
     const textareaAdjustment = textareaAdjustmentArray[i];
     const sectionSearch = textareaAdjustment.parentElement.parentElement
-    const dropdown = sectionSearch.querySelector('.dropdown')
     const save = sectionSearch.querySelector('.section__search-save')
     const close = sectionSearch.querySelector('.section__search-close')
     textareaAdjustment.addEventListener('focus', function(){
-        dropdown.disabled = true
         sectionFormSearch.disabled = true
         sectionFormNewSearch.disabled = true
         sectionSearch.classList.add('section__search-active')
         textareaAdjustment.classList.add('textarea_adjustment-active')
     }) 
     save.addEventListener('click', function(){
-        dropdown.disabled = false
         sectionFormSearch.disabled = false
         sectionFormNewSearch.disabled = false
         sectionSearch.classList.remove('section__search-active')
@@ -1998,7 +1987,6 @@ for (let i = 0; i < textareaAdjustmentArray.length; i++) {
         textareaAdjustment.scrollTo(0, 0)
     })
     close.addEventListener('click', function(){
-        dropdown.disabled = false
         sectionFormSearch.disabled = false
         sectionFormNewSearch.disabled = false
         sectionSearch.classList.remove('section__search-active')
@@ -2006,6 +1994,16 @@ for (let i = 0; i < textareaAdjustmentArray.length; i++) {
         textareaAdjustment.value = ''
         sectionTags.innerHTML = ''
     })
+    document.addEventListener('click', (e) => {
+        const withinBoundaries = e.composedPath().includes(textareaAdjustment.parentElement.parentElement);
+        if ( ! withinBoundaries ) {
+            sectionFormSearch.disabled = false
+            sectionFormNewSearch.disabled = false
+            sectionSearch.classList.remove('section__search-active')
+            textareaAdjustment.classList.remove('textarea_adjustment-active')
+            textareaAdjustment.scrollTo(0, 0)
+        }
+    }) //Закрытие селекта по щелчку вне меню
 }
 
 // Открытие дополнительных фильтров
