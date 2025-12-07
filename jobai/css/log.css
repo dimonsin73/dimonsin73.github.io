@@ -2977,7 +2977,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
   height: 100%;
   padding: 20px 40px 15px;
   border-radius: 12px;
@@ -3041,6 +3041,7 @@ body {
   padding-left: 7px;
 }
 .docum__content-time {
+  margin-bottom: 20px;
   font: 400 16px/22px "Inter", "sans-serif";
   letter-spacing: 0;
   color: var(--Black);
@@ -3049,6 +3050,15 @@ body {
   font: 400 16px/22px "Inter", "sans-serif";
   letter-spacing: 0;
   color: var(--Black);
+}
+.docum__content-doc span {
+  font-weight: 600;
+}
+.docum__content-doc-p20 {
+  padding-left: 20px;
+}
+.docum__content-doc-p40 {
+  padding-left: 40px;
 }
 .docum__content-bold {
   font: 600 18px/22px "Inter", "sans-serif";
