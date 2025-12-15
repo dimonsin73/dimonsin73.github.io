@@ -1,0 +1,465 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title ООО "СТРОМАВТОЛИНИЯ"
+        link(rel="icon", href="images/logo.png", type="image/png")
+        link(rel="stylesheet", href="css/reset.css")
+        link(rel="stylesheet", href="css/fonts.css")
+        link(rel="stylesheet", href="css/itc-slider.css")
+        link(rel="stylesheet", href="css/style.css")
+        script(src="js/itc-slider.js" defer) 
+        script(src="js/script.js" defer) 
+    body 
+        header.header
+            a(href="#hiro").logo 
+                img(src="images/logo.png", alt="logo").logo__img
+                p.logo__text СТРОМАВТОЛИНИЯ
+            nav.nav
+                ul.nav__list
+                    li.nav__item
+                        a(href="#about").nav__link О компании
+                    li.nav__item 
+                        a(href="#products").nav__link Продукция
+                    li.nav__item
+                        a(href="#equipment").nav__link Оборудование
+                    li.nav__item
+                        a(href="#certificates").nav__link Сертификаты
+                    li.nav__item
+                        a(href="#contacts").nav__link Контакты
+            .header__right
+                .language 
+                    .language__view 
+                        p.language__view-link.language__view-active RU
+                        a(href="    ").language__view-link BY
+                a(href="#contacts").header__link Связаться
+            button(type="button").header__burger
+                span.header__burger-span
+                span.header__burger-span
+                span.header__burger-span
+        main.main
+            section.hiro#hiro 
+                .container
+                    .hiro__wrapper
+                        h1.title Оборудование и металлоконструкции: проектирование, создание, монтаж
+                        h2.hiro__title Нестандартное оборудование, емкостное оборудование и технологические линии по вашим чертежам и техническому заданию
+                        h2.hiro__subtitle С 2012 года — самостоятельное динамично развивающееся предприятие с производственными площадками в г. Гомеле и представительством в РФ
+                        .hiro__footer 
+                            a(href="#products").hiro__link Наша продукция
+                            a(href="#contacts").hiro__link Получить консультацию
+            section.about#about.section
+                .container
+                    .section__wrapper 
+                        h2.section__title О компании
+                        p.section__text Динамично развивающееся предприятие с полным циклом производства 
+                    .about__wrapper 
+                        .about__top
+                            p Мы с гордостью продолжаем дело легендарного могилевского завода «Строммашина». Как его бывший гомельский филиал, сегодня мы объединяем богатый производственный опыт и современные технологии. 
+                            p С 2012 года ООО «СТРОМАВТОЛИНИЯ» — это самостоятельное, динамично развивающееся предприятие, которое дорожит своей историей и уверенно смотрит в будущее.
+                            p Мы специализируемся на проектировании и производстве нестандартного оборудования, металлоконструкций, емкостного оборудования и технологических линий. Выполняем работы по чертежам и техническому заданию заказчика, предлагая индивидуальный подход и гарантированное качество.
+                        .info
+                            img(src="images/icons/factory.png", alt="factory").info__icon
+                            h2.info__title Производственные площадки
+                            p.info__text В г. Гомеле имеется несколько производственных площадок, укомплектованных в достаточном количестве производственным оборудованием
+                        .info
+                            img(src="images/icons/gear.png", alt="gear").info__icon
+                            h2.info__title Конструкторский отдел
+                            p.info__text Собственный конструкторско-технический отдел для разработки проектов любой сложности
+            section.products#products.section
+                .container
+                    .section__wrapper
+                        h2.section__title Наша продукция
+                        p.section__text Полный спектр услуг по металлообработке и производству
+                    .products__wrapper 
+                        .info
+                            img(src="images/icons/terminal.png", alt="tank").info__icon
+                            h2.info__title Емкостное оборудование
+                            p.info__text Резервуары, баки, емкости горизонтального и вертикального исполнения от 10 до 700 м³
+                        .info
+                            img(src="images/icons/tank.png", alt="tank").info__icon
+                            h2.info__title Подземные резервуары
+                            p.info__text Одностенные и двустенные резервуары подземного размещения для хранения нефтепродуктов
+                        .info
+                            img(src="images/icons/tank_shasi.png", alt="tank").info__icon
+                            h2.info__title Технологические емкости
+                            p.info__text Емкости на шасси, на лыжах, мобильные открытые емкости, бункеры для различных материалов
+                        .info
+                            img(src="images/icons/elevator.png", alt="elevator").info__icon
+                            h2.info__title Мобильные комплексы
+                            p.info__text Комплексы для приема, хранения, приготовления и выдачи сухих цементных смесей
+                        .info
+                            img(src="images/icons/designing.png", alt="designing").info__icon
+                            h2.info__title Нестандартное оборудование
+                            p.info__text Проектирование и изготовление оборудования по индивидуальным чертежам и техническим заданиям
+                        .info
+                            img(src="images/icons/welding.png", alt="welding").info__icon
+                            h2.info__title Металлоконструкции
+                            p.info__text Производство металлоконструкций любой сложности для промышленных объектов
+                    .products__slider.itc-slider
+                        .itc-slider-wrapper
+                            .itc-slider-items
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЕМКОСТИ ГОРИЗОНТАЛЬНОГО И ВЕРТИКАЛЬНОГО ИСПОЛНЕНИЯ
+                                    img(src="images/products/products_1.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЕМКОСТЬ ДЛЯ СОЛЕНОЙ ВОДЫ 50 М3 (НА ЛЫЖАХ)
+                                    img(src="images/products/products_2.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЕМКОСТЬ ТЕХНОЛОГИЧЕСКАЯ 40 М3 БТЕ
+                                    img(src="images/products/products_3.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title БУНКЕР ХЖВ-60
+                                    img(src="images/products/products_4.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЕМКОСТЬ ТЕХНОЛОГИЧЕСКАЯ V=40М3 НА ШАССИ
+                                    img(src="images/products/products_5.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title БУНКЕР ДЛЯ ПРОППАНТА
+                                    img(src="images/products/products_6.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title РЕЗЕРВУАР СТАЛЬНОЙ ВЕРТИКАЛЬНЫЙ ЦИЛИНДРИЧЕСКИЙ 700 М3
+                                    img(src="images/products/products_7.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЕМКОСТЬ ТЕХНОЛОГИЧЕСКАЯ V=40М3 (ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ)
+                                    img(src="images/products/products_8.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЕМКОСТЬ МОБИЛЬНАЯ ОТКРЫТАЯ ЕМO-3000
+                                    img(src="images/products/products_9-1.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЕМКОСТЬ МОБИЛЬНАЯ ОТКРЫТАЯ ЕМO-3000
+                                    img(src="images/products/products_9-2.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title СУШИЛЬНЫЙ БАРАБАН БН 1,6-10НУ-03
+                                    img(src="images/products/products_10.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title РЕЗЕРВУАР ГОРИЗОНТАЛЬНЫЙ СТАЛЬНОЙ ОДНОСТЕННЫЙ ПОДЗЕМНЫЙ V=10 М3 (РГСП-10)
+                                    img(src="images/products/products_11.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title РЕЗЕРВУАР ДВУСТЕННЫЙ РГДП-50 (25+25)
+                                    img(src="images/products/products_12.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title РЕЗЕРВУАР ДВУСТЕННЫЙ РГДП-50 (15+20+15)
+                                    img(src="images/products/products_13.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title МОБИЛЬНЫЙ КОМПЛЕКС ДЛЯ ПРИЕМА, ХРАНЕНИЯ, ПРИГОТОВЛЕНИЯ И ВЫДАЧИ СУХИХ ЦЕМЕНТНЫХ СМЕСЕЙ
+                                    p.itc-slider-text В СОСТАВЕ: БЛОК КОМПРЕССОРНЫЙ БУНКЕРА БП5, ЕМКОСТЬ УРАВНИТЕЛЬНАЯ, СИЛОС ЦЕМЕНТНЫЙ 30 М3 (3ШТ),ФИЛЬТР РУКАВНЫЙ, ФИЛЬТР ЦЕМЕНТНЫЙ (КАМНЕУЛОВИТЕЛЬ), БУНКЕР ПРИЕМНЫЙ БП5
+                                    img(src="images/products/products_14.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title МОБИЛЬНАЯ ЛИНИЯ СОРТИРОВКИ ОГНЕУПОРНОГО ЛОМА, МОЩНОСТЬЮ 10Т В ЧАС
+                                    img(src="images/products/products_15.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title МОБИЛЬНАЯ ЛИНИЯ СОРТИРОВКИ ОГНЕУПОРНОГО ЛОМА, МОЩНОСТЬЮ 10Т В ЧАС
+                                    img(src="images/products/products_16.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title МОБИЛЬНАЯ ЛИНИЯ СОРТИРОВКИ ОГНЕУПОРНОГО ЛОМА, МОЩНОСТЬЮ 10Т В ЧАС
+                                    img(src="images/products/products_17.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title МОБИЛЬНАЯ ЛИНИЯ ПО СОРТИРОВКЕ ТВЕРДЫХ КОММУНАЛЬНЫХ ОТХОДОВ (СМЕШАННЫХ И РАЗДЕЛЬНО СОБРАННЫХ), МОЩНОСТЬЮ 5 ТЫС. ТОНН В ГОД
+                                    img(src="images/products/products_18.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title МОБИЛЬНАЯ ЛИНИЯ ПО СОРТИРОВКЕ ТВЕРДЫХ КОММУНАЛЬНЫХ ОТХОДОВ (СМЕШАННЫХ И РАЗДЕЛЬНО СОБРАННЫХ), МОЩНОСТЬЮ 5 ТЫС. ТОНН В ГОД
+                                    img(src="images/products/products_19.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЛИНИЯ ПО ПЕРЕРАБОТКЕ АЛЮМИНИЕВЫХ ШЛАКОВ (ПРОИЗВОДСТВО ШЛАКОРАСКИСЛЯЮЩЕЙ СМЕСИ)
+                                    img(src="images/products/products_20.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЛИНИЯ ПО ПЕРЕРАБОТКЕ АЛЮМИНИЕВЫХ ШЛАКОВ (ПРОИЗВОДСТВО ШЛАКОРАСКИСЛЯЮЩЕЙ СМЕСИ)
+                                    img(src="images/products/products_21.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЛИНИЯ ПО СОРТИРОВКЕ ТВЕРДЫХ КОММУНАЛЬНЫХ ОТХОДОВ (СМЕШАННЫХ И РАЗДЕЛЬНО СОБРАННЫХ) МОЩНОСТЬЮ 5000 Т/Г.
+                                    img(src="images/products/products_22.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ДРОБИЛЬНО-СОРТИРОВОЧНЫЙ КОМПЛЕКС СТАЦИОНАРНОГО РАЗМЕЩЕНИЯ
+                                    img(src="images/products/products_23.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ДРОБИЛЬНО-СОРТИРОВОЧНЫЙ КОМПЛЕКС СТАЦИОНАРНОГО РАЗМЕЩЕНИЯ
+                                    img(src="images/products/products_24.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title ЛЕСТНИЦА ШАХТНАЯ ДЛЯ РВС-2000
+                                    img(src="images/products/products_25.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title БЛОК-БОКСЫ КОНТЕЙНЕРНОГО ТИПА
+                                    img(src="images/products/products_26.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title УСТРОЙСТВА ФИКСАЦИИ КТ И ОТСЕК КИП КТ
+                                    img(src="images/products/products_27.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title УСТРОЙСТВА ФИКСАЦИИ КТ И ОТСЕК КИП КТ
+                                    img(src="images/products/products_28.png", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title Форма ЖБШ 07ДВ.00.00.000 СБ в комплекте (пакеты клиньев – 4шт., винты натяжения с гайкой – 4шт., диафрагмы – 12шт.)
+                                    img(src="images/products/products_29.jpeg", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title Форма ЖБШ 07ДВ.00.00.000 СБ в комплекте (пакеты клиньев – 4шт., винты натяжения с гайкой – 4шт., диафрагмы – 12шт.)
+                                    img(src="images/products/products_30.jpeg", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title Шайба закладная седловидная ШЗС-1 (соответствует ОСТ 32.179-2001)
+                                    img(src="images/products/products_31.jpeg", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title Шайба закладная седловидная ШЗС-1 (соответствует ОСТ 32.179-2001)
+                                    img(src="images/products/products_32.jpeg", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title Кантователь ЖБШ 19
+                                    img(src="images/products/products_33.jpeg", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                                .itc-slider-item 
+                                    h2.itc-slider-title Кантователь ЖБШ 19
+                                    img(src="images/products/products_34.jpeg", alt="Фото изделия").itc-slider-product.itc-slider-modal
+                        button(type="button").itc-slider-btn.itc-slider-btn-prev
+                        button(type="button").itc-slider-btn.itc-slider-btn-next
+                        ol.itc-slider-indicators
+                            li.itc-slider-indicator(data-slide-to="0")
+                            li.itc-slider-indicator(data-slide-to="1")
+                            li.itc-slider-indicator(data-slide-to="2")
+                            li.itc-slider-indicator(data-slide-to="3")
+                            li.itc-slider-indicator(data-slide-to="4")
+                            li.itc-slider-indicator(data-slide-to="5")
+                            li.itc-slider-indicator(data-slide-to="6")
+                            li.itc-slider-indicator(data-slide-to="7")
+                            li.itc-slider-indicator(data-slide-to="8")
+                            li.itc-slider-indicator(data-slide-to="9")
+                            li.itc-slider-indicator(data-slide-to="10")
+                            li.itc-slider-indicator(data-slide-to="11")
+                            li.itc-slider-indicator(data-slide-to="12")
+                            li.itc-slider-indicator(data-slide-to="13")
+                            li.itc-slider-indicator(data-slide-to="14")
+                            li.itc-slider-indicator(data-slide-to="15")
+                            li.itc-slider-indicator(data-slide-to="16")
+                            li.itc-slider-indicator(data-slide-to="17")
+                            li.itc-slider-indicator(data-slide-to="18")
+                            li.itc-slider-indicator(data-slide-to="19")
+                            li.itc-slider-indicator(data-slide-to="20")
+                            li.itc-slider-indicator(data-slide-to="21")
+                            li.itc-slider-indicator(data-slide-to="22")
+                            li.itc-slider-indicator(data-slide-to="23")
+                            li.itc-slider-indicator(data-slide-to="24")
+                            li.itc-slider-indicator(data-slide-to="25")
+                            li.itc-slider-indicator(data-slide-to="26")
+                            li.itc-slider-indicator(data-slide-to="27")
+                            li.itc-slider-indicator(data-slide-to="28")
+                            li.itc-slider-indicator(data-slide-to="29")
+                            li.itc-slider-indicator(data-slide-to="30")
+                            li.itc-slider-indicator(data-slide-to="31")
+                            li.itc-slider-indicator(data-slide-to="32")
+                            li.itc-slider-indicator(data-slide-to="33")
+                            li.itc-slider-indicator(data-slide-to="34")
+            section.equipment#equipment.section
+                .container
+                    .section__wrapper
+                        h2.section__title Наше оборудование
+                        p.section__text Современное производственное оборудование для выполнения задач любой сложности
+                    .equipment__wrapper 
+                        .equipment__item
+                            .equipment__top 
+                                img(src="images/icons/laser.png", alt="laser").equipment__top-img
+                                h2.equipment__title Металлообрабатывающее оборудование
+                            ul.equipment__list 
+                                li.equipment__list-item Токарные и фрезерные станки с ЧПУ
+                                li.equipment__list-item Лазерная резка металла
+                                li.equipment__list-item Гильотины и листогибочные прессы
+                                li.equipment__list-item Сверлильное и шлифовальное оборудование
+                        .equipment__item
+                            .equipment__top 
+                                img(src="images/icons/welding.png", alt="welding").equipment__top-img
+                                h2.equipment__title Сварочное оборудование
+                            ul.equipment__list 
+                                li.equipment__list-item Полуавтоматическая сварка MIG/MAG
+                                li.equipment__list-item Аргонодуговая сварка TIG
+                                li.equipment__list-item Ручная электродуговая сварка
+                                li.equipment__list-item Контактная точечная сварка
+                        .equipment__item
+                            .equipment__top 
+                                img(src="images/icons/girder.png", alt="girder").equipment__top-img
+                                h2.equipment__title Грузоподъемное оборудование
+                            ul.equipment__list 
+                                li.equipment__list-item Мостовые краны грузоподъемностью до 10 тонн
+                                li.equipment__list-item Тельферы и таль-балки
+                                li.equipment__list-item Погрузочно-разгрузочная техника
+                        .equipment__item
+                            .equipment__top 
+                                img(src="images/icons/measuring-tool.png", alt="measuring-tool").equipment__top-img
+                                h2.equipment__title Измерительное оборудование
+                            ul.equipment__list 
+                                li.equipment__list-item Координатно-измерительные машины
+                                li.equipment__list-item Ультразвуковой контроль сварных швов
+                                li.equipment__list-item Система контроля качества продукции
+            section.areas.section
+                .container
+                    .section__wrapper
+                        h2.section__title Отрасли, с которыми мы работаем
+                        p.section__text Наше оборудование используется в ключевых отраслях промышленности
+                    .areas__wrapper 
+                        .info
+                            h2.info__title Нефтегазовая отрасль
+                            p.info__text Резервуары для хранения нефтепродуктов, бункеры для проппанта, технологические емкости
+                        .info
+                            h2.info__title Строительная индустрия
+                            p.info__text Мобильные комплексы для цементных смесей, силосы, бункеры
+                        .info
+                            h2.info__title Химическая промышленность
+                            p.info__text Емкости из нержавеющей стали, технологическое оборудование
+                        .info
+                            h2.info__title АЗС и нефтебазы
+                            p.info__text Подземные резервуары одно- и двустенные для топлива
+            section.advantages.section
+                .container
+                    .section__wrapper
+                        h2.section__title Почему выбирают нас
+                    .advantages__wrapper
+                        .advantage
+                            img(src="images/icons/trend.png", alt="trend").advantage__icon
+                            h2.advantage__title 13+ лет опыта
+                            p.advantage__text На рынке с 2012 года, реализовали сотни проектов
+                        .advantage
+                            img(src="images/icons/shield.png", alt="shield").advantage__icon
+                            h2.advantage__title Гарантия качества
+                            p.advantage__text Сертифицированное производство и контроль на всех этапах
+                        .advantage
+                            img(src="images/icons/group.png", alt="group").advantage__icon
+                            h2.advantage__title Опытная команда
+                            p.advantage__text Квалифицированные специалисты и собственный КТО
+                        .advantage
+                            img(src="images/icons/badge.png", alt="badge").advantage__icon
+                            h2.advantage__title Индивидуальный подход
+                            p.advantage__text Работаем по вашим чертежам и техническим заданиям
+            section.certificates#certificates.section
+                .container
+                    .section__wrapper
+                        h2.section__title Сертификаты и документы
+                        p.section__text Все необходимые разрешительные документы и сертификаты соответствия
+                    .certificates__slider.itc-slider
+                        .itc-slider-wrapper
+                            .itc-slider-items
+                                .itc-slider-item
+                                    img(src="images/certificate/1.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/2.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/3.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/4.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/5.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/6.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/7.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/8.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/9.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/13.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/14.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/15.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/16.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/17.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/18.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/19.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/21.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                                .itc-slider-item
+                                    img(src="images/certificate/22.jpg", alt="Сертификат").itc-slider-certificate.itc-slider-modal
+                        button(type="button").itc-slider-btn.itc-slider-btn-prev
+                        button(type="button").itc-slider-btn.itc-slider-btn-next
+                        ol.itc-slider-indicators
+                            li.itc-slider-indicator(data-slide-to="0")
+                            li.itc-slider-indicator(data-slide-to="1")
+                            li.itc-slider-indicator(data-slide-to="2")
+                            li.itc-slider-indicator(data-slide-to="3")
+                            li.itc-slider-indicator(data-slide-to="4")
+                            li.itc-slider-indicator(data-slide-to="5")
+                            li.itc-slider-indicator(data-slide-to="6")
+                            li.itc-slider-indicator(data-slide-to="7")
+                            li.itc-slider-indicator(data-slide-to="8")
+                            li.itc-slider-indicator(data-slide-to="9")
+                            li.itc-slider-indicator(data-slide-to="10")
+                            li.itc-slider-indicator(data-slide-to="11")
+                            li.itc-slider-indicator(data-slide-to="12")
+                            li.itc-slider-indicator(data-slide-to="13")
+                            li.itc-slider-indicator(data-slide-to="14")
+                            li.itc-slider-indicator(data-slide-to="15")
+                            li.itc-slider-indicator(data-slide-to="16")
+                            li.itc-slider-indicator(data-slide-to="17")
+            section.contacts#contacts.section
+                .container
+                    .section__wrapper
+                        h2.section__title Контакты
+                        p.section__text Готовы ответить на ваши вопросы и обсудить ваш проект
+                    .contacts__wrapper 
+                        .contact
+                            .contact__top
+                                img(src="images/icons/placeholder.png", alt="placeholder").contact__icon
+                                h2.contact__title Производственная площадка
+                            .contact__content
+                                h2.contact__title Республика Беларусь
+                                p.contact__text г.Гомель, ул.Тельмана, 44
+                            .contact__content
+                                a(href="tel:+375232344652").contact__link Тел/факс: +375 (232) 34-46-52
+                                a(href="tel:+375333652324").contact__link Контактный: +375 (33) 365-23-24
+                        .contact
+                            .contact__top
+                                img(src="images/icons/placeholder.png", alt="placeholder").contact__icon
+                                h2.contact__title Представительство в РФ
+                            .contact__content 
+                                h2.contact__title Российская Федерация
+                                p.contact__text Брянская область
+                                p.contact__text г.Новозыбков, ул.Рос, д. 1Д
+                            .contact__content 
+                                a(href="tel:+79102919081").contact__link Тел: +7 (910) 291-90-81
+                        .contact.contact_mail
+                            .contact__top
+                                img(src="images/icons/mail.png", alt="mail").contact__icon
+                                h2.contact__title Электронная почта
+                            .contact__content 
+                                a(href="mailto:stromautoline2012@gmail.com").contact__link stromautoline2012@gmail.com
+                    form(action="send.php" method="POST").form
+                        .form__top
+                            h2.form__title Отправить запрос
+                            p.form__text Мы свяжемся с вами в ближайшее время
+                        label(for="name")
+                            input#name(type="text" name="user_name" placeholder="Ваше имя" autocomplete="name" required).form__input
+                        label(for="email")
+                            input#email(type="email" name="user_email" placeholder="Email" autocomplete="email" required).form__input
+                        label(for="phone")
+                            input#phone(type="tel" name="user_phone" placeholder="Телефон" autocomplete="tel" required).form__input
+                        label(for="message") 
+                            textarea#message(name="user_message"  placeholder="Сообщение" rows="5" required).form__input
+                        button(type="submit").form__btn Отправить запрос
+        footer.footer
+            .container
+                .footer__top 
+                    .footer__item.footer__item_big
+                        a(href="#hiro").logo 
+                            p.logo__text СТРОМАВТОЛИНИЯ
+                        p.footer__text Оборудование и металлоконструкции: проектирование, создание, монтаж
+                    .footer__item 
+                        h2.footer__title Навигация
+                        ul.footer__list
+                            li.footer__list-item
+                                a(href="#about").footer__link О компании
+                            li.footer__list-item 
+                                a(href="#products").footer__link Продукция
+                            li.footer__list-item 
+                                a(href="#equipment").footer__link Оборудование
+                            li.footer__list-item 
+                                a(href="#certificates").footer__link Сертификаты
+                            li.footer__list-item 
+                                a(href="#contacts").footer__link Контакты
+                    .footer__item 
+                        h2.footer__title Контакты
+                        p.footer__text г. Гомель, ул. Тельмана, 44
+                        p.footer__text Республика Беларусь
+                        a(href="mailto:stromautoline2012@gmail.com").footer__link stromautoline2012@gmail.com
+                        a(href="tel:+375232344652").footer__link +375 (232) 34-46-52
+                        a(href="tel:+375333652324").footer__link +375 (33) 365-23-24
+                .footer__bottom 
+                    p.rights © 2012 - 2025 ООО «СТРОМАВТОЛИНИЯ». Все права защищены.
+        .modal 
+            button(type="button").modal__close
