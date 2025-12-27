@@ -4539,6 +4539,13 @@ body {
   .docum__content-map iframe {
     height: 160px;
   }
+  .docum .tariffs {
+    max-width: 320px;
+  }
+  .docum .tariffs__banner {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
 }
 .example {
   display: none;
