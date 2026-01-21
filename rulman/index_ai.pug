@@ -1,0 +1,227 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Rulman
+        link(rel="stylesheet", href="css/reset.css")
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/fonts.css")
+        link(rel="stylesheet", href="css/main.css")
+        script(src="js/bootstrap.bundle.min.js" defer)
+    body 
+        header.header
+            .container 
+                .header__wrapper
+                    .header__banner 
+                        p.header__banner-text Минимальная стоимость заказа - 25 000 руб. Принимаем заказы от 1 детали до оптовой партии (партии в 5 000 изделий в месяц)
+                    .header__top 
+                        .header__logo
+                            img(src="images/logo.svg", alt="logo").header__logo-img
+                        .header__contact 
+                            a(href="tel:+79167503525").header__contact-link +7 (916) 750-35-25
+                            p.header__contact-text Время работы с 9:00 до 18:00
+                            .header__social 
+                                a(href="https://t.me/+79167503525", target="_blank", rel="noopener noreferrer").header__social-link
+                                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.10438 10.5464L7.76272 15.0142C8.25154 15.0142 8.46325 14.819 8.71712 14.5846L11.0089 12.5483L15.7577 15.7815C16.6286 16.2328 17.2422 15.9951 17.4771 15.0366L20.5942 1.45731L20.5951 1.45651C20.8713 0.259557 20.1295 -0.208502 19.2809 0.0851351L0.958856 6.60675C-0.291589 7.05801 -0.272656 7.70609 0.746289 7.99973L5.43051 9.3543L16.311 3.0247C16.8231 2.70946 17.2887 2.88389 16.9057 3.19913L8.10438 10.5464Z" fill="white"/>
+                                    </svg>
+                                a(href="https://wa.me/79167503525", target="_blank", rel="noopener noreferrer").header__social-link
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.50212 0H8.49788C3.81119 0 0 3.81225 0 8.5C0 10.3594 0.59925 12.0828 1.61819 13.4821L0.558875 16.6398L3.82606 15.5954C5.17013 16.4858 6.77344 17 8.50212 17C13.1888 17 17 13.1867 17 8.5C17 3.81331 13.1888 0 8.50212 0ZM13.4481 12.0031C13.243 12.5821 12.4291 13.0624 11.7799 13.2026C11.3358 13.2972 10.7557 13.3726 8.80281 12.563C6.30487 11.5281 4.69625 8.98981 4.57088 8.82512C4.45081 8.66044 3.5615 7.48106 3.5615 6.26131C3.5615 5.04156 4.18094 4.44763 4.43062 4.19263C4.63569 3.98331 4.97463 3.88769 5.29975 3.88769C5.40494 3.88769 5.4995 3.893 5.5845 3.89725C5.83419 3.90788 5.95956 3.92275 6.12425 4.31694C6.32931 4.811 6.82869 6.03075 6.88819 6.15613C6.94875 6.2815 7.00931 6.4515 6.92431 6.61619C6.84462 6.78619 6.7745 6.86162 6.64913 7.00612C6.52375 7.15062 6.40475 7.26113 6.27938 7.41625C6.16462 7.55119 6.035 7.69569 6.1795 7.94537C6.324 8.18975 6.82337 9.00469 7.55862 9.65919C8.50744 10.5039 9.27669 10.7738 9.55188 10.8885C9.75694 10.9735 10.0013 10.9533 10.1511 10.7939C10.3413 10.5889 10.5761 10.2489 10.8152 9.91419C10.9852 9.67406 11.1998 9.64431 11.4251 9.72931C11.6546 9.809 12.869 10.4093 13.1187 10.5336C13.3684 10.659 13.5331 10.7185 13.5936 10.8237C13.6531 10.9289 13.6531 11.4229 13.4481 12.0031Z" fill="white"/>
+                                    </svg>
+                        .header__signup 
+                            .header__signup-icon
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.003 0H11.997C5.3805 0 0 5.382 0 12C0 14.625 0.846 17.058 2.2845 19.0335L0.789 23.4915L5.4015 22.017C7.299 23.274 9.5625 24 12.003 24C18.6195 24 24 18.6165 24 12C24 5.3835 18.6195 0 12.003 0ZM18.9855 16.9455C18.696 17.763 17.547 18.441 16.6305 18.639C16.0035 18.7725 15.1845 18.879 12.4275 17.736C8.901 16.275 6.63 12.6915 6.453 12.459C6.2835 12.2265 5.028 10.5615 5.028 8.8395C5.028 7.1175 5.9025 6.279 6.255 5.919C6.5445 5.6235 7.023 5.4885 7.482 5.4885C7.6305 5.4885 7.764 5.496 7.884 5.502C8.2365 5.517 8.4135 5.538 8.646 6.0945C8.9355 6.792 9.6405 8.514 9.7245 8.691C9.81 8.868 9.8955 9.108 9.7755 9.3405C9.663 9.5805 9.564 9.687 9.387 9.891C9.21 10.095 9.042 10.251 8.865 10.47C8.703 10.6605 8.52 10.8645 8.724 11.217C8.928 11.562 9.633 12.7125 10.671 13.6365C12.0105 14.829 13.0965 15.21 13.485 15.372C13.7745 15.492 14.1195 15.4635 14.331 15.2385C14.5995 14.949 14.931 14.469 15.2685 13.9965C15.5085 13.6575 15.8115 13.6155 16.1295 13.7355C16.4535 13.848 18.168 14.6955 18.5205 14.871C18.873 15.048 19.1055 15.132 19.191 15.2805C19.275 15.429 19.275 16.1265 18.9855 16.9455Z" fill="#FBBB5A"/>
+                                </svg>
+                            p.header__signup-text Записаться на посещение производства
+                        .header__rating
+                    .header__bottom 
+                        .header__map
+                            <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 7.44434C13 4.44988 10.5409 2 7.49707 2H7.49414C4.45966 2.00015 2 4.44914 2 7.44434C2.00004 8.99743 2.81533 10.6324 3.94531 12.124C4.91959 13.4101 6.05249 14.4913 6.85449 15.1885L7.17676 15.4629L7.20996 15.4922L7.49414 15.752L7.77148 15.5L7.80566 15.4697C8.61135 14.7993 9.93702 13.5948 11.0527 12.124C12.1848 10.6317 13 8.99721 13 7.44434ZM9.26172 7.44434C9.26172 6.49567 8.47358 5.70215 7.49414 5.70215C6.51879 5.7023 5.73535 6.49183 5.73535 7.44434C5.73541 8.39679 6.51882 9.18637 7.49414 9.18652C8.47994 9.18652 9.26166 8.39492 9.26172 7.44434ZM11.2617 7.44434C11.2617 9.51258 9.57137 11.1865 7.49414 11.1865C5.42343 11.1864 3.73541 9.51052 3.73535 7.44434C3.73535 5.3781 5.4234 3.7023 7.49414 3.70215C9.56105 3.70215 11.2617 5.37408 11.2617 7.44434ZM15 7.44434C15 9.6483 13.8736 11.7153 12.6465 13.333C11.4159 14.9552 9.98067 16.2585 9.1123 16.9834L8.37402 17.6562L8.375 17.6572C7.87868 18.1131 7.11317 18.114 6.61621 17.6592L5.89258 16.9971L5.5459 16.7012C4.67969 15.9486 3.43633 14.7643 2.35059 13.3311C1.12625 11.7147 3.50911e-05 9.64802 0 7.44434C0 3.32922 3.3705 0.000150893 7.49414 0H7.49707C11.6284 0 15 3.32829 15 7.44434Z" fill="#FBBB5A"/>
+                            </svg>
+                            a(href="https://yandex.by/maps/1/moscow-and-moscow-oblast/house/posyolok_svetlyye_gory_31/Z04YdQdhQUUBQFtvfXR4d35lYw==/?ll=37.669346%2C55.791128&z=11" target="_blank" rel="noopener noreferrer") 9км. от МКАД по шоссе. Пос. Светлые горы, владение 31, строение 1
+                        .header__mail
+                            <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.96654C0 0.88045 0.91397 0 2.04141 0H18.3727C19.5001 0 20.4141 0.880449 20.4141 1.96654V13.7658C20.4141 14.8519 19.5001 15.7323 18.3727 15.7323H2.04141C0.913971 15.7323 0 14.8519 0 13.7658V1.96654ZM3.87875 1.96654L10.207 6.62834L16.5353 1.96654H3.87875ZM18.3727 3.08868L11.4471 8.19047C10.7151 8.72968 9.69895 8.72968 8.96699 8.19047L2.04141 3.08868V13.7658H18.3727V3.08868Z" fill="#FBBB5A"/>
+                            </svg>
+                            a(href="mailto:info@rulman.ru") info@rulman.ru
+<!--
+        section.hero#hero
+            .container
+                //- Верхняя панель с контактами
+                .hero__top-bar.py-3.py-md-4
+                .row.align-items-center
+                    .col-6.col-md-4.col-lg-3
+                    .hero__logo
+                        img(src="images/logo.svg", alt="")
+                    .col-6.col-md-4.col-lg-3
+                    .hero__rating.text-end.text-md-center
+                        .d-inline-block.bg-light.p-2.rounded
+                        span.fw-bold 4.8
+                        span.text-muted.ms-1 из 5
+                        .d-inline-block.ms-2
+                            span.text-warning ★★★★★
+                    .col-12.col-md-4.col-lg-3.order-last.order-md-0.mt-3.mt-md-0
+                    .hero__contacts.text-center.text-md-end
+                        a(href="tel:+79167503525", class="d-block fw-bold text-dark text-decoration-none")
+                        | +7 (916) 750-35-25
+                        small.text-muted.d-block
+                        | Бережное место: +9 800 18 00 00
+                    .col-12.col-lg-3.mt-3.mt-lg-0
+                    button.btn.btn-primary.btn-lg.w-100(type="button", data-bs-toggle="modal", data-bs-target="#bookingModal")
+                        | Записаться на посещение производства
+                //- Основной заголовок и форма
+                .hero__main.py-5.py-lg-6
+                .row.align-items-center
+                    .col-lg-6.mb-5.mb-lg-0
+                    h2.hero__title.display-4.fw-bold.mb-4
+                        | ПРОФЕССИОНАЛЬНАЯ ПОКРАСКА 
+                        span.d-block.text-primary ЛЮБЫХ ИЗДЕЛИЙ ЗАКАЗЧИКА
+                    .hero__features.mb-4
+                        .d-flex.align-items-center.mb-3
+                        .hero__feature-icon.me-3
+                            svg(width="24", height="24", fill="currentColor")
+                            use(xlink:href="#icon-check")
+                        span.fs-5 Гарантия качества по ГОСТ
+                        .d-flex.align-items-center.mb-3
+                        .hero__feature-icon.me-3
+                            svg(width="24", height="24", fill="currentColor")
+                            use(xlink:href="#icon-check")
+                        span.fs-5 Более 2000+ оттенков
+                        .d-flex.align-items-center
+                        .hero__feature-icon.me-3
+                            svg(width="24", height="24", fill="currentColor")
+                            use(xlink:href="#icon-check")
+                        span.fs-5 Срочная покраска от 3 дней
+                    
+                    .col-lg-6
+                    .hero__form.card.border-0.shadow-lg
+                        .card-body.p-4.p-md-5
+                        h3.card-title.h4.fw-bold.mb-4
+                            | Получите расчёт стоимости 
+                            span.d-block.text-primary за 30 минут
+                        
+                        form#heroForm(autocomplete="off")
+                            .mb-3
+                            label.form-label(for="heroName") Ваше имя
+                            input.form-control.form-control-lg(
+                                type="text",
+                                id="heroName",
+                                placeholder="Иван Иванов",
+                                required
+                            )
+                            
+                            .mb-3
+                            label.form-label(for="heroPhone") Телефон
+                            input.form-control.form-control-lg(
+                                type="tel",
+                                id="heroPhone",
+                                placeholder="+7 (___) ___-__-__",
+                                required
+                            )
+                            
+                            .mb-4
+                            label.form-label(for="heroTask") Описание задачи
+                            textarea.form-control(
+                                id="heroTask",
+                                rows="3",
+                                placeholder="3 каталога на обработку организаций, сделок с поставками и контрактами..."
+                            )
+                            
+                            .d-grid
+                            button.btn.btn-primary.btn-lg.py-3(type="submit")
+                                span.fw-bold Отправить заявку
+                                small.d-block.fs-6.fw-normal Менеджер свяжется в течение 15 минут
+                            
+                            .form-text.mt-3.text-center
+                            | Нажимая кнопку, вы соглашаетесь с 
+                            a(href="#") политикой конфиденциальности
+                
+                //- Секция "Работаем с бизнесом"
+                .hero__business.py-5.py-lg-6
+                h3.h2.fw-bold.text-center.mb-5
+                    | Работаем с бизнесом 
+                    span.text-primary любого масштаба!
+                
+                .row.g-3.g-md-4
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Производственные компании
+                        p.small.mb-0.text-muted Окраска промышленного оборудования
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Рекламно-производственные компании
+                        p.small.mb-0.text-muted Брендирование конструкций
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Выставочные застройщики
+                        p.small.mb-0.text-muted Покраска стендов и конструкций
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Девелоперы, застройщики
+                        p.small.mb-0.text-muted Фасадные и интерьерные работы
+                    
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Строительно-производственные компании
+                        p.small.mb-0.text-muted Покраска строительных материалов
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Инженерно-производственные компании
+                        p.small.mb-0.text-muted Окраска технических изделий
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Научно-производственные предприятия
+                        p.small.mb-0.text-muted Специальные покрытия
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Мебельные производства
+                        p.small.mb-0.text-muted Покраска фасадов и деталей
+                    
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Малярные мастерские
+                        p.small.mb-0.text-muted Аутсорсинг покрасочных работ
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Ремонтно-строительные компании
+                        p.small.mb-0.text-muted Реставрация поверхностей
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Производители упаковки
+                        p.small.mb-0.text-muted Окраска упаковочных материалов
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Производители промышленного оборудования
+                        p.small.mb-0.text-muted Защитные покрытия
+                    
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Дизайн студии
+                        p.small.mb-0.text-muted Декоративная отделка
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Поставщики электрооборудования
+                        p.small.mb-0.text-muted Окраска корпусов
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Строительно-монтажные организации
+                        p.small.mb-0.text-muted Покраска конструкций на объекте
+                    .col-6.col-md-4.col-lg-3
+                    .hero__business-item.p-3.h-100.bg-light.rounded
+                        h4.h6.fw-bold.mb-2 Производители изделий из пластика
+                        p.small.mb-0.text-muted Покраска пластиковых деталей
+                
+                .row.mt-5
+                    .col-lg-10.mx-auto
+                    .hero__cta.bg-primary.text-white.p-4.p-md-5.rounded.text-center
+                        h4.h3.fw-bold.mb-3
+                        | Неважно, являетесь ли вы малым предприятием или крупной корпорацией
+                        p.fs-5.mb-4
+                        | Наша команда готова предоставить вам услуги высшего класса. 
+                        | Свяжитесь с нами сегодня, чтобы узнать подробности и начать сотрудничество с лидером рынка!
+                        button.btn.btn-light.btn-lg.px-5(type="button")
+-->
