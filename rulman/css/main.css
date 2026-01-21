@@ -247,6 +247,39 @@ h4 {
   color: var(--white);
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav__link {
+  font: 500 0.875rem/1.4 "Geologica", sans-serif;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+.nav__link:hover {
+  color: var(--yellow);
+}
+
+.dropdown__btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 500 0.875rem/1.4 "Geologica", sans-serif;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+.dropdown__btn svg {
+  fill: var(--white);
+  transition: fill 0.3s ease;
+}
+.dropdown__btn:hover {
+  color: var(--yellow);
+}
+.dropdown__btn:hover svg {
+  fill: var(--yellow);
+}
+
 .hero {
   position: relative;
   overflow: hidden;

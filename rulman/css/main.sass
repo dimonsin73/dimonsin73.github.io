@@ -212,6 +212,31 @@ h4
         &-link 
             font: 400 0.875rem/1.4 $font-main
             color: var(--white)
+.nav 
+    display: flex
+    align-items: center
+    gap: 14px
+    &__link 
+        font: 500 0.875rem/1.4 $font-main
+        color: var(--white)
+        transition: color 0.3s ease
+        &:hover 
+            color: var(--yellow)
+.dropdown 
+    &__btn 
+        display: flex
+        align-items: center
+        gap: 10px
+        font: 500 0.875rem/1.4 $font-main
+        color: var(--white)
+        transition: color 0.3s ease
+        & svg 
+            fill: var(--white)
+            transition: fill 0.3s ease
+        &:hover 
+            color: var(--yellow)
+            & svg 
+                fill: var(--yellow)
 // ===== HERO БЛОК =====
 .hero
   // Основные настройки секции

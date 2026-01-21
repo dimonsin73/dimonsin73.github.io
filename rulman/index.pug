@@ -1,5 +1,5 @@
 doctype html
-html(lang="en")
+html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -79,3 +79,38 @@ html(lang="en")
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.96654C0 0.88045 0.91397 0 2.04141 0H18.3727C19.5001 0 20.4141 0.880449 20.4141 1.96654V13.7658C20.4141 14.8519 19.5001 15.7323 18.3727 15.7323H2.04141C0.913971 15.7323 0 14.8519 0 13.7658V1.96654ZM3.87875 1.96654L10.207 6.62834L16.5353 1.96654H3.87875ZM18.3727 3.08868L11.4471 8.19047C10.7151 8.72968 9.69895 8.72968 8.96699 8.19047L2.04141 3.08868V13.7658H18.3727V3.08868Z" fill="#FBBB5A"/>
                             </svg>
                             a(href="mailto:info@rulman.ru").header__mail-link info@rulman.ru
+                    .header__menu
+                        .nav 
+                            .dropdown
+                                button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                                    | О компании
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
+                                    </svg>
+                                .dropdown-menu(aria-labelledby="dropdownMenuButton") 
+                                    a.dropdown-item(href="#") Схема работы
+                                    a.dropdown-item(href="#") Отзывы компании
+                                    a.dropdown-item(href="#") Почему мы?
+                                    a.dropdown-item(href="#") Аутсорсинг
+                                    a.dropdown-item(href="#") Сотрудничество
+                            .dropdown
+                                button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                                    | Каталог покрытий
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
+                                    </svg>
+                            .dropdown
+                                button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                                    | Услуги
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
+                                    </svg>
+                            .dropdown
+                                button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                                    | Примеры работ
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
+                                    </svg>
+                            a(href="").nav__link Расчет стоимости
+                            a(href="").nav__link Блог
+                            a(href="").nav__link Контакты
