@@ -9,13 +9,17 @@ html(lang="ru")
         link(rel="stylesheet", href="css/fonts.css")
         link(rel="stylesheet", href="css/main.css")
         script(src="js/bootstrap.bundle.min.js" defer)
+        script(src="js/itcslider.js" defer)
+        script(src="js/main.js" defer)
     body 
         header.header
-            .container 
-                .header__wrapper
-                    .header__banner 
+            .header__banner 
+                .container 
+                    .header__banner-inner
                         p.header__banner-text Минимальная стоимость заказа - 25 000 руб. Принимаем заказы от 1 детали до оптовой партии (партии в 5 000 изделий в месяц)
-                    .header__top 
+            .header__top 
+                .container 
+                    .header__top-inner
                         .header__logo
                             img(src="images/logo.svg", alt="logo").header__logo-img
                         .header__contact 
@@ -68,7 +72,9 @@ html(lang="ru")
                                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.89599 4.12816C10.1016 3.92789 9.9843 3.57832 9.69952 3.54319L6.73362 3.17547C6.6516 3.16536 6.58103 3.11247 6.54803 3.03668L5.31334 0.205334C5.19393 -0.0684448 4.80595 -0.0684448 4.68655 0.205334L3.45205 3.03668C3.41905 3.11247 3.34847 3.16516 3.26645 3.17547L0.300365 3.54319C0.0155827 3.57851 -0.101726 3.92808 0.103898 4.12816L2.31864 6.2846C2.37491 6.3394 2.40009 6.41882 2.3854 6.49614L1.79905 9.59286C1.74431 9.8823 2.05598 10.1011 2.3091 9.95122L4.88073 8.42882C4.95416 8.38529 5.04553 8.38529 5.11897 8.42882L7.69059 9.95122C7.9439 10.1011 8.25539 9.8823 8.20064 9.59286L7.61429 6.49614C7.59961 6.41882 7.62478 6.3394 7.68105 6.2846L9.89599 4.12816Z" fill="#FFC107"/>
                                         </svg>
-                    .header__bottom 
+            .header__bottom
+                .container 
+                    .header__bottom-inner
                         .header__map
                             <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13 7.44434C13 4.44988 10.5409 2 7.49707 2H7.49414C4.45966 2.00015 2 4.44914 2 7.44434C2.00004 8.99743 2.81533 10.6324 3.94531 12.124C4.91959 13.4101 6.05249 14.4913 6.85449 15.1885L7.17676 15.4629L7.20996 15.4922L7.49414 15.752L7.77148 15.5L7.80566 15.4697C8.61135 14.7993 9.93702 13.5948 11.0527 12.124C12.1848 10.6317 13 8.99721 13 7.44434ZM9.26172 7.44434C9.26172 6.49567 8.47358 5.70215 7.49414 5.70215C6.51879 5.7023 5.73535 6.49183 5.73535 7.44434C5.73541 8.39679 6.51882 9.18637 7.49414 9.18652C8.47994 9.18652 9.26166 8.39492 9.26172 7.44434ZM11.2617 7.44434C11.2617 9.51258 9.57137 11.1865 7.49414 11.1865C5.42343 11.1864 3.73541 9.51052 3.73535 7.44434C3.73535 5.3781 5.4234 3.7023 7.49414 3.70215C9.56105 3.70215 11.2617 5.37408 11.2617 7.44434ZM15 7.44434C15 9.6483 13.8736 11.7153 12.6465 13.333C11.4159 14.9552 9.98067 16.2585 9.1123 16.9834L8.37402 17.6562L8.375 17.6572C7.87868 18.1131 7.11317 18.114 6.61621 17.6592L5.89258 16.9971L5.5459 16.7012C4.67969 15.9486 3.43633 14.7643 2.35059 13.3311C1.12625 11.7147 3.50911e-05 9.64802 0 7.44434C0 3.32922 3.3705 0.000150893 7.49414 0H7.49707C11.6284 0 15 3.32829 15 7.44434Z" fill="#FBBB5A"/>
@@ -79,7 +85,9 @@ html(lang="ru")
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.96654C0 0.88045 0.91397 0 2.04141 0H18.3727C19.5001 0 20.4141 0.880449 20.4141 1.96654V13.7658C20.4141 14.8519 19.5001 15.7323 18.3727 15.7323H2.04141C0.913971 15.7323 0 14.8519 0 13.7658V1.96654ZM3.87875 1.96654L10.207 6.62834L16.5353 1.96654H3.87875ZM18.3727 3.08868L11.4471 8.19047C10.7151 8.72968 9.69895 8.72968 8.96699 8.19047L2.04141 3.08868V13.7658H18.3727V3.08868Z" fill="#FBBB5A"/>
                             </svg>
                             a(href="mailto:info@rulman.ru").header__mail-link info@rulman.ru
-                    .header__menu
+            .header__menu
+                .container 
+                    .header__menu-inner
                         .nav 
                             .dropdown
                                 button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
@@ -124,6 +132,31 @@ html(lang="ru")
 
         main.main 
             section.hero 
+                .slider.hero__slider
+                    .slider__wrapper
+                        .slider__items
+                            .slider__item.hero__slider-item.hero__slider-bg1
+                            .slider__item.hero__slider-item.hero__slider-bg2
+                            .slider__item.hero__slider-item.hero__slider-bg1
+                            .slider__item.hero__slider-item.hero__slider-bg2
+                            .slider__item.hero__slider-item.hero__slider-bg1
+                            .slider__item.hero__slider-item.hero__slider-bg2
+                    .slider__bar
+                        .slider__btn.slider__btn-prev
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50821 14.8249C8.0526 14.3693 8.0526 13.6306 8.50821 13.175L16.6749 5.00829C17.1305 4.55268 17.8692 4.55268 18.3248 5.00829C18.7804 5.46391 18.7804 6.2026 18.3248 6.65821L10.9831 13.9999L18.3248 21.3416C18.7804 21.7972 18.7804 22.5359 18.3248 22.9915C17.8692 23.4472 17.1305 23.4472 16.6749 22.9915L8.50821 14.8249Z"/>
+                            </svg>
+                        ol.slider__indicators
+                            li.slider__indicator(data-slide-to="0")
+                            li.slider__indicator(data-slide-to="1")
+                            li.slider__indicator(data-slide-to="2")
+                            li.slider__indicator(data-slide-to="3")
+                            li.slider__indicator(data-slide-to="4")
+                            li.slider__indicator(data-slide-to="5")
+                        .slider__btn.slider__btn-next
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4918 13.1751C19.9474 13.6307 19.9474 14.3694 19.4918 14.825L11.3251 22.9917C10.8695 23.4473 10.1308 23.4473 9.67521 22.9917C9.21959 22.5361 9.21959 21.7974 9.67521 21.3418L17.0169 14.0001L9.67521 6.65837C9.21959 6.20276 9.21959 5.46407 9.67521 5.00846C10.1308 4.55285 10.8695 4.55285 11.3251 5.00846L19.4918 13.1751Z"/>
+                            </svg>
                 .container 
                     .hero__wrapper 
                         h1.hero__title ПРОФЕССИОНАЛЬНАЯ ПОКРАСКА<br> ЛЮБЫХ ИЗДЕЛИЙ ЗАКАЗЧИКА
@@ -168,13 +201,122 @@ html(lang="ru")
                 .container 
                     .services__wrapper 
                         h2.section__title2 Наши услуги
+                        .services__content 
+                            ul.services__list 
+                                li.services__list-item 
+                                    button.services__list-btn(type="button") Виды изделий
+                                li.services__list-item 
+                                    button.services__list-btn(type="button") Вид материала
+                                li.services__list-item 
+                                    button.services__list-btn(type="button") Вид покрытия
+                            .slider.services__slider
+                                .slider__wrapper
+                                    .slider__items
+                                        .slider__item.services__slider-item
+                                            img.services__slider-img(src="images/services/services_1-1.jpg", alt="")
+                                            .services__slider-content
+                                                h3.services__slider-title Аллюминий, профнастил, металл
+                                                p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
+                                            a.services__slider-link(href="") Перейти
+                                        .slider__item.services__slider-item
+                                            img.services__slider-img(src="images/services/services_1-2.jpg", alt="")
+                                            .services__slider-content
+                                                h3.services__slider-title Покраска пластика, пенопласта, PVC
+                                                p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
+                                            a.services__slider-link(href="") Перейти
+                                        .slider__item.services__slider-item
+                                            img.services__slider-img(src="images/services/services_1-3.jpg", alt="")
+                                            .services__slider-content
+                                                h3.services__slider-title Покраска панелей МДФ, ЛМДФ, ЛДСП
+                                                p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
+                                            a.services__slider-link(href="") Перейти
+                                        .slider__item.services__slider-item
+                                            img.services__slider-img(src="images/services/services_1-4.jpg", alt="")
+                                            .services__slider-content
+                                                h3.services__slider-title Покраска дерева, массива, шпона
+                                                p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
+                                            a.services__slider-link(href="") Перейти
+                                        .slider__item.services__slider-item
+                                            img.services__slider-img(src="images/services/services_1-1.jpg", alt="")
+                                            .services__slider-content
+                                                h3.services__slider-title Аллюминий, профнастил, металл
+                                                p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
+                                            a.services__slider-link(href="") Перейти
+                                        .slider__item.services__slider-item
+                                            img.services__slider-img(src="images/services/services_1-2.jpg", alt="")
+                                            .services__slider-content
+                                                h3.services__slider-title Покраска пластика, пенопласта, PVC
+                                                p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
+                                            a.services__slider-link(href="") Перейти
+                                .slider__bar
+                                    .slider__btn.slider__btn-prev
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50821 14.8249C8.0526 14.3693 8.0526 13.6306 8.50821 13.175L16.6749 5.00829C17.1305 4.55268 17.8692 4.55268 18.3248 5.00829C18.7804 5.46391 18.7804 6.2026 18.3248 6.65821L10.9831 13.9999L18.3248 21.3416C18.7804 21.7972 18.7804 22.5359 18.3248 22.9915C17.8692 23.4472 17.1305 23.4472 16.6749 22.9915L8.50821 14.8249Z"/>
+                                        </svg>
+                                    ol.slider__indicators
+                                        li.slider__indicator(data-slide-to="0")
+                                        li.slider__indicator(data-slide-to="1")
+                                        li.slider__indicator(data-slide-to="2")
+                                        li.slider__indicator(data-slide-to="3")
+                                        li.slider__indicator(data-slide-to="4")
+                                        li.slider__indicator(data-slide-to="5")
+                                    .slider__btn.slider__btn-next
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4918 13.1751C19.9474 13.6307 19.9474 14.3694 19.4918 14.825L11.3251 22.9917C10.8695 23.4473 10.1308 23.4473 9.67521 22.9917C9.21959 22.5361 9.21959 21.7974 9.67521 21.3418L17.0169 14.0001L9.67521 6.65837C9.21959 6.20276 9.21959 5.46407 9.67521 5.00846C10.1308 4.55285 10.8695 4.55285 11.3251 5.00846L19.4918 13.1751Z"/>
+                                        </svg>
             section.promo.section
                 .container 
                     .promo__wrapper 
+                        .promo__item 
+                            img.promo__item-img(src="images/promo/promo_1.png", alt="promo")
+                            .promo__content 
+                                h3.promo__content-title Нас выбирают профессионалы
+                                h3.promo__content-title2 Мы покрасили мебель для форума за 5 дней!
+                                a.promo__content-link(href="") Подробнее
+                        .promo__item 
+                            .promo__content.promo__content-gap10
+                                h3.promo__content-title Новая услуга
+                                h3.promo__content-title2 Запуск малярного участка
+                                ul.promo__list 
+                                    li.promo__list-item Производственный консалтинг
+                                    li.promo__list-item Экспертные консультации
+                                    li.promo__list-item Сопровождение технологического процесса
+                                a.promo__content-link(href="") Подробнее
             section.catalog.section
                 .container 
                     .catalog__wrapper 
                         h2.section__title2 Каталог покрытия
+                        .slider.catalog__slider
+                            .slider__wrapper
+                                .slider__items
+                                    .slider__item.catalog__slider-item
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                    .slider__item.__slider-item
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                    .slider__item.catalog__slider-item
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                    .slider__item.catalog__slider-item
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                    .slider__item.catalog__slider-item
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                    .slider__item.catalog__slider-item
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                            .slider__bar
+                                .slider__btn.slider__btn-prev
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50821 14.8249C8.0526 14.3693 8.0526 13.6306 8.50821 13.175L16.6749 5.00829C17.1305 4.55268 17.8692 4.55268 18.3248 5.00829C18.7804 5.46391 18.7804 6.2026 18.3248 6.65821L10.9831 13.9999L18.3248 21.3416C18.7804 21.7972 18.7804 22.5359 18.3248 22.9915C17.8692 23.4472 17.1305 23.4472 16.6749 22.9915L8.50821 14.8249Z"/>
+                                    </svg>
+                                ol.slider__indicators
+                                    li.slider__indicator(data-slide-to="0")
+                                    li.slider__indicator(data-slide-to="1")
+                                    li.slider__indicator(data-slide-to="2")
+                                    li.slider__indicator(data-slide-to="3")
+                                    li.slider__indicator(data-slide-to="4")
+                                    li.slider__indicator(data-slide-to="5")
+                                .slider__btn.slider__btn-next
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4918 13.1751C19.9474 13.6307 19.9474 14.3694 19.4918 14.825L11.3251 22.9917C10.8695 23.4473 10.1308 23.4473 9.67521 22.9917C9.21959 22.5361 9.21959 21.7974 9.67521 21.3418L17.0169 14.0001L9.67521 6.65837C9.21959 6.20276 9.21959 5.46407 9.67521 5.00846C10.1308 4.55285 10.8695 4.55285 11.3251 5.00846L19.4918 13.1751Z"/>
+                                    </svg>
             section.decoration.section
                 .container 
                     .decoration__wrapper
@@ -264,32 +406,459 @@ html(lang="ru")
                 .container 
                     .materials__wrapper
                         h2.section__title2 Окрашиваемые материалы
+                        .slider.materials__slider
+                            .slider__wrapper
+                                .slider__items
+                                    .slider__item.materials__slider-item
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                    .slider__item.materials__slider-item
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                    .slider__item.materials__slider-item
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                    .slider__item.materials__slider-item
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                    .slider__item.materials__slider-item
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                    .slider__item.materials__slider-item
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                            .slider__bar
+                                .slider__btn.slider__btn-prev
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50821 14.8249C8.0526 14.3693 8.0526 13.6306 8.50821 13.175L16.6749 5.00829C17.1305 4.55268 17.8692 4.55268 18.3248 5.00829C18.7804 5.46391 18.7804 6.2026 18.3248 6.65821L10.9831 13.9999L18.3248 21.3416C18.7804 21.7972 18.7804 22.5359 18.3248 22.9915C17.8692 23.4472 17.1305 23.4472 16.6749 22.9915L8.50821 14.8249Z"/>
+                                    </svg>
+                                ol.slider__indicators
+                                    li.slider__indicator(data-slide-to="0")
+                                    li.slider__indicator(data-slide-to="1")
+                                    li.slider__indicator(data-slide-to="2")
+                                    li.slider__indicator(data-slide-to="3")
+                                    li.slider__indicator(data-slide-to="4")
+                                    li.slider__indicator(data-slide-to="5")
+                                .slider__btn.slider__btn-next
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4918 13.1751C19.9474 13.6307 19.9474 14.3694 19.4918 14.825L11.3251 22.9917C10.8695 23.4473 10.1308 23.4473 9.67521 22.9917C9.21959 22.5361 9.21959 21.7974 9.67521 21.3418L17.0169 14.0001L9.67521 6.65837C9.21959 6.20276 9.21959 5.46407 9.67521 5.00846C10.1308 4.55285 10.8695 4.55285 11.3251 5.00846L19.4918 13.1751Z"/>
+                                    </svg>
             section.about.section
                 .container 
                     .about__wrapper 
+                        img.about__img(src="images/about/about_1.png", alt="")
+                        .about__content 
+                            .about__paragraph
+                                p.about__content-text Компания «Рульман» производит покраску любых изделий: электрофурнитуры, мебели, фасадов, панелей, выставочных стендов, торгового и промышленного оборудования, а также других изделий из МДФ, дерева, пластика, металла и стекла.
+                                p.about__content-text Покраска разной сложности: от обычной эмали, до высокого глянца на полиэфирной основе.
+                            .about__paragraph
+                                p.about__content-text Оказываем техническую консультацию и разрабатываем технологии окраски под задачу любого клиента.
+                                p.about__content-text На нашем сайте Вы можете ознакомиться с ценами на основные 
+                                    a.about__content-link(href="https://rulman.ru/vidy-pokrytij/" target="_blank") виды отделки.
             section.portfolio.section
                 .container 
                     .portfolio__wrapper
                         h2.section__title2 Наши работы
+                        .slider.portfolio__slider
+                            .slider__wrapper
+                                .slider__items
+                                    .slider__item.portfolio__slider-item
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_1.png", alt="portfolio")
+                                        h3.portfolio__slider-title Покраска фасадов МДФ
+                                    .slider__item.portfolio__slider-item
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_2.png", alt="portfolio")
+                                        h3.portfolio__slider-title Покраска фасадов МДФ
+                                    .slider__item.portfolio__slider-item
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_3.png", alt="portfolio")
+                                        h3.portfolio__slider-title Покраска фасадов МДФ
+                                    .slider__item.portfolio__slider-item
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_1.png", alt="portfolio")
+                                        h3.portfolio__slider-title Покраска фасадов МДФ
+                                    .slider__item.portfolio__slider-item
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_2.png", alt="portfolio")
+                                        h3.portfolio__slider-title Покраска фасадов МДФ
+                                    .slider__item.portfolio__slider-item
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_3.png", alt="portfolio")
+                                        h3.portfolio__slider-title Покраска фасадов МДФ
+                            .slider__bar
+                                .slider__btn.slider__btn-prev
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50821 14.8249C8.0526 14.3693 8.0526 13.6306 8.50821 13.175L16.6749 5.00829C17.1305 4.55268 17.8692 4.55268 18.3248 5.00829C18.7804 5.46391 18.7804 6.2026 18.3248 6.65821L10.9831 13.9999L18.3248 21.3416C18.7804 21.7972 18.7804 22.5359 18.3248 22.9915C17.8692 23.4472 17.1305 23.4472 16.6749 22.9915L8.50821 14.8249Z"/>
+                                    </svg>
+                                ol.slider__indicators
+                                    li.slider__indicator(data-slide-to="0")
+                                    li.slider__indicator(data-slide-to="1")
+                                    li.slider__indicator(data-slide-to="2")
+                                    li.slider__indicator(data-slide-to="3")
+                                    li.slider__indicator(data-slide-to="4")
+                                    li.slider__indicator(data-slide-to="5")
+                                .slider__btn.slider__btn-next
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4918 13.1751C19.9474 13.6307 19.9474 14.3694 19.4918 14.825L11.3251 22.9917C10.8695 23.4473 10.1308 23.4473 9.67521 22.9917C9.21959 22.5361 9.21959 21.7974 9.67521 21.3418L17.0169 14.0001L9.67521 6.65837C9.21959 6.20276 9.21959 5.46407 9.67521 5.00846C10.1308 4.55285 10.8695 4.55285 11.3251 5.00846L19.4918 13.1751Z"/>
+                                    </svg>
             section.benefits.section
                 .container 
                     .benefits__wrapper
                         h2.section__title2 У нас Вы получаете
+                        .benefits__content 
+                            .benefits__item 
+                                .benefits__top 
+                                    <svg width="49" height="37" viewBox="0 0 49 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_196_1350)">
+                                    <path d="M34.15 18.1999V10.8999V7.47994C34.15 4.73994 31.92 2.50994 29.17 2.50994H27.29V1.47994C27.29 0.629941 26.6 -0.0600586 25.75 -0.0600586C24.9 -0.0600586 24.21 0.629941 24.21 1.47994V2.50994H17V1.47994C17 0.629941 16.31 -0.0600586 15.46 -0.0600586C14.61 -0.0600586 13.92 0.629941 13.92 1.47994V2.50994H12.03C9.27004 2.47994 7.04004 4.70994 7.04004 7.45994V28.0499C7.04004 30.7899 9.27004 33.0299 12.01 33.0299H24.89C26.65 35.5099 29.51 37.0299 32.59 37.0299C37.82 37.0299 42.08 32.7799 42.08 27.5599C42.08 22.8599 38.63 18.9499 34.14 18.2099L34.15 18.1999ZM12.01 5.56994H13.9V6.59994C13.9 7.44994 14.59 8.13994 15.44 8.13994C16.29 8.13994 16.98 7.44994 16.98 6.59994V5.56994H24.19V6.59994C24.19 7.44994 24.88 8.13994 25.73 8.13994C26.58 8.13994 27.27 7.44994 27.27 6.59994V5.56994H29.15C30.19 5.56994 31.04 6.41994 31.04 7.45994V9.34994H10.13V7.45994C10.13 6.41994 10.98 5.56994 12.02 5.56994H12.01ZM12.01 29.9299C10.97 29.9299 10.12 29.0799 10.12 28.0399V12.4299H31.05V18.1799C31.05 18.1799 30.98 18.1999 30.94 18.2099C30.46 18.2999 29.99 18.4199 29.54 18.5699C29.46 18.5999 29.38 18.6299 29.3 18.6599C28.85 18.8299 28.41 19.0299 27.99 19.2599C27.93 19.2899 27.88 19.3299 27.82 19.3599C27.39 19.6199 26.97 19.8999 26.58 20.2199C26.58 20.2199 26.58 20.2199 26.57 20.2299C26.19 20.5499 25.83 20.8999 25.5 21.2799C25.46 21.3299 25.42 21.3699 25.38 21.4199C25.07 21.7899 24.79 22.1799 24.54 22.5899C24.5 22.6599 24.45 22.7299 24.41 22.7999C24.17 23.2099 23.97 23.6399 23.79 24.0899C23.76 24.1699 23.73 24.2499 23.7 24.3299C23.53 24.7899 23.4 25.2599 23.3 25.7499C23.29 25.8099 23.28 25.8799 23.27 25.9399C23.18 26.4599 23.13 26.9899 23.13 27.5399C23.13 27.9499 23.16 28.3599 23.21 28.7599C23.23 28.9099 23.27 29.0599 23.3 29.2199C23.34 29.4599 23.38 29.6899 23.44 29.9199H12.01V29.9299ZM32.6 33.9299C30.31 33.9299 28.19 32.6999 27.05 30.6999C26.5 29.7599 26.21 28.6699 26.21 27.5499C26.21 24.0199 29.07 21.1499 32.59 21.1499C36.11 21.1499 38.99 24.0199 38.99 27.5499C38.99 31.0799 36.12 33.9299 32.59 33.9299H32.6ZM36.8 28.2599C37.53 28.6999 37.77 29.6499 37.33 30.3799C37.04 30.8599 36.53 31.1299 36 31.1299C35.73 31.1299 35.46 31.0599 35.21 30.9099L31.81 28.8699C31.76 28.8399 31.73 28.7899 31.68 28.7499C31.59 28.6799 31.51 28.6199 31.44 28.5299C31.38 28.4599 31.33 28.3799 31.28 28.2999C31.23 28.2099 31.19 28.1299 31.15 28.0299C31.12 27.9299 31.1 27.8299 31.09 27.7299C31.09 27.6699 31.05 27.6099 31.05 27.5499V23.6999C31.05 22.8499 31.74 22.1599 32.59 22.1599C33.44 22.1599 34.13 22.8499 34.13 23.6999V26.6799L36.78 28.2699L36.8 28.2599Z" fill="#FBBB5A"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_196_1350">
+                                    <rect width="49" height="37" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                    h3.benefits__item-title 5-14 дней
+                                p.benefits__item-text Стандартные сроки окрашивания. Срочная покраска до 3 дней.
+                            .benefits__item 
+                                .benefits__top 
+                                    <svg width="49" height="38" viewBox="0 0 49 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24.5102 36.6799C24.2902 36.6799 24.0702 36.6299 23.8602 36.5399C15.5402 32.6999 10.9502 26.3499 10.9502 18.6699V7.68994C10.9502 7.06994 11.3202 6.50994 11.8902 6.26994L23.9002 1.12994C24.2902 0.959941 24.7302 0.959941 25.1202 1.12994L37.1302 6.27994C37.7002 6.51994 38.0702 7.07994 38.0702 7.69994V18.6799C38.0702 26.3599 33.4902 32.7099 25.1602 36.5499C24.9602 36.6399 24.7302 36.6899 24.5102 36.6899V36.6799ZM14.0402 8.70994V18.6699C14.0402 26.8799 20.3202 31.3599 24.5002 33.4299C28.6902 31.3599 34.9602 26.8799 34.9602 18.6699V8.70994L24.5002 4.22994L14.0402 8.70994ZM23.8802 22.5099L30.7402 15.6499C31.3402 15.0499 31.3402 14.0699 30.7402 13.4699C30.1402 12.8699 29.1602 12.8699 28.5602 13.4699L22.7902 19.2399L20.4502 16.8999C19.8502 16.2999 18.8702 16.2999 18.2702 16.8999C17.6702 17.4999 17.6702 18.4799 18.2702 19.0799L21.7002 22.5099C22.0002 22.8099 22.4002 22.9599 22.7902 22.9599C23.1802 22.9599 23.5802 22.8099 23.8802 22.5099Z" fill="#FBBB5A"/>
+                                    </svg>
+                                    h3.benefits__item-title Заводское качество
+                                p.benefits__item-text Покраска лучшими профессиональными ЛКМ имеющимися на рынке. Схема работы
+                            .benefits__item 
+                                .benefits__top 
+                                    <svg width="50" height="37" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_196_1375)">
+                                    <path d="M11.9717 37.34C11.5117 37.34 11.0417 37.29 10.5717 37.17C9.01173 36.79 7.69173 35.84 6.85173 34.47C6.01173 33.1 5.76175 31.49 6.13175 29.93C6.66175 27.72 8.36173 26.02 10.5717 25.49L7.68173 22.61C5.40173 20.32 5.40173 16.61 7.68173 14.33L10.5717 11.44C11.2217 10.79 12.0817 10.44 12.9917 10.43C13.9117 10.43 14.7717 10.79 15.4217 11.44C15.8717 11.89 16.1817 12.45 16.3317 13.07C16.6617 14.45 18.0617 15.3 19.4317 14.97C20.1017 14.81 20.6617 14.4 21.0217 13.81C21.3817 13.23 21.4917 12.53 21.3317 11.87C21.1017 10.92 20.3817 10.19 19.4317 9.97002C18.5417 9.76002 17.7818 9.21002 17.3118 8.43002C16.8418 7.65002 16.6917 6.73002 16.9017 5.84002C17.0517 5.23002 17.3618 4.66002 17.8118 4.21002L20.7017 1.32002C22.9817 -0.95998 26.7017 -0.96998 28.9817 1.32002L31.8718 4.21002C32.6518 0.990021 35.9017 -0.999979 39.1117 -0.22998C40.6717 0.14002 41.9917 1.10002 42.8317 2.47002C43.6717 3.84002 43.9217 5.45002 43.5517 7.01002C43.0217 9.22002 41.3217 10.92 39.1117 11.45L42.0017 14.34C43.1117 15.45 43.7217 16.92 43.7217 18.48C43.7217 20.04 43.1117 21.51 42.0017 22.62L39.1117 25.51C38.4617 26.16 37.6017 26.52 36.6917 26.52C35.7717 26.52 34.9117 26.16 34.2717 25.51C33.8217 25.06 33.5117 24.5 33.3617 23.88C33.2017 23.21 32.7917 22.65 32.2017 22.29C31.6117 21.93 30.9317 21.82 30.2617 21.98C29.5917 22.14 29.0217 22.55 28.6717 23.14C28.3117 23.73 28.2017 24.42 28.3617 25.09C28.5917 26.03 29.3117 26.76 30.2617 26.99C31.1517 27.2 31.9117 27.75 32.3917 28.53C32.8717 29.31 33.0217 30.23 32.8017 31.13C32.6517 31.75 32.3417 32.31 31.8917 32.76L29.0017 35.65C26.7217 37.93 23.0017 37.93 20.7217 35.65L17.8317 32.76C17.1717 35.51 14.7017 37.36 11.9917 37.36L11.9717 37.34ZM13.0017 13.86L10.1117 16.75C9.17174 17.69 9.17174 19.23 10.1117 20.18L13.0017 23.06C13.4517 23.51 13.7617 24.07 13.9117 24.69C14.1217 25.58 13.9817 26.5 13.5017 27.28C13.0217 28.06 12.2717 28.61 11.3717 28.82C10.4317 29.05 9.70174 29.78 9.47174 30.72C9.31174 31.39 9.42174 32.08 9.78174 32.67C10.1417 33.26 10.7017 33.67 11.3717 33.83C12.7517 34.16 14.1417 33.31 14.4717 31.93C14.6217 31.32 14.9317 30.75 15.3817 30.3C16.6817 29 18.9417 29 20.2317 30.3L23.1218 33.19C24.0718 34.13 25.6117 34.13 26.5517 33.19L29.4417 30.31C27.2317 29.78 25.5317 28.08 25.0017 25.87C24.2317 22.65 26.2217 19.4 29.4417 18.63C31.0017 18.26 32.6117 18.51 33.9817 19.35C35.3517 20.19 36.3117 21.51 36.6817 23.07L39.5717 20.19C40.0317 19.73 40.2817 19.12 40.2817 18.47C40.2817 17.82 40.0317 17.21 39.5717 16.75L36.6817 13.87C36.2317 13.42 35.9217 12.86 35.7717 12.24C35.3317 10.4 36.4718 8.55002 38.3118 8.10002C39.2618 7.87002 39.9917 7.15002 40.2117 6.20002C40.3717 5.53002 40.2617 4.84002 39.9017 4.25002C39.5417 3.66002 38.9818 3.25002 38.3118 3.09002C36.9418 2.77002 35.5417 3.61002 35.2117 4.99002C35.0617 5.60002 34.7517 6.17002 34.3017 6.62002C33.6517 7.27002 32.7918 7.62002 31.8718 7.62002C30.9518 7.62002 30.0917 7.26002 29.4517 6.61002L26.5618 3.73002C25.6418 2.81002 24.0517 2.81002 23.1317 3.73002L20.2417 6.61002C22.4517 7.14002 24.1517 8.84002 24.6817 11.05C25.0617 12.61 24.8017 14.22 23.9617 15.59C23.1217 16.96 21.8017 17.92 20.2417 18.29C17.0217 19.06 13.7717 17.07 13.0017 13.85V13.86Z" fill="#FBBB5A"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_196_1375">
+                                    <rect width="50" height="37" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                    h3.benefits__item-title Решение любой задачи
+                                p.benefits__item-text Разрабатываем технологии окраски под задачу любого клиента. Любые покрытия
+                            .benefits__item 
+                                .benefits__top 
+                                    <svg width="49" height="37" viewBox="0 0 49 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M36.2109 18.4798L36.7609 17.9298C38.9909 15.6098 38.9209 11.9098 36.6209 9.70982L33.3709 6.45982C33.3709 6.45982 33.3409 6.42982 33.3209 6.40982C32.2209 5.32982 30.7709 4.73982 29.2309 4.73982H29.2209C27.6609 4.73982 26.2009 5.34982 25.1009 6.44982L24.0809 7.46982V6.46982C24.0809 3.62982 21.7709 1.31982 18.9309 1.31982H12.0709C9.23089 1.31982 6.9209 3.62982 6.9209 6.46982V27.0598C6.9209 31.7898 10.7709 35.6398 15.5009 35.6398H36.0909C38.9309 35.6398 41.2409 33.3298 41.2409 30.4898V23.6298C41.2409 20.8298 38.9909 18.5598 36.2109 18.4998V18.4798ZM27.5309 8.86982C27.9809 8.41982 28.5909 8.15982 29.2309 8.15982C29.8709 8.15982 30.4709 8.40982 30.9509 8.87982L30.9709 8.89982L34.2209 12.1498C35.1709 13.0698 35.2009 14.5898 34.2409 15.5998L24.0909 25.7998V12.3198L27.5309 8.86982ZM10.3609 27.0398V6.45982C10.3609 5.50982 11.1309 4.73982 12.0809 4.73982H18.9409C19.8909 4.73982 20.6609 5.50982 20.6609 6.45982V27.0498C20.6609 29.8898 18.3509 32.1998 15.5109 32.1998C12.6709 32.1998 10.3609 29.8898 10.3609 27.0498V27.0398ZM37.8109 30.4698C37.8109 31.4198 37.0409 32.1898 36.0909 32.1898H22.5609L32.8109 21.8998H36.1009C37.0509 21.8998 37.8209 22.6698 37.8209 23.6198V30.4798L37.8109 30.4698ZM15.5309 28.7598C14.5809 28.7598 13.8109 27.9898 13.8109 27.0398C13.8109 26.0898 14.5709 25.3198 15.5209 25.3198H15.5409C16.4909 25.3198 17.2609 26.0898 17.2609 27.0398C17.2609 27.9898 16.4909 28.7598 15.5409 28.7598H15.5309Z" fill="#FBBB5A"/>
+                                    </svg>
+                                    h3.benefits__item-title 2 000+ оттенков
+                                p.benefits__item-text Выбор цвета не ограничен каталогами: RAL, NCS, PANTONE, WCP. Колеровка по образцу.
+                            .benefits__item 
+                                .benefits__top 
+                                    <svg width="49" height="37" viewBox="0 0 49 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M32.305 13.6998V10.8898C32.305 6.72985 28.915 3.33984 24.755 3.33984C20.595 3.33984 17.205 6.72985 17.205 10.8898V13.6998C14.785 14.0398 12.915 16.0998 12.915 18.6098V28.8998C12.915 31.6398 15.145 33.8799 17.885 33.8799H31.605C34.345 33.8799 36.585 31.6498 36.585 28.8998V18.6098C36.585 16.0998 34.715 14.0398 32.295 13.6998H32.305ZM24.765 6.42984C27.225 6.42984 29.225 8.42985 29.225 10.8898V13.6299H20.305V10.8898C20.305 8.42985 22.305 6.42984 24.765 6.42984ZM33.505 28.8998C33.505 29.9398 32.655 30.7898 31.615 30.7898H17.895C16.855 30.7898 16.005 29.9398 16.005 28.8998V18.6098C16.005 17.5698 16.855 16.7198 17.895 16.7198H31.615C32.655 16.7198 33.505 17.5698 33.505 18.6098V28.8998ZM26.305 22.0398V27.1898C26.305 28.0399 25.615 28.7298 24.765 28.7298C23.915 28.7298 23.225 28.0399 23.225 27.1898V22.0398C23.225 21.1898 23.915 20.4998 24.765 20.4998C25.615 20.4998 26.305 21.1898 26.305 22.0398Z" fill="#FBBB5A"/>
+                                    </svg>
+                                    h3.benefits__item-title Конфиденциальность
+                                p.benefits__item-text Соблюдаем конфиденциальность при сопровождении проектов
+                            .benefits__item 
+                                .benefits__top 
+                                    <svg width="50" height="38" viewBox="0 0 50 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_196_1365)">
+                                    <path d="M38.9699 -0.360123H24.3899C23.9799 -0.360123 23.5899 -0.200126 23.2999 0.0898743L7.24988 16.1399C6.20988 17.1799 5.62988 18.5699 5.62988 20.0399C5.62988 21.5099 6.19988 22.8999 7.24988 23.9399L19.6399 36.3299C20.7199 37.4099 22.1299 37.9399 23.5399 37.9399C24.9499 37.9399 26.3699 37.3999 27.4399 36.3299L43.4899 20.2799C43.7799 19.9899 43.9399 19.5999 43.9399 19.1899V4.60988C43.9399 1.86988 41.7099 -0.370117 38.9599 -0.370117L38.9699 -0.360123ZM40.8599 18.5599L25.2599 34.1599C24.3099 35.1099 22.7699 35.1099 21.8199 34.1599L9.42987 21.7699C8.96987 21.3099 8.71988 20.6999 8.71988 20.0499C8.71988 19.3999 8.96987 18.7899 9.42987 18.3299L25.0299 2.72987H38.9699C40.0099 2.72987 40.8599 3.57987 40.8599 4.61987V18.5599ZM34.1699 4.81989C32.0999 4.81989 30.4199 6.49989 30.4199 8.56989C30.4199 10.6399 32.0999 12.3199 34.1699 12.3199C36.2399 12.3199 37.9199 10.6399 37.9199 8.56989C37.9199 6.49989 36.2399 4.81989 34.1699 4.81989ZM34.1699 9.21988C33.8099 9.21988 33.5099 8.92988 33.5099 8.55988C33.5099 8.18988 33.8099 7.89987 34.1699 7.89987C34.5299 7.89987 34.8299 8.19988 34.8299 8.55988C34.8299 8.91988 34.5399 9.21988 34.1699 9.21988ZM25.7499 11.2199H21.2899C20.4399 11.2199 19.7499 11.9099 19.7499 12.7599V21.7999H17.3499C16.4999 21.7999 15.8099 22.4899 15.8099 23.3399C15.8099 24.1899 16.4999 24.8799 17.3499 24.8799H19.7499V26.4799C19.7499 27.3299 20.4399 28.0199 21.2899 28.0199C22.1399 28.0199 22.8299 27.3299 22.8299 26.4799V24.8799H25.2299C26.0799 24.8799 26.7699 24.1899 26.7699 23.3399C26.7699 22.4899 26.0799 21.7999 25.2299 21.7999H22.8299V21.1699H25.7499C28.4899 21.1699 30.7299 18.9399 30.7299 16.1899C30.7299 13.4399 28.4999 11.2099 25.7499 11.2099V11.2199ZM25.7499 18.0799H22.8299V14.3099H25.7499C26.7899 14.3099 27.6399 15.1599 27.6399 16.1999C27.6399 17.2399 26.7899 18.0899 25.7499 18.0899V18.0799Z" fill="#FBBB5A"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_196_1365">
+                                    <rect width="50" height="38" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                    h3.benefits__item-title Честная цена
+                                p.benefits__item-text Без скрытых платежей и доплат. С НДС. Возможна отсрочка
             section.suppliers.section
                 .container 
                     .suppliers__wrapper
                         h2.section__title2 Надежные поставщики
+                        .suppliers__content 
+                            .suppliers__item 
+                                img.suppliers__item-img(src="images/suppliers/suppliers_1.png", alt="supplier")
+                                img.suppliers__item-img(src="images/suppliers/suppliers_2.png", alt="supplier")
+                                img.suppliers__item-img(src="images/suppliers/suppliers_3.png", alt="supplier")
+                                img.suppliers__item-img(src="images/suppliers/suppliers_4.png", alt="supplier")
+                                img.suppliers__item-img(src="images/suppliers/suppliers_5.png", alt="supplier")
+                                img.suppliers__item-img(src="images/suppliers/suppliers_6.png", alt="supplier")
+                            .suppliers__item 
+                                img.suppliers__item-img(src="images/suppliers/suppliers_7.png", alt="supplier")
+                                img.suppliers__item-img(src="images/suppliers/suppliers_8.png", alt="supplier")
+                                img.suppliers__item-img(src="images/suppliers/suppliers_9.png", alt="supplier")
+                                img.suppliers__item-img(src="images/suppliers/suppliers_10.png", alt="supplier")
+                                img.suppliers__item-img(src="images/suppliers/suppliers_11.png", alt="supplier")
             section.industries.section
                 .container 
                     .industries__wrapper
                         h2.section__title2 Отрасли обслуживания
+                        .industries__content 
+                            .industries__item 
+                                h3.industries__item-title Рекламные конструкции и торговое оборудование 
+                                ul.industries__list 
+                                    li.industries__list-item покраска рекламных конструкций
+                                    li.industries__list-item покраска макетов и подмакетников
+                                    li.industries__list-item покраска букв и логотипов
+                                    li.industries__list-item покраска рекламных вывесок
+                                    li.industries__list-item покраска объемных элементов
+                                    li.industries__list-item покраска брендированных изделий
+                                    li.industries__list-item покраска предметов дизайна и изделий из пластика
+                                    li.industries__list-item покраска торгового оборудования
+                                    li.industries__list-item покраска подиумов и пьедесталов
+                                    li.industries__list-item покраска стеллажей
+                                    li.industries__list-item покраска элементов выставочных стендов
+                                    li.industries__list-item покраска брендированных изделий
+                                    li.industries__list-item покраска предметов дизайна и изделий из пластика
+                            .industries__item 
+                                h3.industries__item-title Коммерческая мебель и интерьер
+                                ul.industries__list 
+                                    li.industries__list-item покраска ресепшн
+                                    li.industries__list-item покраска коммерческой мебели
+                                    li.industries__list-item покраска предметов интерьера, арт-объектов, светильников
+                                    li.industries__list-item покраска мебели и мебельных деталей (фасадов, полуфабрикатов)
+                                    li.industries__list-item покраска стульев и столов
+                                    li.industries__list-item покраска навигационных указателей
+                                    li.industries__list-item покраска фанкойлов
+                                    li.industries__list-item покраска предметов дизайна и изделий из пластика
+                            .industries__item 
+                                h3.industries__item-title Электроника и электрофурнитура
+                                ul.industries__list 
+                                    li.industries__list-item покраска аудиотехники
+                                    li.industries__list-item покраска электрофурнитуры
+                                    li.industries__list-item покраска корпусов электроприборов
+                                    li.industries__list-item 
+                                        a(href="https://rulman.ru/partneram/uslugi/pokraska-kamer-videonablyudeniya/" target="_blank") покраска камер видеонаблюдения
+                                    li.industries__list-item покраска кондиционеров
+                                    li.industries__list-item покраскаа розеток и выключателей
+                                    li.industries__list-item покраска светильников
+                                    li.industries__list-item покраска тепловентиляторов
+                                    li.industries__list-item покраска аудиосистем и музыкальных инструментов
+                                    li.industries__list-item покраска кабель-каналов
+                                    li.industries__list-item покраска USB розеток и выключателей
+                                    li.industries__list-item покраска щитов управления
             section.reviews.section
                 .container 
-                    .reciews__wrapper
+                    .reviews__wrapper
                         h2.section__title2 Отзывы
+                        .slider.reviews__slider
+                            .slider__wrapper
+                                .slider__items
+                                    .slider__item.reviews__slider-item
+                                        .reviews__slider-stars 
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                        p.reviews__slider-author Роман В.
+                                        p.reviews__slider-text Отдавали в покраску стол, старый и тяжелый, его долго шкурили и чистили, но покрасили просто замечательно, спасибо большое!
+                                    .slider__item.reviews__slider-item
+                                        .reviews__slider-stars 
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                        p.reviews__slider-author Роман В.
+                                        p.reviews__slider-text Отдавали в покраску стол, старый и тяжелый, его долго шкурили и чистили, но покрасили просто замечательно, спасибо большое!
+                                    .slider__item.reviews__slider-item
+                                        .reviews__slider-stars 
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                        p.reviews__slider-author Роман В.
+                                        p.reviews__slider-text Отдавали в покраску стол, старый и тяжелый, его долго шкурили и чистили, но покрасили просто замечательно, спасибо большое!
+                                    .slider__item.reviews__slider-item
+                                        .reviews__slider-stars 
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                        p.reviews__slider-author Роман В.
+                                        p.reviews__slider-text Отдавали в покраску стол, старый и тяжелый, его долго шкурили и чистили, но покрасили просто замечательно, спасибо большое!
+                                    .slider__item.reviews__slider-item
+                                        .reviews__slider-stars 
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                        p.reviews__slider-author Роман В.
+                                        p.reviews__slider-text Отдавали в покраску стол, старый и тяжелый, его долго шкурили и чистили, но покрасили просто замечательно, спасибо большое!
+                                    .slider__item.reviews__slider-item
+                                        .reviews__slider-stars 
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                            .reviews__slider-star
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5406 3.5162C10.9705 2.16126 9.02912 2.16127 8.45911 3.5162L6.99764 6.99014L3.20419 7.29081C1.72465 7.40808 1.12472 9.23355 2.25197 10.1882L5.14218 12.6359L4.25917 16.2957C3.91478 17.7231 5.48543 18.8513 6.75212 18.0864L9.99984 16.1252L13.2476 18.0864C14.5143 18.8513 16.0849 17.7231 15.7405 16.2957L14.8575 12.6359L17.7477 10.1882C18.875 9.23355 18.275 7.40808 16.7955 7.29081L13.002 6.99014L11.5406 3.5162Z" fill="#FBBB5A"/>
+                                                </svg>
+                                        p.reviews__slider-author Роман В.
+                                        p.reviews__slider-text Отдавали в покраску стол, старый и тяжелый, его долго шкурили и чистили, но покрасили просто замечательно, спасибо большое!
+                            .slider__bar
+                                .slider__btn.slider__btn-prev
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.50821 14.8249C8.0526 14.3693 8.0526 13.6306 8.50821 13.175L16.6749 5.00829C17.1305 4.55268 17.8692 4.55268 18.3248 5.00829C18.7804 5.46391 18.7804 6.2026 18.3248 6.65821L10.9831 13.9999L18.3248 21.3416C18.7804 21.7972 18.7804 22.5359 18.3248 22.9915C17.8692 23.4472 17.1305 23.4472 16.6749 22.9915L8.50821 14.8249Z"/>
+                                    </svg>
+                                ol.slider__indicators
+                                    li.slider__indicator(data-slide-to="0")
+                                    li.slider__indicator(data-slide-to="1")
+                                    li.slider__indicator(data-slide-to="2")
+                                    li.slider__indicator(data-slide-to="3")
+                                    li.slider__indicator(data-slide-to="4")
+                                    li.slider__indicator(data-slide-to="5")
+                                .slider__btn.slider__btn-next
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4918 13.1751C19.9474 13.6307 19.9474 14.3694 19.4918 14.825L11.3251 22.9917C10.8695 23.4473 10.1308 23.4473 9.67521 22.9917C9.21959 22.5361 9.21959 21.7974 9.67521 21.3418L17.0169 14.0001L9.67521 6.65837C9.21959 6.20276 9.21959 5.46407 9.67521 5.00846C10.1308 4.55285 10.8695 4.55285 11.3251 5.00846L19.4918 13.1751Z"/>
+                                    </svg>
             section.faq.section
                 .container 
                     .faq__wrapper
+                        .faq__item
+                            .faq__head
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.33333 1.66667C4.65143 1.66667 1.66667 4.65143 1.66667 8.33333C1.66667 12.0152 4.65143 15 8.33333 15C12.0152 15 15 12.0152 15 8.33333C15 4.65143 12.0152 1.66667 8.33333 1.66667ZM0 8.33333C0 3.73096 3.73096 0 8.33333 0C12.9357 0 16.6667 3.73096 16.6667 8.33333C16.6667 12.9357 12.9357 16.6667 8.33333 16.6667C3.73096 16.6667 0 12.9357 0 8.33333ZM8.40527 5.48564C8.07359 5.47297 7.75046 5.59258 7.50697 5.81816C7.26347 6.04373 7.11956 6.3568 7.10689 6.68848C7.08932 7.14838 6.70226 7.50696 6.24236 7.48939C5.78245 7.47182 5.42387 7.08476 5.44144 6.62486C5.47098 5.85147 5.80654 5.12149 6.3743 4.59552C6.94206 4.06954 7.69551 3.79065 8.46889 3.82019C9.24228 3.84973 9.97226 4.18529 10.4982 4.75305C11.0219 5.31836 11.3007 6.06776 11.2739 6.83764C11.2673 7.21603 11.1857 7.5894 11.034 7.93616C10.8809 8.28601 10.6594 8.60172 10.3826 8.86477C10.1057 9.12781 9.77912 9.33287 9.42191 9.46791C9.33802 9.49962 9.25284 9.52732 9.16667 9.55096V10C9.16667 10.4602 8.79357 10.8333 8.33333 10.8333C7.8731 10.8333 7.5 10.4602 7.5 10V8.81833C7.5 8.59197 7.59208 8.37535 7.75508 8.21828C7.91808 8.0612 8.13796 7.97719 8.36417 7.98557C8.52385 7.99148 8.6831 7.96542 8.83257 7.90892C8.98204 7.85241 9.1187 7.76661 9.23454 7.65654C9.35038 7.54648 9.44305 7.41437 9.50711 7.26798C9.57117 7.12159 9.60533 6.96388 9.60758 6.8041L9.60811 6.78402C9.62078 6.45234 9.50117 6.12921 9.27559 5.88572C9.05002 5.64222 8.73695 5.49831 8.40527 5.48564ZM7.49166 12.5065C7.49166 12.0463 7.86475 11.6732 8.32499 11.6732H8.33333C8.79356 11.6732 9.16666 12.0463 9.16666 12.5065C9.16666 12.9667 8.79356 13.3398 8.33333 13.3398H8.32499C7.86475 13.3398 7.49166 12.9667 7.49166 12.5065Z"/>
+                                </svg>
+                                p.faq__head-text Отличается ли профессиональная покраска двери от самостоятельной?
+                                <svg class="faq__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2561 13.2559C9.93065 13.5814 9.40301 13.5814 9.07757 13.2559L3.24424 7.42259C2.9188 7.09715 2.9188 6.56952 3.24424 6.24408C3.56968 5.91864 4.09732 5.91864 4.42275 6.24408L9.66683 11.4882L14.9109 6.24408C15.2363 5.91864 15.764 5.91864 16.0894 6.24408C16.4149 6.56952 16.4149 7.09715 16.0894 7.42259L10.2561 13.2559Z"/>
+                                </svg>
+                            .faq__inner
+                                .faq__content
+                                    p.faq__content-text Вы вполне можете самостоятельно выполнить этот процесс. Но все таки профессиональная покраска имеет ряд существенных преимуществ: опыт и умение обрабатывать различные типы дверных поверхностей (подготовка, выбор подходящих материалов, равномерное нанесение краски без разводов и неровностей).
+                                    p.faq__content-text Использование профессионального инструментов и материалов, что позволяет достичь более долговечного и качественного результата. Мастера могут выполнить задачу быстрее и эффективнее, чем человек не имеющий опыта в этом деле, что освобождает вас от необходимости тратить много времени и усилий, освобождая вас от лишних хлопот и стресса.
+                        .faq__item 
+                            .faq__head
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.33333 1.66667C4.65143 1.66667 1.66667 4.65143 1.66667 8.33333C1.66667 12.0152 4.65143 15 8.33333 15C12.0152 15 15 12.0152 15 8.33333C15 4.65143 12.0152 1.66667 8.33333 1.66667ZM0 8.33333C0 3.73096 3.73096 0 8.33333 0C12.9357 0 16.6667 3.73096 16.6667 8.33333C16.6667 12.9357 12.9357 16.6667 8.33333 16.6667C3.73096 16.6667 0 12.9357 0 8.33333ZM8.40527 5.48564C8.07359 5.47297 7.75046 5.59258 7.50697 5.81816C7.26347 6.04373 7.11956 6.3568 7.10689 6.68848C7.08932 7.14838 6.70226 7.50696 6.24236 7.48939C5.78245 7.47182 5.42387 7.08476 5.44144 6.62486C5.47098 5.85147 5.80654 5.12149 6.3743 4.59552C6.94206 4.06954 7.69551 3.79065 8.46889 3.82019C9.24228 3.84973 9.97226 4.18529 10.4982 4.75305C11.0219 5.31836 11.3007 6.06776 11.2739 6.83764C11.2673 7.21603 11.1857 7.5894 11.034 7.93616C10.8809 8.28601 10.6594 8.60172 10.3826 8.86477C10.1057 9.12781 9.77912 9.33287 9.42191 9.46791C9.33802 9.49962 9.25284 9.52732 9.16667 9.55096V10C9.16667 10.4602 8.79357 10.8333 8.33333 10.8333C7.8731 10.8333 7.5 10.4602 7.5 10V8.81833C7.5 8.59197 7.59208 8.37535 7.75508 8.21828C7.91808 8.0612 8.13796 7.97719 8.36417 7.98557C8.52385 7.99148 8.6831 7.96542 8.83257 7.90892C8.98204 7.85241 9.1187 7.76661 9.23454 7.65654C9.35038 7.54648 9.44305 7.41437 9.50711 7.26798C9.57117 7.12159 9.60533 6.96388 9.60758 6.8041L9.60811 6.78402C9.62078 6.45234 9.50117 6.12921 9.27559 5.88572C9.05002 5.64222 8.73695 5.49831 8.40527 5.48564ZM7.49166 12.5065C7.49166 12.0463 7.86475 11.6732 8.32499 11.6732H8.33333C8.79356 11.6732 9.16666 12.0463 9.16666 12.5065C9.16666 12.9667 8.79356 13.3398 8.33333 13.3398H8.32499C7.86475 13.3398 7.49166 12.9667 7.49166 12.5065Z"/>
+                                </svg>
+                                p.faq__head-text Как рассчитывается стоимость покраски кухни и другой мебели?
+                                <svg class="faq__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2561 13.2559C9.93065 13.5814 9.40301 13.5814 9.07757 13.2559L3.24424 7.42259C2.9188 7.09715 2.9188 6.56952 3.24424 6.24408C3.56968 5.91864 4.09732 5.91864 4.42275 6.24408L9.66683 11.4882L14.9109 6.24408C15.2363 5.91864 15.764 5.91864 16.0894 6.24408C16.4149 6.56952 16.4149 7.09715 16.0894 7.42259L10.2561 13.2559Z"/>
+                                </svg>
+                            .faq__inner
+                                .faq__content
+                                    p.faq__content-text Вы вполне можете самостоятельно выполнить этот процесс. Но все таки профессиональная покраска имеет ряд существенных преимуществ: опыт и умение обрабатывать различные типы дверных поверхностей (подготовка, выбор подходящих материалов, равномерное нанесение краски без разводов и неровностей).
+                                    p.faq__content-text Использование профессионального инструментов и материалов, что позволяет достичь более долговечного и качественного результата. Мастера могут выполнить задачу быстрее и эффективнее, чем человек не имеющий опыта в этом деле, что освобождает вас от необходимости тратить много времени и усилий, освобождая вас от лишних хлопот и стресса.
+                        .faq__item 
+                            .faq__head
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.33333 1.66667C4.65143 1.66667 1.66667 4.65143 1.66667 8.33333C1.66667 12.0152 4.65143 15 8.33333 15C12.0152 15 15 12.0152 15 8.33333C15 4.65143 12.0152 1.66667 8.33333 1.66667ZM0 8.33333C0 3.73096 3.73096 0 8.33333 0C12.9357 0 16.6667 3.73096 16.6667 8.33333C16.6667 12.9357 12.9357 16.6667 8.33333 16.6667C3.73096 16.6667 0 12.9357 0 8.33333ZM8.40527 5.48564C8.07359 5.47297 7.75046 5.59258 7.50697 5.81816C7.26347 6.04373 7.11956 6.3568 7.10689 6.68848C7.08932 7.14838 6.70226 7.50696 6.24236 7.48939C5.78245 7.47182 5.42387 7.08476 5.44144 6.62486C5.47098 5.85147 5.80654 5.12149 6.3743 4.59552C6.94206 4.06954 7.69551 3.79065 8.46889 3.82019C9.24228 3.84973 9.97226 4.18529 10.4982 4.75305C11.0219 5.31836 11.3007 6.06776 11.2739 6.83764C11.2673 7.21603 11.1857 7.5894 11.034 7.93616C10.8809 8.28601 10.6594 8.60172 10.3826 8.86477C10.1057 9.12781 9.77912 9.33287 9.42191 9.46791C9.33802 9.49962 9.25284 9.52732 9.16667 9.55096V10C9.16667 10.4602 8.79357 10.8333 8.33333 10.8333C7.8731 10.8333 7.5 10.4602 7.5 10V8.81833C7.5 8.59197 7.59208 8.37535 7.75508 8.21828C7.91808 8.0612 8.13796 7.97719 8.36417 7.98557C8.52385 7.99148 8.6831 7.96542 8.83257 7.90892C8.98204 7.85241 9.1187 7.76661 9.23454 7.65654C9.35038 7.54648 9.44305 7.41437 9.50711 7.26798C9.57117 7.12159 9.60533 6.96388 9.60758 6.8041L9.60811 6.78402C9.62078 6.45234 9.50117 6.12921 9.27559 5.88572C9.05002 5.64222 8.73695 5.49831 8.40527 5.48564ZM7.49166 12.5065C7.49166 12.0463 7.86475 11.6732 8.32499 11.6732H8.33333C8.79356 11.6732 9.16666 12.0463 9.16666 12.5065C9.16666 12.9667 8.79356 13.3398 8.33333 13.3398H8.32499C7.86475 13.3398 7.49166 12.9667 7.49166 12.5065Z"/>
+                                </svg>
+                                p.faq__head-text Почему поверх эмали рекомендуется наносить лак? Разве эмали недостаточно?
+                                <svg class="faq__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2561 13.2559C9.93065 13.5814 9.40301 13.5814 9.07757 13.2559L3.24424 7.42259C2.9188 7.09715 2.9188 6.56952 3.24424 6.24408C3.56968 5.91864 4.09732 5.91864 4.42275 6.24408L9.66683 11.4882L14.9109 6.24408C15.2363 5.91864 15.764 5.91864 16.0894 6.24408C16.4149 6.56952 16.4149 7.09715 16.0894 7.42259L10.2561 13.2559Z"/>
+                                </svg>
+                            .faq__inner
+                                .faq__content
+                                    p.faq__content-text Вы вполне можете самостоятельно выполнить этот процесс. Но все таки профессиональная покраска имеет ряд существенных преимуществ: опыт и умение обрабатывать различные типы дверных поверхностей (подготовка, выбор подходящих материалов, равномерное нанесение краски без разводов и неровностей).
+                                    p.faq__content-text Использование профессионального инструментов и материалов, что позволяет достичь более долговечного и качественного результата. Мастера могут выполнить задачу быстрее и эффективнее, чем человек не имеющий опыта в этом деле, что освобождает вас от необходимости тратить много времени и усилий, освобождая вас от лишних хлопот и стресса.
+                        .faq__item 
+                            .faq__head
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.33333 1.66667C4.65143 1.66667 1.66667 4.65143 1.66667 8.33333C1.66667 12.0152 4.65143 15 8.33333 15C12.0152 15 15 12.0152 15 8.33333C15 4.65143 12.0152 1.66667 8.33333 1.66667ZM0 8.33333C0 3.73096 3.73096 0 8.33333 0C12.9357 0 16.6667 3.73096 16.6667 8.33333C16.6667 12.9357 12.9357 16.6667 8.33333 16.6667C3.73096 16.6667 0 12.9357 0 8.33333ZM8.40527 5.48564C8.07359 5.47297 7.75046 5.59258 7.50697 5.81816C7.26347 6.04373 7.11956 6.3568 7.10689 6.68848C7.08932 7.14838 6.70226 7.50696 6.24236 7.48939C5.78245 7.47182 5.42387 7.08476 5.44144 6.62486C5.47098 5.85147 5.80654 5.12149 6.3743 4.59552C6.94206 4.06954 7.69551 3.79065 8.46889 3.82019C9.24228 3.84973 9.97226 4.18529 10.4982 4.75305C11.0219 5.31836 11.3007 6.06776 11.2739 6.83764C11.2673 7.21603 11.1857 7.5894 11.034 7.93616C10.8809 8.28601 10.6594 8.60172 10.3826 8.86477C10.1057 9.12781 9.77912 9.33287 9.42191 9.46791C9.33802 9.49962 9.25284 9.52732 9.16667 9.55096V10C9.16667 10.4602 8.79357 10.8333 8.33333 10.8333C7.8731 10.8333 7.5 10.4602 7.5 10V8.81833C7.5 8.59197 7.59208 8.37535 7.75508 8.21828C7.91808 8.0612 8.13796 7.97719 8.36417 7.98557C8.52385 7.99148 8.6831 7.96542 8.83257 7.90892C8.98204 7.85241 9.1187 7.76661 9.23454 7.65654C9.35038 7.54648 9.44305 7.41437 9.50711 7.26798C9.57117 7.12159 9.60533 6.96388 9.60758 6.8041L9.60811 6.78402C9.62078 6.45234 9.50117 6.12921 9.27559 5.88572C9.05002 5.64222 8.73695 5.49831 8.40527 5.48564ZM7.49166 12.5065C7.49166 12.0463 7.86475 11.6732 8.32499 11.6732H8.33333C8.79356 11.6732 9.16666 12.0463 9.16666 12.5065C9.16666 12.9667 8.79356 13.3398 8.33333 13.3398H8.32499C7.86475 13.3398 7.49166 12.9667 7.49166 12.5065Z"/>
+                                </svg>
+                                p.faq__head-text Как происходит расчет стоимости покраски межкомнатных дверей?
+                                <svg class="faq__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2561 13.2559C9.93065 13.5814 9.40301 13.5814 9.07757 13.2559L3.24424 7.42259C2.9188 7.09715 2.9188 6.56952 3.24424 6.24408C3.56968 5.91864 4.09732 5.91864 4.42275 6.24408L9.66683 11.4882L14.9109 6.24408C15.2363 5.91864 15.764 5.91864 16.0894 6.24408C16.4149 6.56952 16.4149 7.09715 16.0894 7.42259L10.2561 13.2559Z"/>
+                                </svg>
+                            .faq__inner
+                                .faq__content
+                                    p.faq__content-text Вы вполне можете самостоятельно выполнить этот процесс. Но все таки профессиональная покраска имеет ряд существенных преимуществ: опыт и умение обрабатывать различные типы дверных поверхностей (подготовка, выбор подходящих материалов, равномерное нанесение краски без разводов и неровностей).
+                                    p.faq__content-text Использование профессионального инструментов и материалов, что позволяет достичь более долговечного и качественного результата. Мастера могут выполнить задачу быстрее и эффективнее, чем человек не имеющий опыта в этом деле, что освобождает вас от необходимости тратить много времени и усилий, освобождая вас от лишних хлопот и стресса.
+                        .faq__item 
+                            .faq__head
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.33333 1.66667C4.65143 1.66667 1.66667 4.65143 1.66667 8.33333C1.66667 12.0152 4.65143 15 8.33333 15C12.0152 15 15 12.0152 15 8.33333C15 4.65143 12.0152 1.66667 8.33333 1.66667ZM0 8.33333C0 3.73096 3.73096 0 8.33333 0C12.9357 0 16.6667 3.73096 16.6667 8.33333C16.6667 12.9357 12.9357 16.6667 8.33333 16.6667C3.73096 16.6667 0 12.9357 0 8.33333ZM8.40527 5.48564C8.07359 5.47297 7.75046 5.59258 7.50697 5.81816C7.26347 6.04373 7.11956 6.3568 7.10689 6.68848C7.08932 7.14838 6.70226 7.50696 6.24236 7.48939C5.78245 7.47182 5.42387 7.08476 5.44144 6.62486C5.47098 5.85147 5.80654 5.12149 6.3743 4.59552C6.94206 4.06954 7.69551 3.79065 8.46889 3.82019C9.24228 3.84973 9.97226 4.18529 10.4982 4.75305C11.0219 5.31836 11.3007 6.06776 11.2739 6.83764C11.2673 7.21603 11.1857 7.5894 11.034 7.93616C10.8809 8.28601 10.6594 8.60172 10.3826 8.86477C10.1057 9.12781 9.77912 9.33287 9.42191 9.46791C9.33802 9.49962 9.25284 9.52732 9.16667 9.55096V10C9.16667 10.4602 8.79357 10.8333 8.33333 10.8333C7.8731 10.8333 7.5 10.4602 7.5 10V8.81833C7.5 8.59197 7.59208 8.37535 7.75508 8.21828C7.91808 8.0612 8.13796 7.97719 8.36417 7.98557C8.52385 7.99148 8.6831 7.96542 8.83257 7.90892C8.98204 7.85241 9.1187 7.76661 9.23454 7.65654C9.35038 7.54648 9.44305 7.41437 9.50711 7.26798C9.57117 7.12159 9.60533 6.96388 9.60758 6.8041L9.60811 6.78402C9.62078 6.45234 9.50117 6.12921 9.27559 5.88572C9.05002 5.64222 8.73695 5.49831 8.40527 5.48564ZM7.49166 12.5065C7.49166 12.0463 7.86475 11.6732 8.32499 11.6732H8.33333C8.79356 11.6732 9.16666 12.0463 9.16666 12.5065C9.16666 12.9667 8.79356 13.3398 8.33333 13.3398H8.32499C7.86475 13.3398 7.49166 12.9667 7.49166 12.5065Z"/>
+                                </svg>
+                                p.faq__head-text Какие виды покрытия мы используем?
+                                <svg class="faq__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2561 13.2559C9.93065 13.5814 9.40301 13.5814 9.07757 13.2559L3.24424 7.42259C2.9188 7.09715 2.9188 6.56952 3.24424 6.24408C3.56968 5.91864 4.09732 5.91864 4.42275 6.24408L9.66683 11.4882L14.9109 6.24408C15.2363 5.91864 15.764 5.91864 16.0894 6.24408C16.4149 6.56952 16.4149 7.09715 16.0894 7.42259L10.2561 13.2559Z"/>
+                                </svg>
+                            .faq__inner
+                                .faq__content
+                                    p.faq__content-text Вы вполне можете самостоятельно выполнить этот процесс. Но все таки профессиональная покраска имеет ряд существенных преимуществ: опыт и умение обрабатывать различные типы дверных поверхностей (подготовка, выбор подходящих материалов, равномерное нанесение краски без разводов и неровностей).
+                                    p.faq__content-text Использование профессионального инструментов и материалов, что позволяет достичь более долговечного и качественного результата. Мастера могут выполнить задачу быстрее и эффективнее, чем человек не имеющий опыта в этом деле, что освобождает вас от необходимости тратить много времени и усилий, освобождая вас от лишних хлопот и стресса.
         footer.footer 
             .container
                 .footer__wrapper 

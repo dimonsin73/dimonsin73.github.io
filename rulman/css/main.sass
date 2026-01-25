@@ -6,10 +6,13 @@
     --light-grey: #F3F3F3
     --white: #fff
     --black: #000
-    //--grye: 
+    --grey: #C1C1C1
     --border: #E5E7EB
     --input: #F9FAFB
-    //--card-shadow: 
+    --text-heading: #101828
+    --text-body: #4A5565
+    --card-shadow: 6px 6px 30px 0px #00000026
+
 
 $font-main: 'Geologica', sans-serif
 $font-accent: 'Inter', sans-serif
@@ -22,28 +25,29 @@ body
     color: var(--dark)
 .container
     position: relative
-    z-index: 1
+    max-width: 1184px
 // ===== HEADER БЛОК =====
 .header
     position: relative
-    padding: 10px 0 17px
+    display: flex
+    flex-direction: column
+    gap: 24px
+    padding: 10px 0 0
     background-color: var(--dark)
     z-index: 10
-    &__wrapper 
-        display: flex
-        flex-direction: column
-        gap: 24px
     &__banner 
-        padding: 4px
-        border-radius: 6px
-        background-color: var(--yellow)
+        &-inner
+            padding: 4px
+            border-radius: 6px
+            background-color: var(--yellow)
         &-text 
             margin-bottom: 0
             text-align: center
     &__top 
-        display: flex
-        align-items: center
-        justify-content: space-between
+        &-inner
+            display: flex
+            align-items: center
+            justify-content: space-between
     &__contact 
         display: flex
         flex-direction: column
@@ -109,10 +113,13 @@ body
         justify-content: center
         height: 10px
     &__bottom 
-        display: flex
-        align-items: center
-        gap: 20px
-        height: 20px
+        &-inner
+            display: flex
+            align-items: center
+            gap: 20px
+            height: 20px
+        &-padding
+            padding-bottom: 51px
     &__map 
         display: flex
         align-items: center
@@ -137,9 +144,19 @@ body
             &:hover 
                 color: var(--yellow)
     &__menu 
-        display: flex
-        align-items: center
-        justify-content: space-between
+        padding-bottom: 17px
+        &-inner
+            display: flex
+            align-items: center
+            justify-content: space-between
+        &-sticky 
+            position: fixed
+            top: 0
+            left: 0
+            right: 0
+            width: 100%
+            padding-top: 17px
+            background-color: var(--dark)
     &__right 
         display: flex
         align-items: center
@@ -196,6 +213,10 @@ body
     border-radius: 17px
     background-color: var(--yellow)
     font: 300 1rem/1.5 $font-main
+    transition: background-color 0.3s ease
+    &:hover, 
+    &:active 
+        background-color: var(--dark-yellow)
 .search 
     display: flex
     align-items: center
@@ -205,14 +226,10 @@ body
 
 // ===== HERO БЛОК =====
 .hero
+    position: relative
     display: flex
     align-items: center
     height: calc( 100vh - 250px )
-    background: 
-        image: url('../images/hero/hero_bg_1.jpg')
-        size: cover 
-        position: center 
-        repeat: no-repeat
     &__wrapper 
         display: flex
         align-items: center
@@ -252,14 +269,61 @@ body
             border-radius: 26px
             background-color: var(--yellow)
             font-weight: 300
+            transition: background-color 0.3s ease
+            &:hover, 
+            &:active 
+                background-color: var(--dark-yellow)
+    & .slider 
+        position: absolute
+        &__wrapper 
+            width: 100%
+            height: 100%
+        &__items 
+            width: 100%
+            height: 100%
+            display: flex
+            gap: 0
+            padding: 0
+        &__item 
+            flex: 0 0 100%
+            border-radius: 0
+        &__bar 
+            position: absolute
+            bottom: 30px
+            left: 50%
+            transform: translateX(-50%)
+    &__slider 
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        &-bg1 
+            width: 100%
+            height: 100%
+            background: 
+                image: url('../images/hero/hero_1.jpg')
+                size: cover 
+                position: center 
+                repeat: no-repeat
+        &-bg2
+            width: 100%
+            height: 100%
+            background: 
+                image: url('../images/hero/hero_2.jpg')
+                size: cover 
+                position: center 
+                repeat: no-repeat
 // ===== SECTION =====
 .section
     padding-top: 100px 
     padding-bottom: 40px
     &__title 
+        margin: 0
         font: 800 3.125rem/1 $font-main
         color: var(--dark)
     &__title2
+        margin: 0
         font: 900 3.125rem/1 $font-accent
         color: var(--dark)
 // ===== COOPERATION БЛОК =====
@@ -276,6 +340,7 @@ body
         padding: 20px
         border-radius: 12px
         background-color: var(--light-grey)
+        overflow: hidden
         transition: background-color 0.3s ease
         &:hover 
             background-color: var(--yellow)
@@ -294,9 +359,129 @@ body
             font-weight: 500
             color: var(--black)
         &-slogan 
+            margin: 0
             font: 800 1.25rem/1.25 $font-main
             color: var(--yellow)
             text-align: right
+// ===== SERVICES БЛОК =====
+.services 
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 45px
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 10px
+    &__list 
+        display: flex
+        align-items: center
+        justify-content: center
+        margin: 0
+        &-btn 
+            padding: 0 12px 16px
+            border-bottom: 1px solid var(--grey)
+            line-height: 1.25
+            transition: border 0.3s ease, color 0.3s ease
+            &:hover 
+                border-bottom: 1px solid var(--yellow)
+                color: var(--yellow)
+    &__slider 
+        display: flex
+        flex-direction: column
+        &-img 
+            width: 260px 
+            height: 192px
+            border-radius: 6px
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 24px
+            width: 308px
+            padding: 24px
+            overflow: hidden
+        &-content 
+            display: flex
+            flex-direction: column
+            gap: 12px
+        &-title 
+            margin: 0
+            font: 500 1.5rem/1.25 $font-main
+            color: var(--text-heading)
+        &-text 
+            margin: 0
+            font-weight: 300 
+            line-height: 1.25
+            color: var(--text-body)
+        &-link 
+            padding: 5px
+            border-radius: 26px
+            background-color: var(--yellow)
+            font-weight: 300
+            color: var(--dark)
+            text-align: center
+            transition: background-color 0.3s ease
+            &:hover, 
+            &:active 
+                background-color: var(--dark-yellow)
+// ===== PROMO БЛОК =====
+.promo
+    &__wrapper 
+        display: grid
+        grid-template-columns: 1fr 1fr
+        align-items: center
+        gap: 20px
+    &__item 
+        display: flex
+        height: 180px
+        border-radius: 12px
+        background-color: var(--dark)
+        overflow: hidden
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 20px
+        width: 100%
+        padding: 10px
+        &-title 
+            margin: 0
+            font: 700 1.125rem/1.25 $font-main
+            color: var(--white)
+            text-transform: uppercase
+        &-title2
+            max-width: 245px
+            margin: 0
+            font: 700 1.125rem/1.25 $font-main
+            color: var(--white)
+        &-link 
+            display: block
+            margin-top: auto
+            margin-left: auto
+            padding: 5px 10px
+            border-radius: 26px
+            background-color: var(--yellow)
+            color: var(--dark)
+            transition: background-color 0.3s ease
+            &:hover, 
+            &:active 
+                background-color: var(--dark-yellow)
+        &-gap10 
+            gap: 10px
+    &__list 
+        margin: 0
+        margin-bottom: -1.5px
+        padding-left: 20px
+        &-item 
+            font-size: 0.875rem 
+            line-height: 1.25
+            color: var(--white)
+            list-style: disc
+// ===== CATALOG БЛОК =====
+.catalog 
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 15px
 // ===== DECORATION БЛОК =====
 .decoration 
     &__wrapper 
@@ -338,7 +523,287 @@ body
             font-weight: 500 
             color: var(--white)
             text-align: center
+// ===== MATERIALS БЛОК =====
+.materials 
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 15px
+// ===== ABOUT БЛОК =====
+.about 
+    &__wrapper 
+        display: flex
+        align-items: center
+    &__img 
+        width: 400px
+        height: 400px
+        border-radius: 12px
+        object-fit: cover
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 30px
+        padding: 20px
+        &-text 
+            margin: 0
+            font: 300 1.5rem/1.25 $font-main
+            color: var(--black)
+        &-link 
+            font: 300 1.5rem/1.25 $font-main
+            color: var(--black)
+            text-decoration: underline !important
+            text-decoration-skip-ink: none
+
+    &__paragraph 
+        display: flex
+        flex-direction: column
+// ===== PORTFOLIO БЛОК =====
+.portfolio
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 30px
+    &__slider 
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 24px
+            padding: 24px
+        &-img 
+            border-radius: 6px
+        &-title 
+            margin: 0
+            font: 600 1.25rem/1.4 $font-main
+// ===== BENEFITS БЛОК =====
+.benefits
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 60px
+    &__content 
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        gap: 16px
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 10px
+        height: 140px
+        padding: 20px 10px 10px 20px
+        border-radius: 12px
+        background-color: var(--dark)
+        &-title 
+            margin: 0
+            font: 500 1.25rem/1 $font-main
+            color: var(--white)
+        &-text 
+            margin: 0
+            line-height: 1.25
+            color: var(--white)
+    &__top 
+        display: flex
+        align-items: center
+        gap: 10px
+        & svg 
+            flex: 0 0 auto
+// ===== SUPPLIERS БЛОК =====
+.suppliers
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 60px
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 24px
+    &__item 
+        display: flex 
+        align-items: center
+        justify-content: space-between
+        gap: 16px
+// ===== INDUSTRIES БЛОК =====
+.industries 
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 60px
+    &__content 
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        gap: 16px
+    &__item 
+        display: flex
+        flex-direction: column
+        gap: 24px
+        padding: 24px
+        border-radius: 12px
+        background-color: var(--light-grey)
+        transition: background-color 0.3s ease
+        &-title 
+            margin: 0
+            font: 600 1.25rem/1.4 $font-main
+            color: var(--dark)
+        &:hover 
+            background-color: var(--yellow)
+    &__list 
+        margin: 0
+        padding-left: 20px
+        &-item
+            line-height: 1.875
+            color: var(--dark-grey)
+            list-style: disc
+            & a 
+                color: var(--dark-grey)
+                text-decoration: underline
+                text-underline-offset: 3px
+// ===== REVIEWS БЛОК =====
+.reviews 
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 30px
+    &__slider 
+        &-item 
+            display: flex
+            flex-direction: column
+            gap: 24px
+            width: 410px
+            padding: 24px
+            transition: background-color 0.5s ease, box-shadow 0.5s ease !important
+            &:hover 
+                background-color: var(--white)
+        &-stars 
+            display: flex
+            align-items: center
+            gap: 4px
+        &-author 
+            margin: 0
+            font: 500 1.25rem/1.4 $font-main
+            color: var(--dark)
+        &-text 
+            margin: 0
+            color: var(--dark-grey)
+// ===== FAQ БЛОК =====
+.faq 
+    margin-bottom: 90px
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        gap: 1px
+    &__head 
+        display: flex
+        align-items: center
+        gap: 8px
+        padding: 13px 12px
+        border-radius: 6px
+        background-color: var(--yellow)
+        cursor: pointer
+        transition: background-color 0.5s ease
+        & svg 
+            flex: 0 0 auto
+            fill: var(--dark)
+            transition: fill 0.5s ease, transform 0.5s ease
+        &-text 
+            width: 100%
+            margin: 0
+            transition: color 0.5s ease
+    &__content 
+        display: flex
+        flex-direction: column
+        gap: 20px
+        padding: 20px 24px
+        &-text 
+            margin: 0
+            line-height: 1.25
+            color: var(--dark-grey)
+    &__inner 
+        height: 0
+        overflow: hidden
+        transition: height 0.5s ease
+    &__item 
+        &-active 
+            & .faq__head 
+                background-color: var(--dark)
+                &-text 
+                    color: var(--white)
+            & svg 
+                fill: var(--yellow)
+            & .faq__arrow 
+                transform: scaleY(-1)
 // ===== FOOTER БЛОК =====
 .footer 
     padding: 40px 0
     background-color: var(--dark)
+
+
+
+
+
+// ===== SLIDER =====
+.slider 
+    position: relative
+    &__wrapper 
+        overflow: hidden
+    &__items 
+        display: flex
+        gap: 16px
+        padding: 30px 0
+        transition: transform 0.5s ease
+        will-change: transform
+    &__item
+        flex: 0 0 auto
+        border-radius: 12px
+        background-color: var(--light-grey)
+        user-select: none
+        will-change: transform
+        transition: box-shadow 0.5s ease
+        &:hover 
+            box-shadow: var(--card-shadow)
+    &__bar 
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 32px
+    /* кнопки влево и вправо */
+    &__btn 
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 30px
+        height: 30px
+        border: none
+        border-radius: 50%
+        background-color: var(--light-grey)
+        color: var(--light-grey)
+        text-align: center
+        cursor: pointer
+        transition: background-color 0.5s ease
+        & svg 
+            fill: var(--yellow)
+            transition: fill 0.5s ease
+        &:hover,
+        &:focus 
+            background-color: var(--dark-yellow)
+            outline: 0
+            & svg 
+                fill: var(--light-grey)
+    /* индикаторы */
+    &__indicators 
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 12px
+        margin: 0
+        padding: 0
+        list-style: none
+    &__indicator 
+        flex: 0 1 auto
+        box-sizing: content-box
+        width: 14px
+        height: 14px
+        border-radius: 50%
+        background-color: var(--light-grey)
+        cursor: pointer
+        transition: background-color 0.5s ease
+        &-active 
+            background-color: var(--dark-yellow)

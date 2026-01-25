@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --dark: #202938;
   --dark-yellow: #DCA34E;
@@ -6,8 +7,12 @@
   --light-grey: #F3F3F3;
   --white: #fff;
   --black: #000;
+  --grey: #C1C1C1;
   --border: #E5E7EB;
   --input: #F9FAFB;
+  --text-heading: #101828;
+  --text-body: #4A5565;
+  --card-shadow: 6px 6px 30px 0px #00000026;
 }
 
 html {
@@ -21,21 +26,19 @@ body {
 
 .container {
   position: relative;
-  z-index: 1;
+  max-width: 1184px;
 }
 
 .header {
   position: relative;
-  padding: 10px 0 17px;
-  background-color: var(--dark);
-  z-index: 10;
-}
-.header__wrapper {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding: 10px 0 0;
+  background-color: var(--dark);
+  z-index: 10;
 }
-.header__banner {
+.header__banner-inner {
   padding: 4px;
   border-radius: 6px;
   background-color: var(--yellow);
@@ -44,7 +47,7 @@ body {
   margin-bottom: 0;
   text-align: center;
 }
-.header__top {
+.header__top-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -127,11 +130,14 @@ body {
   justify-content: center;
   height: 10px;
 }
-.header__bottom {
+.header__bottom-inner {
   display: flex;
   align-items: center;
   gap: 20px;
   height: 20px;
+}
+.header__bottom-padding {
+  padding-bottom: 51px;
 }
 .header__map {
   display: flex;
@@ -164,9 +170,21 @@ body {
   color: var(--yellow);
 }
 .header__menu {
+  padding-bottom: 17px;
+}
+.header__menu-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.header__menu-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 17px;
+  background-color: var(--dark);
 }
 .header__right {
   display: flex;
@@ -239,6 +257,10 @@ body {
   border-radius: 17px;
   background-color: var(--yellow);
   font: 300 1rem/1.5 "Geologica", sans-serif;
+  transition: background-color 0.3s ease;
+}
+.callback:hover, .callback:active {
+  background-color: var(--dark-yellow);
 }
 
 .search {
@@ -250,13 +272,10 @@ body {
 }
 
 .hero {
+  position: relative;
   display: flex;
   align-items: center;
   height: calc(100vh - 250px);
-  background-image: url("../images/hero/hero_bg_1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .hero__wrapper {
   display: flex;
@@ -306,6 +325,57 @@ body {
   border-radius: 26px;
   background-color: var(--yellow);
   font-weight: 300;
+  transition: background-color 0.3s ease;
+}
+.hero__form-btn:hover, .hero__form-btn:active {
+  background-color: var(--dark-yellow);
+}
+.hero .slider {
+  position: absolute;
+}
+.hero .slider__wrapper {
+  width: 100%;
+  height: 100%;
+}
+.hero .slider__items {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 0;
+  padding: 0;
+}
+.hero .slider__item {
+  flex: 0 0 100%;
+  border-radius: 0;
+}
+.hero .slider__bar {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hero__slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.hero__slider-bg1 {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/hero/hero_1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero__slider-bg2 {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/hero/hero_2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .section {
@@ -313,10 +383,12 @@ body {
   padding-bottom: 40px;
 }
 .section__title {
+  margin: 0;
   font: 800 3.125rem/1 "Geologica", sans-serif;
   color: var(--dark);
 }
 .section__title2 {
+  margin: 0;
   font: 900 3.125rem/1 "Inter", sans-serif;
   color: var(--dark);
 }
@@ -335,6 +407,7 @@ body {
   padding: 20px;
   border-radius: 12px;
   background-color: var(--light-grey);
+  overflow: hidden;
   transition: background-color 0.3s ease;
 }
 .cooperation__item:hover {
@@ -359,9 +432,148 @@ body {
   color: var(--black);
 }
 .cooperation__bottom-slogan {
+  margin: 0;
   font: 800 1.25rem/1.25 "Geologica", sans-serif;
   color: var(--yellow);
   text-align: right;
+}
+
+.services__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+.services__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.services__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.services__list-btn {
+  padding: 0 12px 16px;
+  border-bottom: 1px solid var(--grey);
+  line-height: 1.25;
+  transition: border 0.3s ease, color 0.3s ease;
+}
+.services__list-btn:hover {
+  border-bottom: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+.services__slider {
+  display: flex;
+  flex-direction: column;
+}
+.services__slider-img {
+  width: 260px;
+  height: 192px;
+  border-radius: 6px;
+}
+.services__slider-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 308px;
+  padding: 24px;
+  overflow: hidden;
+}
+.services__slider-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.services__slider-title {
+  margin: 0;
+  font: 500 1.5rem/1.25 "Geologica", sans-serif;
+  color: var(--text-heading);
+}
+.services__slider-text {
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--text-body);
+}
+.services__slider-link {
+  padding: 5px;
+  border-radius: 26px;
+  background-color: var(--yellow);
+  font-weight: 300;
+  color: var(--dark);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.services__slider-link:hover, .services__slider-link:active {
+  background-color: var(--dark-yellow);
+}
+
+.promo__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+.promo__item {
+  display: flex;
+  height: 180px;
+  border-radius: 12px;
+  background-color: var(--dark);
+  overflow: hidden;
+}
+.promo__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 10px;
+}
+.promo__content-title {
+  margin: 0;
+  font: 700 1.125rem/1.25 "Geologica", sans-serif;
+  color: var(--white);
+  text-transform: uppercase;
+}
+.promo__content-title2 {
+  max-width: 245px;
+  margin: 0;
+  font: 700 1.125rem/1.25 "Geologica", sans-serif;
+  color: var(--white);
+}
+.promo__content-link {
+  display: block;
+  margin-top: auto;
+  margin-left: auto;
+  padding: 5px 10px;
+  border-radius: 26px;
+  background-color: var(--yellow);
+  color: var(--dark);
+  transition: background-color 0.3s ease;
+}
+.promo__content-link:hover, .promo__content-link:active {
+  background-color: var(--dark-yellow);
+}
+.promo__content-gap10 {
+  gap: 10px;
+}
+.promo__list {
+  margin: 0;
+  margin-bottom: -1.5px;
+  padding-left: 20px;
+}
+.promo__list-item {
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: var(--white);
+  list-style: disc;
+}
+
+.catalog__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .decoration__wrapper {
@@ -411,7 +623,333 @@ body {
   text-align: center;
 }
 
+.materials__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.about__wrapper {
+  display: flex;
+  align-items: center;
+}
+.about__img {
+  width: 400px;
+  height: 400px;
+  border-radius: 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+.about__content-text {
+  margin: 0;
+  font: 300 1.5rem/1.25 "Geologica", sans-serif;
+  color: var(--black);
+}
+.about__content-link {
+  font: 300 1.5rem/1.25 "Geologica", sans-serif;
+  color: var(--black);
+  text-decoration: underline !important;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+}
+.about__paragraph {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.portfolio__slider-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+.portfolio__slider-img {
+  border-radius: 6px;
+}
+.portfolio__slider-title {
+  margin: 0;
+  font: 600 1.25rem/1.4 "Geologica", sans-serif;
+}
+
+.benefits__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.benefits__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.benefits__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 140px;
+  padding: 20px 10px 10px 20px;
+  border-radius: 12px;
+  background-color: var(--dark);
+}
+.benefits__item-title {
+  margin: 0;
+  font: 500 1.25rem/1 "Geologica", sans-serif;
+  color: var(--white);
+}
+.benefits__item-text {
+  margin: 0;
+  line-height: 1.25;
+  color: var(--white);
+}
+.benefits__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.benefits__top svg {
+  flex: 0 0 auto;
+}
+
+.suppliers__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.suppliers__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.suppliers__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.industries__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.industries__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.industries__item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: var(--light-grey);
+  transition: background-color 0.3s ease;
+}
+.industries__item-title {
+  margin: 0;
+  font: 600 1.25rem/1.4 "Geologica", sans-serif;
+  color: var(--dark);
+}
+.industries__item:hover {
+  background-color: var(--yellow);
+}
+.industries__list {
+  margin: 0;
+  padding-left: 20px;
+}
+.industries__list-item {
+  line-height: 1.875;
+  color: var(--dark-grey);
+  list-style: disc;
+}
+.industries__list-item a {
+  color: var(--dark-grey);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.reviews__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.reviews__slider-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 410px;
+  padding: 24px;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease !important;
+}
+.reviews__slider-item:hover {
+  background-color: var(--white);
+}
+.reviews__slider-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.reviews__slider-author {
+  margin: 0;
+  font: 500 1.25rem/1.4 "Geologica", sans-serif;
+  color: var(--dark);
+}
+.reviews__slider-text {
+  margin: 0;
+  color: var(--dark-grey);
+}
+
+.faq {
+  margin-bottom: 90px;
+}
+.faq__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.faq__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 12px;
+  border-radius: 6px;
+  background-color: var(--yellow);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.faq__head svg {
+  flex: 0 0 auto;
+  fill: var(--dark);
+  transition: fill 0.5s ease, transform 0.5s ease;
+}
+.faq__head-text {
+  width: 100%;
+  margin: 0;
+  transition: color 0.5s ease;
+}
+.faq__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 24px;
+}
+.faq__content-text {
+  margin: 0;
+  line-height: 1.25;
+  color: var(--dark-grey);
+}
+.faq__inner {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+.faq__item-active .faq__head {
+  background-color: var(--dark);
+}
+.faq__item-active .faq__head-text {
+  color: var(--white);
+}
+.faq__item-active svg {
+  fill: var(--yellow);
+}
+.faq__item-active .faq__arrow {
+  transform: scaleY(-1);
+}
+
 .footer {
   padding: 40px 0;
   background-color: var(--dark);
+}
+
+.slider {
+  position: relative;
+  /* кнопки влево и вправо */
+  /* индикаторы */
+}
+.slider__wrapper {
+  overflow: hidden;
+}
+.slider__items {
+  display: flex;
+  gap: 16px;
+  padding: 30px 0;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+.slider__item {
+  flex: 0 0 auto;
+  border-radius: 12px;
+  background-color: var(--light-grey);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  will-change: transform;
+  transition: box-shadow 0.5s ease;
+}
+.slider__item:hover {
+  box-shadow: var(--card-shadow);
+}
+.slider__bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.slider__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--light-grey);
+  color: var(--light-grey);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.slider__btn svg {
+  fill: var(--yellow);
+  transition: fill 0.5s ease;
+}
+.slider__btn:hover, .slider__btn:focus {
+  background-color: var(--dark-yellow);
+  outline: 0;
+}
+.slider__btn:hover svg, .slider__btn:focus svg {
+  fill: var(--light-grey);
+}
+.slider__indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.slider__indicator {
+  flex: 0 1 auto;
+  box-sizing: content-box;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--light-grey);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.slider__indicator-active {
+  background-color: var(--dark-yellow);
 }/*# sourceMappingURL=main.css.map */
