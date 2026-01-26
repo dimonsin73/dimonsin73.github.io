@@ -254,7 +254,7 @@ body {
 
 .callback {
   padding: 5px 10px;
-  border-radius: 17px;
+  border-radius: 26px;
   background-color: var(--yellow);
   font: 300 1rem/1.5 "Geologica", sans-serif;
   transition: background-color 0.3s ease;
@@ -870,6 +870,146 @@ body {
 .footer {
   padding: 40px 0;
   background-color: var(--dark);
+}
+.footer__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.footer__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  justify-content: space-between;
+}
+.footer__logo {
+  width: 215px;
+}
+.footer__logo-img {
+  max-width: 100%;
+}
+.footer__menu {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 172px;
+}
+.footer__nav-title {
+  margin: 0;
+  font: 500 0.875rem/1.4 "Geologica", sans-serif;
+  color: var(--white);
+}
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+}
+.footer__list-item {
+  height: 24px;
+}
+.footer__list-link {
+  font: 300 0.875rem/1.715 "Geologica", sans-serif;
+  color: var(--grey);
+}
+.footer__callback {
+  margin-top: 17px;
+  padding: 5px 10px;
+  border-radius: 26px;
+  background-color: var(--yellow);
+  font: 300 1rem/1.5 "Geologica", sans-serif;
+  transition: background-color 0.3s ease;
+}
+.footer__callback:hover, .footer__callback:active {
+  background-color: var(--dark-yellow);
+}
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 120px;
+}
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.footer__contact-link {
+  font: 700 1.25rem/1 "Geologica", sans-serif;
+  color: var(--yellow);
+  text-align: center;
+}
+.footer__contact-text {
+  margin-bottom: 0;
+  font: 400 0.625rem/2 "Geologica", sans-serif;
+  color: var(--white);
+  text-align: center;
+}
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer__social-link {
+  flex: 0 0 auto;
+}
+.footer__social-link svg {
+  fill: var(--white);
+  transition: fill 0.3s ease;
+}
+.footer__social-link:hover svg {
+  fill: var(--yellow);
+}
+.footer__center {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+.footer__map {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer__map-link {
+  font: 400 0.875rem/1.4 "Geologica", sans-serif;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+.footer__map-link:hover {
+  color: var(--yellow);
+}
+.footer__map svg {
+  margin: 0 2px;
+}
+.footer__mail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer__mail-link {
+  font: 400 0.875rem/1.4 "Geologica", sans-serif;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+.footer__mail-link:hover {
+  color: var(--yellow);
+}
+.footer__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.footer__right-text {
+  margin: 0;
+  color: var(--dark-grey);
 }
 
 .slider {
