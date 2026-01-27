@@ -106,6 +106,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 53px;
 }
 .header__rating-bottom {
   display: flex;
@@ -196,6 +197,7 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
+  height: 20px;
 }
 .nav__link {
   font: 500 0.875rem/1.4 "Geologica", sans-serif;
@@ -281,6 +283,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
 }
 .hero__title {
   max-width: 625px;
@@ -402,8 +405,15 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  overflow-x: auto;
+}
+.cooperation__content::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
 }
 .cooperation__item {
+  width: 560px;
   padding: 20px;
   border-radius: 12px;
   background-color: var(--light-grey);
@@ -454,13 +464,21 @@ body {
   justify-content: center;
   margin: 0;
 }
-.services__list-btn {
+.services__list-item {
+  display: flex;
+  align-items: center;
+}
+.services__list-text {
+  margin: 0;
   padding: 0 12px 16px;
   border-bottom: 1px solid var(--grey);
   line-height: 1.25;
   transition: border 0.3s ease, color 0.3s ease;
 }
-.services__list-btn:hover {
+.services__list-btn {
+  display: none;
+}
+.services__list-btn:checked ~ .services__list-text {
   border-bottom: 1px solid var(--yellow);
   color: var(--yellow);
 }
@@ -584,7 +602,13 @@ body {
 .decoration__content {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 17px 40px;
+  gap: 17px 20px;
+  overflow-x: auto;
+}
+.decoration__content::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
 }
 .decoration__item {
   position: relative;
@@ -691,11 +715,18 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
+  overflow-x: auto;
+}
+.benefits__content::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
 }
 .benefits__item {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 370px;
   height: 140px;
   padding: 20px 10px 10px 20px;
   border-radius: 12px;
@@ -727,13 +758,13 @@ body {
 }
 .suppliers__content {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 16px;
 }
 .suppliers__item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 16px;
 }
 
@@ -746,11 +777,18 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
+  overflow-x: auto;
+}
+.industries__content::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
 }
 .industries__item {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 370px;
   padding: 24px;
   border-radius: 12px;
   background-color: var(--light-grey);
@@ -877,7 +915,8 @@ body {
   gap: 56px;
 }
 .footer__content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 215px auto 160px;
   align-items: flex-start;
   gap: 16px;
   justify-content: space-between;
@@ -918,6 +957,7 @@ body {
   color: var(--grey);
 }
 .footer__callback {
+  width: 160px;
   margin-top: 17px;
   padding: 5px 10px;
   border-radius: 26px;
@@ -1092,4 +1132,74 @@ body {
 }
 .slider__indicator-active {
   background-color: var(--dark-yellow);
+}
+
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+  .header {
+    gap: 16px;
+  }
+  .header__menu-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero {
+    height: calc(100vh - 280px);
+  }
+  .cooperation__content {
+    padding-bottom: 10px;
+  }
+  .decoration__content {
+    padding-bottom: 10px;
+  }
+  .benefits__content {
+    padding-bottom: 10px;
+  }
+  .industries__content {
+    padding-bottom: 10px;
+  }
+  .footer__content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__menu {
+    order: 2;
+    grid-column: span 2;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .footer__bottom {
+    gap: 40px;
+  }
+}
+@media (max-width: 969px) {
+  .container {
+    max-width: 720px;
+  }
+  .header__top-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 16px;
+  }
+  .header__bottom-inner {
+    justify-content: space-around;
+  }
+  .promo__wrapper {
+    grid-template-columns: 1fr;
+  }
+  .about__wrapper {
+    flex-direction: column;
+  }
+  .footer__bottom {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+  .footer__right {
+    grid-column: span 2;
+    width: -moz-max-content;
+    width: max-content;
+    margin-left: 240px;
+  }
 }/*# sourceMappingURL=main.css.map */

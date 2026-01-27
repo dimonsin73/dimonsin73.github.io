@@ -21,7 +21,7 @@ html(lang="ru")
                 .container 
                     .header__top-inner
                         .header__logo
-                            img(src="images/logo.svg", alt="logo").header__logo-img
+                            img(src="images/logo.svg", alt="logo" loading="lazy").header__logo-img
                         .header__contact 
                             a(href="tel:+79167503525").header__contact-link +7 (916) 750-35-25
                             p.header__contact-text Время работы с 9:00 до 18:00
@@ -97,7 +97,7 @@ html(lang="ru")
                                     </svg>
                                 .dropdown__menu(aria-labelledby="dropdownMenuButton") 
                                     a.dropdown__item(href="#") Схема работы
-                                    a.dropdown__item(href="#") Отзывы компании
+                                    a.dropdown__item(href="#reviews") Отзывы компании
                                     a.dropdown__item(href="#") Почему мы?
                                     a.dropdown__item(href="#") Аутсорсинг
                                     a.dropdown__item(href="#") Сотрудничество
@@ -204,46 +204,52 @@ html(lang="ru")
                         .services__content 
                             ul.services__list 
                                 li.services__list-item 
-                                    button.services__list-btn(type="button") Виды изделий
+                                    label.services__list-label(for="types-of-products")
+                                        input#types-of-products.services__list-btn(type="radio", name="services", checked)
+                                        p.services__list-text Виды изделий
                                 li.services__list-item 
-                                    button.services__list-btn(type="button") Вид материала
+                                    label.services__list-label(for="types-of-material")
+                                        input#types-of-material.services__list-btn(type="radio", name="services")
+                                        p.services__list-text Вид материала
                                 li.services__list-item 
-                                    button.services__list-btn(type="button") Вид покрытия
+                                    label.services__list-label(for="type-of-coating")
+                                        input#type-of-coating.services__list-btn(type="radio", name="services")
+                                        p.services__list-text Вид покрытия
                             .slider.services__slider
                                 .slider__wrapper
                                     .slider__items
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-1.jpg", alt="")
+                                            img.services__slider-img(src="images/services/services_1-1.jpg", alt="" loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Аллюминий, профнастил, металл
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-2.jpg", alt="")
+                                            img.services__slider-img(src="images/services/services_1-2.jpg", alt="" loading="lazy") 
                                             .services__slider-content
                                                 h3.services__slider-title Покраска пластика, пенопласта, PVC
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-3.jpg", alt="")
+                                            img.services__slider-img(src="images/services/services_1-3.jpg", alt="" loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Покраска панелей МДФ, ЛМДФ, ЛДСП
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-4.jpg", alt="")
+                                            img.services__slider-img(src="images/services/services_1-4.jpg", alt="" loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Покраска дерева, массива, шпона
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-1.jpg", alt="")
+                                            img.services__slider-img(src="images/services/services_1-1.jpg", alt="" loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Аллюминий, профнастил, металл
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-2.jpg", alt="")
+                                            img.services__slider-img(src="images/services/services_1-2.jpg", alt="" loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Покраска пластика, пенопласта, PVC
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
@@ -268,7 +274,7 @@ html(lang="ru")
                 .container 
                     .promo__wrapper 
                         .promo__item 
-                            img.promo__item-img(src="images/promo/promo_1.png", alt="promo")
+                            img.promo__item-img(src="images/promo/promo_1.png", alt="promo" loading="lazy")
                             .promo__content 
                                 h3.promo__content-title Нас выбирают профессионалы
                                 h3.promo__content-title2 Мы покрасили мебель для форума за 5 дней!
@@ -290,17 +296,17 @@ html(lang="ru")
                             .slider__wrapper
                                 .slider__items
                                     .slider__item.catalog__slider-item
-                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog" loading="lazy")
                                     .slider__item.__slider-item
-                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog" loading="lazy")
                                     .slider__item.catalog__slider-item
-                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog" loading="lazy")
                                     .slider__item.catalog__slider-item
-                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog" loading="lazy")
                                     .slider__item.catalog__slider-item
-                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog" loading="lazy")
                                     .slider__item.catalog__slider-item
-                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog")
+                                        img.catalog__slider-img(src="images/catalog/catalog_1.png", alt="catalog" loading="lazy")
                             .slider__bar
                                 .slider__btn.slider__btn-prev
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -323,83 +329,83 @@ html(lang="ru")
                         h2.section__title2 Декоративная отделка, спецэффекты
                         .decoration__content
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_1.png", alt="Кракелюр")
+                                img.decoration__item-img(src="images/decoration/decoration_1.png", alt="Кракелюр" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Кракелюр
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_2.png", alt="Металлик")
+                                img.decoration__item-img(src="images/decoration/decoration_2.png", alt="Металлик" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Металлик
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_3.png", alt="Хамелеон")
+                                img.decoration__item-img(src="images/decoration/decoration_3.png", alt="Хамелеон" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Хамелеон
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_4.png", alt="Патина")
+                                img.decoration__item-img(src="images/decoration/decoration_4.png", alt="Патина" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Патина
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_5.png", alt="Мрамор")
+                                img.decoration__item-img(src="images/decoration/decoration_5.png", alt="Мрамор" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Мрамор
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_6.png", alt="Софт тач")
+                                img.decoration__item-img(src="images/decoration/decoration_6.png", alt="Софт тач" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Софт тач
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_7.png", alt="Жидкая поталь")
+                                img.decoration__item-img(src="images/decoration/decoration_7.png", alt="Жидкая поталь" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Жидкая поталь
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_8.png", alt="Бронза")
+                                img.decoration__item-img(src="images/decoration/decoration_8.png", alt="Бронза" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Под бронзу
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_9.png", alt="Латунь")
+                                img.decoration__item-img(src="images/decoration/decoration_9.png", alt="Латунь" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Под латунь
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_10.png", alt="Медь")
+                                img.decoration__item-img(src="images/decoration/decoration_10.png", alt="Медь" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Под медь
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_11.png", alt="Алюминий")
+                                img.decoration__item-img(src="images/decoration/decoration_11.png", alt="Алюминий" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Под алюминий
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_12.png", alt="Серебро")
+                                img.decoration__item-img(src="images/decoration/decoration_12.png", alt="Серебро" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Под серебро
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_13.png", alt="Мрамор")
+                                img.decoration__item-img(src="images/decoration/decoration_13.png", alt="Мрамор" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Под мрамор
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_14.png", alt="Перламутр")
+                                img.decoration__item-img(src="images/decoration/decoration_14.png", alt="Перламутр" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Перламутр
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_15.png", alt="Кенди")
+                                img.decoration__item-img(src="images/decoration/decoration_15.png", alt="Кенди" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Кенди
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_16.png", alt="Морилка")
+                                img.decoration__item-img(src="images/decoration/decoration_16.png", alt="Морилка" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Морилка
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_17.png", alt="Градиент")
+                                img.decoration__item-img(src="images/decoration/decoration_17.png", alt="Градиент" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Градиент
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_18.png", alt="Золочение, поталь")
+                                img.decoration__item-img(src="images/decoration/decoration_18.png", alt="Золочение, поталь" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Золочение, поталь
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_19.png", alt="Marea/акварель")
+                                img.decoration__item-img(src="images/decoration/decoration_19.png", alt="Marea/акварель" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Marea/акварель
                             .decoration__item 
-                                img.decoration__item-img(src="images/decoration/decoration_20.png", alt="Золото")
+                                img.decoration__item-img(src="images/decoration/decoration_20.png", alt="Золото" loading="lazy")
                                 .decoration__effects 
                                     p.decoration__effects-text Под золото
             section.materials.section
@@ -410,17 +416,17 @@ html(lang="ru")
                             .slider__wrapper
                                 .slider__items
                                     .slider__item.materials__slider-item
-                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials" loading="lazy")
                                     .slider__item.materials__slider-item
-                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials" loading="lazy")
                                     .slider__item.materials__slider-item
-                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials" loading="lazy")
                                     .slider__item.materials__slider-item
-                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials" loading="lazy")
                                     .slider__item.materials__slider-item
-                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials" loading="lazy")
                                     .slider__item.materials__slider-item
-                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials")
+                                        img.materials__slider-img(src="images/materials/materials_1.png", alt="materials" loading="lazy")
                             .slider__bar
                                 .slider__btn.slider__btn-prev
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -440,7 +446,7 @@ html(lang="ru")
             section.about.section
                 .container 
                     .about__wrapper 
-                        img.about__img(src="images/about/about_1.png", alt="")
+                        img.about__img(src="images/about/about_1.png", alt="" loading="lazy")
                         .about__content 
                             .about__paragraph
                                 p.about__content-text Компания «Рульман» производит покраску любых изделий: электрофурнитуры, мебели, фасадов, панелей, выставочных стендов, торгового и промышленного оборудования, а также других изделий из МДФ, дерева, пластика, металла и стекла.
@@ -457,22 +463,22 @@ html(lang="ru")
                             .slider__wrapper
                                 .slider__items
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_1.png", alt="portfolio")
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_1.png", alt="portfolio" loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_2.png", alt="portfolio")
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_2.png", alt="portfolio" loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_3.png", alt="portfolio")
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_3.png", alt="portfolio" loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_1.png", alt="portfolio")
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_1.png", alt="portfolio" loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_2.png", alt="portfolio")
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_2.png", alt="portfolio" loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_3.png", alt="portfolio")
+                                        img.portfolio__slider-img(src="images/portfolio/portfolio_3.png", alt="portfolio" loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                             .slider__bar
                                 .slider__btn.slider__btn-prev
@@ -563,19 +569,17 @@ html(lang="ru")
                     .suppliers__wrapper
                         h2.section__title2 Надежные поставщики
                         .suppliers__content 
-                            .suppliers__item 
-                                img.suppliers__item-img(src="images/suppliers/suppliers_1.png", alt="supplier")
-                                img.suppliers__item-img(src="images/suppliers/suppliers_2.png", alt="supplier")
-                                img.suppliers__item-img(src="images/suppliers/suppliers_3.png", alt="supplier")
-                                img.suppliers__item-img(src="images/suppliers/suppliers_4.png", alt="supplier")
-                                img.suppliers__item-img(src="images/suppliers/suppliers_5.png", alt="supplier")
-                                img.suppliers__item-img(src="images/suppliers/suppliers_6.png", alt="supplier")
-                            .suppliers__item 
-                                img.suppliers__item-img(src="images/suppliers/suppliers_7.png", alt="supplier")
-                                img.suppliers__item-img(src="images/suppliers/suppliers_8.png", alt="supplier")
-                                img.suppliers__item-img(src="images/suppliers/suppliers_9.png", alt="supplier")
-                                img.suppliers__item-img(src="images/suppliers/suppliers_10.png", alt="supplier")
-                                img.suppliers__item-img(src="images/suppliers/suppliers_11.png", alt="supplier")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_1.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_2.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_3.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_4.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_5.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_6.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_7.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_8.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_9.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_10.png", alt="supplier" loading="lazy")
+                            img.suppliers__item-img(src="images/suppliers/suppliers_11.png", alt="supplier" loading="lazy")
             section.industries.section
                 .container 
                     .industries__wrapper
@@ -624,7 +628,7 @@ html(lang="ru")
                                     li.industries__list-item покраска кабель-каналов
                                     li.industries__list-item покраска USB розеток и выключателей
                                     li.industries__list-item покраска щитов управления
-            section.reviews.section
+            section.reviews#reviews.section
                 .container 
                     .reviews__wrapper
                         h2.section__title2 Отзывы
@@ -864,7 +868,7 @@ html(lang="ru")
                 .footer__wrapper 
                     .footer__content    
                         .footer__logo 
-                            img(src="images/logo.svg", alt="logo").footer__logo-img
+                            img(src="images/logo.svg", alt="logo" loading="lazy").footer__logo-img
                         .footer__menu
                             .footer__nav
                                 h2.footer__nav-title О компании

@@ -93,6 +93,7 @@ body
         display: flex
         flex-direction: column
         gap: 10px
+        height: 53px
         &-bottom 
             display: flex
             align-items: center
@@ -165,6 +166,7 @@ body
     display: flex
     align-items: center
     gap: 14px
+    height: 20px
     &__link 
         font: 500 0.875rem/1.4 $font-main
         color: var(--white)
@@ -234,6 +236,7 @@ body
         display: flex
         align-items: center
         justify-content: space-between
+        gap: 24px
     &__title 
         max-width: 625px
         margin-bottom: 0
@@ -336,7 +339,13 @@ body
         display: grid
         grid-template-columns: 1fr 1fr
         gap: 20px 
+        overflow-x: auto
+        &::-webkit-scrollbar-button 
+            display: none
+            height: 0
+            width: 0
     &__item 
+        width: 560px
         padding: 20px
         border-radius: 12px
         background-color: var(--light-grey)
@@ -378,12 +387,20 @@ body
         align-items: center
         justify-content: center
         margin: 0
-        &-btn 
+        &-item 
+            display: flex
+            align-items: center
+        &-text 
+            margin: 0
             padding: 0 12px 16px
             border-bottom: 1px solid var(--grey)
             line-height: 1.25
             transition: border 0.3s ease, color 0.3s ease
-            &:hover 
+        
+            
+        &-btn 
+            display: none
+            &:checked ~ .services__list-text
                 border-bottom: 1px solid var(--yellow)
                 color: var(--yellow)
     &__slider 
@@ -491,7 +508,12 @@ body
     &__content 
         display: grid
         grid-template-columns: repeat(5, 1fr)
-        gap: 17px 40px
+        gap: 17px 20px
+        overflow-x: auto
+        &::-webkit-scrollbar-button 
+            display: none
+            height: 0
+            width: 0
     &__item 
         position: relative
         width: 200px
@@ -584,10 +606,16 @@ body
         display: grid
         grid-template-columns: 1fr 1fr 1fr
         gap: 16px
+        overflow-x: auto
+        &::-webkit-scrollbar-button 
+            display: none
+            height: 0
+            width: 0
     &__item 
         display: flex
         flex-direction: column
         gap: 10px
+        width: 370px
         height: 140px
         padding: 20px 10px 10px 20px
         border-radius: 12px
@@ -614,12 +642,12 @@ body
         gap: 60px
     &__content 
         display: flex
-        flex-direction: column
-        gap: 24px
-    &__item 
-        display: flex 
+        flex-wrap: wrap
         align-items: center
         justify-content: space-between
+        gap: 24px 16px
+    &__item 
+        display: flex 
         gap: 16px
 // ===== INDUSTRIES БЛОК =====
 .industries 
@@ -631,10 +659,16 @@ body
         display: grid
         grid-template-columns: 1fr 1fr 1fr
         gap: 16px
+        overflow-x: auto
+        &::-webkit-scrollbar-button 
+            display: none
+            height: 0
+            width: 0
     &__item 
         display: flex
         flex-direction: column
         gap: 24px
+        min-width: 370px
         padding: 24px
         border-radius: 12px
         background-color: var(--light-grey)
@@ -739,7 +773,8 @@ body
         flex-direction: column
         gap: 56px
     &__content 
-        display: flex
+        display: grid 
+        grid-template-columns: 215px auto 160px
         align-items: flex-start
         gap: 16px
         justify-content: space-between
@@ -771,6 +806,7 @@ body
             font: 300 0.875rem/1.715 $font-main
             color: var(--grey)
     &__callback
+        width: 160px
         margin-top: 17px
         padding: 5px 10px
         border-radius: 26px
@@ -914,3 +950,63 @@ body
         transition: background-color 0.5s ease
         &-active 
             background-color: var(--dark-yellow)
+@media ( max-width: 1199px)
+    .container
+        max-width: 960px
+    .header 
+        gap: 16px
+        &__menu 
+            &-inner 
+                flex-direction: column
+                gap: 10px
+    .hero 
+        height: calc( 100vh - 280px )
+    .cooperation 
+        &__content 
+            padding-bottom: 10px
+    .decoration 
+        &__content 
+            padding-bottom: 10px
+    .benefits 
+        &__content 
+            padding-bottom: 10px
+    .industries 
+        &__content 
+            padding-bottom: 10px
+    .footer 
+        &__content 
+            grid-template-columns: 1fr 1fr
+        &__menu 
+            order: 2
+            grid-column: span 2
+            justify-content: space-between
+            width: 100%
+        &__bottom 
+            gap: 40px
+@media ( max-width: 969px)
+    .container 
+        max-width: 720px
+    .header 
+        &__top 
+            &-inner 
+                display: grid
+                grid-template-columns: 1fr 1fr
+                justify-items: center
+                gap: 16px
+        &__bottom 
+            &-inner 
+                justify-content: space-around
+    .promo 
+        &__wrapper 
+            grid-template-columns: 1fr
+    .about 
+        &__wrapper 
+            flex-direction: column
+    .footer 
+        &__bottom 
+            display: grid
+            grid-template-columns: 200px 1fr
+        &__right 
+            grid-column: span 2
+            width: max-content
+            margin-left: 240px
