@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplay: true, 
         interval: 5000 
     });
+    ItcSlider.getOrCreateInstance('.cooperation__slider');
     ItcSlider.getOrCreateInstance('.services__slider');
     ItcSlider.getOrCreateInstance('.catalog__slider');
     ItcSlider.getOrCreateInstance('.materials__slider');
     ItcSlider.getOrCreateInstance('.portfolio__slider');
+    ItcSlider.getOrCreateInstance('.benefits__slider');
     ItcSlider.getOrCreateInstance('.reviews__slider');
 });
 const headerBottom = document.querySelector('.header__bottom')
@@ -38,3 +40,27 @@ for (let i = 0; i < faqHeadArray.length; i++) {
         
     })
 }
+const headerBurger = document.querySelector('.header__burger')
+const menu = document.querySelector('.menu')
+headerBurger.addEventListener('click', function(){
+    menu.classList.add('menu_active')
+})
+document.addEventListener('click', function(e){
+    const withinBoundaries = e.composedPath().includes(menu);
+    const withinBoundariesBurger = e.composedPath().includes(headerBurger);
+    if ( ! withinBoundaries ) {
+        if ( ! withinBoundariesBurger ) {
+            menu.classList.remove('menu_active')
+        }
+    }
+})
+
+const footerNavTitleArray = document.querySelectorAll('.footer__nav-title')
+for (let i = 0; i < footerNavTitleArray.length; i++) {
+    const footerNavTitle = footerNavTitleArray[i];
+    footerNavTitle.addEventListener('click', function(){
+        const footerNav = footerNavTitle.parentElement
+        footerNav.classList.toggle('footer__nav_active')
+    })
+}
+

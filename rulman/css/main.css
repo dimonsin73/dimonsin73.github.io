@@ -192,6 +192,9 @@ body {
   align-items: center;
   gap: 16px;
 }
+.header__burger {
+  display: none;
+}
 
 .nav {
   display: flex;
@@ -271,6 +274,10 @@ body {
   gap: 7.5px;
   font: 500 0.875rem/1.4 "Inter", sans-serif;
   color: var(--white);
+}
+
+.menu {
+  display: none;
 }
 
 .hero {
@@ -405,12 +412,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  overflow-x: auto;
-}
-.cooperation__content::-webkit-scrollbar-button {
-  display: none;
-  height: 0;
-  width: 0;
 }
 .cooperation__item {
   width: 560px;
@@ -447,6 +448,19 @@ body {
   color: var(--yellow);
   text-align: right;
 }
+.cooperation__slider {
+  display: none;
+}
+.cooperation__slider-item {
+  width: 312px;
+  padding: 10px 10px 10px 0;
+}
+.cooperation__slider .cooperation__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 
 .services__wrapper {
   display: flex;
@@ -463,6 +477,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
+  padding: 0;
 }
 .services__list-item {
   display: flex;
@@ -750,6 +765,13 @@ body {
 .benefits__top svg {
   flex: 0 0 auto;
 }
+.benefits__slider {
+  display: none;
+}
+.benefits__slider .benefits__item {
+  width: 330px;
+  height: 170px;
+}
 
 .suppliers__wrapper {
   display: flex;
@@ -758,14 +780,18 @@ body {
 }
 .suppliers__content {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 24px 16px;
+  gap: 24px;
+  overflow-x: auto;
 }
 .suppliers__item {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 16px;
+  width: 100%;
 }
 
 .industries__wrapper {
@@ -1149,16 +1175,36 @@ body {
     height: calc(100vh - 280px);
   }
   .cooperation__content {
-    padding-bottom: 10px;
+    display: none;
+  }
+  .cooperation__slider {
+    display: block;
+    margin-top: -30px;
   }
   .decoration__content {
     padding-bottom: 10px;
   }
+  .portfolio__slider-item {
+    width: 330px;
+  }
   .benefits__content {
+    display: none;
+  }
+  .benefits__slider {
+    display: block;
+    margin-top: -30px;
+  }
+  .suppliers__content {
     padding-bottom: 10px;
   }
   .industries__content {
     padding-bottom: 10px;
+  }
+  .industries__item {
+    min-width: 330px;
+  }
+  .reviews__slider-item {
+    width: 330px;
   }
   .footer__content {
     grid-template-columns: 1fr 1fr;
@@ -1177,17 +1223,76 @@ body {
   .container {
     max-width: 720px;
   }
+  .header {
+    height: 62px;
+    padding-bottom: 10px;
+  }
+  .header__banner {
+    display: none;
+  }
   .header__top-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
     gap: 16px;
   }
-  .header__bottom-inner {
-    justify-content: space-around;
+  .header__contact {
+    display: none;
+  }
+  .header__signup {
+    display: none;
+  }
+  .header__rating {
+    display: none;
+  }
+  .header__bottom {
+    display: none;
+  }
+  .header__menu {
+    display: none;
+  }
+  .header__burger {
+    display: block;
+    text-align: right;
+  }
+  .hero {
+    height: calc(100vh - 62px);
+  }
+  .hero__wrapper {
+    flex-direction: column;
+  }
+  .hero__title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .section__title {
+    font-size: 2rem;
+  }
+  .section__title2 {
+    font-size: 2rem;
+  }
+  .services__list {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  .services__list-text {
+    white-space: nowrap;
   }
   .promo__wrapper {
     grid-template-columns: 1fr;
+  }
+  .promo__item-img {
+    width: 140px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .promo__content {
+    gap: 8px;
+  }
+  .promo__content-title {
+    font-size: 1rem;
+  }
+  .promo__content-title2 {
+    font-size: 1rem;
   }
   .about__wrapper {
     flex-direction: column;
@@ -1201,5 +1306,221 @@ body {
     width: -moz-max-content;
     width: max-content;
     margin-left: 240px;
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 340px;
+    padding: 20px;
+    background-color: var(--dark);
+    transition: left 0.3s ease;
+    z-index: 100;
+  }
+  .menu_active {
+    left: 0;
+  }
+  .menu__banner {
+    padding: 4px;
+    border-radius: 6px;
+    background-color: var(--yellow);
+  }
+  .menu__banner-text {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .menu__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu__contact-link {
+    font: 700 1rem/1 "Geologica", sans-serif;
+    color: var(--yellow);
+    text-align: center;
+  }
+  .menu__contact-text {
+    margin-bottom: 0;
+    font: 400 0.625rem/2 "Geologica", sans-serif;
+    color: var(--white);
+    text-align: center;
+  }
+  .menu__social {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .menu__social-link {
+    flex: 0 0 auto;
+  }
+  .menu__social-link svg {
+    fill: var(--white);
+    transition: fill 0.3s ease;
+  }
+  .menu__social-link:hover svg {
+    fill: var(--yellow);
+  }
+  .menu__signup {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .menu__signup-icon {
+    flex: 0 0 auto;
+  }
+  .menu__signup-text {
+    max-width: 181px;
+    margin-bottom: 0;
+    font: 400 0.875rem/1.25 "Geologica", sans-serif;
+    color: var(--white);
+    text-align: left;
+    transition: color 0.3s ease;
+  }
+  .menu__signup:hover .header__signup-text {
+    color: var(--yellow);
+  }
+  .menu__rating {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 53px;
+  }
+  .menu__rating-bottom {
+    display: flex;
+    gap: 12px;
+  }
+  .menu__rating-text {
+    margin-bottom: 0;
+    font: 400 0.75rem/1.25 "Inter", sans-serif;
+    color: var(--white);
+  }
+  .menu__stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .menu__star {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10px;
+  }
+  .menu__bottom-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 20px;
+  }
+  .menu__bottom-padding {
+    padding-bottom: 51px;
+  }
+  .menu__map {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .menu__map-link {
+    font: 400 0.875rem/1.4 "Geologica", sans-serif;
+    color: var(--white);
+    transition: color 0.3s ease;
+  }
+  .menu__map-link:hover {
+    color: var(--yellow);
+  }
+  .menu__map a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .menu__map svg {
+    flex: 0 0 auto;
+  }
+  .menu__mail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .menu__mail-link {
+    font: 400 0.875rem/1.4 "Geologica", sans-serif;
+    color: var(--white);
+    transition: color 0.3s ease;
+  }
+  .menu__mail-link:hover {
+    color: var(--yellow);
+  }
+  .menu__menu {
+    padding-bottom: 17px;
+  }
+  .menu__menu-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .menu__menu-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 17px;
+    background-color: var(--dark);
+  }
+  .menu__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .menu__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .menu__link {
+    font: 500 0.875rem/1.4 "Geologica", sans-serif;
+    color: var(--white);
+    transition: color 0.3s ease;
+  }
+  .menu__link:hover {
+    color: var(--yellow);
+  }
+}
+@media (max-width: 720px) {
+  .footer__content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .footer__wrapper {
+    gap: 24px;
+  }
+  .footer__menu {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+  .footer__bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .footer__center {
+    justify-content: center;
+    gap: 8px;
+  }
+  .footer__right {
+    grid-column: span 1;
+    width: 100%;
+    margin-left: 0;
+  }
+  .footer__list {
+    height: 0;
+    overflow-y: hidden;
+  }
+  .footer__nav_active .footer__list {
+    height: -moz-max-content;
+    height: max-content;
   }
 }/*# sourceMappingURL=main.css.map */

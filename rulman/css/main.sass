@@ -162,6 +162,8 @@ body
         display: flex
         align-items: center
         gap: 16px
+    &__burger 
+        display: none
 .nav 
     display: flex
     align-items: center
@@ -225,7 +227,8 @@ body
     gap: 7.5px
     font: 500 0.875rem/1.4 $font-accent
     color: var(--white)
-
+.menu 
+    display: none
 // ===== HERO БЛОК =====
 .hero
     position: relative
@@ -339,11 +342,6 @@ body
         display: grid
         grid-template-columns: 1fr 1fr
         gap: 20px 
-        overflow-x: auto
-        &::-webkit-scrollbar-button 
-            display: none
-            height: 0
-            width: 0
     &__item 
         width: 560px
         padding: 20px
@@ -372,6 +370,16 @@ body
             font: 800 1.25rem/1.25 $font-main
             color: var(--yellow)
             text-align: right
+    &__slider 
+        display: none
+        &-item 
+            width: 312px
+            padding: 10px 10px 10px 0
+        & .cooperation__list 
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            height: 100%
 // ===== SERVICES БЛОК =====
 .services 
     &__wrapper 
@@ -387,6 +395,7 @@ body
         align-items: center
         justify-content: center
         margin: 0
+        padding: 0
         &-item 
             display: flex
             align-items: center
@@ -396,8 +405,6 @@ body
             border-bottom: 1px solid var(--grey)
             line-height: 1.25
             transition: border 0.3s ease, color 0.3s ease
-        
-            
         &-btn 
             display: none
             &:checked ~ .services__list-text
@@ -634,6 +641,11 @@ body
         gap: 10px
         & svg 
             flex: 0 0 auto
+    &__slider 
+        display: none
+        & .benefits__item 
+            width: 330px
+            height: 170px
 // ===== SUPPLIERS БЛОК =====
 .suppliers
     &__wrapper 
@@ -642,13 +654,17 @@ body
         gap: 60px
     &__content 
         display: flex
-        flex-wrap: wrap
+        flex-direction: column
         align-items: center
         justify-content: space-between
-        gap: 24px 16px
+        gap: 24px 
+        overflow-x: auto
     &__item 
         display: flex 
+        align-items: center
+        justify-content: space-between
         gap: 16px
+        width: 100%
 // ===== INDUSTRIES БЛОК =====
 .industries 
     &__wrapper 
@@ -963,16 +979,36 @@ body
         height: calc( 100vh - 280px )
     .cooperation 
         &__content 
-            padding-bottom: 10px
+            display: none
+        &__slider 
+            display: block
+            margin-top: -30px
     .decoration 
         &__content 
             padding-bottom: 10px
+    
+    .portfolio
+        &__slider 
+            &-item 
+                width: 330px
     .benefits 
+        &__content 
+            display: none
+        &__slider 
+            display: block
+            margin-top: -30px
+    .suppliers 
         &__content 
             padding-bottom: 10px
     .industries 
         &__content 
             padding-bottom: 10px
+        &__item 
+            min-width: 330px
+    .reviews
+        &__slider 
+            &-item 
+                width: 330px
     .footer 
         &__content 
             grid-template-columns: 1fr 1fr
@@ -987,18 +1023,59 @@ body
     .container 
         max-width: 720px
     .header 
+        height: 62px
+        padding-bottom: 10px
+        &__banner 
+            display: none
         &__top 
             &-inner 
                 display: grid
                 grid-template-columns: 1fr 1fr
-                justify-items: center
                 gap: 16px
+        &__contact 
+            display: none
+        &__signup
+            display: none
+        &__rating 
+            display: none
         &__bottom 
-            &-inner 
-                justify-content: space-around
+            display: none
+        &__menu 
+            display: none
+        &__burger 
+            display: block
+            text-align: right
+    .hero 
+        height: calc(100vh - 62px)
+        &__wrapper 
+            flex-direction: column
+        &__title 
+            font-size: 1.5rem
+            text-align: center
+    .section 
+        &__title 
+            font-size: 2rem
+        &__title2
+            font-size: 2rem
+    .services 
+        &__list 
+            justify-content: flex-start
+            overflow-x: auto
+            &-text 
+                white-space: nowrap
     .promo 
         &__wrapper 
             grid-template-columns: 1fr
+        &__item 
+            &-img 
+                width: 140px
+                object-fit: cover
+        &__content 
+            gap: 8px    
+            &-title 
+                font-size: 1rem
+            &-title2
+                font-size: 1rem
     .about 
         &__wrapper 
             flex-direction: column
@@ -1010,3 +1087,178 @@ body
             grid-column: span 2
             width: max-content
             margin-left: 240px
+    .menu 
+        position: fixed
+        top: 0
+        left: -100%
+        bottom: 0
+        display: flex
+        flex-direction: column
+        gap: 16px
+        width: 340px
+        padding: 20px
+        background-color: var(--dark)
+        transition: left 0.3s ease
+        z-index: 100
+        &_active 
+            left: 0
+        &__banner
+            padding: 4px
+            border-radius: 6px
+            background-color: var(--yellow)
+            &-text 
+                margin-bottom: 0
+                text-align: center
+        &__contact 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            &-link 
+                font: 700 1rem/1 $font-main
+                color: var(--yellow)
+                text-align: center
+            &-text 
+                margin-bottom: 0
+                font: 400 0.625rem/2 $font-main
+                color: var(--white)
+                text-align: center
+        &__social
+            display: flex
+            align-items: center
+            gap: 8px
+            &-link 
+                flex: 0 0 auto
+                & svg 
+                    fill: var(--white)
+                    transition: fill 0.3s ease
+                &:hover 
+                    & svg 
+                        fill: var(--yellow)
+        &__signup
+            display: flex
+            align-items: center
+            gap: 6px
+            &-icon 
+                flex: 0 0 auto
+            &-text 
+                max-width: 181px
+                margin-bottom: 0
+                font: 400 0.875rem/1.25 $font-main
+                color: var(--white)
+                text-align: left
+                transition: color 0.3s ease
+            &:hover 
+                & .header__signup-text 
+                    color: var(--yellow)
+        &__rating
+            display: flex
+            flex-direction: column
+            gap: 10px
+            height: 53px
+            &-bottom 
+                display: flex
+                gap: 12px
+            &-text 
+                margin-bottom: 0
+                font: 400 0.75rem/1.25 $font-accent
+                color: var(--white)
+        &__stars 
+            display: flex
+            align-items: center
+            gap: 4px
+        &__star
+            flex: 0 0 auto
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 10px
+        &__bottom 
+            &-inner
+                display: flex
+                align-items: center
+                gap: 20px
+                height: 20px
+            &-padding
+                padding-bottom: 51px
+        &__map 
+            display: flex
+            align-items: center
+            gap: 6px
+            &-link 
+                font: 400 0.875rem/1.4 $font-main
+                color: var(--white)
+                transition: color 0.3s ease
+                &:hover 
+                    color: var(--yellow)
+            & a
+                text-decoration: underline
+                text-underline-offset: 2px
+            & svg 
+                flex: 0 0 auto
+        &__mail
+            display: flex
+            align-items: center
+            gap: 6px
+            &-link 
+                font: 400 0.875rem/1.4 $font-main
+                color: var(--white)
+                transition: color 0.3s ease
+                &:hover 
+                    color: var(--yellow)
+        &__menu 
+            padding-bottom: 17px
+            &-inner
+                display: flex
+                align-items: center
+                justify-content: space-between
+            &-sticky 
+                position: fixed
+                top: 0
+                left: 0
+                right: 0
+                width: 100%
+                padding-top: 17px
+                background-color: var(--dark)
+        &__right 
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 16px
+        &__nav 
+            display: flex
+            flex-direction: column
+            gap: 12px
+        &__link 
+            font: 500 0.875rem/1.4 $font-main
+            color: var(--white)
+            transition: color 0.3s ease
+            &:hover 
+                color: var(--yellow)
+@media (max-width: 720px)
+    .footer 
+        &__content 
+            grid-template-columns: 1fr 
+            justify-items: center
+        &__wrapper 
+            gap: 24px
+        &__menu 
+            grid-column: span 1
+            flex-direction: column
+        &__bottom 
+            display: grid
+            grid-template-columns: 1fr
+            gap: 20px
+        &__center 
+            justify-content: center
+            gap: 8px
+        &__right 
+            grid-column: span 1
+            width: 100%
+            margin-left: 0
+        &__list 
+            height: 0
+            overflow-y: hidden
+        &__nav 
+            &_active 
+                & .footer__list 
+                    height: max-content
