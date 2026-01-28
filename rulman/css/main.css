@@ -20,6 +20,7 @@ html {
 }
 
 body {
+  min-width: 390px;
   font: 400 1rem/1.5 "Geologica", sans-serif;
   color: var(--dark);
 }
