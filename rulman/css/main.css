@@ -1225,6 +1225,8 @@ body {
     max-width: 720px;
   }
   .header {
+    position: fixed;
+    top: 0;
     height: 62px;
     padding-bottom: 10px;
   }
