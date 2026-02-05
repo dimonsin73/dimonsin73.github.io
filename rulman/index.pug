@@ -10,6 +10,7 @@ html(lang="ru")
         link(rel="stylesheet", href="css/main.css")
         script(src="js/bootstrap.bundle.min.js" defer)
         script(src="js/itcslider.js" defer)
+        script(src="js/lazyload.min.js" defer)
         script(src="js/main.js" defer)
     body 
         header.header
@@ -144,8 +145,40 @@ html(lang="ru")
         .menu
             .menu__banner 
                 p.menu__banner-text Минимальная стоимость заказа - 25 000 руб. Принимаем заказы от 1 детали до оптовой партии (партии в 5 000 изделий в месяц)
-            .menu__logo
-                img(src="images/logo.svg", alt="logo" loading="lazy").menu__logo-img
+            .menu__nav 
+                .dropdown
+                    button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                        | О компании
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
+                        </svg>
+                    .dropdown__menu(aria-labelledby="dropdownMenuButton") 
+                        a.dropdown__item(href="#") Схема работы
+                        a.dropdown__item(href="#reviews") Отзывы компании
+                        a.dropdown__item(href="#") Почему мы?
+                        a.dropdown__item(href="#") Аутсорсинг
+                        a.dropdown__item(href="#") Сотрудничество
+                .dropdown
+                    button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                        | Каталог покрытий
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
+                        </svg>
+                .dropdown
+                    button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                        | Услуги
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
+                        </svg>
+                .dropdown
+                    button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                        | Примеры работ
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
+                        </svg>
+                a(href="").menu__link Расчет стоимости
+                a(href="").menu__link Блог
+                a(href="").menu__link Контакты
             .menu__contact 
                 a(href="tel:+79167503525").menu__contact-link +7 (916) 750-35-25
                 p.menu__contact-text Время работы с 9:00 до 18:00
@@ -206,40 +239,7 @@ html(lang="ru")
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.96654C0 0.88045 0.91397 0 2.04141 0H18.3727C19.5001 0 20.4141 0.880449 20.4141 1.96654V13.7658C20.4141 14.8519 19.5001 15.7323 18.3727 15.7323H2.04141C0.913971 15.7323 0 14.8519 0 13.7658V1.96654ZM3.87875 1.96654L10.207 6.62834L16.5353 1.96654H3.87875ZM18.3727 3.08868L11.4471 8.19047C10.7151 8.72968 9.69895 8.72968 8.96699 8.19047L2.04141 3.08868V13.7658H18.3727V3.08868Z" fill="#FBBB5A"/>
                 </svg>
                 a(href="mailto:info@rulman.ru").menu__mail-link info@rulman.ru
-            .menu__nav 
-                .dropdown
-                    button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
-                        | О компании
-                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
-                        </svg>
-                    .dropdown__menu(aria-labelledby="dropdownMenuButton") 
-                        a.dropdown__item(href="#") Схема работы
-                        a.dropdown__item(href="#reviews") Отзывы компании
-                        a.dropdown__item(href="#") Почему мы?
-                        a.dropdown__item(href="#") Аутсорсинг
-                        a.dropdown__item(href="#") Сотрудничество
-                .dropdown
-                    button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
-                        | Каталог покрытий
-                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
-                        </svg>
-                .dropdown
-                    button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
-                        | Услуги
-                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
-                        </svg>
-                .dropdown
-                    button.dropdown__btn(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
-                        | Примеры работ
-                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 6.53033C5.76256 6.82322 6.23744 6.82322 6.53033 6.53033L11.7803 1.28033C12.0732 0.987437 12.0732 0.512563 11.7803 0.21967C11.4874 -0.0732236 11.0126 -0.0732236 10.7197 0.21967L6 4.93934L1.28033 0.21967C0.987437 -0.0732236 0.512563 -0.0732236 0.21967 0.21967C-0.0732233 0.512563 -0.0732233 0.987437 0.21967 1.28033L5.46967 6.53033Z"/>
-                        </svg>
-                a(href="").menu__link Расчет стоимости
-                a(href="").menu__link Блог
-                a(href="").menu__link Контакты
+            
             .menu__right 
                 button(type="button").callback Обратный звонок
                 button(type="button").search 
@@ -252,12 +252,90 @@ html(lang="ru")
                 .slider.hero__slider
                     .slider__wrapper
                         .slider__items
-                            .slider__item.hero__slider-item.hero__slider-bg1
-                            .slider__item.hero__slider-item.hero__slider-bg2
-                            .slider__item.hero__slider-item.hero__slider-bg1
-                            .slider__item.hero__slider-item.hero__slider-bg2
-                            .slider__item.hero__slider-item.hero__slider-bg1
-                            .slider__item.hero__slider-item.hero__slider-bg2
+                            .slider__item.hero__slider-item
+                                picture.lazy-picture
+                                    source(type="image/jpeg", data-sizes="100vw", media="(min-width: 992px)", data-srcset="images/hero/hero_1_075.jpg 1440w, images/hero/hero_1.jpg 2150w")
+                                    source(type="image/jpeg", data-sizes="100vw", media="(max-width: 991px)", data-srcset="images/hero/hero_1_025.jpg 480w, images/hero/hero_1_05.jpg 960w")
+                                    img.hero__slider-img.lazy(data-src="images/hero/hero_1.jpg", alt="Рульман", loading="lazy")
+                                .hero__slider-content
+                                    .container 
+                                        .hero__wrapper 
+                                            h1.hero__title ПРОФЕССИОНАЛЬНАЯ ПОКРАСКА<br> ЛЮБЫХ ИЗДЕЛИЙ ЗАКАЗЧИКА
+                                            form.hero__form 
+                                                input#hero__form-name.hero__form-input(type="text", name="name", placeholder="Ваше Имя", required)
+                                                input#hero__form-tel.hero__form-input(type="tel", name="tel", placeholder="Телефон", required)
+                                                p.hero__form-text Я согласен на обработку персональных данных и ознакомлен с Политикой конфиденциальности
+                                                button(type="submit").hero__form-btn Отправить
+                            .slider__item.hero__slider-item
+                                picture.lazy-picture
+                                    source(type="image/jpeg", data-sizes="100vw", media="(min-width: 992px)", data-srcset="images/hero/hero_2_075.jpg 1440w, images/hero/hero_2.jpg 2150w")
+                                    source(type="image/jpeg", data-sizes="100vw", media="(max-width: 991px)", data-srcset="images/hero/hero_2_025.jpg 480w, images/hero/hero_2_05.jpg 960w")
+                                    img.hero__slider-img.lazy(data-src="images/hero/hero_2.jpg", alt="Рульман", loading="lazy")
+                                .hero__slider-content
+                                    .container 
+                                        .hero__wrapper 
+                                            h1.hero__title ПРОФЕССИОНАЛЬНАЯ ПОКРАСКА<br> ЛЮБЫХ ИЗДЕЛИЙ ЗАКАЗЧИКА
+                                            form.hero__form 
+                                                input#hero__form-name.hero__form-input(type="text", name="name", placeholder="Ваше Имя", required)
+                                                input#hero__form-tel.hero__form-input(type="tel", name="tel", placeholder="Телефон", required)
+                                                p.hero__form-text Я согласен на обработку персональных данных и ознакомлен с Политикой конфиденциальности
+                                                button(type="submit").hero__form-btn Отправить
+                            .slider__item.hero__slider-item
+                                picture.lazy-picture
+                                    source(type="image/jpeg", data-sizes="100vw", media="(min-width: 992px)", data-srcset="images/hero/hero_1_075.jpg 1440w, images/hero/hero_1.jpg 2150w")
+                                    source(type="image/jpeg", data-sizes="100vw", media="(max-width: 991px)", data-srcset="images/hero/hero_1_025.jpg 480w, images/hero/hero_1_05.jpg 960w")
+                                    img.hero__slider-img.lazy(data-src="images/hero/hero_1.jpg", alt="Рульман", loading="lazy")
+                                .hero__slider-content
+                                    .container 
+                                        .hero__wrapper 
+                                            h1.hero__title ПРОФЕССИОНАЛЬНАЯ ПОКРАСКА<br> ЛЮБЫХ ИЗДЕЛИЙ ЗАКАЗЧИКА
+                                            form.hero__form 
+                                                input#hero__form-name.hero__form-input(type="text", name="name", placeholder="Ваше Имя", required)
+                                                input#hero__form-tel.hero__form-input(type="tel", name="tel", placeholder="Телефон", required)
+                                                p.hero__form-text Я согласен на обработку персональных данных и ознакомлен с Политикой конфиденциальности
+                                                button(type="submit").hero__form-btn Отправить
+                            .slider__item.hero__slider-item
+                                picture.lazy-picture
+                                    source(type="image/jpeg", data-sizes="100vw", media="(min-width: 992px)", data-srcset="images/hero/hero_2_075.jpg 1440w, images/hero/hero_2.jpg 2150w")
+                                    source(type="image/jpeg", data-sizes="100vw", media="(max-width: 991px)", data-srcset="images/hero/hero_2_025.jpg 480w, images/hero/hero_2_05.jpg 960w")
+                                    img.hero__slider-img.lazy(data-src="images/hero/hero_2.jpg", alt="Рульман", loading="lazy")
+                                .hero__slider-content
+                                    .container 
+                                        .hero__wrapper 
+                                            h1.hero__title ПРОФЕССИОНАЛЬНАЯ ПОКРАСКА<br> ЛЮБЫХ ИЗДЕЛИЙ ЗАКАЗЧИКА
+                                            form.hero__form 
+                                                input#hero__form-name.hero__form-input(type="text", name="name", placeholder="Ваше Имя", required)
+                                                input#hero__form-tel.hero__form-input(type="tel", name="tel", placeholder="Телефон", required)
+                                                p.hero__form-text Я согласен на обработку персональных данных и ознакомлен с Политикой конфиденциальности
+                                                button(type="submit").hero__form-btn Отправить
+                            .slider__item.hero__slider-item
+                                picture.lazy-picture
+                                    source(type="image/jpeg", data-sizes="100vw", media="(min-width: 992px)", data-srcset="images/hero/hero_1_075.jpg 1440w, images/hero/hero_1.jpg 2150w")
+                                    source(type="image/jpeg", data-sizes="100vw", media="(max-width: 991px)", data-srcset="images/hero/hero_1_025.jpg 480w, images/hero/hero_1_05.jpg 960w")
+                                    img.hero__slider-img.lazy(data-src="images/hero/hero_1.jpg", alt="Рульман", loading="lazy")
+                                .hero__slider-content
+                                    .container 
+                                        .hero__wrapper 
+                                            h1.hero__title ПРОФЕССИОНАЛЬНАЯ ПОКРАСКА<br> ЛЮБЫХ ИЗДЕЛИЙ ЗАКАЗЧИКА
+                                            form.hero__form 
+                                                input#hero__form-name.hero__form-input(type="text", name="name", placeholder="Ваше Имя", required)
+                                                input#hero__form-tel.hero__form-input(type="tel", name="tel", placeholder="Телефон", required)
+                                                p.hero__form-text Я согласен на обработку персональных данных и ознакомлен с Политикой конфиденциальности
+                                                button(type="submit").hero__form-btn Отправить
+                            .slider__item.hero__slider-item
+                                picture.lazy-picture
+                                    source(type="image/jpeg", data-sizes="100vw", media="(min-width: 992px)", data-srcset="images/hero/hero_2_075.jpg 1440w, images/hero/hero_2.jpg 2150w")
+                                    source(type="image/jpeg", data-sizes="100vw", media="(max-width: 991px)", data-srcset="images/hero/hero_2_025.jpg 480w, images/hero/hero_2_05.jpg 960w")
+                                    img.hero__slider-img.lazy(data-src="images/hero/hero_2.jpg", alt="Рульман", loading="lazy")
+                                .hero__slider-content
+                                    .container 
+                                        .hero__wrapper 
+                                            h1.hero__title ПРОФЕССИОНАЛЬНАЯ ПОКРАСКА<br> ЛЮБЫХ ИЗДЕЛИЙ ЗАКАЗЧИКА
+                                            form.hero__form 
+                                                input#hero__form-name.hero__form-input(type="text", name="name", placeholder="Ваше Имя", required)
+                                                input#hero__form-tel.hero__form-input(type="tel", name="tel", placeholder="Телефон", required)
+                                                p.hero__form-text Я согласен на обработку персональных данных и ознакомлен с Политикой конфиденциальности
+                                                button(type="submit").hero__form-btn Отправить
                     .slider__bar
                         .slider__btn.slider__btn-prev
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -274,14 +352,6 @@ html(lang="ru")
                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4918 13.1751C19.9474 13.6307 19.9474 14.3694 19.4918 14.825L11.3251 22.9917C10.8695 23.4473 10.1308 23.4473 9.67521 22.9917C9.21959 22.5361 9.21959 21.7974 9.67521 21.3418L17.0169 14.0001L9.67521 6.65837C9.21959 6.20276 9.21959 5.46407 9.67521 5.00846C10.1308 4.55285 10.8695 4.55285 11.3251 5.00846L19.4918 13.1751Z"/>
                             </svg>
-                .container 
-                    .hero__wrapper 
-                        h1.hero__title ПРОФЕССИОНАЛЬНАЯ ПОКРАСКА<br> ЛЮБЫХ ИЗДЕЛИЙ ЗАКАЗЧИКА
-                        form.hero__form 
-                            input#hero__form-name.hero__form-input(type="text", name="name", placeholder="Ваше Имя", required)
-                            input#hero__form-tel.hero__form-input(type="tel", name="tel", placeholder="Телефон", required)
-                            p.hero__form-text Я согласен на обработку персональных данных и ознакомлен с Политикой конфиденциальности
-                            button(type="submit").hero__form-btn Отправить
             section.cooperation.section
                 .container 
                     .cooperation__wrapper 
@@ -377,37 +447,49 @@ html(lang="ru")
                                 .slider__wrapper
                                     .slider__items
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-1.jpg", alt="" loading="lazy")
+                                            picture.lazy-picture
+                                                source(type="image/jpeg", data-sizes="260px", data-srcset="images/services/services_1-1_05.jpg 125px, images/services/services_1-1.jpg 250px")
+                                                img.services__slider-img.lazy(data-src="images/services/services_1-1.jpg", alt="Аллюминий, профнастил, металл", loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Аллюминий, профнастил, металл
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-2.jpg", alt="" loading="lazy") 
+                                            picture.lazy-picture
+                                                source(type="image/jpeg", data-sizes="260px", data-srcset="images/services/services_1-2_05.jpg 125px, images/services/services_1-2.jpg 250px")
+                                                img.services__slider-img.lazy(data-src="images/services/services_1-2.jpg", alt="Покраска пластика, пенопласта, PVC", loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Покраска пластика, пенопласта, PVC
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-3.jpg", alt="" loading="lazy")
+                                            picture.lazy-picture
+                                                source(type="image/jpeg", data-sizes="260px", data-srcset="images/services/services_1-3_05.jpg 125px, images/services/services_1-3.jpg 250px")
+                                                img.services__slider-img.lazy(data-src="images/services/services_1-3.jpg", alt="Покраска панелей МДФ, ЛМДФ, ЛДСП", loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Покраска панелей МДФ, ЛМДФ, ЛДСП
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-4.jpg", alt="" loading="lazy")
+                                            picture.lazy-picture
+                                                source(type="image/jpeg", data-sizes="260px", data-srcset="images/services/services_1-4_05.jpg 125px, images/services/services_1-4.jpg 250px")
+                                                img.services__slider-img.lazy(data-src="images/services/services_1-4.jpg", alt="Покраска дерева, массива, шпона", loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Покраска дерева, массива, шпона
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-1.jpg", alt="" loading="lazy")
+                                            picture.lazy-picture
+                                                source(type="image/jpeg", data-sizes="260px", data-srcset="images/services/services_1-1_05.jpg 125px, images/services/services_1-1.jpg 250px")
+                                                img.services__slider-img.lazy(data-src="images/services/services_1-1.jpg", alt="Аллюминий, профнастил, металл", loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Аллюминий, профнастил, металл
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
                                             a.services__slider-link(href="") Перейти
                                         .slider__item.services__slider-item
-                                            img.services__slider-img(src="images/services/services_1-2.jpg", alt="" loading="lazy")
+                                            picture.lazy-picture
+                                                source(type="image/jpeg", data-sizes="260px", data-srcset="images/services/services_1-2_05.jpg 125px, images/services/services_1-2.jpg 250px")
+                                                img.services__slider-img.lazy(data-src="images/services/services_1-2.jpg", alt="Покраска пластика, пенопласта, PVC", loading="lazy")
                                             .services__slider-content
                                                 h3.services__slider-title Покраска пластика, пенопласта, PVC
                                                 p.services__slider-text Восстановим прежний облик климатического оборудования либо добьемся его идеального сочетания с интерьером.
@@ -604,7 +686,9 @@ html(lang="ru")
             section.about.section
                 .container 
                     .about__wrapper 
-                        img.about__img(src="images/about/about_1.png", alt="" loading="lazy")
+                        picture.lazy-picture
+                            source(type="image/png", data-sizes="400px", data-srcset="images/about/about_1_05.png 200px, images/about/about_1.png 390px")
+                            img.about__img.lazy(data-src="images/about/about_1.png", alt="Компания «Рульман»", loading="lazy")
                         .about__content 
                             .about__paragraph
                                 p.about__content-text Компания «Рульман» производит покраску любых изделий: электрофурнитуры, мебели, фасадов, панелей, выставочных стендов, торгового и промышленного оборудования, а также других изделий из МДФ, дерева, пластика, металла и стекла.
@@ -621,22 +705,34 @@ html(lang="ru")
                             .slider__wrapper
                                 .slider__items
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_1.png", alt="portfolio" loading="lazy")
+                                        picture.lazy-picture
+                                            source(type="image/png", data-sizes="400px", data-srcset="images/portfolio/portfolio_1_05.png 180px, images/portfolio/portfolio_1.png 360px")
+                                            img.portfolio__slider-img.lazy(data-src="images/portfolio/portfolio_1.png", alt="Покраска фасадов МДФ", loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_2.png", alt="portfolio" loading="lazy")
+                                        picture.lazy-picture
+                                            source(type="image/png", data-sizes="400px", data-srcset="images/portfolio/portfolio_2_05.png 180px, images/portfolio/portfolio_2.png 360px")
+                                            img.portfolio__slider-img.lazy(data-src="images/portfolio/portfolio_2.png", alt="Покраска фасадов МДФ", loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_3.png", alt="portfolio" loading="lazy")
+                                        picture.lazy-picture
+                                            source(type="image/png", data-sizes="400px", data-srcset="images/portfolio/portfolio_3_05.png 180px, images/portfolio/portfolio_3.png 360px")
+                                            img.portfolio__slider-img.lazy(data-src="images/portfolio/portfolio_3.png", alt="Покраска фасадов МДФ", loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_1.png", alt="portfolio" loading="lazy")
+                                        picture.lazy-picture
+                                            source(type="image/png", data-sizes="400px", data-srcset="images/portfolio/portfolio_1_05.png 180px, images/portfolio/portfolio_1.png 360px")
+                                            img.portfolio__slider-img.lazy(data-src="images/portfolio/portfolio_1.png", alt="Покраска фасадов МДФ", loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_2.png", alt="portfolio" loading="lazy")
+                                        picture.lazy-picture
+                                            source(type="image/png", data-sizes="400px", data-srcset="images/portfolio/portfolio_2_05.png 180px, images/portfolio/portfolio_2.png 360px")
+                                            img.portfolio__slider-img.lazy(data-src="images/portfolio/portfolio_2.png", alt="Покраска фасадов МДФ", loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                                     .slider__item.portfolio__slider-item
-                                        img.portfolio__slider-img(src="images/portfolio/portfolio_3.png", alt="portfolio" loading="lazy")
+                                        picture.lazy-picture
+                                            source(type="image/png", data-sizes="400px", data-srcset="images/portfolio/portfolio_3_05.png 180px, images/portfolio/portfolio_3.png 360px")
+                                            img.portfolio__slider-img.lazy(data-src="images/portfolio/portfolio_3.png", alt="Покраска фасадов МДФ", loading="lazy")
                                         h3.portfolio__slider-title Покраска фасадов МДФ
                             .slider__bar
                                 .slider__btn.slider__btn-prev
@@ -1213,3 +1309,5 @@ html(lang="ru")
                             p.footer__right-text 2010–2025. Все права защищены.
 
 
+
+            

@@ -1,3 +1,6 @@
+// ===== LAZY LOAD =====
+const lazyLoadInstance = new LazyLoad({});
+// ===== SLIDERS =====
 document.addEventListener('DOMContentLoaded', () => {
     ItcSlider.getOrCreateInstance('.hero__slider', {
         autoplay: true, 
