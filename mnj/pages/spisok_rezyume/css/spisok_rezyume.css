@@ -942,8 +942,6 @@ body {
 /* ItcSlider */
 .itc-slider {
   position: relative;
-  /* кнопки влево и вправо */
-  /* индикаторы */
 }
 .itc-slider-wrapper {
   overflow: hidden;
@@ -963,6 +961,9 @@ body {
      -moz-user-select: none;
           user-select: none;
   will-change: transform;
+}
+.itc-slider {
+  /* кнопки влево и вправо */
 }
 .itc-slider-btn {
   position: absolute;
@@ -1001,6 +1002,9 @@ body {
 }
 .itc-slider-btn-next {
   right: -18px;
+}
+.itc-slider {
+  /* индикаторы */
 }
 .itc-slider-indicators {
   position: absolute;

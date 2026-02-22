@@ -1087,8 +1087,6 @@ body {
 
 .slider {
   position: relative;
-  /* кнопки влево и вправо */
-  /* индикаторы */
 }
 .slider__wrapper {
   overflow: hidden;
@@ -1119,6 +1117,9 @@ body {
   justify-content: center;
   gap: 32px;
 }
+.slider {
+  /* кнопки влево и вправо */
+}
 .slider__btn {
   display: flex;
   justify-content: center;
@@ -1143,6 +1144,9 @@ body {
 }
 .slider__btn:hover svg, .slider__btn:focus svg {
   fill: var(--light-grey);
+}
+.slider {
+  /* индикаторы */
 }
 .slider__indicators {
   display: flex;

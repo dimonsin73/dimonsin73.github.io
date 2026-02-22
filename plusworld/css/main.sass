@@ -16,6 +16,41 @@
     --grey: #a7afb9
     --border: #dee2e6
 
+    --background: #f8f9fa
+    --foreground: #2c3e50
+    --card: #ffffff
+    --card-foreground: #2c3e50
+    --popover: #ffffff
+    --popover-foreground: #2c3e50
+    --primary: #2E8B57
+    --primary-foreground: #ffffff
+    --secondary: #5d6d7e
+    --secondary-foreground: #ffffff
+    --muted: #e9ecef
+    --muted-foreground: #5d6d7e
+    --accent: #FFA726
+    --accent-foreground: #ffffff
+    --destructive: #e74c3c
+    --border: #dee2e6
+    --input: #dee2e6
+    --ring: #2E8B57
+    --chart-1: #3498db
+    --chart-2: #e67e22
+    --chart-3: #2ecc71
+    --chart-4: #9b59b6
+    --chart-5: #f39c12
+    --fact: #3498db
+    --story: #e67e22
+    --project: #2ecc71
+    --sidebar: #ffffff
+    --sidebar-foreground: #2c3e50
+    --sidebar-primary: #2E8B57
+    --sidebar-primary-foreground: #ffffff
+    --sidebar-accent: #e9ecef
+    --sidebar-accent-foreground: #2c3e50
+    --sidebar-border: #dee2e6
+    --sidebar-ring: #2E8B57
+
 ::-webkit-scrollbar 
     width: 5px
     height: 5px
@@ -36,7 +71,7 @@
     right: 0
     padding: 10px 0
     border-bottom: 1px solid var(--border)
-    box-shadow: 0 5px 5px var(--border)
+    box-shadow: 0 2px 5px var(--border)
     background-color: #fff
     z-index: 100
     &__wrapper 
@@ -63,14 +98,48 @@
         display: flex
         align-items: center
         gap: 16px
+.setting 
+    display: flex
+.language 
+    position: relative
+    &__view 
+        display: flex
+        align-items: center
+        gap: 8px
+        padding: 4px
+    &__icon 
+        display: flex
+        width: 24px
+        height: 24px
+    &__code 
+        width: 30px
+        font-size: 20px
+    &__name 
+        width: 122px
+        text-align: left
+    &__dropdown 
+        position: absolute
+        top: calc(100% + 8px)
+        border-radius: 4px
+        box-shadow: 2px 2px 2px var(--border), -2px -2px 2px var(--border), 2px -2px 2px var(--border),-2px 2px 2px var(--border)
+        z-index: 10
+    &__options 
+        display: flex
+        flex-direction: column
+        border-radius: 4px
+        background-color: #fff
+    &__option 
+        display: flex
+        align-items: center
+        gap: 8px
+        padding: 4px
 .main 
     margin-top: 71px
 .hiro 
     display: flex
     align-items: center
     height: calc(100vh - 71px)
-    background: #D2DCD8
-    background: linear-gradient(120deg,rgba(210, 220, 216, 1) 0%, rgba(249, 241, 230, 1) 100%)
+    background: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%)
     &__wrapper 
         height: 100%
         display: flex

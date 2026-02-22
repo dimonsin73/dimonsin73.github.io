@@ -1290,8 +1290,6 @@ input[type=number]::-webkit-inner-spin-button {
 
 .itc-slider {
   position: relative;
-  /* кнопки влево и вправо */
-  /* индикаторы */
 }
 .itc-slider-wrapper {
   overflow: hidden;
@@ -1326,6 +1324,9 @@ input[type=number]::-webkit-inner-spin-button {
   letter-spacing: -0.25px;
   color: var(--Gray-20);
   white-space: nowrap;
+}
+.itc-slider {
+  /* кнопки влево и вправо */
 }
 .itc-slider-btn {
   position: absolute;
@@ -1364,6 +1365,9 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .itc-slider-btn-next {
   right: -18px;
+}
+.itc-slider {
+  /* индикаторы */
 }
 .itc-slider-indicators {
   position: absolute;

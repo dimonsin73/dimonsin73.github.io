@@ -2005,8 +2005,7 @@ select::-ms-expand {
   background-color: #fff;
 }
 .products__item-noview .swiper {
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   opacity: 0.5;
 }
 .products__item-noview .products__view {
@@ -2057,8 +2056,7 @@ select::-ms-expand {
   font: 500 14px/18px "PT Root UI", "sans-serif";
   color: #fff;
   white-space: nowrap;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   transform: translate(-50%, -50%);
   z-index: 10;
 }
