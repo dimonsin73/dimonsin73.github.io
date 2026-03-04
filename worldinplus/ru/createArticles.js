@@ -22,7 +22,7 @@ function createArticle(articles, article) {
     image.classList.add("articles__image")
     const img = document.createElement("img")
     img.classList.add("articles__image-img")
-    img.setAttribute("src", article.img)
+    img.setAttribute("src", `${article.path}${article.img}`)
     image.append(img)
     const rubric = document.createElement("div")
     rubric.classList.add("articles__rubric")

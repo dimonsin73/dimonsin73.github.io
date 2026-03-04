@@ -45,9 +45,9 @@ body
     font: 400 16px/20px "Rubik", "sans-serif"
     color: var(--dark)
 .container 
-    max-width: 1024px
+    max-width: 1536px
     margin: 0 auto
-    padding: 0 12px
+    padding: 0 16px
 svg 
     flex: 0 0 auto
 // ===== HEADER =====
@@ -419,7 +419,124 @@ svg
         color: var(--secondary)
 // ===== ASIDE =====
 .aside 
-    width: 100%
+    height: 100%
+    &__wrapper
+        position: sticky
+        top: 76px
+        display: flex
+        flex-direction: column
+        gap: 24px
+        width: 100%
+    &__item
+        display: flex
+        flex-direction: column
+        gap: 12px
+        padding: 24px
+        border-radius: 8px
+        box-shadow: 0 1px 3px 0 var(--border), 0 1px 2px -1px var(--border)
+        background-color: var(--white)
+        &_filters 
+            border-left: 4px solid var(--project)
+    &__title 
+        display: flex
+        align-items: center
+        gap: 12px
+        font: 600 16px/24px 'Rubik', 'sans-serif'
+    &__filters 
+        display: flex
+        flex-wrap: wrap
+        gap: 8px
+    &__radio 
+        display: none
+        &:checked
+            &~.aside__btn
+                color: var(--white)
+                &_all
+                    border: 1px solid var(--primary-500)
+                    background-color: var(--primary-500)
+                &_facts
+                    border: 1px solid var(--fact)
+                    background-color: var(--fact)
+                    &::before
+                        background-color: var(--white)
+                &_stories
+                    border: 1px solid var(--story)
+                    background-color: var(--story)
+                    &::before
+                        background-color: var(--white)
+                &_projects
+                    border: 1px solid var(--project)
+                    background-color: var(--project)
+                    &::before
+                        background-color: var(--white)
+                &_base
+                    border: 1px solid var(--primary-500)
+                    background-color: var(--primary-500)
+    &__btn 
+        display: flex
+        align-items: center
+        gap: 4px
+        padding: 7px 12px
+        border: 1px solid var(--border)
+        border-radius: 8px
+        background-color: var(--white)
+        font: 500 14px/16px 'Rubik', 'sans-serif'
+        color: var(--dark)
+        transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease
+        &_all
+            border-radius: 16px
+        &_facts
+            border-radius: 16px
+            &::before
+                content: ''
+                width: 14px
+                height: 14px
+                background-color: var(--dark)
+                mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>')
+                transition: background-color 0.3s ease
+        &_stories
+            border-radius: 16px
+            &::before
+                content: ''
+                width: 14px
+                height: 14px
+                background-color: var(--dark)
+                mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>')
+                transition: background-color 0.3s ease
+        &_projects
+            border-radius: 16px
+            &::before
+                content: ''
+                width: 14px
+                height: 14px
+                background-color: var(--dark)
+                mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></svg>') no-repeat center / contain
+                transition: background-color 0.3s ease
+    &__factoftheday 
+        border-left: 4px solid var(--fact)
+    &__text 
+        font: 400 14px/22px 'Rubik', 'sans-serif'
+        color: var(--secondary)
+    &__get 
+        border-left: 4px solid var(--story)
+    &__form 
+        display: flex
+        flex-direction: column
+        gap: 12px 
+        &-input 
+            padding: 8px 16px
+            border: 1px solid var(--border)
+            border-radius: 8px
+            font: 400 14px/20px 'Rubik', 'sans-serif'
+            color: var(--dark)
+            &::placeholder
+                color: var(--secondary)
+        &-btn 
+            padding: 8px 16px
+            border-radius: 8px
+            background-color: var(--primary-500)
+            font: 500 14px/20px 'Rubik', 'sans-serif'
+            color: var(--white)
 // ===== ARTICLE =====
 .article 
     &__wrapper
@@ -465,7 +582,6 @@ svg
         padding: 4px 16px
         border-radius: 16px
         background-color: var(--white)
-        font: 600 14px/24px 'Rubik', 'sans-serif'
         &_project 
             color: var(--project)
             &::before
@@ -473,7 +589,7 @@ svg
                 width: 20px
                 height: 20px
                 background-color: var(--project)
-                mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></svg>') no-repeat center / contain
+                mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></svg>') no-repeat center / contain
         &_story
             color: var(--story)
             &::before
@@ -481,7 +597,7 @@ svg
                 width: 20px
                 height: 20px
                 background-color: var(--story)
-                mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>')
+                mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>')
         &_fact
             color: var(--fact)
             &::before
@@ -489,9 +605,9 @@ svg
                 width: 20px
                 height: 20px
                 background-color: var(--fact)
-                mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>')
+                mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>')
         &-text
-            font: 600 14px/20px 'Rubik', 'sans-serif'
+            font: 600 14px/24px 'Rubik', 'sans-serif'
     &__category 
         display: flex
         justify-content: flex-start

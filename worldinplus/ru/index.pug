@@ -4,11 +4,11 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Мир в плюсе
-        link(rel="stylesheet", href="../css/reset.css")
-        link(rel="stylesheet", href="../css/fonts.css")
-        link(rel="stylesheet", href="../css/main.css")
-        script(src="../js/header.js" defer)
-        script(src="createArticles.js" defer)
+        link(rel="stylesheet", href="/worldinplus/css/reset.css")
+        link(rel="stylesheet", href="/worldinplus/css/fonts.css")
+        link(rel="stylesheet", href="/worldinplus/css/main.css")
+        script(src="/worldinplus/js/header.js" defer)
+        script(src="/worldinplus/ru/createArticles.js" defer)
     body 
         include header.pug
         main.main 
@@ -39,9 +39,59 @@ html(lang="ru")
                     .content__wrapper
                         section.articles 
                         aside.aside
-                            .aside__rubrics 
-                            .aside__categories 
-                            .aside__factoftheday
-                            .aside__get
-                            .aside__tegs
+                            .aside__wrapper
+                                .aside__item.aside__item_filters
+                                    h2.aside__title Рубрики
+                                    .aside__filters 
+                                        label.aside__filter
+                                            input#rubric-all.aside__radio(type="radio", name="rubric", checked) 
+                                            .aside__btn.aside__btn_all Все
+                                        label.aside__filter
+                                            input#rubric-facts.aside__radio(type="radio", name="rubric") 
+                                            .aside__btn.aside__btn_facts Факты
+                                        label.aside__filter
+                                            input#rubric-stories.aside__radio(type="radio", name="rubric") 
+                                            .aside__btn.aside__btn_stories Истории
+                                        label.aside__filter
+                                            input#rubric-projects.aside__radio(type="radio", name="rubric") 
+                                            .aside__btn.aside__btn_projects Проекты
+                                    h2.aside__title Категории
+                                    .aside__filters 
+                                        label.aside__filter
+                                            input#category-all.aside__radio(type="radio", name="category", checked) 
+                                            .aside__btn.aside__btn_base Все
+                                        label.aside__filter
+                                            input#category-ecology.aside__radio(type="radio", name="category") 
+                                            .aside__btn.aside__btn_base Экология
+                                        label.aside__filter
+                                            input#category-science.aside__radio(type="radio", name="category") 
+                                            .aside__btn.aside__btn_base Наука
+                                        label.aside__filter
+                                            input#category-society.aside__radio(type="radio", name="category") 
+                                            .aside__btn.aside__btn_base Общество
+                                        label.aside__filter
+                                            input#category-technologies.aside__radio(type="radio", name="category") 
+                                            .aside__btn.aside__btn_base Технологии
+                                        label.aside__filter
+                                            input#category-health.aside__radio(type="radio", name="category") 
+                                            .aside__btn.aside__btn_base Здоровье
+                                .aside__item.aside__factoftheday
+                                    h2.aside__title 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb h-5 w-5" aria-hidden="true" data-hercules-id="src/pages/home/_components/Sidebar.tsx:150:12" data-hercules-name="Lightbulb" style="color: var(--fact);"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path>
+                                        </svg>
+                                        | Факт дня
+                                    p.aside__text За последний год количество возобновляемой энергии в мире выросло на 12%, что помогло сократить выбросы CO2 на 500 млн тонн.
+                                .aside__item.aside__get
+                                    h2.aside__title Получайте добрые новости
+                                    p.aside__text Подпишитесь на еженедельную рассылку позитивных новостей
+                                    form.aside__form
+                                        input.aside__form-input(type="email", name="", placeholder="Ваш email")
+                                        button.aside__form-btn(type="submit") Подписаться
+                                .aside__item.aside__tegs
+                            
+                                
+                            
+                            
+                            
+                            
         include footer.pug
