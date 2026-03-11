@@ -1,12 +1,23 @@
 const language = document.querySelector('.language')
 const languageView = document.querySelector('.language__view')
-const languageDroprown = document.querySelector('.language__dropdown')
-languageView.addEventListener('click', function () {
-    languageDroprown.classList.toggle('language__dropdown_active')
+const languageDropdown = document.querySelector('.language__dropdown')
+const closeLanguageDropdown = () => {
+    languageDropdown.classList.remove('language__dropdown--active');
+    languageView.setAttribute('aria-expanded', 'false');
+};
+languageView.addEventListener('click', (e) => {
+    e.stopPropagation()
+    languageView.setAttribute('aria-expanded', 'true');
+    languageDropdown.classList.add('language__dropdown--active')
 })
-document.addEventListener('click', function(e){
-    const withinBoundaries = e.composedPath().includes(language);
-    if ( ! withinBoundaries ) {
-        languageDroprown.classList.remove('language__dropdown_active')
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.language')) {
+        closeLanguageDropdown()
+    }
+})
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLanguageDropdown()
+        languageView.focus();
     }
 })
