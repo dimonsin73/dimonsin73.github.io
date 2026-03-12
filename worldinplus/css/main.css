@@ -169,6 +169,59 @@ svg {
   gap: 16px;
 }
 
+.search {
+  display: flex;
+  gap: 8px;
+}
+.search__form {
+  position: relative;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+.search__form::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--secondary);
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>');
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>');
+  transform: translateY(-50%);
+}
+.search__form--active {
+  width: 320px;
+  opacity: 1;
+}
+.search__form--active .search__input {
+  visibility: visible;
+}
+.search__input {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 6px 8px 4px 32px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font: 500 14px/18px "Rubik", sans-serif;
+  color: var(--dark);
+  visibility: hidden;
+  transition: border 0.3s ease;
+}
+.search__input::-moz-placeholder {
+  font-weight: 400;
+  color: var(--secondary);
+}
+.search__input::placeholder {
+  font-weight: 400;
+  color: var(--secondary);
+}
+.search__input:focus-visible {
+  border: 2px solid var(--primary-300);
+}
 .search__btn {
   display: flex;
   align-items: center;
@@ -188,6 +241,25 @@ svg {
 .search__btn:hover {
   background-color: var(--accent);
   color: var(--white);
+}
+.search__btn--active .search__icon--magnifier {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+.search__btn--active .search__icon--close {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+.search__icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.search__icon--close {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0);
 }
 
 .language {
@@ -385,7 +457,7 @@ svg {
   color: var(--primary-500);
 }
 .hero__item-text {
-  font: 400 16px/24px "Rubic", sans-serif;
+  font: 400 16px/24px "Rubik", sans-serif;
   color: var(--secondary);
 }
 

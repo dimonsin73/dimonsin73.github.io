@@ -136,6 +136,45 @@ svg
         align-items: center
         gap: 16px
 .search 
+    display: flex
+    gap: 8px
+    &__form 
+        position: relative
+        width: 0
+        opacity: 0
+        overflow: hidden
+        transition: width 0.3s ease, opacity 0.3s ease
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 8px
+            width: 16px
+            height: 16px
+            background-color: var(--secondary)
+            mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>')
+            transform: translateY(-50%)
+        &--active 
+            width: 320px
+            opacity: 1
+            & .search__input 
+                visibility: visible
+    &__input 
+        position: relative
+        display: block
+        width: 100%
+        padding: 6px 8px 4px 32px
+        border: 2px solid var(--border)
+        border-radius: 8px
+        font: 500 14px/18px "Rubik", sans-serif
+        color: var(--dark)
+        visibility: hidden
+        transition: border 0.3s ease
+        &::placeholder
+            font-weight: 400
+            color: var(--secondary)
+        &:focus-visible
+            border: 2px solid var(--primary-300)
     &__btn
         display: flex
         align-items: center
@@ -153,6 +192,22 @@ svg
         &:hover 
             background-color: var(--accent)
             color: var(--white)
+        &--active
+            .search__icon--magnifier
+                opacity: 0
+                transform: rotate(90deg) scale(0)
+            .search__icon--close
+                opacity: 1
+                transform: rotate(0) scale(1)
+    &__icon 
+        position: absolute 
+        width: 16px
+        height: 16px
+        stroke: currentColor
+        transition: opacity 0.3s ease, transform 0.3s ease
+        &--close
+            opacity: 0
+            transform: rotate(-90deg) scale(0)
 .language 
     position: relative
     &__view 
@@ -315,7 +370,7 @@ svg
             font: 700 36px/40px "Comfortaa", sans-serif
             color: var(--primary-500)
         &-text 
-            font: 400 16px/24px "Rubic", sans-serif
+            font: 400 16px/24px "Rubik", sans-serif
             color: var(--secondary)
 // ===== CONTENT =====
 .content 

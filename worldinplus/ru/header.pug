@@ -21,8 +21,11 @@ header.header
                         a(href="contacts.html").nav__link Контакты
             .header__controls 
                 .search 
+                    form.search__form
+                        input(type="search", placeholder="Поиск по новостям...", aria-label="Введите запрос").search__input
                     button(type="button", aria-label="Поиск").search__btn
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search__icon search__icon--magnifier" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search__icon search__icon--close" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
                 .language 
                     button(type="button", aria-expanded="false", aria-label="Сменить язык", aria-haspopup="true").language__view
                         .language__icon 

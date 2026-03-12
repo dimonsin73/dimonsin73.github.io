@@ -3,9 +3,11 @@ let filterRubric = 'all';
 let filterCategory = 'all';
 let filterTag = 'all'; 
 let articlesCount = 6;
+let searchQuery = '';
 
 const articlesContainer = document.querySelector(".articles");
 const contentMore = document.querySelector(".content__more");
+const searchInput = document.querySelector('.search__input');
 
 // 1. Загружаем данные ОДИН раз
 async function init() {
@@ -69,7 +71,9 @@ function render() {
         const matchRubric = filterRubric === 'all' || item.rubric === filterRubric;
         const matchCategory = filterCategory === 'all' || item.category.toLowerCase() === filterCategory.toLowerCase();
         const matchTag = filterTag === 'all' || item.tags.includes(filterTag);
-        return matchRubric && matchCategory && matchTag;;
+        const matchSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                        item.preview.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchRubric && matchCategory && matchTag && matchSearch;
     });
     // Берем порцию данных
     const part = filtered.slice(0, articlesCount);
@@ -158,3 +162,12 @@ function renderTagCloud() {
         `).join('')}
     `;
 }
+searchBtn.addEventListener('click', () => {
+    searchQuery = searchInput.value;
+    render();
+});
+searchInput.addEventListener('input', (e) => {
+    searchQuery = e.target.value;
+    articlesCount = 6; // Сбрасываем пагинацию
+    render();
+});
