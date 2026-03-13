@@ -9,28 +9,28 @@ html(lang="ru")
         link(rel="stylesheet", href="/worldinplus/css/main.css")
         script(src="/worldinplus/js/header.js" defer)
     body 
-        include ../../header.pug
+        include ../../../header.pug
         main.main
-            .content#content
+            .content.content--article#content
                 .container
                     .content__wrapper
                         section.article 
                             .article__wrapper 
                                 .article__back 
-                                    a(href="../../").article__back-link
+                                    a(href="../../../").article__back-link
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="m12 19-7-7 7-7"></path>
                                             <path d="M19 12H5"></path>
                                         </svg>
                                         | Назад к новостям
                                 .article__image 
-                                    img(src="photo-1511671782779-c97d3d27a1d4.jpeg", alt="").article__image-img
-                                    .article__rubric.article__rubric_story
-                                        p.article__rubric-text Истории
+                                    img(src="biodegradable-packaging-seaweed.jpeg", alt="").article__image-img
+                                    .article__rubric.article__rubric_project 
+                                        p.article__rubric-text Проекты
                                 .article__category 
-                                    p.article__category-text Общество
-                                h2.article__title Бездомный музыкант собрал средства на приют благодаря уличным концертам
-                                h3.article__subtitle История Алексея, который три года жил на улице, а затем своим талантом вдохновил тысячи людей помочь другим бездомным.
+                                    p.article__category-text Экология
+                                h2.article__title Стартап создал биоразлагаемую упаковку из водорослей
+                                h3.article__subtitle Молодая команда разработала упаковочный материал, который полностью разлагается за 4 недели и не вредит океанам.
 
                         aside.aside
-        include ../../footer.pug
+        include ../../../footer.pug

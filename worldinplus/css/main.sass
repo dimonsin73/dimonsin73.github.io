@@ -314,17 +314,20 @@ svg
     &__title 
         font: 700 72px/90px "Comfortaa", sans-serif
         color: var(--dark)
+        opacity: 0 
     &__subtitle 
         margin-bottom: 8px
         font: 500 24px/32px "Rubik", sans-serif
         letter-spacing: 1px
         color: var(--primary-500)
+        opacity: 0 
     &__text 
         max-width: 744px
         margin-bottom: 16px
         font: 400 18px/30px "Rubik", sans-serif
         color: var(--secondary)
         text-align: center
+        opacity: 0 
     &__link 
         display: flex
         align-items: center
@@ -336,6 +339,7 @@ svg
         background-color: var(--primary-500)
         font: 600 16px/16px "Rubik", sans-serif
         color: var(--white)
+        opacity: 0 
         transition: background-color 0.3s ease, outline 0.3s ease
         & svg
             transition: transform 0.5s ease
@@ -354,13 +358,15 @@ svg
         width: 1000px
         height: 1px
         background-color: var(--border)
-    &__static 
+        opacity: 0 
+    &__statistics
         display: grid
         grid-template-columns: repeat(3, 1fr)
         gap: 48px
         width: 100%
         padding-top: 16px
         text-align: center
+        opacity: 0 
     &__item 
         display: flex
         flex-direction: column
@@ -372,9 +378,24 @@ svg
         &-text 
             font: 400 16px/24px "Rubik", sans-serif
             color: var(--secondary)
+    &.is-loaded
+        & .hero__title
+            animation: fadeUp 0.8s ease forwards 0.2s
+        & .hero__subtitle
+            animation: fadeUp 0.8s ease forwards 0.4s
+        & .hero__text
+            animation: fadeUp 0.8s ease forwards 0.6s
+        & .hero__link
+            animation: fadeUp 0.8s ease forwards 0.8s
+        & .hero__line
+            animation: fadeUp 0.8s ease forwards 1s
+        & .hero__statistics
+            animation: fadeUp 0.8s ease forwards 1s
 // ===== CONTENT =====
 .content 
     padding: 88px 0 32px
+    &--article
+        padding: 32px 0
     &__wrapper
         display: grid
         grid-template-columns: 3fr 1fr
@@ -827,5 +848,12 @@ svg
     90% 
         transform: translateY(0)
     100% 
+        transform: translateY(0)
+@keyframes fadeUp
+    0%
+        opacity: 0
+        transform: translateY(30px)
+    100%
+        opacity: 1
         transform: translateY(0)
         
