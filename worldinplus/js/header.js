@@ -1,8 +1,10 @@
 const language = document.querySelector('.language')
 const languageView = document.querySelector('.language__view')
 const languageDropdown = document.querySelector('.language__dropdown')
-const searchBtn = document.querySelector('.search__btn');
+const searchBtn = document.querySelector('.search__btn')
 const searchForm = document.querySelector('.search__form')
+const burger = document.querySelector('.burger')
+const menu = document.querySelector('.menu')
 const closeLanguageDropdown = () => {
     languageDropdown.classList.remove('language__dropdown--active');
     languageView.setAttribute('aria-expanded', 'false');
@@ -24,7 +26,6 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
-
 searchBtn.addEventListener('click', () => {
     searchBtn.classList.toggle('search__btn--active');
     const isActive = searchForm.classList.toggle('search__form--active');
@@ -42,3 +43,8 @@ searchBtn.addEventListener('click', () => {
     }
     searchBtn.setAttribute('aria-label', searchForm ? 'Закрыть поиск' : 'Открыть поиск');
 });
+
+burger.addEventListener('click', () => {
+    burger.classList.toggle('burger--active')
+    menu.classList.toggle('menu--active')
+})

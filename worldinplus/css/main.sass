@@ -45,10 +45,10 @@ body
     font: 400 16px/20px "Rubik", sans-serif
     color: var(--dark)
 .container 
-    max-width: 1536px
+    max-width: 1528px
     margin: 0 auto
     padding: 0 16px
-.visually-hidden 
+.visually-hidden
     position: absolute
     width: 1px
     height: 1px
@@ -63,6 +63,7 @@ svg
     flex: 0 0 auto
 // ===== LOGO =====
 .logo
+    flex: 0 0 auto
     display: flex
     align-items: center
     gap: 8px
@@ -73,6 +74,7 @@ svg
     &:focus-visible 
         outline: 2px solid var(--primary-300)
     &__image
+        flex: 0 0 auto
         height: 40px
     &__img 
         height: 100%
@@ -88,12 +90,85 @@ svg
     &__text 
         font: 400 12px/16px 'Rubik', sans-serif
         color: var(--secondary)
+@media (max-width: 1023px)
+    .logo 
+        &__image 
+            height: 32px
+        &__title 
+            line-height: 18px
+        &__text 
+            line-height: 14px
+// ===== BURGER =====
+.burger
+    flex: 0 0 auto
+    display: none
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    width: 32px
+    height: 32px
+    padding: 10px 8px
+    border-radius: 8px
+    outline: 2px solid transparent
+    transition: outline 0.3s ease, background-color 0.3s ease
+    &--active 
+        position: relative
+        justify-content: center
+        & .burger__line
+            position: absolute
+            &:nth-child(1)
+                transform: rotate(45deg)
+            &:nth-child(2)
+                width: 0
+            &:nth-child(3)
+                transform: rotate(-45deg)
+    &:focus-visible 
+        outline: 2px solid var(--primary-300)
+        outline-offset: 0
+    &:hover 
+        background-color: var(--accent)
+        & .burger__line 
+            background-color: var(--white)
+    &__line 
+        flex: 0 0 auto
+        width: 16px
+        height: 2px
+        border-radius: 1px
+        background-color: var(--secondary)
+        transition: background-color 0.3s ease, width 0.3s ease, transform 0.3s ease
+@media (max-width: 1023px)
+    .burger 
+        display: flex
+// ===== MENU =====
+.menu 
+    display: flex 
+    align-items: center
+    justify-content: flex-end
+    gap: 16px
+    width: 100%
+@media (max-width: 1023px)
+    .menu 
+        position: absolute
+        top: 48px
+        right: -258px
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-start
+        width: 256px
+        height: 100vh
+        padding: 16px 8px
+        box-shadow: -1px 0 3px 0 var(--border), -1px 0 2px -1px var(--border)
+        background-color: var(--white)
+        transition: right 0.3s ease
+        &--active 
+            right: 0
 // ===== NAV =====
 .nav 
+    margin: 0 auto
     &__list 
         display: flex
         align-items: center
-        gap: 24px
+        gap: 16px
         &--vertical
             flex-direction: column
             align-items: flex-start
@@ -115,13 +190,20 @@ svg
             color: var(--dark)
         &--footer 
             font-weight: 400
+@media (max-width: 1023px)
+    .nav 
+        margin: 0
+        padding: 0 8px
+        &__list 
+            flex-direction: column
+            align-items: flex-start
 // ===== HEADER =====
 .header
     position: fixed
     top: 0
     left: 0
     right: 0
-    padding: 12px 0 12px
+    padding: 12px 0 11px
     border-bottom: 1px solid var(--border)
     box-shadow: 0 1px 3px 0 var(--border), 0 1px 2px -1px var(--border)
     background-color: #fff
@@ -130,11 +212,20 @@ svg
         display: flex
         align-items: center
         justify-content: space-between
-        gap: 24px   
+        gap: 16px
     &__controls
         display: flex
         align-items: center
-        gap: 16px
+        gap: 10px 16px
+@media (max-width: 1023px)
+    .header
+        padding: 8px 0 7px
+        &__controls 
+            flex-direction: column
+            align-items: flex-start 
+            justify-content: space-between
+            width: 100%
+// ===== SEARCH =====
 .search 
     display: flex
     gap: 8px
@@ -155,7 +246,7 @@ svg
             mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>')
             transform: translateY(-50%)
         &--active 
-            width: 320px
+            width: 240px
             opacity: 1
             & .search__input 
                 visibility: visible
@@ -181,7 +272,7 @@ svg
         justify-content: center
         width: 32px
         height: 32px
-        padding: 8px
+        padding: 8px    
         border-radius: 8px
         outline: 2px solid transparent
         color: var(--secondary)
@@ -208,12 +299,23 @@ svg
         &--close
             opacity: 0
             transform: rotate(-90deg) scale(0)
+@media (max-width: 1023px)
+    .search 
+        position: relative
+        &__form
+            width: 240px
+            opacity: 1
+        &__input 
+            visibility: visible
+        &__btn 
+            display: none
+// ===== LANGUAGE =====
 .language 
     position: relative
     &__view 
         display: flex
         align-items: flex-end
-        gap: 8px
+        gap: 4px
         padding: 8px
         border-radius: 8px
         outline: 2px solid transparent
@@ -235,14 +337,13 @@ svg
         display: flex
         justify-content: center
         width: 35px
-        padding-top: 2px
         font: 700 14px/14px "Comfortaa", sans-serif
         color: var(--dark)
         transition: color 0.3s ease
     &__name 
         display: flex
         justify-content: flex-start
-        width: 122px
+        width: 97px
         height: 100%
         padding: 2px 0
         font: 400 12px/12px "Rubik", sans-serif
@@ -274,7 +375,7 @@ svg
     &__option 
         display: flex
         align-items: flex-end
-        gap: 8px
+        gap: 4px
         padding: 8px
         border-radius: 8px
         outline: 2px solid transparent
@@ -293,10 +394,14 @@ svg
             background-color: var(--accent)
             .language__code, .language__name
                 color: var(--white)
+
 // ===== MAIN =====
 .main 
     margin-top: 64px
     background-color: var(--background)
+@media (max-width: 1023px)
+    .main
+        margin-top: 48px
 // ===== hero =====
 .hero 
     display: flex
@@ -355,7 +460,8 @@ svg
         &:active 
             background-color: var(--primary-700)
     &__line 
-        width: 1000px
+        max-width: 1000px
+        width: 100%
         height: 1px
         background-color: var(--border)
         opacity: 0 
@@ -400,8 +506,10 @@ svg
     padding: 32px 0
     &__wrapper
         display: grid
-        grid-template-columns: 3fr 1fr
+        grid-template-columns: 3fr 360px
         gap: 24px
+        &--article 
+            grid-template-columns: 1fr
     &__item 
         display: flex
         flex-direction: column
@@ -417,11 +525,14 @@ svg
         color: var(--white)
         &--hidden 
             display: none
+@media ( max-width:  1023px)
+    .content__wrapper 
+        gap: 16px
 // ===== ARTICLES =====
 .articles
     display: grid
     grid-template-columns: 1fr 1fr 1fr
-    gap: 24px
+    gap: 24px 16px
     width: 100%
     &__item
         position: relative
@@ -537,6 +648,12 @@ svg
     &__date 
         font: 400 12px/16px 'Rubik', sans-serif
         color: var(--secondary)
+@media ( max-width: 1335px)
+    .articles
+        grid-template-columns: 1fr 1fr
+@media ( max-width:  1023px)
+    .articles
+        grid-template-columns: 1fr 
 // ===== ASIDE =====
 .aside 
     height: 100%
@@ -551,7 +668,7 @@ svg
         display: flex
         flex-direction: column
         gap: 12px
-        padding: 24px
+        padding: 16px
         border-radius: 8px
         box-shadow: 0 1px 3px 0 var(--border), 0 1px 2px -1px var(--border)
         background-color: var(--white)
@@ -722,6 +839,10 @@ svg
                 background-color: var(--primary-600)
             &:active 
                 background-color: var(--primary-700)
+@media (max-width: 1023px)
+    .aside 
+        &__wrapper
+            top: 64px
 // ===== ARTICLE =====
 .article 
     &__wrapper
@@ -731,32 +852,30 @@ svg
         padding: 0 16px
     &__back 
         display: flex
-        &-link 
-            display: flex
-            align-items: center
-            gap: 8px
-            padding: 4px 16px
-            border-radius: 8px
-            outline: 2px solid transparent
-            outline-offset: 0
-            font: 400 16px/24px 'Rubik', sans-serif
-            color: var(--dark)
-            transition: background-color 0.3s ease, color 0.3s ease, outline 0.3s ease
-            &:focus-visible 
-                outline: 2px solid var(--primary-300) 
-            &:hover 
-                background-color: var(--accent)
-                color: var(--white)
+        align-items: center
+        gap: 8px
+        padding: 4px 16px
+        border-radius: 8px
+        outline: 2px solid transparent
+        outline-offset: 0
+        font: 400 16px/24px 'Rubik', sans-serif
+        color: var(--dark)
+        transition: background-color 0.3s ease, color 0.3s ease, outline 0.3s ease
+        &:focus-visible 
+            outline: 2px solid var(--primary-300) 
+        &:hover 
+            background-color: var(--accent)
+            color: var(--white)
     &__image 
         position: relative
         display: flex
         align-items: center
         justify-content: center
         margin: 0 -16px
-        &-img 
-            width: 100%
-            height: 300px
-            object-fit: cover
+    &__img 
+        width: 100%
+        height: 300px
+        object-fit: cover
     &__rubric 
         position: absolute
         top: 32px
@@ -767,7 +886,8 @@ svg
         padding: 4px 16px
         border-radius: 16px
         background-color: var(--white)
-        &_project 
+        font: 600 14px/24px 'Rubik', sans-serif
+        &--project 
             color: var(--project)
             &::before
                 content: ''
@@ -775,7 +895,7 @@ svg
                 height: 20px
                 background-color: var(--project)
                 mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></svg>') no-repeat center / contain
-        &_story
+        &--story
             color: var(--story)
             &::before
                 content: ''
@@ -783,7 +903,7 @@ svg
                 height: 20px
                 background-color: var(--story)
                 mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>')
-        &_fact
+        &--fact
             color: var(--fact)
             &::before
                 content: ''
@@ -791,17 +911,14 @@ svg
                 height: 20px
                 background-color: var(--fact)
                 mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>')
-        &-text
-            font: 600 14px/24px 'Rubik', sans-serif
     &__category 
         display: flex
         justify-content: flex-start
-        &-text 
-            padding: 4px 8px
-            border-radius: 4px  
-            background-color: var(--secondary)
-            font: 500 12px/14px 'Rubik', sans-serif
-            color: var(--white)
+        padding: 4px 8px
+        border-radius: 4px  
+        background-color: var(--secondary)
+        font: 500 12px/14px 'Rubik', sans-serif
+        color: var(--white)
     &__title 
         font: 700 60px/85px 'Comfortaa', sans-serif
         color: var(--dark)
