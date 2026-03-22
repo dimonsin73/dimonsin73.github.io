@@ -148,7 +148,7 @@ svg
     width: 100%
 @media (max-width: 1023px)
     .menu 
-        position: absolute
+        position: fixed
         top: 48px
         right: -258px
         flex-direction: column
@@ -425,6 +425,7 @@ svg
         font: 500 24px/32px "Rubik", sans-serif
         letter-spacing: 1px
         color: var(--primary-500)
+        text-align: center
         opacity: 0 
     &__text 
         max-width: 744px
@@ -497,16 +498,32 @@ svg
             animation: fadeUp 0.8s ease forwards 0.5s
         & .hero__statistics
             animation: fadeUp 0.8s ease forwards 0.5s
+@media ( max-width:  639px)
+    .hero
+        &__title 
+            font-size: 44px
+            line-height: 50px
+        &__subtitle 
+            font-size: 18px
+            line-height: 24px
+        &__text 
+            font-size: 14px
+            line-height: 24px
+        &__statistics
+            gap: 24px
 // ===== CONTENT =====
 #content
     position: absolute
-    top: -56px
+    top: -64px
+@media ( max-width:  1023px) 
+    #content 
+        top: -48px
 .content 
     position: relative
-    padding: 32px 0
+    padding: 16px 0
     &__wrapper
         display: grid
-        grid-template-columns: 3fr 360px
+        grid-template-columns: 1fr 360px
         gap: 24px
         &--article 
             grid-template-columns: 1fr
@@ -528,6 +545,9 @@ svg
 @media ( max-width:  1023px)
     .content__wrapper 
         gap: 16px
+@media ( max-width:  767px)
+    .content__wrapper 
+        grid-template-columns: 1fr
 // ===== ARTICLES =====
 .articles
     display: grid
@@ -654,6 +674,12 @@ svg
 @media ( max-width:  1023px)
     .articles
         grid-template-columns: 1fr 
+@media ( max-width:  767px)
+    .articles
+        grid-template-columns: 1fr 1fr
+@media ( max-width:  639px)
+    .articles
+        grid-template-columns: 1fr
 // ===== ASIDE =====
 .aside 
     height: 100%
@@ -931,8 +957,8 @@ svg
     background-color: var(--white)
     &__wrapper
         display: grid
-        grid-template-columns: repeat(4, 1fr)
-        gap: 16px
+        grid-template-columns: minmax(270px, 1fr) 1fr 1fr minmax(270px, 1fr)
+        gap: 32px 16px
     &__item
         display: flex
         flex-direction: column
@@ -940,6 +966,9 @@ svg
         &-title 
             font: 500 14px/14px 'Comfortaa', sans-serif
             color: var(--dark)
+    &__nav 
+        margin: 0
+        padding: 0
     &__title 
         font: 400 14px/14px 'Rubik', sans-serif
         color: var(--secondary)
@@ -956,6 +985,18 @@ svg
     &__right
         font: 400 14px/14px 'Rubik', sans-serif
         color: var(--secondary)
+@media (max-width: 1023px)
+    .footer 
+        &__wrapper 
+            grid-template-columns: minmax(270px, 1fr) 1fr 1fr
+        &__right 
+            grid-column: span 3
+@media (max-width: 767px)
+    .footer 
+        &__wrapper 
+            grid-template-columns: 1fr
+        &__right 
+            grid-column: span 1
 // ===== ANIMATION =====
 @keyframes arrow-down
     0% 

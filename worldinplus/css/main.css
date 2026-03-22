@@ -188,7 +188,7 @@ svg {
 
 @media (max-width: 1023px) {
   .menu {
-    position: absolute;
+    position: fixed;
     top: 48px;
     right: -258px;
     flex-direction: column;
@@ -530,6 +530,7 @@ svg {
   font: 500 24px/32px "Rubik", sans-serif;
   letter-spacing: 1px;
   color: var(--primary-500);
+  text-align: center;
   opacity: 0;
 }
 .hero__text {
@@ -622,18 +623,40 @@ svg {
   animation: fadeUp 0.8s ease forwards 0.5s;
 }
 
+@media (max-width: 639px) {
+  .hero__title {
+    font-size: 44px;
+    line-height: 50px;
+  }
+  .hero__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .hero__text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .hero__statistics {
+    gap: 24px;
+  }
+}
 #content {
   position: absolute;
-  top: -56px;
+  top: -64px;
 }
 
+@media (max-width: 1023px) {
+  #content {
+    top: -48px;
+  }
+}
 .content {
   position: relative;
-  padding: 32px 0;
+  padding: 16px 0;
 }
 .content__wrapper {
   display: grid;
-  grid-template-columns: 3fr 360px;
+  grid-template-columns: 1fr 360px;
   gap: 24px;
 }
 .content__wrapper--article {
@@ -661,6 +684,11 @@ svg {
 @media (max-width: 1023px) {
   .content__wrapper {
     gap: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .content__wrapper {
+    grid-template-columns: 1fr;
   }
 }
 .articles {
@@ -818,6 +846,16 @@ svg {
   }
 }
 @media (max-width: 1023px) {
+  .articles {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .articles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 639px) {
   .articles {
     grid-template-columns: 1fr;
   }
@@ -1168,8 +1206,8 @@ svg {
 }
 .footer__wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: minmax(270px, 1fr) 1fr 1fr minmax(270px, 1fr);
+  gap: 32px 16px;
 }
 .footer__item {
   display: flex;
@@ -1179,6 +1217,10 @@ svg {
 .footer__item-title {
   font: 500 14px/14px "Comfortaa", sans-serif;
   color: var(--dark);
+}
+.footer__nav {
+  margin: 0;
+  padding: 0;
 }
 .footer__title {
   font: 400 14px/14px "Rubik", sans-serif;
@@ -1201,6 +1243,22 @@ svg {
   color: var(--secondary);
 }
 
+@media (max-width: 1023px) {
+  .footer__wrapper {
+    grid-template-columns: minmax(270px, 1fr) 1fr 1fr;
+  }
+  .footer__right {
+    grid-column: span 3;
+  }
+}
+@media (max-width: 767px) {
+  .footer__wrapper {
+    grid-template-columns: 1fr;
+  }
+  .footer__right {
+    grid-column: span 1;
+  }
+}
 @keyframes arrow-down {
   0% {
     transform: translateY(0);
