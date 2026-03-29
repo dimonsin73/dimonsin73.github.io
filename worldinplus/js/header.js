@@ -25,7 +25,11 @@ document.addEventListener('keydown', (e) => {
         languageView.focus();
     }
 })
-
+languageDropdown.addEventListener('click', (e) => {
+    if (e.target.closest('.language__option')) {
+        closeLanguageDropdown();
+    }
+});
 searchBtn.addEventListener('click', () => {
     searchBtn.classList.toggle('search__btn--active');
     const isActive = searchForm.classList.toggle('search__form--active');
@@ -41,10 +45,13 @@ searchBtn.addEventListener('click', () => {
         }
         searchInput.blur();
     }
-    searchBtn.setAttribute('aria-label', searchForm ? 'Закрыть поиск' : 'Открыть поиск');
+    const isSearchOpen = searchForm.classList.contains('search__form--active');
+    searchBtn.setAttribute('aria-label', isSearchOpen ? 'Закрыть поиск' : 'Открыть поиск');
+
 });
 
 burger.addEventListener('click', () => {
     burger.classList.toggle('burger--active')
-    menu.classList.toggle('menu--active')
+    const isMenuOpen = menu.classList.toggle('menu--active');
+    document.body.style.overflow = isMenuOpen ? 'hidden' : ''; // Блокируем скролл
 })

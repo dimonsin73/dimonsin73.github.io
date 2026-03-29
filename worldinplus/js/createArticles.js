@@ -17,7 +17,7 @@ async function init() {
         render(); // Первичная отрисовка
         renderTagCloud(allData);
     } catch (error) {
-        console.error("Ошибка загрузки:", error);
+        console.error("ERROR:", error);
     }
 }
 // 2. Функция создания HTML 
@@ -27,22 +27,13 @@ function getArticleHTML(article) {
     });
     
     const rubricMap = {
-        projects: { class: 'articles__rubric--project', label: 'Проекты' },
-        stories: { class: 'articles__rubric--story', label: 'Истории' },
-        facts: { class: 'articles__rubric--fact', label: 'Факты' }
-    };
-    const categoryMap = {
-        all: "Все",
-        ecology: "Экология",
-        science: "Наука",
-        society: "Общество",
-        technologies: "Технологии",
-        health: "Здоровье"
+        projects: { class: 'articles__rubric--project', label: article.rubric_lang },
+        stories: { class: 'articles__rubric--story', label: article.rubric_lang },
+        facts: { class: 'articles__rubric--fact', label: article.rubric_lang }
     };
 
     const currentRubric = rubricMap[article.rubric] || { class: '', label: '' };
-    const categoryLabel = categoryMap[article.category] || article.category;
-
+    
     return `
         <a class="articles__item" href="${article.path}">
             <div class="articles__image">
@@ -52,7 +43,7 @@ function getArticleHTML(article) {
                 <p class="articles__rubric-text">${currentRubric.label}</p>
             </div>
             <div class="articles__info">
-                <p class="articles__category">${categoryLabel}</p>
+                <p class="articles__category">${article.category}</p>
                 <h2 class="articles__title">${article.title}</h2>
                 <p class="articles__preview">${article.preview}</p>
                 <div class="articles__tags">
@@ -97,13 +88,13 @@ const categoryContainer = document.querySelector('.aside__item--filters');
 categoryContainer.addEventListener('change', (e) => {
     // Фильтр РУБРИК
     if (e.target.name === 'rubric') {
-        filterRubric = e.target.id.replace('rubric-', '');
+        filterRubric = e.target.dataset.filter
         articlesCount = 6;
         render();
     }
     // Фильтр КАТЕГОРИЙ
     if (e.target.name === 'category') {
-        filterCategory = e.target.id.replace('category-', '');
+        filterCategory = e.target.dataset.filter
         articlesCount = 6;
         render();
     }
@@ -137,6 +128,8 @@ resetBtn.addEventListener('click', () => {
     filterCategory = 'all';
     filterTag = 'all'; 
     articlesCount = 6;
+    searchInput.value = ''; // Очистка визуального поля
+    searchQuery = '';
     
     // Сбрасываем визуально все радиокнопки на "Все"
     document.querySelector('#rubric-all').checked = true;
@@ -161,13 +154,17 @@ function renderTagCloud() {
             </button>
         `).join('')}
     `;
-}
-searchBtn.addEventListener('click', () => {
-    searchQuery = searchInput.value;
-    render();
-});
-searchInput.addEventListener('input', (e) => {
-    searchQuery = e.target.value;
-    articlesCount = 6; // Сбрасываем пагинацию
-    render();
+}   
+
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Останавливаем перезагрузку страницы
+    
+    // Берем значение из инпута
+    searchQuery = searchInput.value.trim();
+    articlesCount = 6; // Сбрасываем пагинацию при новом поиске
+    
+    render(); // Вызываем отрисовку с новым фильтром
+    
+    // Опционально: скролл к результатам
+    document.querySelector('#content').scrollIntoView({ behavior: 'smooth' });
 });

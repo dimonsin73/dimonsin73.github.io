@@ -9,8 +9,11 @@ html(lang="ru")
         link(rel="stylesheet", href="/worldinplus/css/main.css")
         script(src="/worldinplus/js/header.js" defer)
         script(src="/worldinplus/js/hero.js" defer)
-        script(src="/worldinplus/ru/createArticles.js" defer)
+        script(src="/worldinplus/js/createArticles.js" defer)
     body 
+        - var currentPage = ''
+        - var currentLang = 'ru'
+        include mixins.pug
         include header.pug
         main.main 
             section.hero
@@ -21,9 +24,7 @@ html(lang="ru")
                         p.hero__text Здесь собраны истории о добрых делах, научных открытиях и героях современности. Узнайте, как мир становится лучше каждый день.
                         a(href="#content").hero__link 
                             | Читать новости
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17.5431 14.2672C17.8288 13.9673 17.8172 13.4926 17.5172 13.2069C17.2173 12.9212 16.7426 12.9328 16.4569 13.2328L17.5431 14.2672ZM11.4569 18.4828C11.1712 18.7827 11.1828 19.2574 11.4828 19.5431C11.7827 19.8288 12.2574 19.8172 12.5431 19.5172L11.4569 18.4828ZM11.4569 19.5172C11.7426 19.8172 12.2173 19.8288 12.5172 19.5431C12.8172 19.2574 12.8288 18.7827 12.5431 18.4828L11.4569 19.5172ZM7.5431 13.2328C7.25744 12.9328 6.78271 12.9212 6.48276 13.2069C6.18281 13.4926 6.17123 13.9673 6.4569 14.2672L7.5431 13.2328ZM11.25 19C11.25 19.4142 11.5858 19.75 12 19.75C12.4142 19.75 12.75 19.4142 12.75 19H11.25ZM12.75 5C12.75 4.58579 12.4142 4.25 12 4.25C11.5858 4.25 11.25 4.58579 11.25 5H12.75ZM16.4569 13.2328L11.4569 18.4828L12.5431 19.5172L17.5431 14.2672L16.4569 13.2328ZM12.5431 18.4828L7.5431 13.2328L6.4569 14.2672L11.4569 19.5172L12.5431 18.4828ZM12.75 19V5H11.25V19H12.75Z"/>
-                            </svg>
+                            +icon-arrow 
                         .hero__line
                         .hero__statistics 
                             .hero__item 
@@ -47,48 +48,26 @@ html(lang="ru")
                                 .aside__item.aside__item--filters
                                     h2.aside__title Рубрики
                                     .aside__filters 
-                                        label.aside__filter
-                                            input#rubric-all.aside__radio.visually-hidden(type="radio", name="rubric", checked) 
-                                            span.aside__btn.aside__btn--all Все
-                                        label.aside__filter
-                                            input#rubric-facts.aside__radio.visually-hidden(type="radio", name="rubric") 
-                                            span.aside__btn.aside__btn--facts Факты
-                                        label.aside__filter
-                                            input#rubric-stories.aside__radio.visually-hidden(type="radio", name="rubric") 
-                                            span.aside__btn.aside__btn--stories Истории
-                                        label.aside__filter
-                                            input#rubric-projects.aside__radio.visually-hidden(type="radio", name="rubric") 
-                                            span.aside__btn.aside__btn--projects Проекты
+                                        +filter-item('rubric-all', 'all', 'rubric', 'Все', 'all', true)
+                                        +filter-item('rubric-facts', 'facts', 'rubric', 'Факты', 'facts')
+                                        +filter-item('rubric-stories', 'stories', 'rubric', 'Истории', 'stories')
+                                        +filter-item('rubric-projects', 'projects', 'rubric', 'Проекты', 'projects')
                                     h2.aside__title Категории
                                     .aside__filters 
-                                        label.aside__filter
-                                            input#category-all.aside__radio.visually-hidden(type="radio", name="category", checked) 
-                                            span.aside__btn.aside__btn--base Все
-                                        label.aside__filter
-                                            input#category-ecology.aside__radio.visually-hidden(type="radio", name="category") 
-                                            span.aside__btn.aside__btn--base Экология
-                                        label.aside__filter
-                                            input#category-science.aside__radio.visually-hidden(type="radio", name="category") 
-                                            span.aside__btn.aside__btn--base Наука
-                                        label.aside__filter
-                                            input#category-society.aside__radio.visually-hidden(type="radio", name="category") 
-                                            span.aside__btn.aside__btn--base Общество
-                                        label.aside__filter
-                                            input#category-technologies.aside__radio.visually-hidden(type="radio", name="category") 
-                                            span.aside__btn.aside__btn--base Технологии
-                                        label.aside__filter
-                                            input#category-health.aside__radio.visually-hidden(type="radio", name="category") 
-                                            span.aside__btn.aside__btn--base Здоровье
+                                        +filter-item('category-all', 'all', 'category', 'Все', 'base', true)
+                                        +filter-item('category-ecology', 'Экология', 'category', 'Экология')
+                                        +filter-item('category-science', 'Наука', 'category', 'Наука')
+                                        +filter-item('category-society', 'Общество', 'category', 'Общество')
+                                        +filter-item('category-technologies', 'Технологии', 'category', 'Технологии')
+                                        +filter-item('category-health', 'Здоровье', 'category', 'Здоровье')
                                     h2.aside__title Популярные теги
                                     .aside__tags
                                     button(type="button").aside__reset
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
-                                        </svg>
+                                        +icon-close
                                         | Сбросить фильтры
                                 .aside__item.aside__item--factoftheday
                                     h2.aside__title 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path>
-                                        </svg>
+                                        +icon-fact
                                         | Факт дня
                                     p.aside__text За последний год количество возобновляемой энергии в мире выросло на 12%, что помогло сократить выбросы CO2 на 500 млн тонн.
                                 .aside__item.aside__item--get

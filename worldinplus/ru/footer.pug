@@ -2,23 +2,20 @@ footer.footer
     .container
         .footer__wrapper
             .footer__item 
-                a(href="/worldinplus/ru/").logo.footer__logo
+                a(href=`/worldinplus/${currentLang}/`).logo.footer__logo
                     .logo__image
-                        img(src="/worldinplus/images/logo.png", alt="logo").logo__img
+                        img(src="/worldinplus/images/logo.png", alt="Мир в плюсе").logo__img
                     .logo__content
                         span.logo__title.logo__title--footer Мир в плюсе
-                p.footer__title Добрые новости, которые вдохновляют
+                h2.footer__title Добрые новости, которые вдохновляют
                 p.footer__text Мир в плюсе — это портал о позитивных новостях со всего мира. Мы верим, что добрые истории делают мир лучше.
             .footer__item 
                 h3.footer__item-title Навигация
                 nav.nav.footer__nav 
-                    ul.nav__list.nav__list--vertical
-                        li.nav__item 
-                            a(href="index.html").nav__link.nav__link--footer Главная
-                        li.nav__item 
-                            a(href="about.html").nav__link.nav__link--footer О нас
-                        li.nav__item 
-                            a(href="contacts.html").nav__link.nav__link--footer Контакты
+                    +nav-list(currentLang, currentPage)(class="nav__list--footer")
             .footer__item 
                 h3.footer__item-title Следите за нами
-            p.footer__right © Мир в плюсе. Все права защищены.
+            p.footer__right 
+                | ©
+                | #{new Date().getFullYear()}
+                | Мир в плюсе. Все права защищены. 
