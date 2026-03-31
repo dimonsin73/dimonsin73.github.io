@@ -1109,6 +1109,8 @@ svg {
   }
 }
 .article {
+  max-width: 960px;
+  margin: 0 auto;
   padding: 24px 0;
 }
 .article__wrapper {
@@ -1242,14 +1244,27 @@ svg {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 24px;
+  padding: 32px 24px;
   border-radius: 12px;
   box-shadow: 0 1px 3px 0 var(--border), 0 1px 2px -1px var(--border);
   background-color: var(--white);
 }
 .article__block-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font: 600 18px/28px "Comfortaa", sans-serif;
   color: var(--dark);
+}
+.article__block-title svg {
+  width: 16px;
+  height: 16px;
+}
+.article__block-title--fact {
+  color: var(--fact);
+}
+.article__block-title--bulb {
+  color: var(--story);
 }
 .article__block-text {
   font: 400 18px/28px "Rubik", sans-serif;
@@ -1264,7 +1279,77 @@ svg {
 .article__block--important {
   border-left: 4px solid var(--story);
 }
+.article__quote {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-left: 4px solid var(--border);
+}
+.article__quote-title {
+  font: italic 500 18px/26px "Rubik", sans-serif;
+}
+.article__quote-author {
+  font: 400 14px/16px "Rubik", sans-serif;
+}
 
+@media (max-width: 1023px) {
+  .article__title {
+    font-size: 44px;
+    line-height: 52px;
+  }
+}
+@media (max-width: 767px) {
+  .article {
+    padding: 16px 0;
+  }
+  .article__wrapper {
+    gap: 16px;
+    padding: 0;
+  }
+  .article__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .article__subtitle {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .article__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .article__info {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .article__info svg {
+    width: 12px;
+    height: 12px;
+  }
+  .article__block {
+    gap: 16px;
+    padding: 24px;
+  }
+  .article__block-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .article__block-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .article__quote-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .article__quote-author {
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
 .footer {
   padding: 44px 0;
   background-color: var(--white);
