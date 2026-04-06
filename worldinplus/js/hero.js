@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
+    const mainSection = document.querySelector('.main');
+    if (mainSection) {
         // Добавляем класс, который триггерит анимации в CSS
-        heroSection.classList.add('is-loaded');
+        mainSection.classList.add('is-loaded');
     }
 });

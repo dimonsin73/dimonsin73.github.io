@@ -8,9 +8,39 @@ html(lang="ru")
         link(rel="stylesheet", href="/worldinplus/css/fonts.css")
         link(rel="stylesheet", href="/worldinplus/css/main.css")
         script(src="/worldinplus/js/header.js" defer)
+        script(src="/worldinplus/js/hero.js" defer)
     body 
         - var currentPage = 'about.html'
         - var currentLang = 'ru'
+        include mixins.pug
         include header.pug
         main.main 
+            section.hero.hero--about
+                .container
+                    .hero__wrapper 
+                        h1.hero__title Мы доказываем, что мир становится лучше
+                        p.hero__text.hero__text--about «Мир в плюсе» — портал позитивных новостей, где каждая история вдохновляет, а каждый факт даёт надежду. Мы собираем доказательства того, что добро побеждает.
+            section.statistics.hero__statistics
+                .hero__item 
+                    h3.hero__item-title 10
+                    p.hero__item-text статей  опубликованно
+                .hero__item 
+                    h3.hero__item-title 5
+                    p.hero__item-text стран охваченно
+                .hero__item 
+                    h3.hero__item-title 1000
+                    p.hero__item-text читателей ежемесячно
+                .hero__item 
+                    h3.hero__item-title 1
+                    p.hero__item-text год с вами
+            section.about
+                .container
+                    .about__wrapper
+                        .about__top
+                            .about__dash
+                            h2.about__title Зачем мы существуем
+                        p.about__text В эпоху информационного шума люди устали от тревожных заголовков. Мы создали пространство, где журналистика служит не страху, а надежде. Здесь вы найдёте истории о людях, которые меняют мир к лучшему, о научных прорывах, которые продлевают жизни, и о проектах, которые восстанавливают природу.
+            section.principles
+            section.team 
+            section.subscription
         include footer.pug

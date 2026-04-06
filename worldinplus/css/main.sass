@@ -399,26 +399,43 @@ svg
 .main 
     margin-top: 64px
     background-color: var(--background)
+    &.is-loaded
+        & .hero__title
+            animation: fadeUp 0.8s ease forwards 0.1s
+        & .hero__subtitle
+            animation: fadeUp 0.8s ease forwards 0.2s
+        & .hero__text
+            animation: fadeUp 0.8s ease forwards 0.3s
+        & .hero__link
+            animation: fadeUp 0.8s ease forwards 0.4s
+        & .hero__line
+            animation: fadeUp 0.8s ease forwards 0.5s
+        & .hero__statistics
+            animation: fadeUp 0.8s ease forwards 0.5s
 @media (max-width: 1023px)
     .main
         margin-top: 48px
 // ===== hero =====
 .hero 
     display: flex
+    flex-direction: column
     align-items: center
+    justify-content: center
+    min-height: 500px
     height: calc(100vh - 64px)
     background: linear-gradient(135deg,rgba(46, 139, 87, 0.3) 0%, rgba(248, 249, 250, 0.3) 35%, rgba(248, 249, 250, 0.3) 65%, rgba(255, 167, 38, 0.3) 100%)
     &__wrapper 
-        max-width: 1000px
-        width: 100%
-        height: 100%
         display: flex
         flex-direction: column
         align-items: center
         gap: 16px
+        max-width: 1000px
+        width: 100%
+        height: 100%
     &__title 
         font: 700 72px/90px "Comfortaa", sans-serif
         color: var(--dark)
+        text-align: center
         opacity: 0 
     &__subtitle 
         margin-bottom: 8px
@@ -434,6 +451,9 @@ svg
         color: var(--secondary)
         text-align: center
         opacity: 0 
+        &--about, &--contacts
+            font-size: 20px
+        
     &__link 
         display: flex
         align-items: center
@@ -487,19 +507,24 @@ svg
         &-text 
             font: 400 16px/24px "Rubik", sans-serif
             color: var(--secondary)
-    &.is-loaded
-        & .hero__title
-            animation: fadeUp 0.8s ease forwards 0.1s
-        & .hero__subtitle
-            animation: fadeUp 0.8s ease forwards 0.2s
-        & .hero__text
-            animation: fadeUp 0.8s ease forwards 0.3s
-        & .hero__link
-            animation: fadeUp 0.8s ease forwards 0.4s
-        & .hero__line
-            animation: fadeUp 0.8s ease forwards 0.5s
-        & .hero__statistics
-            animation: fadeUp 0.8s ease forwards 0.5s
+    &--about
+        height: calc(100vh - 240px)
+        & .hero__wrapper 
+            gap: 24px
+            max-width: 680px
+        & .hero__title 
+            font-size: 60px
+            line-height: 72px
+    &--contacts
+        height: max-content
+        & .hero__wrapper 
+            gap: 24px
+            max-width: 650px
+        & .hero__title 
+            font-size: 48px
+            line-height: 60px
+
+    
 @media (max-width: 1023px)
     .hero
         height: calc(100vh - 48px)
@@ -516,6 +541,13 @@ svg
             line-height: 24px
         &__statistics
             gap: 24px
+.statistics
+    grid-template-columns: repeat(4, 1fr)
+    width: 100%
+    padding: 48px 0 48px
+    border-top: 1px solid var(--border)
+    border-bottom: 1px solid var(--border)
+    background-color: var(--white)
 // ===== CONTENT =====
 #content
     position: absolute
@@ -1052,7 +1084,24 @@ svg
             outline-offset: 0
         &:hover
             color: var(--accent)
-
+    &__share 
+        align-items: center
+        gap: 16px
+        &-title 
+            font: 600 18px/28px "Comfortaa", sans-serif
+            color: var(--dark)
+    &__btns 
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 16px
+    &__btn 
+        padding: 8px 16px
+        border: 1px solid var(--border)
+        border-radius: 4px
+        background-color: var(--background)
+        font: 500 14px/22px "Rubik", sans-serif
+        color: var(--dark)
 @media ( max-width: 1023px)
     .article
         &__title 
@@ -1107,7 +1156,14 @@ svg
             &-author 
                 font-size: 12px
                 line-height: 12px
-
+.about 
+    padding: 96px 0
+    &__wrapper 
+        max-width: 768px
+        margin: 0 auto
+    &__top 
+        display: flex
+        align-items: center
 // ===== FOOTER =====
 .footer
     padding: 44px 0

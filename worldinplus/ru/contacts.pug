@@ -8,9 +8,16 @@ html(lang="ru")
         link(rel="stylesheet", href="/worldinplus/css/fonts.css")
         link(rel="stylesheet", href="/worldinplus/css/main.css")
         script(src="/worldinplus/js/header.js" defer)
+        script(src="/worldinplus/js/hero.js" defer)
     body 
         - var currentPage = 'contacts.html'
         - var currentLang = 'ru'
+        include mixins.pug
         include header.pug
         main.main 
+            section.hero.hero--contacts
+                .container
+                    .hero__wrapper 
+                        h1.hero__title Мы рады каждому обращению
+                        p.hero__text.hero__text--contacts Есть история, которую стоит рассказать миру? Хотите сотрудничать или просто поделиться мнением? Напишите нам — мы отвечаем всем.
         include footer.pug
