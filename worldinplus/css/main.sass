@@ -518,6 +518,7 @@ svg
         color: var(--primary-500)
     &--about
         height: calc(100vh - 290px)
+        background: linear-gradient(135deg,rgba(46, 139, 87, 0.3) 0%, rgba(248, 249, 250, 0.3) 35%, rgba(248, 249, 250, 0.3) 65%, rgba(93, 109, 126, 0.3) 100%)
         & .hero__wrapper 
             gap: 24px
             max-width: 680px
@@ -533,7 +534,6 @@ svg
             font-size: 48px
             line-height: 60px
 
-    
 @media (max-width: 1023px)
     .hero
         height: calc(100vh - 48px)
@@ -550,6 +550,10 @@ svg
             line-height: 24px
         &__statistics
             gap: 24px
+        &--about 
+            .hero__title 
+                font-size: 36px
+                line-height: 44px
 .statistics
     width: 100%
     border-top: 1px solid var(--border)
@@ -558,6 +562,11 @@ svg
     &__wrapper 
         grid-template-columns: repeat(4, 1fr)
         padding: 48px 0 48px
+@media ( max-width: 767px)
+    .statistics
+        &__wrapper 
+            grid-template-columns: repeat(2, 1fr)
+
 // ===== CONTENT =====
 #content
     position: absolute
@@ -1185,6 +1194,7 @@ svg
             &-author 
                 font-size: 12px
                 line-height: 12px
+// ===== ABOUT =====
 .about 
     padding: 96px 0
     &__wrapper 
@@ -1207,6 +1217,11 @@ svg
         text-transform: uppercase
     &__text 
         font: 400 20px/32px "Rubik", sans-serif
+@media ( max-width: 1023px)
+@media (max-width: 767px)
+    .about
+        padding: 64px 0
+// ===== PRINCIPLES =====
 .principles 
     padding: 96px 0
     background-color: color-mix(in oklab, var(--muted) 30%, transparent)
@@ -1221,12 +1236,13 @@ svg
     &__content 
         display: grid
         grid-template-columns: repeat(3, 1fr)
+        justify-items: center
         gap: 32px
-        width: 100%
     &__item
         display: flex
         flex-direction: column
         gap: 24px
+        max-width: 400px
         padding: 32px
         border: 1px solid var(--border)
         border-radius: 16px
@@ -1244,6 +1260,33 @@ svg
     &__text 
         font: 400 16px/24px "Rubik", sans-serif
         color: var(--secondary)
+@media (max-width: 1023px)
+    .principles
+        &__content 
+            grid-template-columns: 1fr
+            gap: 16px
+@media (max-width: 767px)
+    .principles
+        padding: 64px 0
+
+// ===== TEAM =====
+.team
+    padding: 96px 0
+    &__wrapper 
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 48px
+    &__title 
+        font: 700 36px/40px "Comfortaa", sans-serif
+        color: var(--dark)
+@media (max-width: 767px)
+    .team
+        padding: 64px 0
+// ===== SUBSCRIPTION =====
+.subscription
+    padding: 96px 0
+    background-color: color-mix(in oklab, var(--muted) 30%, transparent)
 // ===== FOOTER =====
 .footer
     padding: 44px 0

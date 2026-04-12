@@ -640,6 +640,7 @@ svg {
 }
 .hero--about {
   height: calc(100vh - 290px);
+  background: linear-gradient(135deg, rgba(46, 139, 87, 0.3) 0%, rgba(248, 249, 250, 0.3) 35%, rgba(248, 249, 250, 0.3) 65%, rgba(93, 109, 126, 0.3) 100%);
 }
 .hero--about .hero__wrapper {
   gap: 24px;
@@ -683,6 +684,10 @@ svg {
   .hero__statistics {
     gap: 24px;
   }
+  .hero--about .hero__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 .statistics {
   width: 100%;
@@ -695,6 +700,11 @@ svg {
   padding: 48px 0 48px;
 }
 
+@media (max-width: 767px) {
+  .statistics__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 #content {
   position: absolute;
   top: -64px;
@@ -1523,6 +1533,11 @@ svg {
   font: 400 20px/32px "Rubik", sans-serif;
 }
 
+@media (max-width: 767px) {
+  .about {
+    padding: 64px 0;
+  }
+}
 .principles {
   padding: 96px 0;
   background-color: color-mix(in oklab, var(--muted) 30%, transparent);
@@ -1540,13 +1555,14 @@ svg {
 .principles__content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   gap: 32px;
-  width: 100%;
 }
 .principles__item {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 400px;
   padding: 32px;
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -1568,6 +1584,41 @@ svg {
 .principles__text {
   font: 400 16px/24px "Rubik", sans-serif;
   color: var(--secondary);
+}
+
+@media (max-width: 1023px) {
+  .principles__content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .principles {
+    padding: 64px 0;
+  }
+}
+.team {
+  padding: 96px 0;
+}
+.team__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+.team__title {
+  font: 700 36px/40px "Comfortaa", sans-serif;
+  color: var(--dark);
+}
+
+@media (max-width: 767px) {
+  .team {
+    padding: 64px 0;
+  }
+}
+.subscription {
+  padding: 96px 0;
+  background-color: color-mix(in oklab, var(--muted) 30%, transparent);
 }
 
 .footer {

@@ -56,6 +56,11 @@ html(lang="ru")
                         h2.principles__title Наши принципы
                         .principles__content 
                             .principles__item 
+                                .principles__top 
+                                    .principles__icon
+                                        +icon-shield  
+                                    h3.principles__subtitle Достоверность
+                                p.principles__text Мы проверяем каждый факт и публикуем только подтверждённые истории. Позитивность не означает наивность.
                             .principles__item 
                                 .principles__top 
                                     .principles__icon
@@ -63,9 +68,16 @@ html(lang="ru")
                                     h3.principles__subtitle Вдохновение
                                 p.principles__text Каждая публикация должна оставлять ощущение, что мир можно изменить — и это уже происходит прямо сейчас.
                             .principles__item 
+                                .principles__top 
+                                    .principles__icon
+                                        +icon-heart  
+                                    h3.principles__subtitle Доступность
+                                p.principles__text Добрые новости должны быть для всех. Мы пишем просто и понятно, без лишних терминов.
 
             section.team 
                 .container 
+                    .team__wrapper 
+                        h2.team__title Команда
             section.subscription
                 .container 
         include footer.pug
