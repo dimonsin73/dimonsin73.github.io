@@ -20,19 +20,29 @@ html(lang="ru")
                     .hero__wrapper 
                         h1.hero__title Мы доказываем, что мир становится лучше
                         p.hero__text.hero__text--about «Мир в плюсе» — портал позитивных новостей, где каждая история вдохновляет, а каждый факт даёт надежду. Мы собираем доказательства того, что добро побеждает.
-            section.statistics.hero__statistics
-                .hero__item 
-                    h3.hero__item-title 10
-                    p.hero__item-text статей  опубликованно
-                .hero__item 
-                    h3.hero__item-title 5
-                    p.hero__item-text стран охваченно
-                .hero__item 
-                    h3.hero__item-title 1000
-                    p.hero__item-text читателей ежемесячно
-                .hero__item 
-                    h3.hero__item-title 1
-                    p.hero__item-text год с вами
+            section.statistics
+                .container 
+                    .statistics__wrapper.hero__statistics
+                        .hero__item 
+                            .hero__icon
+                                +icon-book-open
+                            h3.hero__item-title 10
+                            p.hero__item-text статей  опубликованно
+                        .hero__item 
+                            .hero__icon
+                                +icon-globe
+                            h3.hero__item-title 5
+                            p.hero__item-text стран охваченно
+                        .hero__item 
+                            .hero__icon
+                                +icon-users
+                            h3.hero__item-title 1000
+                            p.hero__item-text читателей ежемесячно
+                        .hero__item 
+                            .hero__icon
+                                +icon-sparkles
+                            h3.hero__item-title 1
+                            p.hero__item-text год с вами
             section.about
                 .container
                     .about__wrapper
@@ -41,6 +51,21 @@ html(lang="ru")
                             h2.about__title Зачем мы существуем
                         p.about__text В эпоху информационного шума люди устали от тревожных заголовков. Мы создали пространство, где журналистика служит не страху, а надежде. Здесь вы найдёте истории о людях, которые меняют мир к лучшему, о научных прорывах, которые продлевают жизни, и о проектах, которые восстанавливают природу.
             section.principles
+                .container 
+                    .principles__wrapper 
+                        h2.principles__title Наши принципы
+                        .principles__content 
+                            .principles__item 
+                            .principles__item 
+                                .principles__top 
+                                    .principles__icon
+                                        +icon-sparkles  
+                                    h3.principles__subtitle Вдохновение
+                                p.principles__text Каждая публикация должна оставлять ощущение, что мир можно изменить — и это уже происходит прямо сейчас.
+                            .principles__item 
+
             section.team 
+                .container 
             section.subscription
+                .container 
         include footer.pug

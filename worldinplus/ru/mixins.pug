@@ -31,8 +31,6 @@ mixin icon-close
 mixin icon-globe
     svg(
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -46,8 +44,6 @@ mixin icon-globe
         path(d="M2 12h20")
 mixin icon-burger
     svg(
-        width="16" 
-        height="16" 
         viewBox="0 0 24 24" 
         fill="none" 
         stroke="currentColor" 
@@ -133,6 +129,78 @@ mixin icon-calendar
         path(d="M16 2v4")
         rect(width="18" height="18" x="3" y="4" rx="2")
         path(d="M3 10h18")
+mixin icon-book-open
+    svg(
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+    )&attributes(attributes)
+        path(d="M12 7v14")
+        path(d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z")
+mixin icon-users
+    svg(
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+    )&attributes(attributes)
+        path(d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2")
+        path(d="M16 3.128a4 4 0 0 1 0 7.744")
+        path(d="M22 21v-2a4 4 0 0 0-3-3.87")
+        circle(cx="9" cy="7" r="4")
+mixin icon-sparkles
+    svg(
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+    )&attributes(attributes)
+        path(d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z")
+        path(d="M20 2v4")
+        path(d="M22 4h-4")
+        circle(cx="4" cy="20" r="2")
+mixin icon-share(name)
+    svg(
+        xmlns="http://w3.org"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+    )&attributes(attributes)
+        if name === 'telegram'
+            path(d="m22 2-21 8 8 3 3 9 4-7 5 5 1-19z")
+        else if name === 'vk'
+            path(d="M14.2 19.3c-5.5 0-8.6-3.8-8.8-10.1h2.7c.1 4.6 2.2 6.5 3.8 6.9V9.2h2.6v3.9c1.6-.2 3.2-1.9 3.8-3.9h2.5c-.4 2.5-2.2 4.2-3.5 4.9 1.3.6 3.4 2.1 4.2 5.2h-2.8c-.6-1.9-2.2-3.4-3.8-3.5v3.5h-1.5z")
+        else if name === 'whatsapp'
+            path(d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z")
+        else if name === 'facebook'
+            path(d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z")
+        else if name === 'x'
+            path(d="M4 4l11.733 16h4.267l-11.733 -16z")
+            path(d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772")
+        else if name === 'linkedin'
+            path(d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z")
+            rect(width="4" height="12" x="2" y="9")
+            circle(cx="4" cy="4" r="2")
+        else if name === 'copy'
+            rect(width="14" height="14" x="8" y="8" rx="2" ry="2")
+            path(d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2")
 mixin nav-list(currentLang, currentPage)
     - 
         var menuItems = [
