@@ -77,7 +77,48 @@ html(lang="ru")
             section.team 
                 .container 
                     .team__wrapper 
-                        h2.team__title Команда
+                        .team__top
+                            h2.team__title Команда
+                            p.team__text Нас объединяет вера в силу хороших историй
+                        .team__content 
+                            .team__item 
+                                .team__image 
+                                    .team__bg-image 👩‍💼
+                                .team__info 
+                                    h3.team__name Анна Светлова
+                                    p.team__job-title Главный редактор
+                                    p.team__description 10 лет в журналистике. Верит, что каждая история способна изменить чью-то жизнь к лучшему.
+                            .team__item 
+                                .team__image 
+                                    .team__bg-image 👨‍🔬
+                                .team__info 
+                                    h3.team__name Михаил Добров
+                                    p.team__job-title Редактор науки
+                                    p.team__description Физик по образованию, журналист по призванию. Переводит сложное в понятное.
+                            .team__item 
+                                .team__image 
+                                    .team__bg-image 👩‍🎨
+                                .team__info 
+                                    h3.team__name Мария Надеждина
+                                    p.team__job-title Редактор проектов
+                                    p.team__description Находит удивительные социальные инициативы по всему миру и делится ими с читателями.
+                            .team__item 
+                                .team__image 
+                                    .team__bg-image 👨‍💻
+                                .team__info 
+                                    h3.team__name Дмитрий Лучёв
+                                    p.team__job-title Технический директор
+                                    p.team__description Создаёт цифровую платформу, которая делает добрые новости доступными для всех.
             section.subscription
                 .container 
+                    .subscription__wrapper 
+                        .subscription__content 
+                            .subscription__image 🌟
+                            h2.subscription__title Хотите получать добрые новости?
+                            p.subscription__text Подпишитесь на еженедельную рассылку и читайте лучшие истории прямо в почте
+                            a(href="").subscription__link 
+                                +icon-mail.subscription__icon
+                                | Подписаться на рассылку
+                                +icon-arrow-right.subscription__icon
+
         include footer.pug

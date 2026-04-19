@@ -1537,6 +1537,10 @@ svg {
   .about {
     padding: 64px 0;
   }
+  .about__text {
+    font-size: 16px;
+    line-height: 28px;
+  }
 }
 .principles {
   padding: 96px 0;
@@ -1591,6 +1595,10 @@ svg {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+  .principles__item {
+    gap: 16px;
+    padding: 24px;
+  }
 }
 @media (max-width: 767px) {
   .principles {
@@ -1606,21 +1614,147 @@ svg {
   align-items: center;
   gap: 48px;
 }
+.team__top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
 .team__title {
   font: 700 36px/40px "Comfortaa", sans-serif;
   color: var(--dark);
+  text-align: center;
+}
+.team__text {
+  font: 400 16px/24px "Rubik", sans-serif;
+  color: var(--secondary);
+  text-align: center;
+}
+.team__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.team__item {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px 0 var(--border), 0 1px 2px -1px var(--border);
+  background-color: var(--white);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.team__item:hover {
+  box-shadow: 0 10px 15px -3px var(--border), 0 4px 6px -4px var(--border);
+}
+.team__image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  background: linear-gradient(135deg, rgba(46, 139, 87, 0.1) 0%, rgba(93, 109, 126, 0.1) 100%);
+}
+.team__bg-image {
+  font: 400 72px/72px "Rubik", sans-serif;
+}
+.team__info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.team__name {
+  margin-bottom: 2px;
+  font: 600 16px/24px "Comfortaa", sans-serif;
+  color: var(--dark);
+}
+.team__job-title {
+  margin-bottom: 13px;
+  font: 500 14px/20px "Rubik", sans-serif;
+  color: var(--primary-500);
+}
+.team__description {
+  font: 400 14px/24px "Rubik", sans-serif;
+  color: var(--secondary);
 }
 
+@media (max-width: 1023px) {
+  .team__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 767px) {
   .team {
     padding: 64px 0;
   }
+  .team__content {
+    grid-template-columns: 1fr;
+  }
 }
 .subscription {
   padding: 96px 0;
-  background-color: color-mix(in oklab, var(--muted) 30%, transparent);
+  background: linear-gradient(135deg, rgba(46, 139, 87, 0.1) 0%, rgba(93, 109, 126, 0.1) 100%);
+}
+.subscription__wrapper {
+  max-width: 670px;
+  margin: 0 auto;
+}
+.subscription__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px var(--border), 0 4px 6px -4px var(--border);
+  background-color: var(--white);
+}
+.subscription__image {
+  margin-bottom: 4px;
+  font: 400 48px/48px "Rubik", sans-serif;
+}
+.subscription__title {
+  font: 600 30px/36px "Comfortaa", sans-serif;
+  color: var(--dark);
+  text-align: center;
+}
+.subscription__text {
+  margin-bottom: 8px;
+  font: 400 16px/24px "Rubik", sans-serif;
+  color: var(--secondary);
+  text-align: center;
+}
+.subscription__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: var(--primary-500);
+  font: 500 14px/16px "Rubik", sans-serif;
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
+.subscription__link:hover {
+  background-color: var(--primary-600);
+}
+.subscription__link:active {
+  background-color: var(--primary-700);
+}
+.subscription__icon {
+  width: 16px;
+  height: 16px;
 }
 
+@media (max-width: 767px) {
+  .subscription {
+    padding: 64px 0;
+  }
+  .subscription__content {
+    padding: 24px 16px;
+  }
+}
 .footer {
   padding: 44px 0;
   background-color: var(--white);

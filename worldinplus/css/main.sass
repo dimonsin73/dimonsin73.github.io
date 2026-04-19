@@ -1217,10 +1217,13 @@ svg
         text-transform: uppercase
     &__text 
         font: 400 20px/32px "Rubik", sans-serif
-@media ( max-width: 1023px)
+
 @media (max-width: 767px)
     .about
         padding: 64px 0
+        &__text 
+            font-size: 16px
+            line-height: 28px
 // ===== PRINCIPLES =====
 .principles 
     padding: 96px 0
@@ -1265,6 +1268,9 @@ svg
         &__content 
             grid-template-columns: 1fr
             gap: 16px
+        &__item 
+            gap: 16px
+            padding: 24px
 @media (max-width: 767px)
     .principles
         padding: 64px 0
@@ -1277,16 +1283,117 @@ svg
         flex-direction: column
         align-items: center
         gap: 48px
+    &__top 
+        display: flex
+        flex-direction: column
+        justify-content: center
+        gap: 12px
     &__title 
         font: 700 36px/40px "Comfortaa", sans-serif
         color: var(--dark)
+        text-align: center
+    &__text 
+        font: 400 16px/24px "Rubik", sans-serif
+        color: var(--secondary)
+        text-align: center
+    &__content 
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 24px
+    &__item 
+        display: flex
+        flex-direction: column
+        max-width: 400px
+        border-radius: 16px
+        box-shadow: 0 1px 3px 0 var(--border), 0 1px 2px -1px var(--border)
+        background-color: var(--white)
+        overflow: hidden
+        transition: box-shadow 0.3s ease
+        &:hover
+            box-shadow: 0 10px 15px -3px var(--border), 0 4px 6px -4px var(--border)
+    &__image 
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 160px
+        background: linear-gradient(135deg,rgba(46, 139, 87, 0.1) 0%, rgba(93, 109, 126, 0.1) 100%)
+    &__bg-image 
+        font: 400 72px/72px "Rubik", sans-serif
+    &__info 
+        display: flex
+        flex-direction: column
+        padding: 20px
+    &__name 
+        margin-bottom: 2px
+        font: 600 16px/24px "Comfortaa", sans-serif
+        color: var(--dark)
+    &__job-title 
+        margin-bottom: 13px
+        font: 500 14px/20px "Rubik", sans-serif
+        color: var(--primary-500)
+    &__description
+        font: 400 14px/24px "Rubik", sans-serif
+        color: var(--secondary)
+@media ( max-width: 1023px)
+    .team__content 
+        grid-template-columns: repeat(2, 1fr)
 @media (max-width: 767px)
     .team
         padding: 64px 0
+        &__content 
+            grid-template-columns: 1fr
 // ===== SUBSCRIPTION =====
 .subscription
     padding: 96px 0
-    background-color: color-mix(in oklab, var(--muted) 30%, transparent)
+    background: linear-gradient(135deg,rgba(46, 139, 87, 0.1) 0%, rgba(93, 109, 126, 0.1) 100%)
+    &__wrapper 
+        max-width: 670px
+        margin: 0 auto
+    &__content 
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 12px
+        padding: 40px
+        border-radius: 16px
+        box-shadow: 0 10px 15px -3px var(--border), 0 4px 6px -4px var(--border)
+        background-color: var(--white)
+    &__image
+        margin-bottom: 4px
+        font: 400 48px/48px "Rubik", sans-serif
+    &__title 
+        font: 600 30px/36px "Comfortaa", sans-serif
+        color: var(--dark)
+        text-align: center
+    &__text
+        margin-bottom: 8px
+        font: 400 16px/24px "Rubik", sans-serif
+        color: var(--secondary)
+        text-align: center
+    &__link 
+        display: flex
+        align-items: center
+        gap: 8px
+        padding: 12px 16px
+        border-radius: 8px
+        background-color: var(--primary-500)
+        font: 500 14px/16px "Rubik", sans-serif
+        color: var(--white)
+        transition: background-color 0.3s ease
+        &:hover 
+            background-color: var(--primary-600)
+        &:active
+            background-color: var(--primary-700)
+    &__icon 
+        width: 16px
+        height: 16px
+@media (max-width: 767px)
+    .subscription
+        padding: 64px 0
+        &__content 
+            padding: 24px 16px
+
 // ===== FOOTER =====
 .footer
     padding: 44px 0
