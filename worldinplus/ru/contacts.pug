@@ -20,4 +20,74 @@ html(lang="ru")
                     .hero__wrapper 
                         h1.hero__title Мы рады каждому обращению
                         p.hero__text.hero__text--contacts Есть история, которую стоит рассказать миру? Хотите сотрудничать или просто поделиться мнением? Напишите нам — мы отвечаем всем.
+            section.contacts
+                .container
+                    .contacts__wrapper
+                        .contacts__item
+                            h2.section-title Написать нам
+                            form.contacts__form
+                                .contacts__block
+                                    label.contacts__label(for="name") Ваше имя
+                                    input#name.contacts__input(type="text", name="name", placeholder="Иван Иванов", autocomplete="on")
+                                .contacts__block
+                                    label.contacts__label(for="email") Электронная почта
+                                    input#email.contacts__input(type="email", name="email", placeholder="ivan@example.com", autocomplete="on") 
+                                .contacts__block
+                                    label.contacts__label(for="topic") Тема
+                                    input#topic.contacts__input(type="text", name="topic", placeholder="Предложить историю", autocomplete="on")
+                                .contacts__block    
+                                    label.contacts__label(for="message") Сообщение
+                                    textarea#message.contacts__textarea(name="message", placeholder="Расскажите подробнее...")
+                                button(type="submit").contacts__btn
+                                    +icon-send.contacts__icon
+                                    | Отправить сообщение
+                        .contacts__item
+                            h2.section-title Контактная информация
+                            .contacts__info 
+                                +icon-message-square.contacts__icon24
+                                .contacts__block 
+                                    h3.contacts__title Предложить историю
+                                    p.contacts__text Знаете историю, которая достойна внимания? Расскажите нам — лучшие публикуем.
+                            .contacts__info 
+                                +icon-handshake.contacts__icon24
+                                .contacts__block 
+                                    h3.contacts__title Партнёрство
+                                    p.contacts__text Мы открыты для сотрудничества с брендами, которые разделяют наши ценности.
+                            .contacts__info 
+                                +icon-mail.contacts__icon24
+                                .contacts__block 
+                                    h3.contacts__title Электронная почта
+                                    a(href="mailto:hello@mirplius.com").contacts__link hello@mirplius.com
+                            .contacts__info 
+                                .contacts__block 
+                                    h3.contacts__title Социальные сети
+            section.faq 
+                .container 
+                    .faq__wrapper
+                        h2.section-title Часто задаваемые вопросы
+                        .faq__content 
+                            .faq__item 
+                                .faq__top
+                                    h2.faq__title Как предложить историю для публикации?
+                                    +icon-chevron-down.faq__icon 
+                                .faq__container 
+                                    p.faq__text Используйте форму обратной связи с темой «Предложить историю» или напишите на почту. Мы рассматриваем каждое предложение.
+                            .faq__item 
+                                .faq__top
+                                    h2.faq__title Сколько ждать ответа?
+                                    +icon-chevron-down.faq__icon 
+                                .faq__container 
+                                    p.faq__text Обычно мы отвечаем в течение 1–3 рабочих дней. В периоды высокой загрузки — до 5 дней.
+                            .faq__item 
+                                .faq__top
+                                    h2.faq__title Можно ли разместить рекламу на портале?
+                                    +icon-chevron-down.faq__icon 
+                                .faq__container 
+                                    p.faq__text Да, мы работаем с брендами, которые разделяют наши ценности. Напишите нам с темой «Партнёрство».
+                            .faq__item 
+                                .faq__top
+                                    h2.faq__title Вы публикуете новости на других языках?
+                                    +icon-chevron-down.faq__icon 
+                                .faq__container 
+                                    p.faq__text Да. Портал работает на русском, белорусском и английском языках. 
         include footer.pug
