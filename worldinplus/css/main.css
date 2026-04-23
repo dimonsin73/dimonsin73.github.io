@@ -1729,10 +1729,15 @@ svg {
   gap: 8px;
   padding: 12px 16px;
   border-radius: 8px;
+  outline: 2px solid transparent;
   background-color: var(--primary-500);
   font: 500 14px/16px "Rubik", sans-serif;
   color: var(--white);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, outline 0.3s ease;
+}
+.subscription__link:focus-visible {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 0;
 }
 .subscription__link:hover {
   background-color: var(--primary-600);
@@ -1787,17 +1792,29 @@ svg {
   padding: 4px 12px;
   border: 1px solid var(--border);
   border-radius: 8px;
+  outline: 2px solid transparent;
   font: 400 14px/26px "Rubik", sans-serif;
   color: var(--dark);
+  transition: outline 0.3s ease;
+}
+.contacts__input:focus-visible {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 0;
 }
 .contacts__textarea {
   height: 166px;
   padding: 4px 12px;
   border: 1px solid var(--border);
   border-radius: 8px;
+  outline: 2px solid transparent;
   font: 400 14px/26px "Rubik", sans-serif;
   color: var(--dark);
   resize: none;
+  transition: outline 0.3s ease;
+}
+.contacts__textarea:focus-visible {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 0;
 }
 .contacts__btn {
   display: flex;
@@ -1810,6 +1827,17 @@ svg {
   background-color: var(--primary-500);
   font: 500 14px/24px "Rubik", sans-serif;
   color: var(--white);
+  transition: background-color 0.3s ease, outline 0.3s ease;
+}
+.contacts__btn:focus-visible {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 0;
+}
+.contacts__btn:active {
+  background-color: var(--primary-700);
+}
+.contacts__btn:hover {
+  background-color: var(--primary-600);
 }
 .contacts__icon {
   width: 16px;
@@ -1835,6 +1863,15 @@ svg {
 .contacts__text {
   font: 400 14px/20px "Rubik", sans-serif;
   color: var(--dark);
+}
+.contacts__link {
+  font: 400 14px/20px "Rubik", sans-serif;
+  color: var(--primary-500);
+}
+.contacts__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--primary-300);
 }
 .contacts .section-title {
   text-align: left;
@@ -1871,12 +1908,25 @@ svg {
   border: 1px solid var(--border);
   border-radius: 16px;
   background-color: var(--white);
+  overflow: hidden;
+}
+.faq__container {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
 }
 .faq__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 16px 24px;
+}
+.faq__top--active .faq__icon {
+  transform: rotate(180deg);
+}
+.faq__top:hover {
+  background-color: var(--background);
 }
 .faq__title {
   font: 500 16px/24px "Rubik", sans-serif;
@@ -1890,6 +1940,7 @@ svg {
 .faq__icon {
   width: 16px;
   height: 16px;
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 767px) {

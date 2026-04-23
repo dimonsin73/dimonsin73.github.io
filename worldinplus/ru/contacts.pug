@@ -9,6 +9,7 @@ html(lang="ru")
         link(rel="stylesheet", href="/worldinplus/css/main.css")
         script(src="/worldinplus/js/header.js" defer)
         script(src="/worldinplus/js/hero.js" defer)
+        script(src="/worldinplus/js/contacts.js" defer)
     body 
         - var currentPage = 'contacts.html'
         - var currentLang = 'ru'
@@ -20,7 +21,7 @@ html(lang="ru")
                     .hero__wrapper 
                         h1.hero__title Мы рады каждому обращению
                         p.hero__text.hero__text--contacts Есть история, которую стоит рассказать миру? Хотите сотрудничать или просто поделиться мнением? Напишите нам — мы отвечаем всем.
-            section.contacts
+            section.contacts#contacts
                 .container
                     .contacts__wrapper
                         .contacts__item
@@ -67,25 +68,25 @@ html(lang="ru")
                         h2.section-title Часто задаваемые вопросы
                         .faq__content 
                             .faq__item 
-                                .faq__top
+                                button(type="button").faq__top
                                     h2.faq__title Как предложить историю для публикации?
                                     +icon-chevron-down.faq__icon 
                                 .faq__container 
                                     p.faq__text Используйте форму обратной связи с темой «Предложить историю» или напишите на почту. Мы рассматриваем каждое предложение.
                             .faq__item 
-                                .faq__top
+                                button(type="button").faq__top
                                     h2.faq__title Сколько ждать ответа?
                                     +icon-chevron-down.faq__icon 
                                 .faq__container 
                                     p.faq__text Обычно мы отвечаем в течение 1–3 рабочих дней. В периоды высокой загрузки — до 5 дней.
                             .faq__item 
-                                .faq__top
+                                button(type="button").faq__top
                                     h2.faq__title Можно ли разместить рекламу на портале?
                                     +icon-chevron-down.faq__icon 
                                 .faq__container 
                                     p.faq__text Да, мы работаем с брендами, которые разделяют наши ценности. Напишите нам с темой «Партнёрство».
                             .faq__item 
-                                .faq__top
+                                button(type="button").faq__top
                                     h2.faq__title Вы публикуете новости на других языках?
                                     +icon-chevron-down.faq__icon 
                                 .faq__container 

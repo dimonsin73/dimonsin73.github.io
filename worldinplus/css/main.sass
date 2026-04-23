@@ -1376,10 +1376,14 @@ svg
         gap: 8px
         padding: 12px 16px
         border-radius: 8px
+        outline: 2px solid transparent
         background-color: var(--primary-500)
         font: 500 14px/16px "Rubik", sans-serif
         color: var(--white)
-        transition: background-color 0.3s ease
+        transition: background-color 0.3s ease, outline 0.3s ease
+        &:focus-visible
+            outline: 2px solid var(--primary-300)
+            outline-offset: 0
         &:hover 
             background-color: var(--primary-600)
         &:active
@@ -1421,16 +1425,26 @@ svg
         padding: 4px 12px
         border: 1px solid var(--border)
         border-radius: 8px
+        outline: 2px solid transparent
         font: 400 14px/26px "Rubik", sans-serif
         color: var(--dark)
+        transition: outline 0.3s ease
+        &:focus-visible
+            outline: 2px solid var(--primary-300)
+            outline-offset: 0
     &__textarea 
         height: 166px
         padding: 4px 12px
         border: 1px solid var(--border)
         border-radius: 8px
+        outline: 2px solid transparent
         font: 400 14px/26px "Rubik", sans-serif
         color: var(--dark)
         resize: none
+        transition: outline 0.3s ease
+        &:focus-visible
+            outline: 2px solid var(--primary-300)
+            outline-offset: 0
     &__btn 
         display: flex
         align-items: center
@@ -1441,6 +1455,14 @@ svg
         background-color: var(--primary-500)
         font: 500 14px/24px "Rubik", sans-serif
         color: var(--white)
+        transition: background-color 0.3s ease, outline 0.3s ease
+        &:focus-visible
+            outline: 2px solid var(--primary-300)
+            outline-offset: 0
+        &:active
+            background-color: var(--primary-700)
+        &:hover 
+            background-color: var(--primary-600)
     &__icon 
         width: 16px
         height: 16px
@@ -1461,6 +1483,13 @@ svg
     &__text 
         font: 400 14px/20px "Rubik", sans-serif
         color: var(--dark)
+    &__link 
+        font: 400 14px/20px "Rubik", sans-serif
+        color: var(--primary-500)
+        &:hover
+            text-decoration: underline 
+            text-underline-offset: 2px
+            color: var(--primary-300)
     .section-title 
         text-align: left
 @media (max-width: 1023px)
@@ -1489,11 +1518,22 @@ svg
         border: 1px solid var(--border)
         border-radius: 16px
         background-color: var(--white)
+        overflow: hidden
+    &__container 
+        height: 0
+        overflow: hidden
+        transition: height 0.3s ease
     &__top 
         display: flex
         align-items: center
         justify-content: space-between
+        width: 100%
         padding: 16px 24px
+        &--active 
+            & .faq__icon 
+                transform: rotate(180deg)
+        &:hover 
+            background-color: var(--background)
     &__title 
         font: 500 16px/24px "Rubik", sans-serif
         color: var(--dark)
@@ -1504,6 +1544,7 @@ svg
     &__icon 
         width: 16px
         height: 16px
+        transition: transform 0.3s ease
 @media (max-width: 767px)
     .faq
         padding: 64px 0
