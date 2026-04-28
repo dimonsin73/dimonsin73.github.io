@@ -530,7 +530,6 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 500px;
   height: calc(100vh - 64px);
   background: linear-gradient(135deg, rgba(46, 139, 87, 0.3) 0%, rgba(248, 249, 250, 0.3) 35%, rgba(248, 249, 250, 0.3) 65%, rgba(255, 167, 38, 0.3) 100%);
 }
@@ -657,6 +656,7 @@ svg {
   line-height: 72px;
 }
 .hero--contacts {
+  min-height: 500px;
   height: -moz-max-content;
   height: max-content;
   background: linear-gradient(135deg, rgba(93, 109, 126, 0.3) 0%, rgba(248, 249, 250, 0.3) 35%, rgba(248, 249, 250, 0.3) 65%, rgba(46, 139, 87, 0.3) 100%);
@@ -673,6 +673,22 @@ svg {
 @media (max-width: 1023px) {
   .hero {
     height: calc(100vh - 48px);
+  }
+  .hero__item-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .hero__item-text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .hero--about {
+    height: calc(100vh - 290px);
+  }
+  .hero--contacts {
+    min-height: 420px;
+    height: -moz-max-content;
+    height: max-content;
   }
 }
 @media (max-width: 639px) {
@@ -704,7 +720,7 @@ svg {
 }
 .statistics__wrapper {
   grid-template-columns: repeat(4, 1fr);
-  padding: 48px 0 48px;
+  padding: 48px 0;
 }
 
 @media (max-width: 767px) {
@@ -1882,6 +1898,9 @@ svg {
     grid-template-columns: minmax(350px, 800px);
     padding: 0;
   }
+  .contacts__form {
+    margin-top: 0;
+  }
 }
 @media (max-width: 767px) {
   .contacts {
@@ -1931,6 +1950,7 @@ svg {
 .faq__title {
   font: 500 16px/24px "Rubik", sans-serif;
   color: var(--dark);
+  text-align: left;
 }
 .faq__text {
   padding: 0 24px 20px;
