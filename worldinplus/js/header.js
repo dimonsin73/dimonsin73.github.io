@@ -76,6 +76,7 @@ if (searchBtn && searchForm) {
             render();
             document.querySelector('#content')?.scrollIntoView({ behavior: 'smooth' });
         }
+        menuClose()
     });
 }
 
@@ -86,4 +87,9 @@ if (burger && menu) {
         const isMenuOpen = menu.classList.toggle('menu--active');
         document.body.style.overflow = isMenuOpen ? 'hidden' : ''; // Блокируем скролл
     })
+}
+function menuClose() {
+    burger.classList.remove('burger--active')
+    menu.classList.remove('menu--active');
+    document.body.style.overflow = '';
 }
