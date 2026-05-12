@@ -64,6 +64,7 @@ body
     font: 700 36px / 40px "Comfortaa", sans-serif
     color: var(--dark)
     text-align: center
+    opacity: 0
 svg 
     flex: 0 0 auto
 
@@ -417,6 +418,12 @@ svg
             animation: fadeUp 0.8s ease forwards 0.5s
         & .hero__statistics
             animation: fadeUp 0.8s ease forwards 0.5s
+        & .section-title
+            animation: fadeDowm 0.8s ease forwards 0.4s
+        & .contacts__form
+            animation: fadeRight 0.8s ease forwards 0.6s
+        & .contacts__info
+            animation: fadeLeft 0.8s ease forwards 0.6s
 @media (max-width: 1023px)
     .main
         margin-top: 48px
@@ -1426,6 +1433,7 @@ svg
         flex-direction: column
         gap: 20px
         margin-top: 20px
+        opacity: 0
     &__block
         display: flex
         flex-direction: column
@@ -1489,6 +1497,7 @@ svg
         border: 1px solid var(--border)
         border-radius: 16px
         background-color: var(--white)
+        opacity: 0
     &__title 
         font: 600 16px/24px "Comfortaa", sans-serif
         color: var(--dark)
@@ -1628,4 +1637,25 @@ svg
     100%
         opacity: 1
         transform: translateY(0)
+@keyframes fadeDowm
+    0%
+        opacity: 0
+        transform: translateY(-30px)
+    100%
+        opacity: 1
+        transform: translateY(0)
+@keyframes fadeRight
+    0%
+        opacity: 0
+        transform: translateX(-30px)
+    100%
+        opacity: 1
+        transform: translateX(0)
+@keyframes fadeLeft
+    0%
+        opacity: 0
+        transform: translateX(30px)
+    100%
+        opacity: 1
+        transform: translateX(0)
         

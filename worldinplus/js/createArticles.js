@@ -5,22 +5,38 @@ let filterTag = 'all';
 let articlesCount = 6;
 let searchQuery = '';
 
-const articlesContainer = document.querySelector(".articles");
-const contentMore = document.querySelector(".content__more");
-const searchInput = document.querySelector('.search__input');
+const articlesContainer = document.querySelector('.articles')
+const contentMore = document.querySelector('.content__more')
 
-// 1. Загружаем данные ОДИН раз
+// Получаем параметры из URL
+const urlParams = new URLSearchParams(window.location.search);
+searchQuery = urlParams.get('search') || '';
+// Если в хедере есть инпут, синхронизируем его текст с поиском из URL
+if (searchQuery && searchInput) {
+    searchInput.value = searchQuery;
+}
+// Загружаем данные 
 async function init() {
     try {
         const response = await fetch("articles.json");
         allData = await response.json();
         render(); // Первичная отрисовка
-        renderTagCloud(allData);
+        renderTagCloud();
+        // ПРОВЕРКА: Если в URL есть поиск, скроллим к результатам
+        if (searchQuery) {
+            setTimeout(() => {
+                document.querySelector('#content')?.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 100);
+        }
+
     } catch (error) {
         console.error("ERROR:", error);
     }
 }
-// 2. Функция создания HTML 
+// Функция создания HTML 
 function getArticleHTML(article) {
     const fullDate = new Date(article.date).toLocaleString('ru-RU', { 
         day: 'numeric', month: 'long', year: 'numeric' 
@@ -55,15 +71,19 @@ function getArticleHTML(article) {
     `;
 }
 
-// 3. Основная логика рендера
+// Основная логика рендера
 function render() {
-    // Двойная фильтрация: по рубрике И по категории
+    if (!articlesContainer) return;
+    // Фильтрация фильтрация
     const filtered = allData.filter(item => {
         const matchRubric = filterRubric === 'all' || item.rubric === filterRubric;
         const matchCategory = filterCategory === 'all' || item.category.toLowerCase() === filterCategory.toLowerCase();
         const matchTag = filterTag === 'all' || item.tags.includes(filterTag);
-        const matchSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                        item.preview.toLowerCase().includes(searchQuery.toLowerCase());
+        // Безопасная проверка поиска
+        const term = searchQuery?.toLowerCase();
+        const matchSearch = !term || 
+                        item.title.toLowerCase().includes(term) || 
+                        item.preview.toLowerCase().includes(term);
         return matchRubric && matchCategory && matchTag && matchSearch;
     });
     // Берем порцию данных
@@ -71,14 +91,19 @@ function render() {
     // Отрисовываем всё разом
     articlesContainer.innerHTML = part.map(item => getArticleHTML(item)).join('');
     // Управление кнопкой "Показать еще"
-    contentMore.style.display = (articlesCount >= filtered.length) ? 'none' : 'block';
+    if (contentMore) {
+        contentMore.style.display = (articlesCount >= filtered.length) ? 'none' : 'block';
+    }
+
     renderTagCloud();
 }
 // Слушатель кнопки "Показать еще"
-contentMore.addEventListener("click", () => {
-    articlesCount += 6;
-    render();
-});
+if (contentMore) {
+    contentMore.addEventListener("click", () => {
+        articlesCount += 6;
+        render();
+    });
+}
 
 init();
 
@@ -123,20 +148,24 @@ document.addEventListener('click', (e) => {
 
 // Добавим также логику для кнопки "Сбросить фильтры"
 const resetBtn = document.querySelector('.aside__reset');
-resetBtn.addEventListener('click', () => {
-    filterRubric = 'all';
-    filterCategory = 'all';
-    filterTag = 'all'; 
-    articlesCount = 6;
-    searchInput.value = ''; // Очистка визуального поля
-    searchQuery = '';
-    
-    // Сбрасываем визуально все радиокнопки на "Все"
-    document.querySelector('#rubric-all').checked = true;
-    document.querySelector('#category-all').checked = true;
-    
-    render();
-});
+if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+        filterRubric = 'all';
+        filterCategory = 'all';
+        filterTag = 'all'; 
+        articlesCount = 6;
+        searchInput.value = ''; // Очистка визуального поля
+        searchQuery = '';
+        
+        // Сбрасываем визуально все радиокнопки на "Все"
+        document.querySelector('#rubric-all').checked = true;
+        document.querySelector('#category-all').checked = true;
+        
+        render();
+    });
+}
+
+
 
 function renderTagCloud() {
     const tagsContainer = document.querySelector('.aside__tags');
@@ -155,16 +184,3 @@ function renderTagCloud() {
         `).join('')}
     `;
 }   
-
-searchForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Останавливаем перезагрузку страницы
-    
-    // Берем значение из инпута
-    searchQuery = searchInput.value.trim();
-    articlesCount = 6; // Сбрасываем пагинацию при новом поиске
-    
-    render(); // Вызываем отрисовку с новым фильтром
-    
-    // Опционально: скролл к результатам
-    document.querySelector('#content').scrollIntoView({ behavior: 'smooth' });
-});
