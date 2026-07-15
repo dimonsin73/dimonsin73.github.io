@@ -83,7 +83,7 @@ if (searchBtn && searchForm) {
         if (typeof render === 'function') {
             render();
             if (value !== '') {
-                document.querySelector('#content')?.scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('#content')?.scrollIntoView({ behavior: 'auto' });
             }
         }
         menuClose()
