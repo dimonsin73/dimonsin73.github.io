@@ -160,7 +160,8 @@ if (resetBtn) {
         // Сбрасываем визуально все радиокнопки на "Все"
         document.querySelector('#rubric-all').checked = true;
         document.querySelector('#category-all').checked = true;
-        
+        // Чистим адресную строку от лишних запросов
+        history.pushState({}, document.title, window.location.pathname);
         render();
     });
 }

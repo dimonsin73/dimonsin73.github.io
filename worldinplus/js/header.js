@@ -43,8 +43,11 @@ if (searchBtn && searchForm) {
         searchBtn.classList.toggle('search__btn--active');
         const isActive = searchForm.classList.toggle('search__form--active');
         if (isActive) {
-            // Ждем начала анимации и ставим фокус
-            setTimeout(() => searchInput?.focus(), 100);
+            searchForm.addEventListener('transitionend', () => {
+            if (searchForm.classList.contains('search__form--active')) {
+                searchInput?.focus();
+            }
+            }, { once: true }); // once выполнит код только один раз за анимацию
         } else {
             // Если закрыли и там был текст — сбрасываем поиск
             if (searchInput) searchInput.value = '';
@@ -58,11 +61,15 @@ if (searchBtn && searchForm) {
         searchBtn.classList.remove('search__btn--active');
         searchForm.classList.remove('search__form--active');
         searchInput?.blur();
-        
         // Если мы НЕ на главной странице
         const isMainPage = window.location.pathname.endsWith('index.html') || 
-                        window.location.pathname === '/worldinplus/ru/';
+                        window.location.pathname.endsWith('/') ;
         if (!isMainPage) {
+            // Запрещаем отправку пустого поля
+            if (!value) {
+                e.preventDefault(); 
+                return;
+            }
             // Если не на главной — ничего не делаем, форма сама уйдет на главную
             // Убедитесь, что в HTML у <form action="/worldinplus/ru/index.html">
             return; 
@@ -72,9 +79,12 @@ if (searchBtn && searchForm) {
         e.preventDefault();
         searchQuery = value;
         articlesCount = 6;
+        history.replaceState(null, '', window.location.origin + window.location.pathname);
         if (typeof render === 'function') {
             render();
-            document.querySelector('#content')?.scrollIntoView({ behavior: 'smooth' });
+            if (value !== '') {
+                document.querySelector('#content')?.scrollIntoView({ behavior: 'smooth' });
+            }
         }
         menuClose()
     });
