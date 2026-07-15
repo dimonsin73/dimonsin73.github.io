@@ -739,13 +739,12 @@ svg {
   }
 }
 #content {
-  position: absolute;
-  top: -64px;
+  scroll-margin-top: 64px;
 }
 
 @media (max-width: 1023px) {
   #content {
-    top: -48px;
+    scroll-margin-top: 48px;
   }
 }
 .content {
